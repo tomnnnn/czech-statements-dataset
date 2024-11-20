@@ -6,21 +6,6 @@ import time
 from utils import fetch, config
 import asyncio as asyncio
 import aiofiles
-import openai
-
-
-def createSearchQuery(statement):
-    response = ollama.chat(
-        model="llama3",
-        messages=[
-            {
-                "role": "user",
-                "content": "Provide a keyword based search query to find relevant websites to provide grounding context for verifying the veracity of a following statement: "
-                + statement,
-            },
-        ],
-    )
-    print(response["message"]["content"])
 
 
 async def provideGroundingContext(stmt, outputFile):
@@ -62,7 +47,7 @@ async def provideGroundingContext(stmt, outputFile):
     groundingContexts = []
     coros = [
         processGroundingContext(url)
-        for url in search(searchQuery, config["ContextNum"], sleep_interval=2)
+        for url in search(searchQuery, config["ContextNum"], sleep_interval=1)
     ]
 
     for groundingContext in await asyncio.gather(*coros):
@@ -92,10 +77,6 @@ if __name__ == "__main__":
     start_time = time.time()
 
     stmts = asyncio.run(Demagog.scrapeStatements(to_page=2))
-    # dataset = asyncio.run(buildDataset(stmts))
-    #
-
-    for stmt in stmts:
-        createSearchQuery(stmt.statement)
+    dataset = asyncio.run(buildDataset(stmts))
 
     print(f"Execution time: {time.time() - start_time}")
