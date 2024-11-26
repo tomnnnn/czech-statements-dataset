@@ -1,11 +1,16 @@
 default:
   IncludeSource: true
   IncludeAuthor: true
-  IncludeAssessment: true
+  IncludeAssessment: false
   IncludeDate: true
   IncludeContext: true
   ContextNum: 10
   OnlyWithAssesment:
   DemagogPagesNumber: 1
-  ContextLinkOnly: true
+  ContextLinkOnly: false
+  # LLM used for generating search queries for retrieving grounding context
+  ContextLLM: none
+  GoogleSearchSleep: 2
+  OutputDir: dataset
+  SearchAPI: criteria
   UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
