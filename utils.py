@@ -1,18 +1,25 @@
-import asyncio
 import aiohttp
-from gpt4all.gpt4all import sys
+import sys
 import yaml
 import json
 import argparse
+import asyncio
+import itertools
+from googlesearch import search
 
-post_sem = asyncio.Semaphore(1)
 
-async def fetch(url):
-    async with aiohttp.ClientSession() as session:
+async def fetch(url, retries=0):
+    timeout=aiohttp.ClientTimeout(total=60)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
         try:
-            async with session.get(url) as response:
-                response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
-                # Attempt to detect encoding, fallback to utf-8
+            headers = {'User-Agent': config['UserAgent']}
+            async with session.get(url, headers=headers) as response:
+                if(response.status == 429 and retries < 3):
+                    # retry after delay
+                    await asyncio.sleep(3, retries+1)
+                    return await fetch(url)
+
+                response.raise_for_status()
                 encoding = response.charset or 'utf-8'
                 return await response.text(encoding=encoding, errors='replace')
         except Exception as e:
@@ -20,23 +27,19 @@ async def fetch(url):
             return None
 
 async def post_request(url, data):
-    async with post_sem:
-        await asyncio.sleep(2)
-
-    print("Sending POST request to " + url)
     async with aiohttp.ClientSession() as session:
         response = await session.post(url=url,
                                       data=json.dumps(data),
                                       headers={"Content-Type": "application/json"})
         return await response.json()
 
-def loadConfig(mode="default"):
+def load_config(mode="default"):
     with open("config.yaml", "r") as file:
         configs = yaml.safe_load(file)
     return configs.get(mode)
 
 
-def loadCliArgs():
+def load_cli_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-o", "--output", help="Output file name", default="statements.json"
@@ -53,4 +56,37 @@ def loadCliArgs():
     )
     return parser.parse_args()
 
-config = loadConfig()
+
+async def track_progress(coro, counter, total, unit=""):
+    result = await coro
+    print(f"{next(counter)}/{total} {unit}s completed", end="\r", flush=True)
+
+    return result
+
+
+async def search_google(query, num_results):
+    print("Searching Google for:", query)
+    return await asyncio.get_event_loop().run_in_executor(None, search, query, num_results)
+
+
+async def search_bing(query, api_key, num_results):
+    params = {
+        "q": query,
+        "count": num_results,
+    }
+    endpoint = "https://api.bing.microsoft.com/v7.0/search?"
+    headers = {
+        "Ocp-Apim-Subscription-Key": api_key
+    }
+    async with aiohttp.ClientSession() as session:
+        async with session.get(endpoint, headers=headers, params=params) as response:
+            if response.status != 200:
+                print(f"Failed to fetch Bing search results: {response.status}", file=sys.stderr)
+                return []
+            else:
+                result = await response.json()
+                if 'webPages' not in result:
+                    return []
+                return result['webPages']['value']
+
+config = load_config()
