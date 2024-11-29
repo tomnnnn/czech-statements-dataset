@@ -1,6 +1,6 @@
 import aiohttp
 import sys
-import yaml
+import envyaml
 import json
 import argparse
 import asyncio
@@ -34,9 +34,8 @@ async def post_request(url, data):
         return await response.json()
 
 def load_config(mode="default"):
-    with open("config.yaml", "r") as file:
-        configs = yaml.safe_load(file)
-    return configs.get(mode)
+    configs = envyaml.EnvYAML('config.yaml', strict=False)
+    return configs[mode]
 
 
 def load_cli_args():

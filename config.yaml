@@ -1,29 +1,32 @@
 default:
   # general options
   UserAgent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36
-  OutputDir: dataset
-  FetchesPerDelay: 10
+  OutputDir: dataset2
+  FetchesPerDelay: 5
   FetchDelay: .5
-  OverwriteOutput: False
+  OverwriteOutput: true
 
   # Demagog scraping options
+  UseExistingStatements: false
   DemagogFromPage: 1
-  DemagogToPage: 500
+  DemagogToPage: 1000
   IncludeExplanation: true
   IncludeAuthor: true
   IncludeAssessment: false
   IncludeDate: true
   IncludeContext: true
-  OnlyWithAssesment:
+  OnlyWithAssesment: false
+  StmtStartIndex: 100
 
   # Grouding context options
+  ScrapeWithContext: false
   ContextLinkOnly: false
   ContextLLM: none
-  ContextNum: 0
-  ContextNumBuffer: 0
+  ContextNum: 10
+  ContextNumBuffer: 15
   SearchDelay: 1
   SearchesPerDelay: 3
   SearchAPI: bing
-  GoogleAPIKey: AIzaSyDEwtqmI5xiRWQxvFVCzBrRfKA5zIKkxZU
-  BingAPIKey: d7baa2059c9643f7a660e2c409456c84
+  GoogleAPIKey: $GOOGLE_API_TOKEN
+  BingAPIKey: $BING_API_TOKEN
 
