@@ -10,7 +10,7 @@ from dataclasses import dataclass
 import time
 
 from gpt4all.gpt4all import sys
-from utils import fetch
+from utils import fetch, config, track_progress
 import asyncio as asyncio
 import itertools
 
@@ -27,14 +27,16 @@ class Statement:
     statement: str
     speaker: str
 
-stmtCnter = itertools.count(0)
-
-
-async def scrapeStatementsFromPage(url, filter_func=None):
+async def scrapeStatementsFromPage(url, fetch_sem, filter_func=None, statement_cnter=itertools.count(1)):
     statements = []
-    html = await fetch(url)
+
+    async with fetch_sem:
+        html = await fetch(url)
+        await asyncio.sleep(config['FetchDelay'])
+
     if not html:
         return statements
+
     soup = BeautifulSoup(html, "html.parser")
     statement_divs = soup.find_all("div", class_="s-statement")
 
@@ -42,14 +44,14 @@ async def scrapeStatementsFromPage(url, filter_func=None):
         try:
             # statement link
             accordion_div = statement_div.find("div", class_="accordion")
-            link = ""
+            explanation = ""
 
             if accordion_div:
-                link = accordion_div.findChildren("div", recursive=False)[2].select(
+                explanation = accordion_div.findChildren("div", recursive=False)[2].select(
                     "a"
                 )[1]["href"]
             else:
-                link = "N/A"
+                explanation = ' '.join([p.get_text() for p in statement_div.select(".d-block p")])
 
             # date
             citation = statement_div.find("cite").get_text(strip=True)
@@ -73,11 +75,11 @@ async def scrapeStatementsFromPage(url, filter_func=None):
             )["href"]
 
             statement = {
-                'id':next(stmtCnter),
-                'link':link,
+                'id':next(statement_cnter),
+                'statement':statementText.replace("Demagog.cz", "").strip(),
+                'explanation':explanation,
                 'date':date,
                 'assessment':assessment,
-                'statement':statementText,
                 'speaker':speakerLink,
             }
 
@@ -94,14 +96,17 @@ async def scrapeStatementsFromPage(url, filter_func=None):
 async def scrapeStatements(from_page=1, to_page=300, filterFunc=None):
     start_time = time.time()
     statements = []
+    statement_cnter = itertools.count(1)
+    statement_tracker = itertools.count(1)
+    fetch_sem = asyncio.Semaphore(config["FetchesPerDelay"])
 
+    print(f"Scraping Demagog from page {from_page} to page {to_page}")
     coros = [
-        scrapeStatementsFromPage(f"{statements_url}?page={page}", filterFunc)
-        for page in range(from_page, to_page)
+        track_progress(scrapeStatementsFromPage(f"{STMTS_URL}?page={page}", fetch_sem, filterFunc, statement_cnter), statement_tracker, to_page + 1 - from_page, 'page')
+        for page in range(from_page, to_page+1)
     ]
 
     pages = await asyncio.gather(*coros)
-
 
     for page in pages:
         statements.extend(page)
