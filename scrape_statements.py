@@ -1,7 +1,8 @@
 """
-Script to scrape politician statements from https://demagog.cz/
-
+@file scrape_statements.py
 @author: Hai Phong Nguyen (xnguye28@stud.fit.vutbr.cz)
+
+Script to scrape statements from https://demagog.cz/
 """
 
 from bs4 import BeautifulSoup
@@ -13,9 +14,8 @@ from utils import fetch
 import asyncio as asyncio
 import itertools
 
-base_url = "https://demagog.cz"
-statements_url = "https://demagog.cz/vyroky"
-url_speakers_base = "https://demagog.cz/vypis-recniku"
+BASE_URL = "https://demagog.cz"
+STMTS_URL = "https://demagog.cz/vyroky"
 
 
 @dataclass
@@ -92,7 +92,7 @@ async def scrapeStatementsFromPage(url, filter_func=None):
 
 
 async def scrapeStatements(from_page=1, to_page=300, filterFunc=None):
-    startTime = time.time()
+    start_time = time.time()
     statements = []
 
     coros = [
@@ -100,13 +100,12 @@ async def scrapeStatements(from_page=1, to_page=300, filterFunc=None):
         for page in range(from_page, to_page)
     ]
 
-    stmtPages = await asyncio.gather(*coros)
+    pages = await asyncio.gather(*coros)
 
-    for stmtPage in stmtPages:
-        statements.extend(stmtPage)
 
-    endTime = time.time()
-    elapsedTime = endTime - startTime
+    for page in pages:
+        statements.extend(page)
 
-    print(f"Scraped Demagog in {elapsedTime:.2f} seconds")
+    end_time = time.time()
+    print(f"Scraped Demagog in {end_time - start_time:.2f} seconds")
     return statements
