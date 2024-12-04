@@ -1,25 +1,23 @@
 default:
   # general options
   UserAgent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36
-  OutputDir: dataset2
+  OutputDir: dataset_statements_10000
   FetchesPerDelay: 5
   FetchDelay: .5
-  OverwriteOutput: true
+  MaxConcurrentFiles: 10
 
   # Demagog scraping options
-  UseExistingStatements: false
+  UseExistingStatements: true
   DemagogFromPage: 1
-  DemagogToPage: 1000
+  DemagogToPage: 1
   IncludeExplanation: true
   IncludeAuthor: true
   IncludeAssessment: false
   IncludeDate: true
-  IncludeContext: true
-  OnlyWithAssesment: false
-  StmtStartIndex: 100
+  StmtStartIndex: 1
 
   # Grouding context options
-  ScrapeWithContext: false
+  ScrapeWithContext: true
   ContextLinkOnly: false
   ContextLLM: none
   ContextNum: 10
@@ -27,6 +25,32 @@ default:
   SearchDelay: 1
   SearchesPerDelay: 3
   SearchAPI: bing
-  GoogleAPIKey: $GOOGLE_API_TOKEN
-  BingAPIKey: $BING_API_TOKEN
+  BingAPIKey: $BING_API_KEY
 
+criteria:
+  # general options
+  UserAgent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36
+  OutputDir: dataset_statements_10000_criteria
+  FetchesPerDelay: 3
+  FetchDelay: 1
+
+  # Demagog scraping options
+  UseExistingStatements: true
+  DemagogFromPage: 1
+  DemagogToPage: 1000
+  IncludeExplanation: true
+  IncludeAuthor: true
+  IncludeAssessment: false
+  IncludeDate: true
+  StmtStartIndex: 1
+
+  # Grouding context options
+  ScrapeWithContext: true
+  ContextLinkOnly: false
+  ContextLLM: none
+  ContextNum: 10
+  ContextNumBuffer: 15
+  SearchDelay: .5
+  SearchesPerDelay: 1
+  SearchAPI: criteria
+  BingAPIKey: $BING_API_KEY

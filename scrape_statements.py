@@ -8,8 +8,7 @@ Script to scrape statements from https://demagog.cz/
 from bs4 import BeautifulSoup
 from dataclasses import dataclass
 import time
-
-from gpt4all.gpt4all import sys
+import sys
 from utils import fetch, config, track_progress
 import asyncio as asyncio
 import itertools
@@ -67,7 +66,10 @@ async def scrapeStatementsFromPage(url, fetch_sem, filter_func=None, statement_c
 
             # statement text
             blockquote_div = statement_div.find("blockquote")
-            statementText = blockquote_div.select("span")[1].get_text(strip=True)
+            statement_text = blockquote_div.select("span")[1].get_text(strip=True)
+            # remove any words that contain "demagog" in them
+            statement_text = ' '.join([word for word in statement_text.split() if "demagog" not in word.lower()])
+            
 
             # speaker url
             speakerLink = statement_div.find(
@@ -76,7 +78,7 @@ async def scrapeStatementsFromPage(url, fetch_sem, filter_func=None, statement_c
 
             statement = {
                 'id':next(statement_cnter),
-                'statement':statementText.replace("Demagog.cz", "").strip(),
+                'statement':statement_text,
                 'explanation':explanation,
                 'date':date,
                 'assessment':assessment,
@@ -93,16 +95,16 @@ async def scrapeStatementsFromPage(url, fetch_sem, filter_func=None, statement_c
     return statements
 
 
-async def scrapeStatements(from_page=1, to_page=300, filterFunc=None):
+async def scrapeStatements(from_page=1, to_page=300, filterFunc=None, start_index=1):
     start_time = time.time()
     statements = []
-    statement_cnter = itertools.count(1)
+    index_counter = itertools.count(start_index)
     statement_tracker = itertools.count(1)
     fetch_sem = asyncio.Semaphore(config["FetchesPerDelay"])
 
     print(f"Scraping Demagog from page {from_page} to page {to_page}")
     coros = [
-        track_progress(scrapeStatementsFromPage(f"{STMTS_URL}?page={page}", fetch_sem, filterFunc, statement_cnter), statement_tracker, to_page + 1 - from_page, 'page')
+        track_progress(scrapeStatementsFromPage(f"{STMTS_URL}?page={page}", fetch_sem, filterFunc, index_counter), statement_tracker, to_page + 1 - from_page, 'page')
         for page in range(from_page, to_page+1)
     ]
 

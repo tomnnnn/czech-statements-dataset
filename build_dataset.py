@@ -46,37 +46,45 @@ async def extract_article(url):
         return {
             "url": url,
         }
-    else:
-        async with fetch_sem.get():
-            html = await fetch(url)
-            if not html:
-                return None
-            await asyncio.sleep(config['FetchDelay'])
 
-        MIN_NUM_WORDS = 5
-        try:
-            soup = bs4.BeautifulSoup(html, "html.parser", parse_only=bs4.SoupStrainer(["title","body"]))
-        except Exception as e:
-            print(f"Failed to parse HTML for {url}: {e}", file=sys.stderr)
+    async with fetch_sem.get():
+        html = await fetch(url)
+        if not html:
             return None
+        await asyncio.sleep(config['FetchDelay'])
 
-        p_parents = defaultdict(list)
-        for p in soup.find_all("p"):
-            p_parents[p.parent].append(p)
+    MIN_NUM_WORDS = 5
+    try:
+        soup = bs4.BeautifulSoup(html, "html.parser", parse_only=bs4.SoupStrainer(["title","body"]))
+    except Exception as e:
+        print(f"Failed to parse HTML for {url}: {e}", file=sys.stderr)
+        return None
 
-        parents_counts = sorted([(parent, len(ps)) for parent, ps in p_parents.items()], key=lambda v: -v[1])
-        if not parents_counts:
-            return None
-        article_dom = parents_counts[0][0]
-        article_text = " ".join(p.get_text().strip() for p in article_dom.find_all("p") if len(p.get_text().split()) > MIN_NUM_WORDS)
-        title = soup.find('title')
-        title = title.get_text() if title else ""
+    p_parents = defaultdict(list)
 
-        return {
-            "url": url,
-            "title": title,
-            "content": article_text
-        }
+    ps = soup.find_all("p")
+    if len(ps) > 1000:
+        # skip articles with too many paragraphs to avoid long processing times
+        print(f"Skipping article with too many paragraphs ({len(ps)}): {url}", file=sys.stderr)
+        return None
+
+    for p in ps:
+        p_parents[p.parent].append(p)
+
+    parents_counts = sorted([(parent, len(ps)) for parent, ps in p_parents.items()], key=lambda v: -v[1])
+    if not parents_counts:
+        return None
+
+    article_dom = parents_counts[0][0]
+    article_text = " ".join(p.get_text().strip() for p in article_dom.find_all("p") if len(p.get_text().split()) > MIN_NUM_WORDS)
+    title = soup.find('title')
+    title = title.get_text() if title else ""
+
+    return {
+        "url": url,
+        "title": title,
+        "content": article_text
+    }
 
 async def scrape_context(query):
     """
@@ -94,7 +102,7 @@ async def scrape_context(query):
             'title': result['title'],
             'content': result['fulltext']
             } for result in results
-        ]
+        ] if results else []
     else:
         num_results = config["ContextNumBuffer"]
         if num_results == 0:
@@ -111,17 +119,20 @@ async def scrape_context(query):
 
             elif(config["SearchAPI"] == 'bing'):
                 # Bing search
+                try:
                     query += " -site:demagog.cz -site:facebook.com -site:reddit.com -site:instagram.com -site:x.com"
                     result = await search_bing(query, config["BingAPIKey"], num_results)
                     urls = [item['url'] for item in result]
+                except KeyError as e:
+                    print(f"Please, set BING_API_KEY environment variable to use Bing search API: {e}", file=sys.stderr)
+                except Exception as e:
+                    print(f"Failed to fetch Bing search results: {e}", file=sys.stderr)
 
             await asyncio.sleep(config['SearchDelay'])
 
         context = []
-        articles_counter = itertools.count(1)
-        article_coros = [ track_progress(extract_article(url), articles_counter, config['ContextNum'], 'article') for url in urls]
+        article_coros = [ extract_article(url) for url in urls ]
 
-        print("Extracting grounding context articles...")
         articles = await asyncio.gather(*article_coros)
         if not articles:
             print(f"Warning: No articles found for query: {query}", file=sys.stderr)
@@ -130,7 +141,9 @@ async def scrape_context(query):
         for article in articles:
             if len(context) >= config["ContextNum"]:
                 break
-            if article and article['content']:
+            elif config["ContextLinkOnly"]:
+                context.append(article)
+            elif article and article['content']:
                 context.append(article)
 
         return context
@@ -144,16 +157,12 @@ async def provide_context(stmt):
     query = generate_context_query(stmt['statement'])
     context = await scrape_context(query)
 
-    async with aiofiles.open(f"{config['OutputDir']}/context/{stmt['id']}.json", mode="a") as file:
-        try:
-            await file.write(json.dumps(context, ensure_ascii=False, indent=4) + ",\n")
-        except TypeError as e:
-            print(f"Failed to write context for statement: {e}", file=sys.stderr)
-            for article in context:
-                print(type(article))
+    async with aiofiles.open(f"{config['OutputDir']}/context/{stmt['id']}.json", mode="w+") as file:
+            await file.write(json.dumps(context, ensure_ascii=False, indent=4))
+            await file.close()
 
 
-async def build_dataset(stmts):
+async def build_dataset():
     """
     Build a dataset from a list of statements
     Saves pruned statements to file and provides context for each statement
@@ -162,35 +171,47 @@ async def build_dataset(stmts):
 
     # create output directory
     out_dir = config['OutputDir']
-    if(os.path.exists(out_dir) and config["OverwriteOutput"]):
+
+    if(os.path.exists(out_dir) and not config["UseExistingStatements"]):
         shutil.rmtree(out_dir)
-        os.makedirs(out_dir)
-        os.makedirs(f"{out_dir}/context", exist_ok=True)
 
-    # include only fields enabled in config
-    stmts_pruned = [{k:v for k,v in temp.items() if v} for temp in [{
-        "id": stmt['id'],
-        "statement": stmt['statement'],
-        "author": stmt['speaker'] if config["IncludeAuthor"] else "",
-        "date": stmt['date'] if config["IncludeDate"] else "",
-        "explanation":  stmt['explanation'] if config["IncludeExplanation"] else "",
-        "assessment": stmt['assessment'] if config["IncludeAssessment"] else "",
-    } for stmt in stmts]]
+    os.makedirs(out_dir, exist_ok=True)
+    os.makedirs(f"{out_dir}/context", exist_ok=True)
 
-    # write pruned statements to file
-    with open(f"./{out_dir}/statements.json", "w+") as file:
-        json.dump(stmts_pruned, file, ensure_ascii=False, indent=4)
+    # scrape statements if not using existing statements
+    if config["UseExistingStatements"]:
+        print("Using existing statements")
+        with open(f"{config['OutputDir']}/statements.json", "r") as file:
+            existiting_context = [f for f in os.listdir(f"{config['OutputDir']}/context") if f.endswith(".json")]
+            stmts = json.load(file)
+            stmts = [stmt for stmt in stmts if f"{stmt['id']}.json" not in existiting_context]
+    else:
+        stmts = await Demagog.scrapeStatements(from_page=config["DemagogFromPage"],to_page=config["DemagogToPage"], start_index=config["StmtStartIndex"])
 
-    # provide context for each statement
-    stmt_cnter = itertools.count(0)
-    context_coros = [
-        track_progress(provide_context(stmt), stmt_cnter, total_statements, "statement")
-        for stmt in stmts
-    ]
-    await asyncio.gather(*context_coros)
+        # include only fields enabled in config
+        stmts_pruned = [{k:v for k,v in temp.items() if v} for temp in [{
+            "id": stmt['id'],
+            "statement": stmt['statement'],
+            "author": stmt['speaker'] if config["IncludeAuthor"] else "",
+            "date": stmt['date'] if config["IncludeDate"] else "",
+            "explanation":  stmt['explanation'] if config["IncludeExplanation"] else "",
+            "assessment": stmt['assessment'] if config["IncludeAssessment"] else "",
+        } for stmt in stmts]]
+
+        # write pruned statements to file
+        with open(f"./{out_dir}/statements.json", "w+") as file:
+            json.dump(stmts_pruned, file, ensure_ascii=False, indent=4)
 
 
-useExistingStatements = False
+    if config["ScrapeWithContext"]:
+        # provide context for each statement
+        print("Providing context for each statement")
+        stmt_cnter = itertools.count(0)
+        context_coros = [
+            track_progress(provide_context(stmt), stmt_cnter, len(stmts), "statement")
+            for stmt in stmts
+        ]
+        await asyncio.gather(*context_coros)
 
 
 async def main():
@@ -199,21 +220,12 @@ async def main():
     fetch_sem.set(asyncio.Semaphore(config["FetchesPerDelay"]))
 
     start_time = time.time()
-    stmts = []
 
-    if useExistingStatements:
-        with open(f"{config['OutputDir']}/statements.json", "r") as file:
-            stmts = json.load(file)
-    else:
-        stmts = await Demagog.scrapeStatements(from_page=config["DemagogFromPage"],to_page=config["DemagogToPage"])
-
-    total_statements = len(stmts)
-
-    await build_dataset(stmts)
+    await build_dataset()
 
     print(f"Execution time: {time.time() - start_time}")
 
 
 if __name__ == "__main__":
-    asyncio.run(main(), debug=True)
+    asyncio.run(main())
 
