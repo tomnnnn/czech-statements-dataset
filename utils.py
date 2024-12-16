@@ -5,6 +5,7 @@ import json
 import argparse
 import asyncio
 from googlesearch import search
+import requests
 
 async def fetch(url, retries=0):
     timeout=aiohttp.ClientTimeout(total=30)
@@ -34,18 +35,10 @@ async def fetch(url, retries=0):
 
 
 async def post_request(url, data, retries=0):
-    try:
-        async with aiohttp.ClientSession() as session:
-            response = await session.post(url=url,
-                                          data=json.dumps(data),
-                                          headers={"Content-Type": "application/json"})
-        return await response.json()
-    except TimeoutError as e:
-        print(f"Request timed out for {url}: {e}", file=sys.stderr)
-        if retries < 3:
-            await asyncio.sleep(5)
-            return await post_request(url, data, retries+1)
-        return None
+    res = requests.post(url, json=data)
+    articles = json.loads(res.text)
+
+    return articles
 
 def load_config(mode="default"):
     configs = envyaml.EnvYAML('config.yaml', strict=False)
