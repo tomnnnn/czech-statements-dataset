@@ -1,10 +1,9 @@
 default:
   # general options
   UserAgent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36
-  OutputDir: dataset_statements_10000
+  OutputDir: datasets/bing
   FetchesPerDelay: 5
   FetchDelay: .5
-  MaxConcurrentFiles: 10
 
   # Demagog scraping options
   UseExistingStatements: true
@@ -29,15 +28,15 @@ default:
 
 criteria:
   # general options
-  UserAgent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36
-  OutputDir: dataset_statements_10000_criteria
-  FetchesPerDelay: 3
+  UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.
+  OutputDir: datasets/criteria
+  FetchesPerDelay: 1
   FetchDelay: 1
 
   # Demagog scraping options
   UseExistingStatements: true
   DemagogFromPage: 1
-  DemagogToPage: 1000
+  DemagogToPage: 1
   IncludeExplanation: true
   IncludeAuthor: true
   IncludeAssessment: false
@@ -50,7 +49,7 @@ criteria:
   ContextLLM: none
   ContextNum: 10
   ContextNumBuffer: 15
-  SearchDelay: .5
+  SearchDelay: 1
   SearchesPerDelay: 1
   SearchAPI: criteria
   BingAPIKey: $BING_API_KEY
