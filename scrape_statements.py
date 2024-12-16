@@ -6,6 +6,7 @@ Script to scrape statements from https://demagog.cz/
 """
 
 from bs4 import BeautifulSoup
+import json
 from dataclasses import dataclass
 import time
 import sys
@@ -54,7 +55,8 @@ async def scrapeStatementsFromPage(url, fetch_sem, filter_func=None, statement_c
 
             # date
             citation = statement_div.find("cite").get_text(strip=True)
-            date = citation.split(",")[1]
+            # last part of the citation is the date
+            date = citation.split(",")[-1]
 
             # assessment
             assessment_div = statement_div.find(
@@ -76,13 +78,17 @@ async def scrapeStatementsFromPage(url, fetch_sem, filter_func=None, statement_c
                 "a", {"data-sentry-component": "SpeakerLink"}
             )["href"]
 
+            # speaker name
+            author_name = statement_div.find("h3").get_text(strip=True)
+
             statement = {
                 'id':next(statement_cnter),
                 'statement':statement_text,
                 'explanation':explanation,
                 'date':date,
                 'assessment':assessment,
-                'speaker':speakerLink,
+                'author':speakerLink,
+                'author_name':author_name
             }
 
             # Apply the filter if provided
@@ -116,3 +122,9 @@ async def scrapeStatements(from_page=1, to_page=300, filterFunc=None, start_inde
     end_time = time.time()
     print(f"Scraped Demagog in {end_time - start_time:.2f} seconds")
     return statements
+
+
+if __name__ == "__main__":
+    statements = asyncio.run(scrapeStatements(1,1000))
+    with open("demagog_statements.json", "w") as f:
+        json.dump(statements, f, indent=2)
