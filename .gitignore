@@ -4,3 +4,5 @@ pyrightconfig.json
 dataset
 .DS_Store
 dataset*/
+.venv
+.env

@@ -1,0 +1,448 @@
+{
+    "accuracy": 0.37,
+    "correct": 37,
+    "total": 100,
+    "incorrect": [
+        {
+            "id": 7716,
+            "statement": "Kolega tady zmínil, že kraj vynakládá na ty ztrátové linky autobusové a vlakové ne teda 590 ale tam ještě dává 125 milionů ministerstvo dopravy. Tedy přes 700 milionů, téměř třičtvrtě miliardy.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok Josefa Pavlíka se týká financování ztrátových linek autobusové a vlakové dopravy v určitém kraji a příspěvku ministerstva dopravy. Bez konkrétních údajů o tom, o jaký kraj a rok se jedná, není možné výrok ověřit. Navíc, informace o konkrétních částkách, které jsou vynakládány na tyto linky, mohou být dostupné pouze v rozpočtových dokumentech příslušného kraje a ministerstva dopravy.\n\nZDROJE:\n\n1. Zákon č. 111/1994 Sb., o silniční dopravě, ve znění pozdějších předpisů\n2. Zákon č. 266/1994 Sb., o dráhách, ve znění pozdějších předpisů\n3. Rozpočtové dokumenty příslušného kraje a ministerstva dopravy"
+        },
+        {
+            "id": 6369,
+            "statement": "Byl jsem první ministr, který zmapoval majetek státu a našli jsme 27 tisíc nemovitostí, které nikomu nepatřily.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Andrej Babiš se stal prvním ministrem financí v roce 2014. V roce 2013 byla zahájena digitalizace katastru nemovitostí, která byla dokončena v roce 2016. Tato digitalizace umožnila lepší přehled o majetku státu, ale nezmapovala nové nemovitosti, které nikomu nepatřily. V roce 2017 bylo zjištěno, že stát vlastní přibližně 27 tisíc nemovitostí, které nejsou vedeny v katastru nemovitostí. Tyto nemovitosti však nebyly nikomu neznámé a nebyly objeveny až v roce 2017.\nZDROJE:\n1. \"Digitalizace katastru nemovitostí byla dokončena.\" Česká televize, 1. ledna 2016, <https://www.ceskatelevize.cz/ct24/domaci/1514423-digitalizace-katastru-nemovitosti-byla-dokoncena>.\n2. \"Stát vlastní přibližně 27 tisíc nemovitostí, které nejsou vedeny v katastru nemovitostí.\" Česká televize, 2. října 2017, <https://www.ceskatelevize.cz/ct24/domaci/2014423-stat-vlastni-priblizne-27-tisic-nemovitosti-ktere-nejsou-vedeny-v-katastru-nemovitosti>.\n3. \"Andrej Babiš se stal prvním ministrem financí.\" Česká televize, 29. ledna 2014, <https://www.ceskatelevize.cz/ct24/domaci/1"
+        },
+        {
+            "id": 2143,
+            "statement": "Loni jsem strávila léto tím, že jsem objela 12 krajů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je subjektivní a bez přístupu k osobním záznamům nebo deníkům Aleny Schillerové není možné s jistotou potvrdit, zda skutečně strávila léto objížděním 12 krajů.\nZDROJE: Žádné specifické zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 2232,
+            "statement": "Snižovali jsme dluh (do února 2020, pozn.)",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Podle údajů České národní banky (ČNB) a Ministerstva financí ČR (MFČR) se celkový státní dluh České republiky v letech 2014-2020 zvyšoval. V roce 2014 činil státní dluh 1 649,9 miliardy Kč, v roce 2019 to bylo 1 849,5 miliardy Kč a v roce 2020 se zvýšil na 2 070,5 miliardy Kč. Tento trend zvyšování státního dluhu je v rozporu s tvrzením Andreje Babiše, že se dluh snižoval.\n\nZDROJE:\n1. Česká národní banka: https://www.cnb.cz/cs/statistiky/statistiky_v_oblasti_verejnych_financi/verejne_finance/verejny_dluh.jsp\n2. Ministerstvo financí ČR: https://www.mfcr.cz/cs/aktualne/tiskove-zpravy/2021/verejny-dluh-ceske-republiky-k-31-12-2020-20705-miliard-k-100000"
+        },
+        {
+            "id": 7100,
+            "statement": "Já jsem nehlasoval pro občanský zákoník. Měl jsem výhrady, že nový občanský zákoník vytváří prostředí, které je velmi netransparentní.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok se týká osobního názoru a hlasování Vojtěcha Filipa v konkrétní situaci, které nelze ověřit bez přístupu k oficiálním záznamům o hlasování v daném období.\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 8459,
+            "statement": "Ta poptávka po jazykových kurzech češtiny ti cizinci by rádi se učili česky, ale vláda jim to neumí zajistit. Ta poptávka jako převyšuje nabídku.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Matěj Stropnický ve svém výroku tvrdí, že poptávka po jazykových kurzech češtiny převyšuje nabídku. Nicméně, pro ověření této informace je potřeba přesnější data o počtu cizinců, kteří mají zájem se učit česky, a o počtu dostupných jazykových kurzů. Bez těchto informací není možné určit, zda je poptávka skutečně vyšší než nabídka.\n\nZDROJE: Žádné konkrétní zdroje nebyly použity pro ověření tohoto výroku, protože pro jeho ověření nejsou k dispozici dostatečné informace."
+        },
+        {
+            "id": 384,
+            "statement": "(Česko má, pozn.) nejnižší nebo jednu z nejnižších nezaměstnaností v Evropské unii.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Abychom mohli hodnotit, zda Česko má nejnižší nebo jednu z nejnižších nezaměstnaností v Evropské unii, potřebujeme aktuální statistiky o nezaměstnanosti v jednotlivých členských státech EU. Vzhledem k tomu, že výrok byl učiněn v budoucnu (30. ledna 2024), nemáme k dispozici tyto aktuální statistiky. Proto je tento výrok neověřitelný.\n\nZDROJE:\n1. Eurostat - Úřad Evropské unie pro statistiku: https://ec.europa.eu/eurostat\n2. Český statistický úřad: https://www.czso.cz/"
+        },
+        {
+            "id": 6418,
+            "statement": "Sami podnikatelé hlasovali pro to, že to byl druhý nejlepší zákon (o elektronické evidenci tržeb, pozn.) za minulý rok.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože neexistují žádné veřejně dostupné průzkumy nebo dotazníky, které by potvrzovaly, že podnikatelé hlasovali pro to, že zákon o elektronické evidenci tržeb byl druhý nejlepší zákon za minulý rok. Navíc, i kdyby takové průzkumy existovaly, je třeba brát v úvahu, že výsledky mohou být ovlivněny mnoha faktory, jako je velikost vzorku, způsob výběru respondentů a formulace otázek.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 368,
+            "statement": "Já jsem byl ten den (v den odborářské stávky, pozn.) také ve škole (...) a mluvil jsem jak s učiteli, tak se studenty (...). Navštívil jsem taky zemědělský podnik, který shodou okolností jako jeden z vedoucích, nikoliv majitelů, vlastníků, (...) jeden z vedoucích reprezentantů nebo z managementu byl bratr pana Jurečky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že Petr Fiala nezveřejnil konkrétní jméno zemědělského podniku ani jméno bratra pana Jurečky, není možné ověřit pravdivost jeho výroku. Navíc, bez dalších informací o tom, kdy a za jakých okolností se Petr Fiala setkal s bratrem pana Jurečky, nelze posoudit, zda se skutečně jednalo o \"vedoucího reprezentanta\" nebo \"management\" zemědělského podniku.\nZDROJE: Petr Fiala, 14. února 2024"
+        },
+        {
+            "id": 531,
+            "statement": "Sami říkají, že dělají kompromisy, třeba pan Skopeček mluví o krvavých kompromisech, které ODS musí dělat.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je subjektivní a závisí na interpretaci jednotlivých politiků a jejich stranických programů. Bez konkrétních příkladů nebo detailů o těchto údajných kompromisích není možné určit, zda jsou skutečně \"krvavé\" nebo ne.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku, protože se jedná o subjektivní hodnocení politických kompromisů."
+        },
+        {
+            "id": 8138,
+            "statement": "Za dveřmi se rozhodně, je to nejtransparentnější smlouva a jednání, které jsem kdy zažila. Já obchodní politiku v Bruselu dělám 12 let, nikdy jsme neměli zveřejněný mandát. My jako poslanci ale i poslanci českého parlamentu mají přístup k dokumentům, můžeme si je číst, vidíme, jak se ty jednání vyvíjejí.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Dita Charanzová uvedla, že smlouva a jednání, o kterých se zmiňuje, jsou nejtransparentnější, které kdy zažila. Nicméně, bez konkrétních informací o této smlouvě a jednáních, není možné ověřit, zda je to pravda. Navíc, tvrzení o tom, že nikdy neměli zveřejněný mandát, nelze ověřit bez konkrétních informací o tom, kdy a v jakých případech tomu tak bylo.\n\nZDROJE: Dita Charanzová, 30. května 2016, citováno v článku \"Dita Charanzová: Smlouva TTIP je nejtransparentnější, kterou jsem zažila\" na webu iDNES.cz."
+        },
+        {
+            "id": 9227,
+            "statement": "Někdo tady jednal 19 let s paní Havránkovou. My jsme to jednání před dvěma týdny dokončili.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok se týká soukromého jednání mezi neznámými stranami a bez dalších informací není možné určit, zda k tomuto jednání skutečně došlo.\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 4853,
+            "statement": "Zastupitelstvo schválilo rozsah někde mezi 400 a 600 tisíci (vklad zájemců o bydlení do bytového družstva, pozn.)",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok zastupitele Petra Hladíka se týká rozsahu vkladu zájemců o bydlení do bytového družstva, který se pohybuje někde mezi 400 a 600 tisíci. Nicméně, bez konkrétních údajů o tom, jaký typ bydlení se jedná, jaká je cena bytů a jaké jsou další podmínky vkladu, nelze výrok ověřit.\nZDROJE: https://www.ihned.cz/c1-66400930-brno-chce-vybudovat-byty-pro-stovky-rodin-a-zaplatit-je-z-vkladu-zakazniku"
+        },
+        {
+            "id": 2819,
+            "statement": "V této atmosféře vláda bez posvěcení Sněmovny, tam ten materiál nejde, hovořila o nějakých 31 miliardách z Evropské unie, kde zcela nesmyslně 4 miliardy přesunula na žádost sportovní agentury, je to ten React-EU, 4 miliardy na sportovní kabiny na úkor zdravotnických zařízení v České republice.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok je neověřitelný, protože neexistují přesné a veřejně dostupné informace o tom, jak přesně byly přesunuty peníze z React-EU programu a jaké byly jejich konkrétní účely. Navíc, výrok naznačuje, že peníze byly přesunuty na úkor zdravotnických zařízení, což je také neověřitelné bez konkrétních důkazů.\n\nZDROJE:\n\n1. \"React-EU: Co to je a jak bude fungovat?\". Česká televize. 2020-09-01. <https://www.ceskatelevize.cz/ct24/domaci/2990002-react-eu-co-to-je-a-jak-bude-fungovat>\n2. \"React-EU: Česko dostane 4 miliardy eur na podporu ekonomiky\". Česká televize. 2020-09-01. <https://www.ceskatelevize.cz/ct24/domaci/2990002-react-eu-cesko-dostane-4-miliardy-eur-na-podporu-ekonomiky>\n3. \"React-EU: Česko dostane 4 miliardy eur na podporu ekonomiky\". Česká televize. 2020-09-01. <https://www.ceskatelevize.cz/ct24/domaci/2990002-react-eu-cesko-dostane-4-miliardy-eur-na-podporu-ekonomiky>\n4. \"React-EU: Česko dostane 4 miliardy eur na podporu ekonomiky\". Česká televize. 202"
+        },
+        {
+            "id": 3632,
+            "statement": "Celkový objem těchto daňových výjimek je už přes 300 miliard korun.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Miloš Zeman ve svém výroku uvedl, že celkový objem daňových výjimek v České republice je přes 300 miliard korun. Tento údaj je však značně přehnaný. Podle výroční zprávy Nejvyššího kontrolního úřadu (NKÚ) z roku 2019 činil celkový objem daňových výjimek v České republice v roce 2018 přibližně 150 miliard korun. Tento údaj zahrnuje všechny druhy daňových výjimek, včetně těch, které jsou stanoveny zákonem a ty, které jsou uděleny na základě individuálních rozhodnutí.\n\nZDROJE:\n\n* Nejvyšší kontrolní úřad. (2019). Výroční zpráva Nejvyššího kontrolního úřadu za rok 2018. Dostupné z: <https://www.nku.cz/assets/files/vyrocni-zprava-2018.pdf>\n* Česká televize. (2019, 26. prosince). Zeman: Daňové výjimky jsou přes 300 miliard korun. Dostupné z: <https://www.ceskatelevize.cz/ct24/domaci/2219048-zeman-danove-vyjimky-jsou-pres-300-miliard-korun>"
+        },
+        {
+            "id": 5962,
+            "statement": "Čekal jsem také, jestli politické strany vygenerují nějaké kandidáty, jako tomu bylo vždycky v minulosti. Ani z té strany jsem se ničeho nedočkal.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je subjektivní a nezahrnuje žádné konkrétní informace, které by bylo možné ověřit. Jiří Drahoš se zde vyjadřuje o svých očekáváních a zkušenostech, které nemusí být stejné pro všechny.\nZDROJE: Žádné konkrétní zdroje nejsou potřeba pro hodnocení tohoto výroku."
+        },
+        {
+            "id": 1657,
+            "statement": "V Čechách (proti rostoucím cenám energií, pozn.) bojujeme tím, že jsme snížili DPH. Už je to poznat na cenách v listopadu.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: V listopadu 2021 byla DPH na elektřinu a zemní plyn snížena z 21% na 10%, což by mělo vést ke snížení cen pro spotřebitele. Nicméně, podle údajů Českého statistického úřadu (ČSÚ) a České energetické regulační komise (ERÚ) se ceny elektřiny a plynu v listopadu 2021 zvýšily oproti říjnu 2021. Tento trend byl způsoben celosvětovým nárůstem cen surovin a zvýšenou poptávkou po energii.\n\nZDROJE:\n1. Český statistický úřad (ČSÚ) - Cenová statistika\n2. Česká energetická regulační komise (ERÚ) - Ceny elektřiny a plynu pro domácnosti\n3. Zákon č. 241/2021 Sb., kterým se mění zákon č. 235/2004 Sb., o dani z přidané hodnoty, ve znění pozdějších předpisů, a některé další zákony (zákon o snížení DPH na elektřinu a zemní plyn)"
+        },
+        {
+            "id": 1261,
+            "statement": "600 tisíc voličů nikoho nekroužkovalo, volili ty kandidátky včetně pirátských lídrů, ale to kroužkování 250 tisíc vyneslo vlastně ty mandáty STANu.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože pro jeho ověření nejsou k dispozici dostatečné informace. Výrok se týká konkrétního počtu voličů, kteří nekroužkovali, a jejich vlivu na výsledky voleb. Nicméně, tyto informace nejsou veřejně dostupné a nelze je ověřit bez přístupu k úředním záznamům o volbách.\n\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 8930,
+            "statement": "Minulý týden jsme nic ve Sněmovně neudělali kvůli němu (myšlen Kalousek - pozn.)",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je subjektivní a nelze jej jednoznačně ověřit. Závisí na tom, co se považuje za \"nic\" a co za \"udělat\". Navíc je třeba vzít v úvahu, že v politice mohou probíhat i jednání a diskuse, které nejsou veřejně známé.\nZDROJE: https://www.idnes.cz/domaci/zpravy/andrej-babis-mirek-topolanek-kalousek-smlouva-sazka-snemovna.A151004_114048_domaci_jw"
+        },
+        {
+            "id": 6633,
+            "statement": "Dvě stě poslanců už dnes může přece změnit Ústavu.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": " VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle článku 39 odstavce 4 Ústavy České republiky může být Ústava změněna třemi pětinami všech poslanců. Vzhledem k tomu, že Poslanecká sněmovna má 200 poslanců, dvě stě poslanců je tedy třemi pětinami a mohou změnit Ústavu.\nZDROJE:\n1. Ústava České republiky, článek 39 odstavec 4: https://www.psp.cz/eknih/1993ns/ps/tisky/t0010_00.htm\n2. Informace o počtu poslanců Poslanecké sněmovny: https://www.psp.cz/sqw/hp.sqw?k=5001"
+        },
+        {
+            "id": 3505,
+            "statement": "Naše vláda rok a půl diskutuje o patnácti opatřeních boje s chudobou. Bohužel za ten rok a půl jsme se neposunuli ani o milimetr.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok Jany Maláčové se týká diskuse a postupu vlády v boji s chudobou. Ačkoliv je pravda, že Jana Maláčová je politička a může mít přístup k informacím o vládních diskusích, nemáme dostatek informací k ověření, zda se vláda za poslední rok a půl neposunula ani o milimetr v implementaci patnácti opatření boje s chudobou. Proto je tento výrok hodnocen jako neověřitelný.\n\nZDROJE:\n1. [iDNES.cz](https://www.idnes.cz/domaci/zpravy/jana-malacova-chudoba-opatreni-vlada-diskuse.A200210_101115_domaci_kop)\n2. [Seznam Zprávy](https://www.seznamzpravy.cz/clanek/jana-malacova-vlada-se-neposunula-ani-o-milimetr-v-boji-proti-chudobe-101115)"
+        },
+        {
+            "id": 3555,
+            "statement": "Jsme stranou, která vyhrála komunální volby.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože Marian Jurečka je politik, který mohl být členem více politických stran a mohl se vztahovat k různým komunálním volbám v různých obcích. Bez konkrétních informací o tom, kde a kdy se konaly komunální volby a která strana je tím, kterou Marian Jurečka zastupuje, nelze výrok ověřit.\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku jako neověřitelného."
+        },
+        {
+            "id": 1043,
+            "statement": "Pohybujeme se někdy kolem 80 procent mandatorních výdajů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Danuše Nerudová uvedla, že se Česká republika někdy pohybuje kolem 80 procent mandatorních výdajů. Mandatorní výdaje jsou výdaje, které jsou stanoveny zákonem a nemohou být sníženy bez změny zákona. V případě České republiky se jedná například o výdaje na sociální dávky, zdravotnictví, vzdělávání, bezpečnost a další.\n\nNicméně, pro ověření této informace je potřeba mít přesné údaje o tom, jaké výdaje jsou zahrnuty do mandatorních výdajů a jaké jsou jejich podíly na celkovém rozpočtu. Tyto údaje nejsou v současné době k dispozici, protože Česká republika nemá jednotný systém účetnictví, který by umožňoval přesné srovnání výdajů.\n\nZDROJE:\n\n* Český statistický úřad: https://www.czso.cz/csu/czso/finance-verejneho-sektoru\n* Ministerstvo financí České republiky: https://www.mfcr.cz/cs/finance-verejneho-sektoru\n* Česká národní banka: https://www.cnb.cz/cs/financni-trhy/verejne-finance/"
+        },
+        {
+            "id": 1954,
+            "statement": "Pokud bychom vraceli rozpočet k přepracování, jiným způsobem nelze změnit základní čísla.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Výrok Jiřího Dolejše, že pokud bychom vraceli rozpočet k přepracování, jiným způsobem nelze změnit základní čísla, je nepravdivý. Rozpočet je plán výdajů a příjmů, který může být měněn a upravován v průběhu jeho realizace. Pokud je rozpočet vrácen k přepracování, mohou být základní čísla měněna a upravována.\n\nZDROJE:\n\n1. Český statistický úřad. (2021). Rozpočet. https://www.czso.cz/csu/czso/rozpoct\n2. Ministerstvo financí České republiky. (2021). Rozpočet. https://www.mfcr.cz/rozpoct\n3. Dolejš, J. (2021, září 21). Rozhovor pro Českou televizi. https://www.ceskatelevize.cz/ct24/domaci/2994155-rozpoct-musi-byt-zmenen-ale-ne-vracen-k-pripominkam-podle-dolejse"
+        },
+        {
+            "id": 6574,
+            "statement": "A skutečně jsme vybrali obrovské množství daní a odvodů, 604 miliard za období tý naší vlády, ještě do konce července.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Bez přesnějšího určení, které daně a odvody jsou zahrnuty v tomto čísle, není možné ověřit, zda je výrok pravdivý. Navíc, bez přístupu k úředním záznamům a finančním údajům vlády, není možné zjistit, zda tato čísla jsou přesná.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 976,
+            "statement": "Na Hradě probíhaly soukromé oslavy narozenin některých z nejbližšího okolí Miloše Zemana.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok se týká soukromých oslav, které se údajně konaly na Hradě. Jelikož se jedná o soukromé akce, není veřejně dostupná informace o tom, zda se oslavy skutečně konaly. Navíc, ani prezident Miloš Zeman, ani jeho tým nepotvrdili či vyvrátili tuto informaci.\nZDROJE: Žádné veřejně dostupné zdroje nepotvrzují či vyvracejí tuto informaci."
+        },
+        {
+            "id": 3461,
+            "statement": "Mou bývalou firmu to zásadně poškodilo.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je subjektivní a bez konkrétních údajů o tom, jakým způsobem byla poškozena bývalá firma Andreje Babiše, není možné jej ověřit.\nZDROJE: Nejsou k dispozici žádné konkrétní zdroje, které by umožňovaly ověřit tento výrok."
+        },
+        {
+            "id": 5565,
+            "statement": "Za druhé podle zákona kancléř prověrku nepotřebuje. A za třetí kancléř prověrku má na stupeň vyhrazené.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Miloš Zeman v tomto výroku tvrdí, že podle zákona kancléř prověrku nepotřebuje a že kancléř prověrku má na stupeň vyhrazené. Nicméně, bez kontextu a bez bližšího určení, o jaký zákon a jaký stupeň prověrky se jedná, není možné tento výrok ověřit.\n\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 48,
+            "statement": "(...) když jsme řekli, že zmírníme to tempo růstu odchodu do důchodu ze dvou měsíců (...) na měsíc.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl pravděpodobně učiněn v budoucím čase a nebyly poskytnuty žádné konkrétní údaje o tom, kdy a jakým způsobem by mělo dojít ke zmírnění tempa růstu odchodu do důchodu, není možné tento výrok ověřit.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 792,
+            "statement": "Já jsem tam (na jednání Komise pro spravedlivé důchody, pozn.) chodil.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Miloše Vystrčila o tom, že chodil na jednání Komise pro spravedlivé důchody, nelze bez dalších informací ověřit. Pro ověření by bylo potřeba zjistit, zda se jednání skutečně konalo a zda se na něm Miloš Vystrčil účastnil.\nZDROJE: Žádné konkrétní zdroje nebyly uvedeny."
+        },
+        {
+            "id": 1885,
+            "statement": "„Všechny pokusy různým způsobem zasahovat do dění demokratických států v rámci EU jenom prohlubují krizi EU, prohlubují nedůvěru mezi evropskými zeměmi.“ Jakub ŽELEZNÝ, moderátor: Promiňte, z čeho to čtete? Patrik NACHER: (...) To je citace Petra Fialy na jeho Twitteru, otázka týkající se kritiky ze strany Evropské unie, Maďarska. Mám pocit, že 3 roky stará.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok je obecný a neobsahuje žádné konkrétní údaje, které by bylo možné ověřit. Je tedy obtížné určit, zda je pravdivý nebo nepravdivý. Výrok se týká obecného vlivu zásahů do dění demokratických států v rámci EU na krizi EU a nedůvěru mezi evropskými zeměmi. Tento vliv může být různý v závislosti na konkrétních okolnostech a situacích.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 323,
+            "statement": "Když se podíváte na počet nezaměstnaných a počet volných míst, tak vlastně žádná není (nezaměstnanost dlouhodobě, pozn.) je vlastně nulová.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Zbyněk Stanjura tvrdí, že dlouhodobá nezaměstnanost je vlastně nulová, když se podíváme na počet nezaměstnaných a počet volných míst. Tento výrok je nepravdivý, protože i když je počet volných míst vysoký, neznamená to, že všichni nezaměstnaní mohou najít práci. Existují různé faktory, které mohou bránit nezaměstnaným v nalezení práce, jako je nedostatek kvalifikací, diskriminace, geografické omezení nebo nedostatek flexibilních pracovních podmínek.\n\nZDROJE:\n\n* Český statistický úřad: Počet nezaměstnaných a počet volných míst v České republice\n* Eurostat: Dlouhodobá nezaměstnanost v České republice\n* OECD: Zaměstnanost a nezaměstnanost v České republice"
+        },
+        {
+            "id": 2940,
+            "statement": "Svaz průmyslu a cestovního ruchu předložil už během léta státu materiál, ve kterém ta opatření byla, bylo jich tam mnohem víc, byla komplexnější, a stát nechtěl v principu přijímat nic moc.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká interních jednání mezi Svazem průmyslu a cestovního ruchu a státem, která nejsou veřejně dostupná. Bez přístupu k těmto informacím nelze výrok ověřit.\n\nZDROJE: Žádné veřejně dostupné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 6939,
+            "statement": "... ti lidé, kteří v současné době vydělávají víc než 46 tisíc hrubého, kde se ta vaše daňová kalkulačka láme, by zaplatili ne víc. Ale výrazně víc.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Petr Gazdík ve svém výroku tvrdí, že lidé vydělávající více než 46 tisíc hrubého by zaplatili výrazně víc daní. Nicméně, bez konkrétních údajů o tom, o jaký druh daní se jedná a bez informací o tom, jaké by byly konkrétní sazby daní, není možné tento výrok ověřit.\n\nZDROJE:\n1. \"Gazdík: Lidé vydělávající víc než 46 tisíc hrubého by zaplatili výrazně víc daní\" - iDNES.cz, 26. února 2017, <https://www.idnes.cz/zpravy/domaci/gazdik-dane-vyssi-prijmy-46-tisic-hrubo.A161226_144948_domaci_jm>\n2. \"Daňová kalkulačka\" - Ministerstvo financí ČR, <https://www.mfcr.cz/cs/danove-zpravodajstvi/danove-kalkulacky>"
+        },
+        {
+            "id": 535,
+            "statement": "Na své slavné tiskové konferenci (vláda, pozn.) řekla, že ušetří 54 miliard na dotačním byznysu.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Bez konkrétních údajů o tom, jakým způsobem by vláda měla ušetřit 54 miliard korun na dotačním byznysu, není možné tento výrok ověřit. Navíc, bez přístupu k detailním finančním údajům a plánům vlády, nelze potvrdit, zda by tyto úspory byly skutečně realizovatelné.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 1838,
+            "statement": "Já jsem (...) na to (hrozbu migrace a islamizace, pozn.) upozorňoval už v roce 2012.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tomio Okamura tvrdí, že upozorňoval na hrozbu migrace a islamizace již v roce 2012. Nicméně, bez konkrétních důkazů nebo citací z jeho prohlášení z tohoto období není možné tuto informaci ověřit.\n\nZDROJE: Žádné konkrétní zdroje nebyly poskytnuty pro ověření tohoto tvrzení."
+        },
+        {
+            "id": 4438,
+            "statement": "Potřebujeme dneska před povolením stavby 20–150 razítek.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože neobsahuje dostatek kontextu. Není zřejmé, na kterou konkrétní stavbu se výrok vztahuje, ani co znamená \"razítko\" v tomto kontextu. Bez těchto informací není možné výrok ověřit.\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku jako neověřitelného."
+        },
+        {
+            "id": 6733,
+            "statement": "Paní Kratochvílová byla moje blízká spolupracovnice po dobu tří let. (...) Z hlediska výběrového řízení, které vyhrála, byl určitě také záměr, že nebyla z toho prostředí a měla odpovídající vzdělání.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je subjektivní a založený na osobních zkušenostech a názorech Kateřiny Valachové. Nelze objektivně ověřit, zda paní Kratochvílová byla skutečně blízkou spolupracovnicí paní Valachové po dobu tří let, ani zda byla vybrána v rámci výběrového řízení záměrně pro své odpovídající vzdělání a nikoli pro své původní prostředí.\nZDROJE: https://www.idnes.cz/zpravy/domaci/valachova-kratovcilova-vyberove-rizeni-kauza-krajsky-urad-kraj-jihocesky.A170525_114045_domaci_jca"
+        },
+        {
+            "id": 4331,
+            "statement": "Jednak k posílení pravomocí Evropského parlamentu, protože to je snad jediný parlament, který nemá zákonodárnou iniciativu.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": " VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Miloš Zeman v tomto výroku pravdivě popisuje pravomoci Evropského parlamentu. Evropský parlament je jediný parlament v rámci Evropské unie, který nemá zákonodárnou iniciativu. To znamená, že nemůže sám navrhovat zákony, ale může jen schvalovat nebo odmítat návrhy Evropské komise.\n\nZDROJE:\n1. Evropská unie: Evropský parlament. (2021). Evropská unie. https://europa.eu/european-union/about-eu/institutions-bodies/european-parliament_cs\n2. Evropský parlament: Pravomoci. (2021). Evropský parlament. https://www.europarl.europa.eu/portal/cs/european-parliament/powers"
+        },
+        {
+            "id": 3251,
+            "statement": "(...) jsme povinni ověřovat kvalifikaci, tak jsme povinni od toho dodavatele žádat nedoplatky na daních nebo na sociálním a zdravotním pojištění. A tento doklad trvá třicet dnů.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká povinnosti ověřovat kvalifikaci dodavatele a žádat nedoplatky na daních nebo na sociálním a zdravotním pojištění. Nicméně, bez kontextu a bez dalších informací o konkrétním dodavateli a situaci není možné určit, zda je výrok pravdivý nebo nepravdivý.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 4083,
+            "statement": "My (ODS, pozn.) jsme pokládali Británii za důležitý prvek nějaké té transatlantické vazby, vyvažování Británie – Francie – Německo bylo vždycky poměrně klíčové.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok vyjadřuje názor Mareka Bendy na důležitost Británie v kontextu transatlantické vazby a její rovnováhy s Francií a Německem. Jelikož se jedná o názor, nelze jej hodnotit jako pravdu nebo nepravdu, ale pouze jako názor daného politika.\n\nZDROJE: Marek Benda, 1. srpna 2019, https://www.idnes.cz/zpravy/domaci/marek-benda-ods-brexit-britanie-transatlanticka-vazba-vyva-zena-francie-nemecko.A190801_111145_domaci_jw"
+        },
+        {
+            "id": 5959,
+            "statement": "Říkáte (směrem k Hannigovi, pozn.) že způsob výkonu funkce prezidenta Zemana Vám vyhovuje...",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je subjektivní hodnocení Vratislava Kulhánka o způsobu výkonu funkce prezidenta Zemana. Jelikož se jedná o osobní názor, nelze jej objektivně ověřit jako pravdivý nebo nepravdivý.\n\nZDROJE: Žádné zdroje nejsou potřeba pro ověření tohoto subjektivního výroku."
+        },
+        {
+            "id": 3124,
+            "statement": "Ve @snemovna jde o hodně. Poslanci rozhodují o novele rozpočtu, v níž zvedáme investice na téměř 200 mld. Kč. To je bezkonkurenčně nejvíc v historii. Půjdou na dopravní infrastrukturu a další projekty, které mohou hned odstartovat. Jedině tak můžeme ekonomiku zase rozhýbat.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok o tom, že investice na téměř 200 mld. Kč jsou bezkonkurenčně nejvíc v historii, nelze bez dalších informací ověřit. Pro ověření by bylo potřeba porovnat historické údaje o investicích a zjistit, zda se jedná o nejvyšší částku v historii.\n\nZDROJE:\n- Česká národní banka: https://www.cnb.cz/cs/statistiky/\n- Ministerstvo financí ČR: https://www.mfcr.cz/\n- Český statistický úřad: https://www.czso.cz/"
+        },
+        {
+            "id": 700,
+            "statement": "Mám termín do října, kdy mám předložit vládě návrh, zda do toho (nákupu F-35, pozn.) jít, nebo ne.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že neexistuje veřejně dostupná informace o tom, zda Jana Černochová skutečně má termín do října 2023 pro předložení návrhu vládě ohledně nákupu F-35, nelze tento výrok ověřit.\nZDROJE: Žádné dostupné zdroje nepotvrzují ani nevyvracejí tento výrok."
+        },
+        {
+            "id": 8480,
+            "statement": "Karlovarský kraj je nejen nejmenší, ale také nejchudší kraj v České republice.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Podle údajů Českého statistického úřadu z roku 2016 je Karlovarský kraj skutečně nejmenší kraj v České republice, ale nejchudším krajem v té době byl Pražský kraj. HDP na obyvatele v Pražském kraji byl v roce 2016 212,5 % průměru EU28, zatímco v Karlovarském kraji to bylo 64,5 % průměru EU28.\n\nZDROJE:\n\n* Český statistický úřad. (2016). HDP na obyvatele v krajích ČR v roce 2016. Dostupné z: <https://www.czso.cz/csu/czso/hdp-na-obyvatele-v-krajich-cr-v-roce-2016>\n* Český statistický úřad. (2016). Počet obyvatel v krajích ČR k 31. 12. 2016. Dostupné z: <https://www.czso.cz/csu/czso/poct-obyvatel-v-krajich-cr-k-31-12-2016>"
+        },
+        {
+            "id": 2827,
+            "statement": "To, co máme hotovo, jsou ty změny krizové legislativy, které jsme slíbili, že dodáme přes léto, tak ty jsou hotové, ale ta politická debata, která se kolem nich vede, je hodně složitá",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká interních procesů a politických debat v rámci vlády České republiky, které nejsou veřejně dostupné a nelze je tedy ověřit. Navíc, výrok je velmi obecný a neobsahuje konkrétní informace o tom, které změny krizové legislativy byly slíbeny a dodány.\n\nZDROJE: Česká televize, záznam z rozhovoru s Janem Hamáčkem, 18. října 2020."
+        },
+        {
+            "id": 2999,
+            "statement": "Nemáme ještě tu dálnici.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Martin Kuba se touto větou vyjádřil k dálnici D3, která je však již částečně v provozu. Podle informací z oficiálních zdrojů, jako je Ministerstvo dopravy ČR a Ředitelství silnic a dálnic ČR, je dálnice D3 v provozu na úsecích mezi Táborem a Českými Budějovicemi, a také mezi Českými Budějovicemi a hraničním přechodem Dolní Dvořiště/Wullowitz.\n\nZDROJE:\n1. Ministerstvo dopravy ČR - https://www.mdcr.cz/Cesty-a-doprava/Silnice-a-dalsnice/Dalsnice/Dalsnice-D3\n2. Ředitelství silnic a dálnic ČR - https://www.rsd.cz/dalsnice/dalsnice-d3"
+        },
+        {
+            "id": 2821,
+            "statement": "Tenhle koncept velkých odlehčovacích nemocnic funguje všude ve světě. Pokud se podíváte, jak to řešili ve Velké Británii, ve Španělsku, tak v nějakém momentě potřebovali odlehčovací kapacitu pro ty takzvané kamenné špitály.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Politik Jan Hamáček tvrdí, že koncept velkých odlehčovacích nemocnic funguje všude ve světě a jako příklad uvádí Velkou Británii a Španělsko. Nicméně, pro ověření této informace je potřeba detailnější analýza zdravotnických systémů těchto zemí a jejich přístupu k řešení přetížení nemocnic v době pandemie. Bez konkrétních údajů a zdrojů nelze tuto informaci považovat za ověřenou.\n\nZDROJE:\n\n1. BBC News - \"Coronavirus: How busy are UK hospitals?\" (https://www.bbc.com/news/health-51048366)\n2. El País - \"Los hospitales españoles, al límite por el coronavirus\" (https://elpais.com/sociedad/2020-03-24/los-hospitales-espanoles-al-limite-por-el-coronavirus.html)\n3. The Guardian - \"UK hospitals under strain as Covid cases rise\" (https://www.theguardian.com/world/2020/oct/12/uk-hospitals-under-strain-as-covid-cases-rise)\n\nTyto zdroje poskytují informace o situaci v nemocnicích ve Velké Británii a Španělsku během pandemie covidu-19, ale neposkytují dostatek informací k ověření tvrzení o konkrétním konceptu velkých odlehčovacích nemocnic."
+        },
+        {
+            "id": 1276,
+            "statement": "Máme jako jedna z mála stran jasně definovaný postoj k euru.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je subjektivní a závisí na definici \"jasně definovaný postoj\". Abychom mohli tento výrok ověřit, potřebujeme definici toho, co znamená \"jasně definovaný postoj\" a porovnat jej s postoji ostatních stran. Bez těchto informací není možné tento výrok ověřit.\n\nZDROJE: Žádné zdroje nejsou potřeba pro tento úsudek, protože se jedná o subjektivní výrok, který nemůže být ověřen bez dalších informací."
+        },
+        {
+            "id": 9266,
+            "statement": "Arcibiskup pražský, hlava katolické církve v Čechách a na Moravě, František Tomášek, státu za tento dar v srpnu 1991 poděkoval - jak již jsem řekl - a sdělil, že další majetky už katolická církev žádat nebude. Prohlásil doslova: To je poslední nárok, který církev vznáší. To je poslední nárok, který církev vznáší.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok Jiřího Paroubka z 1. prosince 2014, který připisuje Františku Tomáškovi prohlášení, že další majetky už katolická církev žádat nebude, je neověřitelný. Ačkoli je známo, že František Tomášek poděkoval státu za dar v srpnu 1991, není dostatek informací k potvrzení, že skutečně prohlásil, že to je poslední nárok, který církev vznáší.\n\nZDROJE:\n1. \"Paroubek: Tomášek řekl, že církev už nic nebude žádat.\" Česká televize, 1. prosince 2014, https://ct24.ceskatelevize.cz/domaci/1291402-paroubek-tomasek-rekl-ze-cirkev-uz-nic-nebude-zadat.\n2. \"František Tomášek.\" Česká televize, https://www.ceskatelevize.cz/ct24/domaci/1291402-paroubek-tomasek-rekl-ze-cirkev-uz-nic-nebude-zadat.\n3. \"František Tomášek.\" Katolická církev v Čechách, https://www.cirkev.cz/frantisek-tomas."
+        },
+        {
+            "id": 7216,
+            "statement": "Když byla minimální mzda 8 500 korun hrubého, tak lidé, kteří dostávali dávky hmotné nouze, měli čistý příjem vyšší než ti, kteří pracovali za minimální mzdu. To už je pryč. Dnes, když minimální mzda bude od nového roku 11 tisíc korun hrubého, tak jedinec, který bude pobírat minimální mzdu, po zdanění té minimální mzdy bude mít vyšší čistý příjem než za dávky hmotné nouze. Za dávky hmotné nouze včetně doplatku na bydlení dostane 8 500 korun.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: V roce 2016, kdy byla minimální mzda 8 500 Kč hrubého, čistý příjem po zdanění činil přibližně 7 100 Kč. Naopak, dávka hmotné nouze včetně doplatku na bydlení činila v roce 2016 přibližně 8 500 Kč. Tedy, v roce 2016 měli lidé, kteří dostávali dávky hmotné nouze, čistý příjem vyšší než ti, kteří pracovali za minimální mzdu.\n\nNavíc, i když minimální mzda byla zvýšena na 11 000 Kč hrubého od roku 2017, čistý příjem po zdanění činil přibližně 8 800 Kč, což je stále méně než dávka hmotné nouze včetně doplatku na bydlení, která v roce 2017 činila přibližně 9 000 Kč.\n\nZDROJE:\n\n* Český statistický úřad: Mzdy a platy v ČR\n* Ministerstvo práce a sociálních věcí ČR: Dávky hmotné nouze\n* Český rozhlas: Minimální mzda se zvýší na 11 tisíc korun hrubého\n* Český rozhlas: Dávky hmotné nouze v roce 2017"
+        },
+        {
+            "id": 342,
+            "statement": "(...) si můžete pustit – srpen, září, říjen 2022 – co říkali experti na energetiku, jak budou vysoké ceny, že nás to zastropování bude stát ne 100 miliard, ale 200, možná 300 miliard. A ta skutečnost byla naštěstí mnohem lepší.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká budoucích předpovědí expertů na energetiku ohledně vysokých cen a nákladů na zastropování v období srpna, září a října 2022. Protože se jedná o předpovědi, které mohou být ovlivněny mnoha faktory a proměnnými, nelze je považovat za nezvratné fakty. Navíc, bez přesného určení, kteří experti a jaké předpovědi jsou míněny, není možné výrok ověřit.\n\nZDROJE: Žádné přesné zdroje nebyly poskytnuty pro ověření tohoto výroku."
+        },
+        {
+            "id": 7015,
+            "statement": "Jsem jediný politik od roku 93, který zveřejnil své příjmy. (...) Já jsem zaplatil 337 milionů daní. Moje firmy za posledních 10 let zaplatily 23 miliard daní a odvodů.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok Andreje Babiše o tom, že je jediným politikem od roku 93, který zveřejnil své příjmy, nelze ověřit, protože neexistuje žádná oficiální databáze, která by uchovávala informace o tom, kteří politici zveřejnili své příjmy a kteří ne. Navíc, i kdybychom měli takovou databázi, nemůžeme s jistotou říct, že Babiš je jediným politikem, který své příjmy zveřejnil, protože někteří politici mohli své příjmy zveřejnit jiným způsobem, například prostřednictvím médií.\n\nVýrok o tom, že Babiš zaplatil 337 milionů daní a jeho firmy za posledních 10 let zaplatily 23 miliard daní a odvodů, nelze také ověřit, protože tyto informace nejsou veřejně dostupné. Navíc, i kdybychom měli přístup k těmto informacím, nemůžeme s jistotou říct, že jsou správné, protože mohou být zkreslené nebo neúplné.\n\nZDROJE:\n\n* Česká televize: \"Babiš: Jsem jediný politik, který zveřejnil své příjmy\" (12. února 2017)\n* Česká televize: \"Babiš: Moje firmy zaplatily 23 miliard daní a odvodů\" (12. února 2017)\n* Česká televize: \"Babiš: Zaplatil jsem 337 milionů daní\" (12. února 2017)"
+        },
+        {
+            "id": 4125,
+            "statement": "Dostali jsme o 21 tisíc hlasů víc než v těch minulých (ve volbách do Evropského parlamentu, pozn.)",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Pro ověření tohoto výroku bychom potřebovali přesnější informace o tom, ke kterým volbám se výrok vztahuje a jaké byly výsledky těchto voleb. Bez těchto informací není možné výrok ověřit.\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 1008,
+            "statement": "(...) 38 % domácností, které nejsou schopny vyjít se svým rozpočtem a nejsou schopni v tom měsíčním rozpočtu ušetřit ani korunu.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Danuše Nerudová uvedla, že 38 % domácností v České republice není schopno vyjít se svým rozpočtem a není schopno v tom měsíčním rozpočtu ušetřit ani korunu. Nicméně, pro ověření této informace je potřeba přesnější zdroj, který by tuto statistiku podpořil. V současné době neexistuje žádný oficiální zdroj, který by potvrdil, že 38 % domácností v České republice není schopno vyjít se svým rozpočtem a není schopno ušetřit ani korunu.\n\nZDROJE:\n\n* Český statistický úřad - statistiky o domácnostech v České republice\n* Ministerstvo financí České republiky - statistiky o rozpočtech domácností v České republice\n* Česká národní banka - statistiky o úsporách domácností v České republice"
+        },
+        {
+            "id": 724,
+            "statement": "Já jsem taky jasně řekl, že tady (v rámci úpravy valorizačního mechanismu od roku 2024, pozn.) nebudu navrhovat postup v rámci třeba stavu legislativní nouze.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok je citace konkrétního politika, Marian Jurečka, a odkazuje na konkrétní situaci (úprava valorizačního mechanismu od roku 2024), nemáme dostatek informací k tomu, abychom mohli potvrdit, zda tento výrok je pravdivý nebo nepravdivý. Pro ověření bychom potřebovali více kontextu a detailů o tom, co přesně politik řekl a v jakém kontextu.\n\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku, protože neexistuje žádný konkrétní zdroj, který by potvrzoval, zda politik skutečně řekl tento výrok v daném kontextu."
+        },
+        {
+            "id": 7905,
+            "statement": "My ve většině krajů máme odpovědnost už 8 let, to je hodně. Máme v tuto chvíli 11 hejtmanů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok se týká politické situace v České republice a konkrétně počtu hejtmanů zvolených za ČSSD a dobu, po kterou byli ve funkci. Bohužel, bez přesnějšího určení, které kraje jsou míněny a bez přesného datového rozmezí, není možné tento výrok jednoznačně ověřit.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok je neověřitelný bez přesnějších informací."
+        },
+        {
+            "id": 7857,
+            "statement": "Ve většině krajů jsou komunisté ve vládní koalici.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: V roce 2016, kdy Miloš Zeman uvedl tento výrok, nebyli komunisté ve vládní koalici ve většině krajů. Podle oficiálních výsledků krajských voleb v roce 2016, které se konaly v říjnu, byli komunisté ve vládní koalici pouze ve dvou krajích - Ústeckém a Karlovarském. V ostatních krajích nebyli komunisté součástí vládní koalice.\n\nZDROJE:\n1. \"Výsledky krajských voleb 2016.\" Český statistický úřad. <https://www.volby.cz/pls/kpv2016/ps32?xjazyk=CZ>\n2. \"Komunisté ve vládě pouze v Ústeckém a Karlovarském kraji.\" iDNES.cz. 11. listopadu 2016. <https://www.idnes.cz/zpravy/domaci/komuniste-v-vladach-kraju-ustecky-karlovarsky.A161111_104155_domaci_rba>"
+        },
+        {
+            "id": 9463,
+            "statement": "Problém je i u dětí, které vycházejí z dětských domovů, tam to není (jejich budoucí bydlení) vůbec řešeno.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": " VERDIKT: PRAVDA\nVYSVĚTLENÍ: Marta Semelová, tehdejší ministryně práce a sociálních věcí, v roce 2014 upozornila na problém s budoucím bydlením dětí, které vycházejí z dětských domovů. Podle zákona č. 109/2002 Sb., o výkonu ústavní výchovy a o preventivně výchovné péči, má dětský domov povinnost zajistit dítěti výchovu a vzdělání, ale není zde uvedena povinnost zajistit dítěti bydlení po opuštění dětského domova. Tento problém je také zmíněn v několika studiích a zprávách, například v zprávě Českého statistického úřadu z roku 2016, která uvádí, že děti, které vyrůstaly v dětských domovech, mají větší pravděpodobnost, že se stanou bezdomovci.\nZDROJE:\n\n* Zákon č. 109/2002 Sb., o výkonu ústavní výchovy a o preventivně výchovné péči\n* Zpráva Českého statistického úřadu z roku 2016: \"Děti v dětských domovech a jejich budoucnost\"\n* Studie: \"Bezdomovectví v České republice: příčiny, důsledky a řešení\" (2018)"
+        },
+        {
+            "id": 1173,
+            "statement": "(...) někdo, kdo je člen vedení dopravního podniku (Adam Scheinherr jakožto předseda dozorčí rady, pozn.) má takovéto podezření a připustí a nechá hlasovat pro to, aby se tam potvrzovali lidé, kteří jsou přímo do té kauzy (Dozimetr, pozn.) zapojeni.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok je neověřitelný, protože neexistují veřejně dostupné informace, které by potvrzovaly nebo vyvracely tvrzení o tom, že někdo z vedení dopravního podniku, konkrétně Adam Scheinherr jako předseda dozorčí rady, má podezření a připustí hlasovat pro potvrzení lidí zapojených do kauzy Dozimetr.\n\nZDROJE:\n\n1. [iDNES.cz](https://www.idnes.cz/zpravy/domaci/bohuslav-svoboda-adam-scheinherr-dozimetr-dopravni-podnik-praha-podezreni.A220916_104515_domaci_jm) - článek o výroku Bohuslava Svobody, ale neobsahuje žádné důkazy o tom, že Adam Scheinherr má takovéto podezření a připustí hlasovat pro potvrzení lidí zapojených do kauzy Dozimetr.\n2. [Deník.cz](https://www.denik.cz/zpravy_regiony/bohuslav-svoboda-o-kauze-dozimetr-adam-scheinherr-ma-podezreni-a-nechava-hlasovat-pro-potvrzeni-lidi-zapojenych-do-kauzy/) - článek o výroku Bohuslava Svobody, ale neobsahuje žádné důkazy o tom, že Adam Scheinherr má takovéto podezření a připustí hlasovat pro potvrzení lidí zapojených do kauzy Dozimetr.\n3. [Seznam Zprávy](https://www.seznamzpravy.cz/clanek/boh"
+        },
+        {
+            "id": 5315,
+            "statement": "Akvizice v resortu obrany jsou minové pole. To ví každý. Přesto jsme utratili na nákupech přes 40 miliard korun. A bez skandálu!",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Politik Martin Stropnický skutečně uvedl, že akvizice v resortu obrany jsou minové pole a že bylo utraceno přes 40 miliard korun na nákupech. Nicméně, tvrzení, že byly tyto náklady utraceny bez skandálu, je subjektivní a nelze jej jednoznačně ověřit. Skandály mohou být definovány různými způsoby a mohou být hodnoceny různými lidmi různě.\nZDROJE:\n1. https://www.idnes.cz/zpravy/domaci/stropnicky-obrana-akvizice-minove-pole-skandaly.A180509_104149_domaci_brn\n2. https://www.novinky.cz/domaci/464048-stropnicky-obrana-utratila-40-miliard-korun-na-nakupu-zbrani-bez-skandalu.html"
+        },
+        {
+            "id": 4987,
+            "statement": "A já bych chtěl ukázat divákům, že já jsem s nimi tady uzavřel smlouvu před volbami, v říjnu 2017 a tam já plním ty body. Já jsem se zavázal, že nikdy nevpustíme na naše území ilegální migranty a nebudeme nikdy souhlasit s rozdělováním migrantů podle povinných kvót. To jsem splnil za šest měsíců, to jsme prosadili, ano.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": " VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Andrej Babiš skutečně v říjnu 2017, před volbami, slíbil, že nevpustí na území České republiky ilegální migranty a že nebude souhlasit s rozdělováním migrantů podle povinných kvót. Tento slib byl součástí volebního programu hnutí ANO 2011. V roce 2018, když byl Babiš premiérem, Česká republika skutečně nevpustila na své území žádné ilegální migranty a nepodpořila žádné povinné kvóty na přerozdělování migrantů.\n\nZDROJE:\n1. Volební program hnutí ANO 2011 pro volby do Poslanecké sněmovny Parlamentu České republiky v roce 2017. Dostupné online: https://www.ano.cz/program/\n2. Projev Andreje Babiše na setkání s občany v Brně, 2. září 2018. Dostupné online: https://www.youtube.com/watch?v=KZJ_YKZ_QZM\n3. Zpráva o migrační situaci v České republice za rok 2018. Dostupná online: https://www.mvcr.cz/clanek/zprava-o-migracni-situaci-v-ceske-republice-za-rok-2018.aspx"
+        },
+        {
+            "id": 867,
+            "statement": "Hlavní „cenzor“ na vládě řekl, že ty billboardy jsou obrovský problém.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok se týká názoru a subjektivního hodnocení situace, které nelze objektivně ověřit. Bez dalších informací o kontextu a přesném významu slova \"obrovský problém\" není možné určit, zda je výrok pravdivý nebo nepravdivý.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        }
+    ]
+}

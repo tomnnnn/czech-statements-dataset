@@ -1,0 +1,238 @@
+{
+    "accuracy": 0.67,
+    "correct": 67,
+    "total": 100,
+    "incorrect": [
+        {
+            "id": 7398,
+            "statement": "ČSSD hlasovala proti rozpočtové odpovědnosti - proti dluhové brzdě. A s námi hlasovaly pravicové strany.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše o tom, že ČSSD hlasovala proti rozpočtové odpovědnosti, konkrétně proti dluhové brzdě, a že s ním hlasovaly pravicové strany, je pravdivý. Dluhová brzda je mechanismus, který má zabránit překročení určitého limitu státního dluhu. V roce 2016 skutečně proběhla diskuse a hlasování o zavedení dluhové brzdy v České republice. Sociální demokracie (ČSSD) indeed hlasovala proti návrhu na zavedení dluhové brzdy, zatímco pravicové strany, jako je ODS, TOP 09 a další, tento návrh podporovaly.\nZDROJE: \n- Zprávy z Poslanecké sněmovny Parlamentu České republiky z roku 2016\n- Články z českých novin a zpravodajských serverů z roku 2016, které informovaly o diskusi a hlasování o dluhové brzdě."
+        },
+        {
+            "id": 9222,
+            "statement": "Tady v Praze 2 chodí daňová kontrola údajně jednou za 320 let a ve Voticích údajně každé dva, tři roky. Takže mimo Prahu jsou firmy obtěžované, Finanční správa tam stále chodí na kontrolu a tady v Praze to nemá kdo kontrolovat, takže sem přesídlily tisíce firem, které mají své provozy mimo Prahu, ale samozřejmě jsou registrovány tady.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše o tom, že v Praze 2 chodí daňová kontrola jednou za 320 let a ve Voticích každé dva nebo tři roky, není podložen žádnými oficiálními statistikami nebo daty. Finanční správa ČR provádí daňové kontroly na základě stanovených pravidel a kritérií, nikoliv na základě geografické polohy. Četnost daňových kontrol závisí na mnoha faktorech, jako jsou například rizikovost daňového subjektu, výši daňových povinností nebo historie daňových deliktů. Nelze tedy říci, že by firmy v Praze 2 byly méně kontrolovány než firmy ve Voticích. Navíc, tvrzení o tom, že tisíce firem přesídlily do Prahy kvůli nižší četnosti daňových kontrol, není podloženo žádnými důkazy.\nZDROJE: \n- Finanční správa ČR: Metodický pokyn k provádění daňových kontrol\n- Ministerstvo financí ČR: Zpráva o činnosti Finanční správy ČR za rok 2014\n- Česká televize: Rozhovor s Andrejem Babišem, 3. prosince 2014"
+        },
+        {
+            "id": 8626,
+            "statement": "V jedné dvanáctce piva je zhruba 15 kostek cukru energeticky přepočteno. V jedné obdobně půllitru coly toho cukru bude ještě daleko víc.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle údajů o složení potravin, jedna dvanáctilitrová láhev piva (0,33 l) obsahuje přibližně 12-15 gramů cukru, což je ekvivalentní k 3-4 kostkám cukru (kostka cukru váží asi 4 gramy). Pokud bychom přepočítali energii z cukru v pivě na kostky cukru, dostaneme se na hodnotu kolem 15 kostek cukru, protože pivo obsahuje také další sacharidy, které se metabolizují podobně jako cukr. U coly je situace podobná, jedna půllitrová láhev (0,5 l) obsahuje kolem 40-50 gramů cukru, což je ekvivalentní k 10-12 kostkám cukru. Pokud bychom opět přepočítali energii z cukru v colě na kostky cukru, dostaneme se na hodnotu kolem 40-50 kostek cukru. Protože coly obsahuje více cukru než pivo, je pravdou, že v jedné půllitrové colě bude více cukru než v jedné dvanáctilitrové láhvi piva.\nZDROJE: \n- Český statistický úřad: Složení potravin\n- Ministerstvo zdravotnictví ČR: Výživová doporučení\n- Světová zdravotnická organizace (WHO): Doporučení pro spotřebu cukru"
+        },
+        {
+            "id": 1050,
+            "statement": "Nám dlouhodobě neroste naděje na dožití ve zdraví.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle údajů Českého statistického úřadu (ČSÚ) a Světové zdravotnické organizace (WHO), které sledují trend délky života a zdravotního stavu populace, lze pozorovat, že zatímco celková délka života v Česku roste, tempo tohoto růstu se v posledních letech zpomalilo. Navíc, když se podíváme na očekávanou délku života ve zdraví, která se nazývá \"zdravá délka života\" nebo \"délka života bez zdravotního postižení\", tak zde skutečně nejsou patrné výrazné zlepšování. To znamená, že i když lidé žijí déle, část svého života tráví s nějakým zdravotním postižením nebo nemocí. Tento trend je pozorován nejen v Česku, ale i v dalších zemích.\nZDROJE: \n- Český statistický úřad (ČSÚ): Data o délce života a zdravotním stavu populace.\n- Světová zdravotnická organizace (WHO): Globální údaje o zdravotním stavu a délce života.\n- Výzkumy a studie zaměřené na trend délky života a kvality života v Česku a na globální úrovni."
+        },
+        {
+            "id": 9342,
+            "statement": "Když se bořil režim v Kyjevě, ten Maidan, byl tam Schwarzenberg, Štětina, podporovali tam v podstatě to dění tam a víme o tom, že tam nejvíc řádily Banderovy skupiny, že to byly vlastně fašistické skupiny, a přesto tam byli tihle dva.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok je pravdivý v tom, že Karel Schwarzenberg a Jiří Štětina se indeed účastnili událostí na Majdanu v Kyjevě během protestů v roce 2013-2014. Tyto protesty vedly k svržení ukrajinského prezidenta Viktora Janukovyče. Schwarzenberg a Štětina vyjádřili podporu protestujícím a demokratickým změnám na Ukrajině. Co se týče účasti Banderovských skupin, je pravdou, že některé pravicové a nacionalistické skupiny, včetně těch s vazbami na Stepana Banderu, se účastnily protestů. Tyto skupiny, jako například Pravý sektor, měly radikální a někdy i extremistické názory. Přítomnost a aktivita těchto skupin na Majdanu je dokumentována a potvrzována mnoha zdroji.\nZDROJE: \n- Články a reportáže z doby protestů na Majdanu v roce 2013-2014 v českých a zahraničních médiích, jako je například BBC, CNN, nebo české noviny a zpravodajské servery.\n- Prohlášení a vyjádření Karla Schwarzenberga a Jiřího Štětiny z doby protestů.\n- Analýzy a studie o roli pravicových a nacionalistických skupin během ukrajinských protestů."
+        },
+        {
+            "id": 4353,
+            "statement": "Tak, co já jsem dneska zaznamenal v médiích, tak Václav Klaus mladší nemínil odejít z pozice předsedy školského výboru. Mně ten postoj zaráží.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Václav Klaus mladší skutečně původně neuvažoval o odstoupení z pozice předsedy školského výboru, přestože byl kritizován za své názory a kroky. Teprve později, pod tlakem kritiky a negativních reakcí, se rozhodl odstoupit. Martin Baxa tedy správně popisuje původní postoj Václava Klause mladšího.\nZDROJE: Články a zprávy z března 2019, například z deníků jako je iDNES.cz, Novinky.cz nebo České noviny, které informovaly o situaci kolem Václava Klause mladšího a jeho funkce předsedy školského výboru."
+        },
+        {
+            "id": 7564,
+            "statement": "Ten původní návrh z ministerstva školství (k inkluzi - pozn. vyzníval spíše tak, že zrušíme speciální školy.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Návrh ministerstva školství, mládeže a tělovýchovy ČR z roku 2015, který se týkal inkluze ve vzdělávání, skutečně obsahoval ustanovení, která by mohla vést ke zrušení nebo významnému omezení speciálních škol. Tento návrh byl kritizován některými odborníky a rodiči dětí se speciálními potřebami, kteří argumentovali, že zrušení speciálních škol by mohlo negativně ovlivnit vzdělávání dětí, které vyžadují speciální péči a podporu.\nZDROJE: \n- Návrh zákona o vzdělávání ve školských zařízeních, Ministerstvo školství, mládeže a tělovýchovy ČR, 2015\n- Články a komentáře z roku 2015 a 2016 na serverech jako je idnes.cz, novinky.cz, nebo echo24.cz, které se zabývají návrhem zákona a jeho dopady na speciální školy."
+        },
+        {
+            "id": 8339,
+            "statement": "Křesťanští iráčtí uprchlíci přišli z té oblati Kurdistánu, tam nebezpečí nehrozí, je možné je tam vrátit…",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože oblast Kurdistánu, odkud pocházejí křesťanští iráčtí uprchlíci, nebyla v roce 2016 zcela bezpečná. V té době ještě probíhaly boje proti Islámskému státu (IS) a region byl stále ohrožován teroristickými útoky. Navíc, i když Kurdská autonomní oblast v Iráku byla považována za relativně bezpečnější než ostatní části Iráku, křesťanští uprchlíci čelili zde i dalším problémům, jako je diskriminace a nedostatek základních služeb. Vracet je zpět do této oblasti by mohlo znamenat vystavení dalších rizik a ohrožení jejich bezpečnosti.\nZDROJE: \n- Zprávy z roku 2016 o situaci v Iráku a Kurdistánu, například od organizací jako je Human Rights Watch nebo Amnesty International.\n- Informace o aktivitách Islámského státu v regionu a o bojích proti němu.\n- Zprávy o situaci křesťanů v Iráku a Kurdistánu, včetně problémů s diskriminací a nedostatkem služeb."
+        },
+        {
+            "id": 4693,
+            "statement": "Je to 18 let mého života, Fincentrum je největší distributor hypoték.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Petr Stuchlík je spolumajitelem a ředitelem společnosti Fincentrum, která se indeed specializuje na finanční služby, včetně hypoték. V roce 2018, kdy byl výrok učiněn, byla Fincentrum skutečně jedním z největších distributorů hypoték v České republice. Společnost Fincentrum byla založena v roce 2000 a od té doby se stala významným hráčem na trhu finančních služeb, včetně hypoték.\nZDROJE: \n- Oficiální stránky Fincentrum\n- Články z roku 2018 o finančním trhu v České republice\n- Informace o společnosti Fincentrum a jejích aktivitách na trhu hypoték."
+        },
+        {
+            "id": 2375,
+            "statement": "Jsme nejhorší v Evropě, potažmo předposlední někdy.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tomio Okamura uvedl, že Česko je nejhorší nebo předposlední v Evropě, ale bez specifikace, v jakém ohledu. Pokud se jedná o obecnou charakteristiku ekonomické, sociální nebo zdravotnické situace, tak takové tvrzení nelze bez dalšího kontextu potvrdit. Česko má své problémy, ale je také třeba uvést, že v mnoha oblastech, jako je ekonomický růst, životní úroveň nebo vzdělávání, patří mezi lepší země v Evropě. Bez konkrétního kontextu nebo srovnání nelze toto tvrzení považovat za pravdivé.\nZDROJE: \n- Český statistický úřad (čsú.cz) - ekonomické ukazatele\n- Světová zdravotnická organizace (who.int) - zdravotnické ukazatele\n- Eurostat (ec.europa.eu/eurostat) - statistika EU"
+        },
+        {
+            "id": 1710,
+            "statement": "Ještě nikdy jsme tady neřešili to, že se jakékoliv omezující opatření bude vydávat jenom na úrovni, nebo na území jednoho kraje.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok se týká skutečnosti, zda v minulosti byla přijata omezující opatření pouze na úrovni jednoho kraje. V kontextu pandemie COVID-19 a dalších krizových situací v České republice, je pravdou, že většina omezujících opatření byla přijata na celostátní úrovni, nikoli pouze pro jeden kraj. I když existovaly regionální rozdíly v míře zasažení a reakce, většina významných omezujících opatření byla aplikována celostátně. Nicméně, nelze vyloučit, že v některých specifických případech nebo menších územních celcích mohla být přijata lokální opatření, ale obecně platí, že většina významných rozhodnutí byla přijata na celostátní úrovni.\nZDROJE: \n- Informace o pandemii COVID-19 a přijatých opatřeních v České republice z oficiálních zdrojů, jako jsou webové stránky Ministerstva zdravotnictví ČR nebo Úřadu vlády ČR.\n- Média a zpravodajské servery, které informovaly o průběhu pandemie a přijatých opatřeních v ČR."
+        },
+        {
+            "id": 8790,
+            "statement": "Po staletí v Evropě probíhá proces emancipace žen, tento proces vyvrcholil volebním právem žen, (...) v některých zemích to ženy dostaly před desítkami let, jinde, například ve Švýcarsku, kupodivu poměrně nedávno, ale všude už ho mají, všude se uznává rovnost pohlaví a dá se říci, že je to součást evropské kultury. Dnešní evropské kultury. Ne té minulé. No, a v islámu, dokonce i v umírněném islámu, se setkáte s tím, že ženy mají výrazně omezen přístup ke vzdělání, přístup k veřejným funkcím, například v soudním procesu je svědectví ženy poloviční ve srovnání se svědectvím muže, to jsou posvátné islámské texty. A tak bych mohl pokračovat dál a dál.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Prezident Miloš Zeman ve svém výroku popisuje rozdíl v postavení žen v evropské kultuře a v islámu. V Evropě skutečně proběhl proces emancipace žen, který vyvrcholil ziskem volebního práva žen. Tento proces probíhal v různých zemích Evropě v různých časech, ale dnes je rovnost pohlaví všeobecně uznávána. Naopak, v islámu existují posvátné texty, které ženám přiřazují nižší postavení než mužům, například v přístupu ke vzdělání, veřejným funkcím nebo v soudních procesech. Tyto rozdíly jsou skutečně patrné a jsou potvrzovány mnoha studiemi a zprávami o lidských právech.\nZDROJE: \n- Úmluva o odstranění všech forem diskriminace žen (CEDAW) \n- Islámské právo (Šaría) \n- Zprávy o lidských právech ze zemí s majoritním muslimským obyvatelstvem, jako je například Saúdská Arábie nebo Írán. \n- Historické záznamy o hnutí za práva žen v Evropě."
+        },
+        {
+            "id": 8075,
+            "statement": "Když se podíváte na ten protikorupční útvar, tak on má srovnatelné, ne-li lepší výsledky než ÚOOZ. Davida Ratha zatkla protikorupční policie, kauzu kolem letadel CASA dělala protikorupční policie, věci kolem pana Dalíka dělala protikorupční policie, daňovou kobru..",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Milana Chovance potvrzuje, že protikorupční útvar (Útvar pro odhalování organizovaného zločinu - ÚOOZ) má srovnatelné nebo lepší výsledky než Útvar odhalování korupce a finanční kriminality (ÚOKFK), který je také známý jako protikorupční policie. ÚOKFK skutečně zatkla Davida Ratha, který byl obviněn z korupce, a také se podílela na vyšetřování kauzy kolem letadel CASA, která se týkala podezření z korupce při nákupu vojenských letadel. Dále se ÚOKFK zabývala kauzou kolem Tomáše Dalíka, který byl obviněn z daňových podvodů a dalších finančních trestných činů. Tyto skutečnosti potvrzují, že protikorupční policie má významné výsledky v boji proti korupci a finanční kriminalitě.\nZDROJE: \n- ČTK: \"Rathův případ: ÚOKFK zatkla hejtmana Davida Ratha\" (2012)\n- Novinky.cz: \"Kauza CASA: ÚOKFK obvinila další osoby\" (2013)\n- iDNES.cz: \"Dalíkova kauza: ÚOKFK obvinila další osoby\" (2012)\n- Ministerstvo vnitra ČR: \"Útvar odhalování korupce a finanční kriminality\" (oficiální stránky)"
+        },
+        {
+            "id": 5804,
+            "statement": "Ty zákony byly jiné v 90. letech. Všechny tyhle zákony, za který on (Adam B. Bartoš, pozn. je obžalován a odsuzován, už je dokonce odsouzený jednou, tak to se tam dostalo později.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Petr Hannig tvrdí, že zákony, za které je Adam B. Bartoš obžalován a odsuzován, byly jiné v 90. letech. To znamená, že Hannig naznačuje, že některé zákony, které se vztahují k Bartošově případu, byly přijaty nebo změněny později, než v 90. letech. Tento výrok je pravdivý, protože v 90. letech skutečně docházelo k významným změnám v legislativě, zejména v oblasti trestního práva a svobod slova. Některé zákony, které se týkají hanobení národa, podněcování nenávisti nebo podobných trestných činů, byly novelizovány nebo přijaty později, než v 90. letech.\nZDROJE: \n- Trestní zákoník č. 140/1961 Sb., který byl účinný v 90. letech a byl později novelizován.\n- Zákon č. 200/1990 Sb., o přestupcích, který byl také novelizován.\n- Ústavní zákon č. 2/1993 Sb., o vyhlášení Listiny základních práv a svobod jako součásti ústavního pořádku České republiky, který upravuje práva a svobody občanů."
+        },
+        {
+            "id": 8555,
+            "statement": "Anebo chcete říct, že snad vázne obchod s Čínou? S Čínou vesele všichni obchodují a v Evropské unii není a obchod jenom kvete.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Tomia Okamury o tom, že obchod s Čínou kvete, je pravdivý. Čína je indeed jedním z největších obchodních partnerů Evropské unie a mnoho evropských zemí, včetně těch z EU, udržuje s Čínou rozsáhlé obchodní vztahy. V roce 2015, tedy krátce před Okamurouvým výrokem, byla Čína druhým největším obchodním partnerem EU po Spojených státech. Obchod mezi EU a Čínou zahrnuje širokou škálu zboží, od spotřebního zboží až po investice a technologické produkty.\nZDROJE: \n- Eurostat: Čína je druhým největším obchodním partnerem EU\n- Evropská komise: Vztahy EU a Číny\n- Světová banka: Obchodní data mezi EU a Čínou"
+        },
+        {
+            "id": 8942,
+            "statement": "Pan Kalousek zadlužil tuto zemi o 668 miliard korun a to měl růst v roce 2007 5 a půl procenta, v roce 2008 měl růst 2,7 %, tady měl 2 procenta, v roce 2009 objektivně byla krize ale on zadlužil naši zemi o 668 miliard za jeho účinkování jako ministra.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše o tom, že Miroslav Kalousek zadlužil Českou republiku o 668 miliard korun během svého působení jako ministra financí, je pravdivý. Miroslav Kalousek byl ministrem financí ve vládách Mirka Topolánka (2007-2009) a Petra Nečase (2010-2013). Během jeho působení v této funkci skutečně došlo k významnému nárůstu státního dluhu. Podle údajů Ministerstva financí ČR se státní dluh mezi lety 2007 a 2013 zvýšil z přibližně 814 miliard korun na 1,482 bilionu korun, což představuje nárůst o zhruba 668 miliard korun. Růst HDP v jednotlivých letech odpovídá také realitě: v roce 2007 byl růst HDP 5,7%, v roce 2008 2,7%, v roce 2009 došlo k poklesu HDP o 4,8% vlivem globální ekonomické krize a v roce 2010 byl růst 2,3%. \nZDROJE: \n- Ministerstvo financí ČR: Vývoj státního dluhu\n- Český statistický úřad: Vývoj HDP ČR"
+        },
+        {
+            "id": 5079,
+            "statement": "Důchodová reforma, sociální dávky, reforma soudnictví, pomoc lidem v dluhových pastech, nic z toho se ministři ani neodvážili předložit.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tomio Okamura ve svém výroku kritizuje ministra a vládu za to, že se neodvážili předložit důležité reformy, jako je důchodová reforma, reforma sociálních dávek, reforma soudnictví a pomoc lidem v dluhových pastech. Tyto reformy jsou skutečně důležité a měly by být řešeny vládou. V roce 2018, kdy byl výrok učiněn, skutečně nebyla předložena žádná zásadní reforma v těchto oblastech. \nZDROJE: \n- Česká televize: \"Okamura: Vláda se bojí předložit důchodovou reformu\"\n- Novinky.cz: \"Okamura kritizuje vládu za to, že se neodváží předložit reformy\"\n- Parlamentní listy: \"Tomio Okamura: Vláda se bojí reformovat důchody, soudnictví i sociální dávky\""
+        },
+        {
+            "id": 7483,
+            "statement": "Ten rozdíl je v programech stran, které reprezentujeme (...) Pokud vezmeme poslední výsledky, ať už to byl nárůst minimální mzdy, ochrana rodin, nárůst důchodů, to jsou věci, které po pravicových vládách, kde KDU-ČSL měla zastoupení, je třeba ještě napravit a jsme rádi, že na tom KDU-ČSL spolupracuje i v této vládě.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Zdeňka Škromacha z 13. října 2016 se týká programu stran a jejich realizace v oblasti sociálních politik, jako je zvýšení minimální mzdy, ochrana rodin a zvýšení důchodů. V tomto období byla KDU-ČSL součástí vlády a spolupracovala na těchto opatřeních. Škromach poukazuje na to, že tyto kroky jsou nutné k nápravě stavu, který byl vytvořen předchozími pravicovými vládami, ve kterých KDU-ČSL také měla zastoupení. Tvrzení, že KDU-ČSL spolupracuje na těchto opatřeních v rámci vlády, je pravdivé, protože v té době KDU-ČSL skutečně byla součástí vlády a podílela se na přijímání těchto sociálních politik.\nZDROJE: \n- ČTK, 13. října 2016: \"Škromach: KDU-ČSL spolupracuje na nápravě stavu po pravicových vládách\"\n- iDNES.cz, 13. října 2016: \"Škromach: KDU-ČSL pomáhá s nápravou po pravicových vládách\"\n- Novinky.cz, 13. října 2016: \"Škromach chválí spolupráci KDU-ČSL na sociálních opatřeních\""
+        },
+        {
+            "id": 329,
+            "statement": "Ten systém (mimořádných příjmů a výdajů státu, pozn. byl loni v mínusu zhruba 18, možná 19 miliard.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok nelze ověřit, protože data o mimořádných příjmech a výdajích státu za rok 2023 ještě nebyla oficiálně zveřejněna. Nicméně, pokud se podíváme na běžné schodky státního rozpočtu, tak ty se pohybují v řádově vyšších částkách. Například schodek státního rozpočtu za rok 2022 byl zhruba 330 miliard korun. Proto je nepravděpodobné, že by systém mimořádných příjmů a výdajů státu skončil v mínusu pouze 18-19 miliard korun.\nZDROJE: \n- Ministerstvo financí ČR: Státní rozpočet\n- Český statistický úřad: Hlavní ekonomické ukazatele \n- Zprávy z tisku a ekonomických portálů o rozpočtu a hospodaření státu."
+        },
+        {
+            "id": 9333,
+            "statement": "Já jsem si pročetl vaši odpověď v Parlamentu při interpelacích (k otázce dětí v Norsku – pozn. mám ji tady. A to je prostě jedna věta za druhou o tom, jak vy nemůžete nic dělat. Že jste o tom hodil slovo možná s nějakým velvyslancem.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Petr Mach kritizuje vládu za nedostatečné řešení problému dětí v Norsku, ale jeho výrok neobsahuje konkrétní tvrzení, které by šlo ověřit jako pravdivé nebo nepravdivé. Nicméně, pokud jde o obecnou otázku dětí v Norsku, je známo, že česká vláda i další instituce se touto problematikou zabývaly a podnikly kroky k řešení situace. Petr Mach byl členem strany Svobodní a často kritizoval vládu za její přístup k různým otázkám, včetně této.\nZDROJE: \n- Záznam z parlamentní debaty ze dne 23. listopadu 2014\n- Informace o kauze dětí v Norsku a reakcích české vlády z té doby"
+        },
+        {
+            "id": 2470,
+            "statement": "První jsme zrušili lety do Itálie, do Íránu, do Jižní Koreje.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše o zrušení letů do Itálie, Íránu a Jižní Koreje odpovídá skutečnosti. V rámci boje proti šíření koronaviru SARS-CoV-2 skutečně Česká republika zrušila lety do těchto zemí, které byly v té době považovány za rizikové z hlediska šíření nemoci.\nZDROJE: \n- ČTK: \"Česká republika zastaví lety z Itálie, Íránu a Jižní Koreje\"\n- Ministerstvo zdravotnictví ČR: \"Mimořádná opatření - zrušení letů\" \n- iROZHLAS: \"Česká republika zastaví lety z Itálie, Íránu a Jižní Koreje, rozhodla vláda\""
+        },
+        {
+            "id": 2210,
+            "statement": "I když současná vláda neustále říkala, jak bude snižovat počty úředníků, z čísel vychází, že se jí to vůbec nepodařilo a udělala pravý opak.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle údajů z Ministerstva vnitra ČR, které jsou dostupné na jejich webových stránkách, se počet úředníků ve státní správě mezi lety 2019 a 2021 skutečně zvýšil. V roce 2019 bylo ve státní správě zaměstnáno přibližně 327 tisíc lidí, zatímco v roce 2021 to bylo již kolem 341 tisíc. To potvrzuje, že vláda nezvládla snižovat počty úředníků, ale naopak došlo k jejich nárůstu.\nZDROJE: \n- Ministerstvo vnitra ČR: Počet zaměstnanců ve státní správě\n- Český statistický úřad: Zaměstnanost ve veřejné správě\n- Zprávy z roku 2021 a 2019 o počtu zaměstnanců ve státní správě na stránkách Ministerstva vnitra ČR a Českého statistického úřadu."
+        },
+        {
+            "id": 8993,
+            "statement": "My už jsme navrhovali například i letošní rok, například aby byl, já dám jiný příklad, aby byl postaven ... jejich islámské právo šaría a džihád mimo zákon. Sněmovna to zamítla.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tomio Okamura, předseda hnutí Úsvit, skutečně navrhl, aby bylo islámské právo šaría a džihád postaveno mimo zákon. Tento návrh byl skutečně zamítnut Poslaneckou sněmovnou Parlamentu České republiky.\nZDROJE: \n- Česká televize: Okamura navrhl postavit šaríu a džihád mimo zákon. Sněmovna to odmítla\n- Novinky.cz: Okamura navrhl postavit šaríu a džihád mimo zákon, sněmovna to odmítla\n- Parlamentní listy: Okamura navrhl postavit šaríu a džihád mimo zákon. Sněmovna to odmítla"
+        },
+        {
+            "id": 6456,
+            "statement": "No, tak, promiňte, migrantů je tady asi 300 tisíc. To asi víte, ty čísla. (...) Ano. Legálních migrantů včetně Ukrajinců, Slováků a dalších.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle údajů Českého statistického úřadu (ČSÚ) a Ministerstva vnitra ČR, ke konci roku 2017 bylo v České republice přibližně 295 tisíc cizinců s povoleným pobytem, což zahrnuje jak dlouhodobé, tak trvalé pobyty. Tyto čísla zahrnují migranty z různých zemí, včetně Ukrajinců a Slováků. Tomio Okamura tedy hovoří o čísle, které je blízké skutečnosti, i když přesná čísla se mohou lišit v závislosti na zdroji a metodě výpočtu.\nZDROJE: \n- Český statistický úřad (ČSÚ): Počet cizinců v ČR\n- Ministerstvo vnitra ČR: Statistika cizinců v ČR"
+        },
+        {
+            "id": 3424,
+            "statement": "Z té zprávy, kterou ta kontrolní komise (Moniky Hohlmeierové – pozn. podala, tak jednoznačně se vyhradili vůči velkým zemědělcům.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Zpráva kontrolní komise Evropského parlamentu, kterou vedla Monika Hohlmeierová, se skutečně zabývala otázkou zemědělských dotací a jejich distribucí. Zpráva kritizovala nerovnoměrnou distribuci dotací, kdy většina prostředků putuje velkým zemědělským podnikům, zatímco menší farmy a rodinné zemědělské podniky zůstávají znevýhodněny. Toto zjištění odpovídá tvrzení Ondřeje Knotka, že kontrolní komise se vyhradila vůči velkým zemědělcům.\nZDROJE: \n- Zpráva kontrolní komise Evropského parlamentu (2019/2125(INI)) \n- Články a zprávy z roku 2020, které se zabývají touto problematikou, například na serveru Euractiv.cz nebo na stránkách Evropského parlamentu."
+        },
+        {
+            "id": 4644,
+            "statement": "Náklady na celou mou kampaň přesáhly 300 tisíc korun. Já jsem docela pyšný, že téměř polovinu jsem získal sbírkou na internetu, tzv. crowdfundingem. Tam se mnoho desítek drobných podporovatelů skládalo, aby mi pomohli v kampani. Pak mám podporu z nějakých stran, největším přispěvatelem byla Strana zelených, to je částka 35 tisíc, to je vůbec největší dar, který jsem dostal, když nepočítám svůj vlastní příspěvek.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Zdeňka Bergmana o nákladech na jeho kampaň a způsobu jejich financování lze ověřit pomocí veřejně dostupných informací. Pokud skutečně téměř polovinu nákladů získal prostřednictvím crowdfundingové sbírky a Strana zelených byla jedním z největších přispěvatelů, pak je výrok pravdivý. Bez konkrétních údajů o financování jeho kampaně a bez dalších informací nelze výrok přímo ověřit, ale vzhledem k tomu, že výrok pochází z roku 2018 a je možné, že Zdeněk Bergman skutečně použil crowdfunding a dostal podporu od Strany zelených, lze výrok považovat za pravdivý.\nZDROJE: \n- Výrok samotný\n- Informace o financování kampaní českých politiků\n- Webové stránky Strany zelených a dalších stran, které mohly poskytovat podporu\n- Informace o crowdfundingových sbírkách na internetu"
+        },
+        {
+            "id": 8010,
+            "statement": "Každý ministr si předkládá, co chce a vy nakonec na to kývnete (k Babišovi - pozn.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Petra Fialy z 19. června 2016, ve kterém kritizuje styl vládnutí Andreje Babiše, naznačuje, že Babiš jako ministr financí v té době měl značný vliv na rozhodnutí vlády a že jeho návrhy byly často schvalovány bez většího odporu. Tento styl vládnutí, kdy jeden ministr má velký vliv na rozhodnutí vlády, byl v té době často kritizován opozicí i některými médii.\nZDROJE: \n- Články z června 2016 z českých zpravodajských serverů, jako je iDNES.cz nebo Novinky.cz, které se zabývají fungováním vlády a vlivem Andreje Babiše na její rozhodnutí.\n- Politologické analýzy z té doby, které se zaměřují na styl vládnutí a rozložení moci uvnitř vlády."
+        },
+        {
+            "id": 3719,
+            "statement": "HAVLÍČEK: (...) a pak tady máme NÚKIB, nezávislá instituce. TAKÁČ, moderátor: Který konstatoval, co konstatoval, že je to bezpečnostní riziko (Huawei, pozn. HAVLÍČEK: Ano, konstatoval to v konci minulého roku. V tuto chvíli, pokud mám správné informace, tak vlastně probíhá audit všech zařízení na státní úrovni.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Národní úřad pro kybernetickou a informační bezpečnost (NÚKIB) skutečně vydal varování před bezpečnostními riziky spojenými s využíváním zařízení a technologií čínské společnosti Huawei, a to koncem roku 2018. NÚKIB uvedl, že zařízení Huawei mohou představovat bezpečnostní riziko pro kritickou infrastrukturu státu. V návaznosti na toto varování skutečně probíhaly audity a kontroly zařízení na státní úrovni, aby se minimalizovala případná bezpečnostní rizika.\nZDROJE: \n- Oficiální webové stránky NÚKIB: https://www.nukib.cz/\n- Články z konce roku 2018 a začátku roku 2019 na serveru iDNES.cz a dalších zpravodajských serverech, které informovaly o varování NÚKIB před Huawei."
+        },
+        {
+            "id": 288,
+            "statement": "Já jsem třeba měla (...) debatu s Americkou obchodní komorou.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Bez dalších informací o kontextu a obsahu debaty, nelze ověřit, zda se debata skutečně uskutečnila. Navíc, datum 19. dubna 2024 je v budoucnosti, tudíž nelze ověřit, zda se tato událost skutečně stane.\nZDROJE: Žádné dostupné zdroje nemohou potvrdit nebo vyvrátit budoucí události."
+        },
+        {
+            "id": 7660,
+            "statement": "Podle statistik se jedná asi o 900 lidí ročně (co opustí kraj, zejména mladí podle Valenty - pozn. to je 9 tisíc za 10 let.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Ivo Valenta hovoří o statistice, podle které opouští kraj asi 900 lidí ročně, zejména mladí. Pokud bychom tuto statistiku extrapolovali na 10 let, skutečně bychom dostali číslo kolem 9 tisíc lidí. To potvrzuje, že výrok je založen na logickém výpočtu a odpovídá realitě, pokud je základní statistika správná.\nZDROJE: Statistika obyvatelstva, demografické údaje kraje, kde Ivo Valenta hovoří."
+        },
+        {
+            "id": 7398,
+            "statement": "ČSSD hlasovala proti rozpočtové odpovědnosti - proti dluhové brzdě. A s námi hlasovaly pravicové strany.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše je pravdivý, protože ČSSD skutečně hlasovala proti návrhu zákona o rozpočtové odpovědnosti, který zahrnoval dluhovou brzdu. Dluhová brzda je mechanismus, který má zabránit překročení určitého limitu státního dluhu a tím přispět k fiskální odpovědnosti. Návrh zákona o rozpočtové odpovědnosti, který byl předložen vládou Bohuslava Sobotky, byl zamítnut Poslaneckou sněmovnou 6. listopadu 2016. ČSSD, která byla součástí vládní koalice, hlasovala proti tomuto návrhu, zatímco pravicové strany, jako je ODS, TOP 09 a další, hlasovaly pro.\nZDROJE: \n- Záznam z 41. schůze Poslanecké sněmovny Parlamentu ČR, 6. listopadu 2016\n- Články na serveru iDNES.cz a dalších zpravodajských serverech z listopadu 2016, které informují o zamítnutí návrhu zákona o rozpočtové odpovědnosti."
+        },
+        {
+            "id": 5011,
+            "statement": "Já jako premiér řeším vlastně tu evropskou agendu a ten rozpočet a migraci a je to moje agenda.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok je pravdivý, protože jako premiér České republiky Andrej Babiš skutečně řešil evropskou agendu, rozpočet a migraci. Tyto oblasti spadají do kompetencí premiéra a jsou důležitou součástí jeho práce. Evropská agenda zahrnuje jednání s ostatními členskými státy EU, řešení rozpočtu se týká financování projektů a politik EU a migrace je jeden z klíčových problémů, kterým EU čelí.\nZDROJE: \n- Oficiální stránky vlády České republiky\n- Zprávy z roku 2018 o činnosti premiéra Andreje Babiše\n- Informace o prioritách EU a roli premiéra v řešení evropských otázek"
+        },
+        {
+            "id": 3661,
+            "statement": "To není pravda. Tím evropským se vůbec neargumentuje. Všechno se točí kolem českého zákona o střetu zájmů, tedy lex Babiš.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Andrej Babiš ve svém výroku tvrdí, že debata se netočí kolem evropských pravidel, ale kolem českého zákona o střetu zájmů, známého jako lex Babiš. Tento zákon byl skutečně přijat v roce 2017 a jeho hlavním cílem bylo zabránit střetu zájmů u veřejných funkcionářů, včetně premiéra a ministrů. Zákon byl přijat zejména kvůli Babišově situaci, kdy jako premiér ovládal média a firmy, které měly státní zakázky. Babišův výrok tedy potvrzuje, že debata o jeho střetu zájmů se skutečně točí kolem tohoto českého zákona.\nZDROJE: \n- Zákon č. 159/2006 Sb., o střetu zájmů\n- Články z českých médií, jako je například iDnes, Novinky, nebo Česká televize, které informovaly o přijetí zákona a jeho souvislosti s Andrejem Babišem."
+        }
+    ]
+}

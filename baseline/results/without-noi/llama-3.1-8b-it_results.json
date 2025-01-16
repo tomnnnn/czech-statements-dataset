@@ -1,0 +1,350 @@
+{
+    "accuracy": 0.51,
+    "correct": 51,
+    "total": 100,
+    "incorrect": [
+        {
+            "id": 6369,
+            "statement": "Byl jsem první ministr, který zmapoval majetek státu a našli jsme 27 tisíc nemovitostí, které nikomu nepatřily.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš nebyl první ministr, který zmapoval majetek státu. V té době byl premiérem České republiky a jeho vláda se zabývala reformou státního majetku. Podle dostupných informací byla reforma zahájená již v roce 2014, kdy se stala součástí vládního programu. Andrej Babiš byl premiérem od prosince 2017, ale již v roce 2014, kdy se reforma začala, byl ministrem financí. \nZDROJE: \n- Článek \"Babiš: První ministr, který zmapoval majetek státu\" na serveru Aktuálně.cz z 2. října 2017 (tento článek potvrzuje, že Babiš byl premiérem, ale ne první ministr, který zmapoval majetek státu)\n- Článek \"Reforma státního majetku\" na serveru Hospodářských novin z 15. dubna 2014 (tento článek potvrzuje, že reforma státního majetku byla zahájená již v roce 2014)"
+        },
+        {
+            "id": 2143,
+            "statement": "Loni jsem strávila léto tím, že jsem objela 12 krajů.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Aleny Schillerové je nepravdivý, protože v roce 2021 byla Alena Schillerová ministrem financí České republiky a v této funkci by neměla mít čas na objíždění krajů. Její pozice by vyžadovala intenzivní práci v Praze a v dalších místech, kde se konají důležité setkání a jednání. Navíc, pokud by skutečně objela 12 krajů, bylo by to velmi obtížné a časově náročné, zvláště během svého působení v čelní pozici.\nZDROJE: \n- https://www.ceskatelevize.cz/porady/101/charlesov-svet/charlesov-svet/2021/07/charlesov-svet-20210712/ \n- https://www.ceskatelevize.cz/porady/101/charlesov-svet/charlesov-svet/2021/07/charlesov-svet-20210712/"
+        },
+        {
+            "id": 2232,
+            "statement": "Snižovali jsme dluh (do února 2020, pozn.)",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože podle údajů Českého statistického úřadu se státní dluh v období od roku 2017 do února 2020 zvýšil o více než 200 miliard korun. V únoru 2020 činil státní dluh 1,45 bilionu korun, zatímco v roce 2017 činil 1,24 bilionu korun. \nZDROJE: \n- Český statistický úřad: https://www.czso.cz/csu/czso/stanovisko-k-vyvojum-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska-stanoviska"
+        },
+        {
+            "id": 7100,
+            "statement": "Já jsem nehlasoval pro občanský zákoník. Měl jsem výhrady, že nový občanský zákoník vytváří prostředí, které je velmi netransparentní.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Vojtěch Filip, bývalý předseda KSČM, skutečně vyjádřil své výhrady k novému občanskému zákoníku, který byl schválen v roce 2013. V roce 2017, kdy se o tom vyjádřil, již zákon platil a Filip tak mohl své výhrady potvrdit. Jeho slova potvrzují, že měl skutečně výhrady k tomuto zákonu a že se o nich vyjádřil veřejně.\nZDROJE: Informace o Vojtěchovi Filipovi a jeho vyjádření k novému občanskému zákoníku byly potvrzeny na následujících zdrojích:\n- Článek \"Vojtěch Filip: Nový občanský zákoník je nebezpečný\" na serveru Lidovky.cz z 29. ledna 2017\n- Informace o novém občanském zákoníku na serveru Parlamentních listů z 1. ledna 2014"
+        },
+        {
+            "id": 8903,
+            "statement": "A jestliže Andrej Babiš dostává nyní více, v letech 2013, 2014 rostou příjmy ze státního rozpočtu do jeho byznysu a zároveň s tím klesá jeho daňová povinnost vůči státu, jinými slovy platí méně na daních, než když v politice nebyl...",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok potvrzuje fakt, že Andrej Babiš během svého působení v politice (v letech 2013 a 2014) měl nižší daňovou povinnost vůči státu, než když v politice nebyl. To je potvrzeno také faktografií, že Babiš v roce 2013 získal dotaci na nákup letadel, která byla později označena za korupční kauzu. \nZDROJE: \n- Článek \"Babišova Agrofert dostala 1,5 miliardy na nákup letadel\" na serveru Aktuálně.cz z roku 2013\n- Článek \"Babišova Agrofert dostala 1,5 miliardy na nákup letadel\" na serveru Aktuálně.cz z roku 2013\n- Článek \"Babišova Agrofert dostala 1,5 miliardy na nákup letadel\" na serveru Aktuálně.cz z roku 2013"
+        },
+        {
+            "id": 384,
+            "statement": "(Česko má, pozn.) nejnižší nebo jednu z nejnižších nezaměstnaností v Evropské unii.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože podle dostupných dat z Evropské komise a Českého statistického úřadu je nezaměstnanost v Česku vyšší než v některých dalších zemích Evropské unie. Například v lednu 2024 byla nezaměstnanost v Česku okolo 3,5 %, zatímco v Německu byla okolo 3,1 % a v Rakousku okolo 4,1 %.\nZDROJE: \n- Evropská komise: https://ec.europa.eu/eurostat/web/lfs/tables\n- Český statistický úřad: https://www.czso.cz/cps/rde/xj3a/np_2024_01_01_nezaměstnanost.pdf"
+        },
+        {
+            "id": 6418,
+            "statement": "Sami podnikatelé hlasovali pro to, že to byl druhý nejlepší zákon (o elektronické evidenci tržeb, pozn.) za minulý rok.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš v roce 2017 jako ministr financí předložil návrh zákona o elektronické evidenci tržeb, který byl později schválen. Nicméně, samotní podnikatelé nebyli osloveni k hlasování o tom, zda je zákon dobrý nebo špatný. Babišův výrok je pravděpodobně snahou o zamlžování reality a prezentování zákona jako něco, co bylo dobře přijato, ačkoli skutečnost je jiná.\n\nZDROJE: \n- Článek \"Babiš: Podnikatelé jsou spokojeni s novým zákonem\" na serveru iDNES.cz z 2. října 2017, který obsahuje Babišův výrok.\n- Článek \"Babiš: Návrh zákona o EET je hotový\" na serveru ČT24.cz z 25. září 2017, který popisuje Babišův návrh zákona o elektronické evidenci tržeb."
+        },
+        {
+            "id": 9227,
+            "statement": "Někdo tady jednal 19 let s paní Havránkovou. My jsme to jednání před dvěma týdny dokončili.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš byl v době, kdy se údajně jednalo s paní Havránkovou, již ženatý s Ivanou Babišovou. Paní Havránková byla Babišova bývalá partnerka, s níž měl syna Andreje Babiše ml. (narozeného v roce 1984), ale jejich vztah skončil již v roce 1985, tedy před více než 20 lety, než Babiš uvedl, že s ní jednali 19 let.\n\nZDROJE: \n- https://www.idnes.cz/domaci/andrej-babis-rodina.A140123_142111_domaci_bab - článek o rodině Andreje Babiše\n- https://cs.wikipedia.org/wiki/Andrej_Babi%C5%A1 - Wikipedie o Andreji Babišovi"
+        },
+        {
+            "id": 4853,
+            "statement": "Zastupitelstvo schválilo rozsah někde mezi 400 a 600 tisíci (vklad zájemců o bydlení do bytového družstva, pozn.)",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože zastupitelstvo schválilo rozsah někde mezi 400 a 600 tisíci korun, nikoli vklad zájemců o bydlení do bytového družstva. Vklad zájemců o bydlení do bytového družstva je jiný pojem, který se v tomto kontextu nevztahuje k výši schváleného rozsahu.\nZDROJE: Není dostupný zdroj, který by výrok potvrdil."
+        },
+        {
+            "id": 6761,
+            "statement": "Za jeho ministrování (Sobotka, pozn.) poslal svým kámošům do Škody Plzeň, to je ta parta Pokorný-Roman, 11,5 miliardy. Ekologické zakázky.",
+            "reference_label": "neověřitelné",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok Andreje Babiše je nepravdivý, protože Andrej Babiš byl v době, kdy se odehrávaly zmíněné zakázky, ministrem financí, nikoli ministrem průmyslu a obchodu. V této funkci byl od roku 2014 do roku 2017. V roce 2017, kdy Babiš uvedl tento výrok, byl již ministrem financí, ale v minulosti byl ministrem pro místní rozvoj (2006-2009) a ministrem průmyslu a obchodu (2011-2014). \n\nZakázky na Škodě Plzeň byly skutečně zadány v době, kdy Bohuslav Sobotka byl premiérem, a to v roce 2015. Tyto zakázky byly kritizovány za jejich neekologičnost a Babiš se k nim v minulosti vyjádřil kriticky. \n\nZDROJE: \n- https://www.ceskatelevize.cz/ct24/soudy/1441114-babis-odveta-sobotkovi-za-zakazky-ve-skodovce-je-nepravdiva/\n- https://www.ceskatelevize.cz/ct24/soudy/1441114-babis-odveta-sobotkovi-za-zakazky-ve-skodovce-je-nepravdiva/"
+        },
+        {
+            "id": 2819,
+            "statement": "V této atmosféře vláda bez posvěcení Sněmovny, tam ten materiál nejde, hovořila o nějakých 31 miliardách z Evropské unie, kde zcela nesmyslně 4 miliardy přesunula na žádost sportovní agentury, je to ten React-EU, 4 miliardy na sportovní kabiny na úkor zdravotnických zařízení v České republice.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Vít Rakušan, tehdejší předseda ODS, v daném výroku uvádí, že vláda přesunula 4 miliardy z programu React-EU na sportovní kabiny na úkor zdravotnických zařízení. Nicméně, program React-EU byl skutečně využíván pro financování sportovní infrastruktury, ale také pro financování zdravotnických zařízení a dalších projektů. Podle dostupných zdrojů, bylo z programu React-EU v České republice přiděleno více než 10 miliard korun, z nichž část byla skutečně použita pro financování sportovní infrastruktury, ale také pro financování zdravotnických zařízení a dalších projektů.\n\nZdroje:\n- Oficiální stránky Ministerstva financí České republiky: \"Program React-EU\" (https://www.mfcr.cz/cs/evropska-unie/programy/react-eu)\n- Článek na serveru Aktuálně.cz: \"React-EU: Česko dostalo 10 miliard, ale většina šla na sport a cestovní ruch\" (https://zpravy.aktualne.cz/domaci/react-eu-cesko-dostalo-10-miliard-ale-vetsina-sla-na-sport-a-cestovni-ruch/r~d7a1a2a1/)\n- Článek na serveru Hospodářských novin: \"React-EU: Česko dostalo 10 miliard, ale většina šla na sport a cestovní ruch\" (https://hnonline.cz/zpravy-domacich-ekonomika-cesko-dostalo-10-miliard-ale-vetsina-sla-na-sport-a-cestovni-ruch-20210222)"
+        },
+        {
+            "id": 3632,
+            "statement": "Celkový objem těchto daňových výjimek je už přes 300 miliard korun.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože v době, kdy Miloš Zeman řekl toto, bylo v České republice v platnosti několik daňových výjimek, které byly od roku 2013 do roku 2020 postupně zaváděny. Tyto výjimky byly součástí daňové reformy a jejich celkový objem byl nižší než 300 miliard korun. V roce 2019, kdy Miloš Zeman řekl toto, bylo odhadováno, že celkový objem daňových výjimek bude nižší než 200 miliard korun.\n\nZDROJE: \n- Článek \"Daňové výjimky: Jak se vyvíjel jejich objem?\" na webu ČT24 z 26. prosince 2019\n- Článek \"Daňová reforma: Jak se vyvíjel objem daňových výjimek?\" na webu Hospodářských novin z 31. prosince 2019"
+        },
+        {
+            "id": 6611,
+            "statement": "Tato vláda měla plná ústa boje s korupcí, ale je vládou s historicky nejvyšším počtem zakázek bez výběrového řízení.",
+            "reference_label": "neověřitelné",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok potvrzuje, že Miroslav Kalousek kritizuje vládu za korupci a zároveň ji obvinuje z historicky nejvyššího počtu zakázek bez výběrového řízení. To je paradoxní, protože vláda, která bojuje proti korupci, by měla mít zájem na transparentnosti a fairém výběrovém řízení. Pokud vláda má historicky nejvyšší počet zakázek bez výběrového řízení, je to spíše důkazem toho, že vláda porušuje své vlastní principy boje proti korupci. Tento výrok proto vyvrací tvrzení vlády o boji proti korupci.\nZDROJE: https://www.idnes.cz/domaci/kalousek-zakazky-bez-vyberoveho-rizeni.A170702_111111_domaci_KAL (článek z Idnes.cz z 2. července 2017)"
+        },
+        {
+            "id": 1657,
+            "statement": "V Čechách (proti rostoucím cenám energií, pozn.) bojujeme tím, že jsme snížili DPH. Už je to poznat na cenách v listopadu.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš v době svého projevu (16. prosince 2021) nebyl premiérem České republiky. Premiérem byl v té době Petr Fiala, který byl zvolen v říjnu 2021. Andrej Babiš byl v té době předsedou hnutí ANO a ministrem financí, ale nebyl premiérem.\n\nZDROJE: \n- https://www.ceskatelevize.cz/ct24/soudce-za-soudce/2111119-premiere-2021-cesko-vybero-petr-fiala/ (informace o volbách do Poslanecké sněmovny v roce 2021)\n- https://www.ceskatelevize.cz/ct24/soudce-za-soudce/2111119-premiere-2021-cesko-vybero-petr-fiala/ (informace o premiérově kabinetu Petra Fialy)"
+        },
+        {
+            "id": 7264,
+            "statement": "Není pravda, že lidé nevědí. (...) Na koho se bude třetí a čtvrtá vlna EET vztahovat a kdy, je dáno, ten zákon platí, my se bavíme jenom o tom, jestli ještě dojde k nějaké změně.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Pavla Bělobrádka je pravdivý, protože třetí a čtvrtá vlna EET (Elektronická evidence tržeb) byla skutečně stanovená a zákon o EET platí. Bělobrádek pouze vysvětluje, že se jedná o implementaci již existujícího zákona a že se baví o možných změnách, nikoli o tom, zda zákon platí nebo ne.\nZDROJE: Informace o EET a jejím plánu implementace jsou dostupné na stránkách Ministerstva financí České republiky."
+        },
+        {
+            "id": 3338,
+            "statement": "Mimochodem, pro Vaši informaci, před asi dvěma dny na varšavském letišti přistálo letadlo Mrija, které vezlo čínské dodávky zdravotnického materiálu do Polska, a na tom varšavském letišti byl premiér a další činitelé, aby poděkovali Číně za tyto dodávky.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože letadlo Mrija, které bylo zadrženo na varšavském letišti, bylo skutečně plné zdravotnického materiálu, ale ne z Číny. Letadlo bylo zadrženo 26. března 2021, nikoli před dvěma dny v dubnu 2020. Letadlo Mrija bylo zadrženo, protože polská vláda obávala, že letadlo mohlo být použito jako špionážní prostředek. \nZDROJE: https://www.bbc.com/news/world-europe-56711145 (informace o zadržení letadla Mrija)"
+        },
+        {
+            "id": 1261,
+            "statement": "600 tisíc voličů nikoho nekroužkovalo, volili ty kandidátky včetně pirátských lídrů, ale to kroužkování 250 tisíc vyneslo vlastně ty mandáty STANu.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Ivan Bartoš, předseda strany Piráti, v tomto výroku popisuje situaci z voleb do Poslanecké sněmovny v roce 2021. Podle dostupných informací bylo v těchto volbách použito kroužkování preferenčních hlasů, které mělo vliv na rozdělení mandátů. Bartoš v tomto výroku uvádí, že kroužkování preferenčních hlasů ovlivnilo rozdělení mandátů ve prospěch hnutí STAN, ačkoli samotné kroužkování preferenčních hlasů bylo realizováno pouze u 250 tisíc voličů, zatímco 600 tisíc voličů volilo kandidátky včetně lídrů strany Piráti.\n\nZDROJE: \n- Volby do Poslanecké sněmovny 2021\n- Informace o kroužkování preferenčních hlasů v těchto volbách\n- Výroky a komentáře politických lídrů z té doby."
+        },
+        {
+            "id": 2256,
+            "statement": "Už dnes my tam (v rodném listu, pozn.) nemáme matka a otec, my tam máme zákonný zástupce.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok potvrzuje pravdivost, protože Barbora Kořanová, česká politička a poslankyně, v daném roce skutečně uvedla, že v rodném listu se místo matky a otce objevuje zákonný zástupce. Tento fakt je potvrzen v médiích a dalších zdrojích, které citují její slova.\nZDROJE: https://www.ceskatelevize.cz/porady/101/uvodni-strana-zpravy/202104291111-uvodni-strana-zpravy/ - ČT24, 29. dubna 2021"
+        },
+        {
+            "id": 600,
+            "statement": "Příspěvek na bydlení vyplácíme v termínech, které nám dává zákon. U většiny krajů jsme v rozmezí mezi 15 a 21 dny. V Praze jsme na hranici kolem 30 dnů. A to v 98 procentech případů jen proto, že jsme daného klienta vyzvali, aby nám něco doručil, a on nám zatím požadovanou písemnost nebo informaci nedodal.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok potvrzuje skutečnost, že příspěvek na bydlení je vyplácen v termínech stanovených zákonem, a to v rozmezí mezi 15 a 21 dny v většině krajů a až 30 dnů v Praze. Dále také potvrzuje, že zpoždění vyplácení příspěvků je často způsobeno tím, že klienty vyzývá k doručení požadovaných dokumentů nebo informací, které jim dosud nebyly poskytnuty. \nZDROJE: Výrok je citován z článku \"Jurečka: Příspěvek na bydlení vyplácíme v termínech, které nám dává zákon\" z webu Parlamentních novin, publikován 31. července 2023."
+        },
+        {
+            "id": 1318,
+            "statement": "Česká republika místo, aby si nasmlouvala plyn přímo, jako to má demokratické Rakousko, Německo, Slovensko či Maďarsko, tak my nakupujeme plyn přibližně za trojnásobnou cenu přes německé obchodníky, kteří stejně nakupují plyn v Rusku. Takže u nás to funguje tak, že zatímco můžeme nakupovat plyn za 6 Kč za kubík, tak my ho nakupujeme přibližně za 20–25 Kč za kubík.",
+            "reference_label": "neověřitelné",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Tomia Okamury je nepravdivý, protože Česká republika si plyn skutečně nasmlouvá přímo, nikoli přes německé obchodníky. Česká republika má s Ruskem uzavřenou dohodu o dodávkách plynu, která zajišťuje dodávky plynu do České republiky. Kromě toho Česká republika také má s Ruskem uzavřenou dohodu o výstavbě plynovodu Nord Stream 2, který zajišťuje přímou dodávku plynu z Ruska do Evropy.\n\nZdroje:\n- Dohoda o dodávkách plynu mezi Českou republikou a Ruskem (zdroj: Ministerstvo zahraničních věcí České republiky)\n- Dohoda o výstavbě plynovodu Nord Stream 2 (zdroj: Ministerstvo zahraničních věcí České republiky)\n- Informace o dodávkách plynu do České republiky (zdroj: Česká energetika)"
+        },
+        {
+            "id": 6574,
+            "statement": "A skutečně jsme vybrali obrovské množství daní a odvodů, 604 miliard za období tý naší vlády, ještě do konce července.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš, tehdejší premiér České republiky, tvrdil, že jeho vláda vybrala 604 miliard korun za období své vlády, což je v rozporu s skutečností. Podle údajů Ministerstva financí České republiky vybrala vláda Andreje Babiše v období 2017-2022 celkem 2 444 miliard korun, nikoli 604 miliard. \nZDROJE: \n- https://www.ceskatelevize.cz/ct24/domaci/1731119-babis-je-nejlepsi-premier-v-ceske-republice-od-1989-je-nejlepsi-za-ostatni-20-let\n- https://www.ceskatelevize.cz/ct24/domaci/1731119-babis-je-nejlepsi-premier-v-ceske-republice-od-1989-je-nejlepsi-za-ostatni-20-let"
+        },
+        {
+            "id": 3098,
+            "statement": "Snížili jsme DPH, odložili jsme splatnost řady daní, odpustili jsme soc. pojištění.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Aleny Schillerové je nepravdivý, protože v době, kdy byla ministrem financí (2018-2021), došlo k několika změnám v daňové politice, ale ne k snížení DPH. DPH zůstala na stejné úrovni. Navíc, odpustit sociální pojištění je v rámci běžné daňové politiky neúčinné, protože sociální pojištění je povinné a jeho splacení je zajištěno automaticky. \nZDROJE: \n- Článek \"Schillerová: Vláda chce snížit DPH, ale nevíme, jak\" na serveru iDNES.cz z 13. července 2020, který obsahuje rozhovor s Alenou Schillerovou, ale ne potvrzuje, že by došlo k snížení DPH.\n- Informace o DPH na stránkách Ministerstva financí České republiky, které potvrzují, že DPH zůstala na stejné úrovni během Schillerové vlády.\n- Informace o sociálním pojištění na stránkách Ministerstva práce a sociálních věcí České republiky, které potvrzují, že sociální pojištění je povinné a jeho splacení je zajištěno automaticky."
+        },
+        {
+            "id": 3461,
+            "statement": "Mou bývalou firmu to zásadně poškodilo.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš byl v době svého vystupování v televizi ředitelem a vlastníkem firmy Agrofert, která byla v té době v jeho vlastnictví. Firma Agrofert byla v té době v procesu rozdělení na dvě samostatné společnosti, Agrofert a Babišova rodinná firma PPF, ale Babiš byl stále jejím vlastníkem. \n\nZDROJE: \n- https://www.ceskatelevize.cz/ct24/ekonomika/2111110-babis-odchazim-ze-stanovy-ppf-ale-je-jsem-still-jejim-vlastnim/ \n- https://www.ceskatelevize.cz/ct24/ekonomika/2111110-babis-odchazim-ze-stanovy-ppf-ale-je-jsem-still-jejim-vlastnim/"
+        },
+        {
+            "id": 5565,
+            "statement": "Za druhé podle zákona kancléř prověrku nepotřebuje. A za třetí kancléř prověrku má na stupeň vyhrazené.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože kancléř podle zákona potřebuje prověrku. Kancléř je úředník, který má přístup k důvěrným informacím a má vliv na rozhodování vlády, a proto je vyžadován bezpečnostní průkaz, který je udělován po úspěšném vykonání prověrky. \nZDROJE: Zákon č. 235/2004 Sb., o dotačních prostředcích z Evropského fondu pro regionální rozvoj a státního rozpočtu České republiky na podporu rozvoje venkova, zákon č. 361/2003 Sb., o služebním zákoně, a další zákony a předpisy upravující postavení a práva a povinnosti kancléře."
+        },
+        {
+            "id": 792,
+            "statement": "Já jsem tam (na jednání Komise pro spravedlivé důchody, pozn.) chodil.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Miloš Vystrčil je český politik a od roku 2020 do roku 2022 zastával funkci předsedy Senátu Parlamentu České republiky. Na základě dostupných informací nebylo možné potvrdit, že Miloš Vystrčil byl členem Komise pro spravedlivé důchody. \n\nZDROJE: \n- Oficiální stránky Senátu Parlamentu České republiky (senat.cz)\n- Biografie Miloše Vystrčila na serveru Aktuálně.cz (aktualne.cz)"
+        },
+        {
+            "id": 5967,
+            "statement": "Prezident mě často posílal do Parlamentu, abych za něj vyjednával, ať už s opozicí, nebo s vládou.",
+            "reference_label": "neověřitelné",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Pavel Fischer byl v době, kdy byl tento výrok učiněn, českým velvyslancem v Paříži a nikoli prezidentem. Prezidentem České republiky v roce 2017 byl Miloš Zeman. \n\nZDROJE: \n- Pavel Fischer - životopis na stránkách Ministerstva zahraničních věcí České republiky\n- Seznam prezidentů České republiky od roku 1993 do současnosti na stránkách Úřadu vlády České republiky"
+        },
+        {
+            "id": 4680,
+            "statement": "(na Svobodu) Těch 400 bytů, které jste zmiňoval, to byly ty vašimi spolustraníky bržděné projekty. V tuto chvíli se staví 1125 bytů na Praze 7.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok potvrzuje skutečnost, že Jan Čižinský jako pražský radní v roce 2018 informoval o počtu stavebních projektů na Praze 7. Vzhledem k tomu, že výrok obsahuje konkrétní čísla a informace o stavebních aktivitách, lze jej považovat za pravdivý.\nZDROJE: Informace o stavebních projektech na Praze 7 a čísla o počtu stavebních projektů jsou dostupné v oficiálních zdrojích města Prahy, případně v médiích, která informují o aktivitách pražského magistrátu."
+        },
+        {
+            "id": 323,
+            "statement": "Když se podíváte na počet nezaměstnaných a počet volných míst, tak vlastně žádná není (nezaměstnanost dlouhodobě, pozn.) je vlastně nulová.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože podle dostupných dat nezaměstnanost v České republice v roce 2024 byla vyšší než nulová. Podle údajů ČSÚ (Český statistický úřad) byla v únoru 2024 míra nezaměstnanosti 3,4 %. To znamená, že počet nezaměstnaných osob byl vyšší než počet volných míst, což potvrzuje, že nezaměstnanost nebyla nulová.\nZDROJE: \n- ČSÚ (Český statistický úřad) - údaje o míře nezaměstnanosti v únoru 2024."
+        },
+        {
+            "id": 6588,
+            "statement": "Ano, je tam napsané, že budeme usilovat o vyrovnaný rozpočet, ale zároveň říkáme, že pokud budou na stole efektivní investice, tak samozřejmě vyrovnaný rozpočet není mantra.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš jako ministr financí v roce 2017 skutečně usiloval o vyrovnaný rozpočet, ale zároveň také uvedl, že vyrovnaný rozpočet není jediným cílem a že efektivní investice jsou důležité. Nicméně, Babišova vláda nakonec v roce 2017 nedosáhla vyrovnaného rozpočtu a vláda musela přistoupit k vyhlášení nouzového stavu kvůli rozpočtové situaci.\n\nZDROJE: \n- Článek \"Babiš: Vyrovnaný rozpočet není mantra\" na serveru iDNES.cz z 3. září 2017\n- Článek \"Babišova vláda nedosáhla vyrovnaného rozpočtu\" na serveru Hospodářské noviny z 31. prosince 2017"
+        },
+        {
+            "id": 535,
+            "statement": "Na své slavné tiskové konferenci (vláda, pozn.) řekla, že ušetří 54 miliard na dotačním byznysu.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože na tiskové konferenci 3. září 2023 vláda skutečně uvedla, že chce ušetřit 54 miliard, ale pouze na dotačním byznysu v letech 2024-2028. To znamená, že ušetřené peníze budou rozděleny na 4 roky, nikoli na jeden rok. \n\nZDROJE: https://www.ceskatelevize.cz/ct24/soudce-za-soudce/20230903-hlavni-uradnik-havlicek-54-miliard-na-dotačním-byznysu-je-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-vel"
+        },
+        {
+            "id": 1838,
+            "statement": "Já jsem (...) na to (hrozbu migrace a islamizace, pozn.) upozorňoval už v roce 2012.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tomio Okamura je český politik a zakladatel hnutí Svoboda a přímá demokracie (SPD). V roce 2012 se však ještě neobjevil jako politický lídr, ale spíše jako aktivista a publicista. Okamura se v té době soustředil na prosazování témat jako je euroskepticismus a kritika Evropské unie. Hrozba migrace a islamizace se stala významným tématem v české politice až později, zejména po roce 2015, kdy se v Evropě rozrostla migrační krize. Okamura se poté stal jedním z hlavních kritiků migrační politiky a prosazoval tvrdší postupy proti imigrantům. Proto je jeho tvrzení, že již v roce 2012 upozorňoval na hrozbu migrace a islamizace, nepravdivé.\n\nZDROJE: \n- Článek o Tomiu Okamurovi na serveru Aktuálně.cz\n- Informace o hnutí Svoboda a přímá demokracie (SPD) na serveru Wikipedia\n- Články o migrační krizi v roce 2015 na serveru BBC News"
+        },
+        {
+            "id": 4438,
+            "statement": "Potřebujeme dneska před povolením stavby 20–150 razítek.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš v roce 2019 uvedl, že potřebujeme 20–150 razítek, ale v praxi se ukázalo, že je to výrazně více. Podle některých zdrojů bylo v roce 2019 v Praze použito až 300 razítek na jednom místě. Babišův výrok byl proto označen za nepravdivý, protože neodpovídal skutečnosti.\nZDROJE: [1] - Článek na serveru Aktuálně.cz z 1. ledna 2019, který cituje Babišův výrok. [2] - Článek na serveru Seznam.cz z 2. ledna 2019, který uvádí, že bylo použito až 300 razítek."
+        },
+        {
+            "id": 6733,
+            "statement": "Paní Kratochvílová byla moje blízká spolupracovnice po dobu tří let. (...) Z hlediska výběrového řízení, které vyhrála, byl určitě také záměr, že nebyla z toho prostředí a měla odpovídající vzdělání.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Kateřina Valachová byla v roce 2017 ministryní dopravy a v té době byla manželkou Petra Kratochvíla, který byl v té době poslancem. To znamená, že Kateřina Valachová a Petra Kratochvílová (dříve Valachová) nebyly pouze blízkými spolupracovnicemi, ale byly také manželkou a manželem. \nZDROJE: https://www.ceskatelevize.cz/ct24/domaci/1551119-katerina-valachova-je-nova-ministerka-dopravy/"
+        },
+        {
+            "id": 3251,
+            "statement": "(...) jsme povinni ověřovat kvalifikaci, tak jsme povinni od toho dodavatele žádat nedoplatky na daních nebo na sociálním a zdravotním pojištění. A tento doklad trvá třicet dnů.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože v České republice není povinnost od dodavatele žádat nedoplatky na daních nebo na sociálním a zdravotním pojištění. Podle zákona o registru smluv (č. 89/2012 Sb.) je povinnost ověřovat kvalifikaci dodavatele a požadovat doklady o kvalifikaci, ale ne o nedoplatcích na daních nebo sociálním a zdravotním pojištění. \n\nZDROJE: \n- Zákon o registru smluv (č. 89/2012 Sb.)\n- Informace o ověřování kvalifikace dodavatelů na webu Ministerstva financí České republiky"
+        },
+        {
+            "id": 3124,
+            "statement": "Ve @snemovna jde o hodně. Poslanci rozhodují o novele rozpočtu, v níž zvedáme investice na téměř 200 mld. Kč. To je bezkonkurenčně nejvíc v historii. Půjdou na dopravní infrastrukturu a další projekty, které mohou hned odstartovat. Jedině tak můžeme ekonomiku zase rozhýbat.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Aleny Schillerové je pravdivý, protože v roce 2020 skutečně vláda pod vedením premiéra Andreje Babiše navrhovala zvýšení investic do rozpočtu na téměř 200 miliard korun. Toto navrhované zvýšení investic bylo součástí vládní novely rozpočtu, která byla projednávaná v Poslanecké sněmovně. Alena Schillerová v té době zastávala funkci ministryně financí a byla jedním z hlavních představitelů této politiky.\n\nZDROJE: \n- Článek \"Babiš: Vláda navrhne zvýšit investice na 190 miliard\" na serveru ČT24 z 23. června 2020\n- Článek \"Vláda navrhne zvýšit investice na 190 miliard\" na serveru Hospodářské noviny z 23. června 2020"
+        },
+        {
+            "id": 8420,
+            "statement": "Já jsem ihned po nástupu do funkce […] komunikovala to, ano, novela školského zákona nabývá účinnosti 1. září 2016. To je pravda. Na tom se nic nezměnilo. (ČT 24, 1. 3., 90')",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Kateřina Valachová v tomto výroku tvrdí, že novela školského zákona nabývá účinnosti 1. září 2016. Nicméně, novela školského zákona, která byla navrhována Kateřinou Valachovou, byla schválena Poslaneckou sněmovnou 15. prosince 2015 a prezident Miloš Zeman ji podepsal 18. prosince 2015. Novela tedy nabývá účinnosti 1. ledna 2016, nikoli 1. září 2016.\nZDROJE: \n- https://www.psp.cz/sqw/text/text9.html?id=201500001 (text novely školského zákona)\n- https://www.psp.cz/sqw/text/text9.html?id=201500001#p1 (historie novely školského zákona)\n- https://www.psp.cz/sqw/text/text9.html?id=201500001#p2 (historie novely školského zákona)"
+        },
+        {
+            "id": 8480,
+            "statement": "Karlovarský kraj je nejen nejmenší, ale také nejchudší kraj v České republice.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Karlovarský kraj je nejmenší kraj v České republice, ale není nejchudším. Podle údajů z roku 2016 byl Karlovarský kraj 7. nejchudším krajem v České republice. \nZDROJE: [1] - ČSÚ (Český statistický úřad) - Regionální rozpočet 2016 [2] - ČSÚ (Český statistický úřad) - Regionální rozpočet 2016 - Tabulka 1.1.1.1."
+        },
+        {
+            "id": 2999,
+            "statement": "Nemáme ještě tu dálnici.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože v roce 2020 již existovala dálnice D1, která spojuje Prahu s Brnem. Dálnice D1 je jednou z nejdůležitějších dálnic v Česku a byla dokončena v roce 1971. Kromě ní existuje také řada dalších dálnic a rychlostních silnic v Česku.\nZDROJE: \n- https://cs.wikipedia.org/wiki/Dálnice_D1\n- https://www.dopravnimobil.cz/clanky/doprava/cesko/dalnice-v-cr-2020/"
+        },
+        {
+            "id": 2821,
+            "statement": "Tenhle koncept velkých odlehčovacích nemocnic funguje všude ve světě. Pokud se podíváte, jak to řešili ve Velké Británii, ve Španělsku, tak v nějakém momentě potřebovali odlehčovací kapacitu pro ty takzvané kamenné špitály.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože v době, kdy byl Jan Hamáček řekl, se Velká Británie a Španělsko potýkaly s pandemií COVID-19 a musely rychle budovat odlehčovací kapacity. Velká Británie například postavila velkokapacitní nemocnici v londýnském ExCeL Centre, která byla otevřena v březnu 2020. Španělsko také postavilo velkokapacitní nemocnici v Madridu, která byla otevřena v březnu 2020. Tyto kapacity nebyly postaveny na místě existujících \"kamenných špitálů\", ale byly nově vybudovány v krátkém čase, aby se vyrovnaly s náhlým nárůstem počtu pacientů s COVID-19.\nZDROJE: \n- BBC News: \"Coronavirus: NHS Nightingale hospital opens in London\" (anglicky)\n- The New York Times: \"Spain Builds a Giant Hospital in 10 Days to Fight the Coronavirus\" (anglicky)\n- El País: \"La UCI de la feria de Madrid se convierte en un hospital de campaña\" (španělsky)"
+        },
+        {
+            "id": 9266,
+            "statement": "Arcibiskup pražský, hlava katolické církve v Čechách a na Moravě, František Tomášek, státu za tento dar v srpnu 1991 poděkoval - jak již jsem řekl - a sdělil, že další majetky už katolická církev žádat nebude. Prohlásil doslova: To je poslední nárok, který církev vznáší. To je poslední nárok, který církev vznáší.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok potvrzuje, že arcibiskup František Tomášek skutečně v srpnu 1991 poděkoval státu za navrácení majetku a uvedl, že to bude poslední nárok, který církev vznáší. Toto tvrzení je potvrzeno v knize \"Pražský arcibiskup František Tomášek (1909-2005)\" od Jiřího Paroubka, který je politikem a historikem. Jiří Paroubek je známý svou prací v oblasti historie a politiky, a jeho kniha je považována za důvěryhodný zdroj informací o Františku Tomáškovi a jeho roli v české církvi.\n\nZDROJE: \n- Jiří Paroubek, \"Pražský arcibiskup František Tomášek (1909-2005)\""
+        },
+        {
+            "id": 7216,
+            "statement": "Když byla minimální mzda 8 500 korun hrubého, tak lidé, kteří dostávali dávky hmotné nouze, měli čistý příjem vyšší než ti, kteří pracovali za minimální mzdu. To už je pryč. Dnes, když minimální mzda bude od nového roku 11 tisíc korun hrubého, tak jedinec, který bude pobírat minimální mzdu, po zdanění té minimální mzdy bude mít vyšší čistý příjem než za dávky hmotné nouze. Za dávky hmotné nouze včetně doplatku na bydlení dostane 8 500 korun.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Bohuslav Sobotka v tomto výroku uvádí, že v roce 2016 měli lidé pobírající dávky hmotné nouze vyšší čistý příjem než ti, kteří pracovali za minimální mzdu. Dále uvádí, že od nového roku 2017 (ačkoli je zmíněno rok 2016) bude situace obrácená, tj. lidé pobírající minimální mzdu budou mít vyšší čistý příjem než ti, kteří pobírají dávky hmotné nouze. Bohuslav Sobotka v tomto výroku uvádí pravdivé informace o situaci v roce 2016 a předpovídá situaci pro rok 2017.\n\nZDROJE: \n- Informace o minimální mzdě a dávkách hmotné nouze v roce 2016 a 2017\n- Informace o zdanění minimální mzdy a dávek hmotné nouze v roce 2016 a 2017\n- Informace o situaci v ekonomice a sociálních službách v roce 2016 a 2017"
+        },
+        {
+            "id": 7015,
+            "statement": "Jsem jediný politik od roku 93, který zveřejnil své příjmy. (...) Já jsem zaplatil 337 milionů daní. Moje firmy za posledních 10 let zaplatily 23 miliard daní a odvodů.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš nebyl jediným politikem od roku 1993, který zveřejnil své příjmy. V té době již existoval zákon o střetu zájmů, který vyžaduje, aby politici a úředníci zveřejňovali své majetkové poměry a příjmy. Navíc, v roce 2017, kdy Babiš řekl toto, již existoval zákon o střetu zájmů, který byl přijat v roce 2011 a který vyžaduje, aby politici a úředníci zveřejňovali své majetkové poměry a příjmy.\n\nBěhem svého působení jako premiér v roce 2017 Babiš opakovaně tvrdil, že je transparentní a že zveřejňuje své příjmy. Nicméně, jeho společnost Agrofert, která je jeho největší majetkovou hodnotou, byla v roce 2017 převedena do fondu Agrofert, který je řízen Babišovým synem. Toto převedení bylo kritizováno jako snaha o skrytí majetku a o obcházení zákona o střetu zájmů.\n\nZDROJE:\n- Článek \"Babiš: Já jsem jediný politik, který zveřejnil své příjmy\" na serveru Seznam Zprávy z 12. února 2017\n- Článek \"Babišova společnost Agrofert byla převedena do fondu\" na serveru Seznam Zprávy z 1. března 2017\n- Zákona o střetu zájmů z roku 2011"
+        },
+        {
+            "id": 4125,
+            "statement": "Dostali jsme o 21 tisíc hlasů víc než v těch minulých (ve volbách do Evropského parlamentu, pozn.)",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Marek Výborný, který byl v roce 2019 lídrem hnutí ANO v Praze, ve volbách do Evropského parlamentu 2019 získal 11,33% hlasů, což je o 1,33% méně než v předchozích volbách do Evropského parlamentu v roce 2014, kdy hnutí ANO získalo 12,66% hlasů.\n\nZDROJE: \n- Volby do Evropského parlamentu 2014: https://volby.cz/pls/kv2014/kvz2014?xjazyk=1&xid=1&xv=1&xk=1&xw=1&xkod=1&xkodp=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkodt=1&xkodz=1&xkod"
+        },
+        {
+            "id": 7857,
+            "statement": "Ve většině krajů jsou komunisté ve vládní koalici.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože v roce 2016 se v České republice nacházela vládní koalice složená z hnutí ANO 2011, ČSSD a KDU-ČSL. Komunistická strana ČSSD byla v opozici. Miloš Zeman byl v roce 2016 prezidentem České republiky a neměl přímý vliv na složení vlády.\nZDROJE: \n- Oficiální stránky vlády České republiky (archivované verze z roku 2016)\n- Seznam poslanců a členů vlády na stránkách Poslanecké sněmovny Parlamentu České republiky (archivované verze z roku 2016)"
+        },
+        {
+            "id": 9463,
+            "statement": "Problém je i u dětí, které vycházejí z dětských domovů, tam to není (jejich budoucí bydlení) vůbec řešeno.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Marty Semelové potvrzuje skutečnost, že v některých dětských domovech není řešeno budoucí bydlení dětí, které v nich žijí. Tato informace je podporována zprávami o problémech s integrací dětí z dětských domovů do společnosti a jejich následným bydlením. Například v roce 2014 se média zabývala problémem, že děti z dětských domovů často nemají jistotu, kde budou bydlet po odchodu z domova.\nZDROJE: \n- Článek \"Děti z dětských domovů často nemají jistotu, kde budou bydlet\" na serveru Aktuálně.cz z 8. října 2014."
+        },
+        {
+            "id": 1173,
+            "statement": "(...) někdo, kdo je člen vedení dopravního podniku (Adam Scheinherr jakožto předseda dozorčí rady, pozn.) má takovéto podezření a připustí a nechá hlasovat pro to, aby se tam potvrzovali lidé, kteří jsou přímo do té kauzy (Dozimetr, pozn.) zapojeni.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok potvrzuje, že existuje podezření z korupčního chování v dopravním podniku, a to konkrétně v souvislosti s kauzou Dozimetr. Výrok také uvádí, že člen vedení dopravního podniku (Adam Scheinherr) připustil hlasování o potvrzení lidí, kteří jsou přímo do této kauzy zapojeni. To naznačuje, že existuje určitá forma spolupráce nebo ochoty spolupracovat s osobami zapojenými do kauzy, což je podezření, které výrok potvrzuje.\nZDROJE: Výrok je citován z článku nebo rozhovoru, ale konkrétní zdroj není uveden."
+        },
+        {
+            "id": 4987,
+            "statement": "A já bych chtěl ukázat divákům, že já jsem s nimi tady uzavřel smlouvu před volbami, v říjnu 2017 a tam já plním ty body. Já jsem se zavázal, že nikdy nevpustíme na naše území ilegální migranty a nebudeme nikdy souhlasit s rozdělováním migrantů podle povinných kvót. To jsem splnil za šest měsíců, to jsme prosadili, ano.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš v říjnu 2017 skutečně uzavřel smlouvu s hnutím SPD, ale v této smlouvě se zavázal k tomu, že pokud bude vládnout, bude přistupovat k přijímání migrantů v souladu s evropskou legislativou a bude respektovat povinné kvóty. V říjnu 2017 ještě nebyla schválena povinná kvóta na rozdělení migrantů, a to bylo schváleno až v prosinci 2018. Babišova vláda se také nezmocnila k přijetí kvót, ale naopak se zavázala, že bude usilovat o jejich zrušení.\n\nZDROJE: \n- Smlouva mezi ANO a SPD z 13. října 2017 (článek 3, odstavec 2) [1]\n- Schválení povinných kvót na rozdělení migrantů v prosinci 2018 [2]\n- Zpráva o vládní politice týkající se migrantů od 1. ledna 2019 [3]\n\nPoznámka: Zdroje jsou v češtině, proto je možné, že některé odkazy nebudou funkční pro uživatele s jinou lokalizací.\n\n[1] https://www.rozhlas.cz/_zprava/smlouva-ano-spd-20171013\n[2] https://www.rozhlas.cz/_zprava/evropske-soudy-schvalily-povinne-kvoty-na-rozdeleni-migrantu-20181218\n[3] https://www.rozhlas.cz/_zprava/vlada-od-1-1-2019-nebude-rozdilat-migranty-po-kvotach-20190101"
+        },
+        {
+            "id": 1636,
+            "statement": "Povinné očkování existuje v případě celé řady nemocí.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Miloš Zeman se v roce 2021 vyslovil proti povinnému očkování proti COVID-19. V daném výroku je uvedeno, že povinné očkování existuje v případě celé řady nemocí, což je nepravda. Povinné očkování proti COVID-19 bylo v České republice zavedeno v roce 2021, ale pouze pro některé skupiny obyvatel, jako jsou zdravotníci, seniorky a seniorky v pečovatelských zařízeních a další skupiny, nikoli pro celou populaci.\n\nZDROJE: \n- Článek \"Zeman: Očkování proti koronaviru je zbytečné\" na serveru ČT24 z 26. prosince 2021."
+        },
+        {
+            "id": 867,
+            "statement": "Hlavní „cenzor“ na vládě řekl, že ty billboardy jsou obrovský problém.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Andrej Babiš je bývalý premiér České republiky a bývalý ministr financí, ale není známý jako „cenzor“. V roli premiéra a ministra financí měl na starosti ekonomiku a vládní politiku, nikoli cenzuru. \n\nZDROJE: \n- https://www.ceskatelevize.cz/porady/101/poslani-stredoevropy/poslani-stredoevropy/20230119-babi-je-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-proti-velkemu-"
+        }
+    ]
+}

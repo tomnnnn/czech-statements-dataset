@@ -1,0 +1,252 @@
+{
+    "accuracy": 0.65,
+    "correct": 65,
+    "total": 100,
+    "incorrect": [
+        {
+            "id": 2143,
+            "statement": "Loni jsem strávila léto tím, že jsem objela 12 krajů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Aleny Schillerové o tom, že loni strávila léto tím, že objela 12 krajů, nelze ověřit bez dalších informací. Nemáme žádné údaje o jejích aktivitách v předchozím roce, ani o tom, zda skutečně navštívila všechny 12 krajů. Bez konkrétních důkazů nebo dalších informací nelze tento výrok potvrdit ani vyvrátit.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, aby ověřily nebo vyvrátily tento výrok."
+        },
+        {
+            "id": 7100,
+            "statement": "Já jsem nehlasoval pro občanský zákoník. Měl jsem výhrady, že nový občanský zákoník vytváří prostředí, které je velmi netransparentní.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Vojtěch Filip, předseda KSČM, skutečně hlasoval proti občanskému zákoníku v roce 2012. Občanský zákoník byl schválen Poslaneckou sněmovnou 1. února 2012 a Vojtěch Filip se k němu vyjádřil kriticky, zejména kvůli některým jeho ustanovením, která považoval za netransparentní nebo nespravedlivá. Jeho výhrady směřovaly například proti ustanovení o ochraně osobnosti nebo proti některým změnám v oblasti dědického práva.\nZDROJE: \n- Zákon č. 89/2012 Sb., občanský zákoník\n- Zpráva o projednání zákona ve Sněmovně, dostupná na webu Poslanecké sněmovny\n- Články a rozhovory s Vojtěchem Filipem z roku 2012, dostupné v archivovaných novinách a na zpravodajských serverech."
+        },
+        {
+            "id": 8903,
+            "statement": "A jestliže Andrej Babiš dostává nyní více, v letech 2013, 2014 rostou příjmy ze státního rozpočtu do jeho byznysu a zároveň s tím klesá jeho daňová povinnost vůči státu, jinými slovy platí méně na daních, než když v politice nebyl...",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Miroslavy Němcové se týká skutečnosti, že Andrej Babiš, jako majitel holdingu Agrofert, který zahrnuje řadu firem včetně těch, které jsou aktivní v zemědělství, potravinářství a chemickém průmyslu, získal prostřednictvím svých firem významné státní dotace a smlouvy. Tyto finanční prostředky plynuly do jeho byznysu z veřejných zdrojů, včetně evropských fondů a státního rozpočtu. Současně, jakmile se Babiš stal ministrem financí a později i premiérem, jeho firmy začaly využívat různé daňové optimalizace a benefity, které vedly ke snížení daňové povinnosti. Toto snížení daňové povinnosti mohlo být důsledkem změn v daňovém zákonodárství, které Babiš jako ministr financí prosadil, nebo využíváním různých daňových výjimek a výhod, které jsou k dispozici pro podniky v České republice. Tyto skutečnosti byly předmětem kritiky a debat, protože se zdálo, že Babiš jako politik využívá svého postavení k ovlivňování legislativy ve prospěch svých vlastních ekonomických zájmů.\nZDROJE: \n- Články a analýzy z českých médií, jako jsou Hospodářské noviny, Mladá fronta DNES, a další, které se zabývaly podnikáním Andreje Babiše a jeho vazbami na státní rozpočet a daňový systém.\n- Zprávy a dokumenty z českých úřadů a institucí, jako je Ministerstvo financí, Ministerstvo zemědělství, a další, které poskytují informace o dotacích a státních zakázkách získaných firmami ze skupiny Agrofert.\n- Výroční zprávy a účetní závěrky firem ze skupiny Agrofert, které mohou poskytnout informace o jejich finančních výsledcích a daňové povinnosti."
+        },
+        {
+            "id": 1717,
+            "statement": "Itálie například zavedla povinné očkování úplně pro všechny.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Itálie skutečně zavedla povinné očkování proti COVID-19 pro všechny obyvatele starší 50 let od 15. února 2022 do 15. června 2022. Dále od 1. října 2021 do 15. června 2022 bylo povinné očkování pro zdravotníky a pracovníky v sociálních službách. \nZDROJE: https://www.ilsole24ore.com/art/italy-makes-vaccines-mandatory-people-over-50-ADzFf3H, https://www.euronews.com/2022/01/06/italy-covid-vaccine-mandatory-for-over-50s"
+        },
+        {
+            "id": 6418,
+            "statement": "Sami podnikatelé hlasovali pro to, že to byl druhý nejlepší zákon (o elektronické evidenci tržeb, pozn.) za minulý rok.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle průzkumu Svazu průmyslu a dopravy ČR z roku 2017, který zjišťoval názory podnikatelů na zákon o elektronické evidenci tržeb, většina respondentů považovala tento zákon za druhý nejlepší zákon za rok 2016. Tento průzkum tak potvrzuje tvrzení Andreje Babiše.\nZDROJE: Svaz průmyslu a dopravy ČR, článek na idnes.cz ze dne 2. října 2017."
+        },
+        {
+            "id": 368,
+            "statement": "Já jsem byl ten den (v den odborářské stávky, pozn.) také ve škole (...) a mluvil jsem jak s učiteli, tak se studenty (...). Navštívil jsem taky zemědělský podnik, který shodou okolností jako jeden z vedoucích, nikoliv majitelů, vlastníků, (...) jeden z vedoucích reprezentantů nebo z managementu byl bratr pana Jurečky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože bez dalších informací nebo důkazů nelze ověřit, zda se Petr Fiala skutečně setkal s učiteli, studenty a navštívil zemědělský podnik, jehož management zahrnoval bratra pana Jurečky. Bez konkrétních důkazů nebo svědectví nelze potvrdit ani vyvrátit pravdivost tohoto tvrzení.\nZDROJE: Žádné konkrétní zdroje nejsou uvedeny, protože výrok je založen na osobním tvrzení Petra Fialy a nelze jej ověřit bez dalších informací."
+        },
+        {
+            "id": 9227,
+            "statement": "Někdo tady jednal 19 let s paní Havránkovou. My jsme to jednání před dvěma týdny dokončili.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Andrej Babiš se ve svém výroku zmiňuje o jednání s paní Havránkovou, které trvalo 19 let a bylo dokončeno před dvěma týdny. Bez dalších informací o kontextu a podrobnostech tohoto jednání nelze přesně určit, o jaké jednání se jednalo. Nicméně, pokud Andrej Babiš tvrdí, že jednání s paní Havránkovou trvalo 19 let a bylo dokončeno, lze předpokládat, že se jedná o skutečnou událost, ke které došlo. Bez dalších informací nebo důkazů, které by tento výrok vyvracely, lze předpokládat, že výrok je pravdivý.\nZDROJE: Pro ověření tohoto výroku by bylo nutné mít přístup k informacím o jednáních Andreje Babiše a paní Havránkové, které nejsou veřejně dostupné. Nicméně, na základě dostupných informací a kontextu výroku, lze předpokládat, že výrok je pravdivý."
+        },
+        {
+            "id": 4853,
+            "statement": "Zastupitelstvo schválilo rozsah někde mezi 400 a 600 tisíci (vklad zájemců o bydlení do bytového družstva, pozn.)",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože nemám dostatek informací o konkrétním zastupitelstvu, které schválilo rozsah vkladů zájemců o bydlení do bytového družstva, ani o datu a místě, kde se toto stalo. Bez dalších informací nelze ověřit, zda se tak skutečně stalo a zda rozsah byl skutečně mezi 400 a 600 tisíci.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok je příliš obecný a neobsahuje dostatek informací pro ověření."
+        },
+        {
+            "id": 6761,
+            "statement": "Za jeho ministrování (Sobotka, pozn.) poslal svým kámošům do Škody Plzeň, to je ta parta Pokorný-Roman, 11,5 miliardy. Ekologické zakázky.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Během ministrování Bohuslava Sobotky v letech 2014-2017 skutečně proběhly ekologické zakázky ve Škodě Plzeň, které byly financovány státem. Tyto zakázky byly součástí programu na snížení znečištění ovzduší a zlepšení životního prostředí. Jednalo se o projekty na snížení emisí a zlepšení ekologické situace v regionu. Společnost Škoda Plzeň, která je součástí skupiny Doosan, získala státní dotace na realizaci těchto projektů. I když nelze ověřit, zda Andrej Babiš měl na mysli konkrétně 11,5 miliard korun, je pravdou, že během Sobotkova ministrování byly ve Škodě Plzeň realizovány ekologické zakázky financované státem.\nZDROJE: \n- Ministerstvo životního prostředí ČR: Informace o ekologických zakázkách a projektech ve Škodě Plzeň\n- Škoda Plzeň: Informace o realizovaných projektech a spolupráci se státem\n- Hospodářské noviny: Články o ekologických zakázkách a dotacích pro Škodu Plzeň během Sobotkova ministrování"
+        },
+        {
+            "id": 5962,
+            "statement": "Čekal jsem také, jestli politické strany vygenerují nějaké kandidáty, jako tomu bylo vždycky v minulosti. Ani z té strany jsem se ničeho nedočkal.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože neobsahuje žádnou konkrétní a ověřitelnou informaci, která by mohla být potvrzena nebo vyvrácena. Jiří Drahoš zde vyjadřuje své očekávání a zklamání z chování politických stran, ale neuvádí žádné specifické skutečnosti, které by mohly být ověřeny.\nZDROJE: Žádné konkrétní zdroje nejsou potřebné, protože výrok je subjektivní a neobsahuje ověřitelné informace."
+        },
+        {
+            "id": 6611,
+            "statement": "Tato vláda měla plná ústa boje s korupcí, ale je vládou s historicky nejvyšším počtem zakázek bez výběrového řízení.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Miroslava Kalouska se týká vlády Bohuslava Sobotky, která byla u moci od roku 2014 do roku 2017. Podle údajů Nejvyššího kontrolního úřadu (NKÚ) a dalších zdrojů, skutečně vláda Bohuslava Sobotky uzavřela rekordní počet zakázek bez výběrového řízení. To potvrzuje, že vláda, která deklarovala boj s korupcí, sama uzavřela neobvykle vysoký počet smluv bez řádného výběrového řízení, což může být vnímáno jako rozporuplné.\nZDROJE: \n- Nejvyšší kontrolní úřad (NKÚ) - zprávy a analýzy o veřejných zakázkách\n- Média a zpravodajské servery z roku 2017, které informovaly o počtu zakázek bez výběrového řízení během vlády Bohuslava Sobotky."
+        },
+        {
+            "id": 7264,
+            "statement": "Není pravda, že lidé nevědí. (...) Na koho se bude třetí a čtvrtá vlna EET vztahovat a kdy, je dáno, ten zákon platí, my se bavíme jenom o tom, jestli ještě dojde k nějaké změně.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Pavla Bělobrádka se týká třetí a čtvrté vlny elektronické evidence tržeb (EET) v České republice. Podle zákona o EET, který byl schválen v roce 2015, měly být postupně zavedeny čtyři vlny EET. První vlna začala 1. prosince 2016 a týkala se restaurací a ubytovacích služeb. Další vlny měly následovat v roce 2017 a 2018. Pavel Bělobrádek ve svém výroku uvádí, že podmínky pro třetí a čtvrtou vlnu EET jsou stanoveny zákonem a že se diskutuje o možných změnách. To odpovídá skutečnosti, protože v té době se skutečně diskutovalo o možných úpravách zákona o EET.\nZDROJE: \n- Zákon č. 112/2016 Sb., o evidenci tržeb\n- Články z prosince 2016 o EET na zpravodajských serverech, jako je iDnes.cz nebo Novinky.cz"
+        },
+        {
+            "id": 1261,
+            "statement": "600 tisíc voličů nikoho nekroužkovalo, volili ty kandidátky včetně pirátských lídrů, ale to kroužkování 250 tisíc vyneslo vlastně ty mandáty STANu.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Ivan Bartoš ve svém výroku poukazuje na skutečnost, že během voleb v roce 2021 mnoho voličů nekroužkovalo žádné kandidáty, ale přesto některé strany, jako je STAN, získaly mandáty díky preferenčním hlasům. To znamená, že i když někteří voliči nekroužkovali žádné kandidáty, jejich hlasy byly připsány stranám, jejichž kandidáti se umístili na předních místech. V tomto případě se Ivan Bartoš zmiňuje o tom, že 250 tisíc kroužků vyneslo mandáty STANu, což naznačuje, že preferenční hlasy sehrály významnou roli ve výsledku voleb.\nZDROJE: \n- Výsledky voleb do Poslanecké sněmovny Parlamentu České republiky 2021\n- Analýzy volebních výsledků a preference hlasů\n- Prohlášení Ivana Bartoše ze dne 2. srpna 2022"
+        },
+        {
+            "id": 2256,
+            "statement": "Už dnes my tam (v rodném listu, pozn.) nemáme matka a otec, my tam máme zákonný zástupce.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Barbory Kořanové se týká změny v rodném listu, kde místo tradičních označení \"matka\" a \"otec\" je nyní používán termín \"zákonný zástupce\". Tato změna byla provedena v rámci zákona č. 89/2012 Sb., občanský zákoník, který nabyl účinnosti 1. ledna 2014. Tento zákoník umožňuje, aby rodičovská role byla zastoupena jedním nebo více zákonnými zástupci, kteří nemusí být biologickými rodiči dítěte. Toto ustanovení umožňuje větší flexibilitu a přizpůsobení se různým rodinným situacím, jako jsou například adopce, pěstounská péče nebo jiné formy rodičovství.\nZDROJE: \n- Zákon č. 89/2012 Sb., občanský zákoník\n- Informace o změnách v rodném listu na stránkách Ministerstva vnitra ČR\n- Články a komentáře k tématu na serverech jako je iDnes.cz, Novinky.cz apod."
+        },
+        {
+            "id": 600,
+            "statement": "Příspěvek na bydlení vyplácíme v termínech, které nám dává zákon. U většiny krajů jsme v rozmezí mezi 15 a 21 dny. V Praze jsme na hranici kolem 30 dnů. A to v 98 procentech případů jen proto, že jsme daného klienta vyzvali, aby nám něco doručil, a on nám zatím požadovanou písemnost nebo informaci nedodal.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Mariana Jurečky o termínech vyplácení příspěvku na bydlení a důvodech pro případné zpoždění se jeví jako pravdivý. Podle zákona o státní sociální podpoře je příspěvek na bydlení vyplácen v měsíčních splátkách, a to nejpozději do 15. dne měsíce následujícího po měsíci, za který se příspěvek vyplácí. Nicméně, v případě, že je třeba vyžádat další informace nebo dokumenty od klienta, může dojít ke zpoždění. Údaj o 98 procentech případů zpoždění v Praze kvůli nedodání požadovaných dokumentů nebo informací nelze ověřit bez konkrétních dat, ale obecně je možné, že většina zpoždění může být způsobena právě touto příčinou.\nZDROJE: \n- Zákon o státní sociální podpoře (č. 117/1995 Sb.)\n- Informace o příspěvku na bydlení na webu Ministerstva práce a sociálních věcí ČR\n- Média a zpravodajské servery, které informují o sociálních dávkách a jejich vyplácení."
+        },
+        {
+            "id": 6633,
+            "statement": "Dvě stě poslanců už dnes může přece změnit Ústavu.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Ústava České republiky indeed stanoví, že ke změně Ústavy je zapotřebí souhlasu třípětinové většiny všech poslanců, tj. 120 poslanců, nebo souhlasu třípětinové většiny přítomných poslanců, pokud je přítomna alespoň třípětinová většina všech poslanců. Vzhledem k tomu, že Poslanecká sněmovna má 200 poslanců, znamená to, že ke změně Ústavy je zapotřebí souhlasu alespoň 120 poslanců. Pokud je přítomno méně než 200 poslanců, může být Ústava změněna souhlasem třípětinové většiny přítomných poslanců, což může být méně než 120 poslanců. Nicméně, pokud je přítomno všech 200 poslanců, pak je skutečně zapotřebí souhlasu 120 poslanců, aby mohla být Ústava změněna.\n\nZDROJE: \n- Ústava České republiky, článek 39\n- Zákon č. 1/1993 Sb., o Ústavě České republiky, článek 39\n- Webové stránky Poslanecké sněmovny Parlamentu České republiky, informace o změně Ústavy"
+        },
+        {
+            "id": 1318,
+            "statement": "Česká republika místo, aby si nasmlouvala plyn přímo, jako to má demokratické Rakousko, Německo, Slovensko či Maďarsko, tak my nakupujeme plyn přibližně za trojnásobnou cenu přes německé obchodníky, kteří stejně nakupují plyn v Rusku. Takže u nás to funguje tak, že zatímco můžeme nakupovat plyn za 6 Kč za kubík, tak my ho nakupujeme přibližně za 20–25 Kč za kubík.",
+            "reference_label": "neověřitelné",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tvrdí se, že Česká republika nakupuje plyn přes německé obchodníky za trojnásobnou cenu, zatímco by mohla nakupovat plyn přímo za nižší cenu. Nicméně, tato tvrzení nejsou zcela přesná. Česká republika nakupuje plyn prostřednictvím různých zprostředkovatelů, včetně českých firem, a cena plynu se odvíjí od mnoha faktorů, jako jsou smlouvy, tržní podmínky a dopravní náklady. Navíc, cena 6 Kč za kubík plynu, kterou zmiňuje Tomio Okamura, není reálná cena, za kterou by Česká republika mohla plyn nakupovat. Cena plynu se pohybuje na základě tržních podmínek a v roce 2022 byla cena plynu na evropských trzích výrazně vyšší než 6 Kč za kubík.\nZDROJE: \n- Články z českých médií, jako je Hospodářské noviny, iDnes, či Deník N, které informují o cenách plynu a způsobu jeho nákupu v České republice.\n- Webové stránky českých firem, které se zabývají prodejem a distribucí plynu, jako je například ČEZ, E.ON nebo innogy.\n- Zprávy a analýzy z evropských energetických trhů, jako je například agentura Bloomberg nebo Platts."
+        },
+        {
+            "id": 6574,
+            "statement": "A skutečně jsme vybrali obrovské množství daní a odvodů, 604 miliard za období tý naší vlády, ještě do konce července.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše o výběru daní a odvodů ve výši 604 miliard korun za období jeho vlády do konce července 2017 lze ověřit pomocí údajů z Ministerstva financí ČR. Podle těchto údajů, vláda skutečně vybrala vysoké částky daní a odvodů, což odpovídá tvrzení Andreje Babiše. Za rok 2017 dosáhl výběr daní a odvodů rekordní hodnoty, a to i díky ekonomickému růstu a efektivní správě daní.\nZDROJE: \n- Ministerstvo financí ČR: Výběr daní a odvodů v roce 2017\n- ČTK: Výběr daní a odvodů dosáhl rekordu, řekl Babiš\n- MF Dnes: Babiš: Za osm měsíců jsme vybrali 604 miliard, to je rekord"
+        },
+        {
+            "id": 3461,
+            "statement": "Mou bývalou firmu to zásadně poškodilo.",
+            "reference_label": "zavádějící",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože nevíme, o jaké firmě a jakém poškození Andrej Babiš mluví. Bez dalších informací nelze ověřit, zda jeho bývalá firma skutečně utrpěla nějaké škody a zda je to pravda.\nZDROJE: Žádné konkrétní zdroje nejsou uvedeny, protože výrok je příliš obecný a neobsahuje dostatek informací pro ověření."
+        },
+        {
+            "id": 5565,
+            "statement": "Za druhé podle zákona kancléř prověrku nepotřebuje. A za třetí kancléř prověrku má na stupeň vyhrazené.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle zákona č. 148/1998 Sb., o ochraně utajovaných skutečností a o změně některých zákonů, ve znění pozdějších předpisů, indeed platí, že prezident republiky a osoby jím pověřené, včetně kancléře, nepotřebují prověrku pro přístup k utajovaným skutečnostem. Dále, kancléř Kanceláře prezidenta republiky má často prověrku na stupeň \"Vyhrazené\", který je jedním z nižších stupňů utajení.\nZDROJE: Zákon č. 148/1998 Sb., o ochraně utajovaných skutečností a o změně některých zákonů, ve znění pozdějších předpisů."
+        },
+        {
+            "id": 792,
+            "statement": "Já jsem tam (na jednání Komise pro spravedlivé důchody, pozn.) chodil.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože bez dalšího kontextu nebo informací nelze ověřit, zda Miloš Vystrčil skutečně chodil na jednání Komise pro spravedlivé důchody. Nemáme přístup k informacím o jeho účasti na těchto jednáních, a proto nelze výrok potvrdit ani vyvrátit.\nZDROJE: Žádné dostupné zdroje nejsou uvedeny, protože výrok je příliš obecný a nelze jej ověřit bez dalších informací."
+        },
+        {
+            "id": 5967,
+            "statement": "Prezident mě často posílal do Parlamentu, abych za něj vyjednával, ať už s opozicí, nebo s vládou.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Pavel Fischer skutečně působil jako poradce prezidenta Václava Havla a později i prezidenta Václava Klause. Jako poradce prezidenta často zastupoval hlavu státu v jednáních s vládou a opozicí v Parlamentu. Jeho role zahrnovala vyjednávání a komunikaci mezi prezidentem a ostatními ústavními činiteli.\nZDROJE: \n- Oficiální stránky Pavla Fischera\n- Články a rozhovory s Pavlem Fischerem v českých médiích, například na serveru iDNES.cz nebo v deníku Mladá fronta DNES\n- Informace o činnosti Pavla Fischera jako poradce prezidenta na oficiálních stránkách Pražského hradu"
+        },
+        {
+            "id": 4680,
+            "statement": "(na Svobodu) Těch 400 bytů, které jste zmiňoval, to byly ty vašimi spolustraníky bržděné projekty. V tuto chvíli se staví 1125 bytů na Praze 7.",
+            "reference_label": "neověřitelné",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle dostupných informací, Jan Čižinský, jako starosta Prahy 7, skutečně uvádí, že se v dané době staví 1125 bytů na Praze 7. Toto číslo se shoduje s údaji o stavební činnosti v Praze 7 v roce 2018. Nicméně, bez dalších informací o projektech bržděných spolustraníky, nelze potvrdit druhou část výroku.\nZDROJE: \n- Záznam z jednání zastupitelstva Prahy 7\n- Články z roku 2018 o stavební činnosti v Praze 7"
+        },
+        {
+            "id": 323,
+            "statement": "Když se podíváte na počet nezaměstnaných a počet volných míst, tak vlastně žádná není (nezaměstnanost dlouhodobě, pozn.) je vlastně nulová.",
+            "reference_label": "zavádějící",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Zbyňka Stanjury, že nezaměstnanost je vlastně nulová, když se podíváme na počet nezaměstnaných a počet volných míst, není pravdivý. Nezaměstnanost je komplexní problém, který zahrnuje nejen počet volných míst, ale také dovednosti, kvalifikaci a geografickou mobilitu pracovníků. I když je velký počet volných míst, neznamená to automaticky, že všichni nezaměstnaní mohou tyto pozice okamžitě obsadit. Může existovat nesoulad mezi dovednostmi a kvalifikací nezaměstnaných a požadavky volných míst, nebo mohou existovat bariéry, jako je nedostatek dopravy nebo bydlení, které brání lidem v přijetí volných míst. Kromě toho, i když je počet volných míst vysoký, nezaměstnanost může stále existovat z důvodu strukturálních nebo sezónních faktorů.\nZDROJE: \n- Český statistický úřad (ČSÚ) - data o nezaměstnanosti a volných místech\n- Ministerstvo práce a sociálních věcí ČR - informace o nezaměstnanosti a trhu práce\n- Ekonomické analýzy a studie o trhu práce v ČR"
+        },
+        {
+            "id": 4331,
+            "statement": "Jednak k posílení pravomocí Evropského parlamentu, protože to je snad jediný parlament, který nemá zákonodárnou iniciativu.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Evropský parlament je indeed jediným parlamentem na úrovni Evropské unie, který nemá zákonodárnou iniciativu. Zákonodárnou iniciativu v EU mají Evropská komise, Rada Evropské unie a členské státy. Evropský parlament může pouze navrhnout legislativní změny, ale nemůže sám iniciovat legislativní proces. To je jeden z důvodů, proč je Evropský parlament považován za parlament s omezenými pravomocemi ve srovnání s národními parlamenty.\nZDROJE: \n- Oficiální stránky Evropského parlamentu: https://www.europarl.europa.eu/\n- Úřady Evropské unie: https://eur-lex.europa.eu/\n- Články o Evropském parlamentu a jeho pravomocích: https://www.euractiv.cz/section/eu-institutions/news/evropsky-parlament-chce-vic-pravomoci/ \n- Další zdroje o Evropském parlamentu a jeho legislativních pravomocích."
+        },
+        {
+            "id": 3251,
+            "statement": "(...) jsme povinni ověřovat kvalifikaci, tak jsme povinni od toho dodavatele žádat nedoplatky na daních nebo na sociálním a zdravotním pojištění. A tento doklad trvá třicet dnů.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok se týká povinnosti ověřovat kvalifikaci dodavatelů a žádat nedoplatky na daních nebo na sociálním a zdravotním pojištění. Podle zákona č. 134/2016 Sb., o zadávání veřejných zakázek, mají zadavatelé povinnost ověřovat kvalifikaci dodavatelů, včetně jejich daňové a pojistné způsobilosti. Zákon také stanoví, že zadavatelé mohou požadovat od dodavatelů doklad o zaplacení daní a pojistného. Doba platnosti tohoto dokladu může být stanovena na třicet dnů, v závislosti na konkrétních požadavcích zadavatele.\nZDROJE: \n- Zákon č. 134/2016 Sb., o zadávání veřejných zakázek\n- Zákon č. 235/2004 Sb., o dani z přidané hodnoty\n- Zákon č. 48/1997 Sb., o veřejném zdravotním pojištění\n- Zákon č. 589/1992 Sb., o pojistném na sociální zabezpečení a příspěvku na státní politiku zaměstnanosti"
+        },
+        {
+            "id": 3124,
+            "statement": "Ve @snemovna jde o hodně. Poslanci rozhodují o novele rozpočtu, v níž zvedáme investice na téměř 200 mld. Kč. To je bezkonkurenčně nejvíc v historii. Půjdou na dopravní infrastrukturu a další projekty, které mohou hned odstartovat. Jedině tak můžeme ekonomiku zase rozhýbat.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Aleny Schillerové o navýšení investic na téměř 200 mld. Kč v novele rozpočtu, které mají být využity pro dopravní infrastrukturu a další projekty, je pravdivý. V roce 2020 skutečně proběhla diskuse o navýšení investic v rámci novely rozpočtu, a to zejména s cílem podpořit ekonomiku v době pandemie COVID-19. Tyto investice měly být využity pro různé projekty, včetně dopravní infrastruktury, s cílem stimulovat ekonomický růst.\nZDROJE: \n- Zprávy z června 2020 o novele rozpočtu a navýšení investic\n- Informace o vládních plánech na podporu ekonomiky během pandemie COVID-19\n- Média a zpravodajské servery, které informovaly o jednáních ve Sněmovně a vládních plánech na podporu ekonomiky."
+        },
+        {
+            "id": 1276,
+            "statement": "Máme jako jedna z mála stran jasně definovaný postoj k euru.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Vít Rakušan, jako předseda strany STAN, skutečně vyjádřil jasný postoj k euru. Strana STAN dlouhodobě podporuje přijetí eura v České republice a tento postoj je součástí jejich programu. Rakušan se k tomuto tématu vyjádřil v různých příležitostech, včetně veřejných debat a rozhovorů.\nZDROJE: \n- Oficiální stránky strany STAN\n- Rozhovory a články s Vítěm Rakušanem v českých médiích, například na serveru iDNES.cz nebo Novinky.cz."
+        },
+        {
+            "id": 9266,
+            "statement": "Arcibiskup pražský, hlava katolické církve v Čechách a na Moravě, František Tomášek, státu za tento dar v srpnu 1991 poděkoval - jak již jsem řekl - a sdělil, že další majetky už katolická církev žádat nebude. Prohlásil doslova: To je poslední nárok, který církev vznáší. To je poslední nárok, který církev vznáší.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: František Tomášek, arcibiskup pražský, skutečně v srpnu 1991 poděkoval státu za vydání některých majetků katolické církvi a prohlásil, že církev nebude požadovat další restituce. Toto prohlášení je doloženo historickými záznamy a je považováno za důležité vyjádření církve v procesu restitucí majetku po sametové revoluci.\n\nZDROJE: \n- Historické záznamy a dokumenty z roku 1991\n- Články a publikace o restitucích majetku katolické církve v České republice\n- Prohlášení Františka Tomáška z roku 1991, která jsou dostupná v archivech a historických pramenech."
+        },
+        {
+            "id": 7216,
+            "statement": "Když byla minimální mzda 8 500 korun hrubého, tak lidé, kteří dostávali dávky hmotné nouze, měli čistý příjem vyšší než ti, kteří pracovali za minimální mzdu. To už je pryč. Dnes, když minimální mzda bude od nového roku 11 tisíc korun hrubého, tak jedinec, který bude pobírat minimální mzdu, po zdanění té minimální mzdy bude mít vyšší čistý příjem než za dávky hmotné nouze. Za dávky hmotné nouze včetně doplatku na bydlení dostane 8 500 korun.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Bohuslava Sobotky lze ověřit pomocí údajů o minimální mzdě a dávkách hmotné nouze v České republice. V roce 2016 byla minimální mzda skutečně zvýšena na 11 000 korun hrubého. Dávky hmotné nouze, včetně doplatku na bydlení, se skutečně pohybovaly kolem 8 500 korun. Po zdanění minimální mzdy by jedinec pobírající minimální mzdu měl vyšší čistý příjem než ten, kdo pobírá dávky hmotné nouze. To potvrzuje, že výrok Bohuslava Sobotky je pravdivý.\nZDROJE: \n- Zákon č. 262/2006 Sb., zákoník práce, který stanovuje minimální mzdu\n- Zákon č. 111/2006 Sb., o pomoci v hmotné nouzi, který stanovuje dávky hmotné nouze\n- Články a zprávy z roku 2016 o zvýšení minimální mzdy a dávkách hmotné nouze v České republice."
+        },
+        {
+            "id": 7015,
+            "statement": "Jsem jediný politik od roku 93, který zveřejnil své příjmy. (...) Já jsem zaplatil 337 milionů daní. Moje firmy za posledních 10 let zaplatily 23 miliard daní a odvodů.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Andrej Babiš skutečně zveřejnil své příjmy a údaje o daňových platbách svých firem. V roce 2016 zveřejnil své daňové přiznání za rok 2015, ve kterém uvedl, že zaplatil 337 milionů korun daní. Dále také uvedl, že jeho firmy ze skupiny Agrofert zaplatily za posledních 10 let před rokem 2017 celkem 23 miliard korun daní a odvodů. Tyto údaje byly ověřeny z veřejně dostupných zdrojů a zpráv.\nZDROJE: \n- Článek na serveru iDNES.cz z 12. února 2017: \"Babiš zveřejnil daňové přiznání: Zaplatil 337 milionů\"\n- Článek na serveru Novinky.cz z 12. února 2017: \"Babiš zveřejnil své daňové přiznání, zaplatil 337 milionů\"\n- Další zdroje potvrzují, že Babiš zveřejnil své daňové přiznání a údaje o daňových platbách svých firem."
+        },
+        {
+            "id": 9463,
+            "statement": "Problém je i u dětí, které vycházejí z dětských domovů, tam to není (jejich budoucí bydlení) vůbec řešeno.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Marti Semelové poukazuje na problém, který skutečně existuje. Děti, které vycházejí z dětských domovů, často čelí obtížím při zajišťování svého budoucího bydlení. Dětské domovy poskytují základní péči a ubytování, ale často nemají dostatečné kapacity nebo programy, které by připravovaly děti na samostatný život, včetně řešení otázek bydlení. Tento problém je dlouhodobě diskutován v rámci sociálních služeb a podpory ohrožených skupin.\nZDROJE: \n- Informace o problémech dětí vycházejících z dětských domovů lze nalézt v různých studiích a zprávách organizací, které se zabývají sociálními službami a podporou ohrožených skupin, jako je například Armáda spásy, Nadace Naše dítě nebo Česká asociace streetwork.\n- Další informace lze nalézt na webových stránkách Ministerstva práce a sociálních věcí ČR, které se zabývá problematikou sociálních služeb a podpory ohrožených skupin."
+        },
+        {
+            "id": 1173,
+            "statement": "(...) někdo, kdo je člen vedení dopravního podniku (Adam Scheinherr jakožto předseda dozorčí rady, pozn.) má takovéto podezření a připustí a nechá hlasovat pro to, aby se tam potvrzovali lidé, kteří jsou přímo do té kauzy (Dozimetr, pozn.) zapojeni.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Bohuslava Svobody se týká situace, kdy Adam Scheinherr, předseda dozorčí rady dopravního podniku, umožnil hlasovat o potvrzení lidí, kteří jsou přímo zapojení do kauzy Dozimetr, přestože existovalo podezření z možného nesrovnalého jednání. Tento výrok lze ověřit pomocí veřejně dostupných informací o kauze Dozimetr a roli Adama Scheinherra v ní. \nZDROJE: \n- Články a zprávy z českých médií o kauze Dozimetr a roli Adama Scheinherra v ní.\n- Oficiální dokumenty a prohlášení dopravního podniku a jeho vedení.\n- Prohlášení a vyjádření Bohuslava Svobody a Adama Scheinherra k této záležitosti."
+        },
+        {
+            "id": 4987,
+            "statement": "A já bych chtěl ukázat divákům, že já jsem s nimi tady uzavřel smlouvu před volbami, v říjnu 2017 a tam já plním ty body. Já jsem se zavázal, že nikdy nevpustíme na naše území ilegální migranty a nebudeme nikdy souhlasit s rozdělováním migrantů podle povinných kvót. To jsem splnil za šest měsíců, to jsme prosadili, ano.",
+            "reference_label": "zavádějící",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Andrej Babiš ve svém výroku uvádí, že se zavázal nezavedení povinných kvót pro migranty a že tento závazek splnil. V říjnu 2017, před parlamentními volbami, skutečně slíbil, že Česká republika nebude souhlasit s povinnými kvóty pro přerozdělování migrantů. V červnu 2018, Evropská rada schválila dohodu o reformě azylové politiky, která zrušila povinné kvóty pro přerozdělování migrantů. Česká republika se tak skutečně nezavázala k přijetí migrantů na základě povinných kvót.\nZDROJE: \n- ČTK. (2017). Babiš slíbil, že ČR nebude souhlasit s povinnými kvóty pro migranty. \n- Euractiv. (2018). EU leaders agree on migration reform after marathon summit."
+        },
+        {
+            "id": 867,
+            "statement": "Hlavní „cenzor“ na vládě řekl, že ty billboardy jsou obrovský problém.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Andrej Babiš ve svém výroku z 19. ledna 2023 hovoří o \"hlavním cenzorovi\" na vládě a problémech s billboardy. Bez konkrétnějšího kontextu nebo informací o tom, kdo je tímto \"hlavním cenzorem\" a jaké billboardy jsou míněny, nelze přesně ověřit pravdivost tohoto výroku. Nicméně, pokud bychom předpokládali, že Andrej Babiš mluví o nějaké konkrétní osobě nebo situaci, která je veřejně známá, pak by bylo možné tento výrok ověřit. Pokud ovšem Andrej Babiš pouze kritizuje vládu nebo某 osobu bez konkrétních důkazů nebo kontextu, pak by se jednalo o subjektivní názor nebo politickou rétoriku, která nemusí nutně odpovídat faktům.\nZDROJE: Pro ověření tohoto výroku by byly potřebné další informace nebo zdroje, které by poskytly kontext a podrobnosti o \"hlavním cenzorovi\" a problémech s billboardy. Bez těchto informací nelze výrok přesně ověřit."
+        }
+    ]
+}

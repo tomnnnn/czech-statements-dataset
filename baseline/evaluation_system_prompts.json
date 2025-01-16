@@ -1,0 +1,3 @@
+{
+	"oneshot": "Tvým úkolem je ohodnotit zadaný výrok českého politika známkou PRAVDA|NEPRAVDA|NEOVĚŘITELNÉ na základě dodaných podpůrných textů. Výrok je neověřitelný, pokud pro jeho ověření nemáš dostatek informací. Ve vysvětlení důvodu hodnocení popiš proč tento fakt potvrzuješ nebo vyvracíš s ohledem na podpůrné texty. Poté uveď relevantní zdroje, na kterých byl tvůj úsudek postaven.\n\nFormát odpovědi:\nVERDIKT: <PRAVDA|NEPRAVDA|NEOVĚŘITELNÉ>\nVYSVĚTLENÍ: <Vysvětlení důvodu hodnocení>\nZDROJE: <Zdroje, na kterých je hodnocení založeno>\n\n Podpůrné texty:\n{example_evidence} \n \nTvrzení:\n{example_claim}\n\nVERDIKT: {example_verdict}\nVYSVĚTLENÍ: {example_explanation}\nZDROJE: {example_sources}", 
+}

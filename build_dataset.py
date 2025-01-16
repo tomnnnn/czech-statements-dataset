@@ -2,56 +2,44 @@
 @file: build_dataset.py
 @author: Hai Phong Nguyen
 
-Build a dataset of statements with their context
-This script scrapes statements from Demagog.cz and provides context for each statement.
+This script scrapes statements from Demagog.cz and provides scraped evidence documents for each statement.
 """
 
-import scrape_statements as Demagog
+import scrape_statements as scraper
 import json
+import datetime
 import bs4
 import time
-from utils import *
 import asyncio as asyncio
 import aiofiles
 import os
 import itertools
-from gpt4all import GPT4All
 from collections import defaultdict
 import contextvars
+import sys
 import shutil
+from utils.scraper_utils import fetch, post_request, search_bing, track_progress
+import config
 
-search_sem = contextvars.ContextVar("search_sem")
-fetch_sem = contextvars.ContextVar("fetch_sem")
-
-def generate_context_query(stmtText):
-    """
-    Generate a context query for a given statement text
-    """
-
-    query = config["ContextLLMQuery"] if "ContextLLMQuery" in config else "Vytvoř český google dotaz pomocí klíčových slov pro získání relevantního kontextu, který bude sloužit k ověření následujícího tvrzení:"
-
-    if config["ContextLLM"] == "llama":
-        model = GPT4All("Meta-Llama-3-8B-Instruct.Q4_0.gguf")
-        with model.chat_session():
-            return model.generate(query + stmtText)
-    else:
-        return stmtText
+SEARCH_SEM = contextvars.ContextVar("search_sem")
+FETCH_SEM = contextvars.ContextVar("fetch_sem")
+CONFIG = config.load_config("scraper_config.yaml")
 
 async def extract_article(url):
     """
     Extract article content from a given URL
     Heuristitc: Find the parent element with the most <p> children
     """
-    if config["ContextLinkOnly"]:
+    if CONFIG["EvidenceLinkOnly"]:
         return {
             "url": url,
         }
 
-    async with fetch_sem.get():
+    async with FETCH_SEM.get():
         html = await fetch(url)
         if not html:
             return None
-        await asyncio.sleep(config['FetchDelay'])
+        await asyncio.sleep(CONFIG['FetchDelay'])
 
     MIN_NUM_WORDS = 5
     try:
@@ -86,51 +74,47 @@ async def extract_article(url):
         "content": article_text
     }
 
-async def scrape_context(query):
+async def scrape_evidence(query):
     """
-    Search for context articles for a given query and return their content
-    Uses Criteria API, Bing API or Google search, based on config
+    Search for evidence articles for a given query and return their content
+    Uses Criteria API or Bing API based on config
     """
-    if config["SearchAPI"] == 'criteria':
+    if CONFIG["SearchAPI"] == 'criteria':
         data = dict(claim=query)
-        async with search_sem.get():
-            await asyncio.sleep(config['SearchDelay'])
+        async with SEARCH_SEM.get():
+            await asyncio.sleep(CONFIG['SearchDelay'])
             results = await post_request("https://lab.idiap.ch/criteria/search_tom", data)
 
         return [{
             'url': result['url'],
             'title': result['title'],
-            'content': result['fulltext']
+            'date': datetime.datetime.fromtimestamp(result['date']/1000).strftime('%d-%m-%Y'),
+            'score': result['score'],
+            'content': result['fulltext'],
             } for result in results
         ] if results else []
     else:
-        num_results = config["ContextNumBuffer"]
+        num_results = CONFIG["EvidenceNumBuffer"]
         if num_results == 0:
             return []
 
         urls = []
 
-        async with search_sem.get():
-            if(config["SearchAPI"] == 'google'):
-                # Google search
-                    search_adjusters = " -filetype:epub -filetype:mobi -filetype:pdf -filetype:csv -filetype:xlsx -filetype:doc -filetype:docx -filetype:ppt -filetype:pptx -filetype:txt -site:demagog.cz -site:facebook.com -site:reddit.com -site:instagram.com -site:x.com"
-                    query += search_adjusters
-                    urls = await search_google(query, num_results)
-
-            elif(config["SearchAPI"] == 'bing'):
+        async with SEARCH_SEM.get():
+            if(CONFIG["SearchAPI"] == 'bing'):
                 # Bing search
                 try:
                     query += " -site:demagog.cz -site:facebook.com -site:reddit.com -site:instagram.com -site:x.com"
-                    result = await search_bing(query, config["BingAPIKey"], num_results)
+                    result = await search_bing(query, CONFIG["BingAPIKey"], num_results)
                     urls = [item['url'] for item in result]
                 except KeyError as e:
                     print(f"Please, set BING_API_KEY environment variable to use Bing search API: {e}", file=sys.stderr)
                 except Exception as e:
                     print(f"Failed to fetch Bing search results: {e}", file=sys.stderr)
 
-            await asyncio.sleep(config['SearchDelay'])
+            await asyncio.sleep(CONFIG['SearchDelay'])
 
-        context = []
+        evidence = []
         article_coros = [ extract_article(url) for url in urls ]
 
         articles = await asyncio.gather(*article_coros)
@@ -139,63 +123,73 @@ async def scrape_context(query):
             return []
 
         for article in articles:
-            if len(context) >= config["ContextNum"]:
+            if len(evidence) >= CONFIG["EvidenceNum"]:
                 break
-            elif config["ContextLinkOnly"]:
-                context.append(article)
+            elif CONFIG["EvidenceLinkOnly"]:
+                evidence.append(article)
             elif article and article['content']:
-                context.append(article)
+                evidence.append(article)
 
-        return context
+        return evidence
 
 
-async def provide_context(stmt):
+async def provide_evidence(stmt):
     """
-    Provide context for a given statement
+    Provide evidence for a given statement
     """
 
-    query = generate_context_query(stmt['statement'])
-    context = await scrape_context(query)
+    query = stmt['statement']
+    evidence = await scrape_evidence(query)
 
-    async with aiofiles.open(f"{config['OutputDir']}/context/{stmt['id']}.json", mode="w+") as file:
-            await file.write(json.dumps(context, ensure_ascii=False, indent=4))
+    async with aiofiles.open(f"{CONFIG['OutputDir']}/evidence/{stmt['id']}.json", mode="w+") as file:
+            await file.write(json.dumps(evidence, ensure_ascii=False, indent=4))
             await file.close()
+
+def prepare_output_dir():
+    out_dir = CONFIG['OutputDir']
+
+    if(os.path.exists(out_dir) and not CONFIG["UseExistingStatements"]):
+        # confirmation
+        print(f"Directory {out_dir} already exists. Do you want to overwrite it? (y/n)")
+        choice = input().lower()
+        if choice != 'y':
+            print("Exiting...")
+            sys.exit(0)
+
+        shutil.rmtree(out_dir)
+
+    os.makedirs(out_dir, exist_ok=True)
+    os.makedirs(f"{out_dir}/evidence", exist_ok=True)
+    return out_dir
 
 
 async def build_dataset():
     """
     Build a dataset from a list of statements
-    Saves pruned statements to file and provides context for each statement
-    Each statement's context is saved to a separate file named by the statement's ID
+    Saves pruned statements to file and provides evidence for each statement
+    Each statement's evidence is saved to a separate file named by the statement's ID
     """
 
-    # create output directory
-    out_dir = config['OutputDir']
-
-    if(os.path.exists(out_dir) and not config["UseExistingStatements"]):
-        shutil.rmtree(out_dir)
-
-    os.makedirs(out_dir, exist_ok=True)
-    os.makedirs(f"{out_dir}/context", exist_ok=True)
+    out_dir = prepare_output_dir()
 
     # scrape statements if not using existing statements
-    if config["UseExistingStatements"]:
+    if CONFIG["UseExistingStatements"]:
         print("Using existing statements")
-        with open(f"{config['OutputDir']}/statements.json", "r") as file:
-            existiting_context = [f for f in os.listdir(f"{config['OutputDir']}/context") if f.endswith(".json")]
+        with open(f"{CONFIG['OutputDir']}/statements.json", "r") as file:
+            existiting_evidence = [f for f in os.listdir(f"{CONFIG['OutputDir']}/evidence") if f.endswith(".json")]
             stmts = json.load(file)
-            stmts = [stmt for stmt in stmts if f"{stmt['id']}.json" not in existiting_context]
+            stmts = [stmt for stmt in stmts if f"{stmt['id']}.json" not in existiting_evidence]
     else:
-        stmts = await Demagog.scrapeStatements(from_page=config["DemagogFromPage"],to_page=config["DemagogToPage"], start_index=config["StmtStartIndex"])
+        stmts = await scraper.scrapeStatements(from_page=CONFIG["DemagogFromPage"],to_page=CONFIG["DemagogToPage"], start_index=CONFIG["StmtStartIndex"])
 
-        # include only fields enabled in config
+        # include only fields enabled in CONFIG
         stmts_pruned = [{k:v for k,v in temp.items() if v} for temp in [{
             "id": stmt['id'],
             "statement": stmt['statement'],
-            "author": stmt['speaker'] if config["IncludeAuthor"] else "",
-            "date": stmt['date'] if config["IncludeDate"] else "",
-            "explanation":  stmt['explanation'] if config["IncludeExplanation"] else "",
-            "assessment": stmt['assessment'] if config["IncludeAssessment"] else "",
+            "author": stmt['author'] if CONFIG["IncludeAuthor"] else "",
+            "date": stmt['date'] if CONFIG["IncludeDate"] else "",
+            "explanation":  stmt['explanation'] if CONFIG["IncludeExplanation"] else "",
+            "assessment": stmt['assessment'] if CONFIG["IncludeAssessment"] else "",
         } for stmt in stmts]]
 
         # write pruned statements to file
@@ -203,21 +197,21 @@ async def build_dataset():
             json.dump(stmts_pruned, file, ensure_ascii=False, indent=4)
 
 
-    if config["ScrapeWithContext"]:
-        # provide context for each statement
-        print("Providing context for each statement")
+    if CONFIG["ScrapeWithEvidence"]:
+        # provide evidence for each statement
+        print("Providing evidence for each statement")
         stmt_cnter = itertools.count(0)
-        context_coros = [
-            track_progress(provide_context(stmt), stmt_cnter, len(stmts), "statement")
+        evidence_coros = [
+            track_progress(provide_evidence(stmt), stmt_cnter, len(stmts), "statement")
             for stmt in stmts
         ]
-        await asyncio.gather(*context_coros)
+        await asyncio.gather(*evidence_coros)
 
 
 async def main():
     global total_statements
-    search_sem.set(asyncio.Semaphore(config["SearchesPerDelay"]))
-    fetch_sem.set(asyncio.Semaphore(config["FetchesPerDelay"]))
+    SEARCH_SEM.set(asyncio.Semaphore(CONFIG["SearchesPerDelay"]))
+    FETCH_SEM.set(asyncio.Semaphore(CONFIG["FetchesPerDelay"]))
 
     start_time = time.time()
 

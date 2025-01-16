@@ -1,0 +1,315 @@
+{
+    "accuracy": 0.56,
+    "correct": 56,
+    "total": 100,
+    "incorrect": [
+        {
+            "id": 17,
+            "statement": "Ročně deficity (důchodového systému, pozn. budou klidně 200, 250, 300 až 350 miliard korun v dnešních cenách (…). To je prognóza makroekonomická.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok o budoucích deficitách důchodového systému v rozmezí 200 až 350 miliard korun v dnešních cenách je dlouhodobá ekonomická prognóza. Tyto odhady jsou založeny na mnoha proměnných, jako jsou demografické trendy, ekonomický růst, inflace, změny v legislativě a další faktory, které jsou obtížné přesně předpovědět. Bez konkrétních zdrojů a analýz, na kterých by tato prognóza stála, není možné tento výrok ověřit.\nZDROJE: Nejsou k dispozici konkrétní zdroje, které by potvrzovaly nebo vyvracely tuto konkrétní prognózu."
+        },
+        {
+            "id": 47,
+            "statement": "(…) plníme už letos maastrichtská kritéria.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok o tom, že Česká republika plní Maastrichtská kritéria v roce 2024, je v době jeho výslovení neověřitelný, protože k 24. říjnu 2024 nejsou známy oficiální údaje, které by toto tvrzení potvrdily nebo vyvrátily. Maastrichtská kritéria zahrnují několik ekonomických ukazatelů, jako je inflační kurz, veřejný dluh, rozpočtový deficit a úroková sazba, a tyto ukazatele se pravidelně aktualizují a publikují Evropskou komisí a Evropskou centrální bankou. Aby bylo možné tvrzení ověřit, bylo by třeba mít k dispozici aktuální a oficiální údaje.\nZDROJE: \n- Evropská komise: Maastrichtská kritéria (https://ec.europa.eu/info/business-economy-euro/euro-area/joining-euro-area/maastricht-criteria_en)\n- Český statistický úřad: Ekonomické ukazatele (https://www.czso.cz/csu/czso/ekonomicka-statistika)"
+        },
+        {
+            "id": 357,
+            "statement": "Je v něm (v systému elektronického přihlašování na střední školy, pozn. 30 000 přihlášek.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok o počtu přihlášek v systému elektronického přihlašování na střední školy není možné ověřit bez přístupu k aktuálním datům systému. Informace o počtu přihlášek mohou být dynamické a měnit se během přihlašovacího období. Bez konkrétních dat z daného systému není možné potvrdit nebo vyvrátit toto tvrzení.\nZDROJE: Nejsou k dispozici relevantní zdroje pro ověření tohoto konkrétního tvrzení."
+        },
+        {
+            "id": 403,
+            "statement": "Celkem jsme lidem a firmám za dobu, co bylo hnutí ANO ve vládě, daně snížili o 504 miliard korun.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Andreje Babiše o snížení daní o 504 miliard korun za dobu, kdy hnutí ANO bylo ve vládě, je neověřitelný, protože pro jeho ověření by bylo nutné mít přesné údaje o změnách daní a jejich dopadu na rozpočet. Tyto informace nejsou ve veřejně dostupných zdrojích dostatečně podrobně uvedeny, aby bylo možné tento výrok s jistotou potvrdit nebo vyvrátit.\nZDROJE: \n- Ministerstvo financí ČR (https://www.mfcr.cz/)\n- Český statistický úřad (https://www.czso.cz/)"
+        },
+        {
+            "id": 176,
+            "statement": "Piráti jsou dlouhodobě druhá nejsilnější vládní strana, (...) máme deset až jedenáct procent v průzkumech.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok, že Piráti jsou dlouhodobě druhá nejsilnější vládní strana, není správný. V současné době (3. července 2024) nejsou Piráti druhou nejsilnější vládní stranou. Vládní koalice tvoří například ODS, STAN a SPOLU, které mají významně vyšší podporu v průzkumech než Piráti. Co se týče podpory v průzkumech, Piráti dosahují podílu okolo 10 až 11 procent, což je v souladu s některými průzkumy, ale neznamená, že by byli druhou nejsilnější vládní stranou.\nZDROJE: \n- [iDnes.cz - Průzkumy voličských preferencí](https://volby.idnes.cz/pruzkumy/)\n- [ČT24 - Aktuální politické průzkumy](https://www.ct24.cz/politika/2024-07-03-aktualni-politicka-situace-v-cr/)"
+        },
+        {
+            "id": 209,
+            "statement": "Já osobně jsem například dával peníze na záchranu 1 000 volyňských Čechů.",
+            "reference_label": "pravda",
+            "label": "nolabel",
+            "response": "VERDIKT: NEOFŘITELNÉ\nVYSVĚTLENÍ: Výrok Andreje Babiše, že osobně dával peníze na záchranu 1 000 volyňských Čechů, je neověřitelný, protože neexistují dostatečné veřejně dostupné důkazy, které by toto tvrzení potvrzovaly nebo vyvracely. Informace o konkrétních finančních příspěvcích a jejich účelu nejsou dostupné ve veřejně přístupných zdrojích.\nZDROJE: Nejsou k dispozici relevantní veřejně dostupné zdroje, které by toto tvrzení potvrzovaly nebo vyvracely."
+        },
+        {
+            "id": 292,
+            "statement": "Plochy lesů přibývají.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Podle dat Českého statistického úřadu (ČSÚ) a Ministerstva zemědělství České republiky se plocha lesů v České republice v posledních letech mírně zmenšuje. Například v roce 2020 byla plocha lesů 2,72 miliony hektarů, zatímco v roce 2021 byla 2,71 miliony hektarů. Toto mírné snížení je částečně způsobeno výsadbou a likvidací poškozených lesů, zejména v důsledku útoku špicovatého brouka a sucha. Proto je výrok, že plochy lesů přibývají, nepravdivý.\nZDROJE: \n- Český statistický úřad: https://www.czso.cz/csu/czso/statisticka-rocenka-cr-2022\n- Ministerstvo zemědělství České republiky: https://www.mze.cz/lesy/lesy-cr/lesy-cr-statistika/"
+        },
+        {
+            "id": 444,
+            "statement": "Četli jsme článek, který podepsal Andrej Babiš, možná ho i tedy psal, který říká, že za útok na Kapitol může právě korespondenční volba.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Markéty Pekarové Adamové se týká obsahu článku podepsaného Andrejem Babišem, který navazuje souvislost mezi korespondenční volbou a útokem na Kapitol. Pro ověření tohoto tvrzení by bylo nutné mít přístup k danému článku a jeho konkrétnímu obsahu. Bez přímého odkazu na článek nebo jeho citace není možné potvrdit nebo vyvrátit, zda tento výrok odpovídá skutečnosti.\nZDROJE: Nejsou k dispozici konkrétní zdroje, které by umožnily ověřit obsah zmíněného článku."
+        },
+        {
+            "id": 213,
+            "statement": "To v migračním paktu není (ustanovení, že migrant musí o azyl požádat v první bezpečné zemi, pozn.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Migranční pakt Evropské unie, známý jako Nový pakt pro migraci a azyl, skutečně obsahuje ustanovení, podle kterého by měli žadatelé o azyl požádat o azyl v první bezpečné zemi, kterou vstoupí. Toto ustanovení je součástí snahy EU zlepšit spravedlivé a efektivní řízení migračních toků a ochranu žadatelů o azyl. Cílem je také snížit počet nelegálních přesunů a zajišťovat, aby žadatelé o azyl byli správně zpracováni v první zemi, kde se objeví.\nZDROJE: \n1. Evropská komise: Nový pakt pro migraci a azyl (https://ec.europa.eu/home-affairs/what-we-do/policies/migration/refugees-and-asylum/new-migration-and-asylum-pact_en)\n2. Evropský parlament: Nový pakt pro migraci a azyl (https://www.europarl.europa.eu/news/cs/press-room/20201001IPR44001/novy-pakt-pro-migraci-a-azyl)"
+        },
+        {
+            "id": 432,
+            "statement": "Vláda osekala důchody a zvyšuje věk odchodu do penze.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Vláda Andreje Babiše, která byla v úřadu do konce roku 2021, nesekala důchody ani nezvyšovala věk odchodu do penze. Naopak, v době vlády Andreje Babiše byly důchody pravidelně zvyšovány a věk odchodu do penze byl stabilní. Aktuální změny v oblasti důchodového systému, jako je zvýšení věku odchodu do penze, byly zavedeny již po jeho odchodu z funkce.\nZDROJE: \n- Český rozhlas: [Důchody v roce 2021 zvýšeny o 2,5 %](https://www.rozhlas.cz/aktualni-streda/duchody-v-roce-2021-zvyseny-o-25-procent--_6191151)\n- Ministerstvo práce a sociálních věcí ČR: [Věk odchodu do penze](https://www.mpsv.cz/web/penze-a-duchody/odchod-do-penze/vek-odchodu-do-penze)"
+        },
+        {
+            "id": 173,
+            "statement": "(Nadnárodní korporace, pozn. odvádí ročně, a to už jsou údaje i renomovaných ekonomů z auditorských společností, 300 miliard do zahraničí nezdaněných dividend.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Tomia Okamury o tom, že nadnárodní korporace odvádějí ročně 300 miliard nezdaněných dividend do zahraničí, je velmi specifický a může být obtížné ho ověřit bez přístupu k detailním a oficiálním údajům. Informace o mezinárodním přesunu dividend a jejich danění jsou často složité a mohou se lišit v závislosti na zemích a právních předpisech. Kromě toho, renomovaní ekonomové a auditorské společnosti mohou mít různé názory a odhady. Bez konkrétních zdrojů a dat je těžké tento výrok jednoznačně potvrdit nebo vyvrátit.\nZDROJE: Nejsou k dispozici spolehlivé a konkrétní zdroje, které by tento výrok potvrzovaly nebo vyvracovaly."
+        },
+        {
+            "id": 343,
+            "statement": "EET nefunguje od roku 2020.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Elektronický daňový doklad (EET) byl zaveden v České republice v roce 2017 a funguje dodnes. Zákonná povinnost vystavovat EET se nezměnila od roku 2020. Zbyněk Stanjura tedy uvádí nepravdivý výrok.\nZDROJE: \n1. Ministerstvo financí ČR - EET: https://www.mfcr.cz/daňové-povinníky/podnikatelé/eet\n2. Česká národní banka - EET: https://www.cnb.cz/cs/platebni-styk/elektronicky-danychy-doklad-eet/"
+        },
+        {
+            "id": 336,
+            "statement": "(...) poslanecký návrh, který předložili napříč paní poslankyně Válková za hnutí ANO a pan poslanec Navrátil za KDU, který umožňuje přiosvojení (pro stejnopohlavní páry, pozn.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok, že poslanecký návrh umožňující přiosvojení pro stejnopohlavní páry byl předložen napříč poslankyní Válkovou za hnutí ANO a poslancem Navrátil za KDU, není správný. Podle dostupných informací nebyl žádný takový návrh předložen těmito poslanci. Poslanecký návrh týkající se přiosvojení pro stejnopohlavní páry byl předložen jinými poslanci a stranami.\nZDROJE: \n- Poslanecký návrh k zákonu o přiosvojení: https://www.psp.cz/sqw/hp.sqw?g=93481\n- Seznam poslanců, kteří předložili návrh: https://www.psp.cz/eknih/cdrom/psp021/psp21100/0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+            "id": 335,
+            "statement": "Byl tam návrh (u novely občanského zákoníku, pozn. ukotvující právě úplně plná práva a pouze měnící název z manželství na partnerství.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Návrh novely občanského zákoníku, který by úplně zachoval práva manželů a pouze změnil název manželství na partnerství, nebyl předložen. Aktuální návrhy se týkají zejména práv homosexuálních partnerství, ale nezahrnují takovouto radikální změnu terminologie a zachování všech práv manželů. Tento výrok je tedy nepravdivý.\nZDROJE: \n1. Poslanecký návrh novely občanského zákoníku (2023/01152 P) - https://www.psp.cz/eknih/2023n/sbornik/1152.pdf\n2. Aktuální stav legislativy týkající se práv homosexuálních partnerství - https://www.vlada.cz/assets/tema-prava-lesbigay-bisexual-trans-a-intersex-osob/aktualni-stav-legislativy.pdf"
+        },
+        {
+            "id": 410,
+            "statement": "Prosadil (Petr Fiala, pozn. zákaz výroby spalovacích motorů, i když sliboval opak, a prosadil migrační pakt EU.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Petr Fiala, premiér České republiky, nezavedl zákaz výroby spalovacích motorů. Česká republika se zavázala k evropským směrnicím, které stanovují cíle snížení emisí CO2, ale konkrétní zákaz výroby spalovacích motorů není v České republice v platnosti. Co se týče migračního paktu EU, Petr Fiala a jeho vláda se zúčastnily jednání o migrační politice EU, ale nebylo dosaženo shody na migračním paktu, který by byl závazný pro všechny členské státy. Česká republika se také v minulosti vyjádřila kriticky k některým aspektům tohoto paktu.\nZDROJE: \n1. [Český rozhlas: Česká republika se zavázala k evropským cílům snížení emisí CO2](https://www.rozhlas.cz/aktualni/ceska-republika-se-zavazovala-k-evropskym-cilum-snizeni-emisii-co2--61924410)\n2. [Novinky.cz: Česká republika odmítla migrační pakt EU](https://www.novinky.cz/domaci/448462-ceska-republika-odmitla-migracni-pakt-eu.html)"
+        },
+        {
+            "id": 182,
+            "statement": "„Munice pro Ukrajinu je nekvalitní, část ji musíme doplňovat“, říká český zbrojař.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok, že munice pro Ukrajinu je nekvalitní a že část ji musíme doplňovat, je neověřitelný bez konkrétních důkazů nebo dat. Informace o kvalitě munice a jejím doplňování mohou být citlivé a nejsou veřejně dostupné. Navíc, bez odkazu na konkrétní zdroje nebo testy, které by tuto tvrzení podpořily, není možné tento výrok objektivně ověřit.\nZDROJE: Nejsou k dispozici relevantní a spolehlivé veřejné zdroje, které by tento výrok potvrzovaly nebo vyvracely."
+        },
+        {
+            "id": 317,
+            "statement": "Pan Babiš použil jeden (vulgární, pozn. výraz, hned na to prostě pan poslanec Kolář za TOP 09 použil možná ještě ostřejší výraz.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok obsahuje informace o konkrétních událostech, které se odehrály během jedné konkrétní debaty nebo diskuse. Bez přístupu k záznamu nebo protokolu tohoto setkání není možné ověřit, zda byly dané výrazy skutečně použity a jaké přesně byly. Informace o tom, co řekl pan Babiš a pan poslanec Kolář, nejsou dostatečně podloženy nezávislými zdroji.\nZDROJE: Chybí dostatečné nezávislé zdroje pro ověření tohoto výroku."
+        },
+        {
+            "id": 86,
+            "statement": "(Platy poslanců, pozn. jsme několikrát zastropovali a potom ten automat takhle skočí (o 14 %, pozn.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok naznačuje, že platy poslanců byly několikrát zastropovány a poté náhle zvýšeny o 14 %. Toto tvrzení není správné. Platy poslanců v České republice jsou regulovány zákonem a jakékoliv změny jsou veřejně známé a dokumentované. Poslední významné zvýšení platů poslanců se uskutečnilo v roce 2021, kdy byly platy zvýšeny o 10 %. Od té doby nebylo oznámeno žádné další významné zvýšení o 14 %. Zároveň neexistují důkazy o tom, že by byly platy poslanců několikrát zastropovány a poté náhle zvýšeny.\nZDROJE: \n1. Český rozhlas: \"Poslancům zvýšili platy o 10 procent\" (https://www.rozhlas.cz/domov/politika--6114142)\n2. ČT24: \"Poslancům zvýšili platy o 10 procent\" (https://ct24.ceskatelevize.cz/domov/11022224-poslancum-zvysili-plate-o-10-procent)"
+        },
+        {
+            "id": 83,
+            "statement": "Vedou 3:1 (hnutí ANO nad hnutím STAN, pozn. oni mají za tohle volební období obviněné a trestně stíhané tři politiky za korupci. My jednoho a je to bývalý člen.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok, že hnutí ANO má tři politiky obviněné a trestně stíhané za korupci, zatímco hnutí STAN má jednoho a to bývalého člena, není správný. Podle dostupných informací neexistuje důkaz, který by potvrzoval, že hnutí ANO má tři politiky obviněné a trestně stíhané za korupci. Naopak, hnutí STAN má aktuálně alespoň jednoho člena, který je stíhán za korupci, a to Jiřího Čuněk, který je stále aktivním politikem hnutí STAN.\nZDROJE: \n1. [Novinky.cz - Jiří Čuněk: Státní zástupce požádal o zrušení zadržení](https://www.novinky.cz/domaci/454042-cunek-stav-zastupce-pozadal-o-zruseni-zadrzeni.html)\n2. [iDnes.cz - Jiří Čuněk: Státní zástupce požádal o zrušení zadržení](https://zpravy.idnes.cz/cunek-zadrzani-zruseno-11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+        },
+        {
+            "id": 412,
+            "statement": "(...) si pan Fiala neomaleně přisvojuje naši práci. Například když tvrdí, že jeho vláda staví 200 kilometrů nových dálnic.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Vláda Petra Fialy, která byla jmenována v říjnu 2021, nemohla do konce roku 2023 postavit 200 kilometrů nových dálnic. Podle dostupných dat bylo v roce 2023 otevřeno pouze několik menších úseků dálnic, které dohromady nedosahují ani 20 kilometrů. Tedy tvrzení, že vláda Fialy postavila 200 kilometrů nových dálnic, je nepravdivé.\nZDROJE: \n- Česká televize: [Nové úseky dálnic otevřené v roce 2023](https://www.ct24.cz/domaci/2023-12-31-nove-useky-dalnic-otevrene-v-roce-2023)\n- Ministerstvo dopravy ČR: [Přehled stavby dálnic a silnic I. třídy](https://www.doprava.cz/cz/cesty-a-dopravni-infrastruktura/stavba-a-udrzba-cest/stavba-dalnic-a-silnic-i-triedy/)"
+        },
+        {
+            "id": 366,
+            "statement": "Já jsem byl ten den (v den odborářské stávky, pozn. také ve škole (...) a mluvil jsem jak s učiteli, tak se studenty (...). Navštívil jsem taky zemědělský podnik, který shodou okolností jako jeden z vedoucích, nikoliv majitelů, vlastníků, (...) jeden z vedoucích reprezentantů nebo z managementu byl bratr pana Jurečky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok obsahuje konkrétní informace o Petr Fialově, které se týkají jeho činnosti v den odborářské stávky. Fiala tvrdí, že navštívil školu a zemědělský podnik a mluvil s učiteli, studenty a s vedoucím zemědělského podniku, který je bratrem Jana Jurečky. Pro ověření těchto konkrétních informací by bylo nutné mít přístup k dokumentům, svědeckým výpovědím nebo jiným důkazům, které by potvrdily jeho přítomnost a konkrétní aktivity v daný den. Bez těchto důkazů není možné výrok s jistotou potvrdit nebo vyvrátit.\nZDROJE: Nejsou k dispozici důkazy, které by umožnily ověřit konkrétní tvrzení v daném výroku."
+        },
+        {
+            "id": 57,
+            "statement": "V minulém roce časopis The Economist (...) řekl, že Česká republika je v klientelismu na druhém místě za Ruskem.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Časopis The Economist v minulém roce neuváděl žádné hodnocení, podle kterého by Česká republika byla na druhém místě v klientelismu za Ruskem. The Economist publikuje pravidelně zpravodajství a analýzy, ale konkrétního hodnocení, které by odpovídalo tomuto výroku, nebylo nalezeno. Pokud by takové hodnocení existovalo, bylo by pravděpodobně široce zveřejněné a citováno v médiích.\nZDROJE: \n- The Economist (vyhledávání v archivu článků z minulého roku)\n- Vyhledávání v českých a zahraničních médiích, která by mohla citovat toto hodnocení The Economist"
+        },
+        {
+            "id": 8,
+            "statement": "Tomáš Pojar ve všech svých výrocích vždy hovoří o tom, že to je Ukrajina, která souhlasí s tím řešením (ukončení války na Ukrajině, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože by bylo třeba mít přehled o všech výrocích Tomáše Pojara, což je prakticky nemožné. Navíc by bylo třeba zjistit, zda v každém z jeho výroků skutečně hovoří o souhlasu Ukrajiny s ukončením války, což je velmi specifický a omezený aspekt.\nZDROJE: Nejsou k dispozici dostatečné zdroje pro ověření tohoto výroku."
+        },
+        {
+            "id": 305,
+            "statement": "(Evropská, pozn. komise slíbila, že bude některá opatření (v oblasti zemědělství, pozn. revidovat.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože neobsahuje dostatek konkrétních informací, které by umožnily jeho ověření. Nejde o jasné a specifické tvrzení, které by bylo možné potvrdit nebo vyvrátit na základě dostupných zdrojů. Výrok je velmi obecný a neupřesňuje, která konkrétní opatření Evropská komise slíbila revidovat, ani v jakém kontextu toto slib byl učiněn.\nZDROJE: Nejsou k dispozici konkrétní zdroje, které by umožnily ověřit daný výrok."
+        },
+        {
+            "id": 135,
+            "statement": "Gymnázium v Černošicích, které se má stavět, tak hnutí ANO ho na zastupitelstvu nepodpořilo (...). Byť jejich odborníci, kteří jsou ve výboru pro školství, to jednoznačně podpořili.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože hnutí ANO v Černošicích podpořilo výstavbu gymnázia na zastupitelstvu. I když je pravda, že odborníci z hnutí ANO ve výboru pro školství výstavbu podpořili, toto podpoření bylo také potvrzeno na úrovni zastupitelstva. Tedy, hnutí ANO nezabránilo výstavbě gymnázia, jak naznačuje výrok.\nZDROJE: \n1. Zápisy zasedání zastupitelstva Černošic (pokud jsou veřejně dostupné)\n2. Prohlášení předsedy hnutí ANO v Černošicích týkající se výstavby gymnázia (pokud je veřejně dostupné)"
+        },
+        {
+            "id": 225,
+            "statement": "Různé brněnské firmy nebo české tam mají čističky vody (ve zdrojových zemích migrace, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok obsahuje informace, které jsou velmi široké a neupřesněné. Neexistuje dostatek konkrétních informací o tom, které konkrétní firmy z Brna nebo České republiky mají čističky vody ve zdrojových zemích migrace. Bez bližšího upřesnění, které firmy a v kterých zemích jsou tato čistička umístěna, není možné tento výrok ověřit.\nZDROJE: Informace o činnosti českých firem v zahraničí, zejména v zemích původu migrace, by bylo třeba ověřit na základě konkrétních dat a zdrojů, které nejsou v daném kontextu k dispozici."
+        },
+        {
+            "id": 235,
+            "statement": "Její práce (Danuše Nerudové, pozn. se objevila v desítkách renomovaných časopisů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok o tom, že práce Danuše Nerudové se objevila v desítkách renomovaných časopisů, nelze bez dalších informací a konkrétních důkazů ověřit. Informace o publikacích konkrétní osoby vyžadují přesné zdroje a citace, které by potvrdily její přínos a rozsah publikací.\nZDROJE: Nejsou k dispozici konkrétní zdroje, které by potvrdily nebo vyvrátily tento výrok."
+        },
+        {
+            "id": 407,
+            "statement": "Reálné mzdy u nás propadly nejvíc ze všech vyspělých zemí.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Podle dostupných dat z Eurostatu a OECD nebyl propad reálných mzd v České republice v roce 2023 největší ze všech vyspělých zemí. Naopak, v roce 2023 se reálné mzdy v České republice zvýšily o 2,4 %, což je výrazně lepší výsledek než v některých jiných vyspělých zemích, jako například ve Velké Británii, kde se reálné mzdy snížily o 2,8 %. Tedy výrok Andreje Babiše není správný.\nZDROJE: \n- Eurostat: <https://ec.europa.eu/eurostat/web/labour-market/earnings/data/database>\n- OECD: <https://data.oecd.org/earnwage/real-wages.htm>"
+        },
+        {
+            "id": 391,
+            "statement": "Bureš 25085. To je evidenční číslo karty Andreje Babiše z 11. listopadu 1982, pod kterou ho StB zaevidovala jako udavače. Soud už o tom, že byl Andrej Babiš konfidentem StB, dávno rozhodl. Dnes to slovenský Ústavní soud opět potvrdil. Možná je na čase si to přiznat.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Markéty Pekarové Adamové je v souladu s informacemi, které jsou veřejně dostupné. Andrej Babiš byl skutečně zaevidován Státní bezpečností (StB) jako konfident s evidenčním číslem 25085. Tento fakt byl potvrzen soudními rozhodnutími, včetně nedávného rozhodnutí Slovenského ústavního soudu. Tímto rozhodnutím bylo opětovně potvrzeno, že Andrej Babiš byl konfidentem StB.\nZDROJE: \n1. Rozhodnutí Ústavního soudu Slovenské republiky, spisová značka II. ÚS 111/2023-28, ze dne 7. února 2024.\n2. Článek \"Ústavný súd potvrdil: Andrej Babiš bol konfidentom StB\" na webu Denník N, 7. února 2024.\n3. Článek \"Ústavný súd potvrdil, že Babiš bol konfidentom StB\" na webu SME, 7. února 2024."
+        },
+        {
+            "id": 188,
+            "statement": "Jsme na tuto iniciativu (nákupu munice pro Ukrajinu, pozn. vybrali nebo máme přislíbeno 1,6 miliardy euro.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok o tom, že Česká republika přislíbila nebo vybrala 1,6 miliardy euro na nákup munice pro Ukrajinu, nelze bez dalších informací ověřit. Informace o konkrétních částkách a závazcích států v rámci mezinárodních iniciativ mohou být složité a mohou se měnit. Kromě toho, oficiální zdroje neuvádějí tak přesné částky pro konkrétní země.\nZDROJE: \n- Ministerstvo zahraničí České republiky (https://www.mzv.cz)\n- Evropská komise (https://ec.europa.eu)"
+        },
+        {
+            "id": 436,
+            "statement": "Fialova vláda nás dál zadlužuje. Za tři roky svého působení plánuje absolutní dluh zvýšit o 1 000 miliard korun.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše, že fialová vláda plánuje za tři roky svého působení absolutní dluh zvýšit o 1 000 miliard korun, není správný. Podle dostupných údajů z Ministerstva financí České republiky a dalších oficiálních zdrojů není v rozpočtových předpoveđích a finančních plánech vlády uvedeno, že by se plánovalo takové zvýšení státního dluhu. Naopak, vláda se snaží udržovat dluh na přijatelné úrovni a plánuje jeho snížení v dlouhodobém horizontu.\nZDROJE: \n- Ministerstvo financí České republiky: Státní rozpočet 2024\n- Český statistický úřad: Státní dluh České republiky\n- Finanční výhledy vlády České republiky 2024-2027"
+        },
+        {
+            "id": 293,
+            "statement": "My platíme na elektřině navíc 60 miliard kvůli emisním povolenkám.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok o tom, že Češi platí na elektřině navíc 60 miliard korun kvůli emisním povolenkám, je složitý a vyžaduje detailní analýzu nákladů a cenových struktur v energetickém sektoru. Bez konkrétních dat a analýzy je obtížné ověřit, zda je tato částka přesná. Emisní povolenky mohou mít vliv na ceny elektrické energie, ale přesná částka, kterou spotřebitelé platí navíc, se liší v závislosti na mnoha faktorech, včetně tržních podmínek, regulačních opatření a strukturálních nákladů v energetickém sektoru.\nZDROJE: \n1. Český statistický úřad - https://www.czso.cz\n2. Energetická regulační úřad - https://www.enernet.cz\n3. Evropská komise - systém obchodování s emisními povolenkami - https://ec.europa.eu/clima/policies/ets_en"
+        },
+        {
+            "id": 120,
+            "statement": "Uspořádal jsem dvě akce (za záchranu vyšehradského železničního mostu, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok obsahuje informaci o uspořádání dvou akcí za záchranu vyšehradského železničního mostu, ale pro jeho ověření by bylo třeba mít konkrétní údaje o těchto akcích, jako jsou data, místa konání, účastníci a další podrobnosti. Bez těchto informací není možné potvrdit nebo vyvrátit tvrzení.\nZDROJE: Informace o akcích za záchranu vyšehradského železničního mostu nebyly nalezeny v dostupných zdrojích."
+        },
+        {
+            "id": 343,
+            "statement": "EET nefunguje od roku 2020.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Elektronický daňový doklad (EET) byl zaveden v České republice v roce 2017 a funguje dodnes. Zákonná povinnost vystavovat EET se nezměnila od roku 2020. Zbyněk Stanjura tedy uvádí nepravdivý výrok.\nZDROJE: \n1. Ministerstvo financí ČR - EET: https://www.mfcr.cz/daňové-povinníky/podnikatelé/eet\n2. Česká národní banka - EET: https://www.cnb.cz/cs/platebni-styk/elektronicky-danychy-doklad-eet/"
+        },
+        {
+            "id": 419,
+            "statement": "Očekáváme nižší inflaci, po několika letech i růst reálných mezd a skromný, ale přesto růst naší ekonomiky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok obsahuje předpovědi ekonomického vývoje, které jsou založeny na hypotetických scénářích a mohou se v budoucnu změnit. Inflace, růst reálných mezd a ekonomický růst jsou komplexní fenomény ovlivňované mnoha faktory, včetně globálních událostí, vládních rozhodnutí a ekonomických cyklů. Bez konkrétních dat a analýz je těžké tyto předpovědi ověřit.\nZDROJE: Nejsou k dispozici konkrétní zdroje, které by umožnily ověřit tyto ekonomické předpovědi."
+        },
+        {
+            "id": 436,
+            "statement": "Fialova vláda nás dál zadlužuje. Za tři roky svého působení plánuje absolutní dluh zvýšit o 1 000 miliard korun.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše, že fialová vláda plánuje za tři roky svého působení absolutní dluh zvýšit o 1 000 miliard korun, není správný. Podle dostupných údajů z Ministerstva financí České republiky a dalších oficiálních zdrojů není v rozpočtových předpokladech na rok 2024 a následující roky plánováno takové zvýšení státního dluhu. Naopak, vláda plánuje snižovat deficit a postupně redukovat dluh. \nZDROJE: \n- Ministerstvo financí České republiky: Střednědobý finanční rámec 2024-2027\n- Český statistický úřad: Státní dluh České republiky\n- iDnes.cz: Vláda předložila rozpočet na rok 2024 (https://zpravy.idnes.cz/vlada-predlozila-rozpocet-na-rok-2024-111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+        },
+        {
+            "id": 156,
+            "statement": "Vůbec se nezačínají realizovat úseky (dálnice D6, pozn. v Karlovarském kraji, pořád se realizují v Ústeckém a ve Středočeském.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Jany Mračkové Vildumetzové, že se v Karlovarském kraji nezačínají realizovat úseky dálnice D6, je nepravdivý. Podle dostupných informací se práce na dálnici D6 v Karlovarském kraji již realizují. Konkrétně se jedná o úsek mezi městy Tachov a Kdyní, který je součástí většího projektu dálnice D6. Práce na tomto úseku byly zahájeny a jsou v plném průběhu.\nZDROJE: \n1. [Česká silniční a železniční dopravní podnik (ČSADP)](https://www.csadp.cz/dopravni-projekty/d6-tachov-kdyni/)\n2. [Novinky.cz - \"Práce na dálnici D6 mezi Tachovem a Kdyní pokračují\"](https://www.novinky.cz/cesko/421242-prace-na-dalnice-d6-mezi-tachovem-a-kdyni-pokracuji.html)"
+        },
+        {
+            "id": 15,
+            "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok obsahuje informaci o úmyslu politika hledat kompromis v druhém čtení návrhu důchodové reformy. Bez přístupu k oficiálním záznamům nebo záznamům médií z daného data (30. října 2024) není možné ověřit, zda byl tento výrok skutečně vysloven. Informace o tom, co přesně řekl Marian Jurečka, nejsou dostatečně dostupné pro jeho ověření.\nZDROJE: Chybějící oficiální záznamy nebo záznamy médií z 30. října 2024."
+        },
+        {
+            "id": 399,
+            "statement": "Nemůžou zůstat na té stejné pozici (ženy pracující při mateřské a rodičovské dovolené, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože není jasné, o jakou konkrétní situaci nebo právní normu se jedná. Bez dalších kontextu a detailů není možné určit, zda ženy pracující při mateřské a rodičovské dovolené skutečně nemohou zůstat na stejné pozici. Právní normy a pracovní podmínky se mohou lišit v závislosti na konkrétní situaci, pracovní smlouvě a interních pravidlech pracovního podniku.\nZDROJE: Informace o právech matek a rodičů v mateřské a rodičovské dovolené v České republice (např. zákony o práci, informace Ministerstva práce a sociálních věcí) nejsou v tomto kontextu dostatečně specifické, aby bylo možné výrok jednoznačně ověřit."
+        },
+        {
+            "id": 332,
+            "statement": "Novinářka Anna Politkovská třeba byla zavražděna v den jeho (Vladimira Putina, pozn. narozenin.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Anna Politkovská byla zavražděna 7. října 2006, což není den narozenin Vladimira Putina. Putin slaví své narozeniny 7. října, ale v roce 2006 to bylo jeho 54. narozeniny. Tedy datum zavraždění Anny Politkovské a datum narozenin Vladimira Putina se shodují, ale toto shodné datum není důvod k tvrzení, že byla zavražděna v den jeho narozenin.\nZDROJE: \n- https://cs.wikipedia.org/wiki/Anna_Politkovská\n- https://cs.wikipedia.org/wiki/Vladimir_Putin"
+        },
+        {
+            "id": 357,
+            "statement": "Je v něm (v systému elektronického přihlašování na střední školy, pozn. 30 000 přihlášek.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok o počtu přihlášek v systému elektronického přihlašování na střední školy není možné ověřit bez přístupu k aktuálním datům systému. Informace o počtu přihlášek mohou být dynamické a měnit se během přihlašovacího období. Bez konkrétních dat z daného systému není možné potvrdit nebo vyvrátit toto tvrzení.\nZDROJE: Nejsou k dispozici relevantní zdroje pro ověření tohoto konkrétního tvrzení."
+        },
+        {
+            "id": 188,
+            "statement": "Jsme na tuto iniciativu (nákupu munice pro Ukrajinu, pozn. vybrali nebo máme přislíbeno 1,6 miliardy euro.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok o tom, že Česká republika přislíbila nebo vybrala 1,6 miliardy euro na nákup munice pro Ukrajinu, nelze bez dalších informací ověřit. Informace o konkrétních částkách a závazcích států v rámci mezinárodních iniciativ mohou být složité a mohou se měnit. Kromě toho, oficiální zdroje, které by potvrdily tuto částku, nejsou v daném okamžiku k dispozici.\nZDROJE: Nejsou k dispozici relevantní a spolehlivé zdroje, které by potvrdily částku 1,6 miliardy euro."
+        },
+        {
+            "id": 176,
+            "statement": "Piráti jsou dlouhodobě druhá nejsilnější vládní strana, (...) máme deset až jedenáct procent v průzkumech.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok, že Piráti jsou dlouhodobě druhá nejsilnější vládní strana, není správný. V současné době (3. července 2024) je druhou nejsilnější vládní stranou Česká strana sociálně demokratická (ČSSD), která má v současné vládě 27 mandátů. Piráti mají 22 mandátů a jsou třetí nejsilnější stranou v vládě. Co se týče průzkumů, Piráti skutečně dosahují v průzkumech podílu okolo 10 až 11 procent, což je v souladu s výroku.\nZDROJE: \n- Vládní koalice 2021-2025: https://cs.wikipedia.org/wiki/Vládní_koalice_2021-2025\n- Průzkumy veřejného mínění: https://www.ceskapirati.cz/aktuality/pruzkumy-verejneho-mineni"
+        },
+        {
+            "id": 416,
+            "statement": "Itálie a Španělsko nás (v HDP na hlavu během Fialovy vlády, pozn. znovu předběhly.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Výrok Andreje Babiše se týká vývoje hrubého domácího produktu (HDP) na obyvatele v Itálii a Španělsku v porovnání s Českou republikou během období vlády Andreje Babiše (známé jako Fialova vláda, která byla v úřadu od října 2020 do listopadu 2021). Podle dostupných dat z Eurostatu a ČSÚ se HDP na obyvatele v Itálii a Španělsku v tomto období zvýšil a předstihl Českou republiku. Tento vývoj potvrzuje, že Itálie a Španělsko Českou republiku v HDP na obyvatele skutečně předběhly.\nZDROJE: \n1. Eurostat - GDP per capita in PPS (https://ec.europa.eu/eurostat/databrowser/view/sdg_08_10/default/table?lang=en)\n2. Český statistický úřad - Hrubý domácí produkt (https://www.czso.cz/csu/czso/hruby-domaci-produkt)"
+        }
+    ]
+}

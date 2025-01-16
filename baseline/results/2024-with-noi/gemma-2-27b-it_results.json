@@ -1,0 +1,574 @@
+{
+    "accuracy": 0.19,
+    "correct": 19,
+    "total": 100,
+    "incorrect": [
+        {
+            "id": 299,
+            "statement": "Ústecký a Karlovarský kraj, kde – Česká republika se blíží 90 % HDP, průměrného, Evropské unie – ale v těchto krajích se bavíme o 55 % a 65 %.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nPro ověření tohoto tvrzení by bylo potřeba porovnat HDP na obyvatele v Ústeckém a Karlovarském kraji s průměrem HDP na obyvatele v EU. Data o HDP na regionální úrovni v EU jsou shromažďována Eurostatem, ale tato data se obvykle nezveřejňují tak detailně, aby bylo možné porovnat HDP na úrovni krajů s průměrem EU. \n\nNavíc je nutné zvážit, jak je HDP na obyvatele definováno a jaká data se používají pro výpočet.\n\nZDROJE: \n* Eurostat: https://ec.europa.eu/eurostat/databrowser/view/tec00001/default/table"
+        },
+        {
+            "id": 17,
+            "statement": "Ročně deficity (důchodového systému, pozn. budou klidně 200, 250, 300 až 350 miliard korun v dnešních cenách (…). To je prognóza makroekonomická.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Prognózy deficitu důchodového systému se liší v závislosti na mnoha faktorech, jako je demografický vývoj, ekonomický růst, míra nezaměstnanosti a legislativní změny. Bez bližších informací o zdroji a metodologii této prognózy nelze její přesnost ověřit. \nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 101,
+            "statement": "My jsme rozjeli projekty na snížení energetické náročnosti budov v majetku kraje, ať už se to týká škol, týká se to nemocnic, týká se to zařízení pobytových sociálních služeb.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k informacím o konkrétních projektech kraje, které by potvrdily nebo vyvrátily tvrzení paní Holomčíkové. K ověření tohoto výroku by bylo potřeba detailnější informace o projektech, jako jsou jejich názvy, rozpočty, časový harmonogram a realizovaná opatření. \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 62,
+            "statement": "(…) vyšetřovací komisi (zabývající se střelbou na Filozofické fakultě Univerzity Karlovy, pozn. kterou jsme opozici schválili, já jsem hlasoval pro.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám přístup k informacím o hlasování poslanců v parlamentu, ani k detailům o schvalování vyšetřovacích komisí. \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 47,
+            "statement": "(…) plníme už letos maastrichtská kritéria.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Zda Česko plní maastrichtská kritéria v daném roce, je komplexní otázka, která vyžaduje analýzu aktuálních ekonomických dat. Tyto data se mění a vyhodnocují se institucemi jako je Evropská komise. Bez přístupu k těmto aktuálním datům a analýzám nelze s jistotou potvrdit nebo vyvrátit tvrzení.\nZDROJE:  \n* Informace o maastrichtských kritériích: https://ec.europa.eu/info/business-economy-euro/euro-area/euro-convergence-criteria_cs\n* Aktuální data a analýzy k maastrichtským kritériím: Evropská komise (https://ec.europa.eu/)"
+        },
+        {
+            "id": 357,
+            "statement": "Je v něm (v systému elektronického přihlašování na střední školy, pozn. 30 000 přihlášek.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k reálným datům o počtu přihlášek do systému elektronického přihlašování na střední školy. Informace o počtu 30 000 přihlášek by musela pocházet z oficiálních zdrojů, jako je Ministerstvo školství, mládeže a tělovýchovy. \nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 403,
+            "statement": "Celkem jsme lidem a firmám za dobu, co bylo hnutí ANO ve vládě, daně snížili o 504 miliard korun.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZatímco Andrej Babiš jako předseda hnutí ANO byl premiérem v letech 2017-2021, ověření celkové výše snížení daní za tuto dobu je složité. \n\nPro ověření tohoto tvrzení by bylo potřeba detailní analýzy daňových reforem provedených v daném období, zohlednění všech typů daní (daň z příjmů fyzických a právnických osob, DPH, spotřební daně atd.) a srovnání s vývojem daňových příjmů státu v předchozích letech. \n\nK dispozici nejsou veřejně přístupné a komplexní data, která by umožnila takovou analýzu.\nZDROJE: \n\n* Žádné specifické zdroje nepodporují ani nevyvrací toto tvrzení. \n\n\n"
+        },
+        {
+            "id": 176,
+            "statement": "Piráti jsou dlouhodobě druhá nejsilnější vládní strana, (...) máme deset až jedenáct procent v průzkumech.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nelze ověřit, zda Piráti jsou dlouhodobě druhou nejsilnější vládní stranou, ani zda mají v průzkumech 10-11%. K ověření by bylo potřeba znát přesný časový rámec \"dlouhodobě\" a srovnat výsledky voleb a průzkumů veřejného mínění za dané období. \nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 209,
+            "statement": "Já osobně jsem například dával peníze na záchranu 1 000 volyňských Čechů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemáme dostatek informací, abychom ověřili, zda Andrej Babiš finančně přispěl na záchranu 1 000 volyňských Čechů.  Chybí nám kontext, kdy a jakým způsobem měl k této pomoci dojít. \nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 206,
+            "statement": "V chartě NATO je devětkrát slovo mír, že členové NATO mají řešit konflikty mírovými prostředky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k plnému textu Charty Severoatlantické smlouvy, abych mohl ověřit, kolikrát se v ní slovo \"mír\" vyskytuje. \nZDROJE:  Žádné. \n"
+        },
+        {
+            "id": 292,
+            "statement": "Plochy lesů přibývají.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Znění výroku je příliš obecné. Abychom mohli posoudit pravdivost tvrzení, že plochy lesů přibývají, potřebujeme více kontextu. Kde se plochy lesů mají zvětšovat? V jakém časovém úseku? Globálně, v České republice, nebo v jiné zemi? Bez těchto informací nelze tvrzení ověřit. \nZDROJE: - \n\n\n"
+        },
+        {
+            "id": 444,
+            "statement": "Četli jsme článek, který podepsal Andrej Babiš, možná ho i tedy psal, který říká, že za útok na Kapitol může právě korespondenční volba.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ:  Útok na Kapitol v USA 6. ledna 2021 byl motivací demonstrací a násilností ze strany stoupenců tehdejšího prezidenta Donalda Trumpa, kteří odmítali výsledky prezidentských voleb.  Korespondenční volba, která umožňuje lidem hlasovat poštou, byla v USA předmětem debat a kontroverzí, ale neexistují žádné důkazy, že by byla příčinou útoku na Kapitol. \n\nZDROJE:\n* **Report of the Select Committee to Investigate the January 6th Attack on the United States Capitol:** https://january6th.house.gov/\n* **The New York Times:** https://www.nytimes.com/\n* **The Washington Post:** https://www.washingtonpost.com/"
+        },
+        {
+            "id": 240,
+            "statement": "My to máme v programu (nesouhlas se zrušením práva veta, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZadaný výrok je neověřitelný, protože neobsahuje dostatek kontextu. Nevíme, o jaký \"program\" se jedná. Bez znalosti obsahu programu a jeho vztahu k právu veta nelze posoudit pravdivost tvrzení.\n\nZDROJE:  Žádné. \n"
+        },
+        {
+            "id": 1,
+            "statement": "Udělali jsme tzv. prokremelské pohádky (...) anebo běží série veřejných debat po regionech, kde naši diplomaté hovoří s veřejností o Rusku.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nVýrok se týká existence aktivit, které Jan Lipavský označuje jako \"prokremelské pohádky\" a série debat o Rusku s veřejností.  Bez bližšího kontextu a specifikace, co se pod těmito termíny skrývá, je nemožné ověřit pravdivost tvrzení. \n\nK ověření by bylo potřeba znát:\n\n* **Definici \"prokremelských pohádek\":** Co konkrétně tím Lipavský myslí? Jaké obsahují informace a jakým způsobem jsou šířeny?\n* **Konkrétní příklady debat:** Kdy a kde probíhaly? Kdo v nich hovořil a o čem?\n\nBez těchto informací je hodnocení pravdivosti výroku nemožné.\n\nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 432,
+            "statement": "Vláda osekala důchody a zvyšuje věk odchodu do penze.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZnění výroku je obecné a neumožňuje ověření. Abychom mohli zhodnotit pravdivost, potřebujeme konkrétnější informace. Kdy a o kolik vláda osekala důchody? Jaký je nový věk odchodu do penze? Bez těchto detailů nelze tvrzení ověřit.\n\nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 173,
+            "statement": "(Nadnárodní korporace, pozn. odvádí ročně, a to už jsou údaje i renomovaných ekonomů z auditorských společností, 300 miliard do zahraničí nezdaněných dividend.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nTomio Okamura uvádí, že nadnárodní korporace odvádí ročně 300 miliard korun nezdaněných dividend do zahraničí. Toto tvrzení je velmi obecné a neposkytuje dostatek informací pro ověření. \n\nChybí kontext, který by umožnil ověřit jeho pravdivost:\n\n* **Definice \"nadnárodních korporací\":** Které firmy se pod tímto pojmem skrývají? Je to jasně definovaná skupina firem?\n* **Zdroj údajů:** Kdo jsou ti \"renomovaní ekonomové z auditorských společností\"? Jaká je metodologie jejich výpočtu? Jaké období tato data pokrývají?\n* **Definice \"nezdaněných dividend\":** Jsou tím myšleny dividendy, které jsou v České republice vůbec zdaněny, nebo dividendy, které jsou zdaněny v zemi původu korporace?\n\nBez těchto informací je nemožné ověřit pravdivost tvrzení.\n\nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 343,
+            "statement": "EET nefunguje od roku 2020.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Elektronický evidenci tržeb (EET) je v České republice v provozu od roku 2017 a stále funguje. \nZDROJE: \n* Oficiální web Ministerstva financí ČR: https://www.mfcr.cz/cs/danove-informace/elektronicka-evidence-trzeb"
+        },
+        {
+            "id": 68,
+            "statement": "Máme 607 stavebních úřadů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Počet stavebních úřadů v České republice se může měnit v závislosti na administrativních reformách a sloučení úřadů. Bez aktuálních a oficiálních statistik z ministerstva pro místní rozvoj nebo jiného relevantního zdroje nelze toto tvrzení ověřit.\nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 336,
+            "statement": "(...) poslanecký návrh, který předložili napříč paní poslankyně Válková za hnutí ANO a pan poslanec Navrátil za KDU, který umožňuje přiosvojení (pro stejnopohlavní páry, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Informace o tom, že poslanecký návrh pro stejnopohlavní páry předložili poslankyně Válková a poslanec Navrátil, je neúplná. K ověření pravdivosti je potřeba znát přesný název návrhu a jeho obsah. Bez těchto informací nelze posoudit, zda se jedná o návrh umožňující adopci pro stejnopohlavní páry.\nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 4,
+            "statement": "Česko předložilo návrh, abychom nedovolili ruským diplomatům volně cestovat po celém Schengenu, ale vždycky se zdržovali v té zemi, ve které mají podle Vídeňské úmluvy působit. Na tom jsme také shodu nenašli.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Není možné ověřit pravdivost tvrzení, zda Česko skutečně předložilo takový návrh a zda se na něm nedošlo ke shodě. K datu 26. listopadu 2024 nemáme přístup k archivům a aktuálním diplomatickým záznamům, které by mohly potvrdit nebo vyvrátit toto tvrzení.\nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 410,
+            "statement": "Prosadil (Petr Fiala, pozn. zákaz výroby spalovacích motorů, i když sliboval opak, a prosadil migrační pakt EU.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: \n\nVýrok je neověřitelný z několika důvodů. \n\n* **Zákaz výroby spalovacích motorů:** Zatímco EU diskutuje o přechodu na elektromobilitu a snižování emisí, neexistuje žádný konkrétní zákaz výroby spalovacích motorů, který by Petr Fiala prosadil. Evropská komise navrhla cíle pro snižování emisí CO2 z osobních vozidel, ale konečné rozhodnutí o tom, jak tyto cíle dosáhnout, náleží členským státům.\n* **Migrační pakt EU:** Migrační pakt EU je komplexní téma, které zahrnuje řadu opatření a dohod. Je obtížné říci, zda Petr Fiala \"prosadil\" migrační pakt, protože se jedná o složitý proces, ve kterém se podílejí všechny členské státy.\n\nAbychom mohli ověřit tento výrok, potřebovali bychom přesnější informace o tom, na jaký konkrétní zákaz výroby spalovacích motorů a na jakou část migračního paktu se vztahuje.\n\nZDROJE:\n\n* Evropská komise: https://ec.europa.eu/info/strategy/priorities-2019-2024/european-green-deal_en\n* Evropský parlament: https://www.europarl.europa.eu/news/en/headlines/society/20200915STO88787/migration-pact-what-are-the-key-proposals"
+        },
+        {
+            "id": 182,
+            "statement": "„Munice pro Ukrajinu je nekvalitní, část ji musíme doplňovat“, říká český zbrojař.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemáme dostatek informací, abychom ověřili pravdivost tohoto tvrzení. Nevíme, na jakého zbrojaře se odkazuje, ani jaká je jeho pozice a odbornost.  Bez bližších informací o zdroji a kontextu výroku nelze posoudit jeho pravdivost.\nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 317,
+            "statement": "Pan Babiš použil jeden (vulgární, pozn. výraz, hned na to prostě pan poslanec Kolář za TOP 09 použil možná ještě ostřejší výraz.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k archivům záznamů z parlamentních jednání, ani k jiným zdrojům, které by mohly potvrdit nebo vyvrátit tvrzení o použití vulgárních výrazů panem Babišem a panem Kolářem. \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 86,
+            "statement": "(Platy poslanců, pozn. jsme několikrát zastropovali a potom ten automat takhle skočí (o 14 %, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Výrok je neověřitelný, protože neobsahuje dostatek informací. Abychom mohli ověřit, zda platy poslanců byly \"několikrát zastropovány\", potřebujeme znát přesné datum, kdy k zastropování došlo, a jaký byl tehdy plat poslanců.  Také není jasné, co znamená \"automat takhle skočí o 14 %\".  Je to automatické navýšení platů? Pokud ano, jak je toto navýšení spočítáno? \nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 149,
+            "statement": "Dělali jsme i nový projekt, který je zaměřen na návrat rodáků – jmenuje se to Návrat expatů – kdy jsme vyjeli i s komunikačním týmem do velkých měst, jako je Praha a Plzeň.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám přístup k informacím o konkrétních projektech ministerstva, na kterých se Markéta Monsportová podílela. Nemohu proto potvrdit ani vyvrátit existenci projektu \"Návrat expatů\". \nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 339,
+            "statement": "(...) co má, pokud vím, 36 zemí světa, prostě rovná práva, možnost vstoupit do manželství i pro stejnopohlavní páry.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Přesné číslo zemí, které uznaly manželství osob stejného pohlaví, se neustále mění.  Není možné bez komplexní a aktuální databáze právních předpisů všech zemí světa s jistotou potvrdit nebo vyvrátit toto tvrzení. \nZDROJE:  \n* Informace o legalizaci manželství osob stejného pohlaví se mění, proto je nutné se obracet na specializované organizace a databáze, jako je například:\n    *  International Lesbian, Gay, Bisexual, Trans and Intersex Association (ILGA): https://ilga.org/\n    *  Equaldex: https://www.equaldex.com/"
+        },
+        {
+            "id": 95,
+            "statement": "Zdědili jsme ekonomiku s deficitem 5,6 procenta hrubého domácího produktu.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k reálným datovým sadám o ekonomických ukazatelích v reálném čase, jako je deficit státního rozpočtu. Informace o deficitu HDP za minulý rok by se obvykle zveřejňovaly v ekonomických statistikách a reportech, které vydávají instituce jako Český statistický úřad nebo Ministerstvo financí. \nZDROJE:  Žádné. \n"
+        },
+        {
+            "id": 83,
+            "statement": "Vedou 3:1 (hnutí ANO nad hnutím STAN, pozn. oni mají za tohle volební období obviněné a trestně stíhané tři politiky za korupci. My jednoho a je to bývalý člen.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nInformace o počtu obviněných a trestně stíhaných politiků za korupci v hnutí ANO a STAN je nutné ověřit u nezávislých a důvěryhodných zdrojů, jako jsou soudy, policie nebo nezávislá média.  Pouhé tvrzení politika bez odkazu na konkrétní případy a právní postupy nelze považovat za ověřitelné.\n\nZDROJE:  Žádné. \n"
+        },
+        {
+            "id": 412,
+            "statement": "(...) si pan Fiala neomaleně přisvojuje naši práci. Například když tvrdí, že jeho vláda staví 200 kilometrů nových dálnic.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nAbychom mohli ověřit pravdivost tvrzení Andreje Babiše, potřebujeme znát kontext jeho výroku. Kdy a kde Fiala toto tvrzení pronesl? Jaké dálnice se tím myslí? Bez těchto informací nelze posoudit, zda si Fiala skutečně přisvojuje práci jiných, nebo zda se jedná o legitimní prohlášení o aktivitách jeho vlády.\n\nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 211,
+            "statement": "Tomáš ZDECHOVSKÝ: Jednu z těch částí (migračního paktu, pozn. jsem vyjednával já. Pavlína WOLFOVÁ: Která to je? Řekněte nám to. Tomáš ZDECHOVSKÝ: Dobrovolné relokace (...), mechanismus, když si stát někoho chce vzít, tak ať si ho vezme a my mu na to přispějeme.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k archivům jednání a dokumentům týkajících se vyjednávání migračního paktu. Proto nemohu ověřit, zda Tomáš Zdechovský skutečně vyjednával část migračního paktu týkající se dobrovolných relokací. \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 361,
+            "statement": "To není tak, že by v celé Evropě všude byla tato látka (HHC, pozn. zakázaná. Je řada států, kde už to tak je, řada států k tomu směřuje.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nInformace o tom, ve kterých evropských zemích je HHC zakázáno a ve kterých ne, je složitá a neustále se mění. Není možné s jistotou potvrdit, že \"řada států\" už HHC zakázala a \"řada států\" k tomu směřuje, aniž bychom provedli detailní průzkum právních předpisů všech evropských zemí.\n\nZDROJE: \n\n*  Informace o legislativě jednotlivých zemí se liší a je nutné je ověřovat na oficiálních webových stránkách příslušných vládních orgánů. \n"
+        },
+        {
+            "id": 187,
+            "statement": "Nechci to citovat, nevím to úplně přesně, Masaryk někde řekl, že nejde o to být velkým národem, jde o to být slušným národem.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Přestože citace zní pravděpodobně a odpovídá Masarykovým ideálům, nelze ji bez bližšího kontextu a zdroje ověřit. Neexistuje veřejně dostupný záznam, který by tuto konkrétní formulaci Masaryka potvrdil. \nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 96,
+            "statement": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Informace o tom, které země EU mají nadměrné schodky a zda s nimi Evropská komise vede jednání, nejsou veřejně dostupné v takové detailní formě. Evropská komise zveřejňuje obecné informace o nadměrných deficitech v rámci svých ekonomických doporučení a hlášení, ale ne identifikuje konkrétní země, s nimiž vede jednání. \nZDROJE: \n* Webové stránky Evropské komise: https://ec.europa.eu/info/business-economy-euro/economic-and-fiscal-policy-coordination/economic-governance-and-surveillance_en"
+        },
+        {
+            "id": 366,
+            "statement": "Já jsem byl ten den (v den odborářské stávky, pozn. také ve škole (...) a mluvil jsem jak s učiteli, tak se studenty (...). Navštívil jsem taky zemědělský podnik, který shodou okolností jako jeden z vedoucích, nikoliv majitelů, vlastníků, (...) jeden z vedoucích reprezentantů nebo z managementu byl bratr pana Jurečky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Petr Fiala ve svém výroku uvádí, že navštívil zemědělský podnik, kde byl jedním z vedoucích bratr pana Jurečky.  Bez bližších informací o datu stávky, jménu pana Jurečky a názvu zemědělského podniku není možné toto tvrzení ověřit. \nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 265,
+            "statement": "(...) automobilový průmysl, na kterém je závislých 13 milionů rodin v celé Evropě.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k datům o počtu rodin v Evropě závislých na automobilovém průmyslu. Toto číslo by vyžadovalo komplexní analýzu, která by zohledňovala různé formy závislosti (zaměstnanci, dodavatelé, související služby atd.). \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 57,
+            "statement": "V minulém roce časopis The Economist (...) řekl, že Česká republika je v klientelismu na druhém místě za Ruskem.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Není možné ověřit, zda časopis The Economist skutečně v minulém roce prohlásil, že Česká republika je v klientelismu na druhém místě za Ruskem. K ověření tohoto tvrzení by bylo potřeba najít konkrétní vydání časopisu The Economist z minulého roku, ve kterém se toto tvrzení nachází. \nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 240,
+            "statement": "My to máme v programu (nesouhlas se zrušením práva veta, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZadaný výrok je neověřitelný, protože neobsahuje dostatek kontextu. Nevíme, o jaký \"program\" se jedná. Bez znalosti obsahu programu a jeho vztahu k právu veta nelze posoudit pravdivost tvrzení.\n\nZDROJE:  Žádné. \n"
+        },
+        {
+            "id": 65,
+            "statement": "On (tehdejší ministr pro místní rozvoj Ivan Bartoš, pozn. se rozhodl některá tato řízení, soutěžní dialogy zrušit.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k archivům a veřejně dostupným záznamům o jednáních vlády a ministerstva pro místní rozvoj z minulosti. Bez přístupu k těmto informacím nemohu ověřit, zda Ivan Bartoš skutečně zrušil některé soutěžní dialogy.\nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 8,
+            "statement": "Tomáš Pojar ve všech svých výrocích vždy hovoří o tom, že to je Ukrajina, která souhlasí s tím řešením (ukončení války na Ukrajině, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k archivu všech výroků Tomáše Pojara, abych mohl ověřit, zda ve všech jeho prohlášeních o řešení konfliktu na Ukrajině uvádí souhlas Ukrajiny. \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 305,
+            "statement": "(Evropská, pozn. komise slíbila, že bude některá opatření (v oblasti zemědělství, pozn. revidovat.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Výrok je příliš vágní na to, aby byl ověřen. Nevíme, o jaká opatření v oblasti zemědělství se jedná, ani jaká revidovaná verze byla slibována. Bez bližších detailů nelze ověřit pravdivost tvrzení.\nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 135,
+            "statement": "Gymnázium v Černošicích, které se má stavět, tak hnutí ANO ho na zastupitelstvu nepodpořilo (...). Byť jejich odborníci, kteří jsou ve výboru pro školství, to jednoznačně podpořili.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám přístup k archivům jednání zastupitelstva v Černošicích ani k informacím o stanovisku hnutí ANO k tomuto projektu. Bez těchto informací nemohu ověřit, zda je výrok pravdivý.\nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 359,
+            "statement": "My jsme po mém nástupu finalizovali ten dlouhodobý záměr, který platí od tohoto roku a výrazně jsme se odchýlili od dosavadní praxe. Ty dvě minulé vlády trvaly na tom, že ten poměr mezi všeobecným a odborným vzděláním bude 30 % všeobecné vzdělání a 70 % odborné. My jsme v tom našem dlouhodobém záměru, který schválila vláda, nastavili ty mantinely 50 na 50.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nNemám přístup k archivům vládních dokumentů ani k detailnímu rozpisu dlouhodobého záměru ministerstva školství. Proto nemohu ověřit, zda byl poměr mezi všeobecným a odborným vzděláním skutečně nastaven na 50:50 a zda předchozí vlády skutečně trvaly na poměru 30:70. \n\nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 232,
+            "statement": "V Libyi nejdřív (působili, pozn. wagnerovci, dneska GRU jako tzv. bezpečnostní experti.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZatímco je známo, že Wagnerova skupina působila v Libyi, a že Rusko má v Libyi vojenskou přítomnost,  konkrétní tvrzení o GRU jako \"bezpečnostních expertech\" v Libyi je obtížné ověřit. Informace o aktivitách GRU jsou často tajné a ne vždy veřejně dostupné. \n\nZDROJE:\n\n* **Obecné informace o Wagnerově skupině v Libyi:**\n    * https://www.bbc.com/news/world-africa-51999287\n    * https://www.aljazeera.com/news/2020/12/16/russia-backed-wagner-group-accused-of-war-crimes-in-libya\n* **Informace o ruské vojenské přítomnosti v Libyi:**\n    * https://www.reuters.com/article/us-libya-security-russia-idUSKBN22L18Q\n* **Informace o GRU jsou obecně tajné a těžko ověřitelné.**"
+        },
+        {
+            "id": 225,
+            "statement": "Různé brněnské firmy nebo české tam mají čističky vody (ve zdrojových zemích migrace, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je příliš vágní, aby se dal ověřit. Nevíme, které firmy Markéta Gregorová myslí, ani jaký typ čističek vody má na mysli.  Neexistuje žádný jasný a měřitelný fakt, který by se dal ověřit. \nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 235,
+            "statement": "Její práce (Danuše Nerudové, pozn. se objevila v desítkách renomovaných časopisů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k databázím publikací a nemůžu ověřit, v jakých časopisech Danuše Nerudová publikovala. \nZDROJE:  Žádné. \n"
+        },
+        {
+            "id": 179,
+            "statement": "1,6 milionu lidí v Česku se v nějaké životní fázi může dostat do problému udržet si stávající bydlení.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nI když je problém s dostupností bydlení v Česku reálný a vážný, nemáme dostatek informací, abychom ověřili přesnost tohoto tvrzení. K určení, kolik lidí se v životě dostane do problémů s bydlením, by bylo potřeba komplexní socioekonomické analýzy zohledňující faktory jako příjmy, ceny nemovitostí, dostupnost sociálního bydlení a další. \n\nZDROJE: \n* Žádné specifické zdroje pro ověření tohoto tvrzení nejsou k dispozici. \n"
+        },
+        {
+            "id": 385,
+            "statement": "Pátá generace (švédských letounů Gripen, pozn. by byla přibližně za poloviční cenu (…), za další provoz je výrazně, výrazně levnější. Navíc nám nabízeli 14 stávajících gripenů, které by nám přenechali.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZatímco je veřejně známo, že Švédsko nabízí Česku Gripeny, konkrétně model Gripen E,  informace o ceně, provozních nákladech a nabídce 14 stávajících letounů nejsou veřejně dostupné a ověřitelné. \n\nZDROJE:\n\n* Veřejně dostupné informace o jednáních Česka se Švédskem o koupi Gripenů. \n\n\n"
+        },
+        {
+            "id": 146,
+            "statement": "Dnešní I/13 (...) úsek, který jsme (...) dotáhli do schválení centrální komisí řešení, že bude vystavěno v novém koridoru šířkové uspořádání 2+1 nebo 2+2 po celé délce z Ostrova směrem do Ústeckého kraje.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Informace o schválení trasy a uspořádání silnice I/13 v novém koridoru 2+1 nebo 2+2 po celé délce z Ostrova do Ústeckého kraje nelze na základě veřejně dostupných zdrojů ověřit. K prověření by bylo potřeba přístup k dokumentům centrální komise řešení a oficiálním komunikacím ministerstva dopravy.\nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 407,
+            "statement": "Reálné mzdy u nás propadly nejvíc ze všech vyspělých zemí.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZatímco je pravda, že Česká republika čelí problémům s růstem mezd a inflací, tvrzení, že reálné mzdy propadly nejvíc ze všech vyspělých zemí, je velmi obecné a těžko ověřitelné. K provedení takového srovnání by bylo potřeba definovat, které země se považují za \"vyspělé\" a jak se měří \"propad reálných mezd\". K dispozici nejsou data, která by umožnila takové komplexní srovnání.\n\nZDROJE: \n* Žádné specifické zdroje pro ověření tohoto tvrzení. \n"
+        },
+        {
+            "id": 391,
+            "statement": "Bureš 25085. To je evidenční číslo karty Andreje Babiše z 11. listopadu 1982, pod kterou ho StB zaevidovala jako udavače. Soud už o tom, že byl Andrej Babiš konfidentem StB, dávno rozhodl. Dnes to slovenský Ústavní soud opět potvrdil. Možná je na čase si to přiznat.",
+            "reference_label": "nepravda",
+            "label": "pravda",
+            "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ:  Markéta Pekarová Adamová se odvolává na fakt, že Andrej Babiš byl evidován StB pod číslem 25085 a že soudní rozhodnutí potvrdilo jeho status konfidenta StB. Toto tvrzení je pravdivé. Soudní spor o tom, zda byl Andrej Babiš agentem StB, probíhal v Česku a slovenský Ústavní soud se k němu vyjádřil v souvislosti s odvoláním. \nZDROJE:\n* Rozsudek Městského soudu v Praze ze dne 17. ledna 2023\n* Rozhodnutí Ústavního soudu Slovenské republiky ze dne 7. února 2024 \n\n\n"
+        },
+        {
+            "id": 271,
+            "statement": "Antverpská deklarace nám prostě jasně říká, že (...) odejdou, utečou, že prostě tohle pro ně není životaschopné (Green Deal pro průmyslníky, pozn.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Antverpská deklarace je dokumentem, který se zabývá energetickou politikou EU a snahou o dosažení klimatických cílů. Deklarace sama o sobě neobsahuje žádné explicitní prohlášení o tom, že průmyslníci \"odejdou\" nebo \"utečou\" z EU v důsledku Green Dealu.  Bez bližšího kontextu a analýzy obsahu deklarace nelze ověřit, zda Kateřina Konečná správně interpretuje její obsah. \nZDROJE: \n* Text Antverpské deklarace (pro ověření obsahu)\n* Kontext projevu Kateřiny Konečné (pro pochopení jejího tvrzení)"
+        },
+        {
+            "id": 188,
+            "statement": "Jsme na tuto iniciativu (nákupu munice pro Ukrajinu, pozn. vybrali nebo máme přislíbeno 1,6 miliardy euro.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Informace o přesné částce, která byla \"vybrána nebo přislíbena\" na nákup munice pro Ukrajinu, není veřejně dostupná. Premiér Fiala mohl tuto informaci sdělit na nějaké neveřejné schůzce nebo jednání, ale bez bližších detailů a ověření z jiných zdrojů nelze toto tvrzení potvrdit ani vyvrátit.\nZDROJE:  Žádné veřejně dostupné zdroje nepotvrzují ani nevyvracejí tuto informaci. \n\n\n"
+        },
+        {
+            "id": 436,
+            "statement": "Fialova vláda nás dál zadlužuje. Za tři roky svého působení plánuje absolutní dluh zvýšit o 1 000 miliard korun.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZatímco je veřejně dostupné, jaký byl objem státního dluhu v minulosti a jaký je aktuálně, není možné s jistotou říci, jaký bude absolutní dluh za tři roky. To závisí na mnoha faktorech, jako je ekonomický růst, výdaje státu, příjmy státu a další. Prognózy státního dluhu se mohou lišit a jsou ovlivněny mnoha proměnnými.\n\nZDROJE: \n* Data o státním dluhu jsou zveřejňována Ministerstvem financí ČR: [https://www.mfcr.cz/cs/aktualne/statni-dluh](https://www.mfcr.cz/cs/aktualne/statni-dluh)\n* Prognózy státního dluhu zpracovávají nezávislé instituce, jako je Česká národní banka nebo Mezinárodní měnový fond. \n\n\n"
+        },
+        {
+            "id": 293,
+            "statement": "My platíme na elektřině navíc 60 miliard kvůli emisním povolenkám.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZatímco je pravda, že cena emisních povolenek se promítá do cen elektřiny, nelze s jistotou říci, o jakou konkrétní částku se jedná. Cena emisních povolenek kolísá a její vliv na konečnou cenu elektřiny je složitý a závisí na mnoha faktorech, jako je typ elektrárny, spotřeba a další náklady. Bez detailní analýzy energetického trhu a cenových mechanismů nelze potvrdit, zda je tvrzení o 60 miliardách korun přesné.\n\nZDROJE: \n* **Energetický regulační úřad:** https://www.eru.cz/\n* **Ministerstvo průmyslu a obchodu:** https://www.mpo.cz/\n* **Evropská komise - Emissions Trading System:** https://ec.europa.eu/clima/policies/ets_en"
+        },
+        {
+            "id": 120,
+            "statement": "Uspořádal jsem dvě akce (za záchranu vyšehradského železničního mostu, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám přístup k informacím o minulých událostech, jako jsou akce uspořádané konkrétní osobou v minulosti. \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 71,
+            "statement": "Povedlo se zřídit speciální stavební úřad při Ministerstvu dopravy.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Není veřejně dostupná informace o zřízení speciálního stavebního úřadu při Ministerstvu dopravy. K nalezení takové informace by bylo potřeba prověřit oficiální web Ministerstva dopravy, legislativní materiály a tiskové zprávy. \nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 125,
+            "statement": "My jsme na zastupitelstvu a se širokou podporou napříč zastupitelstvem schválili klimatický akční plán.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám přístup k informacím o jednáních zastupitelstva, ani k záznamům o schválených dokumentech. Proto nemohu ověřit, zda byl klimatický akční plán skutečně schválen a jaká byla míra podpory.\nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 343,
+            "statement": "EET nefunguje od roku 2020.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Elektronický evidenci tržeb (EET) je v České republice v provozu od roku 2017 a stále funguje. \nZDROJE: \n* Oficiální web Ministerstva financí ČR: https://www.mfcr.cz/cs/danove-informace/danove-systemy/eet"
+        },
+        {
+            "id": 264,
+            "statement": "Green Deal je třeba vysazení tří miliard stromů, vyčištění 25 tisíc kilometrů toků řek (...), zachování biodiverzity, to znamená například zastavení vymírání včelstev.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZatímco Green Deal je skutečný program Evropské unie zaměřený na boj s klimatickou změnou a ochranu životního prostředí,  konkrétní cíle jako vysazení tří miliard stromů, vyčištění 25 tisíc kilometrů toků řek a zastavení vymírání včelstev nelze z výroku jednoznačně ověřit. Green Deal je komplexní program s mnoha cíli a opatřeními, a tyto konkrétní cíle se v něm nemusí explicitně uvádět. \n\nZDROJE:\n\n* Oficiální web Evropské unie o Green Deal: https://ec.europa.eu/info/strategy/priorities-2019-2024/european-green-deal_en \n\n\n"
+        },
+        {
+            "id": 360,
+            "statement": "Ta účinnost (zákazu prodeje HHC, pozn. je závislá na notifikaci Evropskou unií.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Znění výroku je nejasné a neumožňuje jednoznačné ověření.  \n\n* **Závislost na notifikaci EU:** Zatímco je pravda, že Evropská unie hraje roli v regulaci nových psychoaktivních látek, není jasné, jak přesně by se notifikace EU týkala účinnosti zákazu prodeje HHC v Česku. \n* **Nejasná formulace:** Výrok neupřesňuje, jaká forma notifikace EU by ovlivnila účinnost zákazu. Může se jednat o:\n    * **Zákaz na úrovni EU:** V takovém případě by notifikace EU mohla vést k zákazu prodeje HHC v celé EU, včetně Česka.\n    * **Doporučení EU:** Notifikace EU ve formě doporučení by nebyla závazná pro Česko a Česká republika by si mohla ponechat svůj vlastní přístup k regulaci HHC.\n    * **Jiná forma notifikace:**  Existují i další formy notifikace EU, které by mohly mít vliv na regulaci HHC, ale bez bližších informací je nemožné posoudit jejich dopad.\n\nZDROJE: \n* Žádné specifické zdroje nelze uvést, protože znění výroku je příliš obecné. \n\n\n"
+        },
+        {
+            "id": 206,
+            "statement": "V chartě NATO je devětkrát slovo mír, že členové NATO mají řešit konflikty mírovými prostředky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k plnému textu Charty Severoatlantické smlouvy, abych mohl ověřit, kolikrát se v ní slovo \"mír\" vyskytuje. \nZDROJE:  Žádné. \n"
+        },
+        {
+            "id": 419,
+            "statement": "Očekáváme nižší inflaci, po několika letech i růst reálných mezd a skromný, ale přesto růst naší ekonomiky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Ekonomické prognózy jsou složité a závisí na mnoha faktorech, které se mohou v budoucnu změnit. Zatímco Petr Pavel jako prezident může mít přístup k určitým ekonomickým datům a analýzám, nelze s jistotou říci, zda se jeho očekávání naplní. \n\nZDROJE: Žádné. Pro ověření ekonomických predikcí je potřeba analyzovat data a prognózy od nezávislých ekonomických institucí. \n"
+        },
+        {
+            "id": 393,
+            "statement": "Použiju třeba data České národní banky. (...) Ten očekávaný vývoj třeba inflace, tak ten má (v roce 2024, pozn. být mezi 2,5–3 procenty. Opravdu už zhruba od února loňského roku, meziměsíční inflace je v hodnotách, v desetinách buďto růstu, nebo dokonce i poklesu.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nPolitici se často odvolávají na ekonomické prognózy, ale bez kontextu a přesného zdroje je nemožné ověřit přesnost tvrzení. Zatímco Česká národní banka (ČNB) zveřejňuje prognózy inflace, nelze z výroku zjistit, zda se Jurečka odkazuje na oficiální prognózu ČNB a zda se jedná o prognózu pro celý rok 2024, nebo jen pro část roku. \n\nDále tvrzení o meziměsíčním vývoji inflace od února 2022 je obecné a bez uvedení konkrétních dat nelze ověřit.\n\nZDROJE: \n* Webové stránky České národní banky (https://www.cnb.cz/)"
+        },
+        {
+            "id": 351,
+            "statement": "Pocházím z univerzity, která elektronizovala přihlášky před 20 lety a v roce 2007 zrušila papírové přihlášky, zatímco na střední školy jsme se ještě loni hlásili jenom papírově.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám přístup k archivním datům o elektronizaci přihlášek na vysoké školy a střední školy v České republice. Informace o tom, kdy jednotlivé instituce zavedly elektronické přihlášky, jsou pravděpodobně rozptýlené a neexistuje centrální databáze, která by je shromažďovala. \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 436,
+            "statement": "Fialova vláda nás dál zadlužuje. Za tři roky svého působení plánuje absolutní dluh zvýšit o 1 000 miliard korun.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZatímco je veřejně dostupné, jaký byl objem státního dluhu v minulosti a jaký je aktuálně, není možné s jistotou říci, jaký bude absolutní dluh za tři roky. To závisí na mnoha faktorech, jako je ekonomický růst, výdaje státu, příjmy státu a další. Prognózy státního dluhu se mohou lišit a jsou často předmětem politických debat. \n\nZDROJE: \n* Data o státním dluhu jsou zveřejňována Ministerstvem financí ČR: [https://www.mfcr.cz/cs/aktualne/statni-dluh](https://www.mfcr.cz/cs/aktualne/statni-dluh)\n* Prognózy státního dluhu zpracovávají nezávislé instituce, jako je Česká národní banka nebo Mezinárodní měnový fond. \n\n\n"
+        },
+        {
+            "id": 299,
+            "statement": "Ústecký a Karlovarský kraj, kde – Česká republika se blíží 90 % HDP, průměrného, Evropské unie – ale v těchto krajích se bavíme o 55 % a 65 %.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nPro ověření tohoto tvrzení by bylo potřeba porovnat HDP na obyvatele v Ústeckém a Karlovarském kraji s průměrem HDP na obyvatele v EU. Data o HDP na regionální úrovni v EU jsou shromažďována Eurostatem, ale tato data se obvykle nezveřejňují tak detailně, aby bylo možné porovnat HDP na úrovni krajů s průměrem EU. \n\nNavíc je nutné zvážit, jak je HDP na obyvatele definováno a jaká data se používají pro výpočet.\n\nZDROJE: \n* Eurostat: https://ec.europa.eu/eurostat/databrowser/view/tec00001/default/table"
+        },
+        {
+            "id": 179,
+            "statement": "1,6 milionu lidí v Česku se v nějaké životní fázi může dostat do problému udržet si stávající bydlení.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nI když je problém dostupnosti bydlení v Česku reálný a vážný, nemáme dostatek informací, abychom ověřili přesnost tohoto tvrzení. K určení, kolik lidí se v životě dostane do problémů s bydlením, by bylo potřeba komplexní socioekonomické analýzy zohledňující faktory jako příjmy, ceny nemovitostí, dostupnost sociálního bydlení a další. \n\nZDROJE: \n* Žádné specifické zdroje pro ověření tohoto tvrzení nejsou k dispozici. \n"
+        },
+        {
+            "id": 156,
+            "statement": "Vůbec se nezačínají realizovat úseky (dálnice D6, pozn. v Karlovarském kraji, pořád se realizují v Ústeckém a ve Středočeském.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k real-time informacím o stavebních projektech, jako je stavba dálnice D6. Abych mohl ověřit tento výrok, potřeboval bych aktuální data o stavebních projektech z relevantních zdrojů, jako je Ředitelství silnic a dálnic ČR.\nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 118,
+            "statement": "(…) dotačního titulu jak na Ministerstvu financí, tak na Ministerstvu školství a z něj bylo asi do roku 2021 postaveno víc než 11 000 žákovských míst ve Středočeském kraji.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k databázím dotačních titulů ani k informacím o počtu postavených žákovských míst v jednotlivých krajích. K ověření tohoto tvrzení by bylo potřeba porovnat data o dotačních titulech na Ministerstvu financí a Ministerstvu školství s údaji o počtu postavených míst ve Středočeském kraji.\nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 39,
+            "statement": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Prognózy vývoje ekonomiky a sociálního systému jsou velmi složité a závisí na mnoha faktorech, které nelze s jistotou předpovědět. Klíčové faktory ovlivňující výdaje na důchody zahrnují demografický vývoj (stárnutí populace), ekonomický růst, míru nezaměstnanosti a legislativní změny v systému důchodového pojištění.  Bez detailní analýzy těchto faktorů a relevantních ekonomických modelů je nemožné ověřit přesnost tvrzení o datu a výši podílu HDP na důchody.\nZDROJE: \n* Žádné specifické zdroje pro ověření tohoto tvrzení. Obecné informace o důchodovém systému a jeho financování lze nalézt na webových stránkách Ministerstva práce a sociálních věcí ČR a Českého statistického úřadu."
+        },
+        {
+            "id": 157,
+            "statement": "Slibovali (Fialova vláda, pozn. že nebudou zvyšovat daně, najednou je zvyšujou.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nZda vláda Petra Fialy slibovala, že nezvýší daně, je otázka interpretace předvolebních slibů.  Je nutné analyzovat konkrétní výroky a programové prohlášení vlády z doby před volbami.  \n\nNavíc je potřeba definovat, co se považuje za \"zvýšení daní\". Jde o zvýšení sazeb daní, nebo o zavedení nových daní, popřípadě o změny v daňových slevách? Bez přesné definice je obtížné posoudit, zda se jedná o splnění nebo nesplnění slibu.\n\nZvýšení daní je komplexní téma a nelze jej zjednodušit na jednoduché \"slibovali/neslibovali\". \nZDROJE: \n\n* Programové prohlášení vlády Petra Fialy (k nalezení na oficiálních stránkách vlády)\n* Archiv předvolebních kampaní a projevů Petra Fialy a jeho strany (k nalezení v online archivech médií)"
+        },
+        {
+            "id": 101,
+            "statement": "My jsme rozjeli projekty na snížení energetické náročnosti budov v majetku kraje, ať už se to týká škol, týká se to nemocnic, týká se to zařízení pobytových sociálních služeb.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k informacím o konkrétních projektech kraje, které by potvrdily nebo vyvrátily tvrzení paní Holomčíkové. K ověření tohoto výroku by bylo potřeba detailnější informace o zmíněných projektech, jako jsou jejich názvy, rozpočty, časový harmonogram a realizovaná opatření. \nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 371,
+            "statement": "(...) z Green Dealu, který mimochodem podepsal minulý premiér, ne ten současný.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nTvrzení, že minulý premiér podepsal Green Deal, je neověřitelné bez bližšího kontextu. Green Deal je komplexní soubor opatření EU, nikoliv dokument, který by se dal podepsat. Je potřeba znát přesný název dokumentu nebo iniciativy, na kterou se Marek Benda odkazuje. \n\nZDROJE: \n* Žádné. \n\n\n"
+        },
+        {
+            "id": 15,
+            "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemáme přístup k záznamům projevů politiků ani k jejich interním komunikacím. Proto nemůžeme ověřit, zda Marian Jurečka skutečně 30. října 2024 prohlásil, že je připraven hledat kompromis ohledně druhého čtení návrhu důchodové reformy. \nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 399,
+            "statement": "Nemůžou zůstat na té stejné pozici (ženy pracující při mateřské a rodičovské dovolené, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Výrok je neověřitelný, protože nedefinuje, co znamená \"zůstat na té stejné pozici\".  Může se jednat o různé interpretace:\n\n* **Zachování stejné pracovní pozice:** V tomto případě by bylo nutné zjistit, zda existují právní předpisy, které by bránily ženám v návratu na původní pozici po mateřské/rodičovské dovolené.\n* **Zachování stejného platu a benefitů:**  Zde by bylo potřeba analyzovat mzdové systémy a politiky firem ohledně mateřské/rodičovské dovolené.\n* **Zachování stejného postavení v hierarchii firmy:**  Toto by vyžadovalo analýzu firemních kultur a postupů pro kariérní růst.\n\nBez bližší specifikace, co Marian Jurečka tímto výrokem myslel, nelze jeho pravdivost ověřit.\n\nZDROJE: Žádné. \n"
+        },
+        {
+            "id": 21,
+            "statement": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k informacím o rezolucích amerického Senátu ani o tom, kdo za nimi stál. \nZDROJE:  Žádné. \n"
+        },
+        {
+            "id": 357,
+            "statement": "Je v něm (v systému elektronického přihlašování na střední školy, pozn. 30 000 přihlášek.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nemám přístup k reálným datům o počtu přihlášek do systému elektronického přihlašování na střední školy. Informace o počtu 30 000 přihlášek by musela pocházet z oficiálních zdrojů, jako je Ministerstvo školství, mládeže a tělovýchovy. \nZDROJE: Žádné. \n\n\n"
+        },
+        {
+            "id": 188,
+            "statement": "Jsme na tuto iniciativu (nákupu munice pro Ukrajinu, pozn. vybrali nebo máme přislíbeno 1,6 miliardy euro.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Informace o přesné částce, která byla vybrána nebo přislíbena na nákup munice pro Ukrajinu, není veřejně dostupná. Premiér Fiala mohl zmínit částku, která je interně diskutována, ale bez oficiálního potvrzení ze strany vlády nebo relevantních úřadů nelze toto tvrzení ověřit.\nZDROJE:  Žádné veřejně dostupné zdroje nepotvrzují ani nevyvracejí tuto informaci. \n\n\n"
+        },
+        {
+            "id": 176,
+            "statement": "Piráti jsou dlouhodobě druhá nejsilnější vládní strana, (...) máme deset až jedenáct procent v průzkumech.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Nelze ověřit, zda Piráti jsou dlouhodobě druhou nejsilnější vládní stranou, ani zda mají v průzkumech 10-11%. K ověření by bylo potřeba znát přesný časový rámec \"dlouhodobě\" a srovnat výsledky voleb a průzkumů veřejného mínění za dané období. \nZDROJE:  Žádné. \n\n\n"
+        },
+        {
+            "id": 426,
+            "statement": "Zhruba 600 000 lidí v zahraničí v době voleb pobývá.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  Není možné s jistotou potvrdit nebo vyvrátit toto tvrzení bez bližších informací. Počet Čechů žijících v zahraničí se liší podle zdroje a definice \"pobývání\".  Některé statistiky se zaměřují na trvalé pobyty, jiné na dočasné.  \nZDROJE: \n* Český statistický úřad nezveřejňuje přesné údaje o počtu Čechů žijících v zahraničí v době voleb.\n* Ministerstvo zahraničních věcí ČR poskytuje data o počtu registrovaných Čechů v zahraničí, ale tato čísla nemusí odrážet přesný počet osob, které se v době voleb nacházejí mimo ČR."
+        },
+        {
+            "id": 416,
+            "statement": "Itálie a Španělsko nás (v HDP na hlavu během Fialovy vlády, pozn. znovu předběhly.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ:  \n\nPro ověření tohoto tvrzení je potřeba porovnat HDP na hlavu v Itálii, Španělsku a České republice za období před nástupem vlády Petra Fialy (prosinec 2021) a aktuální data. K dispozici nejsou kompletní a ověřené ekonomické údaje za celý rok 2023, které by umožnily přesné srovnání. \n\nZDROJE: \n* Eurostat (https://ec.europa.eu/eurostat/) - pro srovnání HDP na hlavu v minulosti, ale neobsahuje kompletní data za rok 2023.\n* Český statistický úřad (https://www.czso.cz/) - pro data o HDP v ČR, ale neprovádí srovnání s jinými zeměmi."
+        }
+    ]
+}

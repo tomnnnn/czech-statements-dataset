@@ -1,0 +1,560 @@
+{
+    "accuracy": 0.21,
+    "correct": 21,
+    "total": 100,
+    "incorrect": [
+        {
+            "id": 22,
+            "statement": "(Rusko nebere Ukrajince, pozn. ani jako samostatný národ a Zelenského neuznávají jako prezidenta té země.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože se jedná o politický názor a postoje Ruska k Ukrajině a jejím obyvatelům se mohou v průběhu času měnit. Navíc, bez konkrétních zdrojů a důkazů nelze s jistotou říci, zda Rusko skutečně neuznává Ukrajince jako samostatný národ a Zelenského jako prezidenta Ukrajiny.\n\nZDROJE: Žádné konkrétní zdroje nebyly poskytnuty pro ověření tohoto výroku."
+        },
+        {
+            "id": 7,
+            "statement": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský, ministr zahraničních věcí České republiky, nikdy nevyjádřil takové prohlášení. Tento výrok je zjevně zkreslený a neodpovídá politice České republiky ani jejím závazkům vůči mezinárodnímu právu a bezpečnosti.\nZDROJE:\n1. Oficiální webové stránky Ministerstva zahraničních věcí České republiky\n2. Česká televize - zpravodajství\n3. Český rozhlas - zpravodajství"
+        },
+        {
+            "id": 16,
+            "statement": "(...) když jsme řekli, že zmírníme to tempo růstu odchodu do důchodu ze dvou měsíců (...) na měsíc.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok se týká budoucího rozhodnutí vlády, které k datu hodnocení ještě nebylo přijato. Proto není možné jej ověřit.\nZDROJE: Žádné zdroje nejsou k dispozici, protože výrok se týká budoucího rozhodnutí vlády."
+        },
+        {
+            "id": 82,
+            "statement": "My (hnutí STAN, pozn. nemáme pod sebou v Praze dopravu.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok je neověřitelný, protože není zřejmé, na kterou konkrétní dopravní situaci nebo problém v Praze se Vít Rakušan odkazuje. Bez dalších informací není možné určit, zda hnutí STAN má pod sebou dopravu v Praze nebo ne.\n\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku jako neověřitelného."
+        },
+        {
+            "id": 43,
+            "statement": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok Aleny Schillerové se týká budoucích rozhodnutí vlády Petra Fialy a jejich dopadů na důchodový systém. Protože se jedná o budoucí vývoj, který není možné s jistotou předpovědět, nelze výrok označit jako pravdivý nebo nepravdivý.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok se týká budoucích událostí."
+        },
+        {
+            "id": 40,
+            "statement": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože se jedná o budoucí odhad, který je založen na současných trendech a předpokladech. Je třeba poznamenat, že přesnost takových odhadů závisí na mnoha faktorech, jako jsou demografické trendy, migrace, úmrtnost a plodnost. Navíc, tyto faktory mohou být ovlivněny mnoha dalšími proměnnými, jako jsou politické, ekonomické a environmentální faktory.\n\nZDROJE:\n\n1. Český statistický úřad - Demografické statistiky: https://www.czso.cz/csu/czso/populace-a-demografie\n2. Eurostat - Demografické statistiky: https://ec.europa.eu/eurostat/statistics-explained/index.php/Demography_statistics\n3. Populační prognózy OSN: https://population.un.org/wpp/"
+        },
+        {
+            "id": 47,
+            "statement": "(…) plníme už letos maastrichtská kritéria.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že dotaz se týká budoucího data, nemohu poskytnout přesnou odpověď, protože neexistují žádné dostupné informace o tom, zda Česká republika bude v roce 2024 splňovat maastrichtská kritéria.\nZDROJE: Žádné zdroje nejsou k dispozici pro budoucí data."
+        },
+        {
+            "id": 15,
+            "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože neexistuje žádný objektivní způsob, jak ověřit, zda Marian Jurečka skutečně řekl, že je připraven hledat kompromis v druhém čtení návrhu důchodové reformy. Tento výrok je subjektivní a závisí na osobním svědectví Marian Jurečky.\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 31,
+            "statement": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je hodnocen jako neověřitelný, protože se jedná o předpověď budoucích událostí a jejich dopadů. Zda důchodová reforma skutečně zastabilizuje průběžný systém a bude garantovat důstojné důchody současným i budoucím důchodcům, závisí na mnoha faktorech, jako jsou ekonomické podmínky, demografické změny a úspěšná implementace reformy. Tyto faktory jsou v současné době obtížně předvídatelné a mohou se v průběhu času měnit.\n\nZDROJE:\n1. \"Důchodová reforma: Co říkají ekonomové?\". iDNES.cz. 30. října 2024. <https://www.idnes.cz/ekonomika/duchodova-reforma-ekonomove.A241030_143000_ekonomika_jm>\n2. \"Důchodová reforma: Jaká je situace v České republice?\". Česká televize. 30. října 2024. <https://www.ceskatelevize.cz/ct24/domaci/241030_duchodova-reforma-jaka-je-situace-v-ceske-republice>"
+        },
+        {
+            "id": 22,
+            "statement": "(Rusko nebere Ukrajince, pozn. ani jako samostatný národ a Zelenského neuznávají jako prezidenta té země.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože se jedná o politický názor a postoje Ruska k Ukrajině a jejím obyvatelům se mohou v průběhu času měnit. Navíc, bez konkrétních zdrojů a důkazů nelze s jistotou říci, zda Rusko skutečně neuznává Ukrajince jako samostatný národ a Zelenského jako prezidenta Ukrajiny.\n\nZDROJE: Žádné konkrétní zdroje nebyly poskytnuty pro ověření tohoto výroku."
+        },
+        {
+            "id": 24,
+            "statement": "Zdědila jsem stranu v situaci, kdy měla sedm poslanců (…). Teď máme 14.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl učiněn v budoucím čase a odkazuje na situaci, která se může měnit, nemůže být jeho pravdivost v době poskytování této odpovědi ověřena.\n\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku, protože se jedná o budoucí událost, která se může měnit a nemůže být ověřena v době poskytování této odpovědi."
+        },
+        {
+            "id": 9,
+            "statement": "Byl to Donald Trump, který byl první, kdo začal dodávat americké zbraně na Ukrajinu. Poslal tam dodávku protitankových střel Javelin.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Jan Lipavský tvrdí, že Donald Trump byl první, kdo začal dodávat americké zbraně na Ukrajinu a poslal tam dodávku protitankových střel Javelin. Toto tvrzení je nepravdivé, protože americká vojenská pomoc Ukrajině byla poskytována již před Trumpovou administrativou. Podle zprávy Kongresové knihovny z roku 2018, americká vojenská pomoc Ukrajině byla zahájena v roce 2014, kdy prezidentem USA byl Barack Obama. Tato pomoc zahrnovala neletální vojenskou pomoc, jako jsou přenosné radary, lékařské zásoby a komunikační zařízení. V roce 2017, Trumpova administrativa rozšířila tuto pomoc o dodávku letální vojenské pomoci, včetně protitankových střel Javelin.\n\nZDROJE:\n\n* \"U.S. Security Assistance to Ukraine\" (Congressional Research Service, 2018)\n* \"Trump Administration Approves Lethal Arms Sales to Ukraine\" (The New York Times, 2017)\n* \"U.S. to Send Lethal Weapons to Ukraine, Confronting Russia\" (The New York Times, 2017)"
+        },
+        {
+            "id": 83,
+            "statement": "Vedou 3:1 (hnutí ANO nad hnutím STAN, pozn. oni mají za tohle volební období obviněné a trestně stíhané tři politiky za korupci. My jednoho a je to bývalý člen.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká počtu obviněných a trestně stíhaných politiků za korupci v rámci hnutí ANO a hnutí STAN. Nicméně, bez konkrétních informací o těchto případech a bez přístupu k oficiálním záznamům a dokumentům není možné tento výrok ověřit.\n\nZDROJE: Vzhledem k tomu, že výrok neobsahuje konkrétní informace o jednotlivých případech, není možné uvést žádné konkrétní zdroje."
+        },
+        {
+            "id": 96,
+            "statement": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Informace o tom, kolik unijních zemí má nadměrné schodky a s nimiž Evropská komise řeší, se může měnit v průběhu času. Bez konkrétního data a dalších podrobností není možné tuto informaci ověřit.\nZDROJE: Evropská komise, Eurostat"
+        },
+        {
+            "id": 19,
+            "statement": "Ta důchodová reforma má zhruba 12 opatření.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Bez konkrétních informací o tom, která opatření jsou zahrnuta v důchodové reformě, není možné ověřit, zda je skutečně 12 opatření.\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 30,
+            "statement": "(…) výchovné bude pokračovat (v rámci důchodové reformy, pozn. Rodinný vyměřovací základ, který oceňuje nejenom výchovu, ale i péči o osobu blízkou.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl učiněn v budoucím čase a odkazuje na plánovanou důchodovou reformu, která se v době hodnocení ještě neuskutečnila, není možné jej ověřit. Navíc, výrok se týká konkrétního opatření (Rodinný vyměřovací základ), které může být součástí reformy, ale jeho podoba a účinky mohou být předmětem diskuse a mohou se lišit v závislosti na konkrétních podmínkách a implementaci.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku, protože se jedná o budoucí událost a plánovanou reformu."
+        },
+        {
+            "id": 17,
+            "statement": "Ročně deficity (důchodového systému, pozn. budou klidně 200, 250, 300 až 350 miliard korun v dnešních cenách (…). To je prognóza makroekonomická.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Marian Jurečka uvedl prognózu o budoucích deficitech důchodového systému, které se mohou pohybovat od 200 do 350 miliard korun v dnešních cenách. Protože se jedná o prognózu do budoucna, nelze ji v současné době ověřit jako pravdivou nebo nepravdivou. Prognózy mohou být založeny na různých faktorech a předpokladech, které se mohou v budoucnu změnit.\n\nZDROJE:\n\n1. Česká televize - \"Marian Jurečka: Ročně deficity (důchodového systému) budou klidně 200, 250, 300 až 350 miliard korun v dnešních cenách\" (30. října 2024) - <https://ct24.ceskatelevize.cz/domaci/333333-marian-jurecka-rocn-deficity-budou-klidne-200-250-300-az-350-miliard-korun-v-dnesnich-cenach>\n2. Český statistický úřad - \"Důchodový systém České republiky\" (2024) - <https://www.czso.cz/csu/czso/duchodovy-system-ceske-republiky>"
+        },
+        {
+            "id": 19,
+            "statement": "Ta důchodová reforma má zhruba 12 opatření.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Bez konkrétních informací o tom, která opatření jsou zahrnuta v důchodové reformě, není možné ověřit, zda je skutečně 12 opatření.\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 6,
+            "statement": "Bylo to právě minulý týden, kdy Parlamentem prošla aktualizace mezinárodní smlouvy o policejní spolupráci, kdy lépe policie naše na Ukrajině a ukrajinská zde může potírat zločin.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že se zadaný výrok týká události, která se měla odehrát v budoucnosti (26. listopadu 2024), není možné jej v současné době ověřit.\nZDROJE: Žádné zdroje nejsou k dispozici, protože se jedná o budoucí událost."
+        },
+        {
+            "id": 43,
+            "statement": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok Aleny Schillerové se týká budoucího rozhodnutí vlády Petra Fialy, které ještě nebylo učiněno. Protože se jedná o budoucí událost, nelze ji v současné době ověřit.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože se jedná o budoucí událost."
+        },
+        {
+            "id": 35,
+            "statement": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Hnutí ANO v minulosti skutečně navrhovalo změny v důchodovém systému, ale nikdy neprosazovalo hranici 67 let pro odchod do důchodu. V roce 2018 navrhlo hranici 65 let, ale tento návrh nebyl přijat. V současné době je hranice pro odchod do důchodu v České republice 63,5 roku a postupně se zvyšuje na 65 let do roku 2030.\n\nZDROJE:\n\n1. \"Důchodové reformy: Co plánují politické strany?\". iDNES.cz. 2018-09-18. <https://zpravy.idnes.cz/duschodove-reformy-co-plani-politicke-strany-pjn-/domaci.aspx?c=A180918_104941_domaci_mich>\n2. \"Důchodový věk v Česku se zvyšuje na 65 let\". Česká televize. 2019-01-01. <https://www.ceskatelevize.cz/ct24/domaci/2190042-duschodovy-vek-v-cesku-se-zvyssuje-na-65-let>"
+        },
+        {
+            "id": 41,
+            "statement": "(k Marianu Jurečkovi, pozn. za vaší vlády klesá porodnost.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Pro ověření tohoto výroku bychom potřebovali přesnější údaje o porodnosti v České republice a jejím vývoji během vlády, které Marian Jurečka vedl. Porodnost je ovlivněna mnoha faktory a nelze ji jednoduše připsat vládě. Navíc, pro úplné ověření bychom potřebovali srovnání s předchozími vládami a dalšími relevantními faktory.\n\nZDROJE: Český statistický úřad, databáze demografických údajů."
+        },
+        {
+            "id": 40,
+            "statement": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je předpověď budoucí demografické situace, která se může měnit v závislosti na mnoha faktorech, jako jsou úmrtnost, porodnost, migrace a další. Protože se jedná o budoucí událost, nelze ji s jistotou potvrdit nebo vyvrátit.\n\nZDROJE: Český statistický úřad, Eurostat, Organizace spojených národů"
+        },
+        {
+            "id": 39,
+            "statement": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je předpověď budoucího vývoje, který je založen na současných trendech a předpokladech. Jeho přesnost závisí na mnoha faktorech, jako jsou demografické změny, ekonomický růst, inflace a další. Protože se jedná o budoucí vývoj, který ještě nenastal, nelze jej s jistotou potvrdit ani vyvrátit.\n\nZDROJE:\n1. Český statistický úřad - data o HDP a důchodech\n2. Ministerstvo práce a sociálních věcí - prognózy vývoje důchodové soustavy\n3. Ekonomičtí experti - analýzy a předpovědi vývoje ekonomiky"
+        },
+        {
+            "id": 35,
+            "statement": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Hnutí ANO v minulosti skutečně navrhlo zvýšení hranice odchodu do důchodu, ale nikdy nebylo navrženo 67 let. V roce 2019 navrhlo hnutí ANO zvýšení hranice odchodu do důchodu na 65 let pro muže a 63 let pro ženy. Tento návrh byl později změněn na 65 let pro muže a 64 let pro ženy. V roce 2021 navrhlo hnutí ANO zvýšení hranice odchodu do důchodu na 65 let pro muže a 64 let pro ženy.\n\nZDROJE:\n\n* \"ANO chce zvýšit hranici odchodu do důchodu na 65 let pro muže a 63 let pro ženy.\" (iDNES.cz, 2019)\n* \"ANO chce zvýšit hranici odchodu do důchodu na 65 let pro muže a 64 let pro ženy.\" (iDNES.cz, 2021)"
+        },
+        {
+            "id": 14,
+            "statement": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Marian Jurečka tvrdí, že Hnutí ANO slibovalo důchodovou reformu po dobu osmi let, ale nedodrželo svůj slib. Nicméně, podle informací z oficiálních zdrojů, Hnutí ANO předložilo návrh důchodové reformy v roce 2021, který byl schválen v roce 2022. Tento návrh zahrnoval zvýšení základní důchodové dávky, zavedení flexibilního důchodového věku a další opatření. Proto tvrzení, že Hnutí ANO nedodrželo svůj slib ohledně důchodové reformy, je nepravdivé.\n\nZDROJE:\n\n1. \"Návrh důchodové reformy schválen vládou,\" Česká televize, 12. únor 2022, <https://ct24.ceskatelevize.cz/domaci/3124365-navrh-duchodove-reformy-schvalen-vlada-premier-babis-chce-zvysit-duchody-o-1000-korun>.\n2. \"Důchodová reforma: Co obsahuje návrh vlády,\" iDNES.cz, 12. únor 2022, <https://zpravy.idnes.cz/duchodova-reforma-co-obsahuje-navrh-vlady-p2n-/domaci.aspx?c=A220212_161019_domaci_meva>."
+        },
+        {
+            "id": 7,
+            "statement": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský, ministr zahraničních věcí České republiky, nikdy nevyjádřil takové prohlášení. Tento výrok je zjevně zkreslený a neodpovídá skutečnosti.\nZDROJE:\n1. [Oficiální web Ministerstva zahraničních věcí ČR](https://www.mzv.cz/)\n2. [Česká televize - zpravodajství](https://www.ceskatelevize.cz/ct24/)\n3. [Český rozhlas - zpravodajství](https://www.rozhlas.cz/zpravy)"
+        },
+        {
+            "id": 91,
+            "statement": "Z těch devíti nových opozičních mandátů (v Senátu, pozn. je šest ze tří strukturálně postižených regionů, tedy z Moravskoslezského, Ústeckého a Karlovarského kraje.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká nových opozičních mandátů v Senátu a jejich rozdělení mezi regiony. Bez přesnějších informací o tom, jaké mandáty jsou míněny a jaké regiony jsou považovány za \"strukturálně postižené\", není možné výrok ověřit.\n\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 9,
+            "statement": "Byl to Donald Trump, který byl první, kdo začal dodávat americké zbraně na Ukrajinu. Poslal tam dodávku protitankových střel Javelin.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Jan Lipavský tvrdí, že Donald Trump byl první, kdo začal dodávat americké zbraně na Ukrajinu a poslal tam dodávku protitankových střel Javelin. Toto tvrzení je nepravdivé, protože americká vojenská pomoc Ukrajině byla poskytována již před Trumpovou administrativou. Podle zprávy Kongresové knihovny z roku 2018, americká vojenská pomoc Ukrajině byla zahájena v roce 2014, kdy prezidentem USA byl Barack Obama. Tato pomoc zahrnovala neletální vojenskou pomoc, jako jsou přenosné radary, lékařské vybavení a komunikační zařízení. V roce 2017, Trumpova administrativa rozšířila tuto pomoc o dodávku letální vojenské pomoci, včetně protitankových střel Javelin.\n\nZDROJE:\n\n* \"U.S. Security Assistance to Ukraine\" (Congressional Research Service, 2018)\n* \"Trump Administration Approves Lethal Arms Sales to Ukraine\" (The New York Times, 2017)\n* \"U.S. to Send Lethal Weapons to Ukraine, Confronting Russia\" (The New York Times, 2017)"
+        },
+        {
+            "id": 20,
+            "statement": "Česká vláda naplňuje svůj předvolební, tedy ten slib z programového prohlášení vlády, že půjdou 2 % HDP na obranu.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože se vztahuje k budoucímu jednání vlády a nelze předem určit, zda bude vláda skutečně věnovat 2 % HDP na obranu. Navíc, i kdyby vláda oznámila, že bude věnovat 2 % HDP na obranu, nelze bez dalších informací určit, zda to bude skutečně splněno.\n\nZDROJE:\n\n* Česká vláda: Programové prohlášení vlády (2021)\n* Česká vláda: Rozpočet na rok 2024 (2023)\n* Česká vláda: Zpráva o plnění programového prohlášení vlády (2024)"
+        },
+        {
+            "id": 89,
+            "statement": "U soudců rozhodl Ústavní soud, že to naše zastropování (platů, pozn. které jsme také spoluprosadili, (…) nebylo učiněno v souladu se zákonem.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Váš dotaz se týká rozhodnutí Ústavního soudu České republiky ohledně zastropování platů, které bylo údajně prosazeno s pomocí Víta Rakušana. Nicméně, bez konkrétních informací o tomto rozhodnutí, jako je jeho datum, číslo a obsah, není možné určit, zda je výrok pravdivý nebo nepravdivý.\n\nZDROJE: Vzhledem k tomu, že jste neposkytli žádné konkrétní informace o tomto rozhodnutí Ústavního soudu, nemohu poskytnout žádné konkrétní zdroje. Doporučuji zkontrolovat oficiální web Ústavního soudu České republiky pro další informace."
+        },
+        {
+            "id": 63,
+            "statement": "My jsme chtěli rychlonovelu, která zpřísní nakládání se zbraněmi, už v tomhle roce, od 1. července. (…) Hnutí ANO a SPD řekly: „Zrychleně vám to neschválíme.“",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká politických jednání a rozhodnutí, která jsou obvykle utajována a nejsou veřejně přístupná. Bez přístupu k interním dokumentům a jednáním stran Hnutí ANO a SPD nelze s jistotou potvrdit nebo vyvrátit, že tyto strany odmítly rychle schválit rychlonovelu o zpřísnění nakládání se zbraněmi.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok se týká interních politických jednání, která jsou obvykle utajována."
+        },
+        {
+            "id": 5,
+            "statement": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl pravděpodobně učiněn v budoucnu (26. listopadu 2024), nemohu ho v tuto chvíli ověřit.\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku, protože se týká budoucích událostí."
+        },
+        {
+            "id": 67,
+            "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože neexistují veřejně dostupné informace, které by potvrzovaly, že Ivan Bartoš nezrušil soutěžní dialog a nechal ho ležet 18 měsíců. Navíc, bez konkrétních podrobností o tom, o jaký soutěžní dialog se jedná, není možné tento výrok ověřit.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 40,
+            "statement": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože se jedná o budoucí odhad, který je založen na současných trendech a předpokladech. Je třeba poznamenat, že přesnost takových odhadů závisí na mnoha faktorech, jako jsou demografické trendy, migrace, úmrtnost a plodnost. Navíc, tyto faktory mohou být ovlivněny mnoha dalšími proměnnými, jako jsou politické, ekonomické a environmentální faktory.\n\nZDROJE:\n\n1. Český statistický úřad - pro současné demografické údaje a trendy.\n2. Eurostat - pro srovnání s ostatními zeměmi EU.\n3. Populační prognózy OSN - pro globální demografické trendy a prognózy."
+        },
+        {
+            "id": 67,
+            "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože neexistují veřejně dostupné informace, které by potvrzovaly, že Ivan Bartoš nezrušil soutěžní dialog a nechal ho ležet 18 měsíců. Navíc, aniž bychom měli přístup k vnitřním dokumentům a komunikaci mezi účastníky soutěžního dialogu, nemůžeme s jistotou říci, zda tento výrok je pravdivý nebo nepravdivý.\nZDROJE: Žádné veřejně dostupné zdroje nepotvrzují ani nevyvracejí tento výrok."
+        },
+        {
+            "id": 16,
+            "statement": "(...) když jsme řekli, že zmírníme to tempo růstu odchodu do důchodu ze dvou měsíců (...) na měsíc.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok se týká budoucího rozhodnutí vlády, které k datu hodnocení ještě nebylo přijato. Proto není možné jej ověřit.\nZDROJE: Žádné zdroje nejsou k dispozici, protože výrok se týká budoucího rozhodnutí vlády."
+        },
+        {
+            "id": 25,
+            "statement": "Měli jsme také poloviční počet senátorů (v době nástupu Pekarové Adamové do čela TOP 09, pozn. než máme dnes.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Markéta Pekarová Adamová tvrdí, že v době jejího nástupu do čela TOP 09 měla strana poloviční počet senátorů než má dnes. Toto tvrzení je však nepravdivé. Podle oficiálních záznamů Senátu Parlamentu České republiky měla TOP 09 v době nástupu Markéty Pekarové Adamové do čela strany (2019) celkem 10 senátorů. V současné době (2024) má TOP 09 12 senátorů. Tedy nikoli poloviční počet, ale pouze o dva senátory méně.\n\nZDROJE:\n1. \"Seznam senátorů podle stranické příslušnosti.\" Senát Parlamentu České republiky. https://www.senat.cz/xqw/webdav/pssenat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/senat/"
+        },
+        {
+            "id": 68,
+            "statement": "Máme 607 stavebních úřadů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Informace o přesném počtu stavebních úřadů v České republice se může v průběhu času měnit. Aktuální počet stavebních úřadů nelze ověřit bez přístupu k oficiálním údajům nebo datům z kompetentní instituce.\n\nZDROJE: Žádné zdroje nebyly použity, protože informace o přesném počtu stavebních úřadů v České republice v daném čase není k dispozici."
+        },
+        {
+            "id": 24,
+            "statement": "Zdědila jsem stranu v situaci, kdy měla sedm poslanců (…). Teď máme 14.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že Markéta Pekarová Adamová uvedla tento výrok v budoucím čase (19. listopadu 2024), nemůžeme jeho pravdivost ověřit, protože se týká budoucích událostí.\n\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku, protože se jedná o budoucí událost, která nemůže být ověřena."
+        },
+        {
+            "id": 67,
+            "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože neexistují veřejně dostupné informace, které by potvrzovaly, že Ivan Bartoš nezrušil soutěžní dialog a nechal ho ležet 18 měsíců. Navíc, aniž bychom měli přístup k vnitřním dokumentům a komunikaci mezi účastníky soutěžního dialogu, nemůžeme s jistotou říci, zda tento výrok je pravdivý nebo nepravdivý.\nZDROJE: Žádné veřejně dostupné zdroje nepotvrzují ani nevyvracejí tento výrok."
+        },
+        {
+            "id": 7,
+            "statement": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský, ministr zahraničních věcí České republiky, nikdy nevyjádřil takové prohlášení. Tento výrok je zjevně zkreslený a neodpovídá politice České republiky ani jejím závazkům vůči mezinárodnímu právu a bezpečnosti.\nZDROJE:\n1. Oficiální web Ministerstva zahraničních věcí České republiky - https://www.mzv.cz/\n2. Česká televize - https://www.ceskatelevize.cz/\n3. Český rozhlas - https://www.rozhlas.cz/\n4. Česká tisková kancelář - https://www.ctk.cz/"
+        },
+        {
+            "id": 14,
+            "statement": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Marian Jurečka tvrdí, že Hnutí ANO slibovalo důchodovou reformu po dobu osmi let, ale nedodrželo svůj slib. Nicméně, podle informací z oficiálních zdrojů, Hnutí ANO předložilo návrh důchodové reformy v roce 2021, který byl schválen v roce 2022. Tento návrh zahrnoval zvýšení základního důchodu, zavedení důchodového systému s bodovým hodnocením a další opatření. Proto tvrzení, že Hnutí ANO nedodrželo svůj slib ohledně důchodové reformy, je nepravdivé.\n\nZDROJE:\n\n1. \"Návrh důchodové reformy schválen vládou,\" Česká televize, 12. únor 2022, <https://ct24.ceskatelevize.cz/domaci/3124455-navrh-duchodove-reformy-schvalen-vlada>\n2. \"Důchodová reforma: Co obsahuje návrh vlády,\" iDNES.cz, 12. únor 2022, <https://zpravy.idnes.cz/duchodova-reforma-co-obsahuje-navrh-vlady-p2n-/domaci.aspx?c=A220212_161019_domaci_meva>"
+        },
+        {
+            "id": 61,
+            "statement": "Přišel jsem s návrhem – za Ministerstvo vnitra – aby byla zpřísněna legislativa třeba vůči těm tlumičům jako takovým. (…) (Opozice, pozn. dává pozměňovací návrhy, aby to tak nebylo. (…) Je to pan kolega Růžička a podobně.",
+            "reference_label": "nepravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká soukromého názoru a návrhu politika Víta Rakušana, který byl pravděpodobně přednesen v rámci politického jednání. Bez přístupu k oficiálním záznamům nebo protokolům z jednání není možné ověřit, zda byl tento návrh skutečně předložen a zda se jednalo o zpřísnění legislativy vůči tlumičům.\n\nZDROJE: Vzhledem k tomu, že výrok pochází z ústního projevu, nemohu poskytnout žádné konkrétní zdroje, které by potvrzovaly nebo vyvracely jeho pravdivost."
+        },
+        {
+            "id": 3,
+            "statement": "(…) ve společné vojenské pomoci (Ukrajině ze strany EU, pozn. kde to Maďarsko dlouhou dobu blokuje.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl učiněn v budoucím čase a odkazuje na události, které se mohou nebo nemusí stát, není možné jej s jistotou ohodnotit jako pravdivý nebo nepravdivý. Navíc, bez konkrétních informací o tom, jakým způsobem Maďarsko blokuje společnou vojenskou pomoc EU Ukrajině, nelze posoudit, zda je tento výrok pravdivý.\n\nZDROJE: Výrok Jana Lipavského, 26. listopadu 2024"
+        },
+        {
+            "id": 5,
+            "statement": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že se výrok týká soukromých jednání mezi vládami, nemáme dostatek informací k ověření jeho pravdivosti. Navíc, výrok byl učiněn v budoucnosti, což znamená, že nemůže být ověřen v současné době.\n\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 13,
+            "statement": "(…) to jsem říkala opakovaně, že chápu, že (někdejší ministryně pro vědu, výzkum a inovace Helena Langšádlová, pozn. nemá stejnou startovní pozici jako ministři, kteří jsou mnohem exponovanější.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je hodnocen jako neověřitelný, protože neexistují objektivní kritéria pro porovnání startovních pozic mezi ministry. Startovní pozice může být ovlivněna mnoha faktory, jako je například politická zkušenost, veřejná podpora, média, atd. Bez konkrétních měřítek a bez přesné definice, co znamená \"startovní pozice\", není možné tento výrok ověřit.\n\nZDROJE: Žádné konkrétní zdroje nejsou potřeba pro hodnocení tohoto výroku jako neověřitelného."
+        },
+        {
+            "id": 1,
+            "statement": "Udělali jsme tzv. prokremelské pohádky (...) anebo běží série veřejných debat po regionech, kde naši diplomaté hovoří s veřejností o Rusku.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl učiněn v budoucím čase a odkazuje na aktivity, které se mají konat v budoucnu, nemůžeme s jistotou potvrdit, zda tyto aktivity skutečně proběhly. Navíc, bez konkrétních informací o těchto \"prokremelských pohádkách\" a \"sérii veřejných debat po regionech\", nemůžeme ověřit, zda tyto aktivity skutečně proběhly a jaké byly jejich výsledky.\n\nZDROJE: Výrok Jana Lipavského, 26. listopadu 2024"
+        },
+        {
+            "id": 15,
+            "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je subjektivní a nelze jej ověřit bez dalších informací o konkrétním návrhu důchodové reformy a o tom, jakým způsobem Marian Jurečka hledal kompromis.\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku, protože se jedná o subjektivní tvrzení."
+        },
+        {
+            "id": 29,
+            "statement": "20. srpna, jestli se nemýlím, jsme jako TOP 09 vyvolali koaliční jednání (v souvislosti s digitalizací stavebního řízení, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nelze ověřit, zda TOP 09 skutečně vyvolala koaliční jednání dne 20. srpna v souvislosti s digitalizací stavebního řízení, protože nebyly poskytnuty žádné konkrétní zdroje nebo důkazy, které by tuto informaci potvrzovaly.\nZDROJE: Žádné zdroje nebyly poskytnuty."
+        },
+        {
+            "id": 35,
+            "statement": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Hnutí ANO v minulosti skutečně navrhovalo změny v důchodovém systému, ale nikdy neprosazovalo hranici 67 let pro odchod do důchodu. V roce 2018 navrhlo hranici 65 let, ale tento návrh nebyl přijat. V současné době je hranice pro odchod do důchodu v České republice 63,5 roku a postupně se zvyšuje na 65 let do roku 2030.\n\nZDROJE:\n\n1. \"Důchodová reforma: Hnutí ANO navrhlo zvýšit důchodový věk na 65 let.\" iDNES.cz, 12. října 2018, https://zpravy.idnes.cz/duschodova-reforma-hnuti-ano-navrhlo-zvysit-duschodovy-vek-na-65-let-pjn-/domaci.aspx?c=A181012_134951_domaci_kop.\n2. \"Důchodový věk se zvyšuje na 65 let.\" Česká televize, 20. února 2019, https://www.ceskatelevize.cz/ct24/domaci/2184033-duschodovy-vek-se-zvysuje-na-65-let.\n3. \"Důchodový věk.\" Ministerstvo práce a sociálních věcí ČR, https://www.mpsv.cz/web/cz/duschodove-pojisteni/duschodovy-vek."
+        },
+        {
+            "id": 15,
+            "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je subjektivní a nelze jej ověřit bez dalších informací o konkrétním návrhu důchodové reformy a o tom, jakým způsobem Marian Jurečka hledal kompromis.\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku, protože se jedná o subjektivní tvrzení."
+        },
+        {
+            "id": 18,
+            "statement": "75 % české veřejnosti (...) říká v průzkumech, že důchodová reforma je potřeba.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl učiněn v budoucím čase a nebyly poskytnuty žádné konkrétní průzkumy veřejného mínění, které by potvrzovaly tuto informaci, není možné tuto tvrzení ověřit.\nZDROJE: Žádné konkrétní průzkumy veřejného mínění nebyly poskytnuty."
+        },
+        {
+            "id": 81,
+            "statement": "My máme za tři roky, co jsme ve vládě, (…) jednoho trestně stíhaného bývalého politika hnutí STAN. Když se dívám na konkurenční ANO a nebo třeba i koaliční partnery, tak máme nejmíň.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká počtu trestně stíhaných bývalých politiků v různých politických stranách v České republice. Abychom mohli výrok ověřit, potřebujeme přesné údaje o počtu trestně stíhaných bývalých politiků v každé straně. Tyto údaje však nejsou veřejně dostupné a nelze je ověřit bez přístupu k úředním záznamům.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 88,
+            "statement": "Díky návrhu hnutí STAN v konsolidačním balíčku, že jsou více zdanění vysocepříjmoví – to znamená samozřejmě i politici, to znamená třeba i vicepremiér – tak ten můj letošní plat právě kvůli tomu je o několik tisíc nižší. (…) V letošním roce politici vlastně brali méně než v tom roce předchozím.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok Víta Rakušana o tom, že politici v roce 2024 brali méně než v roce 2023, nelze ověřit bez přesných údajů o platových podmínkách politiků v daných letech. Navíc je třeba brát v úvahu, že plat politiků může být ovlivněn řadou faktorů, jako jsou změny v daních, inflace nebo legislativní změny.\n\nZDROJE: Vzhledem k tomu, že výrok pochází z října 2024, neexistují žádné dostupné zdroje, které by umožňovaly ověřit jeho pravdivost."
+        },
+        {
+            "id": 15,
+            "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je subjektivní a nelze jej ověřit bez dalších informací o konkrétním návrhu důchodové reformy a o tom, jakým způsobem Marian Jurečka hledal kompromis.\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku, protože se jedná o subjektivní tvrzení."
+        },
+        {
+            "id": 5,
+            "statement": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že se výrok týká soukromých jednání mezi vládami, nemáme dostatek informací k tomu, abychom mohli potvrdit nebo vyvrátit jeho pravdivost.\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku."
+        },
+        {
+            "id": 14,
+            "statement": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Marian Jurečka tvrdí, že Hnutí ANO slibovalo důchodovou reformu po dobu osmi let, ale nedodrželo svůj slib. Nicméně, podle dostupných informací, Hnutí ANO předložilo návrh důchodové reformy v roce 2021, který byl schválen vládou a předložen Poslanecké sněmovně. Tento návrh obsahoval změny v důchodovém systému, jako je zvýšení základního důchodu a zavedení flexibilního důchodového věku. Proto tvrzení, že Hnutí ANO nedodrželo svůj slib ohledně důchodové reformy, je nepravdivé.\n\nZDROJE:\n\n* \"Hnutí ANO předložilo návrh důchodové reformy\" (iDNES.cz, 2021)\n* \"Důchodová reforma: Hnutí ANO předložilo návrh\" (Novinky.cz, 2021)\n* \"Důchodová reforma: Hnutí ANO předložilo návrh, který zvýší základní důchod\" (Seznam Zprávy, 2021)"
+        },
+        {
+            "id": 3,
+            "statement": "(…) ve společné vojenské pomoci (Ukrajině ze strany EU, pozn. kde to Maďarsko dlouhou dobu blokuje.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl učiněn v budoucím čase a odkazuje na události, které se mohou nebo nemusí stát, není možné jej s jistotou ohodnotit jako pravdivý nebo nepravdivý. Navíc, bez konkrétních informací o tom, jaké kroky Maďarsko podniklo nebo plánuje podniknout v souvislosti s vojenskou pomocí Ukrajině ze strany EU, není možné s jistotou říci, zda Maďarsko blokuje tuto pomoc nebo ne.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku, protože se jedná o budoucí událost."
+        },
+        {
+            "id": 67,
+            "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože neexistují veřejně dostupné informace, které by potvrzovaly, že Ivan Bartoš nezrušil soutěžní dialog a nechal ho ležet 18 měsíců. Navíc, aniž bychom měli přístup k vnitřním dokumentům a komunikaci mezi účastníky soutěžního dialogu, nemůžeme s jistotou říci, zda tento výrok je pravdivý nebo nepravdivý.\nZDROJE: Žádné veřejně dostupné zdroje nepotvrzují ani nevyvracejí tento výrok."
+        },
+        {
+            "id": 66,
+            "statement": "Pravomocné rozhodnutí Úřadu pro ochranu hospodářské soutěže říká, že to nebylo zákonné, protože to nebylo transparentní (zrušení soutěžních dialogů ze strany MMR, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká pravomocného rozhodnutí Úřadu pro ochranu hospodářské soutěže (ÚOHS) a jeho hodnocení zákonnosti a transparentnosti. Nicméně, bez konkrétních informací o tom, o jaké konkrétní rozhodnutí a soutěžní dialogy se jedná, není možné výrok ověřit.\n\nZDROJE: Úřad pro ochranu hospodářské soutěže (ÚOHS) - https://www.uohs.cz/"
+        },
+        {
+            "id": 46,
+            "statement": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že se výrok týká budoucího stavu deficitu v roce 2025, který ještě nemohl být ověřen, nelze jej hodnotit jako pravdivý nebo nepravdivý. Navíc, pro úplné ověření by bylo potřeba mít přístup k navrženému rozpočtu a dalším relevantním informacím, které nejsou k dispozici.\n\nZDROJE: Žádné zdroje nejsou k dispozici pro ověření tohoto výroku, protože se týká budoucího stavu, který ještě nemohl být ověřen."
+        },
+        {
+            "id": 35,
+            "statement": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Hnutí ANO v minulosti skutečně navrhovalo změny v důchodovém systému, ale nikdy neprosazovalo hranici 67 let pro odchod do důchodu. V roce 2018 navrhlo hranici 65 let, ale tento návrh nebyl přijat. V současné době je hranice pro odchod do důchodu v České republice 63,5 roku pro muže a 62,5 roku pro ženy.\n\nZDROJE:\n1. \"Důchodový věk v Česku: Kdy a za jakých podmínek můžete odejít do důchodu?\". Novinky.cz. <https://www.novinky.cz/domaci/clanek/douchodovy-vek-v-cesku-kdy-a-za-jaky-podminek-muzete-odejit-do-douchodu-40360951>\n2. \"Hnutí ANO navrhlo zvýšit důchodový věk na 65 let\". iDNES.cz. <https://zpravy.idnes.cz/hnuti-ano-navrhlo-zvysit-douchodovy-vek-na-65-let-pjz-/domaci.aspx?c=A180911_104951_domaci_mich>"
+        },
+        {
+            "id": 88,
+            "statement": "Díky návrhu hnutí STAN v konsolidačním balíčku, že jsou více zdanění vysocepříjmoví – to znamená samozřejmě i politici, to znamená třeba i vicepremiér – tak ten můj letošní plat právě kvůli tomu je o několik tisíc nižší. (…) V letošním roce politici vlastně brali méně než v tom roce předchozím.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok Víta Rakušana o tom, že politici v roce 2024 brali méně než v roce 2023, nelze ověřit bez přesných údajů o platových podmínkách politiků v daných letech. Navíc je třeba brát v úvahu, že plat politiků může být ovlivněn řadou faktorů, jako jsou změny v daních, inflace nebo legislativní změny.\n\nZDROJE: Vzhledem k tomu, že výrok pochází z října 2024, nemohu poskytnout žádné aktuální zdroje, které by potvrzovaly nebo vyvracely jeho pravdivost."
+        },
+        {
+            "id": 15,
+            "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je subjektivní a neověřitelný, protože se týká osobního postoje a připravenosti jednotlivce. Abychom mohli tento výrok ověřit, potřebujeme více informací o tom, jak se Marian Jurečka choval během druhého čtení návrhu důchodové reformy a zda skutečně hledal kompromis.\nZDROJE: Žádné zdroje nejsou potřeba pro hodnocení tohoto výroku, protože se jedná o subjektivní a neověřitelný výrok."
+        },
+        {
+            "id": 43,
+            "statement": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká budoucí politiky vlády Petra Fialy a jejích záměrů v oblasti důchodové reformy. Protože se jedná o budoucí událost, která se může nebo nemusí stát, nelze ji v současné době ověřit. Navíc, aniž bychom měli přístup k oficiálním dokumentům a plánům vlády, nemůžeme s jistotou říct, zda se vláda skutečně chystá prodlužovat věk odchodu do důchodu v souladu s prodlužováním doby dožití.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku, protože se jedná o budoucí událost."
+        },
+        {
+            "id": 44,
+            "statement": "ODS řekla, tak my chceme prostě omezit náročné profese ze 130 000 na 12 000 (lidí, pozn.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Výrok Aleny Schillerové, že ODS chce omezit náročné profese ze 130 000 na 12 000 lidí, je nepravdivý. Podle oficiálního programu ODS pro volby do Poslanecké sněmovny v roce 2021, které jsou nejnovějšími dostupnými informacemi, ODS navrhla omezit počet náročných profesí na 12 000, ale nebylo uvedeno, že by se jednalo o snížení z 130 000. Navíc, podle Českého statistického úřadu, v roce 2021 bylo v České republice celkem 12 000 náročných profesí, takže není možné, aby ODS chtěla omezit jejich počet ze 130 000 na 12 000.\n\nZDROJE:\n\n* Program ODS pro volby do Poslanecké sněmovny 2021: <https://www.ods.cz/program-ods-pro-volby-do-poslaneck-sne-movny-2021>\n* Český statistický úřad: <https://www.czso.cz/csu/czso/zamestnanost-podle-profesi-a-odvetvi>"
+        },
+        {
+            "id": 89,
+            "statement": "U soudců rozhodl Ústavní soud, že to naše zastropování (platů, pozn. které jsme také spoluprosadili, (…) nebylo učiněno v souladu se zákonem.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok se týká rozhodnutí Ústavního soudu České republiky, které však nebylo k dispozici v době, kdy jsem byl naposledy aktualizován. Protože nemám přístup k aktuálním informacím o rozhodnutích Ústavního soudu, nemohu s jistotou potvrdit nebo vyvrátit výrok.\n\nZDROJE: Žádné zdroje nejsou k dispozici, protože výrok se týká aktuálního rozhodnutí Ústavního soudu, které nebylo k dispozici v době, kdy jsem byl naposledy aktualizován."
+        },
+        {
+            "id": 68,
+            "statement": "Máme 607 stavebních úřadů.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Informace o přesném počtu stavebních úřadů v České republice se může v průběhu času měnit. Aktuální počet stavebních úřadů nelze ověřit bez přístupu k oficiálním údajům nebo datům z kompetentní instituce.\n\nZDROJE: Žádné zdroje nebyly použity, protože informace o aktuálním počtu stavebních úřadů v České republice není k dispozici."
+        },
+        {
+            "id": 46,
+            "statement": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Vzhledem k tomu, že se výrok týká budoucího stavu deficitu v roce 2025, který ještě nenastal, nelze jej s jistotou potvrdit ani vyvrátit. Navíc, pro úplné ověření by bylo třeba mít přístup k detailnímu rozpočtu a dalším finančním informacím, které nejsou veřejně dostupné.\n\nZDROJE: Žádné konkrétní zdroje nejsou pro tento úsudek potřeba, neboť se jedná o budoucí událost, která ještě nenastala a nelze ji tedy ověřit."
+        },
+        {
+            "id": 67,
+            "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože neexistují veřejně dostupné informace, které by potvrzovaly, že Ivan Bartoš nezrušil soutěžní dialog a nechal ho ležet 18 měsíců. Navíc, bez kontextu a detailů o tomto konkrétním soutěžním dialogu, není možné posoudit pravdivost tohoto tvrzení.\nZDROJE: Žádné dostupné zdroje nepotvrzují pravdivost tohoto tvrzení."
+        },
+        {
+            "id": 31,
+            "statement": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je hodnocen jako neověřitelný, protože se jedná o předpověď budoucích událostí a jejich dopadů, které nelze s jistotou předem určit. Zda důchodová reforma skutečně zastabilizuje průběžný systém a bude garantovat důstojné důchody současným i budoucím důchodcům, závisí na mnoha faktorech, jako jsou ekonomické podmínky, demografické změny a úspěšnost implementace reformy.\n\nZDROJE:\n1. \"Důchodová reforma: Co říkají ekonomové?\". iDNES.cz, 30. října 2024. <https://www.idnes.cz/ekonomika/duchodova-reforma-ekonomove.A241030_143000_ekonomika_jm>\n2. \"Důchodová reforma: Jaká je situace v České republice?\". Česká televize, 30. října 2024. <https://www.ceskatelevize.cz/ct24/domaci/241030-duchodova-reforma-jaka-je-situace-v-ceske-republice>"
+        },
+        {
+            "id": 28,
+            "statement": "Ještě půl roku před sněmovními volbami 2021 to podle průzkumů vypadalo tak, že budeme třetí (…) jako koalice SPOLU.",
+            "reference_label": "pravda",
+            "label": "nepravda",
+            "response": " VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Markéta Pekarová Adamová ve svém výroku tvrdí, že půl roku před sněmovními volbami 2021 průzkumy ukazovaly, že koalice SPOLU by skončila třetí. Podle dostupných průzkumů však koalice SPOLU byla v průběhu roku 2021 většinou na prvním místě, nebo alespoň na druhém místě. Třetí místo v průzkumech získávala většinou koalice Pirátů a Starostů.\n\nZDROJE:\n\n1. Průzkumy veřejného mínění před sněmovními volbami 2021: https://www.cvvm.cz/cz/tema/volby-do-psp/\n2. Průzkumy veřejného mínění před sněmovními volbami 2021: https://www.kantar.cz/cs/prumysly/politika/volby-do-psp-2021/\n3. Průzkumy veřejného mínění před sněmovními volbami 2021: https://www.median.cz/cs/prumysly/politika/volby-do-psp-2021/"
+        },
+        {
+            "id": 46,
+            "statement": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Bez přístupu k detailnímu rozpočtu a bez znalosti všech faktorů, které mohou ovlivnit deficit v roce 2025, není možné s jistotou potvrdit nebo vyvrátit tvrzení Petra Fialy. Navíc, protože se jedná o budoucí odhad, mohou se situace a okolnosti měnit.\n\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto tvrzení, protože nebyly poskytnuty žádné podrobnosti o navrženém rozpočtu nebo o povodňové pomoci."
+        },
+        {
+            "id": 18,
+            "statement": "75 % české veřejnosti (...) říká v průzkumech, že důchodová reforma je potřeba.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok byl učiněn v budoucím čase (30. října 2024), nemohu ověřit, zda 75 % české veřejnosti skutečně řeklo, že důchodová reforma je potřeba. Pro ověření bych potřeboval konkrétní průzkum nebo studii, která by tuto informaci podpořila.\nZDROJE: Žádné, protože výrok byl učiněn v budoucím čase a nemohu ho ověřit."
+        },
+        {
+            "id": 39,
+            "statement": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je předpověď budoucího vývoje, který je založen na současných trendech a předpokladech. Jeho přesnost závisí na mnoha faktorech, jako jsou demografické změny, ekonomický růst, inflace a další. Protože se jedná o budoucí vývoj, který ještě nenastal, nelze jej s jistotou potvrdit nebo vyvrátit.\n\nZDROJE:\n1. Český statistický úřad - data o vývoji HDP a důchodového systému\n2. Ministerstvo práce a sociálních věcí - informace o důchodové reformě a budoucích výdajích na důchody\n3. Česká národní banka - informace o inflaci a ekonomickém růstu\n4. Eurostat - data o demografickém vývoji v České republice"
+        },
+        {
+            "id": 31,
+            "statement": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Tento výrok je hodnocen jako neověřitelný, protože se jedná o předpověď budoucích událostí a jejich dopadů. Zda důchodová reforma skutečně zastabilizuje průběžný systém a bude garantovat důstojné důchody současným i budoucím důchodcům, závisí na mnoha faktorech, jako jsou ekonomické podmínky, demografické změny a úspěšnost implementace reformy. Tyto faktory jsou v současné době neznámé a nelze je s jistotou předpovědět.\n\nZDROJE:\n1. \"Důchodová reforma: Co říkají ekonomové?\". iDNES.cz. 30. října 2024. <https://www.idnes.cz/ekonomika/duchodova-reforma-ekonomove.A241030_143000_ekonomika_jmi>\n2. \"Důchodová reforma: Jaká je její pravděpodobná budoucnost?\". Hospodářské noviny. 30. října 2024. <https://hn.ihned.cz/c1-66505140-duchodova-reforma-jaka-je-jeji-pravdepodobna-budoucnost>"
+        },
+        {
+            "id": 94,
+            "statement": "(...) a patřil k tomu i Miroslav Kalousek (návrhům na sjednocování středopravicových stran, pozn.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Vzhledem k tomu, že výrok se týká účasti Miroslava Kalouska na návrzích na sjednocování středopravicových stran, je třeba mít přesnější informace o konkrétních návrzích a o tom, jakým způsobem se Miroslav Kalousek na nich podílel. Bez těchto informací nelze výrok jednoznačně ověřit.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok je neověřitelný."
+        },
+        {
+            "id": 96,
+            "statement": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky.",
+            "reference_label": "pravda",
+            "label": "neověřitelné",
+            "response": " VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Informace o tom, kolik unijních zemí má nadměrné schodky a s nimiž Evropská komise řeší, se může měnit v průběhu času. Bez konkrétního data a zdroje, který by potvrzoval, že v daném čase bylo sedm unijních zemí s nadměrnými schodky, není možné tuto informaci ověřit.\nZDROJE: Evropská komise, Eurostat"
+        }
+    ]
+}

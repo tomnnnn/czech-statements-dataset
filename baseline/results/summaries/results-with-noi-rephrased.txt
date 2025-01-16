@@ -1,0 +1,6 @@
+llama-3.3-70b-it - 52.0 %
+qwen-2.5-it - 51.0 %
+llama-3.1-405b-it - 48.0 %
+gemma-2-27b-it - 40.0 %
+mixtral-8x22b-i - 37.0 %
+llama-3.1-8b-it - 31.0 %

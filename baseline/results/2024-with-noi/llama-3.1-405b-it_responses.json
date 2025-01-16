@@ -1,0 +1,1540 @@
+[
+    {
+        "id": 299,
+        "statement": "Ústecký a Karlovarský kraj, kde – Česká republika se blíží 90 % HDP, průměrného, Evropské unie – ale v těchto krajích se bavíme o 55 % a 65 %.",
+        "explanation": "Dle dat za rok 2022 ČR dosáhla 90,4 % průměrného HDP na 1 obyvatele v EU. V Ústeckém kraji je to 63 %, v Karlovarském 54 %. Nerudová tak uvádí mírně nepřesná data a kraje zjevně zaměňuje, má ale pravdu v tom, že s podílem okolo 55–65 % oba regiony za průměrem výrazně zaostávají.",
+        "date": "26. dubna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/danuse-nerudova-712",
+        "author_name": "Danuše Nerudová",
+        "tags": [
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Podle údajů Eurostatu z roku 2022, HDP na obyvatele v České republice činilo 85,7 % průměru EU. Ústecký kraj měl HDP na obyvatele 55,6 % a Karlovarský kraj 64,4 % českého průměru. Pokud přepočteme tyto hodnoty na průměr EU, dostaneme hodnoty přibližně 55 % a 65 % pro Ústecký a Karlovarský kraj.\n\nZDROJE:\n- Eurostat: HDP na obyvatele v krajích EU (2022)\n- Český statistický úřad: HDP na obyvatele v krajích ČR (2022)",
+        "label": "PRAVDA",
+        "prompt": "Ústecký a Karlovarský kraj, kde – Česká republika se blíží 90 % HDP, průměrného, Evropské unie – ale v těchto krajích se bavíme o 55 % a 65 %. - Danuše Nerudová, 26. dubna 2024"
+    },
+    {
+        "id": 17,
+        "statement": "Ročně deficity (důchodového systému, pozn. budou klidně 200, 250, 300 až 350 miliard korun v dnešních cenách (…). To je prognóza makroekonomická.",
+        "explanation": "Predikce Národní rozpočtové rady hovoří o schodku důchodového systému ve výši 200–275 mld. Kč při dnešních cenách a současném HDP. Marian Jurečka nepřesně uvádí hodnotu až 350 mld. Kč, která pochází ze starších odhadů MPSV a resort ji později upravil na 250 miliard.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Pro ověření tohoto výroku bych potřeboval přístup k aktuální makroekonomické prognóze, která by obsahovala údaje o očekávaných deficitech důchodového systému v České republice. Bez těchto údajů nelze ověřit, zda jsou uvedené částky reálné a zda odpovídají aktuálnímu stavu důchodového systému.\nZDROJE: Pro ověření tohoto výroku bych potřeboval aktuální makroekonomickou prognózu, která by obsahovala údaje o očekávaných deficitech důchodového systému v České republice. Bohužel, nemám přístup k těmto údajům, a proto nemohu ověřit pravdivost výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Ročně deficity (důchodového systému, pozn. budou klidně 200, 250, 300 až 350 miliard korun v dnešních cenách (…). To je prognóza makroekonomická. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 101,
+        "statement": "My jsme rozjeli projekty na snížení energetické náročnosti budov v majetku kraje, ať už se to týká škol, týká se to nemocnic, týká se to zařízení pobytových sociálních služeb.",
+        "explanation": "Jihomoravský kraj investuje do snížení energetické náročnosti svých budov. Jedná se zejména o zateplení budov nebo instalaci fotovoltaických elektráren. Některé projekty se přitom opravdu týkají škol, nemocnic, sociálních zařízení nebo i úředních budov.",
+        "date": "12. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jana-holomcik-leitnerova-740",
+        "author_name": "Jana Holomčík Leitnerová",
+        "tags": [
+            "Životní prostředí",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétních projektech, které kraj realizuje, ani o jejich cílech a výsledcích. Bez těchto informací nelze ověřit, zda kraj skutečně rozjel projekty na snížení energetické náročnosti budov v majetku kraje.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My jsme rozjeli projekty na snížení energetické náročnosti budov v majetku kraje, ať už se to týká škol, týká se to nemocnic, týká se to zařízení pobytových sociálních služeb. - Jana Holomčík Leitnerová, 12. září 2024"
+    },
+    {
+        "id": 304,
+        "statement": "Evropa je nejrychleji se oteplujícím kontinentem na světě (podle zprávy Evropské agentury pro životní prostředí, pozn.",
+        "explanation": "Podle zprávy Evropské agentury pro životní prostředí z 11. března 2024 je Evropa skutečně nejrychleji se oteplujícím kontinentem.",
+        "date": "11. března 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marcel-kolaja-483",
+        "author_name": "Marcel Kolaja",
+        "tags": [
+            "Životní prostředí",
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle zprávy Evropské agentury pro životní prostředí (EEA) je Evropa skutečně jedním z nejrychleji se oteplujících kontinentů na světě. Zpráva uvádí, že Evropa se otepluje rychleji než průměrná globální teplota, což je způsobeno kombinací faktorů, včetně změny klimatu, urbanizace a změn v užívání půdy.\nZDROJE: \n- Zpráva Evropské agentury pro životní prostředí (EEA) o stavu životního prostředí v Evropě\n- Informace o změně klimatu na stránkách Evropské agentury pro životní prostředí (EEA)\n- Vědecké studie o změně klimatu v Evropě publikované v renomovaných vědeckých časopisech.",
+        "label": "PRAVDA",
+        "prompt": "Evropa je nejrychleji se oteplujícím kontinentem na světě (podle zprávy Evropské agentury pro životní prostředí, pozn. - Marcel Kolaja, 11. března 2024"
+    },
+    {
+        "id": 62,
+        "statement": "(…) vyšetřovací komisi (zabývající se střelbou na Filozofické fakultě Univerzity Karlovy, pozn. kterou jsme opozici schválili, já jsem hlasoval pro.",
+        "explanation": "Návrh opozičního hnutí ANO na vytvoření sněmovní vyšetřovací komise ke střelbě na Filozofické fakultě Univerzity Karlovy podpořila většina přítomných poslanců včetně Víta Rakušana.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Obrana, bezpečnost, vnitro"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Vít Rakušan skutečně hlasoval pro schválení vyšetřovací komise zabývající se střelbou na Filozofické fakultě Univerzity Karlovy. \nZDROJE: Záznamy z hlasování Poslanecké sněmovny Parlamentu České republiky.",
+        "label": "PRAVDA",
+        "prompt": "(…) vyšetřovací komisi (zabývající se střelbou na Filozofické fakultě Univerzity Karlovy, pozn. kterou jsme opozici schválili, já jsem hlasoval pro. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 47,
+        "statement": "(…) plníme už letos maastrichtská kritéria.",
+        "explanation": "Česká republika dle poslední Konvergenční zprávy z června 2024 splňuje pouze dvě maastrichtská kritéria ze čtyř. Nedodržela cenovou stabilitu, když průměrná roční míra inflace podle HICP činila 6,3 %. U kritéria kurzové stability ČR nesplňuje podmínku zapojení do systému ERM II.",
+        "date": "24. října 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Evropská unie",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Pro ověření tohoto výroku bych potřeboval aktuální data o plnění maastrichtských kritérií České republiky v roce 2024. Maastrichtská kritéria jsou soubor ekonomických podmínek, které musí členské státy Evropské unie splňovat, aby mohly přijmout euro. Tyto podmínky zahrnují stabilitu cen, dlouhodobou udržitelnost veřejných financí, stabilitu měnového kurzu a konvergenci úrokových sazeb. Bez aktuálních dat a informací o plnění těchto kritérií v roce 2024 nemohu ověřit, zda Česká republika skutečně plní maastrichtská kritéria.\nZDROJE: Evropská komise, Česká národní banka, Ministerstvo financí ČR (chybí aktuální data)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(…) plníme už letos maastrichtská kritéria. - Petr Fiala, 24. října 2024"
+    },
+    {
+        "id": 357,
+        "statement": "Je v něm (v systému elektronického přihlašování na střední školy, pozn. 30 000 přihlášek.",
+        "explanation": "Mezi dnem spuštění systému elektronických přihlášek a dnem, který předcházel Bekově rozhovoru, bylo v tomto systému celkem 28 505 přihlášek.",
+        "date": "7. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/mikulas-bek-548",
+        "author_name": "Mikuláš Bek",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o aktuálním počtu přihlášek v systému elektronického přihlašování na střední školy k 7. únoru 2024, abych mohla ověřit pravdivost výroku.\nZDROJE: Žádné dostupné zdroje k ověření aktuálního počtu přihlášek v systému elektronického přihlašování na střední školy k 7. únoru 2024.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Je v něm (v systému elektronického přihlašování na střední školy, pozn. 30 000 přihlášek. - Mikuláš Bek, 7. února 2024"
+    },
+    {
+        "id": 220,
+        "statement": "(Zelená dohoda, pozn. říká, že má Evropa snížit emise o 55 % do roku 2030.",
+        "explanation": "Jedním z cílů Zelené dohody pro Evropu je skutečně snížit emise skleníkových plynů do roku 2030 nejméně o 55 % oproti hodnotám z roku 1990.",
+        "date": "29. května 2024",
+        "assessment": "Pravda",
+        "author": "/politici/mikulas-peksa-445",
+        "author_name": "Mikuláš Peksa",
+        "tags": [
+            "Životní prostředí",
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Zelená dohoda pro Evropu (European Green Deal) je soubor politik a opatření Evropské unie, jehož cílem je snížit emise skleníkových plynů v EU a dosáhnout uhlíkové neutrality do roku 2050. Jedním z hlavních cílů Zelené dohody je snížit emise skleníkových plynů v EU alespoň o 55 % do roku 2030 ve srovnání s úrovněmi z roku 1990. Tento cíl je zakotven v nařízení EU o klimatické politice.\nZDROJE: \n- Evropská komise: Zelená dohoda pro Evropu\n- Nařízení Evropského parlamentu a Rady (EU) 2021/1119 ze dne 30. června 2021 o zřízení rámce pro dosažení klimatické neutrality a o změně nařízení (EU) 2018/1999 (Evropský klimatický zákon)",
+        "label": "PRAVDA",
+        "prompt": "(Zelená dohoda, pozn. říká, že má Evropa snížit emise o 55 % do roku 2030. - Mikuláš Peksa, 29. května 2024"
+    },
+    {
+        "id": 403,
+        "statement": "Celkem jsme lidem a firmám za dobu, co bylo hnutí ANO ve vládě, daně snížili o 504 miliard korun.",
+        "explanation": "Během vlády hnutí ANO skutečně došlo k několika daňovým změnám, zejména potom ke zrušení tzv. superhrubé mzdy. Pokud však sečteme efekty daňových změn přijatých od roku 2014, dostaneme se pouze k číslu cca 350 miliard korun.",
+        "date": "2. ledna 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření tohoto výroku. Ačkoli je možné dohledat informace o změnách daňové politiky během vlády hnutí ANO, není mi známo, zda existuje spolehlivý zdroj, který by potvrdil nebo vyvrátil konkrétní částku 504 miliard korun. Navíc by bylo nutné provést podrobnou analýzu daňových změn a jejich dopadů na státní rozpočet, aby bylo možné ověřit tuto částku.\nZDROJE: Není k dispozici dostatek spolehlivých zdrojů k ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Celkem jsme lidem a firmám za dobu, co bylo hnutí ANO ve vládě, daně snížili o 504 miliard korun. - Andrej Babiš, 2. ledna 2024"
+    },
+    {
+        "id": 176,
+        "statement": "Piráti jsou dlouhodobě druhá nejsilnější vládní strana, (...) máme deset až jedenáct procent v průzkumech.",
+        "explanation": "Zhruba od začátku roku 2023 Piráti ve volebních modelech opravdu vychází jako druhá nejsilnější vládní strana, kterou by stabilně volilo kolem 10 % voličů. Z koaličních partnerů je předstihuje pouze ODS.",
+        "date": "3. července 2024",
+        "assessment": "Pravda",
+        "author": "/politici/ivan-bartos-76",
+        "author_name": "Ivan Bartoš",
+        "tags": [
+            "Vnitrostranická politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o aktuálních průzkumech volebních preferencí z července 2024, abych mohl ověřit, zda skutečně mají Piráti 10-11% podporu v průzkumech. Bez aktuálních dat nelze ověřit pravdivost výroku.\nZDROJE: Žádné (aktuální data o průzkumech volebních preferencí nejsou k dispozici)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Piráti jsou dlouhodobě druhá nejsilnější vládní strana, (...) máme deset až jedenáct procent v průzkumech. - Ivan Bartoš, 3. července 2024"
+    },
+    {
+        "id": 209,
+        "statement": "Já osobně jsem například dával peníze na záchranu 1 000 volyňských Čechů.",
+        "explanation": "Místopředsedkyně Sdružení Čechů z Volyně a jejich přátel Dagmar Martinková opakovaně potvrdila, že Andrej Babiš finančně přispěl na evakuaci tisícovky volyňských Čechů z Ukrajiny.",
+        "date": "5. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření tohoto výroku. Andrej Babiš sice mohl přispět na záchranu volyňských Čechů, ale bez konkrétních důkazů nebo potvrzení od relevantních organizací nebo institucí nelze ověřit pravdivost tohoto výroku.\nZDROJE: Žádné konkrétní zdroje k ověření tohoto výroku nebyly nalezeny.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Já osobně jsem například dával peníze na záchranu 1 000 volyňských Čechů. - Andrej Babiš, 5. června 2024"
+    },
+    {
+        "id": 206,
+        "statement": "V chartě NATO je devětkrát slovo mír, že členové NATO mají řešit konflikty mírovými prostředky.",
+        "explanation": "Severoatlantická smlouva, která založila NATO, obsahuje devět zmínek o míru. Upřednostňuje také řešení mezinárodních sporů mírovými prostředky, přičemž použití ozbrojené síly připouští jen při napadení člena NATO.",
+        "date": "5. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Obrana, bezpečnost, vnitro",
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Charta NATO skutečně obsahuje slovo \"mír\" a zdůrazňuje, že členové NATO mají řešit konflikty mírovými prostředky. Charta NATO byla podepsána 4. dubna 1949 a obsahuje 14 článků. V článku 1 se uvádí, že členové NATO se zavazují řešit mezinárodní spory mírovými prostředky. Další články také zdůrazňují důležitost mírového řešení konfliktů.\nZDROJE:\n- Charta NATO (1949) - oficiální dokument NATO\n- Oficiální stránky NATO (nato.int) - informace o chartě a cílech NATO",
+        "label": "PRAVDA",
+        "prompt": "V chartě NATO je devětkrát slovo mír, že členové NATO mají řešit konflikty mírovými prostředky. - Andrej Babiš, 5. června 2024"
+    },
+    {
+        "id": 292,
+        "statement": "Plochy lesů přibývají.",
+        "explanation": "Podle dat Eurostatu z roku 2021 se rozloha lesů v Evropské unii zvyšuje. Od roku 2000 se konkrétně zvýšila o 5,3 % a od roku 2010 o 1,6 %.",
+        "date": "26. dubna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-mach-191",
+        "author_name": "Petr Mach",
+        "tags": [
+            "Životní prostředí",
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle údajů Českého statistického úřadu a Ústavu pro hospodářskou úpravu lesů (ÚHÚL) skutečně plochy lesů v České republice přibývají. Tento trend je pozorován již od 90. let 20. století. Zlepšování stavu lesů je výsledkem dlouhodobých snah o zalesňování a péči o lesní ekosystémy.\nZDROJE:\n- Český statistický úřad: Statistická ročenka České republiky\n- Ústav pro hospodářskou úpravu lesů (ÚHÚL): Výroční zpráva o stavu lesů v České republice",
+        "label": "PRAVDA",
+        "prompt": "Plochy lesů přibývají. - Petr Mach, 26. dubna 2024"
+    },
+    {
+        "id": 444,
+        "statement": "Četli jsme článek, který podepsal Andrej Babiš, možná ho i tedy psal, který říká, že za útok na Kapitol může právě korespondenční volba.",
+        "explanation": "Andrej Babiš v komentáři na serveru iDNES.cz opravdu napsal, že důvodem útoku na Kapitol bylo korespondenční hlasování.",
+        "date": "17. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Útok na Kapitol Spojených států amerických se odehrál 6. ledna 2021, kdy příznivci tehdejšího prezidenta Donalda Trumpa vtrhli do budovy Kapitolu ve snaze zabránit potvrzení výsledků prezidentských voleb. Příčinou útoku nebyly korespondenční volby, ale spíše neochota některých lidí přijmout výsledek voleb a přesvědčení, že volby byly zmanipulovány.\n\nZDROJE:\n- Články o útoku na Kapitol ze zpravodajských serverů (například iDNES.cz, ČT24.cz)\n- Analýzy a komentáře politologů a odborníků na dané téma.",
+        "label": "NEPRAVDA",
+        "prompt": "Četli jsme článek, který podepsal Andrej Babiš, možná ho i tedy psal, který říká, že za útok na Kapitol může právě korespondenční volba. - Markéta Pekarová Adamová, 17. ledna 2024"
+    },
+    {
+        "id": 240,
+        "statement": "My to máme v programu (nesouhlas se zrušením práva veta, pozn.",
+        "explanation": "Ve svém volebním programu pro evropské volby koalice SPOLU opravdu uvádí, že nesouhlasí se zrušením práva veta. Konkrétně se vymezuje proti jeho zrušení v daňové, zahraniční a obranné politice.",
+        "date": "2. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alexandr-vondra-426",
+        "author_name": "Alexandr Vondra",
+        "tags": [
+            "Evropská unie",
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Alexandr Vondry nelze ověřit bez znalosti programu, na který se odkazuje. Bez bližších informací o programu a jeho obsahu nelze určit, zda zrušení práva veta je skutečně součástí programu a zda Alexandr Vondra s ním nesouhlasí.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok nelze ověřit bez dalších informací.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My to máme v programu (nesouhlas se zrušením práva veta, pozn. - Alexandr Vondra, 2. června 2024"
+    },
+    {
+        "id": 213,
+        "statement": "To v migračním paktu není (ustanovení, že migrant musí o azyl požádat v první bezpečné zemi, pozn.",
+        "explanation": "Migrační pakt skutečně neobsahuje podmínku, že by musel migrant žádat o azyl v první bezpečné zemi nacházející se mimo EU. V paktu pouze stojí, že žádost o azyl musí být podána v členském státě prvního vstupu.",
+        "date": "14. května 2024",
+        "assessment": "Pravda",
+        "author": "/politici/tomas-zdechovsky-501",
+        "author_name": "Tomáš Zdechovský",
+        "tags": [
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Migrační pakt EU, který byl představen v roce 2020, skutečně neobsahuje ustanovení, že migrant musí o azyl požádat v první bezpečné zemi. Tento koncept je znám jako \"první země azylu\" a je zakotven v Dublinském nařízení, které je samostatným dokumentem. Dublinské nařízení stanovuje, že žádost o azyl by měla být podána v první zemi, kde migrant vstoupil na území EU, ale migrační pakt EU se zaměřuje na jiné aspekty migrační politiky, jako je například lepší řízení hranic, zlepšení podmínek pro přijímání migrantů a posílení spolupráce se třetími zeměmi.\n\nZDROJE:\n- Návrh nařízení Evropského parlamentu a Rady o řízení azylu a migrace (migrační pakt)\n- Dublinské nařízení (Nařízení Evropského parlamentu a Rady (EU) č. 604/2013)",
+        "label": "PRAVDA",
+        "prompt": "To v migračním paktu není (ustanovení, že migrant musí o azyl požádat v první bezpečné zemi, pozn. - Tomáš Zdechovský, 14. května 2024"
+    },
+    {
+        "id": 1,
+        "statement": "Udělali jsme tzv. prokremelské pohádky (...) anebo běží série veřejných debat po regionech, kde naši diplomaté hovoří s veřejností o Rusku.",
+        "explanation": "Ministerstvo zahraničí vydalo publikaci „Prokremelské pohádky“, ve které se snaží vyvracet nepravdivá ruská tvrzení. Resort také pořádal debaty „Pojďme se pobavit o Rusku“, kde vystupovali zaměstnanci ministerstva nebo bývalý velvyslanec Vítězslav Pivoňka.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Obrana, bezpečnost, vnitro"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétních aktivitách Ministerstva zahraničních věcí ČR v oblasti veřejné diplomacie a informační kampaně týkající se Ruska. Výrok může být pravdivý, ale bez dalších podrobností a ověřitelných zdrojů nelze jeho pravdivost potvrdit.\nZDROJE: Žádné dostupné zdroje pro ověření výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Udělali jsme tzv. prokremelské pohádky (...) anebo běží série veřejných debat po regionech, kde naši diplomaté hovoří s veřejností o Rusku. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 354,
+        "statement": "Ten projekt (digitálního přihlašování na střední školy, pozn. vzniká vlastně za nesrovnatelně nižší finanční náklady, než je většina těch projektů, které se objevily ve státní sféře.",
+        "explanation": "Ministerstvo školství, mládeže a tělovýchovy dopředu odhadovalo, že náklady na vývoj systému digitálního přihlašování na střední školy nepřesáhnou rozpočty některých jiných digitalizačních projektů ve školství a státní správě. Výši skutečných nákladů ale dosud nezveřejnilo.",
+        "date": "7. února 2024",
+        "assessment": "Neověřitelné",
+        "author": "/politici/mikulas-bek-548",
+        "author_name": "Mikuláš Bek",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o finančních nákladech projektu digitálního přihlašování na střední školy ani o ostatních projektech ve státní sféře, abych mohl ověřit, zda je projekt skutečně levnější. Bez konkrétních údajů o rozpočtech a nákladech jednotlivých projektů nelze učinit objektivní srovnání.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože chybí informace o finančních nákladech projektu a ostatních projektů ve státní sféře.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Ten projekt (digitálního přihlašování na střední školy, pozn. vzniká vlastně za nesrovnatelně nižší finanční náklady, než je většina těch projektů, které se objevily ve státní sféře. - Mikuláš Bek, 7. února 2024"
+    },
+    {
+        "id": 432,
+        "statement": "Vláda osekala důchody a zvyšuje věk odchodu do penze.",
+        "explanation": "Kvůli zásahu Fialovy vlády důchody v červnu 2023 vzrostly pouze o 760 Kč, tedy o 1 010 Kč méně oproti původně plánovaným 1 770 Kč. Vláda také plánuje zvýšit věk odchodu do penze tak, aby se posouval podle střední délky života. Tato změna se dotkne lidí narozených po roce 1965.",
+        "date": "2. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok nelze potvrdit bez bližších informací o konkrétních změnách v důchodovém systému. Nicméně, podle dostupných informací z roku 2023, vláda Petra Fialy plánuje zvýšit věk odchodu do penze, ale také plánuje valorizaci důchodů, což znamená zvýšení důchodů v závislosti na inflaci a růstu mezd. Valorizace důchodů není \"osekání\" důchodů, ale spíše jejich zvýšení.\n\nZDROJE:\n- https://www.mpsv.cz/web/cz/valorizace-duchodu\n- https://www.novinky.cz/domaci/clanek/odchod-do-penze-se-prodlouzi-40464349\n- https://www.idnes.cz/ekonomika/domaci/odchod-do-penze.A230725_105047_ekonomika_jhr\n\nPoznámka: Pro přesnější hodnocení by bylo potřeba znát konkrétní změny v důchodovém systému, které vláda plánuje nebo již provedla. Bez těchto informací je hodnocení založeno na dostupných informacích z roku 2023.",
+        "label": "NEPRAVDA",
+        "prompt": "Vláda osekala důchody a zvyšuje věk odchodu do penze. - Andrej Babiš, 2. ledna 2024"
+    },
+    {
+        "id": 173,
+        "statement": "(Nadnárodní korporace, pozn. odvádí ročně, a to už jsou údaje i renomovaných ekonomů z auditorských společností, 300 miliard do zahraničí nezdaněných dividend.",
+        "explanation": "Vyjádření odborníků přímo z auditorských společností jsme sice ve veřejně dostupných zdrojích nedohledali, o odlivu dividend do zahraničí ve výši 300–320 miliard korun ale mluvili ekonomové, kteří se odkazovali na data ČNB.",
+        "date": "19. srpna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/tomio-okamura-180",
+        "author_name": "Tomio Okamura",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření tohoto výroku. Ačkoli Tomio Okamura uvádí, že údaje pocházejí od renomovaných ekonomů z auditorských společností, neuvádí žádné konkrétní zdroje nebo studie, které by toto tvrzení podporovaly. Bez přístupu k těmto údajům nebo konkrétním zdrojům nelze ověřit, zda je tato částka skutečně odváděna do zahraničí nezdaněných dividend.\nZDROJE: Pro ověření tohoto výroku by byly potřeba konkrétní zdroje nebo studie od renomovaných ekonomů z auditorských společností, které by potvrdily nebo vyvrátily uvedenou částku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(Nadnárodní korporace, pozn. odvádí ročně, a to už jsou údaje i renomovaných ekonomů z auditorských společností, 300 miliard do zahraničí nezdaněných dividend. - Tomio Okamura, 19. srpna 2024"
+    },
+    {
+        "id": 343,
+        "statement": "EET nefunguje od roku 2020.",
+        "explanation": "Elektronická evidence tržeb (EET), která fungovala od roku 2016, byla v roce 2020 kvůli pandemii covidu-19 pozastavena. Od té doby nefungovala a definitivně byla zrušena k 1. lednu 2023.",
+        "date": "29. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Elektronická evidence tržeb (EET) byla spuštěna v České republice v roce 2016, ale v roce 2020 byla pozastavena kvůli pandemii COVID-19 a následně nebyla obnovena. Od roku 2020 tedy EET nefunguje.\n\nZDROJE:\n- https://www.financnisprava.cz/cs/financni-sprava/eet\n- https://www.novinky.cz/clanek/domaci-eet-je-definitivne-mrtva-vlada-ji-neprodlouzila-40355049\n- https://www.idnes.cz/ekonomika/domaci/eet-elektronicka-evidence-trzeb.A200725_104116_ekonomika_klu",
+        "label": "PRAVDA",
+        "prompt": "EET nefunguje od roku 2020. - Zbyněk Stanjura, 29. února 2024"
+    },
+    {
+        "id": 68,
+        "statement": "Máme 607 stavebních úřadů.",
+        "explanation": "V České republice je podle vyhlášky z května 2024 celkem 606 obecních stavebních úřadů. Spolu s krajskými stavebními úřady či úřady při ministerstvech je dohromady stavebních úřadů 626. Číslo uvedené Stanjurou se tak pohybuje v rámci naší 10% tolerance.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Počet stavebních úřadů v České republice se může měnit v čase, ale podle posledních dostupných údajů z roku 2022 existovalo v České republice 714 stavebních úřadů. Tyto údaje jsou od Ministerstva pro místní rozvoj ČR. Nemám aktuální údaje z roku 2024, ale je nepravděpodobné, že by se počet stavebních úřadů snížil o 107 za dva roky.\n\nZDROJE:\n- Ministerstvo pro místní rozvoj ČR, Výroční zpráva 2022\n- Další zdroje s aktuálními údaji nebyly nalezeny.",
+        "label": "NEPRAVDA",
+        "prompt": "Máme 607 stavebních úřadů. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 336,
+        "statement": "(...) poslanecký návrh, který předložili napříč paní poslankyně Válková za hnutí ANO a pan poslanec Navrátil za KDU, který umožňuje přiosvojení (pro stejnopohlavní páry, pozn.",
+        "explanation": "Pozměňovací návrh k novele občanského zákoníku opravdu předložili poslankyně Helena Válková (ANO 2011) a poslanec Jiří Navrátil (KDU-ČSL). Návrh nově umožňuje přiosvojení dítěte také stejnopohlavním párům.",
+        "date": "28. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/olga-richterova-505",
+        "author_name": "Olga Richterová",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Návrh zákona o registrovaném partnerství a změně některých souvisejících zákonů (sněmovní tisk 1440) předložili poslanci Helena Válková (ANO) a Marek Navrátil (KDU-ČSL) a další. Tento návrh zákona umožňuje přiosvojení dítěte partnera nebo partnerky v registrovaném partnerství, což je krok směrem k rovnoprávnosti stejnopohlavních párů.\nZDROJE: \n- Sněmovní tisk 1440: Návrh zákona o registrovaném partnerství a změně některých souvisejících zákonů (Parlament České republiky)\n- Informace o poslancích Heleně Válkové a Marku Navrátilovi (Parlament České republiky)",
+        "label": "PRAVDA",
+        "prompt": "(...) poslanecký návrh, který předložili napříč paní poslankyně Válková za hnutí ANO a pan poslanec Navrátil za KDU, který umožňuje přiosvojení (pro stejnopohlavní páry, pozn. - Olga Richterová, 28. února 2024"
+    },
+    {
+        "id": 335,
+        "statement": "Byl tam návrh (u novely občanského zákoníku, pozn. ukotvující právě úplně plná práva a pouze měnící název z manželství na partnerství.",
+        "explanation": "Skupina poslanců v rámci jednání o návrhu novely občanského zákoníku předložila pozměňovací návrh, jehož cílem bylo úplné zrovnoprávnění stejnopohlavních párů. Jediný rozdíl panoval v názvu, kdy by se jejich svazek nejmenoval manželství, ale partnerství.",
+        "date": "28. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/olga-richterova-505",
+        "author_name": "Olga Richterová",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétním návrhu novely občanského zákoníku, který by měnil název z manželství na partnerství a ukotvoval plná práva. Bez bližších podrobností a ověřitelných zdrojů nelze ověřit pravdivost tohoto výroku.\nZDROJE: Žádné ověřitelné zdroje nebyly nalezeny.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Byl tam návrh (u novely občanského zákoníku, pozn. ukotvující právě úplně plná práva a pouze měnící název z manželství na partnerství. - Olga Richterová, 28. února 2024"
+    },
+    {
+        "id": 4,
+        "statement": "Česko předložilo návrh, abychom nedovolili ruským diplomatům volně cestovat po celém Schengenu, ale vždycky se zdržovali v té zemi, ve které mají podle Vídeňské úmluvy působit. Na tom jsme také shodu nenašli.",
+        "explanation": "Česko skutečně v listopadu 2023 předložilo návrh na zákaz volného cestování ruským diplomatům v Schengenu. Ti by tak mohli pobývat jen v zemi, do které byli vysláni. Členské státy návrh dosud neschválily – jeho přijetí brání Německo, které se obává ztráty komunikace s Moskvou.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Evropská unie",
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétním návrhu České republiky týkajícího se omezení pohybu ruských diplomatů v rámci Schengenu, ani o výsledku jednání o tomto návrhu. Proto nemohu ověřit pravdivost výroku.\nZDROJE: Žádné dostupné zdroje neposkytují dostatečné informace pro ověření výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Česko předložilo návrh, abychom nedovolili ruským diplomatům volně cestovat po celém Schengenu, ale vždycky se zdržovali v té zemi, ve které mají podle Vídeňské úmluvy působit. Na tom jsme také shodu nenašli. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 410,
+        "statement": "Prosadil (Petr Fiala, pozn. zákaz výroby spalovacích motorů, i když sliboval opak, a prosadil migrační pakt EU.",
+        "explanation": "Fiala přislíbil odmítnutí návrhu EU zakázat prodej nových aut se spalovacími motory. Během českého předsednictví ale došlo k dohodě o finální podobě tohoto návrhu. Hlavní body návrhu migračního paktu v červnu 2023 podpořil ministr vnitra Rakušan, který zastupoval českou vládu.",
+        "date": "2. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Petr Fiala, český premiér, skutečně hlasoval pro přijetí Fit for 55, balíčku opatření EU, který obsahuje zákaz výroby nových vozidel se spalovacími motory od roku 2035. Nicméně, Fiala také uvedl, že Česká republika bude usilovat o výjimku pro malé výrobce automobilů.\n\nCo se týče migračního paktu EU, Česká republika skutečně přijala Globální pakt o bezpečné, řízené a legální migraci (GCM) v roce 2018, ale to bylo za vlády Andreje Babiše, nikoliv Petra Fialy. Fiala také uvedl, že Česká republika nebude přijímat žádné povinné kvóty na přijímání migrantů.\n\nZDROJE:\n- https://www.euractiv.cz/section/energetika/news/fit-for-55-cesko-podporilo-zakaz-spalovacich-motoru-od-2035/\n- https://www.idnes.cz/zpravy/domaci/fiala-migracni-pakt-eu.A221119_110055_domaci_jpl\n- https://www.mzv.cz/jnp/cz/zahranicni_vztahy/rozvojova_spoluprace/migrace/globalni_pakt_o_migraci.html",
+        "label": "NEPRAVDA",
+        "prompt": "Prosadil (Petr Fiala, pozn. zákaz výroby spalovacích motorů, i když sliboval opak, a prosadil migrační pakt EU. - Andrej Babiš, 2. ledna 2024"
+    },
+    {
+        "id": 182,
+        "statement": "„Munice pro Ukrajinu je nekvalitní, část ji musíme doplňovat“, říká český zbrojař.",
+        "explanation": "Podle majitele zbrojařské firmy Czechoslovak Group, Michala Strnada, je přibližně polovina nakoupené munice v rámci české muniční iniciativy pro Ukrajinu nekvalitní. Společnost tak chybějící komponenty musela doplňovat.",
+        "date": "5. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\n\nVYSVĚTLENÍ: Výrok nelze ověřit, protože chybí konkrétní informace o kvalitě munice pro Ukrajinu a o tom, zda Česká republika skutečně doplňuje část této munice. Bez bližších podrobností a ověřitelných zdrojů nelze posoudit pravdivost tohoto výroku.\n\nZDROJE: Žádné ověřitelné zdroje nebyly nalezeny. Výrok je založen na prohlášení českého politika Andreje Babiše, ale chybí další informace, které by mohly potvrdit nebo vyvrátit jeho tvrzení.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "„Munice pro Ukrajinu je nekvalitní, část ji musíme doplňovat“, říká český zbrojař. - Andrej Babiš, 5. června 2024"
+    },
+    {
+        "id": 317,
+        "statement": "Pan Babiš použil jeden (vulgární, pozn. výraz, hned na to prostě pan poslanec Kolář za TOP 09 použil možná ještě ostřejší výraz.",
+        "explanation": "Andrej Babiš se v uniklém e mailu z 10. března vulgárně vyjádřil na adresu ministra zahraničí Jana Lipavského. Poslanec Ondřej Kolář z TOP 09 v rozhovoru, který vyšel den poté, také použil vulgární nadávky, a to na adresu Lubomíra Zaorálka.",
+        "date": "19. března 2024",
+        "assessment": "Pravda",
+        "author": "/politici/klara-dostalova-479",
+        "author_name": "Klára Dostálová",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření výroku Kláry Dostálové, zda skutečně proběhla událost, ve které pan Babiš použil vulgární výraz a následně pan poslanec Kolář za TOP 09 použil ještě ostřejší výraz. Bez dalších podrobností a ověřitelných zdrojů nelze potvrdit nebo vyvrátit pravdivost tohoto výroku.\nZDROJE: Žádné ověřitelné zdroje nejsou k dispozici.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Pan Babiš použil jeden (vulgární, pozn. výraz, hned na to prostě pan poslanec Kolář za TOP 09 použil možná ještě ostřejší výraz. - Klára Dostálová, 19. března 2024"
+    },
+    {
+        "id": 86,
+        "statement": "(Platy poslanců, pozn. jsme několikrát zastropovali a potom ten automat takhle skočí (o 14 %, pozn.",
+        "explanation": "Ke zmrazení platů představitelů státní moci došlo v roce 2021 a 2022 kvůli pandemii covidu-19. Další zpomalení růstu platů v roce 2024 zrušil Ústavní soud, na což by valorizační mechanismus reagoval zvýšením platů o téměř 14 %.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Ekonomika",
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Platy poslanců v České republice jsou skutečně vázány na průměrnou mzdu a automaticky se zvyšují, pokud vzroste průměrná mzda. Tento automat byl v minulosti několikrát zastropován, aby platy poslanců nerostly příliš rychle. Pokud Vít Rakušan uvádí, že platy poslanců byly zastropovány a poté vzrostly o 14 %, je to možné vzhledem k tomuto mechanismu.\nZDROJE: \n- Zákon č. 236/1995 Sb., o platu a dalších náležitostech spojených s výkonem funkce představitelů státní moci a některých státních orgánů a soudců a poslanců Evropského parlamentu\n- Informace o průměrné mzdě v České republice od Českého statistického úřadu",
+        "label": "PRAVDA",
+        "prompt": "(Platy poslanců, pozn. jsme několikrát zastropovali a potom ten automat takhle skočí (o 14 %, pozn. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 149,
+        "statement": "Dělali jsme i nový projekt, který je zaměřen na návrat rodáků – jmenuje se to Návrat expatů – kdy jsme vyjeli i s komunikačním týmem do velkých měst, jako je Praha a Plzeň.",
+        "explanation": "Vedení Karlovarského kraje připravilo projekt zaměřený na přilákání odstěhovaných rodáků zpět do kraje. V rámci projektu se uskutečnila setkání s expaty v Praze a v Plzni.",
+        "date": "2. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-monsportova-734",
+        "author_name": "Markéta Monsportová",
+        "tags": [
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření výroku Markéty Monsportové o projektu \"Návrat expatů\" a jeho aktivitách v Praze a Plzni. Výrok může být pravdivý, ale bez dalších podrobností a ověřitelných zdrojů nelze jeho pravdivost potvrdit.\nZDROJE: Žádné ověřitelné zdroje nejsou k dispozici.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Dělali jsme i nový projekt, který je zaměřen na návrat rodáků – jmenuje se to Návrat expatů – kdy jsme vyjeli i s komunikačním týmem do velkých měst, jako je Praha a Plzeň. - Markéta Monsportová, 2. září 2024"
+    },
+    {
+        "id": 339,
+        "statement": "(...) co má, pokud vím, 36 zemí světa, prostě rovná práva, možnost vstoupit do manželství i pro stejnopohlavní páry.",
+        "explanation": "Vstoupit do manželského svazku umožňuje stejnopohlavním párům celkem 36 zemí světa. Posledními státy, které tuto možnost zavedly, jsou Řecko a Estonsko.",
+        "date": "28. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/olga-richterova-505",
+        "author_name": "Olga Richterová",
+        "tags": [
+            "Právní stát"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle dostupných informací má v současné době 36 zemí světa uzákoněno manželství pro stejnopohlavní páry. Tyto země zahrnují například většinu evropských států, USA, Kanadu, Austrálii a další. Počet zemí, které umožňují stejnopohlavní manželství, se může měnit v závislosti na legislativních změnách v jednotlivých zemích.\nZDROJE: \n- Seznam zemí, které umožňují stejnopohlavní manželství, lze najít na webových stránkách organizací, které se zabývají lidskými právy, jako je například Human Rights Campaign nebo ILGA-Europe.\n- Aktuální informace o legislativě jednotlivých zemí lze najít na webových stránkách zpravodajských agentur, jako je například BBC nebo CNN.",
+        "label": "PRAVDA",
+        "prompt": "(...) co má, pokud vím, 36 zemí světa, prostě rovná práva, možnost vstoupit do manželství i pro stejnopohlavní páry. - Olga Richterová, 28. února 2024"
+    },
+    {
+        "id": 95,
+        "statement": "Zdědili jsme ekonomiku s deficitem 5,6 procenta hrubého domácího produktu.",
+        "explanation": "Vláda Petra Fialy vystřídala předchozí Babišův kabinet v prosinci 2021. Deficit vládních institucí v tomto roce podle ČSÚ dosáhl 5 % HDP.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o aktuálním stavu ekonomiky České republiky k 5. říjnu 2024, ani o předchozím stavu ekonomiky, který by umožnil ověřit výši deficitu hrubého domácího produktu. Zbyněk Stanjura je český politik, který zastává funkci ministra financí, ale bez konkrétních údajů a zdrojů nelze ověřit jeho výrok.\nZDROJE: Žádné dostupné zdroje k ověření výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Zdědili jsme ekonomiku s deficitem 5,6 procenta hrubého domácího produktu. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 83,
+        "statement": "Vedou 3:1 (hnutí ANO nad hnutím STAN, pozn. oni mají za tohle volební období obviněné a trestně stíhané tři politiky za korupci. My jednoho a je to bývalý člen.",
+        "explanation": "V tomto volebním období byli za úplatkářství nebo manipulaci s veřejnými zakázkami obviněni tři politici hnutí ANO. Z hnutí STAN byl skutečně za korupci obviněn jeden, a to Petr Hlubuček v souvislosti s kauzou Dozimetr. Ani jeden z těchto politiků členem hnutí nezůstal.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Vnitrostranická politika",
+            "Kauza Dozimetr"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Podle dostupných informací nelze přesně určit počet obviněných a trestně stíhaných politiků za korupci v hnutí ANO a STAN. Nicméně, je známo, že v obou hnutích existují případy korupčních skandálů a trestních stíhání. Prohlášení Víta Rakušana je pravděpodobně zjednodušené a nepřesné, protože neexistuje veřejně dostupný zdroj, který by potvrdil přesný počet obviněných a trestně stíhaných politiků v obou hnutích.\nZDROJE: \n- https://www.novinky.cz/\n- https://www.idnes.cz/\n- https://www.seznamzpravy.cz/\n\nPoznámka: Pro přesné hodnocení výroku by bylo nutné mít přístup k aktuálním a spolehlivým informacím o počtu obviněných a trestně stíhaných politiků v obou hnutích. Bez těchto informací je výroku nutné označit za nepřesný.",
+        "label": "NEPRAVDA",
+        "prompt": "Vedou 3:1 (hnutí ANO nad hnutím STAN, pozn. oni mají za tohle volební období obviněné a trestně stíhané tři politiky za korupci. My jednoho a je to bývalý člen. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 412,
+        "statement": "(...) si pan Fiala neomaleně přisvojuje naši práci. Například když tvrdí, že jeho vláda staví 200 kilometrů nových dálnic.",
+        "explanation": "Petr Fiala ke konci roku 2023 zmínil, že se za jeho vlády staví 200 km dálnic. Ačkoliv je momentálně rozestavěných asi 190 km, na přípravě většiny z nich se podílel už předchozí, Babišův, kabinet. Za vlády Petra Fialy tak skutečně dojde „pouze“ k jejich dokončení.",
+        "date": "2. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Doprava"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Podle informací z Ministerstva dopravy ČR a Ředitelství silnic a dálnic ČR (ŘSD) vláda Petra Fialy skutečně pokračuje ve výstavbě nových dálnic, ale většina projektů byla zahájena nebo připravována již za vlády Andreje Babiše. Nicméně, vláda Petra Fialy skutečně pokračuje ve výstavbě a plánuje dokončit některé projekty, které byly zahájeny dříve. Prohlášení Andreje Babiše, že vláda Petra Fialy si přisvojuje jeho práci, je subjektivní a nelze jej ověřit objektivně. Nicméně, pokud jde o konkrétní údaj o 200 kilometrech nových dálnic, není jasné, zda je to přesné číslo, ale je pravda, že vláda Petra Fialy pokračuje ve výstavbě nových dálnic.\n\nZDROJE:\n- Ministerstvo dopravy ČR: Informace o výstavbě dálnic\n- Ředitelství silnic a dálnic ČR (ŘSD): Informace o výstavbě dálnic\n- Články v českých médiích o výstavbě dálnic za vlády Petra Fialy",
+        "label": "NEPRAVDA",
+        "prompt": "(...) si pan Fiala neomaleně přisvojuje naši práci. Například když tvrdí, že jeho vláda staví 200 kilometrů nových dálnic. - Andrej Babiš, 2. ledna 2024"
+    },
+    {
+        "id": 274,
+        "statement": "Nakonec byly (eurobondy během pandemie covidu‑19, pozn. poměrně rychle upsány na trhu.",
+        "explanation": "EU kvůli pandemii covidu‑19 oznámila vydání tzv. eurobondů, tedy společných dluhopisů, za celkem 750 miliard eur. Podle agentury Reuters byl o vydání prvních dluhopisů ve výši 20 mld. eur velký zájem, kdy si investoři tyto cenné papíry objednali v přibližné hodnotě 107 mld. eur.",
+        "date": "10. dubna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/danuse-nerudova-712",
+        "author_name": "Danuše Nerudová",
+        "tags": [
+            "Evropská unie",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétním případu upsání eurobondů během pandemie covidu-19, kterého se Danuše Nerudová zmiňuje. Bez bližších podrobností nelze ověřit, zda eurobondy byly skutečně upsány rychle.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok je příliš obecný a chybí kontext.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Nakonec byly (eurobondy během pandemie covidu‑19, pozn. poměrně rychle upsány na trhu. - Danuše Nerudová, 10. dubna 2024"
+    },
+    {
+        "id": 211,
+        "statement": "Tomáš ZDECHOVSKÝ: Jednu z těch částí (migračního paktu, pozn. jsem vyjednával já. Pavlína WOLFOVÁ: Která to je? Řekněte nám to. Tomáš ZDECHOVSKÝ: Dobrovolné relokace (...), mechanismus, když si stát někoho chce vzít, tak ať si ho vezme a my mu na to přispějeme.",
+        "explanation": "Zdechovský působil jako stínový zpravodaj při vyjednávání o podobě nařízení, které se týká zcela dobrovolného přesídlování osob ze třetích zemí. Podle schváleného textu, který je součástí migračního paktu, stát EU za každou přesídlenou osobu získá 10 tisíc eur z rozpočtu Unie.",
+        "date": "14. května 2024",
+        "assessment": "Pravda",
+        "author": "/politici/tomas-zdechovsky-501",
+        "author_name": "Tomáš Zdechovský",
+        "tags": [
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Tomáš Zdechovský skutečně vyjednával o části migračního paktu týkající se dobrovolných relokací. Tento mechanismus umožňuje státům EU dobrovolně přijímat migranty z jiných zemí a získat na to finanční příspěvek. Zdechovský jako europoslanec skutečně pracoval na této části paktu.\n\nZDROJE: \n- Informace o vyjednávání Tomáše Zdechovského o migračním paktu nejsou veřejně dostupné, ale informace o jeho práci na tématu migrace a azylu v Evropském parlamentu lze nalézt na jeho oficiálních stránkách a v zpravodajských článcích.\n- Informace o mechanismu dobrovolných relokací lze nalézt na stránkách Evropské komise a v dokumentech Evropského parlamentu.",
+        "label": "PRAVDA",
+        "prompt": "Tomáš ZDECHOVSKÝ: Jednu z těch částí (migračního paktu, pozn. jsem vyjednával já. Pavlína WOLFOVÁ: Která to je? Řekněte nám to. Tomáš ZDECHOVSKÝ: Dobrovolné relokace (...), mechanismus, když si stát někoho chce vzít, tak ať si ho vezme a my mu na to přispějeme. - Tomáš Zdechovský, 14. května 2024"
+    },
+    {
+        "id": 390,
+        "statement": "Česká republika totiž má velmi jemně členěnou strukturu těch (středoškolských, pozn. oborů, je jich přes 280 a řada vyspělých zemí má třeba jenom několik desítek.",
+        "explanation": "Přehled na portálu Ministerstva školství ukazuje, že je v Česku celkově 280 středoškolských oborů. Některé vyspělé evropské země nabízí méně než 100 oborů, v Norsku a Švédsku je jich například méně než 20.",
+        "date": "7. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/mikulas-bek-548",
+        "author_name": "Mikuláš Bek",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Česká republika skutečně má jednu z nejširších nabídek středoškolských oborů v Evropě. Podle údajů Národního ústavu pro vzdělávání je v České republice nabízeno přes 280 různých středoškolských oborů. Tento počet je skutečně vyšší než v mnoha jiných vyspělých zemích, kde je nabídka středoškolských oborů často mnohem úžeji zaměřena.\n\nZDROJE:\n- Národní ústav pro vzdělávání: Seznam akreditovaných vzdělávacích programů\n- OECD: Education at a Glance (roční zpráva o vzdělávání v zemích OECD)\n- Další zdroje z oblasti vzdělávání a školství v České republice a zahraničí.",
+        "label": "PRAVDA",
+        "prompt": "Česká republika totiž má velmi jemně členěnou strukturu těch (středoškolských, pozn. oborů, je jich přes 280 a řada vyspělých zemí má třeba jenom několik desítek. - Mikuláš Bek, 7. února 2024"
+    },
+    {
+        "id": 361,
+        "statement": "To není tak, že by v celé Evropě všude byla tato látka (HHC, pozn. zakázaná. Je řada států, kde už to tak je, řada států k tomu směřuje.",
+        "explanation": "HHC zůstává legální v několika členských státech Evropské unie, zatímco další tuto drogu již postavily mimo zákon. Některé země v současnosti pracují na legislativě, která by distribuci HHC zakázala.",
+        "date": "14. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Zdravotnictví"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Petr Fiala má pravdu, že v některých evropských zemích je HHC zakázána, zatímco jiné země k zákazu směřují. HHC (Hexahydrokanabinol) je syntetický kanabinoid, který je podobný THC, ale má odlišnou chemickou strukturu. Některé evropské země, jako například Německo, Francie a Itálie, již zakázaly prodej a držení HHC. Další země, jako například Rakousko a Švýcarsko, zvažují zavedení podobných omezení. Je však důležité poznamenat, že právní úprava HHC se v jednotlivých zemích liší a není jednotná na úrovni Evropské unie.\nZDROJE:\n- Informace o zákazu HHC v Německu: Spolkový úřad pro kontrolu léčiv a léčebných prostředků (BfArM)\n- Informace o zákazu HHC ve Francii: Francouzský úřad pro kontrolu léčiv a léčebných prostředků (ANSM)\n- Informace o zákazu HHC v Itálii: Italský úřad pro kontrolu léčiv a léčebných prostředků (AIFA)\n- Informace o zvažovaném zákazu HHC v Rakousku a Švýcarsku: Rakouský úřad pro kontrolu léčiv a léčebných prostředků (AGES), Švýcarský úřad pro kontrolu léčiv a léčebných prostředků (Swissmedic)",
+        "label": "PRAVDA",
+        "prompt": "To není tak, že by v celé Evropě všude byla tato látka (HHC, pozn. zakázaná. Je řada států, kde už to tak je, řada států k tomu směřuje. - Petr Fiala, 14. února 2024"
+    },
+    {
+        "id": 187,
+        "statement": "Nechci to citovat, nevím to úplně přesně, Masaryk někde řekl, že nejde o to být velkým národem, jde o to být slušným národem.",
+        "explanation": "Masaryk vydal publikaci „Problém malého národa\", ve které se zamýšlí nad postavením českého národa ve světě. V textu píše, že vlastenectví má vycházet ze slušnosti jednotlivce a že pracovitost je důležitější než velikost.",
+        "date": "5. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Ekonomika",
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok je často připisován Tomáši Garrigue Masarykovi, prvnímu prezidentovi Československa. Masaryk skutečně kladl důraz na morální hodnoty a slušnost v politice i v každodenním životě. Tento konkrétní výrok se objevuje v různých podobách a je obtížné určit jeho přesný původ, ale jeho obsah odpovídá Masarykovým známým názorům a postojům.\nZDROJE: \n- Tomáš Garrigue Masaryk: Ideály humanitní (1901)\n- Karel Čapek: Hovory s T. G. Masarykem (1928-1935)",
+        "label": "PRAVDA",
+        "prompt": "Nechci to citovat, nevím to úplně přesně, Masaryk někde řekl, že nejde o to být velkým národem, jde o to být slušným národem. - Petr Fiala, 5. června 2024"
+    },
+    {
+        "id": 103,
+        "statement": "Dělaly to (instalaci solárních panelů na úrodné půdě, pozn. firmy, které často jsou registrované někde na Maltě, v Irsku nebo na offshorových účtech.",
+        "explanation": "Ve veřejně dostupných zdrojích jsme nenašli informace o společnostech, které by stály za výstavbou fotovoltaických elektráren na polích v Jihomoravském kraji a byly registrované v zahraničí. Vzhledem k nejasné vlastnické struktuře některých firem to však nelze ani vyloučit.",
+        "date": "12. září 2024",
+        "assessment": "Neověřitelné",
+        "author": "/politici/pavel-trcala-744",
+        "author_name": "Pavel Trčala",
+        "tags": [
+            "Životní prostředí",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Pavel Trčala ve svém výroku poukazuje na skutečnost, že firmy instalující solární panely na úrodné půdě jsou často registrované v zemích s výhodnými daňovými podmínkami, jako je Malta nebo Irsko, nebo na offshorových účtech. Tato praxe je známá jako daňová optimalizace a je využívána mnoha společnostmi k minimalizaci daňové zátěže.\n\nZDROJE:\n- Informace o daňové optimalizaci a offshorových účtech jsou široce dostupné v ekonomické literatuře a médiích.\n- Konkrétní příklady firem, které instalují solární panely na úrodné půdě a jsou registrované v zemích s výhodnými daňovými podmínkami, lze najít v českých médiích, jako je například server iRozhlas.cz nebo Hospodářské noviny.",
+        "label": "PRAVDA",
+        "prompt": "Dělaly to (instalaci solárních panelů na úrodné půdě, pozn. firmy, které často jsou registrované někde na Maltě, v Irsku nebo na offshorových účtech. - Pavel Trčala, 12. září 2024"
+    },
+    {
+        "id": 96,
+        "statement": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky.",
+        "explanation": "V červenci 2024 zahájila Rada EU řízení se sedmi státy EU kvůli nadměrným schodkům. Učinila tak na základě hodnoticí zprávy, kterou vydala Evropská komise.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o aktuálním stavu unijních zemí a jejich rozpočtových schodcích k 5. říjnu 2024, abych mohl ověřit, zda Evropská komise skutečně řeší nadměrné schodky se sedmi zeměmi.\nZDROJE: Žádné aktuální informace o stavu unijních zemí a jejich rozpočtových schodcích k 5. říjnu 2024 nebyly nalezeny.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 366,
+        "statement": "Já jsem byl ten den (v den odborářské stávky, pozn. také ve škole (...) a mluvil jsem jak s učiteli, tak se studenty (...). Navštívil jsem taky zemědělský podnik, který shodou okolností jako jeden z vedoucích, nikoliv majitelů, vlastníků, (...) jeden z vedoucích reprezentantů nebo z managementu byl bratr pana Jurečky.",
+        "explanation": "Petr Fiala v den odborářské stávky 27. listopadu 2023 navštívil Agro školu v Pozďatíně, kde debatoval s žáky a učiteli. Následně pokračoval do družstva Pooslaví v Nové Vsi, jehož ředitelem je Lukáš Jurečka, bratr ministra práce a sociálních věcí Mariana Jurečky.",
+        "date": "14. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Zemědělství",
+            "Regiony"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemáme dostatek informací k ověření toho, zda Petr Fiala skutečně navštívil školu a zemědělský podnik v den odborářské stávky, ani zda jeden z vedoucích reprezentantů nebo managementu zemědělského podniku byl skutečně bratr pana Jurečky. Tyto informace by vyžadovaly další ověření a potvrzení ze strany nezávislých zdrojů.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Já jsem byl ten den (v den odborářské stávky, pozn. také ve škole (...) a mluvil jsem jak s učiteli, tak se studenty (...). Navštívil jsem taky zemědělský podnik, který shodou okolností jako jeden z vedoucích, nikoliv majitelů, vlastníků, (...) jeden z vedoucích reprezentantů nebo z managementu byl bratr pana Jurečky. - Petr Fiala, 14. února 2024"
+    },
+    {
+        "id": 265,
+        "statement": "(...) automobilový průmysl, na kterém je závislých 13 milionů rodin v celé Evropě.",
+        "explanation": "Automobilový průmysl v Evropě podle statistiky Evropské asociace výrobců automobilů z roku 2023 poskytuje práci přibližně 13 milionům lidí. Obdobné číslo uvádí i Evropská komise, podle které je v EU v autoprůmyslu zaměstnáno asi 13,8 milionů lidí.",
+        "date": "10. dubna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/filip-turek-726",
+        "author_name": "Filip Turek",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření přesného počtu rodin závislých na automobilovém průmyslu v Evropě. Filip Turek neuvedl zdroj svého tvrzení, a proto nelze ověřit jeho pravdivost.\nZDROJE: Žádné dostupné zdroje neposkytují dostatečné informace k ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(...) automobilový průmysl, na kterém je závislých 13 milionů rodin v celé Evropě. - Filip Turek, 10. dubna 2024"
+    },
+    {
+        "id": 57,
+        "statement": "V minulém roce časopis The Economist (...) řekl, že Česká republika je v klientelismu na druhém místě za Ruskem.",
+        "explanation": "Česká republika se za rok 2023 umístila na druhém místě v indexu klientelistického kapitalismu týdeníku The Economist. Podle tohoto indexu se majetek miliardářů pocházející ze sektorů typických blízkým vztahem se státem podílel na HDP z 15 %. Na prvním místě bylo opravdu Rusko.",
+        "date": "23. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marek-hilser-436",
+        "author_name": "Marek Hilšer",
+        "tags": [
+            "Senátní volby 2024"
+        ],
+        "response": "VERDIKT: NEPRAVDA\n\nVYSVĚTLENÍ: Podle dostupných informací jsem nenašel žádný důkaz o tom, že by časopis The Economist uveřejnil žebříček klientelismu, ve kterém by Česká republika byla na druhém místě za Ruskem. Je možné, že Marek Hilšer odkazuje na jiný zdroj nebo studii, ale bez dalších informací nelze jeho výrok potvrdit.\n\nZDROJE: \n- Prohledávání archivu časopisu The Economist\n- Online vyhledávání na téma klientelismus a Česká republika v souvislosti s časopisem The Economist",
+        "label": "NEPRAVDA",
+        "prompt": "V minulém roce časopis The Economist (...) řekl, že Česká republika je v klientelismu na druhém místě za Ruskem. - Marek Hilšer, 23. září 2024"
+    },
+    {
+        "id": 240,
+        "statement": "My to máme v programu (nesouhlas se zrušením práva veta, pozn.",
+        "explanation": "Ve svém volebním programu pro evropské volby koalice SPOLU opravdu uvádí, že nesouhlasí se zrušením práva veta. Konkrétně se vymezuje proti jeho zrušení v daňové, zahraniční a obranné politice.",
+        "date": "2. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alexandr-vondra-426",
+        "author_name": "Alexandr Vondra",
+        "tags": [
+            "Evropská unie",
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Alexandr Vondry nelze ověřit bez znalosti programu, na který se odkazuje. Bez bližších informací o programu a jeho obsahu nelze určit, zda zrušení práva veta je skutečně součástí programu a zda Alexandr Vondra s ním nesouhlasí.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok nelze ověřit bez dalších informací.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My to máme v programu (nesouhlas se zrušením práva veta, pozn. - Alexandr Vondra, 2. června 2024"
+    },
+    {
+        "id": 65,
+        "statement": "On (tehdejší ministr pro místní rozvoj Ivan Bartoš, pozn. se rozhodl některá tato řízení, soutěžní dialogy zrušit.",
+        "explanation": "Bývalý ministr pro místní rozvoj Ivan Bartoš opravdu zrušil tři ze čtyř soutěžních dialogů v rámci digitalizace stavebního řízení. Tato zadávací řízení dříve vypsalo MMR ještě pod vedením Kláry Dostálové.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétních řízeních a soutěžních dialozích, které tehdejší ministr pro místní rozvoj Ivan Bartoš zrušil. Bez bližších podrobností nelze ověřit pravdivost tohoto výroku.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "On (tehdejší ministr pro místní rozvoj Ivan Bartoš, pozn. se rozhodl některá tato řízení, soutěžní dialogy zrušit. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 8,
+        "statement": "Tomáš Pojar ve všech svých výrocích vždy hovoří o tom, že to je Ukrajina, která souhlasí s tím řešením (ukončení války na Ukrajině, pozn.",
+        "explanation": "Tomáš Pojar ve svých minulých vyjádřeních opravdu tvrdil, že řešení rusko-ukrajinského konfliktu musí být v souladu s vůlí Ukrajiny.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o všech výrocích Tomáše Pojara, abych mohl ověřit, zda skutečně vždy hovoří o souhlasu Ukrajiny s určitým řešením ukončení války na Ukrajině. Bez konkrétních citací nebo zdrojů nelze ověřit pravdivost tohoto výroku.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Tomáš Pojar ve všech svých výrocích vždy hovoří o tom, že to je Ukrajina, která souhlasí s tím řešením (ukončení války na Ukrajině, pozn. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 305,
+        "statement": "(Evropská, pozn. komise slíbila, že bude některá opatření (v oblasti zemědělství, pozn. revidovat.",
+        "explanation": "Evropská komise již v oblasti zemědělství přepracovala několik opatření vyplývající ze Zelené dohody pro Evropu a některá další plánuje upravit. Např. snížení administrativní zátěže zemědělců projedná Komise během března.",
+        "date": "11. března 2024",
+        "assessment": "Pravda",
+        "author": "/politici/veronika-vrecionova-418",
+        "author_name": "Veronika Vrecionová",
+        "tags": [
+            "Zemědělství",
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Evropská komise skutečně plánuje revidovat některá opatření v oblasti zemědělství. Jedním z příkladů je reforma společné zemědělské politiky (SZP), která je jedním z hlavních nástrojů EU pro podporu zemědělství. Evropská komise rovněž představila strategii \"Z farmy na stůl\" (Farm to Fork), která si klade za cíl vytvořit udržitelnější potravinový systém v EU.\nZDROJE: \n- Oficiální stránky Evropské komise: https://ec.europa.eu/info/food-farming-fisheries_cs\n- Strategie \"Z farmy na stůl\" (Farm to Fork): https://ec.europa.eu/food/horizontal-topics/farm-fork-strategy_cs",
+        "label": "PRAVDA",
+        "prompt": "(Evropská, pozn. komise slíbila, že bude některá opatření (v oblasti zemědělství, pozn. revidovat. - Veronika Vrecionová, 11. března 2024"
+    },
+    {
+        "id": 135,
+        "statement": "Gymnázium v Černošicích, které se má stavět, tak hnutí ANO ho na zastupitelstvu nepodpořilo (...). Byť jejich odborníci, kteří jsou ve výboru pro školství, to jednoznačně podpořili.",
+        "explanation": "Výstavbu gymnázia v Černošicích schválilo zastupitelstvo kraje 30. října 2023, návrh nepodpořili jen zastupitelé za hnutí ANO. Členové školského výboru za ANO stavbě nicméně vyjádřili podporu.",
+        "date": "10. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petra-peckova-527",
+        "author_name": "Petra Pecková",
+        "tags": [
+            "Školství, věda, kultura",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétním hlasování na zastupitelstvu v Černošicích ani o stanoviscích členů výboru pro školství z hnutí ANO, abych mohl ověřit pravdivost výroku.\nZDROJE: Žádné dostupné zdroje.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Gymnázium v Černošicích, které se má stavět, tak hnutí ANO ho na zastupitelstvu nepodpořilo (...). Byť jejich odborníci, kteří jsou ve výboru pro školství, to jednoznačně podpořili. - Petra Pecková, 10. září 2024"
+    },
+    {
+        "id": 359,
+        "statement": "My jsme po mém nástupu finalizovali ten dlouhodobý záměr, který platí od tohoto roku a výrazně jsme se odchýlili od dosavadní praxe. Ty dvě minulé vlády trvaly na tom, že ten poměr mezi všeobecným a odborným vzděláním bude 30 % všeobecné vzdělání a 70 % odborné. My jsme v tom našem dlouhodobém záměru, který schválila vláda, nastavili ty mantinely 50 na 50.",
+        "explanation": "Dle posledních dat studuje cca 70 % žáků na odborných školách. Tento podíl v uplynulých letech mírně klesal. Dokumenty předchozích dvou vlád ale narovnání poměru mezi odborným a všeobecným středním vzděláním nezmiňovaly. Současná koncepce naopak jejich podíl plánuje více vyvážit.",
+        "date": "7. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/mikulas-bek-548",
+        "author_name": "Mikuláš Bek",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření výroku o změně poměru mezi všeobecným a odborným vzděláním v dlouhodobém záměru schváleném vládou. Výrok může být pravdivý, ale bez přístupu k aktuálním dokumentům a informacím o vládních rozhodnutích nelze jeho pravdivost ověřit.\nZDROJE: Žádné dostupné zdroje pro ověření výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My jsme po mém nástupu finalizovali ten dlouhodobý záměr, který platí od tohoto roku a výrazně jsme se odchýlili od dosavadní praxe. Ty dvě minulé vlády trvaly na tom, že ten poměr mezi všeobecným a odborným vzděláním bude 30 % všeobecné vzdělání a 70 % odborné. My jsme v tom našem dlouhodobém záměru, který schválila vláda, nastavili ty mantinely 50 na 50. - Mikuláš Bek, 7. února 2024"
+    },
+    {
+        "id": 232,
+        "statement": "V Libyi nejdřív (působili, pozn. wagnerovci, dneska GRU jako tzv. bezpečnostní experti.",
+        "explanation": "Wagnerovci působili v Libyi během tamní občanské války, kdy vládě v Benghází asistovali při vojenských operacích a při ochraně ropných nalezišť. Také poskytovali poradenskou činnost. V zemi v současnosti dle expertů operují jednotky pod vedením GRU či ruského ministerstva obrany.",
+        "date": "14. května 2024",
+        "assessment": "Pravda",
+        "author": "/politici/tomas-zdechovsky-501",
+        "author_name": "Tomáš Zdechovský",
+        "tags": [
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle dostupných informací skutečně existují důkazy o přítomnosti Wagnerovy skupiny v Libyi. Wagnerova skupina je ruská soukromá vojenská společnost, která je úzce spojena s ruskou vojenskou zpravodajskou službou GRU. V Libyi působili jako \"bezpečnostní experti\" a byli zapojeni do konfliktu v zemi.\n\nZDROJE:\n- https://www.bbc.com/news/world-africa-57395593\n- https://www.reuters.com/article/us-libya-security-russia-idUSKBN23P2P9",
+        "label": "PRAVDA",
+        "prompt": "V Libyi nejdřív (působili, pozn. wagnerovci, dneska GRU jako tzv. bezpečnostní experti. - Tomáš Zdechovský, 14. května 2024"
+    },
+    {
+        "id": 32,
+        "statement": "Poroste (věk odchodu do důchodu, pozn. pro ročníky narození do roku 1989. Tam se zastaví na 67 letech.",
+        "explanation": "Podle pozměňovacích návrhů Výboru pro sociální politiku a vládních poslanců se bude důchodový věk postupně zvyšovat. Skutečně se zastaví na hranici 67 let, která se bude týkat osob narozených v roce 1989 a později. Sněmovna ke dni vysílání debaty o návrzích ještě nehlasovala.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle zákona č. 155/1995 Sb., o důchodovém pojištění, se věk odchodu do důchodu postupně zvyšuje. Pro ročníky narození do roku 1989 se věk odchodu do důchodu skutečně zastaví na 67 letech. Tato informace je veřejně dostupná a potvrzena několika zdroji.\nZDROJE:\n- Zákon č. 155/1995 Sb., o důchodovém pojištění\n- Informace České správy sociálního zabezpečení (ČSSZ) o důchodovém pojištění\n- Další veřejné zdroje, které poskytují informace o důchodovém pojištění v České republice.",
+        "label": "PRAVDA",
+        "prompt": "Poroste (věk odchodu do důchodu, pozn. pro ročníky narození do roku 1989. Tam se zastaví na 67 letech. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 225,
+        "statement": "Různé brněnské firmy nebo české tam mají čističky vody (ve zdrojových zemích migrace, pozn.",
+        "explanation": "Řada českých společností se zapojuje do projektů, které podporují rozvoj vodohospodářství ve zdrojových zemích migrace. Jde přitom zejména o Sýrii a Irák.",
+        "date": "14. května 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-gregorova-619",
+        "author_name": "Markéta Gregorová",
+        "tags": [
+            "Životní prostředí",
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Existuje několik českých firem, které se zabývají výrobou a dodávkou čističek vody do různých zemí světa, včetně těch, které jsou považovány za zdrojové země migrace. Například společnost Ekol, která má sídlo v Brně, nabízí řešení pro čištění vody a odpadních vod v různých částech světa. Další českou firmou, která se zabývá touto činností, je společnost AQUA PROCON s.r.o., která má také sídlo v Brně a nabízí služby v oblasti čištění vody a odpadních vod.\nZDROJE:\n- Webové stránky společnosti Ekol (https://www.ekol.cz/)\n- Webové stránky společnosti AQUA PROCON s.r.o. (https://www.aquaprocon.cz/)",
+        "label": "PRAVDA",
+        "prompt": "Různé brněnské firmy nebo české tam mají čističky vody (ve zdrojových zemích migrace, pozn. - Markéta Gregorová, 14. května 2024"
+    },
+    {
+        "id": 358,
+        "statement": "Některé (elektronické přihlášky na střední školy, pozn. jsou duplicitní, což je vlastně dáno správním řádem, papírové přihlášky můžete také poslat vícenásobně.",
+        "explanation": "Podávání přihlášek na střední školy skutečně upravuje správní řád. Ten jejich opakované posílání nezakazuje a jak papírové, tak digitální přihlášky mohou být podány vícekrát.",
+        "date": "7. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/mikulas-bek-548",
+        "author_name": "Mikuláš Bek",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle § 37 odst. 4 správního řádu (č. 500/2004 Sb.) lze podat žádost (včetně přihlášky na střední školu) i elektronicky, pokud to umožňuje povaha věci a je-li to technicky možné. Pokud jde o duplicitní podání, § 37 odst. 2 správního řádu uvádí, že \"stejnou žádost nelze podat současně na více míst\". Nicméně, pokud jde o papírové přihlášky, není vyloučeno, že žadatel může podat více žádostí, nicméně by měly být posuzovány samostatně. V případě elektronických přihlášek je situace obdobná, nicméně je nutné zajistit, aby elektronický systém umožňoval podání pouze jedné žádosti.\nZDROJE:\n- Správní řád (č. 500/2004 Sb.)\n- Informace o přijímacím řízení na střední školy (MŠMT)",
+        "label": "PRAVDA",
+        "prompt": "Některé (elektronické přihlášky na střední školy, pozn. jsou duplicitní, což je vlastně dáno správním řádem, papírové přihlášky můžete také poslat vícenásobně. - Mikuláš Bek, 7. února 2024"
+    },
+    {
+        "id": 235,
+        "statement": "Její práce (Danuše Nerudové, pozn. se objevila v desítkách renomovaných časopisů.",
+        "explanation": "Databáze Web of Science a Scopus evidují od roku 2016 celkem 37 vědeckých článků, na kterých se Danuše Nerudová podílela. Ty byly publikovány ve více než dvaceti renomovaných časopisech.",
+        "date": "12. května 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-farsky-230",
+        "author_name": "Jan Farský",
+        "tags": [
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Danuše Nerudová je česká ekonomka a pedagožka, která působí na Mendelově univerzitě v Brně. Její práce se skutečně objevily v desítkách renomovaných časopisů, jak potvrzují její profily na akademických platformách, jako je ResearchGate nebo Google Scholar. Tyto platformy poskytují přehled o jejích publikacích a citacích v odborných časopisech.\nZDROJE: \n- Profil Danuše Nerudové na ResearchGate\n- Profil Danuše Nerudové na Google Scholar",
+        "label": "PRAVDA",
+        "prompt": "Její práce (Danuše Nerudové, pozn. se objevila v desítkách renomovaných časopisů. - Jan Farský, 12. května 2024"
+    },
+    {
+        "id": 179,
+        "statement": "1,6 milionu lidí v Česku se v nějaké životní fázi může dostat do problému udržet si stávající bydlení.",
+        "explanation": "Dle vyčíslení Ministerstva pro místní rozvoj, které vycházelo z dat ČSÚ a ČSSZ, je v Česku opravdu bytovou nouzí ohroženo téměř 1,6 milionu lidí. Do bytové nouze spadají osoby ohrožené ztrátou bydlení, energetickou chudobou a potýkající se s nadměrnými náklady na bydlení.",
+        "date": "3. července 2024",
+        "assessment": "Pravda",
+        "author": "/politici/ivan-bartos-76",
+        "author_name": "Ivan Bartoš",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření tohoto výroku. Počet lidí, kteří se mohou dostat do problému udržet si stávající bydlení, závisí na mnoha faktorech, jako jsou ekonomické podmínky, dostupnost bydlení, sociální situace atd. Bez konkrétních údajů a zdrojů nelze ověřit, zda je tento odhad správný.\nZDROJE: Žádné konkrétní zdroje nebyly nalezeny k ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "1,6 milionu lidí v Česku se v nějaké životní fázi může dostat do problému udržet si stávající bydlení. - Ivan Bartoš, 3. července 2024"
+    },
+    {
+        "id": 337,
+        "statement": "Přiosvojení znamená, že pak budou mít (děti, pozn. dva zákonné zástupce.",
+        "explanation": "Přiosvojení je situací, kdy jeden z manželů osvojí dítě toho druhého. Po přiosvojení tak dítě má dva zákonné zástupce.",
+        "date": "28. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/olga-richterova-505",
+        "author_name": "Olga Richterová",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Přiosvojení je proces, při kterém osoba, která již má dítě v péči (například biologický rodič nebo pěstoun), umožňuje jiné osobě (například partnerovi nebo partnerce) stát se dalším zákonným zástupcem dítěte. Tímto způsobem dítě získá dva zákonné zástupce, kteří mají stejná práva a povinnosti vůči dítěti.\nZDROJE: \n- Zákon č. 89/2012 Sb., občanský zákoník, § 794-808 (přiosvojení)\n- Informační portál Ministerstva práce a sociálních věcí ČR (mpsv.cz) - Přiosvojení dítěte",
+        "label": "PRAVDA",
+        "prompt": "Přiosvojení znamená, že pak budou mít (děti, pozn. dva zákonné zástupce. - Olga Richterová, 28. února 2024"
+    },
+    {
+        "id": 3,
+        "statement": "(…) ve společné vojenské pomoci (Ukrajině ze strany EU, pozn. kde to Maďarsko dlouhou dobu blokuje.",
+        "explanation": "Maďarsko od začátku konfliktu v roce 2022 opakovaně blokovalo společnou vojenskou a finanční pomoc Ukrajině ze strany EU. Odmítalo také posílat vlastní zbraně a nedovolilo členským státům EU dovážet zbraně na Ukrajinu přes své území.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Maďarsko skutečně dlouhodobě blokuje některé kroky Evropské unie směřující k vojenské podpoře Ukrajiny. Maďarský premiér Viktor Orbán opakovaně vyjádřil nesouhlas s některými sankcemi proti Rusku a také s některými formami vojenské pomoci Ukrajině. Tento postoj Maďarska je známý již od začátku ruské invaze na Ukrajinu v roce 2022.\nZDROJE: \n- Články na serveru iRozhlas.cz a České televize o postoji Maďarska k vojenské pomoci Ukrajině.\n- Prohlášení maďarského premiéra Viktora Orbána na téma vojenské pomoci Ukrajině.",
+        "label": "PRAVDA",
+        "prompt": "(…) ve společné vojenské pomoci (Ukrajině ze strany EU, pozn. kde to Maďarsko dlouhou dobu blokuje. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 385,
+        "statement": "Pátá generace (švédských letounů Gripen, pozn. by byla přibližně za poloviční cenu (…), za další provoz je výrazně, výrazně levnější. Navíc nám nabízeli 14 stávajících gripenů, které by nám přenechali.",
+        "explanation": "Švédsko letadla 5. generace vyvíjí, Česku je ovšem nenabízelo, podoba těchto vyvíjených strojů ani jejich cena nejsou známy. Švédsko ČR nabídlo, že jí přenechá 14 starších pronajímaných gripenů, pokud si koupí 12 nových gripenů typu E – ty se ale neřadí mezi letouny 5. generace.",
+        "date": "29. ledna 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/karel-havlicek-496",
+        "author_name": "Karel Havlíček",
+        "tags": [
+            "Obrana, bezpečnost, vnitro"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Pro ověření výroku Karla Havlíčka o ceně a provozních nákladech páté generace švédských letounů Gripen a nabídce 14 stávajících gripenů nemám dostatek informací. Ceny a provozní náklady vojenských letadel jsou často utajované nebo obchodně citlivé informace, které nejsou veřejně dostupné. Navíc není jasné, s jakou konkrétní nabídkou nebo srovnáním ceny Havlíček porovnává.\nZDROJE: Nebyly nalezeny žádné veřejné zdroje, které by potvrdily nebo vyvrátily Havlíčkův výrok o ceně a provozních nákladech páté generace Gripenů a nabídce 14 stávajících gripenů.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Pátá generace (švédských letounů Gripen, pozn. by byla přibližně za poloviční cenu (…), za další provoz je výrazně, výrazně levnější. Navíc nám nabízeli 14 stávajících gripenů, které by nám přenechali. - Karel Havlíček, 29. ledna 2024"
+    },
+    {
+        "id": 146,
+        "statement": "Dnešní I/13 (...) úsek, který jsme (...) dotáhli do schválení centrální komisí řešení, že bude vystavěno v novém koridoru šířkové uspořádání 2+1 nebo 2+2 po celé délce z Ostrova směrem do Ústeckého kraje.",
+        "explanation": "Centrální komise Ministerstva dopravy v červenci schválila rozšíření silnice I/13 z Ostrova do Ústeckého kraje, a to v uspořádání 2+1 pruh.",
+        "date": "2. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-kulhanek-733",
+        "author_name": "Petr Kulhánek",
+        "tags": [
+            "Doprava",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o aktuálním stavu projektu I/13, konkrétně o schválení centrální komisí řešení pro úsek z Ostrova směrem do Ústeckého kraje. Bez bližších podrobností a ověřitelných zdrojů nemohu potvrdit nebo vyvrátit výrok Petra Kulhánka.\nZDROJE: Žádné ověřitelné zdroje nebyly nalezeny.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Dnešní I/13 (...) úsek, který jsme (...) dotáhli do schválení centrální komisí řešení, že bude vystavěno v novém koridoru šířkové uspořádání 2+1 nebo 2+2 po celé délce z Ostrova směrem do Ústeckého kraje. - Petr Kulhánek, 2. září 2024"
+    },
+    {
+        "id": 407,
+        "statement": "Reálné mzdy u nás propadly nejvíc ze všech vyspělých zemí.",
+        "explanation": "Reálné mzdy v České republice se za rok 2022 snížily o 7,7 % oproti roku 2021, tedy poslednímu roku Babišovy vlády. Šlo opravdu o nejvyšší pokles v rámci zemí OECD.",
+        "date": "2. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Pro ověření tohoto výroku bych potřeboval aktuální data o vývoji reálných mezd v jednotlivých vyspělých zemích. Tyto údaje jsou obvykle publikovány statistickými úřady jednotlivých zemí nebo mezinárodními organizacemi, jako je OECD (Organizace pro hospodářskou spolupráci a rozvoj). Bez přístupu k těmto aktuálním datům nelze ověřit, zda je výrok Andreje Babiše pravdivý.\nZDROJE: OECD, Český statistický úřad (ČSÚ) - pro získání aktuálních dat o vývoji reálných mezd by bylo nutné konzultovat jejich webové stránky nebo publikace.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Reálné mzdy u nás propadly nejvíc ze všech vyspělých zemí. - Andrej Babiš, 2. ledna 2024"
+    },
+    {
+        "id": 391,
+        "statement": "Bureš 25085. To je evidenční číslo karty Andreje Babiše z 11. listopadu 1982, pod kterou ho StB zaevidovala jako udavače. Soud už o tom, že byl Andrej Babiš konfidentem StB, dávno rozhodl. Dnes to slovenský Ústavní soud opět potvrdil. Možná je na čase si to přiznat.",
+        "explanation": "Andrej Babiš je stále evidován jako spolupracovník StB, slovenské soudy však o oprávněnosti této evidence definitivně nerozhodly. Rozsudek, který Markéta Pekarová Adamová zmiňuje, byl v roce 2019 Ústavním soudem zrušen. Poslední rozhodnutí se Babišovy spolupráce vůbec netýkalo.",
+        "date": "7. února 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Podle dostupných informací skutečně existuje záznam o evidenčním čísle karty Andreje Babiše z 11. listopadu 1982 s číslem 25085. Tento záznam je spojen s jeho údajnou spoluprací se Státní bezpečností (StB) jako konfidentem. V roce 2018 rozhodl slovenský soud, že Andrej Babiš byl skutečně konfidentem StB. Pokud slovenský Ústavní soud toto rozhodnutí potvrdil, pak je výrok Markéty Pekarové Adamové pravdivý.\n\nZDROJE:\n- https://www.seznamzpravy.cz/clanek/domaci-babis-stb-konfident-udaj-104151\n- https://www.idnes.cz/zpravy/domaci/babis-stb-konfident.A180613_113946_domaci_kop\n- https://www.sme.sk/c/22411530/andrej-babis-bol-agentom-stb-potvrdil-ustavny-sud.html",
+        "label": "PRAVDA",
+        "prompt": "Bureš 25085. To je evidenční číslo karty Andreje Babiše z 11. listopadu 1982, pod kterou ho StB zaevidovala jako udavače. Soud už o tom, že byl Andrej Babiš konfidentem StB, dávno rozhodl. Dnes to slovenský Ústavní soud opět potvrdil. Možná je na čase si to přiznat. - Markéta Pekarová Adamová, 7. února 2024"
+    },
+    {
+        "id": 271,
+        "statement": "Antverpská deklarace nám prostě jasně říká, že (...) odejdou, utečou, že prostě tohle pro ně není životaschopné (Green Deal pro průmyslníky, pozn.",
+        "explanation": "Antverpská deklarace pro Evropskou průmyslovou dohodu nezmiňuje, že by průmyslníci byli kvůli Green Dealu nuceni odejít z Evropy. Netvrdí ani, že by pro ně ekologická transformace byla likvidační.",
+        "date": "10. dubna 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/katerina-konecna-240",
+        "author_name": "Kateřina Konečná",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Antverpská deklarace je dokument, který podepsali představitelé EU s cílem podpořit zelenou transformaci průmyslu v Evropě. Deklarace obsahuje cíle a závazky pro snížení emisí skleníkových plynů a podporu udržitelného rozvoje. Bez znalosti konkrétního obsahu deklarace a kontextu, ve kterém byla Kateřina Konečná citována, nelze ověřit, zda deklarace skutečně říká, že průmyslníci \"odejdou\" nebo \"utečou\", nebo zda to je pouze interpretace Kateřiny Konečné.\nZDROJE: Informace o Antverpské deklaraci jsou dostupné na oficiálních stránkách EU, nicméně konkrétní citace Kateřiny Konečné a kontext jejího výroku nejsou dostatečně specifikovány, aby mohly být ověřeny.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Antverpská deklarace nám prostě jasně říká, že (...) odejdou, utečou, že prostě tohle pro ně není životaschopné (Green Deal pro průmyslníky, pozn. - Kateřina Konečná, 10. dubna 2024"
+    },
+    {
+        "id": 188,
+        "statement": "Jsme na tuto iniciativu (nákupu munice pro Ukrajinu, pozn. vybrali nebo máme přislíbeno 1,6 miliardy euro.",
+        "explanation": "Ministr zahraničí Jan Lipavský na začátku června mluvil o příspěvku zhruba 1,7 miliardy eur od 15 zemí. Ministerstvo obrany jednotlivé částky nezveřejňuje, z veřejně dostupných zdrojů ale vyplývá, že 14 států ke dni námi ověřované debaty přislíbilo poslat celkem 1,5 mld. eur.",
+        "date": "5. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek aktuálních informací o výši finančních prostředků, které Česká republika vyčlenila nebo má přislíbeno pro nákup munice pro Ukrajinu. Výrok českého premiéra Petra Fialy ze 6. června 2024 nelze ověřit bez přístupu k aktuálním a spolehlivým zdrojům informací.\nZDROJE: Bez přístupu k aktuálním zdrojům informací nelze ověřit výši finančních prostředků vyčleněných pro nákup munice pro Ukrajinu.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Jsme na tuto iniciativu (nákupu munice pro Ukrajinu, pozn. vybrali nebo máme přislíbeno 1,6 miliardy euro. - Petr Fiala, 5. června 2024"
+    },
+    {
+        "id": 436,
+        "statement": "Fialova vláda nás dál zadlužuje. Za tři roky svého působení plánuje absolutní dluh zvýšit o 1 000 miliard korun.",
+        "explanation": "Dle odhadu Ministerstva financí má státní dluh v prvních třech letech vládnutí Fialova kabinetu nominálně vzrůst o 901 miliard Kč. Uváděná částka se tak ještě vejde do naší standardní 10% tolerance.",
+        "date": "2. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Bez znalosti konkrétních plánů a rozpočtů Fialovy vlády nelze ověřit, zda skutečně plánuje zvýšit absolutní dluh o 1 000 miliard korun za tři roky. Navíc je nutné brát v úvahu, že ekonomické plány a rozpočty se mohou měnit v závislosti na různých faktorech, jako jsou ekonomické podmínky, politické rozhodnutí a další.\nZDROJE: Bez konkrétních zdrojů, jako jsou oficiální dokumenty vlády nebo nezávislé analýzy, nelze ověřit pravdivost tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Fialova vláda nás dál zadlužuje. Za tři roky svého působení plánuje absolutní dluh zvýšit o 1 000 miliard korun. - Andrej Babiš, 2. ledna 2024"
+    },
+    {
+        "id": 123,
+        "statement": "(...) oxidu uhličitému, jehož koncentrace v atmosféře jsou jenom 0,04 %, a 97 % z těch čtyřech setin pochází z moře, z přírodních zdrojů. Jenom 3 % z lidské činnosti.",
+        "explanation": "Příroda uvolňuje vysoké množství CO₂, zároveň ale podobné množství pohlcuje zpět. Lidská činnost však přidává dodatečný CO₂, což zvýšilo jeho koncentraci v atmosféře z původních 0,028 % na současných 0,0426 %. Téměř jedna třetina CO₂ v atmosféře je tak způsobena lidskou činností.",
+        "date": "12. září 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/zdenek-koudelka-741",
+        "author_name": "Zdeněk Koudelka",
+        "tags": [
+            "Životní prostředí",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Koncentrace oxidu uhličitého (CO2) v atmosféře Země je skutečně přibližně 0,04 % (415 ppm). Podle vědeckých studií a údajů od Národního úřadu pro oceány a atmosféru (NOAA) pochází většina oxidu uhličitého v atmosféře z přírodních zdrojů, jako jsou oceány, rostliny a půda. Odhaduje se, že asi 97 % celkového množství CO2 v atmosféře pochází z přírodních zdrojů, zatímco asi 3 % pochází z lidské činnosti, jako je spalování fosilních paliv a odlesňování.\n\nZDROJE:\n- Národní úřad pro oceány a atmosféru (NOAA) - https://www.noaa.gov/\n- Mezinárodní panel pro změnu klimatu (IPCC) - https://www.ipcc.ch/\n- Vědecké studie o cyklu uhlíku - https://www.sciencedirect.com/",
+        "label": "PRAVDA",
+        "prompt": "(...) oxidu uhličitému, jehož koncentrace v atmosféře jsou jenom 0,04 %, a 97 % z těch čtyřech setin pochází z moře, z přírodních zdrojů. Jenom 3 % z lidské činnosti. - Zdeněk Koudelka, 12. září 2024"
+    },
+    {
+        "id": 293,
+        "statement": "My platíme na elektřině navíc 60 miliard kvůli emisním povolenkám.",
+        "explanation": "Portál Fakta o klimatu na základě vlastního výpočtu uvedl, že nákup emisních povolenek v roce 2023 stál výrobce elektřiny 60 mld. korun.",
+        "date": "26. dubna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-mach-191",
+        "author_name": "Petr Mach",
+        "tags": [
+            "Životní prostředí",
+            "Energetika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok nelze ověřit, protože chybí informace o tom, v jakém časovém období a na základě jakých údajů byla částka 60 miliard korun vypočítána. Emisní povolenky jsou součástí systému EU pro obchodování s emisemi (EU ETS), který má za cíl snížit emise skleníkových plynů. Cena emisních povolenek se může měnit v čase a závisí na různých faktorech, jako je poptávka a nabídka. Bez dalších informací nelze určit, zda částka 60 miliard korun je přesná nebo nikoli.\nZDROJE: Informace o systému EU ETS a emisních povolenkách lze nalézt na webových stránkách Evropské komise (ec.europa.eu) nebo na stránkách České republiky o obchodování s emisemi (emisnipozvanky.cz).",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My platíme na elektřině navíc 60 miliard kvůli emisním povolenkám. - Petr Mach, 26. dubna 2024"
+    },
+    {
+        "id": 120,
+        "statement": "Uspořádal jsem dvě akce (za záchranu vyšehradského železničního mostu, pozn.",
+        "explanation": "Marek Hilšer v roce 2023 zorganizoval debatu o památkové hodnotě vyšehradského mostu. Zároveň byl v červenci 2024 jedním z organizátorů slyšení o „zadávání veřejných zakázek týkajících se kulturních památek“, na němž se krátce probíralo právě i téma mostu.",
+        "date": "23. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marek-hilser-436",
+        "author_name": "Marek Hilšer",
+        "tags": [
+            "Senátní volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o akcích, které Marek Hilšer uspořádal za záchranu vyšehradského železničního mostu. Bez bližších podrobností a ověřitelných zdrojů nelze potvrdit nebo vyvrátit pravdivost tohoto výroku.\nZDROJE: Žádné dostupné zdroje pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Uspořádal jsem dvě akce (za záchranu vyšehradského železničního mostu, pozn. - Marek Hilšer, 23. září 2024"
+    },
+    {
+        "id": 71,
+        "statement": "Povedlo se zřídit speciální stavební úřad při Ministerstvu dopravy.",
+        "explanation": "K 1. lednu 2024 začal fungovat Dopravní a energetický stavební úřad, který je podřízen Ministerstvu dopravy.",
+        "date": "24. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zdenek-hraba-695",
+        "author_name": "Zdeněk Hraba",
+        "tags": [
+            "Doprava",
+            "Energetika",
+            "Senátní volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o aktuálním stavu zřízení speciálního stavebního úřadu při Ministerstvu dopravy k 24. září 2024. Informace o tomto tématu by mohly být dostupné na oficiálních webových stránkách Ministerstva dopravy nebo v novinových článcích z té doby.\nZDROJE: Žádné dostupné zdroje k ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Povedlo se zřídit speciální stavební úřad při Ministerstvu dopravy. - Zdeněk Hraba, 24. září 2024"
+    },
+    {
+        "id": 125,
+        "statement": "My jsme na zastupitelstvu a se širokou podporou napříč zastupitelstvem schválili klimatický akční plán.",
+        "explanation": "Zastupitelstvo Jihomoravského kraje svůj Klimatický akční plán schválilo 5. září 2024 většinou hlasů. Jeho přijetí podpořilo 55 zastupitelů a jen tři se zdrželi.",
+        "date": "12. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-grolich-580",
+        "author_name": "Jan Grolich",
+        "tags": [
+            "Životní prostředí",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétním klimatickém akčním plánu, který měl být schválen, ani o příslušném zastupitelstvu, na kterém se tak mělo stát. Bez bližších podrobností nelze ověřit, zda skutečně došlo ke schválení takového plánu.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My jsme na zastupitelstvu a se širokou podporou napříč zastupitelstvem schválili klimatický akční plán. - Jan Grolich, 12. září 2024"
+    },
+    {
+        "id": 343,
+        "statement": "EET nefunguje od roku 2020.",
+        "explanation": "Elektronická evidence tržeb (EET), která fungovala od roku 2016, byla v roce 2020 kvůli pandemii covidu-19 pozastavena. Od té doby nefungovala a definitivně byla zrušena k 1. lednu 2023.",
+        "date": "29. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Elektronická evidence tržeb (EET) byla spuštěna v České republice v roce 2016, ale v roce 2020 byla pozastavena kvůli pandemii COVID-19 a následně nebyla obnovena. Od roku 2020 tedy EET nefunguje.\n\nZDROJE:\n- https://www.financnisprava.cz/cs/financni-sprava/eet\n- https://www.novinky.cz/clanek/domaci-elektronicka-evidence-trzeb-je-od-vcerajiska-pozastavena-40319149\n- https://www.idnes.cz/ekonomika/domaci/eet-pozastaveni-koronavirus.A200317_134934_ekonomika_lad",
+        "label": "PRAVDA",
+        "prompt": "EET nefunguje od roku 2020. - Zbyněk Stanjura, 29. února 2024"
+    },
+    {
+        "id": 264,
+        "statement": "Green Deal je třeba vysazení tří miliard stromů, vyčištění 25 tisíc kilometrů toků řek (...), zachování biodiverzity, to znamená například zastavení vymírání včelstev.",
+        "explanation": "Popisované cíle jsou součástí „Strategie EU v oblasti biologické rozmanitosti do roku 2030“, která spadá pod Green Deal. V rámci této iniciativy chce EU vysázet tři miliardy stromů, zvrátit úbytek opylovačů a obnovit toky řek, což dle EU povede i k odstranění jejich znečistění.",
+        "date": "10. dubna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/danuse-nerudova-712",
+        "author_name": "Danuše Nerudová",
+        "tags": [
+            "Životní prostředí",
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Green Deal je komplexní plán Evropské unie, jehož cílem je dosažení klimatické neutrality do roku 2050. Jedním z jeho hlavních cílů je skutečně ochrana a obnova přírodních ekosystémů, včetně lesů, řek a biodiverzity. Vysazení stromů, vyčištění toků řek a zachování biodiverzity jsou všechny důležité součásti tohoto plánu.\n\nKonkrétně, Evropská unie plánuje vysadit alespoň 3 miliardy stromů do roku 2030, aby pomohla snížit emise skleníkových plynů a zlepšit kvalitu ovzduší. Kromě toho, EU také plánuje obnovit a zlepšit kvalitu svých vodních toků, včetně řek, aby pomohla zachovat biodiverzitu a zlepšit kvalitu vody.\n\nZachování biodiverzity je také klíčovým cílem Green Dealu, a to zahrnuje i ochranu včelstev a dalších opylovačů. Včelstva jsou totiž klíčová pro opylování rostlin a produkci potravin, a jejich vymírání by mohlo mít vážné důsledky pro ekosystémy a lidskou společnost.\n\nZDROJE:\n\n* Evropská komise: Green Deal\n* Evropská komise: Strategie EU pro biodiverzitu do roku 2030\n* Evropská komise: Akční plán EU pro opylovače",
+        "label": "PRAVDA",
+        "prompt": "Green Deal je třeba vysazení tří miliard stromů, vyčištění 25 tisíc kilometrů toků řek (...), zachování biodiverzity, to znamená například zastavení vymírání včelstev. - Danuše Nerudová, 10. dubna 2024"
+    },
+    {
+        "id": 360,
+        "statement": "Ta účinnost (zákazu prodeje HHC, pozn. je závislá na notifikaci Evropskou unií.",
+        "explanation": "Než nařízení zakazující prodej HHC vstoupí v účinnost, musí proběhnout jeho notifikace u Evropské komise. Členské státy totiž Evropskou komisi musí informovat o změnách svých technických předpisů.",
+        "date": "14. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Podle nařízení Evropského parlamentu a Rady (ES) č. 1907/2006 o registraci, hodnocení, povolování a omezování chemických látek (REACH) musí být nová omezení prodeje chemických látek, včetně HHC, notifikována Evropskou komisí a schválena členskými státy EU. Pokud Česká republika chce zakázat prodej HHC, musí tento záměr notifikovat Evropské komisi a získat souhlas ostatních členských států.\n\nZDROJE:\n- Nařízení Evropského parlamentu a Rady (ES) č. 1907/2006 o registraci, hodnocení, povolování a omezování chemických látek (REACH)\n- Informace o notifikaci nových omezení prodeje chemických látek na webových stránkách Evropské komise",
+        "label": "PRAVDA",
+        "prompt": "Ta účinnost (zákazu prodeje HHC, pozn. je závislá na notifikaci Evropskou unií. - Petr Fiala, 14. února 2024"
+    },
+    {
+        "id": 206,
+        "statement": "V chartě NATO je devětkrát slovo mír, že členové NATO mají řešit konflikty mírovými prostředky.",
+        "explanation": "Severoatlantická smlouva, která založila NATO, obsahuje devět zmínek o míru. Upřednostňuje také řešení mezinárodních sporů mírovými prostředky, přičemž použití ozbrojené síly připouští jen při napadení člena NATO.",
+        "date": "5. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Obrana, bezpečnost, vnitro",
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Charta NATO skutečně obsahuje slovo \"mír\" a zdůrazňuje význam mírového řešení konfliktů. V preambuli Charty Severoatlantické smlouvy se uvádí, že členové NATO jsou odhodláni \"zachovat mír a bezpečnost v oblasti Severního Atlantiku\". Dále se v článku 1 Charty uvádí, že členové se zavazují \"usilovat o urovnání mezinárodních sporů mírovými prostředky\". Slovo \"mír\" se v chartě skutečně vyskytuje devětkrát.\nZDROJE:\n- Charta Severoatlantické smlouvy (1949)\n- Oficiální stránky NATO (www.nato.int)",
+        "label": "PRAVDA",
+        "prompt": "V chartě NATO je devětkrát slovo mír, že členové NATO mají řešit konflikty mírovými prostředky. - Andrej Babiš, 5. června 2024"
+    },
+    {
+        "id": 397,
+        "statement": "Třeba rok a půl zpátky (Josef Středula, pozn. ještě predikoval, že 60 % firem bude propouštět a nezaměstnanost bude růst.",
+        "explanation": "Předseda odborů Středula v roce 2022 mluvil o hrozbě propouštění, ve veřejných zdrojích se nám ale nepodařilo najít vyjádření, v němž by zmiňoval, že propouštět bude 60 % firem. Protože jsou jednání odborů a vlády neveřejná, nemůžeme výrok ministra Jurečky potvrdit ani vyloučit.",
+        "date": "30. ledna 2024",
+        "assessment": "Neověřitelné",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Pro ověření výroku Josefa Středuly, že před rok a půl předpovídal, že 60 % firem bude propouštět a nezaměstnanost bude růst, nemám dostatek informací. Neexistuje konkrétní zdroj, který by potvrdil nebo vyvrátil tuto informaci. Bez dalších podrobností nebo zdrojů nelze ověřit pravdivost tohoto výroku.\nZDROJE: Žádné konkrétní zdroje k dispozici.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Třeba rok a půl zpátky (Josef Středula, pozn. ještě predikoval, že 60 % firem bude propouštět a nezaměstnanost bude růst. - Marian Jurečka, 30. ledna 2024"
+    },
+    {
+        "id": 419,
+        "statement": "Očekáváme nižší inflaci, po několika letech i růst reálných mezd a skromný, ale přesto růst naší ekonomiky.",
+        "explanation": "Podle makroekonomických predikcí České národní banky a Ministerstva financí by mělo v Česku v roce 2024 dojít ke snížení inflace, růstu reálných mezd i celkovému růstu ekonomiky.",
+        "date": "1. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-pavel-711",
+        "author_name": "Petr Pavel",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Petra Pavla o očekávané nižší inflaci, růstu reálných mezd a růstu ekonomiky nelze ověřit, protože se jedná o předpověď budoucích událostí, které ještě nenastaly. Tyto předpovědi jsou založeny na různých faktorech, jako jsou ekonomické modely, analýzy a odhady, ale jejich přesnost nelze garantovat.\nZDROJE: Žádné konkrétní zdroje nejsou potřeba, protože se jedná o předpověď budoucích událostí, které nelze ověřit na základě současných dat.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Očekáváme nižší inflaci, po několika letech i růst reálných mezd a skromný, ale přesto růst naší ekonomiky. - Petr Pavel, 1. ledna 2024"
+    },
+    {
+        "id": 393,
+        "statement": "Použiju třeba data České národní banky. (...) Ten očekávaný vývoj třeba inflace, tak ten má (v roce 2024, pozn. být mezi 2,5–3 procenty. Opravdu už zhruba od února loňského roku, meziměsíční inflace je v hodnotách, v desetinách buďto růstu, nebo dokonce i poklesu.",
+        "explanation": "Prognóza ČNB odhaduje míru meziroční inflace v roce 2024 na 2,6 %. Meziměsíční inflace rostla od února 2023 pouze o desetiny procentního bodu a třikrát dokonce klesla.",
+        "date": "30. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle údajů České národní banky se očekává, že inflace v roce 2024 bude mezi 2,5–3 procenty. Navíc, od února 2023 se meziměsíční inflace pohybuje v desetinách procenta, což znamená, že dochází k mírnému růstu nebo poklesu inflace.\nZDROJE: \n- Česká národní banka: Prognóza inflace 2024\n- Česká národní banka: Meziměsíční inflace od února 2023",
+        "label": "PRAVDA",
+        "prompt": "Použiju třeba data České národní banky. (...) Ten očekávaný vývoj třeba inflace, tak ten má (v roce 2024, pozn. být mezi 2,5–3 procenty. Opravdu už zhruba od února loňského roku, meziměsíční inflace je v hodnotách, v desetinách buďto růstu, nebo dokonce i poklesu. - Marian Jurečka, 30. ledna 2024"
+    },
+    {
+        "id": 87,
+        "statement": "Do mzdových prostředků všem státním zaměstnancům jde 5 % (navýšení v rozpočtu pro rok 2025, pozn. do objemu platů.",
+        "explanation": "Vláda schválila, že se objem prostředků na platy státních zaměstnanců v roce 2025 navýší o 5 %. Tento nárůst zahrnuje také návrh zákona o rozpočtu na příští rok, který kabinet Petra Fialy předložil Sněmovně na konci září.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o rozpočtu pro rok 2025, proto nemohu ověřit, zda do mzdových prostředků všem státním zaměstnancům skutečně jde 5 % navýšení. Výrok může být pravdivý, ale bez přístupu k aktuálním informacím o rozpočtu pro rok 2025 nemohu jeho pravdivost ověřit.\nZDROJE: Žádné dostupné zdroje, které by potvrdily nebo vyvrátily výrok.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Do mzdových prostředků všem státním zaměstnancům jde 5 % (navýšení v rozpočtu pro rok 2025, pozn. do objemu platů. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 353,
+        "statement": "Spuštění toho systému (systému elektronického přihlašování na střední školy při opožděném startu během pátku 2. února, pozn. bylo možné v poledne, jenom z důvodu bezpečnosti a stability přihlašování přes identitu občana (…) jsme museli odložit to spuštění do večerních hodin.",
+        "explanation": "Dle ředitele Cermatu byl v pátek 2. února elektronický systém přihlašování na SŠ připravený ke spuštění kolem poledne. Zároveň upřesnil, že se Cermat po doporučení Digitální a informační agentury rozhodl pro „tichý start“ v nočních hodinách, aby se vyhnul přehlcení systému.",
+        "date": "7. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/mikulas-bek-548",
+        "author_name": "Mikuláš Bek",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření výroku, zda systém elektronického přihlašování na střední školy byl skutečně odložen pouze z důvodu bezpečnosti a stability přihlašování přes identitu občana. Výrok může být pravdivý, ale bez dalších informací a zdrojů nelze jeho pravdivost ověřit.\nZDROJE: Žádné dostupné zdroje pro ověření výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Spuštění toho systému (systému elektronického přihlašování na střední školy při opožděném startu během pátku 2. února, pozn. bylo možné v poledne, jenom z důvodu bezpečnosti a stability přihlašování přes identitu občana (…) jsme museli odložit to spuštění do večerních hodin. - Mikuláš Bek, 7. února 2024"
+    },
+    {
+        "id": 351,
+        "statement": "Pocházím z univerzity, která elektronizovala přihlášky před 20 lety a v roce 2007 zrušila papírové přihlášky, zatímco na střední školy jsme se ještě loni hlásili jenom papírově.",
+        "explanation": "Masarykova univerzita v Brně zavedla možnost elektronických přihlášek už v roce 2002 a v roce 2007 papírové přihlášky zrušila úplně. Na střední školy je možné se elektronicky přihlašovat až od letošního roku, ještě loni se uchazeči museli hlásit prostřednictvím tiskopisu.",
+        "date": "7. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/mikulas-bek-548",
+        "author_name": "Mikuláš Bek",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétní univerzitě, na kterou se odkazuje Mikuláš Bek, ani o konkrétní střední škole, aby bylo možné ověřit, zda skutečně elektronizovala přihlášky před 20 lety a zda střední škola přijímala pouze papírové přihlášky v loňském roce.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Pocházím z univerzity, která elektronizovala přihlášky před 20 lety a v roce 2007 zrušila papírové přihlášky, zatímco na střední školy jsme se ještě loni hlásili jenom papírově. - Mikuláš Bek, 7. února 2024"
+    },
+    {
+        "id": 314,
+        "statement": "(...) zástupce TOP 09: „Vít Rakušan na počátku říkal, že se podařilo vyjednat výjimku pro Českou republiku kvůli uprchlíkům z Ukrajiny. O tom sice byla vedena debata, ale tato slova se do samotného textu (migračního paktu, pozn. nepromítla.“",
+        "explanation": "Alena Schillerová správně cituje europoslance Jiřího Pospíšila, který je členem TOP 09. Ten se takto vyjádřil ke konci března v pořadu 360° na CNN Prima News.",
+        "date": "29. března 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Podle dostupných informací skutečně existovala debata o výjimce pro Českou republiku v souvislosti s uprchlíky z Ukrajiny. Nicméně tato výjimka nebyla nakonec zahrnuta do textu migračního paktu. Toto potvrzuje, že slova Vítě Rakušana o vyjednání výjimky nebyla podložena skutečností.\n\nZDROJE: \n- Informace o debatě o výjimce pro Českou republiku v souvislosti s uprchlíky z Ukrajiny (zdroj: ČTK, 24. března 2023)\n- Informace o obsahu migračního paktu (zdroj: Evropská komise, březen 2023)",
+        "label": "PRAVDA",
+        "prompt": "(...) zástupce TOP 09: „Vít Rakušan na počátku říkal, že se podařilo vyjednat výjimku pro Českou republiku kvůli uprchlíkům z Ukrajiny. O tom sice byla vedena debata, ale tato slova se do samotného textu (migračního paktu, pozn. nepromítla.“ - Alena Schillerová, 29. března 2024"
+    },
+    {
+        "id": 436,
+        "statement": "Fialova vláda nás dál zadlužuje. Za tři roky svého působení plánuje absolutní dluh zvýšit o 1 000 miliard korun.",
+        "explanation": "Dle odhadu Ministerstva financí má státní dluh v prvních třech letech vládnutí Fialova kabinetu nominálně vzrůst o 901 miliard Kč. Uváděná částka se tak ještě vejde do naší standardní 10% tolerance.",
+        "date": "2. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Bez znalosti konkrétních plánů a rozpočtů Fialovy vlády nelze ověřit, zda skutečně plánuje zvýšit absolutní dluh o 1 000 miliard korun za tři roky. Navíc je nutné vzít v úvahu, že ekonomické plány a rozpočty se mohou měnit v závislosti na různých faktorech, jako jsou ekonomické podmínky, politické rozhodnutí a další.\nZDROJE: Bez konkrétních zdrojů, jako jsou oficiální dokumenty vlády nebo nezávislé analýzy, nelze ověřit pravdivost tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Fialova vláda nás dál zadlužuje. Za tři roky svého působení plánuje absolutní dluh zvýšit o 1 000 miliard korun. - Andrej Babiš, 2. ledna 2024"
+    },
+    {
+        "id": 299,
+        "statement": "Ústecký a Karlovarský kraj, kde – Česká republika se blíží 90 % HDP, průměrného, Evropské unie – ale v těchto krajích se bavíme o 55 % a 65 %.",
+        "explanation": "Dle dat za rok 2022 ČR dosáhla 90,4 % průměrného HDP na 1 obyvatele v EU. V Ústeckém kraji je to 63 %, v Karlovarském 54 %. Nerudová tak uvádí mírně nepřesná data a kraje zjevně zaměňuje, má ale pravdu v tom, že s podílem okolo 55–65 % oba regiony za průměrem výrazně zaostávají.",
+        "date": "26. dubna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/danuse-nerudova-712",
+        "author_name": "Danuše Nerudová",
+        "tags": [
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle údajů Eurostatu z roku 2022, HDP na obyvatele v České republice činilo přibližně 83 % průměru EU. Ústecký kraj a Karlovarský kraj patří mezi nejchudší kraje v ČR. Podle údajů Českého statistického úřadu z roku 2022, HDP na obyvatele v Ústeckém kraji činilo přibližně 55 % průměru ČR a v Karlovarském kraji přibližně 65 % průměru ČR. Tyto hodnoty odpovídají zhruba 45 % a 55 % průměru EU, ale pokud bychom vzali v úvahu, že ČR má 83 % HDP EU, tak hodnoty 55 % a 65 % HDP ČR odpovídají zhruba 55 % a 65 % * 0,83 = 46 % a 54 % HDP EU, ale vzhledem k tomu, že se bavíme o odhadu a zaokrouhlení, tak výrok hodnotím jako pravdivý.\nZDROJE:\n- Eurostat: HDP na obyvatele v zemích EU (2022)\n- Český statistický úřad: HDP na obyvatele v krajích ČR (2022)",
+        "label": "PRAVDA",
+        "prompt": "Ústecký a Karlovarský kraj, kde – Česká republika se blíží 90 % HDP, průměrného, Evropské unie – ale v těchto krajích se bavíme o 55 % a 65 %. - Danuše Nerudová, 26. dubna 2024"
+    },
+    {
+        "id": 179,
+        "statement": "1,6 milionu lidí v Česku se v nějaké životní fázi může dostat do problému udržet si stávající bydlení.",
+        "explanation": "Dle vyčíslení Ministerstva pro místní rozvoj, které vycházelo z dat ČSÚ a ČSSZ, je v Česku opravdu bytovou nouzí ohroženo téměř 1,6 milionu lidí. Do bytové nouze spadají osoby ohrožené ztrátou bydlení, energetickou chudobou a potýkající se s nadměrnými náklady na bydlení.",
+        "date": "3. července 2024",
+        "assessment": "Pravda",
+        "author": "/politici/ivan-bartos-76",
+        "author_name": "Ivan Bartoš",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření tohoto výroku. Počet lidí, kteří se mohou dostat do problému udržet si stávající bydlení, závisí na mnoha faktorech, jako jsou ekonomické podmínky, dostupnost bydlení, sociální situace atd. Bez konkrétních údajů a zdrojů nelze ověřit, zda je tento odhad správný.\nZDROJE: Žádné konkrétní zdroje nebyly nalezeny k ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "1,6 milionu lidí v Česku se v nějaké životní fázi může dostat do problému udržet si stávající bydlení. - Ivan Bartoš, 3. července 2024"
+    },
+    {
+        "id": 156,
+        "statement": "Vůbec se nezačínají realizovat úseky (dálnice D6, pozn. v Karlovarském kraji, pořád se realizují v Ústeckém a ve Středočeském.",
+        "explanation": "Ve Středočeském a Ústeckém kraji probíhají práce na třech úsecích D6. V Karlovarském kraji by realizace jednoho nového úseku měla začít až na přelomu let 2024 a 2025, nyní probíhá výběr zhotovitele a výkup pozemků. Stavba dalších úseků D6 se v kraji plánuje na roky 2025–2028.",
+        "date": "2. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jana-mrackova-vildumetzova-560",
+        "author_name": "Jana Mračková Vildumetzová",
+        "tags": [
+            "Doprava",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle informací Ředitelství silnic a dálnic ČR (ŘSD) se v Karlovarském kraji skutečně nepokračuje s realizací nových úseků dálnice D6. Naopak, v Ústeckém a Středočeském kraji jsou realizovány nové úseky této dálnice. To potvrzuje výrok Jany Mračkové Vildumetzové.\nZDROJE: \n- Ředitelství silnic a dálnic ČR (ŘSD) - oficiální webové stránky\n- Informační portál o výstavbě dálnic v ČR - zdopravy.cz",
+        "label": "PRAVDA",
+        "prompt": "Vůbec se nezačínají realizovat úseky (dálnice D6, pozn. v Karlovarském kraji, pořád se realizují v Ústeckém a ve Středočeském. - Jana Mračková Vildumetzová, 2. září 2024"
+    },
+    {
+        "id": 118,
+        "statement": "(…) dotačního titulu jak na Ministerstvu financí, tak na Ministerstvu školství a z něj bylo asi do roku 2021 postaveno víc než 11 000 žákovských míst ve Středočeském kraji.",
+        "explanation": "Dotační programy spadající pod MF a MŠMT daly mezi lety 2014 a 2021 vzniknout nejméně 12 tisícům nových žákovských míst ve Středočeském kraji.",
+        "date": "10. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petra-peckova-527",
+        "author_name": "Petra Pecková",
+        "tags": [
+            "Školství, věda, kultura",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření výroku Petry Peckové o počtu postavených žákovských míst ve Středočeském kraji do roku 2021. Výrok obsahuje konkrétní údaj, ale bez přístupu k aktuálním a spolehlivým zdrojům nelze ověřit jeho pravdivost.\nZDROJE: Žádné dostupné zdroje pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(…) dotačního titulu jak na Ministerstvu financí, tak na Ministerstvu školství a z něj bylo asi do roku 2021 postaveno víc než 11 000 žákovských míst ve Středočeském kraji. - Petra Pecková, 10. září 2024"
+    },
+    {
+        "id": 39,
+        "statement": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055.",
+        "explanation": "Národní rozpočtová rada ve své Zprávě o dlouhodobé udržitelnosti veřejných financí předpokládá, že maximální podíl HDP na starobní důchody bude Česká republika vydávat v roce 2060, a to 11,05 %.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Pro ověření tohoto výroku by bylo nutné mít přístup k aktuálním a spolehlivým prognózám vývoje důchodového systému v České republice, které by zohledňovaly demografické změny, ekonomický růst a další faktory ovlivňující důchodový systém. Bez těchto informací nelze ověřit, zda Alena Schillerová správně odhadla rok, kdy bude vydáváno 11,5 % HDP na důchody.\nZDROJE: Pro ověření tohoto výroku by bylo nutné mít přístup k aktuálním prognózám důchodového systému, které nejsou v tomto okamžiku k dispozici.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 157,
+        "statement": "Slibovali (Fialova vláda, pozn. že nebudou zvyšovat daně, najednou je zvyšujou.",
+        "explanation": "Vláda jako celek sice nezvyšování daní neslíbila, zástupci koalice SPOLU se ale během kampaně před sněmovními volbami v říjnu 2021 – a také po volbách – zavázali k nezvyšování daní. Konsolidační balíček pak některé daně zvyšuje, např. z nemovitosti nebo příjmů právnických osob.",
+        "date": "19. srpna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/tomio-okamura-180",
+        "author_name": "Tomio Okamura",
+        "tags": [
+            "Ekonomika",
+            "Sněmovní volby 2021"
+        ],
+        "response": "VERDIKT: PRAVDA\n\nVYSVĚTLENÍ: Vláda Petra Fialy skutečně slibovala, že nebude zvyšovat daně. Tento slib byl součástí jejich volebního programu a byl opakovaně potvrzován členy vlády. Nicméně, v roce 2024 vláda skutečně zvýšila některé daně, což je v rozporu s jejich původním slibem.\n\nZDROJE:\n- Volební program koalice SPOLU (2021)\n- Články v českých médiích o zvýšení daní v roce 2024 (například iDnes, Seznam Zprávy, Hospodářské noviny)",
+        "label": "PRAVDA",
+        "prompt": "Slibovali (Fialova vláda, pozn. že nebudou zvyšovat daně, najednou je zvyšujou. - Tomio Okamura, 19. srpna 2024"
+    },
+    {
+        "id": 101,
+        "statement": "My jsme rozjeli projekty na snížení energetické náročnosti budov v majetku kraje, ať už se to týká škol, týká se to nemocnic, týká se to zařízení pobytových sociálních služeb.",
+        "explanation": "Jihomoravský kraj investuje do snížení energetické náročnosti svých budov. Jedná se zejména o zateplení budov nebo instalaci fotovoltaických elektráren. Některé projekty se přitom opravdu týkají škol, nemocnic, sociálních zařízení nebo i úředních budov.",
+        "date": "12. září 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jana-holomcik-leitnerova-740",
+        "author_name": "Jana Holomčík Leitnerová",
+        "tags": [
+            "Životní prostředí",
+            "Krajské volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o konkrétních projektech, které kraj rozjel za účelem snížení energetické náročnosti budov v majetku kraje. Výrok je příliš obecný a neobsahuje žádné konkrétní údaje, které by mohly být ověřeny.\nZDROJE: Žádné konkrétní zdroje nejsou k dispozici, protože výrok je příliš obecný a neobsahuje žádné konkrétní údaje.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My jsme rozjeli projekty na snížení energetické náročnosti budov v majetku kraje, ať už se to týká škol, týká se to nemocnic, týká se to zařízení pobytových sociálních služeb. - Jana Holomčík Leitnerová, 12. září 2024"
+    },
+    {
+        "id": 371,
+        "statement": "(...) z Green Dealu, který mimochodem podepsal minulý premiér, ne ten současný.",
+        "explanation": "Tzv. Green Deal schválila Evropská rada v prosinci 2020, kdy se jednání za Českou republiku účastnil tehdejší premiér Andrej Babiš.",
+        "date": "19. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marek-benda-206",
+        "author_name": "Marek Benda",
+        "tags": [
+            "Životní prostředí",
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Green Deal, oficiálně známý jako Zelená dohoda pro Evropu, je soubor politik Evropské unie zaměřených na boj proti klimatickým změnám. Byl představen Evropskou komisí v prosinci 2019. Česká republika jako člen Evropské unie se zavázala k plnění cílů Zelené dohody. V době představení Zelené dohody byl premiérem České republiky Andrej Babiš, který podepsal závazek České republiky k těmto cílům. Následující premiér, Petr Fiala, pokračoval v zavádění politik souvisejících se Zelenou dohodou.\n\nZDROJE:\n- https://ec.europa.eu/info/strategy/priorities-2019-2024/european-green-deal_cs\n- https://www.vlada.cz/cz/evropske-zalezitosti/aktualne/zeleny-uzel-187510/\n- https://www.euractiv.cz/section/energetika/news/andrej-babis-podporil-ciel-eu-stal-se-nezelenym-premierem/",
+        "label": "PRAVDA",
+        "prompt": "(...) z Green Dealu, který mimochodem podepsal minulý premiér, ne ten současný. - Marek Benda, 19. února 2024"
+    },
+    {
+        "id": 15,
+        "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+        "explanation": "Marian Jurečka opakovaně zmiňoval, že je do druhého čtení připraven jednat o úpravách návrhu důchodové reformy a hledat shodu s opozicí. Několikrát to uvedl jak před předložením návrhu vládě, tak i poté, co Fialův kabinet návrh reformy schválil.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření výroku, zda Marian Jurečka skutečně řekl, že je připraven hledat kompromis v návrhu důchodové reformy do druhého čtení. Výrok může být pravdivý, ale bez dalších zdrojů nebo kontextu nelze jeho pravdivost ověřit.\nZDROJE: Žádné dostupné zdroje pro ověření výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 399,
+        "statement": "Nemůžou zůstat na té stejné pozici (ženy pracující při mateřské a rodičovské dovolené, pozn.",
+        "explanation": "V současnosti zákon neumožňuje rodičům na mateřské a rodičovské dovolené vykonávat stejnou pracovní činnost u stávajícího zaměstnavatele. Nejčastěji poté dochází k uzavření DPP nebo DPČ u stejného zaměstnavatele, ale na jiný druh práce.",
+        "date": "30. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle zákona č. 262/2006 Sb., zákoník práce, § 148 odst. 1, nemůže být zaměstnankyně, která čerpá mateřskou nebo rodičovskou dovolenou, přeřazena na jinou práci nebo přeložena do jiného místa výkonu práce bez jejího souhlasu. Nicméně po skončení mateřské nebo rodičovské dovolené nemá zaměstnankyně automaticky nárok na stejnou pozici, ale zaměstnavatel je povinen ji zařadit na její původní práci a pracoviště, pokud to je možné a pokud se na tom se zaměstnankyní nedohodl jinak. Pokud to není možné, musí ji zaměstnavatel zařadit na jinou práci odpovídající jejímu zdravotnímu stavu a kvalifikaci.\n\nZDROJE:\n- Zákon č. 262/2006 Sb., zákoník práce, § 148 odst. 1\n- Zákon č. 262/2006 Sb., zákoník práce, § 148 odst. 2",
+        "label": "PRAVDA",
+        "prompt": "Nemůžou zůstat na té stejné pozici (ženy pracující při mateřské a rodičovské dovolené, pozn. - Marian Jurečka, 30. ledna 2024"
+    },
+    {
+        "id": 21,
+        "statement": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla.",
+        "explanation": "Marco Rubio inicioval rezoluci amerického Senátu v prosinci 2011, krátce po smrti Václava Havla. Cílem přijaté rezoluce bylo připomenout Havlův přínos k rozvoji demokracie, obhajobě svobody a podpoře lidských práv.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Marco Rubio skutečně stál za rezolucí, která připomněla význam Václava Havla v americkém Senátu. Václav Havel byl český spisovatel, dramatik a politik, který hrál klíčovou roli v české sametové revoluci v roce 1989 a později se stal prezidentem Československa a České republiky. Marco Rubio je americký politik, který je členem Republikánské strany a od roku 2011 působí jako senátor za stát Florida. Jeho rezoluce v Senátu připomínající Havla je důkazem toho, že Rubio skutečně uznává význam tohoto českého politika.\nZDROJE: \n- https://www.rubio.senate.gov/public/index.cfm/press-releases?ID=8F4F4C9A-5056-8A66-BD64-8B909F7F2382 (tisková zpráva z roku 2011 o rezoluci připomínající Václava Havla)\n- https://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=112&session=1&vote=00213 (seznam hlasování o rezoluci v Senátu)",
+        "label": "PRAVDA",
+        "prompt": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 332,
+        "statement": "Novinářka Anna Politkovská třeba byla zavražděna v den jeho (Vladimira Putina, pozn. narozenin.",
+        "explanation": "Novinářka Anna Politkovská byla zavražděna 7. října 2006, tedy v den Putinových narozenin.",
+        "date": "28. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/olga-richterova-505",
+        "author_name": "Olga Richterová",
+        "tags": [
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Anna Politkovská byla ruská novinářka a spisovatelka, která byla známá svými kritickými články o vládě Vladimira Putina a o válce v Čečensku. Byla zavražděna 7. října 2006 ve výtahu svého domu v Moskvě. Tento den se shoduje s Putinovými narozeninami, který se narodil 7. října 1952.\nZDROJE: \n- https://cs.wikipedia.org/wiki/Anna_Politkovsk%C3%A1\n- https://cs.wikipedia.org/wiki/Vladimir_Putin",
+        "label": "PRAVDA",
+        "prompt": "Novinářka Anna Politkovská třeba byla zavražděna v den jeho (Vladimira Putina, pozn. narozenin. - Olga Richterová, 28. února 2024"
+    },
+    {
+        "id": 357,
+        "statement": "Je v něm (v systému elektronického přihlašování na střední školy, pozn. 30 000 přihlášek.",
+        "explanation": "Mezi dnem spuštění systému elektronických přihlášek a dnem, který předcházel Bekově rozhovoru, bylo v tomto systému celkem 28 505 přihlášek.",
+        "date": "7. února 2024",
+        "assessment": "Pravda",
+        "author": "/politici/mikulas-bek-548",
+        "author_name": "Mikuláš Bek",
+        "tags": [
+            "Školství, věda, kultura"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o aktuálním počtu přihlášek v systému elektronického přihlašování na střední školy k 7. únoru 2024, abych mohla ověřit pravdivost výroku.\nZDROJE: Žádné dostupné zdroje k ověření aktuálního počtu přihlášek v systému elektronického přihlašování na střední školy k 7. únoru 2024.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Je v něm (v systému elektronického přihlašování na střední školy, pozn. 30 000 přihlášek. - Mikuláš Bek, 7. února 2024"
+    },
+    {
+        "id": 188,
+        "statement": "Jsme na tuto iniciativu (nákupu munice pro Ukrajinu, pozn. vybrali nebo máme přislíbeno 1,6 miliardy euro.",
+        "explanation": "Ministr zahraničí Jan Lipavský na začátku června mluvil o příspěvku zhruba 1,7 miliardy eur od 15 zemí. Ministerstvo obrany jednotlivé částky nezveřejňuje, z veřejně dostupných zdrojů ale vyplývá, že 14 států ke dni námi ověřované debaty přislíbilo poslat celkem 1,5 mld. eur.",
+        "date": "5. června 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek aktuálních informací o výši finančních prostředků, které Česká republika vyčlenila nebo má přislíbeno pro nákup munice pro Ukrajinu. Výrok českého premiéra Petra Fialy ze dne 5. června 2024 nelze ověřit bez přístupu k aktuálním a spolehlivým zdrojům informací.\nZDROJE: Žádné dostupné zdroje pro ověření tohoto výroku.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Jsme na tuto iniciativu (nákupu munice pro Ukrajinu, pozn. vybrali nebo máme přislíbeno 1,6 miliardy euro. - Petr Fiala, 5. června 2024"
+    },
+    {
+        "id": 176,
+        "statement": "Piráti jsou dlouhodobě druhá nejsilnější vládní strana, (...) máme deset až jedenáct procent v průzkumech.",
+        "explanation": "Zhruba od začátku roku 2023 Piráti ve volebních modelech opravdu vychází jako druhá nejsilnější vládní strana, kterou by stabilně volilo kolem 10 % voličů. Z koaličních partnerů je předstihuje pouze ODS.",
+        "date": "3. července 2024",
+        "assessment": "Pravda",
+        "author": "/politici/ivan-bartos-76",
+        "author_name": "Ivan Bartoš",
+        "tags": [
+            "Vnitrostranická politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací o aktuálních průzkumech volebních preferencí z července 2024, abych mohl ověřit, zda skutečně mají Piráti 10-11% podporu v průzkumech. Bez aktuálních dat nelze ověřit pravdivost výroku.\nZDROJE: Žádné (aktuální data o průzkumech volebních preferencí nejsou k dispozici)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Piráti jsou dlouhodobě druhá nejsilnější vládní strana, (...) máme deset až jedenáct procent v průzkumech. - Ivan Bartoš, 3. července 2024"
+    },
+    {
+        "id": 426,
+        "statement": "Zhruba 600 000 lidí v zahraničí v době voleb pobývá.",
+        "explanation": "Přesná statistika o Češích žijících v zahraničí není dostupná. Ministerstvo zahraničních věcí ale odhaduje, že v zahraničí pobývá zhruba 600 000 českých občanů s volebním právem, kterých by se korespondenční volba týkala.",
+        "date": "17. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek informací k ověření přesného počtu lidí, kteří v době voleb pobývají v zahraničí. Počet lidí v zahraničí se může lišit v závislosti na mnoha faktorech, jako je sezóna, ekonomická situace nebo politická situace v zemi.\nZDROJE: Žádné dostupné zdroje neposkytují aktuální a přesné informace o počtu lidí, kteří v době voleb pobývají v zahraničí.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Zhruba 600 000 lidí v zahraničí v době voleb pobývá. - Markéta Pekarová Adamová, 17. ledna 2024"
+    },
+    {
+        "id": 416,
+        "statement": "Itálie a Španělsko nás (v HDP na hlavu během Fialovy vlády, pozn. znovu předběhly.",
+        "explanation": "Podle dat OECD a Světové banky Španělsko nepředstihlo Českou republiku během vlády Petra Fialy v HDP na jednoho obyvatele. Itálie sice Česko překonala, stalo se tak ale ještě v posledním roce vládnutí Babišova kabinetu.",
+        "date": "2. ledna 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/andrej-babis-183",
+        "author_name": "Andrej Babiš",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Nemám dostatek aktuálních informací o HDP na hlavu v České republice, Itálii a Španělsku během vlády Petra Fialy, abych mohla ověřit, zda Itálie a Španělsko skutečně Českou republiku v tomto ukazateli předběhly. Údaje o HDP na hlavu jsou obvykle aktualizovány s určitým zpožděním a mohou být dostupné až po určité době.\nZDROJE: Aktuální údaje o HDP na hlavu v České republice, Itálii a Španělsku nejsou veřejně dostupné. Údaje o HDP na hlavu jsou obvykle publikovány organizacemi jako Světová banka, Mezinárodní měnový fond nebo Eurostat, ale tyto údaje mohou být zastaralé.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Itálie a Španělsko nás (v HDP na hlavu během Fialovy vlády, pozn. znovu předběhly. - Andrej Babiš, 2. ledna 2024"
+    },
+    {
+        "id": 450,
+        "statement": "Od dnešního dne se agenda milostí vrací zpět do rukou prezidenta.",
+        "explanation": "Petr Pavel rozhodl o vrácení agendy udělování milostí z Ministerstva spravedlnosti zpět do rukou Kanceláře prezidenta republiky, a to od 1. ledna 2024. Této pravomoci se Miloš Zeman částečně vzdal v roce 2013.",
+        "date": "1. ledna 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-pavel-711",
+        "author_name": "Petr Pavel",
+        "tags": [
+            "Pražský hrad"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Podle platné legislativy České republiky má prezident pravomoc udělovat milosti. Pokud Petr Pavel uvedl, že agenda milostí se vrací zpět do rukou prezidenta, znamená to, že tato pravomoc byla dříve omezena nebo pozastavena, ale nyní je opět v platnosti. Od 1. ledna 2024 by tak prezident měl mít opět pravomoc udělovat milosti.\nZDROJE: Ústava České republiky, článek 62, odstavec 1, písmeno g) - Prezident republiky má právo udělovat amnestii a milost.",
+        "label": "PRAVDA",
+        "prompt": "Od dnešního dne se agenda milostí vrací zpět do rukou prezidenta. - Petr Pavel, 1. ledna 2024"
+    }
+]

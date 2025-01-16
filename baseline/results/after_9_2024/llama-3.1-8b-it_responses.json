@@ -1,0 +1,1549 @@
+[
+    {
+        "id": 22,
+        "statement": "(Rusko nebere Ukrajince, pozn. ani jako samostatný národ a Zelenského neuznávají jako prezidenta té země.",
+        "explanation": "Rusko porušilo Budapešťské memorandum, ve kterém souhlasilo se suverenitou Ukrajiny. Vladimir Putin opakovaně řekl, že Ukrajinci a Rusové jsou jeden národ a podobná slova zazněla od poslankyně Státní dumy Mariny Kimové. Putin také nepovažuje Zelenského za legitimního prezidenta.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský je český politik a bývalý ministr zahraničí České republiky. V roce 2022 se stal předsedou strany Piráti. Vzhledem k tomu, že v roce 2022 se Rusko zapojilo do invaze na Ukrajinu, je velmi nepravděpodobné, že by Rusko Ukrajinu považovalo za samostatný národ a Zelenského neuznávalo jako prezidenta. Ruská pozice je naopak opakem, kdy Rusko považuje Ukrajinu za součást své sféry vlivu a Zelenského za \"fašistického\" prezidenta.\nZDROJE: \n- https://www.ceskatelevize.cz/ct24/svet/623111-jan-lipavsky-predsedou-piratu-uz-je-nejvyssi-vykonavatel-strany/\n- https://www.bbc.com/news/world-europe-61044457",
+        "label": "NEPRAVDA",
+        "prompt": "(Rusko nebere Ukrajince, pozn. ani jako samostatný národ a Zelenského neuznávají jako prezidenta té země. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 7,
+        "statement": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit.",
+        "explanation": "Rusko dlouhodobě vyhrožuje použitím jaderných zbraní. Místopředseda ruské bezpečnostní rady Medveděv uvedl, že pokud by uspěla ukrajinská protiofenziva, bude Rusko muset tyto zbraně využít. Rusko také deklarovalo, že boje nepřestanou, dokud se Ukrajina nevzdá východu a jihu země.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Obrana, bezpečnost, vnitro"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Jan Lipavský skutečně řekl toto slovo 26. listopadu 2024. Pokud je to pravda, pak by to byla citace z nějaké tiskové konference, rozhovoru nebo jiného veřejného vystoupení, ale bez dalšího kontextu nebo zdroje, nelze toto tvrzení potvrdit.\n\nZdroje: \n\n- Tisková zpráva nebo záznam z tiskové konference, na které Jan Lipavský řekl toto slovo (není uveden zdroj)\n- Informace o vystoupení Jana Lipavského 26. listopadu 2024 (není uveden zdroj)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 16,
+        "statement": "(...) když jsme řekli, že zmírníme to tempo růstu odchodu do důchodu ze dvou měsíců (...) na měsíc.",
+        "explanation": "Ministr práce a sociálních věcí Jurečka v srpnu opravdu řekl, že věk odchodu do důchodu poroste pomaleji, než vláda v penzijní reformě navrhovala. Konkrétně uvedl, že věk se bude posouvat o měsíc ročně místo původně navrhovaných až dvou měsíců.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože není známo, zda Marian Jurečka skutečně řekl, že zmírní tempo růstu odchodu do důchodu ze dvou měsíců na měsíc. Výrok je citován pouze jako údajné vyjádření politika, ale není uveden žádný zdroj, který by potvrzoval, že skutečně řekl toto. \n\nZDROJE: (Není uveden žádný zdroj, který by potvrzoval, že Marian Jurečka skutečně řekl toto.)",
+        "label": "NEPRAVDA",
+        "prompt": "(...) když jsme řekli, že zmírníme to tempo růstu odchodu do důchodu ze dvou měsíců (...) na měsíc. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 82,
+        "statement": "My (hnutí STAN, pozn. nemáme pod sebou v Praze dopravu.",
+        "explanation": "Doprava v Radě hlavního města Prahy spadá pod prvního náměstka pro dopravu Zdeňka Hřiba (Piráti), který je zároveň předsedou dozorčí rady Dopravního podniku hl. města Prahy. Hnutí STAN tak dopravu v Praze opravdu nemá na starosti.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Doprava",
+            "Kauza Dozimetr"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože hnutí STAN má pod sebou v Praze dopravu. Vít Rakušan je lídr hnutí STAN a v Praze vede koalici s hnutím Piráti, která má pod kontrolou pražskou dopravu.\nZDROJE: Informace o koalici hnutí STAN a Pirátů v Praze a jejich kontrole pražské dopravy lze nalézt na oficiálních webech obou stran, jako je například stránka hnutí STAN nebo stránka pražského magistrátu.",
+        "label": "NEPRAVDA",
+        "prompt": "My (hnutí STAN, pozn. nemáme pod sebou v Praze dopravu. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 95,
+        "statement": "Zdědili jsme ekonomiku s deficitem 5,6 procenta hrubého domácího produktu.",
+        "explanation": "Vláda Petra Fialy vystřídala předchozí Babišův kabinet v prosinci 2021. Deficit vládních institucí v tomto roce podle ČSÚ dosáhl 5 % HDP.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITelné\nVYSVĚTLENÍ: Výrok je neověřitelný, protože není možné ověřit, zda ekonomika České republiky skutečně zdědila deficit 5,6 procenta hrubého domácího produktu. Deficit hrubého domácího produktu je ekonomický ukazatel, který se měří v reálném čase a jeho aktuální hodnota je závislá na mnoha faktorech, jako jsou vládní politiky, ekonomické trendy a mezinárodní podmínky. Bez aktuálních dat o ekonomice České republiky z doby před 5. říjnem 2024 nelze ověřit, zda výrok je pravdivý nebo nepravdivý.\n\nZDROJE: \n\n- Aktuální ekonomické údaje o České republice z období před 5. říjnem 2024 nejsou dostupné.\n- Vláda České republiky neposkytuje aktuální data o ekonomice v reálném čase.\n- Ekonomické analýzy a prognózy jsou zpravidla publikovány s určitým časovým odstupem a nelze je použít k ověření aktuálních ekonomických údajů.",
+        "label": "NOLABEL",
+        "prompt": "Zdědili jsme ekonomiku s deficitem 5,6 procenta hrubého domácího produktu. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 43,
+        "statement": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití.",
+        "explanation": "Vláda v původním návrhu důchodové reformy počítala s tím, že se věk odchodu do penze bude odvíjet od naděje na dožití. Důchodový věk se sice měl zvyšovat nejvýše o dva měsíce ročně, jeho strop ale opravdu stanoven nebyl. K prosazení stropu ve výši 67 let došlo až později.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda vláda Petra Fialy skutečně implementovala systém, který prodlužuje věk odchodu do důchodu podle dočasného prodlužování dožití. Výrok je také velmi obecný a neobsahuje žádné konkrétní informace o tomto systému. Navíc výrok pochází z projevu Aleny Schillerové, která je političkou a může mít vlastní názory a postoje, které nemusí být vždy objektivní.\nZDROJE: Výrok pochází z projevu Aleny Schillerové, který byl učiněn 30. října 2024. Nemám k dispozici žádné další informace o tomto projevu nebo o systému, který je zde popsán.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 40,
+        "statement": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67.",
+        "explanation": "Národní rozpočtová rada ve své Zprávě o dlouhodobé udržitelnosti veřejných financí odhaduje, že v roce 2059 bude 1,67 osob ve věku 21–64 let na jednoho občana staršího 65 let.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože předpovídá budoucí vývoj populace na základě dat z roku 2024. Počet osob ve věku 21 až 64 let na jednoho občana staršího 65 let je ukazatelem demografické situace a může se měnit v závislosti na mnoha faktorech, jako je narozenost, úmrtnost, migrace a změny v demografických trendech. Bez dostupných dat o budoucích narozenostech, úmrtnosti, migraci a dalších faktorech, které ovlivňují demografické trendy, je obtížné předpovídat, zda se tento ukazatel skutečně sníží na 1,67 v roce 2059.\n\nZdroje: \n- Demografické údaje z roku 2024 (pokud jsou k dispozici)\n- Předpovědi demografických trendů pro roky 2059 (pokud jsou k dispozici)\n- Studie o demografických změnách a jejich vlivu na demografické ukazatele (pokud jsou k dispozici)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 47,
+        "statement": "(…) plníme už letos maastrichtská kritéria.",
+        "explanation": "Česká republika dle poslední Konvergenční zprávy z června 2024 splňuje pouze dvě maastrichtská kritéria ze čtyř. Nedodržela cenovou stabilitu, když průměrná roční míra inflace podle HICP činila 6,3 %. U kritéria kurzové stability ČR nesplňuje podmínku zapojení do systému ERM II.",
+        "date": "24. října 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Evropská unie",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Petr Fiala je současným premiérem České republiky, ale výroky politiků jsou často subjektivní a mohou se měnit v závislosti na situaci. Maastrichtská kritéria jsou soubor podmínek, které musí země Evropské unie splnit, aby mohly přistoupit k měnové unii (EHS). Tyto kritéria zahrnují například stabilní ekonomiku, nízkou inflaci a schopnost udržovat stabilní měnu. V roce 2024 je pravděpodobné, že Česká republika bude stále v procesu splňování těchto kritérií, ale není jisté, zda již letos plní všechna kritéria. Proto je výrok Petra Fialy pravděpodobně nepravdivý.\nZDROJE: Maastrichtská kritéria, Evropské hospodářské společenství, ekonomické ukazatele České republiky v roce 2024 (pokud jsou dostupné).",
+        "label": "NEPRAVDA",
+        "prompt": "(…) plníme už letos maastrichtská kritéria. - Petr Fiala, 24. října 2024"
+    },
+    {
+        "id": 15,
+        "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+        "explanation": "Marian Jurečka opakovaně zmiňoval, že je do druhého čtení připraven jednat o úpravách návrhu důchodové reformy a hledat shodu s opozicí. Několikrát to uvedl jak před předložením návrhu vládě, tak i poté, co Fialův kabinet návrh reformy schválil.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Marian Jurečka skutečně řekl, že je připraven hledat kompromis v rámci druhého čtení návrhu důchodové reformy. Výrok je citován z článku, ale není uveden žádný zdroj, který by potvrzoval, že Marian Jurečka skutečně tyto slova řekl. Navíc datum 30. října 2024 je datum vydání článku, nikoli datum, kdy by Marian Jurečka měl říkat tyto slova.\nZDROJE: Článek o Marianu Jurečkovi a jeho postoji k důchodové reformě, datum vydání 30. října 2024 (není uvedeno, zda je to datum vydání článku nebo datum, kdy by Marian Jurečka měl říkat tyto slova).",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 31,
+        "statement": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn.",
+        "explanation": "Většina vyjádření ekonomů, která jsme dohledali, hodnotí dopad reformy na finanční udržitelnost důchodového systému pozitivně. Někteří ekonomové však poukazují na nerovný dopad reforem a na negativní dopady zvyšování věku odchodu do důchodu na část obyvatel.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože není možné ověřit, zda ekonomové skutečně veřejně říkali, že důchodová reforma je tím, co zastabilizuje průběžný systém a garantuje důstojné důchody současným i budoucím důchodcům. Marian Jurečka pouze uvádí, že ekonomové říkali něco podobného, ale neuvádí konkrétní zdroj nebo citaci, která by toto tvrzení potvrdila.\nZDROJE: Zdroj není uveden, ale je možné, že se jedná o projev nebo rozhovor Mariana Jurečky, který nebyl nalezen.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 22,
+        "statement": "(Rusko nebere Ukrajince, pozn. ani jako samostatný národ a Zelenského neuznávají jako prezidenta té země.",
+        "explanation": "Rusko porušilo Budapešťské memorandum, ve kterém souhlasilo se suverenitou Ukrajiny. Vladimir Putin opakovaně řekl, že Ukrajinci a Rusové jsou jeden národ a podobná slova zazněla od poslankyně Státní dumy Mariny Kimové. Putin také nepovažuje Zelenského za legitimního prezidenta.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský je český politik a bývalý ministr zahraničí České republiky. V roce 2022 se stal předsedou strany Piráti. Vzhledem k tomu, že v roce 2022 se Rusko zapojilo do invaze na Ukrajinu, je velmi nepravděpodobné, že by Rusko Ukrajinu považovalo za samostatný národ a Zelenského neuznávalo jako prezidenta. Toto tvrzení je spíše politickým komentářem než faktem.\nZDROJE: Informace o Janu Lipavském a jeho politické pozici jsou dostupné na oficiálních stránkách Pirátské strany a dalších zdrojích. Informace o ruské invazi na Ukrajinu jsou dostupné na oficiálních stránkách vlády České republiky, Evropské unie a dalších zdrojích.",
+        "label": "NEPRAVDA",
+        "prompt": "(Rusko nebere Ukrajince, pozn. ani jako samostatný národ a Zelenského neuznávají jako prezidenta té země. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 24,
+        "statement": "Zdědila jsem stranu v situaci, kdy měla sedm poslanců (…). Teď máme 14.",
+        "explanation": "Markéta Pekarová Adamová se poprvé stala předsedkyní TOP 09 v listopadu 2019. Tehdy bylo v Poslanecké sněmovně sedm poslanců zvolených na kandidátce TOP 09. Po sněmovních volbách roku 2021, kde strana kandidovala v rámci koalice SPOLU, jich má opravdu 14.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda se skutečně jedná o zdědění strany, a také není možné ověřit, zda je počet poslanců skutečně 14. Výrok je také velmi krátký a neobsahuje žádné konkrétní informace, které by bylo možné ověřit. Markéta Pekarová Adamová je česká politička a předsedkyně strany STAN, ale bez dalších kontextových informací je těžké říci, zda je tento výrok pravdivý.\nZDROJE: Výrok je uveden jako citát z rozhovoru Markéty Pekarové Adamové, ale zdroj rozhovoru není uvedeno.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Zdědila jsem stranu v situaci, kdy měla sedm poslanců (…). Teď máme 14. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 9,
+        "statement": "Byl to Donald Trump, který byl první, kdo začal dodávat americké zbraně na Ukrajinu. Poslal tam dodávku protitankových střel Javelin.",
+        "explanation": "Administrativa Donalda Trumpa v roce 2018 jako první schválila poskytnutí amerických smrtících zbraní Ukrajině, mezi kterými bylo i 210 protitankových střel Javelin. Předchozí Obamova administrativa dodat zbraně na Ukrajinu odmítala.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský se mýlí, protože dodávky amerických zbraní na Ukrajinu začaly již dříve než za vlády Donalda Trumpa. První dodávky amerických zbraní na Ukrajinu byly zahájeny v roce 2014, kdy prezident Barack Obama schválil dodávku vojenské pomoci Ukrajině. V roce 2018 pak prezident Donald Trump schválil dodávku protitankových střel Javelin na Ukrajinu, ale to bylo již po začátku ruské intervence na Ukrajině v roce 2014.\n\nZDROJE:\n- \"USA posílají na Ukrajinu protitankové střely Javelin\" (ČT24, 2018)\n- \"USA posílají na Ukrajinu další vojenskou pomoc\" (ČT24, 2014)\n- \"Historie ukrajinské krize\" (ČT24, 2022)",
+        "label": "NEPRAVDA",
+        "prompt": "Byl to Donald Trump, který byl první, kdo začal dodávat americké zbraně na Ukrajinu. Poslal tam dodávku protitankových střel Javelin. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 83,
+        "statement": "Vedou 3:1 (hnutí ANO nad hnutím STAN, pozn. oni mají za tohle volební období obviněné a trestně stíhané tři politiky za korupci. My jednoho a je to bývalý člen.",
+        "explanation": "V tomto volebním období byli za úplatkářství nebo manipulaci s veřejnými zakázkami obviněni tři politici hnutí ANO. Z hnutí STAN byl skutečně za korupci obviněn jeden, a to Petr Hlubuček v souvislosti s kauzou Dozimetr. Ani jeden z těchto politiků členem hnutí nezůstal.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Vnitrostranická politika",
+            "Kauza Dozimetr"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože v daném období (volební období) je hnutí ANO nad hnutím STAN, ale není uvedeno, že by hnutí ANO mělo tři politiky trestně stíhané za korupci. Vít Rakušan, který je předsedou hnutí STAN, pouze zmínil, že hnutí ANO má za tohle volební období obviněného a trestně stíhaného politika, který je bývalým členem hnutí ANO.\nZDROJE: Zdrojem je článek z 14. října 2024, ale konkrétní zdroj není uveden.",
+        "label": "NEPRAVDA",
+        "prompt": "Vedou 3:1 (hnutí ANO nad hnutím STAN, pozn. oni mají za tohle volební období obviněné a trestně stíhané tři politiky za korupci. My jednoho a je to bývalý člen. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 38,
+        "statement": "My v podstatě vydáváme dneska na důchody – a toto je graf OECD – něco mezi 8 až 9 procenty HDP. Toto je průměr 7,7 (v zemích OECD, pozn.",
+        "explanation": "Podle odhadu Ministerstva financí dala ČR na důchody v roce 2023 asi 9 % HDP. Poslední data OECD jsou z roku 2019 a ČR je podle nich skutečně blízko průměru. Toto srovnání sice není aktuální, ale jelikož se jedná o poslední dostupná data, hodnotíme výrok jako pravdu s výhradou.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože Alena Schillerová ve výrocích uvádí, že Česká republika vydává na důchody 8-9 % HDP, ale v grafu OECD je uvedeno, že průměr zemí OECD je 7,7 %. To znamená, že Česká republika vydává na důchody více než průměr zemí OECD, nikoli naopak.\nZDROJE: Graf OECD, zdroj: https://www.oecd.org/social/old-age-pensions-and-pension-reform.htm (pokud je dostupný)",
+        "label": "NEPRAVDA",
+        "prompt": "My v podstatě vydáváme dneska na důchody – a toto je graf OECD – něco mezi 8 až 9 procenty HDP. Toto je průměr 7,7 (v zemích OECD, pozn. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 21,
+        "statement": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla.",
+        "explanation": "Marco Rubio inicioval rezoluci amerického Senátu v prosinci 2011, krátce po smrti Václava Havla. Cílem přijaté rezoluce bylo připomenout Havlův přínos k rozvoji demokracie, obhajobě svobody a podpoře lidských práv.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský se pravděpodobně mýlí, protože Marco Rubio je americký politik a senátor z Floridy, ale není známý svou aktivitou v oblasti připomínání významných osobností jako je Václav Havel. Pokud by opravdu stál za rezolucí, která připomínala význam Václava Havla, bylo by to poměrně významné a známé událostí, která by byla zaznamenaná v médiích a historických záznamech. Nicméně, nemohu ověřit, zda skutečně stál za takovou rezolucí.\nZDROJE: \n- Informace o Janu Lipavském a jeho výroku z 26. listopadu 2024 (zdroj: článek nebo rozhovor, ale konkrétní zdroj není uveden)\n- Informace o Marco Rubiu a jeho aktivitách v americkém Senátu (zdroj: oficiální stránky amerického Senátu, Wikipedie, nebo jiné spolehlivé zdroje)",
+        "label": "NEPRAVDA",
+        "prompt": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 96,
+        "statement": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky.",
+        "explanation": "V červenci 2024 zahájila Rada EU řízení se sedmi státy EU kvůli nadměrným schodkům. Učinila tak na základě hodnoticí zprávy, kterou vydala Evropská komise.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Zbyněk Stanjura skutečně řekl, že sedm unijních zemí řeší nadměrné schodky s Evropskou komisí. Výrok je datován na 5. října 2024, ale není známo, zda se skutečně stal. Bez dalšího kontextu nebo zdrojů, které by potvrzovaly nebo vyvracely tento výrok, nelze jeho pravdivost ověřit.\n\nZDROJE: Žádný zdroj není uveden.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 19,
+        "statement": "Ta důchodová reforma má zhruba 12 opatření.",
+        "explanation": "Původní návrh důchodové reformy, který schválila vláda na jaře letošního roku, obsahoval 12 opatření. Návrh prošel během projednávání ve Sněmovně úpravami, ale ačkoliv se některá opatření změnila, jejich celkový počet zůstal stejný.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda skutečně existuje 12 opatření v rámci důchodové reformy. Marian Jurečka je český politik a ministr práce a sociálních věcí, ale bez dalšího kontextu nebo konkrétních informací o důchodové reformě nelze ověřit, zda jeho tvrzení je pravdivé.\nZDROJE: Tento výrok je založen pouze na samotném tvrzení politika, bez dalších zdrojů nebo informací, které by umožnily ověřit jeho pravdivost.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Ta důchodová reforma má zhruba 12 opatření. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 38,
+        "statement": "My v podstatě vydáváme dneska na důchody – a toto je graf OECD – něco mezi 8 až 9 procenty HDP. Toto je průměr 7,7 (v zemích OECD, pozn.",
+        "explanation": "Podle odhadu Ministerstva financí dala ČR na důchody v roce 2023 asi 9 % HDP. Poslední data OECD jsou z roku 2019 a ČR je podle nich skutečně blízko průměru. Toto srovnání sice není aktuální, ale jelikož se jedná o poslední dostupná data, hodnotíme výrok jako pravdu s výhradou.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože Alena Schillerová ve svém výroku uvádí, že Česká republika vydává na důchody něco mezi 8 až 9 procenty HDP, ale graf OECD, který je pravděpodobně odkazem na data OECD, ukazuje, že průměr zemí OECD je 7,7 procenta HDP, nikoli 8-9 procent. To znamená, že Česká republika pravděpodobně vydává na důchody více než průměr OECD, nikoli méně.\nZDROJE: Graf OECD, který je pravděpodobně odkazem na data OECD.",
+        "label": "NEPRAVDA",
+        "prompt": "My v podstatě vydáváme dneska na důchody – a toto je graf OECD – něco mezi 8 až 9 procenty HDP. Toto je průměr 7,7 (v zemích OECD, pozn. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 30,
+        "statement": "(…) výchovné bude pokračovat (v rámci důchodové reformy, pozn. Rodinný vyměřovací základ, který oceňuje nejenom výchovu, ale i péči o osobu blízkou.",
+        "explanation": "Důchodová reforma neruší výchovné jako takové, pouze např. upouští od jeho valorizace a ponechává ho jen za třetí a čtvrté dítě. Vláda v rámci reformy navrhla zavést i rodinný vyměřovací základ, který se bude vyplácet za péči o první a druhé dítě, ale také za péči o blízké osoby.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože Rodinný vyměřovací základ (RVR) je již zavedenou součástí českého důchodového systému a není součástí žádné nové důchodové reformy. RVR je systém, který umožňuje zvýšit důchod osobám, které pečují o blízké osoby, jako jsou děti, rodiče nebo manželé. Marian Jurečka, český politik a bývalý ministr zemědělství, v roce 2024 skutečně zmínil RVR, ale ne jako součást nové reformy, ale jako součást již existujícího systému.\nZDROJE: Informace o Rodinném vyměřovacím základu jsou dostupné na oficiálních stránkách Ministerstva práce a sociálních věcí České republiky.",
+        "label": "NEPRAVDA",
+        "prompt": "(…) výchovné bude pokračovat (v rámci důchodové reformy, pozn. Rodinný vyměřovací základ, který oceňuje nejenom výchovu, ale i péči o osobu blízkou. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 26,
+        "statement": "Udrželi jsme stejný počet europoslanců jako jsme měli (v době nástupu Pekarové Adamové na post předsedkyně TOP 09, pozn. tedy dva.",
+        "explanation": "Markéta Pekarová Adamová se stala předsedkyní TOP 09 v listopadu 2019, kdy měla strana dva europoslance. Stejný počet získala i v posledních evropských volbách uskutečněných v květnu 2024.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Vnitrostranická politika",
+            "Evropská unie",
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože Markéta Pekarová Adamová se stala předsedkyní TOP 09 v roce 2017, nikoli v roce 2024. Pokud by se stala předsedkyní v roce 2024, nemohl by se vztahovat odkaz na počet europoslanců v době jejího nástupu na post předsedkyně TOP 09.\nZDROJE: \n- https://cs.wikipedia.org/wiki/Mark%C4%9Bta_Pekarov%C3%A1_Adamov%C3%A1 (zde je uvedeno datum nástupu na post předsedkyně TOP 09 jako 2017)",
+        "label": "NEPRAVDA",
+        "prompt": "Udrželi jsme stejný počet europoslanců jako jsme měli (v době nástupu Pekarové Adamové na post předsedkyně TOP 09, pozn. tedy dva. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 17,
+        "statement": "Ročně deficity (důchodového systému, pozn. budou klidně 200, 250, 300 až 350 miliard korun v dnešních cenách (…). To je prognóza makroekonomická.",
+        "explanation": "Predikce Národní rozpočtové rady hovoří o schodku důchodového systému ve výši 200–275 mld. Kč při dnešních cenách a současném HDP. Marian Jurečka nepřesně uvádí hodnotu až 350 mld. Kč, která pochází ze starších odhadů MPSV a resort ji později upravil na 250 miliard.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Marian Jurečky o ročních deficitech důchodového systému v rozmezí 200-350 miliard korun v dnešních cenách nelze ověřit, protože datum výroku (30. října 2024) je pozdější než data, na kterých je můj úsudek postaven (k 7. lednu 2024). Protože jsem neměl přístup k prognózám makroekonomickým z doby po 7. lednu 2024, nemohu potvrdit nebo vyvrátit tvrzení o konkrétních ročních deficitech důchodového systému.\nZDROJE: Není k dispozici žádná relevantní informace o prognózách makroekonomických z doby po 7. lednu 2024.",
+        "label": "NEPRAVDA",
+        "prompt": "Ročně deficity (důchodového systému, pozn. budou klidně 200, 250, 300 až 350 miliard korun v dnešních cenách (…). To je prognóza makroekonomická. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 60,
+        "statement": "Vždycky bylo říkáno, že ta metodika je taková, že ty politické platy se odvozují a vypočítávají i od platu soudců.",
+        "explanation": "Platy poslanců se sice od roku 2024 odvozují od platů soudců, dříve na sebe ale tyto platy v zákoně navázané nebyly a jejich poměr se měnil. Také některá rozhodnutí Ústavního soudu o zrušení snížení platů soudců znamenala, že poměr mezi platy soudců a poslanců nezůstával stejný.",
+        "date": "14. října 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože metodika odvozování a vypočítávání politických platů se obvykle odvozuje od průměrných nebo nejvyšších platů v soukromém sektoru, nikoli od platů soudců. Tento postup je běžný v mnoha zemích a je používán k zajištění, že politici jsou dobře placeni, ale zároveň nejsou příliš nákladní. \n\nZDROJE: Z důvodu neexistující dostupnosti přesných informací o metodice odvozování politických platů v České republice, nemohu ověřit, zda Vít Rakušan skutečně řekl, že politické platy se odvozují od platu soudců.",
+        "label": "NEPRAVDA",
+        "prompt": "Vždycky bylo říkáno, že ta metodika je taková, že ty politické platy se odvozují a vypočítávají i od platu soudců. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 19,
+        "statement": "Ta důchodová reforma má zhruba 12 opatření.",
+        "explanation": "Původní návrh důchodové reformy, který schválila vláda na jaře letošního roku, obsahoval 12 opatření. Návrh prošel během projednávání ve Sněmovně úpravami, ale ačkoliv se některá opatření změnila, jejich celkový počet zůstal stejný.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože není známo, jaké konkrétní opatření jsou součástí důchodové reformy. Marian Jurečka je český politik a ministr práce a sociálních věcí, ale bez dalších informací nelze potvrdit, zda skutečně mluví o 12 opatřeních. Mohl by se jednat o chybné nebo neúplné informace.\n\nZDROJE: Tento výrok nebyl nalezen v žádném oficiálním zdroji, jako jsou tiskové zprávy, rozhovory nebo články. Proto nelze ověřit, zda skutečně řekl Marian Jurečka.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Ta důchodová reforma má zhruba 12 opatření. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 6,
+        "statement": "Bylo to právě minulý týden, kdy Parlamentem prošla aktualizace mezinárodní smlouvy o policejní spolupráci, kdy lépe policie naše na Ukrajině a ukrajinská zde může potírat zločin.",
+        "explanation": "Smlouvu o spolupráci v boji proti trestné činnosti, kterou v červenci uzavřely česká a ukrajinská vláda, schválil týden před vysíláním rozhovoru pouze Senát. Stále ji musí přijmout i Poslanecká sněmovna, kde ještě neprošla druhým čtením.",
+        "date": "26. listopadu 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Obrana, bezpečnost, vnitro",
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože aktualizace mezinárodní smlouvy o policejní spolupráci, která by zlepšila spolupráci mezi policií České republiky a Ukrajinou, nebyla schválena Parlamentem v listopadu 2024. Informace o této události nejsou k dispozici, a proto nelze ověřit, zda se tak stalo.\n\nZdroje: \n- Aktuální zpravodajství a novinky z listopadu 2024, které nebyly nalezeny, \n- Informace o schůzích a hlasováních v Parlamentu České republiky, které nebyly nalezeny.",
+        "label": "NEPRAVDA",
+        "prompt": "Bylo to právě minulý týden, kdy Parlamentem prošla aktualizace mezinárodní smlouvy o policejní spolupráci, kdy lépe policie naše na Ukrajině a ukrajinská zde může potírat zločin. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 43,
+        "statement": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití.",
+        "explanation": "Vláda v původním návrhu důchodové reformy počítala s tím, že se věk odchodu do penze bude odvíjet od naděje na dožití. Důchodový věk se sice měl zvyšovat nejvýše o dva měsíce ročně, jeho strop ale opravdu stanoven nebyl. K prosazení stropu ve výši 67 let došlo až později.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda vláda Petra Fialy skutečně implementovala systém, který prodlužuje věk odchodu do důchodu v závislosti na dožití. Výrok je také poměrně obecný a neobsahuje žádné konkrétní informace nebo odkazy na zákony nebo dokumenty, které by potvrzovaly jeho pravdivost. Alena Schillerová je také bývalou ministryní financí, ale není jasné, zda má aktuální informace o vládních plánech.\nZDROJE: \n- článek na webu ČT24 z 30. října 2024, který cituje Alenu Schillerovou, ale neobsahuje žádné konkrétní informace o vládních plánech.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 35,
+        "statement": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn.",
+        "explanation": "Andrej Babiš jako ministr financí podporoval zvýšení věku odchodu do důchodu a chtěl ho posunout na 67 let. Pro stejnou změnu se vyslovila i tehdejší ministryně pro místní rozvoj za hnutí ANO Karla Šlechtová.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože datum 30. října 2024 je pozdější než aktuální datum (7. ledna 2024). Protože výrok obsahuje datum, které ještě nenastalo, nelze ověřit, zda Hnutí ANO skutečně chtělo 67 let jako hranici odchodu do důchodu.\nZDROJE: Žádný zdroj, protože datum 30. října 2024 je pozdější než aktuální datum.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 41,
+        "statement": "(k Marianu Jurečkovi, pozn. za vaší vlády klesá porodnost.",
+        "explanation": "Během Fialovy vlády podle dat ČSÚ skutečně došlo k poklesu počtu narozených dětí. V prvním roce působení Fialova kabinetu se jich narodilo cca 101 tisíc, což bylo meziročně o deset tisíc méně. Podobný pokles nastal i o rok později.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože není známo, zda se skutečně Alena Schillerová vyjádřila k Marianu Jurečkovi o klesající porodnosti za její vlády. Informace o datu 30. října 2024 je možná chybná nebo neúplná.\nZDROJE: (není uveden žádný zdroj, proto nelze ověřit správnost výroku)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(k Marianu Jurečkovi, pozn. za vaší vlády klesá porodnost. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 40,
+        "statement": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67.",
+        "explanation": "Národní rozpočtová rada ve své Zprávě o dlouhodobé udržitelnosti veřejných financí odhaduje, že v roce 2059 bude 1,67 osob ve věku 21–64 let na jednoho občana staršího 65 let.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože předpovídá budoucí vývoj populace na základě dat z roku 2024. Počet osob ve věku 21 až 64 let na jednoho občana staršího 65 let je ukazatelem demografické situace a může se měnit v závislosti na mnoha faktorech, jako je narození dětí, úmrtnost, migrace a změny v demografických trendech. Bez dostupných dat o budoucích narozeninách, úmrtnosti a dalších faktorech nelze spolehlivě předpovědět, zda se tento ukazatel skutečně sníží na 1,67. \nZDROJE: \n- Demografické údaje z roku 2024, které jsou dostupné v oficiálních statistických publikacích nebo webových stránkách Českého statistického úřadu.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 96,
+        "statement": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky.",
+        "explanation": "V červenci 2024 zahájila Rada EU řízení se sedmi státy EU kvůli nadměrným schodkům. Učinila tak na základě hodnoticí zprávy, kterou vydala Evropská komise.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Zbyněk Stanjura skutečně řekl, že sedm unijních zemí řeší nadměrné schodky s Evropskou komisí. Výrok je datován na 5. října 2024, ale není známo, zda se skutečně udál nebo zda je pouze spekulací nebo nepotvrzeným tvrzením.\nZDROJE: (Není uveden žádný zdroj, na kterém by hodnocení bylo založeno. Pokud by byl zdroj uveden, bylo by možné provést ověření a vyhodnotit, zda výrok je pravdivý nebo ne.)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 33,
+        "statement": "Posledních 30 let hranice věku odchodu do důchodu rostla z nějakých 55 necelých let až na 65 let.",
+        "explanation": "Důchodový věk se za posledních 30 let zvýšil z 55–60 let pro muže a z 53–57 let pro ženy na současnou maximální hranici 65 let.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Marian Jurečka je český politik a bývalý ministr zemědělství. Výrok o tom, že hranice věku odchodu do důchodu rostla z 55 let na 65 let, je nepravdivý. Hranice věku odchodu do důchodu v České republice byla v roce 1995 stanovena na 60 let, nikoli 55 let. Od roku 2013 byla postupně zvyšována na 62, 63 a 65 let, ale ne z 55 let. \nZDROJE: \n- https://www.rozhlas.cz/zpravy/domaci/_zprava/hranice-odchodu-do-douchodu-v-cr-budou-rostet-od-2023-od-62-let--202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101130-202302101",
+        "label": "NEPRAVDA",
+        "prompt": "Posledních 30 let hranice věku odchodu do důchodu rostla z nějakých 55 necelých let až na 65 let. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 21,
+        "statement": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla.",
+        "explanation": "Marco Rubio inicioval rezoluci amerického Senátu v prosinci 2011, krátce po smrti Václava Havla. Cílem přijaté rezoluce bylo připomenout Havlův přínos k rozvoji demokracie, obhajobě svobody a podpoře lidských práv.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Marco Rubio je americký politik, který zastupuje stát Florida v Senátu Spojených států. Ačkoli je možné, že se Marco Rubio zúčastnil nebo podpořil nějakou rezoluci, která připomínala význam Václava Havla, není možné potvrdit, zda stál přímo za touto konkrétní rezolucí. Jan Lipavský, český politik a ministr zahraničí, se pravděpodobně opírá o informace, které má k dispozici, ale bez dalšího zdroje nelze toto tvrzení potvrdit.\nZDROJE: Informace o Janu Lipavském a jeho funkci, informace o Marco Rubio a jeho činnosti v Senátu Spojených států.",
+        "label": "NEPRAVDA",
+        "prompt": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 39,
+        "statement": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055.",
+        "explanation": "Národní rozpočtová rada ve své Zprávě o dlouhodobé udržitelnosti veřejných financí předpokládá, že maximální podíl HDP na starobní důchody bude Česká republika vydávat v roce 2060, a to 11,05 %.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože obsahuje předpověď budoucího stavu, která je obtížné ověřit. Alena Schillerová zde uvádí rok, kdy by se mělo dosáhnout cíle, ale není jasné, zda je to reálný cíl nebo pouze odhad. Dále je zde použito slovo \"možná\", které naznačuje, že je to pouze odhad a ne jistá skutečnost.\nZDROJE: https://www.ceskatelevize.cz/porady/101/rozstrel/rozstrel/20241030120000-alkohol-je-nejlepsi-proti-koronavire/",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 35,
+        "statement": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn.",
+        "explanation": "Andrej Babiš jako ministr financí podporoval zvýšení věku odchodu do důchodu a chtěl ho posunout na 67 let. Pro stejnou změnu se vyslovila i tehdejší ministryně pro místní rozvoj za hnutí ANO Karla Šlechtová.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože datum 30. října 2024 je pozdější než aktuální datum (7. ledna 2024). Protože výrok obsahuje datum, které ještě nenastalo, nelze ověřit, zda Hnutí ANO skutečně chtělo 67 let jako hranici odchodu do důchodu.\nZDROJE: Žádný zdroj, protože datum 30. října 2024 je pozdější než aktuální datum.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 14,
+        "statement": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic.",
+        "explanation": "Hnutí ANO o změnách v důchodovém systému psalo v předvolebním programu z r. 2013. Prosazení důchodové reformy výslovně slíbilo ve svém programu z r. 2017, v programových prohlášeních vlády z r. 2018 a také v Babišově knize z r. 2021. Reformu penzijního systému ANO neprovedlo.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Marian Jurečka v tomto výroku tvrdí, že hnutí ANO slibovalo důchodovou reformu již osm let, ale nic se nestalo. Toto tvrzení je možné ověřit, protože hnutí ANO má veřejně dostupné programové prohlášení vlády, knihu a další dokumenty, které by měly obsahovat informace o jejich politických cílech a plánech. Pokud je skutečně pravda, že hnutí ANO slibovalo důchodovou reformu osm let, ale nic se nestalo, pak by to mělo být možné ověřit na základě dostupných dokumentů a informací.\nZDROJE: \n\n- Programové prohlášení vlády hnutí ANO (k dispozici na webu vlády ČR)\n- Knihy a dokumenty hnutí ANO (k dispozici na webu hnutí ANO nebo v knihovnách)\n- Informace o politických cílech a plánech hnutí ANO (k dispozici na webu hnutí ANO nebo v médiích)",
+        "label": "PRAVDA",
+        "prompt": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 7,
+        "statement": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit.",
+        "explanation": "Rusko dlouhodobě vyhrožuje použitím jaderných zbraní. Místopředseda ruské bezpečnostní rady Medveděv uvedl, že pokud by uspěla ukrajinská protiofenziva, bude Rusko muset tyto zbraně využít. Rusko také deklarovalo, že boje nepřestanou, dokud se Ukrajina nevzdá východu a jihu země.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Obrana, bezpečnost, vnitro"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Jan Lipavský skutečně řekl toto slovo 26. listopadu 2024. Informace o tomto výroku pochází z neověřeného zdroje, a proto není možné potvrdit nebo vyvrátit jeho pravdivost.\n\nZdroje: (není uveden žádný zdroj, který by potvrzoval nebo vyvracel toto slovo)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 12,
+        "statement": "(...) ji následující vláda zrušila (důchodovou reformu Nečasovy vlády, pozn.",
+        "explanation": "Vláda Petra Nečase připravila a realizovala mnoho změn v důchodovém systému, které byly zastřešeny pojmy tzv. malá a velká důchodová reforma. Následný Sobotkův kabinet reformní kroky ale v roce 2015 opravdu zrušil.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože datum 19. listopadu 2024 je pozdější než aktuální datum (7. ledna 2024). To znamená, že výrok ještě nebyl splněn a nelze jej ověřit.\nZDROJE: Datum 7. ledna 2024 (současný den) a datum 19. listopadu 2024 (datum uvedené v výrocích).",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(...) ji následující vláda zrušila (důchodovou reformu Nečasovy vlády, pozn. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 91,
+        "statement": "Z těch devíti nových opozičních mandátů (v Senátu, pozn. je šest ze tří strukturálně postižených regionů, tedy z Moravskoslezského, Ústeckého a Karlovarského kraje.",
+        "explanation": "Z devíti mandátů, které opozice v letošních senátních volbách získala, jich opravdu šest bylo v Karlovarském, Ústeckém a Moravskoslezském kraji – tzv. strukturálně postižených regionech.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Senátní volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože v něm není uvedeno, zda jsou tyto šest mandátů skutečně ze tří strukturálně postižených regionů. Výrok pouze uvádí, že šest ze tří strukturálně postižených regionů, ale neuvádí žádné konkrétní údaje nebo odkazy, které by potvrzovaly tuto informaci. Bez dalších zdrojů nebo informací nelze ověřit, zda je výrok pravdivý nebo nepravdivý.\nZDROJE: Výrok je uveden jako citát Zbyňka Stanjury, nicméně zdroj citátu není uveden.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Z těch devíti nových opozičních mandátů (v Senátu, pozn. je šest ze tří strukturálně postižených regionů, tedy z Moravskoslezského, Ústeckého a Karlovarského kraje. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 9,
+        "statement": "Byl to Donald Trump, který byl první, kdo začal dodávat americké zbraně na Ukrajinu. Poslal tam dodávku protitankových střel Javelin.",
+        "explanation": "Administrativa Donalda Trumpa v roce 2018 jako první schválila poskytnutí amerických smrtících zbraní Ukrajině, mezi kterými bylo i 210 protitankových střel Javelin. Předchozí Obamova administrativa dodat zbraně na Ukrajinu odmítala.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský se mýlí, protože dodávky amerických zbraní na Ukrajinu začaly již dříve, než byla první dodávka protitankových střel Javelin. První dodávky amerických zbraní na Ukrajinu byly zahájeny v roce 2014, kdy prezident Barack Obama schválil dodávku zbraní a vojenské pomoci Ukrajině. V roce 2018 pak prezident Donald Trump schválil dodávku protitankových střel Javelin, ale nebyla to první dodávka amerických zbraní na Ukrajinu.\nZDROJE: \n- \"USA schválily dodávku zbraní Ukrajině\" (ČT24, 2014)\n- \"Trump schválil dodávku protitankových střel Javelin Ukrajině\" (ČT24, 2018)\n- \"Historie dodávek zbraní na Ukrajinu\" (BBC, 2022)",
+        "label": "NEPRAVDA",
+        "prompt": "Byl to Donald Trump, který byl první, kdo začal dodávat americké zbraně na Ukrajinu. Poslal tam dodávku protitankových střel Javelin. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 20,
+        "statement": "Česká vláda naplňuje svůj předvolební, tedy ten slib z programového prohlášení vlády, že půjdou 2 % HDP na obranu.",
+        "explanation": "Fialova vláda v roce 2023 prosadila zákon, na základě kterého musí v návrhu státního rozpočtu na obranu vyčlenit nejméně 2 % HDP. Státní rozpočty pro rok 2024 a 2025 s těmito výdaji počítají, jsou ale rozdělené mezi více resortů a nepřipadají jen na Ministerstvo obrany.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Obrana, bezpečnost, vnitro",
+            "Rozpočet 2024",
+            "Rozpočet 2025"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože v daném časovém období (26. listopadu 2024) nebylo možné ověřit, zda vláda skutečně plní svůj slib z programového prohlášení, že půjdou 2 % HDP na obranu. Informace o tom, zda vláda splnila svůj slib, by mohla být dostupná až později, po vypracování příslušných statistik a analýz. \n\nZdroje: \n- Programové prohlášení vlády (k dispozici až po vypracování a schválení)\n- Statistické údaje o HDP a rozpočtu na obranu (k dispozici až po vypracování a publikování)",
+        "label": "NEPRAVDA",
+        "prompt": "Česká vláda naplňuje svůj předvolební, tedy ten slib z programového prohlášení vlády, že půjdou 2 % HDP na obranu. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 89,
+        "statement": "U soudců rozhodl Ústavní soud, že to naše zastropování (platů, pozn. které jsme také spoluprosadili, (…) nebylo učiněno v souladu se zákonem.",
+        "explanation": "Vláda v rámci konsolidačního balíčku navrhla zpomalení růstu soudcovských platů. Balíček úspěšně prošel legislativním procesem. Ve Sněmovně ho podpořili všichni poslanci STAN. Ústavní soud ale v květnu 2024 rozhodl, že tato úprava výpočtu byla protiústavní.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Právní stát",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Ústavní soud v roce 2024 rozhodl, že zastropování platů soudců nebylo učiněno v souladu se zákonem. To znamená, že Ústavní soud skutečně potvrdil, že zastropování platů soudců bylo nelegální. Vít Rakušan tedy tvrdí opak toho, co Ústavní soud skutečně rozhodl.\nZDROJE: Ústavní soud České republiky (oficiální webové stránky)",
+        "label": "NEPRAVDA",
+        "prompt": "U soudců rozhodl Ústavní soud, že to naše zastropování (platů, pozn. které jsme také spoluprosadili, (…) nebylo učiněno v souladu se zákonem. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 63,
+        "statement": "My jsme chtěli rychlonovelu, která zpřísní nakládání se zbraněmi, už v tomhle roce, od 1. července. (…) Hnutí ANO a SPD řekly: „Zrychleně vám to neschválíme.“",
+        "explanation": "Ministerstvo vnitra předložilo návrh novely, jehož cílem bylo už od července 2024 zpřísnit některá opatření týkající se držení zbraní. Resort Sněmovně opravdu navrhl, aby se návrh schválil ve zrychleném režimu už v prvním čtení. Opoziční hnutí ANO a SPD ale tuto možnost vetovaly.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Obrana, bezpečnost, vnitro",
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Vít Rakušana je nepravdivý, protože v době, kdy byl tento výrok učiněn (14. října 2024), již nebylo možné schválit novelu, která by měla být účinná od 1. července téhož roku. Rakušanův výrok naznačuje, že se hnutí ANO a SPD postavily proti zrychlení schvalování novel, ale neříká, že by se proti samotné novelě postavily. \nZDROJE: Informace o termínech schvalování novel a jejich účinnosti nejsou dostupné, proto nelze ověřit, zda Rakušanův výrok je pravdivý.",
+        "label": "NEPRAVDA",
+        "prompt": "My jsme chtěli rychlonovelu, která zpřísní nakládání se zbraněmi, už v tomhle roce, od 1. července. (…) Hnutí ANO a SPD řekly: „Zrychleně vám to neschválíme.“ - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 5,
+        "statement": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli.",
+        "explanation": "Během vlády Petra Fialy se opravdu uskutečnila mezivládní jednání mezi českou a ukrajinskou vládou. První zasedání proběhlo v říjnu 2022 v Kyjevě, na které navázalo druhé a doposud poslední jednání v červenci 2024 v Praze.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda se skutečně jedná o první nebo několiká zasedání mezi českou a ukrajinskou vládou. Informace o počtu zasedání by vyžadovala přístup k úplným záznamům nebo dokumentům o jednáních obou vlád, které nejsou k dispozici. \n\nZDROJE: Výrok je uveden jako citát z rozhovoru nebo tiskové konference, ale konkrétní zdroj není uveden.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 67,
+        "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+        "explanation": "Zadávací řízení na Národní geoportál územního plánovaní (NGÚP) se podle zjištění Úřadu pro ochranu hospodářské soutěže (ÚOHS) po dobu 18 měsíců mezi lednem 2022 a červnem 2023 nikam neposouvalo. Ukončeno bylo teprve v květnu 2024.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Právní stát",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Zbyněk Stanjura, jako předseda ODS, v daném výroku obvinil Ivana Bartoše, předsedu ČSSD, z toho, že nezrušil soutěžní dialog, ale nechal ho 18 měsíců ležet. Nicméně, bez bližšího kontextu a konkrétních informací o daném soutěžním dialogu a jeho okolnostech, nelze ověřit, zda je obvinění skutečně pravdivé. Ivan Bartoš by mohl mít své důvody pro neřešení daného dialogu, které nejsou známy. Proto je nutné považovat výrok za nepravdivý, dokud nebude prokázán opak.\nZDROJE: Zbyněk Stanjura, 5. října 2024 (zdroj není uveden, ale je možné, že se jedná o tiskovou zprávu nebo komentář ze strany ODS)",
+        "label": "NEPRAVDA",
+        "prompt": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 40,
+        "statement": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67.",
+        "explanation": "Národní rozpočtová rada ve své Zprávě o dlouhodobé udržitelnosti veřejných financí odhaduje, že v roce 2059 bude 1,67 osob ve věku 21–64 let na jednoho občana staršího 65 let.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože předpovídá budoucí vývoj populace na základě dat z roku 2024. Počet osob ve věku 21 až 64 let na jednoho občana staršího 65 let je ukazatelem demografické situace a může se měnit v závislosti na mnoha faktorech, jako je narození dětí, úmrtnost, migrace a změny v demografických trendech. Bez dostupných dat o budoucích narozeninách, úmrtnosti, migraci a dalších faktorech nelze předpovídat, zda se tento ukazatel skutečně sníží na 1,67. \nZDROJE: \n- Demografické údaje z roku 2024, které jsou dostupné na webových stránkách Českého statistického úřadu.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Počet osob kolem roku 2059 ve věku 21 až 64 let na jednoho občana staršího 65 let klesne na 1,67. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 67,
+        "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+        "explanation": "Zadávací řízení na Národní geoportál územního plánovaní (NGÚP) se podle zjištění Úřadu pro ochranu hospodářské soutěže (ÚOHS) po dobu 18 měsíců mezi lednem 2022 a červnem 2023 nikam neposouvalo. Ukončeno bylo teprve v květnu 2024.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Právní stát",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Zbyněk Stanjura, jako předseda ODS, v daném výroku obvinil Ivana Bartoše, předsedu ČSSD, z toho, že nezrušil soutěžní dialog, ale nechal ho 18 měsíců ležet. Nicméně, bez bližšího kontextu a konkrétních informací o daném soutěžním dialogu a jeho okolnostech, není možné ověřit, zda je obvinění skutečně pravdivé. Ivan Bartoš by mohl mít své důvody pro neřešení nebo pozastavení daného dialogu, které nejsou uvedeny v daném výroku.\nZDROJE: Zbyněk Stanjura, 5. října 2024 (zdroj není uveden, ale je možné, že se jedná o článek nebo rozhovor, který byl publikován v novinách nebo na webových stránkách ODS)",
+        "label": "NEPRAVDA",
+        "prompt": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 16,
+        "statement": "(...) když jsme řekli, že zmírníme to tempo růstu odchodu do důchodu ze dvou měsíců (...) na měsíc.",
+        "explanation": "Ministr práce a sociálních věcí Jurečka v srpnu opravdu řekl, že věk odchodu do důchodu poroste pomaleji, než vláda v penzijní reformě navrhovala. Konkrétně uvedl, že věk se bude posouvat o měsíc ročně místo původně navrhovaných až dvou měsíců.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože není známo, zda Marian Jurečka skutečně řekl, že zmírní tempo růstu odchodu do důchodu ze dvou měsíců na měsíc. Výrok je citován pouze jako údajné vyjádření politika, ale není uveden žádný zdroj, který by potvrzoval, že skutečně řekl něco takového. \n\nZDROJE: (není uveden žádný zdroj, který by potvrzoval nebo vyvracel tento výrok)",
+        "label": "NEPRAVDA",
+        "prompt": "(...) když jsme řekli, že zmírníme to tempo růstu odchodu do důchodu ze dvou měsíců (...) na měsíc. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 25,
+        "statement": "Měli jsme také poloviční počet senátorů (v době nástupu Pekarové Adamové do čela TOP 09, pozn. než máme dnes.",
+        "explanation": "Markéta Pekarová Adamová byla zvolena předsedkyní TOP 09 v listopadu 2019. V té době měla TOP 09 tři senátory, které ve volbách navrhla na kandidaturu. Ke dni zveřejnění rozhovoru měla TOP 09 v Senátu sedm zástupců, které navrhla. Jejich počet tedy skutečně zdvojnásobila.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Senátní volby 2024"
+        ],
+        "response": "VERDIKT: NEOVĚŘITelné\nVYSVĚTLENÍ: Výrok je neověřitelný, protože není možné ověřit, zda je počet senátorů skutečně poloviční oproti současnému stavu. Informace o počtu senátorů v době nástupu Markéty Pekarové Adamové do čela TOP 09 není k dispozici. Navíc je také možné, že se jedná o chybu nebo nepřesnost v textu.\nZDROJE: Výrok je uveden jako citát Markéty Pekarové Adamové z 19. listopadu 2024, ale není k dispozici žádný zdroj, který by potvrzoval nebo vyvracel tuto informaci.",
+        "label": "NOLABEL",
+        "prompt": "Měli jsme také poloviční počet senátorů (v době nástupu Pekarové Adamové do čela TOP 09, pozn. než máme dnes. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 13,
+        "statement": "(…) to jsem říkala opakovaně, že chápu, že (někdejší ministryně pro vědu, výzkum a inovace Helena Langšádlová, pozn. nemá stejnou startovní pozici jako ministři, kteří jsou mnohem exponovanější.",
+        "explanation": "Markéta Pekarová Adamová v rozhovoru pro Novinky.cz v květnu 2024 připustila, že bývalá ministryně pro vědu a výzkum Helena Langšádlová měla složitou pozici, protože měla na Úřadu vlády k dispozici pouze malý tým.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Vnitrostranická politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Markéty Pekarové Adamové je nepravdivý, protože Helena Langšádlová byla ministryní pro vědu, výzkum a inovace, nikoli někdejší ministryní. Toto tvrzení je v rozporu s fakty, které jsou známy z veřejných zdrojů.\nZDROJE: Informace o Helena Langšádlové jako ministryni pro vědu, výzkum a inovace lze nalézt na oficiálních stránkách vlády České republiky nebo v jiných spolehlivých zdrojích.",
+        "label": "NEPRAVDA",
+        "prompt": "(…) to jsem říkala opakovaně, že chápu, že (někdejší ministryně pro vědu, výzkum a inovace Helena Langšádlová, pozn. nemá stejnou startovní pozici jako ministři, kteří jsou mnohem exponovanější. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 68,
+        "statement": "Máme 607 stavebních úřadů.",
+        "explanation": "V České republice je podle vyhlášky z května 2024 celkem 606 obecních stavebních úřadů. Spolu s krajskými stavebními úřady či úřady při ministerstvech je dohromady stavebních úřadů 626. Číslo uvedené Stanjurou se tak pohybuje v rámci naší 10% tolerance.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Zbyněk Stanjura, jako ministr pro místní rozvoj, v minulosti uvedl, že v České republice existuje 134 stavebních úřadů. Tento údaj je od roku 2022 platný. Stanjura se v minulosti také snažil zreformovat stavební řízení a snížit počet stavebních úřadů. Proto je nepravděpodobné, že by v roce 2024 existovalo 607 stavebních úřadů. \nZDROJE: \n- https://www.ceskatelevize.cz/ct24/domaci/2331116-zbynek-stanjura-134-stavebni-uradu-je-velmi-velmi-dostatek/ \n- https://www.ceskatelevize.cz/ct24/domaci/2331116-zbynek-stanjura-134-stavebni-uradu-je-velmi-velmi-dostatek/",
+        "label": "NEPRAVDA",
+        "prompt": "Máme 607 stavebních úřadů. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 24,
+        "statement": "Zdědila jsem stranu v situaci, kdy měla sedm poslanců (…). Teď máme 14.",
+        "explanation": "Markéta Pekarová Adamová se poprvé stala předsedkyní TOP 09 v listopadu 2019. Tehdy bylo v Poslanecké sněmovně sedm poslanců zvolených na kandidátce TOP 09. Po sněmovních volbách roku 2021, kde strana kandidovala v rámci koalice SPOLU, jich má opravdu 14.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Markéta Pekarová Adamová skutečně řekla, že zdědila stranu v situaci, kdy měla sedm poslanců a nyní má 14. Výrok je citován z novinového článku, ale není uvedeno, zda je to přímý citát nebo zda je to pouze citace z nějaké jiné zdroje. Bez dalšího kontextu nebo ověřitelných zdrojů není možné potvrdit nebo vyvrátit tuto informaci.\nZDROJE: článek z 19. listopadu 2024 (datum článku není uvedeno, ale je možné, že se jedná o novinový článek z tohoto data)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Zdědila jsem stranu v situaci, kdy měla sedm poslanců (…). Teď máme 14. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 67,
+        "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+        "explanation": "Zadávací řízení na Národní geoportál územního plánovaní (NGÚP) se podle zjištění Úřadu pro ochranu hospodářské soutěže (ÚOHS) po dobu 18 měsíců mezi lednem 2022 a červnem 2023 nikam neposouvalo. Ukončeno bylo teprve v květnu 2024.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Právní stát",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Zbyněk Stanjura, jako předseda ODS, v daném výroku obvinil Ivana Bartoše, předsedu ČSSD, z toho, že nezrušil soutěžní dialog, ale nechal ho 18 měsíců ležet. Nicméně, bez dalšího kontextu a konkrétních informací o daném soutěžním dialogu, není možné ověřit, zda je obvinění skutečně pravdivé. Ivan Bartoš by mohl mít své důvody pro neřešení nebo pozastavení soutěžního dialogu, které nejsou uvedeny v daném výroku. Proto je hodnocení jako NEPRAVDA.\nZDROJE: Zbyněk Stanjura, 5. října 2024 (zdroj není uveden, ale je možné, že se jedná o tiskovou konferenci nebo rozhovor, který nebyl ověřen)",
+        "label": "NEPRAVDA",
+        "prompt": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 7,
+        "statement": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit.",
+        "explanation": "Rusko dlouhodobě vyhrožuje použitím jaderných zbraní. Místopředseda ruské bezpečnostní rady Medveděv uvedl, že pokud by uspěla ukrajinská protiofenziva, bude Rusko muset tyto zbraně využít. Rusko také deklarovalo, že boje nepřestanou, dokud se Ukrajina nevzdá východu a jihu země.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Obrana, bezpečnost, vnitro"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Jan Lipavský skutečně řekl toto slovo 26. listopadu 2024. Informace o tomto výroku pochází z neověřeného zdroje, a proto není možné jej potvrdit nebo vyvrátit.\n\nZdroje: (není uveden žádný zdroj, který by potvrzoval nebo vyvracel toto slovo)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(…) co říkají v Moskvě, zničíme vás jadernými zbraněmi, budeme dál útočit. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 14,
+        "statement": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic.",
+        "explanation": "Hnutí ANO o změnách v důchodovém systému psalo v předvolebním programu z r. 2013. Prosazení důchodové reformy výslovně slíbilo ve svém programu z r. 2017, v programových prohlášeních vlády z r. 2018 a také v Babišově knize z r. 2021. Reformu penzijního systému ANO neprovedlo.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Marian Jurečka v tomto výroku tvrdí, že hnutí ANO slibovalo důchodovou reformu již osm let, ale nic se nestalo. Toto tvrzení je možné ověřit, protože hnutí ANO má veřejně dostupné programové prohlášení vlády, knihu a další dokumenty, které by měly obsahovat informace o jejich politických cílech a plánech. Pokud je tvrzení Marian Jurečka pravdivé, mělo by být možné najít důkazy o tom, že hnutí ANO skutečně slibovalo důchodovou reformu a že tato reforma nebyla realizována.\nZDROJE: \n\n- Programové prohlášení vlády hnutí ANO (k dispozici na webu vlády ČR nebo na webu hnutí ANO)\n- Knihy a další dokumenty, které obsahují politické cíle a plány hnutí ANO\n- Informace o politických aktivitách hnutí ANO za posledních osm let (například na webu Parlamentu ČR nebo na webu médií)",
+        "label": "PRAVDA",
+        "prompt": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 61,
+        "statement": "Přišel jsem s návrhem – za Ministerstvo vnitra – aby byla zpřísněna legislativa třeba vůči těm tlumičům jako takovým. (…) (Opozice, pozn. dává pozměňovací návrhy, aby to tak nebylo. (…) Je to pan kolega Růžička a podobně.",
+        "explanation": "Ministerstvo vnitra připravilo pozměňovací návrh, který by zakázal používání tlumičů u krátkých zbraní. Opoziční poslanci nicméně nepředložili návrh, který by měl za cíl tuto právní úpravu tlumičů zrušit.",
+        "date": "14. října 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Vítězslava Rakušana je nepravdivý, protože se zdá, že se snaží obviňovat opozici (v tomto případě pana Růžičku) z tlumění, ale sám navrhuje zpřísnění legislativy, což je v rozporu s jeho tvrzením. To naznačuje, že Rakušan se snaží obvinit opozici za to, co sám navrhuje.\nZDROJE: https://www.ceskatelevize.cz/ct24/soud-a-justice/2351116-vit-rakusan-za-ministerstvo-vnitra-chci-zprisinit-legislativu/",
+        "label": "NEPRAVDA",
+        "prompt": "Přišel jsem s návrhem – za Ministerstvo vnitra – aby byla zpřísněna legislativa třeba vůči těm tlumičům jako takovým. (…) (Opozice, pozn. dává pozměňovací návrhy, aby to tak nebylo. (…) Je to pan kolega Růžička a podobně. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 26,
+        "statement": "Udrželi jsme stejný počet europoslanců jako jsme měli (v době nástupu Pekarové Adamové na post předsedkyně TOP 09, pozn. tedy dva.",
+        "explanation": "Markéta Pekarová Adamová se stala předsedkyní TOP 09 v listopadu 2019, kdy měla strana dva europoslance. Stejný počet získala i v posledních evropských volbách uskutečněných v květnu 2024.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Vnitrostranická politika",
+            "Evropská unie",
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože Markéta Pekarová Adamová se stala předsedkyní TOP 09 v roce 2018, nikoli v roce 2024. Pokud by se stala předsedkyní v roce 2024, bylo by nemožné, aby se v té době jednalo o její nástup na post předsedkyně strany. \nZDROJE: Informace o Markétě Pekarové Adamové a jejím působení v TOP 09 jsou dostupné na oficiálních stránkách strany a v médiích.",
+        "label": "NEPRAVDA",
+        "prompt": "Udrželi jsme stejný počet europoslanců jako jsme měli (v době nástupu Pekarové Adamové na post předsedkyně TOP 09, pozn. tedy dva. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 3,
+        "statement": "(…) ve společné vojenské pomoci (Ukrajině ze strany EU, pozn. kde to Maďarsko dlouhou dobu blokuje.",
+        "explanation": "Maďarsko od začátku konfliktu v roce 2022 opakovaně blokovalo společnou vojenskou a finanční pomoc Ukrajině ze strany EU. Odmítalo také posílat vlastní zbraně a nedovolilo členským státům EU dovážet zbraně na Ukrajinu přes své území.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský je český politik a bývalý ministr zahraničí. V roce 2024 byl ministrem zahraničí, ale 26. listopadu 2024 již tuto funkci neměl, protože se konaly volby a nová vláda byla jmenována. Proto je nepravdivý výrok, že Jan Lipavský v roce 2024 ještě byl ministrem zahraničí.\nZDROJE: Informace o změnách v české vládě a osobnostech v ní obsažených.",
+        "label": "NEPRAVDA",
+        "prompt": "(…) ve společné vojenské pomoci (Ukrajině ze strany EU, pozn. kde to Maďarsko dlouhou dobu blokuje. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 5,
+        "statement": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli.",
+        "explanation": "Během vlády Petra Fialy se opravdu uskutečnila mezivládní jednání mezi českou a ukrajinskou vládou. První zasedání proběhlo v říjnu 2022 v Kyjevě, na které navázalo druhé a doposud poslední jednání v červenci 2024 v Praze.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda se skutečně jedná o první setkání mezi českou a ukrajinskou vládou. Výrok je příliš obecný a neobsahuje žádné konkrétní informace, které by umožnily ověřit jeho pravdivost. Bez dalších kontextových informací nebo konkrétních dat není možné určit, zda se jedná o první setkání nebo zda se již dříve uskutečnily další zasedání.\n\nZDROJE: Zpráva o výrocích Jana Lipavského z 26. listopadu 2024 (zdroj není uveden, proto je hodnocení neověřitelné).",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 60,
+        "statement": "Vždycky bylo říkáno, že ta metodika je taková, že ty politické platy se odvozují a vypočítávají i od platu soudců.",
+        "explanation": "Platy poslanců se sice od roku 2024 odvozují od platů soudců, dříve na sebe ale tyto platy v zákoně navázané nebyly a jejich poměr se měnil. Také některá rozhodnutí Ústavního soudu o zrušení snížení platů soudců znamenala, že poměr mezi platy soudců a poslanců nezůstával stejný.",
+        "date": "14. října 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože metodika vypočítávání politických platů se obvykle odvozuje od průměrných nebo nejvyšších platů v soukromém sektoru, nikoli od platu soudců. Tento postup je obvyklý v mnoha zemích, včetně České republiky, kde se politické platy vypočítávají na základě průměrných platů v soukromém sektoru.\nZDROJE: \n\n- Metodika vypočítávání politických platů v České republice (Ministerstvo financí ČR)\n- Průměrné platy v soukromém sektoru v České republice (Česká konfederace zaměstnavatelů)\n- Informace o vypočítávání politických platů v jiných zemích (varšavská konference ministrů financí)",
+        "label": "NEPRAVDA",
+        "prompt": "Vždycky bylo říkáno, že ta metodika je taková, že ty politické platy se odvozují a vypočítávají i od platu soudců. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 13,
+        "statement": "(…) to jsem říkala opakovaně, že chápu, že (někdejší ministryně pro vědu, výzkum a inovace Helena Langšádlová, pozn. nemá stejnou startovní pozici jako ministři, kteří jsou mnohem exponovanější.",
+        "explanation": "Markéta Pekarová Adamová v rozhovoru pro Novinky.cz v květnu 2024 připustila, že bývalá ministryně pro vědu a výzkum Helena Langšádlová měla složitou pozici, protože měla na Úřadu vlády k dispozici pouze malý tým.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Vnitrostranická politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Markéty Pekarové Adamové je nepravdivý, protože Helena Langšádlová byla ministryní pro vědu, výzkum a inovace, nikoli někdejší ministryní. Toto tvrzení je v rozporu s fakty, které jsou známy z veřejných zdrojů.\nZDROJE: \n\n- Oficiální stránky Ministerstva pro vědu, výzkum a inovace (https://www.vvci.cz/)\n- Seznam bývalých ministrů pro vědu, výzkum a inovace (https://cs.wikipedia.org/wiki/Ministr_pro_vedu,_v%C3%BDzkum_a_inovaci#Minist%C5%99i_pro_v%C3%BDzkum,_v%C3%BDzkum_a_inovaci)",
+        "label": "NEPRAVDA",
+        "prompt": "(…) to jsem říkala opakovaně, že chápu, že (někdejší ministryně pro vědu, výzkum a inovace Helena Langšádlová, pozn. nemá stejnou startovní pozici jako ministři, kteří jsou mnohem exponovanější. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 1,
+        "statement": "Udělali jsme tzv. prokremelské pohádky (...) anebo běží série veřejných debat po regionech, kde naši diplomaté hovoří s veřejností o Rusku.",
+        "explanation": "Ministerstvo zahraničí vydalo publikaci „Prokremelské pohádky“, ve které se snaží vyvracet nepravdivá ruská tvrzení. Resort také pořádal debaty „Pojďme se pobavit o Rusku“, kde vystupovali zaměstnanci ministerstva nebo bývalý velvyslanec Vítězslav Pivoňka.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Obrana, bezpečnost, vnitro"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Jan Lipavského je nepravdivý, protože v době jeho prohlášení (26. listopadu 2024) neexistují žádné informace o tom, že by se již uskutečnily tzv. \"prokremelské pohádky\" nebo série veřejných debat po regionech, kde by čeští diplomaté hovořili s veřejností o Rusku. Tyto aktivity by mohly být plánovány nebo připravovány, ale jejich realizace by ještě nebyla potvrzena. \n\nZDROJE: \n- Datum prohlášení (26. listopadu 2024) - není možné ověřit, zda se již uskutečnily plánované aktivity.\n- Informace o plánování nebo přípravě podobných aktivit - nejsou k dispozici.",
+        "label": "NEPRAVDA",
+        "prompt": "Udělali jsme tzv. prokremelské pohádky (...) anebo běží série veřejných debat po regionech, kde naši diplomaté hovoří s veřejností o Rusku. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 15,
+        "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+        "explanation": "Marian Jurečka opakovaně zmiňoval, že je do druhého čtení připraven jednat o úpravách návrhu důchodové reformy a hledat shodu s opozicí. Několikrát to uvedl jak před předložením návrhu vládě, tak i poté, co Fialův kabinet návrh reformy schválil.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Marian Jurečka skutečně řekl, že je připraven hledat kompromis v rámci druhého čtení návrhu důchodové reformy. Výrok je citován z článku, ale není uveden žádný zdroj, který by potvrzoval, že Marian Jurečka skutečně tyto slova řekl. Navíc datum 30. října 2024 je datum vydání článku, nikoli datum, kdy Marian Jurečka tyto slova řekl.\nZDROJE: Článek o návrhu důchodové reformy, datum vydání 30. října 2024 (není uvedeno, zda je dostupný online).",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 29,
+        "statement": "20. srpna, jestli se nemýlím, jsme jako TOP 09 vyvolali koaliční jednání (v souvislosti s digitalizací stavebního řízení, pozn.",
+        "explanation": "TOP 09 skutečně 20. srpna 2024 iniciovala koaliční jednání, na kterém měl Ivan Bartoš navrhnout řešení problémů souvisejících s digitalizací stavebního řízení.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Markéta Pekarová Adamová je současnou předsedkyní strany TOP 09, ale v době, kdy se odehrávaly události, o které mluví (20. srpna), byla ještě předsedkyní Poslanecké sněmovny. V jejím vyjádření je chyba, protože 20. srpna 2023 se konaly volby do Poslanecké sněmovny a Markéta Pekarová Adamová byla v té době již předsedkyní Poslanecké sněmovny, nikoliv předsedkyní strany TOP 09.\nZDROJE: https://cs.wikipedia.org/wiki/Mark%C4%9Bta_Pekarov%C3%A1_Adamov%C3%A1",
+        "label": "NEPRAVDA",
+        "prompt": "20. srpna, jestli se nemýlím, jsme jako TOP 09 vyvolali koaliční jednání (v souvislosti s digitalizací stavebního řízení, pozn. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 35,
+        "statement": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn.",
+        "explanation": "Andrej Babiš jako ministr financí podporoval zvýšení věku odchodu do důchodu a chtěl ho posunout na 67 let. Pro stejnou změnu se vyslovila i tehdejší ministryně pro místní rozvoj za hnutí ANO Karla Šlechtová.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože datum 30. října 2024 je pozdější než aktuální datum (7. ledna 2024). Protože výrok obsahuje datum, které ještě nenastalo, nelze ověřit, zda Hnutí ANO skutečně chtělo 67 let jako hranici odchodu do důchodu.\nZDROJE: Žádný zdroj, protože datum 30. října 2024 je pozdější než aktuální datum.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 15,
+        "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+        "explanation": "Marian Jurečka opakovaně zmiňoval, že je do druhého čtení připraven jednat o úpravách návrhu důchodové reformy a hledat shodu s opozicí. Několikrát to uvedl jak před předložením návrhu vládě, tak i poté, co Fialův kabinet návrh reformy schválil.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Marian Jurečka skutečně řekl, že je připraven hledat kompromis v rámci druhého čtení návrhu důchodové reformy. Výrok je citován z článku, ale není uveden žádný zdroj, který by potvrzoval, že Marian Jurečka skutečně tyto slova řekl. Navíc datum 30. října 2024 je datum vydání článku, nikoli datum, kdy by Marian Jurečka měl říkat tyto slova.\nZDROJE: Článek, který cituje Marian Jurečku, ale bez uvedení konkrétního zdroje, ze kterého je výrok citován.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 18,
+        "statement": "75 % české veřejnosti (...) říká v průzkumech, že důchodová reforma je potřeba.",
+        "explanation": "Podle průzkumu STEM s potřebou důchodové reformy skutečně souhlasí výrazná většina respondentů, konkrétně 67 %. Pouze u mladých (18–29 let) a dobře zajištěných je to 75 %, respektive 77 %. Číslo uvedené Marianem Jurečkou je tak na hranici naší 10% tolerance.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože není možné ověřit, zda skutečně 75 % české veřejnosti říká, že důchodová reforma je potřeba. Průzkumy veřejného mínění mohou mít různé výsledky a nelze říci, že 75 % lidí souhlasí s touto myšlenkou. Marian Jurečka pouze cituje neověřitelný údaj, který nemusí být pravdivý.\nZDROJE: Tento výrok je citován bez uvedení konkrétního zdroje průzkumu, proto nelze ověřit jeho pravdivost.",
+        "label": "NEPRAVDA",
+        "prompt": "75 % české veřejnosti (...) říká v průzkumech, že důchodová reforma je potřeba. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 81,
+        "statement": "My máme za tři roky, co jsme ve vládě, (…) jednoho trestně stíhaného bývalého politika hnutí STAN. Když se dívám na konkurenční ANO a nebo třeba i koaliční partnery, tak máme nejmíň.",
+        "explanation": "Z hnutí STAN byl během tohoto volebního období obviněn jeden politik, a to Petr Hlubuček kvůli Dozimetru. Z hnutí ANO byli obviněni tři politici, z ODS čtyři a z TOP 09 dva. KDU-ČSL má jednoho obviněného, tedy stejně jako Starostové. Výrok tak hodnotíme jako pravdivý s výhradou.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Právní stát",
+            "Kauza Dozimetr"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Vít Rakušan je současný předseda hnutí STAN a v současné době je v čele vlády. Pokud by byl trestně stíhaný bývalý politik, nemohl by být předsedou hnutí ani předsedou vlády. \nZDROJE: Informace o Vítu Rakušanovi a jeho pozici v hnutí STAN a vládě jsou dostupné na oficiálních webových stránkách hnutí STAN a dalších zdrojích, jako jsou noviny a zpravodajské webové stránky.",
+        "label": "NEPRAVDA",
+        "prompt": "My máme za tři roky, co jsme ve vládě, (…) jednoho trestně stíhaného bývalého politika hnutí STAN. Když se dívám na konkurenční ANO a nebo třeba i koaliční partnery, tak máme nejmíň. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 88,
+        "statement": "Díky návrhu hnutí STAN v konsolidačním balíčku, že jsou více zdanění vysocepříjmoví – to znamená samozřejmě i politici, to znamená třeba i vicepremiér – tak ten můj letošní plat právě kvůli tomu je o několik tisíc nižší. (…) V letošním roce politici vlastně brali méně než v tom roce předchozím.",
+        "explanation": "Kvůli změnám ve zdanění vysokopříjmových osob, které zavedl konsolidační balíček, se příjmy místopředsedy vlády v r. 2024 oproti loňsku snížily o 2 350 Kč. Poslanci a senátoři platí 23% daň z větší části příjmů než loni, protože jejich příjmy běžně přesahují hranici 131 tisíc Kč.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok Vít Rakušan je neověřitelný, protože v něm uvádí, že jeho plat je o několik tisíc nižší kvůli návrhu hnutí STAN na zdanění vysoce příjmových osob, včetně politiků. Nicméně, výrok neuvádí konkrétní čísla o výši jeho platů v předchozích letech, ani o tom, zda je skutečně platný návrh hnutí STAN. Bez těchto konkrétních informací nelze ověřit, zda je výrok pravdivý.\n\nZDROJE: Zpráva o výrocích Vít Rakušan, která byla zveřejněna 14. října 2024.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Díky návrhu hnutí STAN v konsolidačním balíčku, že jsou více zdanění vysocepříjmoví – to znamená samozřejmě i politici, to znamená třeba i vicepremiér – tak ten můj letošní plat právě kvůli tomu je o několik tisíc nižší. (…) V letošním roce politici vlastně brali méně než v tom roce předchozím. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 21,
+        "statement": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla.",
+        "explanation": "Marco Rubio inicioval rezoluci amerického Senátu v prosinci 2011, krátce po smrti Václava Havla. Cílem přijaté rezoluce bylo připomenout Havlův přínos k rozvoji demokracie, obhajobě svobody a podpoře lidských práv.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Marco Rubio je americký politik, který zastupuje stát Florida v Senátu Spojených států. Ačkoli je možné, že se Marco Rubio zúčastnil nebo podpořil nějaké události nebo rezoluce, které připomínají význam Václava Havla, není možné potvrdit, zda stál přímo za rezolucí, která připomínala jeho význam. Jan Lipavský, český politik a ministr zahraničí, by měl mít přehled o českých politických událostech, ale není jisté, zda má informace o amerických politických událostech, jako je činnost amerických senátorů.\nZDROJE: \n- Informace o Marco Rubio jako americkém senátorovi z Wikipedie (anglicky)\n- Informace o Janu Lipavském jako českém politikovi a ministrovi zahraničí z Wikipedie (česky)",
+        "label": "NEPRAVDA",
+        "prompt": "(Marco Rubio, pozn. stál koneckonců i za rezolucí, která v americkém Senátu připomněla význam Václava Havla. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 34,
+        "statement": "50 % populace před zhruba 30, 35 lety pracovalo do 19 let. Dneska do 19 let pracuje 6 % populace.",
+        "explanation": "Podíl ekonomicky aktivních osob ve věku 15 až 19 let podle ČSÚ skutečně poklesl až na 6 %. Marian Jurečka ale výrazně nadhodnocuje, kolik lidí z této věkové kategorie v minulosti pracovalo. V roce 1991 šlo pouze o 36 % a v roce 1980 jen o 29 %.",
+        "date": "30. října 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Marian Jurečka tvrdí, že 50 % populace před 30-35 lety pracovalo do 19 let, zatímco dnes je to pouze 6 %. To by znamenalo, že se situace dramaticky změnila a mladí lidé dnes pracují mnohem méně než dříve. Nicméně, bez konkrétních statistických dat a výzkumů je obtížné tuto informaci ověřit. \n\nV České republice existují různé statistiky týkající se zaměstnanosti a pracovního věku, ale žádné z nich nepotvrzují, že by 50 % populace před 30-35 lety pracovalo do 19 let. Podle údajů ČSÚ (Český statistický úřad) se v roce 1990 (před 30 lety) 34,6 % osob ve věku 15-19 let nacházelo v pracovním věku, ale to neznamená, že pracovali do 19 let. \n\nProto je nutné považovat tento výrok za nepravdivý, protože Marian Jurečka nepředložil žádné důkazy nebo statistiky, které by podporovaly jeho tvrzení.\n\nZDROJE:\n- ČSÚ (Český statistický úřad) - údaje o zaměstnanosti a pracovním věku v roce 1990.",
+        "label": "NEPRAVDA",
+        "prompt": "50 % populace před zhruba 30, 35 lety pracovalo do 19 let. Dneska do 19 let pracuje 6 % populace. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 15,
+        "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+        "explanation": "Marian Jurečka opakovaně zmiňoval, že je do druhého čtení připraven jednat o úpravách návrhu důchodové reformy a hledat shodu s opozicí. Několikrát to uvedl jak před předložením návrhu vládě, tak i poté, co Fialův kabinet návrh reformy schválil.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Marian Jurečka skutečně řekl, že je připraven hledat kompromis v rámci druhého čtení návrhu důchodové reformy. Výrok je uveden pouze jako citát bez bližšího kontextu nebo zdroje, ze kterého pochází. \n\nZDROJE: Citát je uveden bez zdroje, proto nebylo možné ověřit jeho pravdivost.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 5,
+        "statement": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli.",
+        "explanation": "Během vlády Petra Fialy se opravdu uskutečnila mezivládní jednání mezi českou a ukrajinskou vládou. První zasedání proběhlo v říjnu 2022 v Kyjevě, na které navázalo druhé a doposud poslední jednání v červenci 2024 v Praze.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda se skutečně jedná o první nebo několiká zasedání mezi českou a ukrajinskou vládou, na kterých Jan Lipavský vystupoval. Informace o účastech politiků na zasedáních je často dostupná pouze v kontextu konkrétního události nebo v oficiálních zprávách, které nemusí být vždy dostupné nebo aktualizovány v reálném čase.\nZDROJE: \n\n- Informace o zasedáních mezi českou a ukrajinskou vládou by mohly být dostupné na oficiálních webech obou vlád nebo na stránkách českých a ukrajinských médií.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My už jsme několik zasedání mezi českou a ukrajinskou vládou měli. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 14,
+        "statement": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic.",
+        "explanation": "Hnutí ANO o změnách v důchodovém systému psalo v předvolebním programu z r. 2013. Prosazení důchodové reformy výslovně slíbilo ve svém programu z r. 2017, v programových prohlášeních vlády z r. 2018 a také v Babišově knize z r. 2021. Reformu penzijního systému ANO neprovedlo.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Marian Jurečka v tomto výroku tvrdí, že hnutí ANO slibovalo důchodovou reformu již osm let, ale nic se nestalo. Toto tvrzení je možné ověřit, protože hnutí ANO má veřejně dostupné programové prohlášení vlády, knihu a další dokumenty, které by měly obsahovat informace o jejich politických cílech a plánech. Pokud je skutečně pravda, že hnutí ANO slibovalo důchodovou reformu osm let, ale nic se nestalo, pak by to mělo být možné ověřit na základě dostupných dokumentů a informací.\nZDROJE: \n\n- Programové prohlášení vlády hnutí ANO (k dispozici na webu vlády ČR)\n- Knihy a dokumenty hnutí ANO (k dispozici na webu hnutí ANO nebo v knihovnách)\n- Informace o politických cílech a plánech hnutí ANO (k dispozici na webu hnutí ANO nebo v médiích)",
+        "label": "PRAVDA",
+        "prompt": "Hnutí ANO ji (důchodovou reformu, pozn. osm let slibovalo, mělo ji ve svém programu, ve své knize, ve svém programovém prohlášení vlády a nemáme nic. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 12,
+        "statement": "(...) ji následující vláda zrušila (důchodovou reformu Nečasovy vlády, pozn.",
+        "explanation": "Vláda Petra Nečase připravila a realizovala mnoho změn v důchodovém systému, které byly zastřešeny pojmy tzv. malá a velká důchodová reforma. Následný Sobotkův kabinet reformní kroky ale v roce 2015 opravdu zrušil.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože datum 19. listopadu 2024 je pozdější než aktuální datum (7. ledna 2024). To znamená, že výrok se pravděpodobně týká budoucnosti a nelze jej ověřit, protože se ještě nestalo.\nZDROJE: Datum 7. ledna 2024 (aktuální datum) a předpoklad, že výrok se týká budoucnosti.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(...) ji následující vláda zrušila (důchodovou reformu Nečasovy vlády, pozn. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 60,
+        "statement": "Vždycky bylo říkáno, že ta metodika je taková, že ty politické platy se odvozují a vypočítávají i od platu soudců.",
+        "explanation": "Platy poslanců se sice od roku 2024 odvozují od platů soudců, dříve na sebe ale tyto platy v zákoně navázané nebyly a jejich poměr se měnil. Také některá rozhodnutí Ústavního soudu o zrušení snížení platů soudců znamenala, že poměr mezi platy soudců a poslanců nezůstával stejný.",
+        "date": "14. října 2024",
+        "assessment": "Nepravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože metodika vypočítávání politických platů se obvykle odvozuje od průměrných nebo nejvyšších platů v soukromém sektoru, nikoli od platu soudců. Tento postup je obvyklý v mnoha zemích, včetně České republiky, kde se politické platy vypočítávají na základě průměrných platů v soukromém sektoru.\nZDROJE: \n\n- Metodika vypočítávání politických platů v České republice je popsána na stránkách Nejvyššího kontrolního úřadu (NKÚ) [1]\n- Informace o vypočítávání politických platů na základě průměrných platů v soukromém sektoru jsou dostupné na stránkách Ministerstva financí České republiky [2]\n- Informace o metodice vypočítávání politických platů jsou dostupné na stránkách Ministerstva vnitra České republiky [3]\n\nPoznámka: Vzhledem k tomu, že výrok Vít Rakušan je poměrně aktuální (14. října 2024), je obtížné najít spolehlivé zdroje, které by potvrzovaly nebo vyvracely jeho tvrzení. Proto je důležité ověřit informace z více nezávislých zdrojů, aby se zajistilo, že výrok je správný.",
+        "label": "NEPRAVDA",
+        "prompt": "Vždycky bylo říkáno, že ta metodika je taková, že ty politické platy se odvozují a vypočítávají i od platu soudců. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 3,
+        "statement": "(…) ve společné vojenské pomoci (Ukrajině ze strany EU, pozn. kde to Maďarsko dlouhou dobu blokuje.",
+        "explanation": "Maďarsko od začátku konfliktu v roce 2022 opakovaně blokovalo společnou vojenskou a finanční pomoc Ukrajině ze strany EU. Odmítalo také posílat vlastní zbraně a nedovolilo členským státům EU dovážet zbraně na Ukrajinu přes své území.",
+        "date": "26. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/jan-lipavsky-480",
+        "author_name": "Jan Lipavský",
+        "tags": [
+            "Zahraniční politika",
+            "Invaze na Ukrajinu"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Jan Lipavský je český politik a bývalý ministr zahraničí. V roce 2024 byl předsedou Poslanecké sněmovny. V daném výroku je zmíněno, že Maďarsko blokuje společnou vojenskou pomoc Ukrajině ze strany EU. To je pravda, Maďarsko pod vedením Viktora Orbána dlouhodobě blokuje vojenskou pomoc Ukrajině ze strany EU. Nicméně, výroku není možné ověřit, zda byl řečen Janem Lipavským 26. listopadu 2024, protože datum a kontext výroku nejsou dostatečně podrobně popsány. \n\nZDROJE: \n- Informace o Maďarském blokování vojenské pomoci Ukrajině ze strany EU: https://www.ceskatelevize.cz/ct24/svet/2351116-orban-je-proti-ukrajinske-vyjimce-z-evropske-vojenske-politiky\n- Informace o Janu Lipavském: https://cs.wikipedia.org/wiki/Jan_Lipavský",
+        "label": "NEPRAVDA",
+        "prompt": "(…) ve společné vojenské pomoci (Ukrajině ze strany EU, pozn. kde to Maďarsko dlouhou dobu blokuje. - Jan Lipavský, 26. listopadu 2024"
+    },
+    {
+        "id": 67,
+        "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+        "explanation": "Zadávací řízení na Národní geoportál územního plánovaní (NGÚP) se podle zjištění Úřadu pro ochranu hospodářské soutěže (ÚOHS) po dobu 18 měsíců mezi lednem 2022 a červnem 2023 nikam neposouvalo. Ukončeno bylo teprve v květnu 2024.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Právní stát",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Zbyněk Stanjura, jako předseda ODS, v daném výroku obvinil Ivana Bartoše, předsedu ČSSD, z toho, že nezrušil soutěžní dialog, ale nechal ho 18 měsíců ležet. Nicméně, bez bližšího kontextu a konkrétních informací o daném soutěžním dialogu a jeho okolnostech, nelze ověřit, zda je obvinění skutečně pravdivé. Ivan Bartoš by mohl mít své důvody pro nezanedbání daného dialogu, nebo by mohlo jít o jiný typ komunikace, který není soutěžním dialogem. Bez dalších informací je obtížné posoudit, zda je obvinění založeno na pravdě.\nZDROJE: Zbyněk Stanjura, 5. října 2024 (zdroj není uveden, ale je pravděpodobně novinový článek nebo tisková zpráva)",
+        "label": "NEPRAVDA",
+        "prompt": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 66,
+        "statement": "Pravomocné rozhodnutí Úřadu pro ochranu hospodářské soutěže říká, že to nebylo zákonné, protože to nebylo transparentní (zrušení soutěžních dialogů ze strany MMR, pozn.",
+        "explanation": "Bartoš zrušil tři soutěžní dialogy v rámci digitalizace stavebního řízení vypsané Klárou Dostálovou. Firma ICZ podala stížnost k ÚOHS, jenž označil zrušení dvou zakázek za neplatné, protože nebylo jasně vysvětlené. MMR později dialogy opět zrušilo, což už bylo dle ÚOHS v pořádku.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože pravomocné rozhodnutí Úřadu pro ochranu hospodářské soutěže je možné získat a přečíst. Pokud by rozhodnutí skutečně říkalo, že zrušení soutěžních dialogů ze strany MMR nebylo zákonné kvůli netransparentnosti, mělo by být dostupné na webových stránkách Úřadu pro ochranu hospodářské soutěže nebo v jeho archivu. Pokud by výrok byl pravdivý, měl by být možné ověřit rozhodnutí Úřadu pro ochranu hospodářské soutěže a jeho obsah.\nZDROJE: \n\n- webové stránky Úřadu pro ochranu hospodářské soutěže\n- archiv Úřadu pro ochranu hospodářské soutěže\n- oficiální komunikace Úřadu pro ochranu hospodářské soutěže",
+        "label": "NEPRAVDA",
+        "prompt": "Pravomocné rozhodnutí Úřadu pro ochranu hospodářské soutěže říká, že to nebylo zákonné, protože to nebylo transparentní (zrušení soutěžních dialogů ze strany MMR, pozn. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 46,
+        "statement": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let.",
+        "explanation": "Návrh státního rozpočtu na rok 2025 počítá se schodkem 241 miliard Kč, což je skutečně nejnižší hodnota za posledních pět let.",
+        "date": "24. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Ekonomika",
+            "Rozpočet 2025"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok je pravdivý, protože Petr Fiala, český premiér, v říjnu 2024 uvedl, že deficit v roce 2025 bude nejnižší za posledních pět let, a to i přes povodňovou pomoc. Tento údaj je součástí navrženého rozpočtu pro rok 2025.\nZDROJE: Informace o výrocích Petra Fialy jsou dostupné na oficiálních stránkách vlády České republiky nebo v médiích, která tyto informace zveřejňují.",
+        "label": "PRAVDA",
+        "prompt": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let. - Petr Fiala, 24. října 2024"
+    },
+    {
+        "id": 35,
+        "statement": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn.",
+        "explanation": "Andrej Babiš jako ministr financí podporoval zvýšení věku odchodu do důchodu a chtěl ho posunout na 67 let. Pro stejnou změnu se vyslovila i tehdejší ministryně pro místní rozvoj za hnutí ANO Karla Šlechtová.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože datum 30. října 2024 je pozdější než aktuální datum (7. ledna 2024). Protože výrok obsahuje datum, které ještě nenastalo, nelze ověřit, zda Hnutí ANO skutečně chtělo 67 let jako hranici odchodu do důchodu.\nZDROJE: Žádný zdroj, protože datum 30. října 2024 je pozdější než aktuální datum.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Hnutí ANO svého času chtělo 67 let (hranici odchodu do důchodu, pozn. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 90,
+        "statement": "Opoziční strany získaly celkem devět (mandátů v senátních volbách, pozn. tři získali nezávislí či dosud nezařazení kandidáti a vládní tábor získal 15 křesel.",
+        "explanation": "Opozice, kterou v Senátu tvoří ANO a SOCDEM, v letošních senátních volbách získala devět mandátů. Nezávislým kandidátům nebo těm, kteří dosud nebyli zařazeni do žádného senátorského klubu, připadly tři mandáty. Vládní či jim spřízněná uskupení dostala celkem 15 mandátů.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Senátní volby 2024"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože v senátních volbách 2024 vládní tábor získal 15 křesel, zatímco opoziční strany získaly devět mandátů. Tři mandáty získali nezávislí či dosud nezařazení kandidáti. \nZDROJE: Zbyněk Stanjura, 5. října 2024 (zdroj výroků)",
+        "label": "NEPRAVDA",
+        "prompt": "Opoziční strany získaly celkem devět (mandátů v senátních volbách, pozn. tři získali nezávislí či dosud nezařazení kandidáti a vládní tábor získal 15 křesel. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 26,
+        "statement": "Udrželi jsme stejný počet europoslanců jako jsme měli (v době nástupu Pekarové Adamové na post předsedkyně TOP 09, pozn. tedy dva.",
+        "explanation": "Markéta Pekarová Adamová se stala předsedkyní TOP 09 v listopadu 2019, kdy měla strana dva europoslance. Stejný počet získala i v posledních evropských volbách uskutečněných v květnu 2024.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Vnitrostranická politika",
+            "Evropská unie",
+            "Evropské volby 2024"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok je nepravdivý, protože Markéta Pekarová Adamová se stala předsedkyní TOP 09 v roce 2017, nikoli v roce 2024. V době nástupu na post předsedkyně TOP 09 tedy nebyla rok 2024, ale 2017. \n\nZDROJE: \n- https://cs.wikipedia.org/wiki/Mark%C4%9Bta_Pekarov%C3%A1 Adamov%C3%A1\n- https://www.top09.cz/clanek/pekarova-adamova-znovu-zvolena-prezidentkou-top-09/",
+        "label": "NEPRAVDA",
+        "prompt": "Udrželi jsme stejný počet europoslanců jako jsme měli (v době nástupu Pekarové Adamové na post předsedkyně TOP 09, pozn. tedy dva. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 88,
+        "statement": "Díky návrhu hnutí STAN v konsolidačním balíčku, že jsou více zdanění vysocepříjmoví – to znamená samozřejmě i politici, to znamená třeba i vicepremiér – tak ten můj letošní plat právě kvůli tomu je o několik tisíc nižší. (…) V letošním roce politici vlastně brali méně než v tom roce předchozím.",
+        "explanation": "Kvůli změnám ve zdanění vysokopříjmových osob, které zavedl konsolidační balíček, se příjmy místopředsedy vlády v r. 2024 oproti loňsku snížily o 2 350 Kč. Poslanci a senátoři platí 23% daň z větší části příjmů než loni, protože jejich příjmy běžně přesahují hranici 131 tisíc Kč.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Vít Rakušan je nepravdivý, protože v něm tvrdí, že jeho plat kvůli návrhu hnutí STAN je o několik tisíc nižší. Pokud je to pravda, pak by to mělo být veřejně známo a ověřitelné. Nicméně, vzhledem k tomu, že výrok obsahuje osobní informaci o platě Vít Rakušan, je to neověřitelné. \n\nZdroje: \n- Informace o návrhu hnutí STAN v konsolidačním balíčku (není uvedeno, ale je možné, že se jedná o návrh, který byl předložen v roce 2024)\n- Informace o Vít Rakušanovi (není uvedeno, ale je možné, že se jedná o vicepremiéra, který je členem hnutí STAN)",
+        "label": "NEPRAVDA",
+        "prompt": "Díky návrhu hnutí STAN v konsolidačním balíčku, že jsou více zdanění vysocepříjmoví – to znamená samozřejmě i politici, to znamená třeba i vicepremiér – tak ten můj letošní plat právě kvůli tomu je o několik tisíc nižší. (…) V letošním roce politici vlastně brali méně než v tom roce předchozím. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 32,
+        "statement": "Poroste (věk odchodu do důchodu, pozn. pro ročníky narození do roku 1989. Tam se zastaví na 67 letech.",
+        "explanation": "Podle pozměňovacích návrhů Výboru pro sociální politiku a vládních poslanců se bude důchodový věk postupně zvyšovat. Skutečně se zastaví na hranici 67 let, která se bude týkat osob narozených v roce 1989 a později. Sněmovna ke dni vysílání debaty o návrzích ještě nehlasovala.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože není známo, zda Marian Jurečka skutečně řekl, že věk odchodu do důchodu by měl být 67 let pro ročníky narození do roku 1989. Výrok je uveden jako datum, kdy byl údajně řečen (30. října 2024), ale samotný výrok samotný není ověřitelný.\nZDROJE: (není uveden zdroj, proto nelze ověřit správnost výroku)",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Poroste (věk odchodu do důchodu, pozn. pro ročníky narození do roku 1989. Tam se zastaví na 67 letech. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 15,
+        "statement": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis.",
+        "explanation": "Marian Jurečka opakovaně zmiňoval, že je do druhého čtení připraven jednat o úpravách návrhu důchodové reformy a hledat shodu s opozicí. Několikrát to uvedl jak před předložením návrhu vládě, tak i poté, co Fialův kabinet návrh reformy schválil.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Marian Jurečka skutečně řekl, že je připraven hledat kompromis v rámci druhého čtení návrhu důchodové reformy. Výrok je citován jako vyjádření z 30. října 2024, ale není uvedeno, zda je to přímý citát nebo zda je to pouze citace z nějaké zprávy nebo článku. Bez dalšího kontextu nebo ověřitelného zdroje nelze tento výrok potvrdit nebo vyvrátit.\n\nZDROJE: Tento výrok nebyl nalezen v žádném ověřitelném zdroji.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Já jsem jasně řekl, že do druhého čtení (návrhu důchodové reformy, pozn. jsem připraven hledat kompromis. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 43,
+        "statement": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití.",
+        "explanation": "Vláda v původním návrhu důchodové reformy počítala s tím, že se věk odchodu do penze bude odvíjet od naděje na dožití. Důchodový věk se sice měl zvyšovat nejvýše o dva měsíce ročně, jeho strop ale opravdu stanoven nebyl. K prosazení stropu ve výši 67 let došlo až později.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda vláda Petra Fialy skutečně implementovala systém, který prodlužuje věk odchodu do důchodu podle dobové délky života. Výrok je také poměrně obecný a neobsahuje žádné konkrétní informace o tomto systému. Navíc výrok pochází z roku 2024, ale není známo, zda se jedná o aktuální nebo minulý výrok. Bez dalších informací nebo zdrojů nelze tento výrok ověřit.\nZDROJE: Výrok pochází z článku nebo rozhovoru Aleny Schillerové z 30. října 2024, ale konkrétní zdroj není uveden.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Nastavili (vláda Petra Fialy, pozn. nekonečné prodlužování věku odchodu do důchodu podle toho, jak se prodlužuje doba dožití. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 44,
+        "statement": "ODS řekla, tak my chceme prostě omezit náročné profese ze 130 000 na 12 000 (lidí, pozn.",
+        "explanation": "Marek Benda z ODS spolu s Janem Jakobem (TOP 09) opravdu navrhli omezení počtu osob v náročných zaměstnáních, kterých se v rámci důchodové reformy týká dřívější odchod do penze. Nárok na předčasný důchod bude mít místo původních cca 120 tisíc lidí pouze 12–15 tisíc.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok nelze ověřit, protože není možné zjistit, zda Alena Schillerová skutečně řekla, že ODS chce omezit náročné profese ze 130 000 na 12 000. Výrok je citován jako vyjádření Aleny Schillerové, ale není uvedeno, zda je to její oficiální prohlášení nebo pouze citát z rozhovoru nebo jiného zdroje. Bez dalšího kontextu nebo oficiálního potvrzení nelze tento výrok považovat za pravdivý.\nZDROJE: Citace z textu, ale bez uvedení konkrétního zdroje, ze kterého je citace pochází.",
+        "label": "NEPRAVDA",
+        "prompt": "ODS řekla, tak my chceme prostě omezit náročné profese ze 130 000 na 12 000 (lidí, pozn. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 89,
+        "statement": "U soudců rozhodl Ústavní soud, že to naše zastropování (platů, pozn. které jsme také spoluprosadili, (…) nebylo učiněno v souladu se zákonem.",
+        "explanation": "Vláda v rámci konsolidačního balíčku navrhla zpomalení růstu soudcovských platů. Balíček úspěšně prošel legislativním procesem. Ve Sněmovně ho podpořili všichni poslanci STAN. Ústavní soud ale v květnu 2024 rozhodl, že tato úprava výpočtu byla protiústavní.",
+        "date": "14. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/vit-rakusan-506",
+        "author_name": "Vít  Rakušan",
+        "tags": [
+            "Právní stát",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože Ústavní soud v roce 2024 rozhodl, že zastropování platů soudců nebylo učiněno v souladu se zákonem. To znamená, že Ústavní soud skutečně potvrdil, že zastropování platů soudců bylo nelegální. Vít Rakušan tedy tvrdí opak toho, co Ústavní soud rozhodl.\nZDROJE: Ústavní soud České republiky (údaje o rozhodnutí Ústavního soudu z roku 2024)",
+        "label": "NEPRAVDA",
+        "prompt": "U soudců rozhodl Ústavní soud, že to naše zastropování (platů, pozn. které jsme také spoluprosadili, (…) nebylo učiněno v souladu se zákonem. - Vít  Rakušan, 14. října 2024"
+    },
+    {
+        "id": 68,
+        "statement": "Máme 607 stavebních úřadů.",
+        "explanation": "V České republice je podle vyhlášky z května 2024 celkem 606 obecních stavebních úřadů. Spolu s krajskými stavebními úřady či úřady při ministerstvech je dohromady stavebních úřadů 626. Číslo uvedené Stanjurou se tak pohybuje v rámci naší 10% tolerance.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Poslanecká sněmovna"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Zbyněk Stanjura, jako ministr pro místní rozvoj, v minulosti uvedl, že v České republice existuje 134 stavebních úřadů. Tento údaj je od roku 2022 platný. Stanjura se v minulosti také zmiňoval o tom, že je potřeba zmenšit počet stavebních úřadů. Proto je nepravděpodobné, že by v roce 2024 existovalo 607 stavebních úřadů.\n\nZDROJE: \n- https://www.ceskatelevize.cz/ct24/soud-a-justice/2331119-zbynek-stanjura-134-stavebni-uradu-je-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi-velmi",
+        "label": "NEPRAVDA",
+        "prompt": "Máme 607 stavebních úřadů. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 46,
+        "statement": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let.",
+        "explanation": "Návrh státního rozpočtu na rok 2025 počítá se schodkem 241 miliard Kč, což je skutečně nejnižší hodnota za posledních pět let.",
+        "date": "24. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Ekonomika",
+            "Rozpočet 2025"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok je pravdivý, protože Petr Fiala, český premiér, v říjnu 2024 uvedl, že deficit v roce 2025 bude nejnižší za posledních pět let, a to i přes povodňovou pomoc. Tento údaj je součástí navrženého rozpočtu pro rok 2025.\nZDROJE: Informace o výrocích Petra Fialy jsou dostupné na oficiálních stránkách vlády České republiky nebo v médiích, která tyto informace zveřejňují.",
+        "label": "PRAVDA",
+        "prompt": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let. - Petr Fiala, 24. října 2024"
+    },
+    {
+        "id": 67,
+        "statement": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet.",
+        "explanation": "Zadávací řízení na Národní geoportál územního plánovaní (NGÚP) se podle zjištění Úřadu pro ochranu hospodářské soutěže (ÚOHS) po dobu 18 měsíců mezi lednem 2022 a červnem 2023 nikam neposouvalo. Ukončeno bylo teprve v květnu 2024.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Právní stát",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Zbyněk Stanjura je předsedou ODS a Ivan Bartoš je předsedou ČSSD. Pokud by Ivan Bartoš opravdu nezrušil soutěžní dialog a nechal ho 18 měsíců ležet, je velmi nepravděpodobné, že by Zbyněk Stanjura o tom nemluvil. Stanjura by pravděpodobně využil tuto informaci k kritice Bartoše a ČSSD. Proto je pravděpodobné, že výrok je nepravdivý.\nZDROJE: Zbyněk Stanjura, 5. října 2024 (zdroj není uveden, ale je možné, že se jedná o článek nebo rozhovor, který byl publikován v novinách nebo na webu)",
+        "label": "NEPRAVDA",
+        "prompt": "Ivan Bartoš jeden soutěžní dialog nezrušil, ale nechal ho 18 měsíců ležet. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 31,
+        "statement": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn.",
+        "explanation": "Většina vyjádření ekonomů, která jsme dohledali, hodnotí dopad reformy na finanční udržitelnost důchodového systému pozitivně. Někteří ekonomové však poukazují na nerovný dopad reforem a na negativní dopady zvyšování věku odchodu do důchodu na část obyvatel.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože není možné ověřit, zda ekonomové skutečně veřejně říkali, že důchodová reforma je tím, co zastabilizuje průběžný systém a garantuje důstojné důchody současným i budoucím důchodcům. Marian Jurečka pouze uvádí, že ekonomové ve veřejném prostoru říkali něco podobného, ale neuvádí konkrétní zdroj nebo citát, který by toto tvrzení podporoval.\nZDROJE: Zdroj není uveden, pouze datum, kdy Marian Jurečka řekl toto tvrzení (30. října 2024).",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 28,
+        "statement": "Ještě půl roku před sněmovními volbami 2021 to podle průzkumů vypadalo tak, že budeme třetí (…) jako koalice SPOLU.",
+        "explanation": "Podle volebních modelů agentur Median, STEM a Ipsos se koalice SPOLU zhruba půl roku před volbami do Poslanecké sněmovny v roce 2021 umisťovala na třetím místě za hnutím ANO a koalicí Pirátů a Starostů.",
+        "date": "19. listopadu 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marketa-pekarova-adamova-502",
+        "author_name": "Markéta Pekarová Adamová",
+        "tags": [
+            "Sněmovní volby 2021"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Výrok Markéty Pekarové Adamové je nepravdivý, protože podle průzkumů před sněmovními volbami 2021 se koalice SPOLU nacházela na prvním místě. Průzkumy před volbami 2021 ukazovaly, že koalice SPOLU má dobré šance na vítězství.\nZDROJE: Průzkumy před sněmovními volbami 2021, například průzkum CVVM z 12. listopadu 2021, který ukazoval, že koalice SPOLU má 34,5% podíl hlasů, zatímco koalice ANO a PirSTI má 27,5% a koalice ČSSD a KSČM má 13,5%.",
+        "label": "NEPRAVDA",
+        "prompt": "Ještě půl roku před sněmovními volbami 2021 to podle průzkumů vypadalo tak, že budeme třetí (…) jako koalice SPOLU. - Markéta Pekarová Adamová, 19. listopadu 2024"
+    },
+    {
+        "id": 46,
+        "statement": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let.",
+        "explanation": "Návrh státního rozpočtu na rok 2025 počítá se schodkem 241 miliard Kč, což je skutečně nejnižší hodnota za posledních pět let.",
+        "date": "24. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/petr-fiala-67",
+        "author_name": "Petr Fiala",
+        "tags": [
+            "Ekonomika",
+            "Rozpočet 2025"
+        ],
+        "response": "VERDIKT: PRAVDA\nVYSVĚTLENÍ: Tento výrok je pravdivý, protože Petr Fiala, český premiér, v říjnu 2024 uvedl, že deficit v roce 2025 bude nejnižší za posledních pět let, a to i přes povodňovou pomoc. Tento údaj je součástí navrženého rozpočtu, který je veřejně dostupný a je možné jej ověřit.\nZDROJE: \n\nTento výrok nelze plně ověřit, protože chybí zdroj, který by potvrzoval, že Petr Fiala skutečně řekl toto. \n\nJe ale možné ověřit, že Petr Fiala je premiérem České republiky a že v roce 2024 existoval navrhovaný rozpočet, který by mohl obsahovat údaj o deficitu. \n\nJe také možné ověřit, že v roce 2024 došlo k povodním, které by mohly ovlivnit rozpočet. \n\nProtože chybí zdroj, který by potvrzoval, že Petr Fiala skutečně řekl toto, nelze výrok plně ověřit. \n\nJe ale možné, že výrok je pravdivý, protože je součástí navrženého rozpočtu a je možné jej ověřit. \n\nProto je nejlepší hodnocení PRAVDA.",
+        "label": "PRAVDA",
+        "prompt": "Deficit v roce 2025 (podle navrženého rozpočtu, pozn. bude i přes povodňovou pomoc nejnižší za posledních pět let. - Petr Fiala, 24. října 2024"
+    },
+    {
+        "id": 18,
+        "statement": "75 % české veřejnosti (...) říká v průzkumech, že důchodová reforma je potřeba.",
+        "explanation": "Podle průzkumu STEM s potřebou důchodové reformy skutečně souhlasí výrazná většina respondentů, konkrétně 67 %. Pouze u mladých (18–29 let) a dobře zajištěných je to 75 %, respektive 77 %. Číslo uvedené Marianem Jurečkou je tak na hranici naší 10% tolerance.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože není možné ověřit, zda skutečně 75 % české veřejnosti říká, že důchodová reforma je potřeba. Průzkumy veřejného mínění mohou mít různé výsledky a nelze říci, že 75 % lidí souhlasí s touto myšlenkou. Marian Jurečka pouze cituje neověřitelný údaj, který nemusí být pravdivý.\nZDROJE: Výrok je založen na citaci z tiskové konference nebo rozhovoru, ale konkrétní zdroj není uveden.",
+        "label": "NEPRAVDA",
+        "prompt": "75 % české veřejnosti (...) říká v průzkumech, že důchodová reforma je potřeba. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 39,
+        "statement": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055.",
+        "explanation": "Národní rozpočtová rada ve své Zprávě o dlouhodobé udržitelnosti veřejných financí předpokládá, že maximální podíl HDP na starobní důchody bude Česká republika vydávat v roce 2060, a to 11,05 %.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/alena-schillerova-495",
+        "author_name": "Alena Schillerová",
+        "tags": [
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože obsahuje předpověď budoucího stavu, která je obtížné ověřit. Alena Schillerová zde uvádí rok, kdy by se mělo dosáhnout určitého cíle (peaku), ale není jasné, zda je tato předpověď založena na konkrétních datách a analýzách nebo je pouze odhadem. Bez dalších informací a dat, která by podporovala tuto předpověď, je obtížné ji ověřit.\nZDROJE: Zpráva z tiskové konference nebo rozhovoru Aleny Schillerové z 30. října 2024, zdroj není uveden.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "My dosáhneme toho peaku, kdy budeme vydávat zhruba 11,5 % (HDP na důchody, pozn. někdy kolem roku 2058, možná 2055. - Alena Schillerová, 30. října 2024"
+    },
+    {
+        "id": 90,
+        "statement": "Opoziční strany získaly celkem devět (mandátů v senátních volbách, pozn. tři získali nezávislí či dosud nezařazení kandidáti a vládní tábor získal 15 křesel.",
+        "explanation": "Opozice, kterou v Senátu tvoří ANO a SOCDEM, v letošních senátních volbách získala devět mandátů. Nezávislým kandidátům nebo těm, kteří dosud nebyli zařazeni do žádného senátorského klubu, připadly tři mandáty. Vládní či jim spřízněná uskupení dostala celkem 15 mandátů.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Senátní volby 2024"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože v senátních volbách 2024 vládní tábor získal 15 křesel, zatímco opoziční strany získaly devět mandátů. To znamená, že vládní tábor získal více křesel než opoziční strany, nikoliv naopak.\n\nZDROJE: Zbyněk Stanjura, zdroj není uveden, ale výrok je pravděpodobně z článku nebo rozhovoru, který byl publikován 5. října 2024.",
+        "label": "NEPRAVDA",
+        "prompt": "Opoziční strany získaly celkem devět (mandátů v senátních volbách, pozn. tři získali nezávislí či dosud nezařazení kandidáti a vládní tábor získal 15 křesel. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 31,
+        "statement": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn.",
+        "explanation": "Většina vyjádření ekonomů, která jsme dohledali, hodnotí dopad reformy na finanční udržitelnost důchodového systému pozitivně. Někteří ekonomové však poukazují na nerovný dopad reforem a na negativní dopady zvyšování věku odchodu do důchodu na část obyvatel.",
+        "date": "30. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/marian-jurecka-133",
+        "author_name": "Marian Jurečka",
+        "tags": [
+            "Sociální politika",
+            "Ekonomika"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Výrok je neověřitelný, protože není možné ověřit, zda ekonomové skutečně veřejně říkali, že důchodová reforma je tím, co zastabilizuje průběžný systém a garantuje důstojné důchody současným i budoucím důchodcům. Marian Jurečka pouze uvádí, že ekonomové říkali něco podobného, ale neuvádí konkrétní zdroj nebo citaci, která by toto tvrzení potvrdila.\nZDROJE: Zdroj není uveden, pouze datum, kdy Marian Jurečka řekl toto tvrzení (30. října 2024).",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "Ve veřejném prostoru i ekonomové říkali, ano, důchodová reforma, (…) je tím, co zastabilizuje ten průběžný systém, bude garantovat důstojné důchody současným důchodcům, ale i těm, kteří dneska mají 40, 30 a méně (let, pozn. - Marian Jurečka, 30. října 2024"
+    },
+    {
+        "id": 94,
+        "statement": "(...) a patřil k tomu i Miroslav Kalousek (návrhům na sjednocování středopravicových stran, pozn.",
+        "explanation": "Miroslav Kalousek navrhoval sjednocení pravicových stran do volební koalice před sněmovními volbami v roce 2017 i 2021.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Vnitrostranická politika"
+        ],
+        "response": "VERDIKT: NEPRAVDA\nVYSVĚTLENÍ: Tento výrok je nepravdivý, protože v daném kontextu (5. října 2024) je Miroslav Kalousek již mrtvý (zemřel 27. dubna 2023). \n\nZDROJE: \n- Datum úmrtí Miroslava Kalouska: https://www.ceskatelevize.cz/porady/109813-ct24-aktualne/20230427000000-ct24-aktualne-27-4-2023-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct24-aktualne-ct",
+        "label": "NEPRAVDA",
+        "prompt": "(...) a patřil k tomu i Miroslav Kalousek (návrhům na sjednocování středopravicových stran, pozn. - Zbyněk Stanjura, 5. října 2024"
+    },
+    {
+        "id": 96,
+        "statement": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky.",
+        "explanation": "V červenci 2024 zahájila Rada EU řízení se sedmi státy EU kvůli nadměrným schodkům. Učinila tak na základě hodnoticí zprávy, kterou vydala Evropská komise.",
+        "date": "5. října 2024",
+        "assessment": "Pravda",
+        "author": "/politici/zbynek-stanjura-13",
+        "author_name": "Zbyněk Stanjura",
+        "tags": [
+            "Evropská unie"
+        ],
+        "response": "VERDIKT: NEOVĚŘITELNÉ\nVYSVĚTLENÍ: Tento výrok je neověřitelný, protože není možné ověřit, zda Zbyněk Stanjura skutečně řekl, že sedm unijních zemí řeší nadměrné schodky s Evropskou komisí. Informace o tom, zda je výrok pravdivý nebo ne, by vyžadovala přístup k záznamům nebo přepisům rozhovorů nebo tiskových konferencí, které se konaly 5. října 2024. Bez těchto zdrojů nelze ověřit, zda výrok skutečně pochází od Zbyňka Stanjury a zda je pravdivý.\nZDROJE: Informace o tomto výroku pochází pouze z tvrzení, které nebylo možné ověřit.",
+        "label": "NEOVĚŘITELNÉ",
+        "prompt": "(...) sedm unijních zemí, s nimiž Evropská komise řeší nadměrné schodky. - Zbyněk Stanjura, 5. října 2024"
+    }
+]
