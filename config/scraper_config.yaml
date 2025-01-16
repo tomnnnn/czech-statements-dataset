@@ -1,7 +1,7 @@
 default:
   # general options
   UserAgent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36
-  OutputDir: datasets/with_evidence/bing
+  OutputDir: datasets/test
   FetchesPerDelay: 5
   FetchDelay: .5
 
@@ -9,6 +9,8 @@ default:
   UseExistingStatements: false
   DemagogFromPage: 1
   DemagogToPage: 1
+  FromYear: 2024
+  ToYear: 2024
   IncludeExplanation: true
   IncludeAuthor: true
   IncludeAssessment: false

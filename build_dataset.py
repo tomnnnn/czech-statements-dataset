@@ -180,7 +180,7 @@ async def build_dataset():
             stmts = json.load(file)
             stmts = [stmt for stmt in stmts if f"{stmt['id']}.json" not in existiting_evidence]
     else:
-        stmts = await scraper.scrapeStatements(from_page=CONFIG["DemagogFromPage"],to_page=CONFIG["DemagogToPage"], start_index=CONFIG["StmtStartIndex"])
+        stmts = await scraper.scrapeByYears(CONFIG["FromYear"], CONFIG["ToYear"], CONFIG["DemagogToPage"])
 
         # include only fields enabled in CONFIG
         stmts_pruned = [{k:v for k,v in temp.items() if v} for temp in [{
@@ -200,6 +200,7 @@ async def build_dataset():
     if CONFIG["ScrapeWithEvidence"]:
         # provide evidence for each statement
         print("Providing evidence for each statement")
+
         stmt_cnter = itertools.count(0)
         evidence_coros = [
             track_progress(provide_evidence(stmt), stmt_cnter, len(stmts), "statement")
