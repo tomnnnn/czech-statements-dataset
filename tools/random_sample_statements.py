@@ -9,21 +9,17 @@ import locale
 
 locale.setlocale(locale.LC_TIME, "cs_CZ.UTF-8")
 
-RANGE = [1,10000]
-NUM_SAMPLES = 100
-STATEMENTS_FILE = "../datasets/without_evidence/statements_2024.json"
-OUTPUT_FILE = "../datasets/samples/statements_after_9_2024_sample.json"
-INCLUDE_NOI = True
+NUM_SAMPLES = 1000
+STATEMENTS_FILE = "../datasets/with_evidence/bing/statements.json"
+OUTPUT_FILE = "../datasets/samples/random_sample_statements_1000.json"
+ALLOWED_LABELS = ["pravda", "nepravda", "neověřitelné"]
 
 def find_by_id(id, statements):
     for statement in statements:
-        if statement["id"] == id:
-            if (not INCLUDE_NOI and statement["assessment"] == "Neověřitelné") or statement["assessment"] == "Zavádějící":
-                return find_by_id(random.randint(RANGE[0], RANGE[1]), statements)
-
-            parsed_date = datetime.datetime.strptime(statement['date'], "%YYY-%mm-%dd")
-            if(parsed_date < datetime.datetime(2024, 9, 30)):
-                # include only statements after 30.9.2024
+        if statement["id"] == id and statement["assessment"].lower() in ALLOWED_LABELS:
+            parsed_date = datetime.datetime.strptime(statement["date"], "%Y-%m-%d")
+            if(parsed_date > datetime.datetime(2023, 12, 31)):
+                # include only statements after 31.12.2023
                 return find_by_id(random.randint(RANGE[0], RANGE[1]), statements)
 
             return statement
@@ -35,10 +31,47 @@ statements = {}
 with open(STATEMENTS_FILE, "r") as f:
     statements = json.load(f)
 
-sample_ids = random.sample(range(RANGE[0], RANGE[1]), NUM_SAMPLES)
-sample_statements = [find_by_id(id, statements) for id in sample_ids]
+# get highest id
+ids = [statement["id"] for statement in statements]
+ids.sort()
 
+RANGE = (0, ids[-1])
+
+# split dataset by labels
+true_statements = [statement for statement in statements if statement["assessment"].lower() == "pravda"]
+false_statements = [statement for statement in statements if statement["assessment"].lower() == "nepravda"]
+unverifiable_statements = [statement for statement in statements if statement["assessment"].lower() == "neověřitelné"]
+
+# sample evenly from each label
+sample_ids = []
+sample_statements = []
+
+for i in range(NUM_SAMPLES):
+    if i % 3 == 0:
+        sample_ids.append(random.choice(true_statements)["id"])
+    elif i % 3 == 1:
+        sample_ids.append(random.choice(false_statements)["id"])
+    else:
+        sample_ids.append(random.choice(unverifiable_statements)["id"])
+
+for id in sample_ids:
+    sample_statements.append(find_by_id(id, statements))
+
+# calculate distribution
+true_count = len([statement for statement in sample_statements if statement["assessment"].lower() == "pravda"])
+false_count = len([statement for statement in sample_statements if statement["assessment"].lower() == "nepravda"])
+unverifiable_count = len([statement for statement in sample_statements if statement["assessment"].lower() == "neověřitelné"])
+
+# save to file
 with open(OUTPUT_FILE, "w") as f:
-    json.dump(sample_statements, f, indent=4, ensure_ascii=False)
+    sample = {
+        "count": NUM_SAMPLES,
+        "true": true_count,
+        "false": false_count,
+        "unverifiable": unverifiable_count,
+        "statements": sample_statements
+    }
+    json.dump(sample, f, indent=4, ensure_ascii=False)
 
-print(f"Random sample of {NUM_SAMPLES} statements saved to {OUTPUT_FILE}.")
+print(f"Created random sample with following distribution: \n{true_count} true\n{false_count} false\n{unverifiable_count} unverifiable\nLocation: {OUTPUT_FILE}")
+
