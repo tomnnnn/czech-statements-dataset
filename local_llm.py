@@ -1,7 +1,7 @@
 import transformers
 import os
-import time
 from dotenv import load_dotenv
+import torch
 
 load_dotenv()
 
@@ -10,7 +10,9 @@ ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 class Model:
     def __init__(self, model_path, max_tokens=100):
         self.model_id = model_path
-        self.pipeline = transformers.pipeline("text-generation", model=model_path, tokenizer=model_path, token=ACCESS_TOKEN)
+        self.device = 0 if torch.cuda.is_available() else -1
+
+        self.pipeline = transformers.pipeline("text-generation", model=model_path, tokenizer=model_path, token=ACCESS_TOKEN, device=self.device)
         self.pipeline.tokenizer.pad_token = self.pipeline.tokenizer.eos_token
         self.max_tokens = max_tokens
 
