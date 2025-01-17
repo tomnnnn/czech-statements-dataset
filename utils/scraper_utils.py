@@ -32,8 +32,6 @@ async def fetch(url, retries=0, ):
 
 
 async def post_request(url, data, retries=0):
-    print("Posting request to", url, file=sys.stderr)
-
     timeout = aiohttp.ClientTimeout(total=30)
     async with aiohttp.ClientSession(timeout=timeout) as session:
         try:
@@ -47,7 +45,6 @@ async def post_request(url, data, retries=0):
                     )
                 articles = await response.json()  # Parse JSON response
 
-                print("Received", file=sys.stderr)
                 return articles
         except asyncio.exceptions.TimeoutError as e:
             print(f"Request timed out for {url}: {e}", file=sys.stderr)

@@ -21,7 +21,7 @@ import config
 BASE_URL = "https://demagog.cz"
 STMTS_URL = "https://demagog.cz/vyroky"
 CONFIG = config.load_config("scraper_config.yaml")
-
+FETCH_SEM = asyncio.Semaphore(CONFIG["FetchesPerDelay"])
 
 class Statement:
     date: str
@@ -29,6 +29,7 @@ class Statement:
     statement: str
     author: str
     explanation: str
+    explanation_brief: str
     tags: list
     origin: str
 
@@ -36,7 +37,7 @@ class Statement:
         self.statement_div = statement_div
         self.selectors = {
             "citation": "div > div:nth-child(1) > div > div.ps-5 > cite",
-            "statement": "div > div:nth-child(2) > div.accordion > div.content.fs-6",
+            "statement": "div:nth-child(1) > div > div.ps-5 > blockquote > span.position-relative.fs-6",
             "author": "div > div:nth-child(1) > div > div.w-100px.min-w-100px > div.mt-2.text-center.w-100 > h3",
             "tags": "div > div.ps-5 > div",
             "assessment": "div > div:nth-child(2) > div.d-flex.align-items-center.mb-2 > span.text-primary.fs-5.text-uppercase.fw-600",
@@ -53,6 +54,7 @@ class Statement:
             "statement": self.statement,
             "author": self.author,
             "explanation": self.explanation,
+            "explanation_brief": self.explanation_brief,
             "date": self.date,
             "origin": self.origin,
             "tags": self.tags
@@ -104,10 +106,14 @@ class Statement:
         explanation_container = self.statement_div.select(self.selectors["explanation"])
 
         if explanation_container:
-            explanation = explanation_container[0].findChildren("div", recursive=False)[0].get_text(strip=True)
+            explanation_brief = explanation_container[0].findChildren("div", recursive=False)[0].get_text(strip=True)
+            explanation = ' '.join([p.get_text() for p in explanation_container[0].find_all("p")])
         else:
             explanation = ' '.join([p.get_text() for p in self.statement_div.select(self.selectors["explanation_alt"])[0].find_all("p")])
+            explanation_brief = ''
+
         self.explanation = explanation
+        self.explanation_brief = explanation_brief
 
     def __parse_tags(self):
         tags_container_selector = "div > div:nth-child(1) > div > div.ps-5 > div > div"
@@ -155,7 +161,6 @@ async def scrapeStatements(from_page=1, to_page=300, start_index=1, year=None):
     statements = []
     index_counter = itertools.count(start_index)
     finished_cnter = itertools.count(1)
-    fetch_sem = asyncio.Semaphore(CONFIG["FetchesPerDelay"])
     query = f"years={year}" if year else ""
 
     print(f"Scraping {year if year else ''} statements from page {from_page} to page {to_page}")
@@ -163,7 +168,7 @@ async def scrapeStatements(from_page=1, to_page=300, start_index=1, year=None):
         track_progress(
             scrapeStatementsFromPage(
                 f"{STMTS_URL}?{query}&page={page}",
-                fetch_sem,
+                FETCH_SEM,
                 index_counter
             ), 
             finished_cnter, # counter for statements
@@ -192,6 +197,7 @@ def scrapeYears():
     """
     driver = webdriver.Chrome()
     driver.get(STMTS_URL)
+
     filters_button = driver.find_elements(By.CSS_SELECTOR, ".btn.w-100.h-44px")[0]
     filters_button.click()
 
@@ -231,13 +237,13 @@ def loadYears():
     Returns:
         list of (year, count) entries for each available year.
     """
-    if os.path.exists(f"{CONFIG['OutputDir']}/years.json"):
-        with open(f"{CONFIG['OutputDir']}/years.json", "r") as f:
+    if os.path.exists(f"{CONFIG['YearListPath']}/years.json"):
+        with open(f"{CONFIG['YearListPath']}/years.json", "r") as f:
             return json.load(f)
     else:
         years = scrapeYears()
-        os.makedirs(CONFIG['OutputDir'], exist_ok=True)
-        with open(f"{CONFIG['OutputDir']}/years.json", "w") as f:
+        os.makedirs(CONFIG['YearListPath'], exist_ok=True)
+        with open(f"{CONFIG['YearListPath']}/years.json", "w") as f:
             json.dump(years, f, indent=2, ensure_ascii=False)
 
         return years

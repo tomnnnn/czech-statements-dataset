@@ -25,6 +25,7 @@ SEARCH_SEM = contextvars.ContextVar("search_sem")
 FETCH_SEM = contextvars.ContextVar("fetch_sem")
 CONFIG = config.load_config("scraper_config.yaml")
 
+
 async def extract_article(url):
     """
     Extract article content from a given URL
@@ -41,7 +42,9 @@ async def extract_article(url):
             return None
         await asyncio.sleep(CONFIG['FetchDelay'])
 
-    MIN_NUM_WORDS = 5
+    min_num_words = 5
+    max_num_paragraphs = 1000
+
     try:
         soup = bs4.BeautifulSoup(html, "html.parser", parse_only=bs4.SoupStrainer(["title","body"]))
     except Exception as e:
@@ -51,7 +54,7 @@ async def extract_article(url):
     p_parents = defaultdict(list)
 
     ps = soup.find_all("p")
-    if len(ps) > 1000:
+    if len(ps) > max_num_paragraphs:
         # skip articles with too many paragraphs to avoid long processing times
         print(f"Skipping article with too many paragraphs ({len(ps)}): {url}", file=sys.stderr)
         return None
@@ -64,7 +67,7 @@ async def extract_article(url):
         return None
 
     article_dom = parents_counts[0][0]
-    article_text = " ".join(p.get_text().strip() for p in article_dom.find_all("p") if len(p.get_text().split()) > MIN_NUM_WORDS)
+    article_text = " ".join(p.get_text().strip() for p in article_dom.find_all("p") if len(p.get_text().split()) > min_num_words)
     title = soup.find('title')
     title = title.get_text() if title else ""
 
@@ -182,19 +185,9 @@ async def build_dataset():
     else:
         stmts = await scraper.scrapeByYears(CONFIG["FromYear"], CONFIG["ToYear"], CONFIG["DemagogToPage"])
 
-        # include only fields enabled in CONFIG
-        stmts_pruned = [{k:v for k,v in temp.items() if v} for temp in [{
-            "id": stmt['id'],
-            "statement": stmt['statement'],
-            "author": stmt['author'] if CONFIG["IncludeAuthor"] else "",
-            "date": stmt['date'] if CONFIG["IncludeDate"] else "",
-            "explanation":  stmt['explanation'] if CONFIG["IncludeExplanation"] else "",
-            "assessment": stmt['assessment'] if CONFIG["IncludeAssessment"] else "",
-        } for stmt in stmts]]
-
         # write pruned statements to file
         with open(f"./{out_dir}/statements.json", "w+") as file:
-            json.dump(stmts_pruned, file, ensure_ascii=False, indent=4)
+            json.dump(stmts, file, ensure_ascii=False, indent=4)
 
 
     if CONFIG["ScrapeWithEvidence"]:

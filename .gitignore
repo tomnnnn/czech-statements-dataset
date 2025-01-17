@@ -6,3 +6,4 @@ dataset
 dataset*/
 .venv
 .env
+logs/baseline

@@ -1,23 +1,20 @@
-import openai
-import envyaml
+import os
 import json
 import re
 import asyncio
 import itertools
 import logging
 import datetime
-import transformers
-import torch
+from local_llm import Model
+import config
 
-from utils.baseline_utils import track_progress, find_by_id
+from utils.baseline_utils import find_by_id
 
-CONFIG = envyaml.EnvYAML("config.yaml", strict=False)["default"]
+CONFIG = config.load_config("baseline_config.yaml")
 
 SEM = asyncio.Semaphore(1)
 STATEMENTS_FILE = CONFIG["StatementsPath"]
 
-API_KEY = CONFIG["APIKey"]
-API_BASE_URL = CONFIG["APIBaseURL"]
 WITH_NOI = CONFIG["NOI"]
 CNTER = itertools.count(1)
 RPM = CONFIG["RPM"]
@@ -42,32 +39,8 @@ ZDROJE: <Zdroje, na kterých je hodnocení založeno>
 """
 
 
-
-async def eval_statement(i, statement, model):
-    # Rate limiter for API requests
-    await asyncio.sleep(i * 60 / RPM)
-    client = openai.AsyncOpenAI(api_key=API_KEY, base_url=API_BASE_URL)
-
-    prompt = (
-        statement["statement"]
-        + " - "
-        + statement["author_name"]
-        + ", "
-        + statement["date"]
-    )
-
-    logger.info(f"Evaluating statement {i}: {prompt}")
-    response = await client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT_ZEROSHOT},
-            {"role": "user", "content": prompt},
-        ],
-        max_tokens=512,
-    )
-
-    response = response.choices[0].message.content
-    label = ""
+def process_response(response, prompt, id):
+    label = "NOLABEL"
 
     if response:
         first_line = response.split("\n")[0]
@@ -76,34 +49,48 @@ async def eval_statement(i, statement, model):
     else:
         response = "NORESPONSE"
 
-    statement["response"] = response
-    statement["label"] = label
-    statement["prompt"] = prompt
+    statement = {
+        "id": id,
+        "response": response,
+        "label": label,
+        "prompt": prompt,
+    }
 
-    logger.info(f"Statement {i} evaluated with label: {label}")
     return statement
 
-async def eval_dataset(model, response_file, result_file):
+async def eval_dataset(model_id, response_file, result_file):
     """
     Test chosen models accuracy of labeling statements in STATEMENTS_FILE with zero-shot prompt.
     The results are saved to response_file and result_file.
+
+    Args:
+    model_id (str): Model name.
+    response_file (str): Path to output file for responses.
     """
 
     with open(STATEMENTS_FILE, "r") as f:
         statements = json.load(f)
 
-    res_coros = [
-        track_progress(
-            eval_statement(i, statement, model), CNTER, len(statements), "statement"
-        )
-        for i, statement in enumerate(statements)
-    ]
-    responses = await asyncio.gather(*res_coros)
+    model = Model(model_id)
+    model.set_system_prompt(SYSTEM_PROMPT_ZEROSHOT)
+
+    prompts = [
+        statement["statement"]
+        + " - "
+        + statement["author"]
+        + ", "
+        + statement["date"]
+        for statement in statements]
+
+    responses = model(prompts)
+    processed = []
+    for raw, prompt, statement in zip(responses, prompts, statements):
+        processed += [process_response(raw, prompt, statement["id"])]
 
     with open(response_file, "w") as f:
-        json.dump(responses, f, indent=4, ensure_ascii=False)
+        json.dump(processed, f, indent=4, ensure_ascii=False)
 
-    calculate_accuracy(STATEMENTS_FILE, response_file, result_file)
+    calculate_accuracy(STATEMENTS_FILE, processed, result_file)
 
     print(f"Written to LLM responses to {response_file}")
     print(f"Written to LLM test results to {result_file}")
@@ -111,19 +98,22 @@ async def eval_dataset(model, response_file, result_file):
     logger.info(f"Written to LLM test results to {result_file}")
 
 
-def calculate_accuracy(reference_path, with_responses_path, output_path):
-    reference = []
-    responses = []
+def calculate_accuracy(reference_path, responses, output_path):
+    """
+    Calculate accuracy of responses in with_responses_path compared to reference in reference_path.
+    The results are saved to output_path.
 
+    Args:
+    reference_path (str): Path to reference file. The statements in this files define the correct labels.
+    responses (List): List of responses to evaluate.
+    output_path (str): Path to output file.
+    """
+    reference = []
     incorrect = []
     correct_cnt = 0
 
     with open(reference_path) as f:
         reference = json.load(f)
-
-    with open(with_responses_path) as f:
-        responses = json.load(f)
-
 
     for res in responses:
         ref = find_by_id(res["id"], reference)
@@ -157,17 +147,13 @@ def calculate_accuracy(reference_path, with_responses_path, output_path):
 if __name__ == "__main__":
     # set up logging
     logging.basicConfig(filename=f"logs/baseline/{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log", level=logging.INFO)
+    os.makedirs("logs/baseline", exist_ok=True)
+    os.makedirs(CONFIG["ResultsFolder"], exist_ok=True)
 
-    out_folder = (
-        CONFIG["ResultsFolder"]
-        if CONFIG["ResultsFolder"][-1] == "/"
-        else CONFIG["ResultsFolder"] + "/"
-    )
-
-    for i, model in enumerate(CONFIG["ModelAPINames"]):
+    for i, model in enumerate(CONFIG["ModelName"]):
         CNTER = itertools.count(1)
-        responses_file = out_folder + CONFIG["ModelName"][i] + "_responses" + ".json"
-        result_file = out_folder + CONFIG["ModelName"][i] + "_results" + ".json"
+        responses_file = f"{CONFIG['ResultsFolder']}/{model.split('/')[-1]}_responses.json"
+        result_file = f"{CONFIG['ResultsFolder']}/{model.split('/')[-1]}_results.json"
 
         logger.info(f"Starting evaluation of model {model}")
         print(f"Starting evaluation of model {model}")
