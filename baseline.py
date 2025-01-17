@@ -7,14 +7,12 @@ import logging
 import datetime
 from local_llm import Model
 import config
-
+import argparse
 from utils.baseline_utils import find_by_id
 
 CONFIG = config.load_config("baseline_config.yaml")
 
 SEM = asyncio.Semaphore(1)
-STATEMENTS_FILE = CONFIG["StatementsPath"]
-
 WITH_NOI = CONFIG["NOI"]
 CNTER = itertools.count(1)
 RPM = CONFIG["RPM"]
@@ -60,7 +58,7 @@ def process_response(response, prompt, id):
 
 async def eval_dataset(model_id, response_file, result_file):
     """
-    Test chosen models accuracy of labeling statements in STATEMENTS_FILE with zero-shot prompt.
+    Test chosen models accuracy of labeling statements in CONFIG["StatementsPath"] with zero-shot prompt.
     The results are saved to response_file and result_file.
 
     Args:
@@ -68,8 +66,8 @@ async def eval_dataset(model_id, response_file, result_file):
     response_file (str): Path to output file for responses.
     """
 
-    with open(STATEMENTS_FILE, "r") as f:
-        statements = json.load(f)
+    with open(CONFIG["StatementsPath"], "r") as f:
+        statements = json.load(f)['statements']
 
     model = Model(model_id)
     model.set_system_prompt(SYSTEM_PROMPT_ZEROSHOT)
@@ -90,7 +88,7 @@ async def eval_dataset(model_id, response_file, result_file):
     with open(response_file, "w") as f:
         json.dump(processed, f, indent=4, ensure_ascii=False)
 
-    calculate_accuracy(STATEMENTS_FILE, processed, result_file)
+    calculate_accuracy(CONFIG["StatementsPath"], processed, result_file)
 
     print(f"Written to LLM responses to {response_file}")
     print(f"Written to LLM test results to {result_file}")
@@ -113,7 +111,7 @@ def calculate_accuracy(reference_path, responses, output_path):
     correct_cnt = 0
 
     with open(reference_path) as f:
-        reference = json.load(f)
+        reference = json.load(f)["statements"]
 
     for res in responses:
         ref = find_by_id(res["id"], reference)
@@ -145,6 +143,19 @@ def calculate_accuracy(reference_path, responses, output_path):
         }, f, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
+    # parse arguments
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-s", "--statements", type=str, default=CONFIG['StatementsPath'], help="Path to statements file.")
+    parser.add_argument("-n", "--name", type=str, default=CONFIG["Name"], help="Name of the evaluation.")
+    parser.add_argument("-o", "--out-folder", type=str, default=CONFIG["ResultsFolder"], help="Path to output folder.")
+
+    args = parser.parse_args()
+
+    CONFIG["StatementsPath"] = args.statements
+    CONFIG["Name"] = args.name
+    CONFIG["ResultsFolder"] = args.out_folder
+
+
     # set up logging
     logging.basicConfig(filename=f"logs/baseline/{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log", level=logging.INFO)
     os.makedirs("logs/baseline", exist_ok=True)
@@ -152,8 +163,8 @@ if __name__ == "__main__":
 
     for i, model in enumerate(CONFIG["ModelName"]):
         CNTER = itertools.count(1)
-        responses_file = f"{CONFIG['ResultsFolder']}/{model.split('/')[-1]}_responses.json"
-        result_file = f"{CONFIG['ResultsFolder']}/{model.split('/')[-1]}_results.json"
+        responses_file = f"{CONFIG['ResultsFolder']}/{CONFIG['Name']}_responses.json"
+        result_file = f"{CONFIG['ResultsFolder']}/{CONFIG['Name']}_results.json"
 
         logger.info(f"Starting evaluation of model {model}")
         print(f"Starting evaluation of model {model}")
