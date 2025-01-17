@@ -1,8 +1,9 @@
 default:
+  Name: baseline
   NOI: True
   RPM: 600
   APIBaseURL: https://api.together.xyz/v1
-  StatementsPath: "datasets/samples/test.json"
+  StatementsPath: "datasets/samples/even_sample/random_sample_statements_1000.json"
   ResultsFolder: "baseline/results/test"
 
   ModelName: 
