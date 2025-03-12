@@ -1,8 +1,8 @@
 default:
   Name: baseline
-  StatementsPath: datasets/with_evidence/demagog/statements.json
+  StatementsPath: datasets/statements_demagog_filtered.json
   ResultsFolder: results
-  EvidenceDir: datasets/with_evidence/demagog/evidence
+  EvidenceDir: datasets/demagog_evidence
   ModelName: meta-llama/Llama-3.2-1B-Instruct
   PromptConfigPath: config/prompts/with_evidence.yaml
   LogPath: logs

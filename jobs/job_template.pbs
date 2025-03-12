@@ -1,0 +1,45 @@
+#!/bin/bash
+#PBS -J 1-10
+#PBS -l select=1:ncpus=1:ngpus=1:mem=12gb:gpu_mem=40gb:scratch_local=2gb
+#PBS -j oe
+
+export TMPDIR=$SCRATCHDIR
+export HF_HOME=$DATA/.hf # set Hugging Face cache directory
+
+OUTPUT_DIR=$DATA/results/$NAME
+
+echo "Job started on $(hostname) at $(date) with index $PBS_ARRAY_INDEX"
+
+mkdir -p "$OUTPUT_DIR" # prepare output folder
+
+cd "$SCRATCHDIR" || { echo "Failed to change to scratch directory"; exit 1; }
+
+# Load required modules
+module add mambaforge || { echo "Failed to load mambaforge"; exit 1; }
+
+# Activate conda environment
+if ! mamba activate "$DATA/.mamba/venv"; then
+	echo "Failed to activate mamba environment"
+	exit 1
+fi
+
+# Activate Python virtual environment
+if ! source "$DATA/.venv/bin/activate"; then
+	echo "Failed to activate Python virtual environment"
+	exit 1
+fi
+
+# Copy scripts and data to scratch space
+cp -r "$DATA/$EVIDENCE_PATH" evidence
+cp "$DATA/$STATEMENTS_PATH" statements.json
+cp "$DATA/$PROMPT_PATH" prompt.yaml
+
+cp -r "$DATA/src" .
+
+# Run baseline script
+PYTHONPATH=src python -m src.evaluate_dataset -y -o $OUTPUT_DIR -i $PBS_ARRAY_INDEX -m $MAX_INDEX -b $BATCH_SIZE -t $SAMPLE_PORTION --example-count $EXAMPLE_COUNT --allowed-labels $ALLOWED_LABELS --prompt-config prompt.yaml --evidence evidence --statements statements.json $MODEL
+
+# Finalize
+clean_scratch
+echo "Job completed successfully at $(date)"
+

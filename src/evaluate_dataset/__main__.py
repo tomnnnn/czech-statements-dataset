@@ -1,3 +1,4 @@
+import pprint
 import argparse
 import datetime
 import json
@@ -33,9 +34,10 @@ def load_prompt_config(config_location) -> tuple:
     return prompts.get("system_prompt", ""), prompts.get("examples", [])
 
 
-def extract_label(response):
+def extract_label(response, allowed_labels):
     if response:
-        label = re.findall(r"zavádějící|neověřitelné|pravda|nepravda", response.lower())
+        labels_regex = "|".join(allowed_labels)
+        label = re.findall(labels_regex, response.lower())
         label = label[-1] if label else "nolabel"
     else:
         label = "nolabel"
@@ -162,10 +164,14 @@ def eval_dataset(
     Args:
     model_id (str): ID of the model to evaluate.
     statements (List): List of statements to evaluate.
-    result_dir (str): Path to output folder.
-    evidence_dir (str): Path to folder with evidence files.
-    prompt_config_path (str): Path to prompt configuration
+    result_dir (str): Path to directory where results will be saved.
+    evidence_dir (str): Path to directory with evidence files.
+    prompt_config_path (str): Path to prompt configuration file.
     index (int): Index for parallelization.
+    with_explanation (bool): Require explanation in the model output.
+    example_count (int): Number of examples for each label to use.
+    batch_size (int): Inference batch size.
+    allowed_labels (List): List of allowed labels.
     """
 
     model = Model(model_id, max_tokens=4000 if with_explanation else 10)
@@ -200,34 +206,29 @@ def eval_dataset(
             "author": statement["author"],
             "date": statement["date"],
             "response": response,
-            "label": extract_label(response),
+            "label": extract_label(response, allowed_labels),
         }
         for statement, response in zip(statements, responses)
     ]
 
     # save responses
-    with open(os.path.join(result_dir, "responses.json"), "w") as f:
+    responses_dest = os.path.join(result_dir, f"responses_{index}.json")
+    with open(os.path.join(responses_dest), "w") as f:
         json.dump(verdicts, f, indent=4, ensure_ascii=False)
-        logger.info(f"Responses saved to {os.path.join(result_dir, 'responses.json')}")
+        logger.info(f"Responses saved to {responses_dest}")
+
+    # save prompts
+    prompts_dest = os.path.join(result_dir, f"prompts_{index}.json")
+    with open(prompts_dest, "w") as f:
+        json.dump(prompts, f, indent=4, ensure_ascii=False)
+        logger.info(f"Prompts saved to {prompts_dest}")
 
     if index == 0:
         # calculate and save metrics
-        f1_micro, f1_macro, f1_weighted, accuracy, precision, recall = (
-            calculate_metrics(statements, verdicts)
-        )
-
-        results_dest = os.path.join(result_dir, f"results_{index}.json")
-
+        results_dest = os.path.join(result_dir, f"metrics.json")
         with open(results_dest, "w") as f:
             json.dump(
-                {
-                    "precision": precision,
-                    "recall": recall,
-                    "f1_micro": f1_micro,
-                    "f1_macro": f1_macro,
-                    "f1_weighted": f1_weighted,
-                    "accuracy": accuracy,
-                },
+                calculate_metrics(statements, verdicts, allowed_labels),
                 f,
                 indent=4,
                 ensure_ascii=False,
