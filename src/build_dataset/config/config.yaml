@@ -1,0 +1,20 @@
+default:
+  # general options
+  OutputDir: datasets/test
+  FetchConcurrency: 10
+  FetchDelay: .5
+
+  # Demagog scraping options
+  UseExistingStatements: true
+  FromYear: 2025
+  ToYear: 2025
+  FirstNPages: 1
+
+  # Evidence retrieval options
+  UseExistingEvidenceLinks: true
+  ScrapeArticles: true
+  EvidenceNum: 10
+  SearchDelay: 1
+  SearchesPerDelay: 3
+  EvidenceRetriever: demagog
+  EvidenceAPIKey: $BING_API_KEY

@@ -1,6 +1,0 @@
-qwen-2.5-it - 56.0 % - cutoff September 2024
-llama-3.3-70b-it - 50.0 % - cutoff December 2023
-llama-3.1-405b-it - 39.0 % - cutoff December 2023
-gemma-2-27b-it - 19.0 % - cutoff ?
-mixtral-8x22b-i - 16.0 % - cutoff ?
-llama-3.1-8b-it - 13.0 % - cutoff December 2023
