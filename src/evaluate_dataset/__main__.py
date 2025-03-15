@@ -1,4 +1,3 @@
-import pprint
 import argparse
 import datetime
 import json
@@ -7,12 +6,14 @@ import os
 import random
 import re
 import tldextract
+import sqlite3
 
 import yaml
 from sklearn.model_selection import train_test_split
 
+from dataset_manager import DemagogDataset
 from .config import CONFIG
-from .local_llm import Model
+from .llm_apis import llm_api_factory, llm_api_dict
 from .utils import calculate_metrics
 
 logger = logging.getLogger(__name__)
@@ -45,54 +46,46 @@ def extract_label(response, allowed_labels):
     return label
 
 
-def prompt_builder(statements, evidence_dir=None):
+def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=500):
     """
     Build prompts for given statements. Optionally include evidence from evidence_dir.
 
     Args:
     statements (List): List of statements.
     evidence_dir (str): Path to folder with evidence files.
+    max_content_len (int): Maximum length of evidence content to include in the prompt.
     """
-    max_content_len = 5000
     prompts = []
     for statement in statements:
-        statement_str = (
-            f"{statement['statement']} - {statement['author']}, {statement['date']}"
-        )
-        if evidence_dir:
-            evidence_path = os.path.join(evidence_dir, f"{statement['id']}.json")
-            try:
-                with open(evidence_path, "r") as f:
-                    evidence = json.load(f)
-                    truncated = [
-                        {
-                            'Titulek': e['title'],
-                            'Text': e['content'][:max_content_len] + "..." if len(e['content']) > max_content_len else e['content'],
-                            'Zdroj': tldextract.extract(e['url']).domain + "." + tldextract.extract(e['url']).suffix,
-                        }
-                        for e in evidence
-                    ]
+        statement_str = ( f"{statement['statement']} - {statement['author']}, {statement['date']}")
 
-                    evidence_str = json.dumps(truncated, indent=2, ensure_ascii=False)
+        evidence = dataset.get_evidence(statement['id'])
+        if not evidence:
+            logger.warning(f"No evidence found for statement {statement['id']}.")
+            prompts.append(statement_str + "\nPodpůrné dokumenty: Není dostupný žádný podpůrný dokument.")
+            continue
 
-            except FileNotFoundError:
-                logger.warning(
-                    f"Evidence file for statement {statement['id']} not found."
-                )
-                evidence_str = ""
+        truncated = [
+            {
+                'Titulek': e['title'],
+                'Text': e['content'][:max_evidence_len] + "..." if len(e['content']) > max_evidence_len else e['content'],
+                'Zdroj': tldextract.extract(e['url']).domain + "." + tldextract.extract(e['url']).suffix,
+            }
+            for e in evidence
+        ]
 
-            prompts.append(f"{statement_str}\nPodpůrné dokumenty: {evidence_str}")
-        else:
-            prompts.append(statement_str)
+        evidence_str = json.dumps(truncated, indent=2, ensure_ascii=False)
+
+        prompts.append(f"{statement_str}\nPodpůrné dokumenty: {evidence_str}")
 
     return prompts
 
 
-def build_examples(
+def split_and_build_examples(
     statements,
+    dataset,
     seed=None,
     allowed_labels=["pravda", "nepravda", "neověřitelné"],
-    evidence_dir=None,
     include_explanation=False,
     count_for_each_label=1,
 ):
@@ -112,23 +105,21 @@ def build_examples(
 
     example_statements = []
     for label in allowed_labels:
-        filtered_statements = [
-            stmt for stmt in statements if stmt["assessment"].lower() == label
-        ]
+        filtered_statements = [ stmt for stmt in statements if stmt["label"].lower() == label ]
+
         if len(filtered_statements) < count_for_each_label:
-            raise ValueError(
-                f"Not enough statements for label '{label}'. Required: {count_for_each_label}, Found: {len(filtered_statements)}"
-            )
+            raise ValueError(f"Not enough statements for label '{label}'. Required: {count_for_each_label}, Found: {len(filtered_statements)}")
 
         # pseudo-randomly sample
-        shuffled_items = sorted(filtered_statements, key=lambda x: random.random())  # Shuffle while keeping order fixed
+        shuffled_items = sorted(filtered_statements, key=lambda _: random.random())  # Shuffle while keeping order fixed
         example_statements.extend(shuffled_items[:count_for_each_label])
 
-    inputs = prompt_builder(example_statements, evidence_dir=evidence_dir)
+    test_statements = [stmt for stmt in statements if stmt not in example_statements]
+    inputs = prompt_builder(example_statements,dataset)
 
     explanations = [
         (
-            f"Úvaha: {stmt['explanation'] if stmt['explanation_brief'] else stmt['explanation']}"
+            f"Úvaha: {stmt['explanation'] if stmt['explanation_brief'] else stmt['explanation']}\n"
             if include_explanation
             else ""
         )
@@ -136,27 +127,26 @@ def build_examples(
     ]
 
     examples = [
-        {"input": input_text, "output": explanation + "\nHodnocení: " + stmt["assessment"].lower()}
-        for input_text, stmt, explanation in zip(
-            inputs, example_statements, explanations
-        )
+        {"input": input_text, "output": explanation + "Hodnocení: " + stmt["label"].lower()}
+        for input_text, stmt, explanation in zip(inputs, example_statements, explanations)
     ]
 
-    return examples
+    return examples, test_statements
 
 
 def eval_dataset(
     model_id,
     statements,
     result_dir,
-    evidence_dir=None,
+    dataset,
     prompt_config_path=None,
     index=0,
     with_explanation=False,
     example_count=0,
     batch_size=1,
     allowed_labels=['pravda', 'nepravda'],
-    example_statements=None
+    example_statements=None,
+    model_api="transformers",
 ):
     """
     Test chosen models accuracy of labeling given statements with zero-shot prompt.
@@ -175,15 +165,17 @@ def eval_dataset(
     allowed_labels (List): List of allowed labels.
     """
 
-    model = Model(model_id, max_tokens=3000 if with_explanation else 25)
+    model = llm_api_factory(model_api, model_id)
     system_prompt, _ = load_prompt_config(prompt_config_path)
-    examples = build_examples(
+
+    # split statements into examples and test statements
+    examples, test_statements = split_and_build_examples(
         example_statements if example_statements else statements,
         seed=42,
-        evidence_dir=evidence_dir,
         include_explanation=with_explanation,
         count_for_each_label=example_count,
-        allowed_labels=allowed_labels
+        allowed_labels=allowed_labels,
+        dataset=dataset
     )
     logger.info(f"Loaded system prompt: {system_prompt}")
     logger.info(f"Loaded {len(examples)} examples.")
@@ -193,14 +185,20 @@ def eval_dataset(
         json.dump(examples, f, indent=4, ensure_ascii=False)
 
     model.set_system_prompt(system_prompt)
-    # model.set_generation_prompt("Úvaha: " if with_explanation else "Hodnocení: ")
+    model.set_generation_prompt("Úvaha: " if with_explanation else "Hodnocení: ")
     model.set_examples(examples)
 
-    prompts = prompt_builder(statements, evidence_dir=evidence_dir)
+    prompts = prompt_builder(test_statements, dataset)
+
+    # test statements info
+    logger.info(f"Evaluating {len(prompts)} statements.")
+    labels = [item["label"] for item in test_statements]
+    label_counts = {label: labels.count(label) for label in set(labels)}
+    logger.info(f"Label distribution in test set: {label_counts}")
 
     # generate responses
     logger.info(f"Generating responses for {len(prompts)} prompts.")
-    responses = model(prompts, batch_size)
+    responses = model(prompts, batch_size, max_new_tokens=3000 if with_explanation else 25)
 
     verdicts = [
         {
@@ -211,7 +209,7 @@ def eval_dataset(
             "response": response,
             "label": extract_label(response, allowed_labels),
         }
-        for statement, response in zip(statements, responses)
+        for statement, response in zip(test_statements, responses)
     ]
 
     # save responses
@@ -231,7 +229,7 @@ def eval_dataset(
         results_dest = os.path.join(result_dir, f"metrics.json")
         with open(results_dest, "w") as f:
             json.dump(
-                calculate_metrics(statements, verdicts, allowed_labels),
+                calculate_metrics(test_statements, verdicts, allowed_labels),
                 f,
                 indent=4,
                 ensure_ascii=False,
@@ -242,7 +240,7 @@ def eval_dataset(
         # parallelization used, dont calculate metrics, it will be aggregated later
         with open(os.path.join(result_dir, f"results_{index}.json"), "w") as f:
             json.dump(
-                {"y_pred": verdicts, "y_ref": statements},
+                {"y_pred": verdicts, "y_ref": test_statements},
                 f,
                 indent=4,
                 ensure_ascii=False,
@@ -281,41 +279,39 @@ def load_config():
     config = CONFIG
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-s", "--statements", type=str, default=config["StatementsPath"], help="Path to statements file.",)
-    parser.add_argument("-n", "--name", type=str, default=config["Name"], help="Name of the evaluation.")
     parser.add_argument("-o", "--out-folder", type=str, default=config["ResultsFolder"], help="Path to output folder.",)
-    parser.add_argument("ModelName", help="Name of the model to evaluate.", type=str, default=config["ModelName"], nargs="?",)
-    parser.add_argument("-y", "--yes", action="store_true", help="Automatically overwrite existing files.",)
-    parser.add_argument("-c", "--crossval", action="store_true", help="Perform cross-validation.")
-    parser.add_argument("-i", "--index", type=int, help="Index for parallelization.", default=0)
-    parser.add_argument("-m", "--max", type=int, default = 0, help="Maximum number of parallel processes.")
+    parser.add_argument("-i", "--index", type=int, default=0, help="Index for parallelization.")
+    parser.add_argument("-m", "--max", type=int, default = 1, help="Maximum number of parallel processes.")
     parser.add_argument("-e", "--explanation", action="store_true", help="Require explanation in the model output",)
-    parser.add_argument("-E", "--evidence", type=str, default=config["EvidenceDir"], help="Evidence folder path")
     parser.add_argument("-p", "--prompt-config", type=str, default=config["PromptConfigPath"], help="Prompt config file path")
-    parser.add_argument("--example-count", type=int, default=0, help="Number of examples for each label to use")
     parser.add_argument("-b", "--batch-size", type=int, default=1, help="Inference batch size")
     parser.add_argument("-t", "--test-portion", type=float, default=0.2, help="Portion of dataset to sample for testing")
-    parser.add_argument("--allowed-labels", nargs="+", default=['pravda','nepravda'], help="Labels that should be included in the evaluation")
-    parser.add_argument("--example-statements",default=config["StatementsPath"], help="Path to statements file used for examples")
+    parser.add_argument("-d", "--dataset-path", type=str, default=config.get("DatasetPath", ""), help="Path to dataset file. Accepts [sqlite] database file.")
+    parser.add_argument("-a", "--allowed-labels", nargs="+", default=['pravda','nepravda'], help="Labels that should be included in the evaluation")
+    parser.add_argument("-A", "--model-api", default="transformers", help="LLM API to use. Avaialble APIs: " + ", ".join(llm_api_dict.keys()))
+    parser.add_argument("-c", "--example-count", type=int, default=0, help="Number of examples for each label to use")
+    parser.add_argument("-l", "--log-path", type=str, default=config["LogPath"], help="Path to log file.")
+    parser.add_argument("-E", "--evidence-source", type=str, default="demagog", help="Source of evidence data, used to determine evidence table in dataset database.")
+    parser.add_argument("ModelName", help="Name of the model to evaluate.", type=str, default=config["ModelName"], nargs="?",)
+
 
     args = parser.parse_args()
 
-    config["StatementsPath"] = args.statements
-    config["Name"] = args.name
     config["ResultsFolder"] = args.out_folder
     config["ModelName"] = args.ModelName
-    config["Yes"] = args.yes
-    config["CrossValidation"] = args.crossval
     config["Index"] = args.index
     config["Max"] = args.max
     config["WithExplanation"] = args.explanation
-    config["EvidenceDir"] = args.evidence
     config["PromptConfigPath"] = args.prompt_config
     config["ExampleCount"] = args.example_count
     config["BatchSize"] = args.batch_size
     config["TestPortion"] = args.test_portion
     config["AllowedLabels"] = args.allowed_labels
-    config["ExampleStatementsPath"] = args.example_statements
+    config["ModelAPI"] = args.model_api
+    config["DatasetPath"] = args.dataset_path
+    config["LogPath"] = args.log_path
+    config["EvidenceSource"] = args.evidence_source
+
 
     if config["Index"] and not config["Max"]:
         parser.error("--index requires --max.")
@@ -325,80 +321,45 @@ def load_config():
     return config
 
 
-def check_file_overwrite(file_path):
-    if os.path.exists(file_path):
-        logger.warning(f"File {file_path} already exists.")
-        user_input = input("Do you want to overwrite it? (y/n): ")
-
-        if user_input.lower() != "y":
-            logger.info("Exiting.")
-            exit()
-        else:
-            logger.info("Overwriting file.")
-
-
 if __name__ == "__main__":
     config = load_config()
     setup_logging(config["LogPath"])
+    dataset = DemagogDataset(config["DatasetPath"], config["EvidenceSource"])
 
-    result_dir = os.path.join(
-        config["ResultsFolder"], config["ModelName"].split("/")[-1]
-    )
-
+    result_dir = os.path.join(config["ResultsFolder"], config["ModelName"].split("/")[-1])
     os.makedirs(result_dir, exist_ok=True)
 
-    logger.info(f"Starting evaluation of model {config['ModelName']}")
+    logger.info(f"Starting evaluation of model {config['ModelName']} via {config['ModelAPI']} API")
 
-    statements = []
-    with open(config["StatementsPath"], "r") as f:
-        statements = json.load(f)
+    # get all statements with allowed labels and at least 5 articles
+    statements = dataset.get_all_statements(config["AllowedLabels"], 5)
 
-    with open(config["ExampleStatementsPath"], "r") as f:
-        example_statements = json.load(f)
-
-    # filter only statements with allowed labels
-    filtered_statements = [stmt for stmt in statements if stmt['assessment'].lower() in config["AllowedLabels"]]
+    logger.info(f"Loaded {len(statements)} statements with allowed labels and at least 5 evidence articles.")
 
     if config["TestPortion"] < 1.0:
-        _, test_statements = train_test_split(
-            filtered_statements, test_size=config["TestPortion"], random_state=42, stratify=None
-        )
+        _, test_statements = train_test_split( statements, test_size=config["TestPortion"], random_state=42, stratify=None)
+        logger.info(f"Split dataset into {len(test_statements)} test statements ({config['TestPortion']*100} %).")
     else:
-        test_statements = filtered_statements
+        test_statements = statements
 
     # determine index range for parallelization
-    lower_index = (
-        (config["Index"] - 1) * len(test_statements) // config["Max"]
-        if config["Index"] > 0
-        else 0
-    )
-    upper_index = (
-        config["Index"] * len(test_statements) // config["Max"] - 1
-        if config["Index"] > 0
-        else len(test_statements) - 1
-    )
-
-    logger.info(
-        f"Parallelization index: {config['Index']}, lower index: {lower_index}, upper index: {upper_index}"
-    )
-
-    # calculate distribution of labels
-    labels = [item["assessment"] for item in test_statements]
-    label_counts = {label: labels.count(label) for label in set(labels)}
-    logger.info(f"Label distribution in test set: {label_counts}\nTotal: {len(labels)}")
-
+    lower_index = max(0, (config["Index"] - 1) * len(test_statements) // config["Max"])
+    upper_index = len(test_statements) - 1 if config["Index"] == 0 else config["Index"] * len(test_statements) // config["Max"] - 1
+    logger.info(f"Parallelization index: {config['Index']}, lower index: {lower_index}, upper index: {upper_index}")
 
     # evaluate
     eval_dataset(
         model_id = config["ModelName"],
         statements = test_statements[lower_index:upper_index],
         result_dir = result_dir,
-        evidence_dir = config["EvidenceDir"],
         prompt_config_path = config["PromptConfigPath"],
         index = config["Index"],
         with_explanation = config["WithExplanation"],
         example_count=config["ExampleCount"],
         batch_size = config["BatchSize"],
         allowed_labels = config["AllowedLabels"],
-        example_statements = example_statements
+        model_api=config["ModelAPI"],
+        dataset=dataset,
     )
+
+    logger.info("Evaluation finished.")

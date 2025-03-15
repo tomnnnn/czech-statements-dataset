@@ -1,9 +1,5 @@
 default:
-  Name: baseline
-  StatementsPath: datasets/statements.json
   ResultsFolder: results
-  EvidenceDir: null
   ModelName: meta-llama/Llama-3.2-1B-Instruct
-  PromptConfigPath: prompts/with_evidence.yaml
-  LogPath: /storage/brno2/home/tomn/czech-statements-dataset/logs
-  # LogPath: logs
+  PromptConfigPath: prompts/truefalse.yaml
+  LogPath: logs

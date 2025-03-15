@@ -14,7 +14,7 @@ class StatementParser:
     tags: list
     origin: str
     party: str
-    evidence_links: list
+    evidence_links: list = []
     selectors = {
         "citation": "div > div:nth-child(1) > div > div.ps-5 > cite",
         "statement": "div:nth-child(1) > div > div.ps-5 > blockquote > span.position-relative.fs-6",

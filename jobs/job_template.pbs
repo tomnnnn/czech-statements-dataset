@@ -30,15 +30,24 @@ if ! source "$DATA/.venv/bin/activate"; then
 fi
 
 # Copy scripts and data to scratch space
-cp -r "$DATA/$EVIDENCE_PATH" evidence
-cp "$DATA/$STATEMENTS_PATH" statements.json
 cp "$DATA/$PROMPT_PATH" prompt.yaml
-cp "$DATA/$EXAMPLES_PATH" examples.json
-
 cp -r "$DATA/src" .
 
 # Run baseline script
-PYTHONPATH=src python -m src.evaluate_dataset -y $EXPLANATION -o $OUTPUT_DIR -i $PBS_ARRAY_INDEX -m $MAX_INDEX -b $BATCH_SIZE -t $SAMPLE_PORTION --example-count $EXAMPLE_COUNT --allowed-labels $ALLOWED_LABELS --example-statements examples.json --prompt-config prompt.yaml --evidence evidence --statements statements.json $MODEL
+PYTHONPATH=src python -m src.evaluate_dataset			\
+	$EXPLANATION						\
+	-o $OUTPUT_DIR						\
+	-i $PBS_ARRAY_INDEX					\
+	-m $MAX_INDEX						\
+	-b $BATCH_SIZE						\
+	-t $SAMPLE_PORTION					\
+	--example-count $EXAMPLE_COUNT				\
+	--allowed-labels $ALLOWED_LABELS			\
+	--dataset-path $DATA/$DATASET_PATH			\
+	--evidence-source $EVIDENCE_SOURCE			\
+	--prompt-config prompt.yaml				\
+	--model-api $MODEL_API					\
+	$MODEL
 
 # Finalize
 clean_scratch

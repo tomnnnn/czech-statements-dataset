@@ -2,6 +2,7 @@ import json
 import os
 import shutil
 import sys
+from warnings import showwarning
 
 from tqdm.asyncio import tqdm
 
@@ -9,6 +10,7 @@ from .config import CONFIG
 from article_retriever import ArticleRetriever
 from demagog_scraper import DemagogScraper
 from evidence_retriever import evidence_retriever_factory
+from dataset_manager import DemagogDataset
 
 
 def prepare_output_dir(output_dir):
@@ -25,7 +27,6 @@ def prepare_output_dir(output_dir):
         shutil.rmtree(output_dir)
 
     os.makedirs(output_dir, exist_ok=True)
-    os.makedirs(f"{output_dir}/evidence", exist_ok=True)
     return output_dir
 
 
@@ -36,25 +37,19 @@ async def build_dataset():
     """
 
     output_dir = prepare_output_dir(CONFIG["OutputDir"])
+    dataset = DemagogDataset(os.path.join(output_dir, "dataset.sqlite"), CONFIG["EvidenceRetriever"])
 
     if CONFIG["UseExistingStatements"]:
         # load existing statements
         print("Using existing statements")
-        try:
-            with open(f"{CONFIG['OutputDir']}/statements.json", "r") as file:
-                stmts = json.load(file)
-        except FileNotFoundError:
-            print("UseExistingStatements is set to True, but no statements.json file was found in the output directory.")
-            exit(1)
+        stmts = dataset.get_all_statements()
     else:
         # scrape statements
         scraper = DemagogScraper(CONFIG["FromYear"], CONFIG["ToYear"], CONFIG["FirstNPages"])
 
         # include demagog evidence links if the evidence retriever is demagog 
         stmts = await scraper.run(CONFIG["EvidenceRetriever"] == "demagog")
-
-        with open(os.path.join(output_dir, 'statements.json'), "w+") as file:
-            json.dump(stmts, file, ensure_ascii=False, indent=4)
+        dataset.insert_statements(stmts)
 
     if CONFIG["UseExistingEvidenceLinks"]:
         print("Using existing evidence links")
@@ -74,17 +69,24 @@ async def build_dataset():
             json.dump(evidence_links, file, ensure_ascii=False, indent=4)
 
     if CONFIG["ScrapeArticles"]:
-        article_retriever = ArticleRetriever()
-
         # skip already scraped evidence (file exists)
-        filtered_evidence_links = list(filter(lambda x: not os.path.exists(os.path.join(output_dir, "evidence", f"{x['id']}.json")), evidence_links))
-        print(f"Skipping {len(evidence_links) - len(filtered_evidence_links)} already scraped evidence links")
+        scraped_ids = dataset.get_scraped_statement_ids()
+        filtered_evidence_links = [item for item in evidence_links if item["id"] not in scraped_ids]
+
+        print(f"Skipping {len(scraped_ids)} already scraped statements")
 
         # prepare inputs for batch retrieval
         links_batches = [ [ result["url"] for result in item["results"] ] for item in filtered_evidence_links ]
         batch_ids = [item["id"] for item in filtered_evidence_links]
-        batch_save_paths = [os.path.join(output_dir, "evidence", f"{id}.json") for id in batch_ids]
 
         # scrape articles
-        tasks = [article_retriever.batch_retrieve_save(path,links,id, show_progress=False) for path,id,links in zip(batch_save_paths, batch_ids, links_batches)]
+        tasks = [retrieve_and_save(dataset, id, links) for id,links in zip(batch_ids, links_batches)]
+
         await tqdm.gather(*tasks, desc="Scraping articles (total progress)", unit="statements", file=sys.stdout)
+
+
+async def retrieve_and_save(dataset: DemagogDataset, statement_id, links):
+    article_retriever = ArticleRetriever()
+    articles = await article_retriever.batch_retrieve(links, show_progress=False)
+
+    dataset.insert_evidence_batch(statement_id, articles)

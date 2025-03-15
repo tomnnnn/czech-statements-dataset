@@ -1,9 +1,10 @@
 import sklearn.metrics
+import numpy as np
 from utils.utils import *
 
 def calculate_metrics(ref_statements, responses, allowed_labels):
     """
-    Calculate accuracy, micro, macro and weighted f1 scores of predicted labels in responses compared to reference assessments in reference_path.
+    Calculate accuracy, micro, macro and weighted f1 scores of predicted labels in responses compared to reference labels in reference_path.
     The results are saved to output_path.
 
     Args:
@@ -18,8 +19,7 @@ def calculate_metrics(ref_statements, responses, allowed_labels):
         if (item := find_by_id(ref['id'], responses)) is not None
     ]    
     # get labels from reference
-    ref_labels = [ref["assessment"].lower() for ref in ref_statements]
+    ref_labels = [ref["label"].lower() for ref in ref_statements]
 
     # calculate metrics
-    return sklearn.metrics.classification_report(ref_labels, pred_labels, output_dict=True, labels=allowed_labels)
-
+    return sklearn.metrics.classification_report(ref_labels, pred_labels, output_dict=True, labels=allowed_labels, zero_division=np.nan)

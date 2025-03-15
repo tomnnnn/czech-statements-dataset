@@ -1,4 +1,4 @@
-from llm_api import LanguageModelAPI
+from ..llm_api import LanguageModelAPI
 import os
 from openai import OpenAI
 
@@ -10,18 +10,18 @@ class OpenAI_API(LanguageModelAPI):
     system_prompt = ""
     generation_prompt = ""
 
-    def __init__(self,model_path="gpt-4o", max_tokens=1000):
-        super().__init__(model_path, max_tokens)
+    def __init__(self,model_path="gpt-4o"):
+        super().__init__(model_path)
         self.client = OpenAI(api_key=os.getenv("MODEL_API_KEY"))
 
-    def _infer(self, conversations, batch_size=8):
+    def _infer(self, conversations, batch_size=8, max_new_tokens=1000):
         results = []
         for chat in conversations:
             print(len("".join([x["content"] for x in chat])))
             response = self.client.chat.completions.create(
                 model=self.model_path,
                 messages=chat,
-                max_tokens=self.max_tokens,
+                max_tokens=max_new_tokens,
                 temperature=0.0,
             )
 

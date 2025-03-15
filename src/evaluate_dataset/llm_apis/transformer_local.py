@@ -1,12 +1,13 @@
-from llm_api import LanguageModelAPI
+from ..llm_api import LanguageModelAPI
 import os
 import transformers
 
 class Transformer_Local(LanguageModelAPI):
-    def __init__(self, model_path, max_tokens=1000, quant_config=None):
-        super().__init__(model_path, max_tokens)
+    def __init__(self, model_path, quant_config=None):
+        super().__init__(model_path)
 
         hf_token = os.getenv("HF_ACCESS_TOKEN")
+        print("HF TOKEN: " + str(hf_token))
 
         # Load model and tokenizer
         self.model = transformers.AutoModelForCausalLM.from_pretrained(model_path, quantization_config=quant_config, token=hf_token, device_map="auto", torch_dtype="auto")
@@ -18,6 +19,6 @@ class Transformer_Local(LanguageModelAPI):
 
         self.pipeline = transformers.pipeline("text-generation", model=self.model, tokenizer=self.tokenizer, token=hf_token)
 
-    def _infer(self, conversations, batch_size=8):
-        results = self.pipeline(conversations, max_new_tokens=self.max_tokens,return_full_text=False, batch_size=batch_size, truncation=True, do_sample=False)
+    def _infer(self, conversations, batch_size=8, max_new_tokens=1000):
+        results = self.pipeline(conversations, max_new_tokens=max_new_tokens,return_full_text=False, batch_size=batch_size, truncation=True, do_sample=False)
         return [result[0]["generated_text"] for result in results]

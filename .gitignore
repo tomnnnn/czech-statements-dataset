@@ -3,7 +3,7 @@ dataset.json
 pyrightconfig.json
 dataset
 .DS_Store
-dataset*/
+datasets/
 .venv
 .env
 .mamba

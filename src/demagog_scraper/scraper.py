@@ -114,7 +114,8 @@ class DemagogScraper:
         for statement_div in statement_divs:
             try:
                 statements.append(StatementParser(statement_div, include_evidence).get_dict())
-            except:
+            except Exception as e:
+                print(f"Failed to parse statement: {e}", file=sys.stderr)
                 corrupted_count += 1
 
         if corrupted_count:
