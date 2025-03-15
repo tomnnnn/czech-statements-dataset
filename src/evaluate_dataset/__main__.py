@@ -155,7 +155,8 @@ def eval_dataset(
     with_explanation=False,
     example_count=0,
     batch_size=1,
-    allowed_labels=['pravda', 'nepravda']
+    allowed_labels=['pravda', 'nepravda'],
+    example_statements=None
 ):
     """
     Test chosen models accuracy of labeling given statements with zero-shot prompt.
@@ -174,10 +175,10 @@ def eval_dataset(
     allowed_labels (List): List of allowed labels.
     """
 
-    model = Model(model_id, max_tokens=4000 if with_explanation else 10)
+    model = Model(model_id, max_tokens=3000 if with_explanation else 25)
     system_prompt, _ = load_prompt_config(prompt_config_path)
     examples = build_examples(
-        statements,
+        example_statements if example_statements else statements,
         seed=42,
         evidence_dir=evidence_dir,
         include_explanation=with_explanation,
@@ -192,6 +193,7 @@ def eval_dataset(
         json.dump(examples, f, indent=4, ensure_ascii=False)
 
     model.set_system_prompt(system_prompt)
+    # model.set_generation_prompt("Úvaha: " if with_explanation else "Hodnocení: ")
     model.set_examples(examples)
 
     prompts = prompt_builder(statements, evidence_dir=evidence_dir)
@@ -199,6 +201,7 @@ def eval_dataset(
     # generate responses
     logger.info(f"Generating responses for {len(prompts)} prompts.")
     responses = model(prompts, batch_size)
+
     verdicts = [
         {
             "id": statement["id"],
@@ -293,6 +296,7 @@ def load_config():
     parser.add_argument("-b", "--batch-size", type=int, default=1, help="Inference batch size")
     parser.add_argument("-t", "--test-portion", type=float, default=0.2, help="Portion of dataset to sample for testing")
     parser.add_argument("--allowed-labels", nargs="+", default=['pravda','nepravda'], help="Labels that should be included in the evaluation")
+    parser.add_argument("--example-statements",default=config["StatementsPath"], help="Path to statements file used for examples")
 
     args = parser.parse_args()
 
@@ -311,6 +315,7 @@ def load_config():
     config["BatchSize"] = args.batch_size
     config["TestPortion"] = args.test_portion
     config["AllowedLabels"] = args.allowed_labels
+    config["ExampleStatementsPath"] = args.example_statements
 
     if config["Index"] and not config["Max"]:
         parser.error("--index requires --max.")
@@ -347,6 +352,9 @@ if __name__ == "__main__":
     statements = []
     with open(config["StatementsPath"], "r") as f:
         statements = json.load(f)
+
+    with open(config["ExampleStatementsPath"], "r") as f:
+        example_statements = json.load(f)
 
     # filter only statements with allowed labels
     filtered_statements = [stmt for stmt in statements if stmt['assessment'].lower() in config["AllowedLabels"]]
@@ -391,5 +399,6 @@ if __name__ == "__main__":
         with_explanation = config["WithExplanation"],
         example_count=config["ExampleCount"],
         batch_size = config["BatchSize"],
-        allowed_labels = config["AllowedLabels"] 
+        allowed_labels = config["AllowedLabels"],
+        example_statements = example_statements
     )

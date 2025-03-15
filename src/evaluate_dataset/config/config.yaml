@@ -1,16 +1,9 @@
 default:
   Name: baseline
-  StatementsPath: datasets/statements_demagog_filtered.json
+  StatementsPath: datasets/statements.json
   ResultsFolder: results
-  EvidenceDir: datasets/demagog_evidence
-  ModelName: meta-llama/Llama-3.2-1B-Instruct
-  PromptConfigPath: config/prompts/with_evidence.yaml
-  LogPath: logs
-metacentrum:
-  Name: baseline
-  StatementsPath: ../datasets/statements.json
-  ResultsFolder: ../results
   EvidenceDir: null
   ModelName: meta-llama/Llama-3.2-1B-Instruct
-  PromptConfigPath: config/prompts/with_evidence.yaml
-  LogPath: /storage/brno12-cerit/home/tomn/baseline/logs
+  PromptConfigPath: prompts/with_evidence.yaml
+  LogPath: /storage/brno2/home/tomn/czech-statements-dataset/logs
+  # LogPath: logs
