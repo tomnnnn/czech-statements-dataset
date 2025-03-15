@@ -12,3 +12,5 @@ logs/baseline
 baseline/results
 stats
 logs
+.hf/
+jobs

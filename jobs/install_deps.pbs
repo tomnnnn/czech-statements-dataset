@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=1:mem=12gb:scratch_local=10gb
+#PBS -l walltime=2:0:0
+
+export TMPDIR=$SCRATCHDIR
+cd /storage/brno2/home/tomn/czech-statements-dataset
+module add mambaforge
+mamba activate .mamba/venv
+pip install -r requirements.txt
+
+clean_scratch

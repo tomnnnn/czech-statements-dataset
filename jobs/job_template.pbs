@@ -6,7 +6,7 @@
 export TMPDIR=$SCRATCHDIR
 export HF_HOME=$DATA/.hf # set Hugging Face cache directory
 
-OUTPUT_DIR=$DATA/results/$NAME
+export OUTPUT_DIR=$DATA/results/new/$NAME
 
 echo "Job started on $(hostname) at $(date) with index $PBS_ARRAY_INDEX"
 
@@ -33,11 +33,12 @@ fi
 cp -r "$DATA/$EVIDENCE_PATH" evidence
 cp "$DATA/$STATEMENTS_PATH" statements.json
 cp "$DATA/$PROMPT_PATH" prompt.yaml
+cp "$DATA/$EXAMPLES_PATH" examples.json
 
 cp -r "$DATA/src" .
 
 # Run baseline script
-PYTHONPATH=src python -m src.evaluate_dataset -y -o $OUTPUT_DIR -i $PBS_ARRAY_INDEX -m $MAX_INDEX -b $BATCH_SIZE -t $SAMPLE_PORTION --example-count $EXAMPLE_COUNT --allowed-labels $ALLOWED_LABELS --prompt-config prompt.yaml --evidence evidence --statements statements.json $MODEL
+PYTHONPATH=src python -m src.evaluate_dataset -y $EXPLANATION -o $OUTPUT_DIR -i $PBS_ARRAY_INDEX -m $MAX_INDEX -b $BATCH_SIZE -t $SAMPLE_PORTION --example-count $EXAMPLE_COUNT --allowed-labels $ALLOWED_LABELS --example-statements examples.json --prompt-config prompt.yaml --evidence evidence --statements statements.json $MODEL
 
 # Finalize
 clean_scratch

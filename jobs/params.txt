@@ -2,18 +2,42 @@
 # NAME=truefalse_demagog_oneshot EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/truefalse.yaml ALLOWED_LABELS="pravda nepravda" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=3:0:0
 # NAME=truefalse_demagog_twoshot EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/truefalse.yaml ALLOWED_LABELS="pravda nepravda" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=3:0:0
 # NAME=truefalse_demagog_threeshot EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/truefalse.yaml ALLOWED_LABELS="pravda nepravda" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=3:30:0
-#  
-# # demagog whole with unverifiable
+ 
+# demagog whole with unverifiable
 # NAME=unveri_demagog_oneshot EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=3:0:0
 # NAME=unveri_demagog_twoshot EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=3:0:0
 # NAME=unveri_demagog_threeshot EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=3:30:0
 
 # bing whole with unverifiable
-NAME=whole_bing_oneshot EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=5:0:0
-NAME=whole_bing_twoshot EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=5:0:0
-NAME=whole_bing_threeshot EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=5:00:0
+# NAME=whole_bing_oneshot EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=5:0:0
+# NAME=whole_bing_twoshot EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=5:0:0
+# NAME=whole_bing_threeshot EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=5:00:0
+# 
+# # criteria whole with unverifiable
+# NAME=whole_criteria_oneshot EVIDENCE_PATH=datasets/criteria_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=5:0:0
+# NAME=whole_criteria_twoshot EVIDENCE_PATH=datasets/criteria_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=5:0:0
+# NAME=whole_criteria_threeshot EVIDENCE_PATH=datasets/criteria_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=5:00:0
 
-# criteria whole with unverifiable
-NAME=whole_criteria_oneshot EVIDENCE_PATH=datasets/criteria_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=5:0:0
-NAME=whole_criteria_twoshot EVIDENCE_PATH=datasets/criteria_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=5:0:0
-NAME=whole_criteria_threeshot EVIDENCE_PATH=datasets/criteria_evidence STATEMENTS_PATH=datasets/statements.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=5:00:0
+
+# ============================== WITH EXPLANATION ==============================
+
+# # bing 20 percent with unverifiable
+# NAME=bing_oneshot_exp EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements_bing_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=4:0:0 EXPLANATION=--explanation
+# NAME=bing_twoshot_exp EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements_bing_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=4:0:0 EXPLANATION=--explanation
+# NAME=bing_threeshot_exp EVIDENCE_PATH=datasets/bing_evidence STATEMENTS_PATH=datasets/statements_bing_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=4:00:0 EXPLANATION=--explanation
+#   
+# 
+# demagog 20 percent with unverifiable
+ NAME=demagog_oneshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=4:0:0 EXPLANATION=--explanation
+ NAME=demagog_twoshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=4:0:0 EXPLANATION=--explanation
+ NAME=demagog_threeshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_demagog_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=4:00:0 EXPLANATION=--explanation
+# 
+# criteria 20 percent with unverifiable
+# NAME=criteria_oneshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_criteria_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=3:0:0 EXPLANATION=--explanation
+# NAME=criteria_twoshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_criteria_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=2 WALLTIME=3:0:0 EXPLANATION=--explanation
+# NAME=criteria_threeshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/statements_criteria_filtered.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=3 WALLTIME=3:00:0 EXPLANATION=--explanation
+
+# ============================ CURATED ============================
+NAME=demagog_curated_oneshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/curated_demagog.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=2 EXAMPLE_COUNT=1 WALLTIME=0:30:0 EXPLANATION=""
+NAME=demagog_curated_twoshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/curated_demagog.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=2 EXAMPLE_COUNT=2 WALLTIME=0:30:0 EXPLANATION=""
+NAME=demagog_curated_threeshot_exp EVIDENCE_PATH=datasets/demagog_evidence STATEMENTS_PATH=datasets/curated_demagog.json PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=2 EXAMPLE_COUNT=3 WALLTIME=0:30:0 EXPLANATION=""
