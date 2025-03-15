@@ -11,7 +11,7 @@ class ArticleRetriever:
         self.fetch_sem = asyncio.Semaphore(fetch_concurrency)
         self.fetch_delay = fetch_delay
 
-    def __extract_article(self, html, max_num_paragraphs=1000, min_num_words=5):
+    def __extract_article(self, html, max_num_paragraphs=1000, min_num_words=30):
         """
         Extract article content from HTML using a combination of article tags and paragraph heuristics
 
@@ -31,15 +31,15 @@ class ArticleRetriever:
             "content": ""
         }
 
-        if soup.find("article") is not None:
-            article = soup.find("article")
-            article_text = article.get_text(strip=True)
-            title = soup.find('title')
-            title = title.get_text() if title else ""
-
-            parsed_article["title"] = title
-            parsed_article["content"] = article_text
-            return parsed_article
+        # if soup.find("article") is not None:
+        #     article = soup.find("article")
+        #     article_text = article.get_text()
+        #     title = soup.find('title')
+        #     title = title.get_text() if title else ""
+        #
+        #     parsed_article["title"] = title
+        #     parsed_article["content"] = article_text
+        #     return parsed_article
 
         # no article found, resort to paragraph heuristics
         p_parents = defaultdict(list)
@@ -54,7 +54,7 @@ class ArticleRetriever:
             raise ValueError("No paragraphs found")
 
         article_dom = parents_counts[0][0]
-        article_text = " ".join(p.get_text().strip() for p in article_dom.find_all("p") if len(p.get_text().split()) > min_num_words)
+        article_text = "\n".join(p.get_text() for p in article_dom.find_all("p") if len(p.get_text().split()) > min_num_words)
         title = soup.find('title')
         title = title.get_text() if title else ""
 
@@ -80,7 +80,7 @@ class ArticleRetriever:
         articles = await tqdm.gather(*tasks, desc="Retrieving and extracting articles", unit="article", disable=not show_progress)
         articles = [r for r in articles if r is not None]
 
-        return {"id": id, "articles": articles} if id else articles
+        return articles
 
 
     async def batch_retrieve_save(self, path:str, links: list[str], id=None, max_num_paragraphs: int=1000, min_num_words:int=5, show_progress=True):
