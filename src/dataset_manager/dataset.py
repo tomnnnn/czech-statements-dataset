@@ -16,7 +16,7 @@ class DemagogDataset:
     """
     new = False
 
-    def __init__(self, path, evidence_source="demagog"):
+    def __init__(self, path, evidence_source="demagog", readonly=False):
         """
         Initialize the dataset database connection, create tables if they don't exist
         """
@@ -25,45 +25,47 @@ class DemagogDataset:
         if not os.path.exists(path):
             self.new = True
 
-        self.conn = sqlite3.connect(path)
+        self.conn = sqlite3.connect(f"file:{path}?mode={'ro' if readonly else 'wa'}", uri=True)
+        self.readonly = readonly
         self.conn.row_factory = sqlite3.Row
         self.cursor = self.conn.cursor()
         self.set_evidence_source(evidence_source)
 
-        # create tables if not exist
-        self.cursor.execute(
-            """CREATE TABLE IF NOT EXISTS statements (
-            id INTEGER PRIMARY KEY,
-            statement TEXT,
-            label TEXT,
-            author TEXT,
-            date TEXT,
-            party TEXT,
-            explanation TEXT,
-            explanation_brief TEXT,
-            origin TEXT
-            )""",
-        )
-
-        # NOTE: For the sake of simplicity, no join table is used, despite many-to-many relationship
-        self.cursor.execute(
-            """CREATE TABLE IF NOT EXISTS tags (
-            id INTEGER PRIMARY KEY,
-            statement_id INTEGER,
-            tag TEXT
+        if not readonly:
+            # create tables if not exist
+            self.cursor.execute(
+                """CREATE TABLE IF NOT EXISTS statements (
+                id INTEGER PRIMARY KEY,
+                statement TEXT,
+                label TEXT,
+                author TEXT,
+                date TEXT,
+                party TEXT,
+                explanation TEXT,
+                explanation_brief TEXT,
+                origin TEXT
+                )""",
             )
-            """
-        )
-        # create index
-        self.cursor.execute(
-            """CREATE INDEX IF NOT EXISTS idx_statements_id ON statements (id)"""
-        )
 
-        self.cursor.execute(
-            """CREATE INDEX IF NOT EXISTS idx_tags_statement_id ON tags (statement_id)"""
-        )
+            # NOTE: For the sake of simplicity, no join table is used, despite many-to-many relationship
+            self.cursor.execute(
+                """CREATE TABLE IF NOT EXISTS tags (
+                id INTEGER PRIMARY KEY,
+                statement_id INTEGER,
+                tag TEXT
+                )
+                """
+            )
+            # create index
+            self.cursor.execute(
+                """CREATE INDEX IF NOT EXISTS idx_statements_id ON statements (id)"""
+            )
 
-        self.conn.commit()
+            self.cursor.execute(
+                """CREATE INDEX IF NOT EXISTS idx_tags_statement_id ON tags (statement_id)"""
+            )
+
+            self.conn.commit()
 
     def set_evidence_source(self, source):
         """
@@ -72,30 +74,31 @@ class DemagogDataset:
         self.evidence_source = source
         self._evidence_table = "evidence_" + source
 
-        # create evidence table if not exist
-        self.cursor.execute(
-            f"""CREATE TABLE IF NOT EXISTS {self._evidence_table} (
-            id INTEGER PRIMARY KEY,
-            statement_id INTEGER,
-            url TEXT,
-            title TEXT,
-            description TEXT,
-            content TEXT,
-            author TEXT,
-            type TEXT,
-            published TEXT,
-            source TEXT,
-            accessed TEXT,
-            FOREIGN KEY (statement_id) REFERENCES statements (id)
-            )"""
-        )
+        if not self.readonly:
+            # create evidence table if not exist
+            self.cursor.execute(
+                f"""CREATE TABLE IF NOT EXISTS {self._evidence_table} (
+                id INTEGER PRIMARY KEY,
+                statement_id INTEGER,
+                url TEXT,
+                title TEXT,
+                description TEXT,
+                content TEXT,
+                author TEXT,
+                type TEXT,
+                published TEXT,
+                source TEXT,
+                accessed TEXT,
+                FOREIGN KEY (statement_id) REFERENCES statements (id)
+                )"""
+            )
 
-        # create index
-        self.cursor.execute(
-            f"""CREATE INDEX IF NOT EXISTS idx_{self._evidence_table}_statement_id ON {self._evidence_table} (statement_id)"""
-        )
+            # create index
+            self.cursor.execute(
+                f"""CREATE INDEX IF NOT EXISTS idx_{self._evidence_table}_statement_id ON {self._evidence_table} (statement_id)"""
+            )
 
-        self.conn.commit()
+            self.conn.commit()
 
 
     def get_all_statements(self, allowed_labels=None, min_evidence_count=0):

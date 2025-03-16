@@ -42,4 +42,7 @@
 # NAME=demagog_curated_twoshot_exp DATASET_PATH=datasets/dataset.sqlite EVIDENCE_SOURCE=demagog PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=2 EXAMPLE_COUNT=2 WALLTIME=0:30:0 EXPLANATION=""
 # NAME=demagog_curated_threeshot_exp DATASET_PATH=datasets/dataset.sqlite EVIDENCE_SOURCE=demagog PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=2 EXAMPLE_COUNT=3 WALLTIME=0:30:0 EXPLANATION=""
 
-NAME=mock DATASET_PATH=datasets/dataset.sqlite EVIDENCE_SOURCE=demagog PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=2 EXAMPLE_COUNT=3 WALLTIME=0:30:0 EXPLANATION="" MODEL_API=mock
+# NAME=mock DATASET_PATH=datasets/dataset.sqlite EVIDENCE_SOURCE=demagog PROMPT_PATH=prompts/with_evidence.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=1 MAX_INDEX=2 EXAMPLE_COUNT=3 WALLTIME=0:10:0 EXPLANATION="" MODEL_API=mock
+
+NAME=bing_oneshot DATASET_PATH=datasets/dataset.sqlite EVIDENCE_SOURCE=bing PROMPT_PATH=prompts/unveri.yaml ALLOWED_LABELS="pravda nepravda neověřitelné" BATCH_SIZE=1 SAMPLE_PORTION=0.2 MAX_INDEX=10 EXAMPLE_COUNT=1 WALLTIME=6:0:0 EXPLANATION="" MODEL_API=llamacpp MODEL=bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF MODEL_FILE=DeepSeek-R1-Distill-Qwen-32B-Q5_K_M.gguf
+

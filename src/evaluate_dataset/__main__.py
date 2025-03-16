@@ -46,7 +46,7 @@ def extract_label(response, allowed_labels):
     return label
 
 
-def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=500):
+def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=1500):
     """
     Build prompts for given statements. Optionally include evidence from evidence_dir.
 
@@ -327,7 +327,7 @@ def load_config():
 if __name__ == "__main__":
     config = load_config()
     setup_logging(config["LogPath"])
-    dataset = DemagogDataset(config["DatasetPath"], config["EvidenceSource"])
+    dataset = DemagogDataset(config["DatasetPath"], config["EvidenceSource"], readonly=True)
 
     result_dir = os.path.join(config["ResultsFolder"], config["ModelName"].split("/")[-1])
     os.makedirs(result_dir, exist_ok=True)
@@ -353,8 +353,8 @@ if __name__ == "__main__":
     # evaluate
     eval_dataset(
         model_id = config["ModelName"],
-        #statements = test_statements[lower_index:upper_index],
-        statements = test_statements[:1],
+        statements = test_statements[lower_index:upper_index],
+        #statements = test_statements[:1],
         result_dir = result_dir,
         prompt_config_path = config["PromptConfigPath"],
         index = config["Index"],

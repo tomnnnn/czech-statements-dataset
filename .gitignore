@@ -13,4 +13,4 @@ baseline/results
 stats
 logs
 .hf/
-jobs
+jobs/.jobs

@@ -1,6 +1,5 @@
 #!/bin/bash
-#PBS -J 1-10
-#PBS -l select=1:ncpus=1:ngpus=1:mem=12gb:gpu_mem=40gb:scratch_local=2gb
+#PBS -l select=1:ncpus=1:mem=12gb:ngpus=1:gpu_mem=40gb:scratch_local=10gb
 #PBS -j oe
 
 export TMPDIR=$SCRATCHDIR
@@ -47,6 +46,7 @@ PYTHONPATH=src python -m src.evaluate_dataset			\
 	--evidence-source $EVIDENCE_SOURCE			\
 	--prompt-config prompt.yaml				\
 	--model-api $MODEL_API					\
+	--model-file $MODEL_FILE				\
 	$MODEL
 
 # Finalize
