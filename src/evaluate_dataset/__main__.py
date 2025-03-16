@@ -147,6 +147,7 @@ def eval_dataset(
     allowed_labels=['pravda', 'nepravda'],
     example_statements=None,
     model_api="transformers",
+    model_file=""
 ):
     """
     Test chosen models accuracy of labeling given statements with zero-shot prompt.
@@ -165,7 +166,7 @@ def eval_dataset(
     allowed_labels (List): List of allowed labels.
     """
 
-    model = llm_api_factory(model_api, model_id)
+    model = llm_api_factory(model_api, model_id, filename=model_file)
     system_prompt, _ = load_prompt_config(prompt_config_path)
 
     # split statements into examples and test statements
@@ -292,6 +293,7 @@ def load_config():
     parser.add_argument("-c", "--example-count", type=int, default=0, help="Number of examples for each label to use")
     parser.add_argument("-l", "--log-path", type=str, default=config["LogPath"], help="Path to log file.")
     parser.add_argument("-E", "--evidence-source", type=str, default="demagog", help="Source of evidence data, used to determine evidence table in dataset database.")
+    parser.add_argument("--model-file", help="Optional path to model file if needed.", type=str, default='', nargs="?")
     parser.add_argument("ModelName", help="Name of the model to evaluate.", type=str, default=config["ModelName"], nargs="?",)
 
 
@@ -311,6 +313,7 @@ def load_config():
     config["DatasetPath"] = args.dataset_path
     config["LogPath"] = args.log_path
     config["EvidenceSource"] = args.evidence_source
+    config["ModelFile"] = args.model_file
 
 
     if config["Index"] and not config["Max"]:
@@ -350,7 +353,8 @@ if __name__ == "__main__":
     # evaluate
     eval_dataset(
         model_id = config["ModelName"],
-        statements = test_statements[lower_index:upper_index],
+        #statements = test_statements[lower_index:upper_index],
+        statements = test_statements[:1],
         result_dir = result_dir,
         prompt_config_path = config["PromptConfigPath"],
         index = config["Index"],
@@ -360,6 +364,7 @@ if __name__ == "__main__":
         allowed_labels = config["AllowedLabels"],
         model_api=config["ModelAPI"],
         dataset=dataset,
+        model_file=config["ModelFile"]
     )
 
     logger.info("Evaluation finished.")
