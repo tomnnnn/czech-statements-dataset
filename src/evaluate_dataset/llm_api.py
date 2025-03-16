@@ -3,7 +3,7 @@ class LanguageModelAPI:
     system_prompt = ""
     examples = []
 
-    def __init__(self, model_path):
+    def __init__(self, model_path, **kwargs):
         self.model_path = model_path
 
     def set_system_prompt(self, prompt):

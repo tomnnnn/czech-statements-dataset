@@ -3,11 +3,11 @@ from llama_cpp import Llama
 
 
 class LlamaCpp_Local(LanguageModelAPI):
-    def __init__(self, model_path: str, filaname: str):
+    def __init__(self, model_path: str, **kwargs):
         super().__init__(model_path)
         self.model = Llama.from_pretrained(
             repo_id=model_path,
-            filename=filaname,
+            filename=kwargs.get('filename', ''),
             verbose=False
         )
 
