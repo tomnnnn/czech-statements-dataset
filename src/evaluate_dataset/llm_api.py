@@ -25,7 +25,7 @@ class LanguageModelAPI:
         prompts = prompts if isinstance(prompts, list) else [prompts]
 
         conversations = [
-            [ {"role": "system", "content": self.system_prompt}, ]
+            [ {"role": "user", "content": self.system_prompt}, ]
             +
             [ {"role": role, "content": example[key]} for example in self.examples for role,key in [("user", "input"), ("assistant", "output")] ]
             +

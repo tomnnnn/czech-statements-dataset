@@ -1,6 +1,7 @@
 import datetime
 import os
 import sqlite3
+from bs4 import BeautifulSoup
 
 class DemagogDataset:
     """
@@ -134,6 +135,30 @@ class DemagogDataset:
         row = self.cursor.fetchone()
         return dict(row) if row else None
 
+    def _convert_html_to_text(self, html):
+        """
+        Convert HTML content to plain text
+        """
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # Decompose all <img> and <figure> tags in a single loop
+        for tag in soup.find_all(['img', 'figure']):
+            tag.decompose()
+
+        # Remove <p> tags containing 'cookie' in a single pass
+        for tag in soup.find_all('p'):
+            if 'cookie' in tag.text.lower():
+                tag.decompose()
+
+        # Collect text efficiently using a generator
+        text = '\n'.join(
+            tag.text.strip()
+            for tag in soup.find_all('p')
+            if len(tag.text.strip()) > 100
+        )
+
+        return text
+
     def get_evidence(self, statement_id):
         """
         Get all evidence documents for a statement by the statement ID
@@ -143,7 +168,19 @@ class DemagogDataset:
         )
 
         row = self.cursor.fetchall()
-        return [dict(r) for r in row]
+
+        result = [dict(r) for r in row]
+
+        # NOTE: temporarily convert html content to plain text in demagog dataset
+        if self.evidence_source == "demagog":
+            result = [
+                {**r, "content": self._convert_html_to_text(r["content"])}
+                for r in result
+            ]
+
+        return result
+
+
 
     def get_all_evidence(self):
         """
@@ -212,6 +249,7 @@ class DemagogDataset:
         """
         Insert multiple statements into the dataset
         """
+
         self.cursor.executemany(
             """ INSERT INTO statements 
             (statement, label, author, date, party, explanation, explanation_brief, origin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)

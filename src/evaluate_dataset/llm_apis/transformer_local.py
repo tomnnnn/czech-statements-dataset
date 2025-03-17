@@ -3,14 +3,13 @@ import os
 import transformers
 
 class Transformer_Local(LanguageModelAPI):
-    def __init__(self, model_path, quant_config=None):
+    def __init__(self, model_path, **kwargs):
         super().__init__(model_path)
 
         hf_token = os.getenv("HF_ACCESS_TOKEN")
-        print("HF TOKEN: " + str(hf_token))
 
         # Load model and tokenizer
-        self.model = transformers.AutoModelForCausalLM.from_pretrained(model_path, quantization_config=quant_config, token=hf_token, device_map="auto", torch_dtype="auto")
+        self.model = transformers.AutoModelForCausalLM.from_pretrained(model_path, token=hf_token, device_map="auto", torch_dtype="auto")
         self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_path, token=hf_token, padding_side="left")
 
         # Set padding token to eos token if it is not set

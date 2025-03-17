@@ -286,14 +286,14 @@ def load_config():
     parser.add_argument("-e", "--explanation", action="store_true", help="Require explanation in the model output",)
     parser.add_argument("-p", "--prompt-config", type=str, default=config["PromptConfigPath"], help="Prompt config file path")
     parser.add_argument("-b", "--batch-size", type=int, default=1, help="Inference batch size")
-    parser.add_argument("-t", "--test-portion", type=float, default=0.2, help="Portion of dataset to sample for testing")
+    parser.add_argument("-t", "--test-portion", type=float, default=None, help="Portion of dataset to sample for testing. If number N >= 1 is supplied, exactly N statements will be sampled for testing.")
     parser.add_argument("-d", "--dataset-path", type=str, default=config.get("DatasetPath", ""), help="Path to dataset file. Accepts [sqlite] database file.")
     parser.add_argument("-a", "--allowed-labels", nargs="+", default=['pravda','nepravda'], help="Labels that should be included in the evaluation")
     parser.add_argument("-A", "--model-api", default="transformers", help="LLM API to use. Avaialble APIs: " + ", ".join(llm_api_dict.keys()))
     parser.add_argument("-c", "--example-count", type=int, default=0, help="Number of examples for each label to use")
     parser.add_argument("-l", "--log-path", type=str, default=config["LogPath"], help="Path to log file.")
     parser.add_argument("-E", "--evidence-source", type=str, default="demagog", help="Source of evidence data, used to determine evidence table in dataset database.")
-    parser.add_argument("--model-file", help="Optional path to model file if needed.", type=str, default='', nargs="?")
+    parser.add_argument("--model-file", help="Optional path to model file if needed.", type=str, default=None, nargs="?")
     parser.add_argument("ModelName", help="Name of the model to evaluate.", type=str, default=config["ModelName"], nargs="?",)
 
 
@@ -328,6 +328,7 @@ if __name__ == "__main__":
     config = load_config()
     setup_logging(config["LogPath"])
     dataset = DemagogDataset(config["DatasetPath"], config["EvidenceSource"], readonly=True)
+    random.seed(42)
 
     result_dir = os.path.join(config["ResultsFolder"], config["ModelName"].split("/")[-1])
     os.makedirs(result_dir, exist_ok=True)
@@ -339,9 +340,15 @@ if __name__ == "__main__":
 
     logger.info(f"Loaded {len(statements)} statements with allowed labels and at least 5 evidence articles.")
 
-    if config["TestPortion"] < 1.0:
-        _, test_statements = train_test_split( statements, test_size=config["TestPortion"], random_state=42, stratify=None)
-        logger.info(f"Split dataset into {len(test_statements)} test statements ({config['TestPortion']*100} %).")
+    if config["TestPortion"] and config["TestPortion"] != 1:
+        if config["TestPortion"] < 1.0:
+            _, test_statements = train_test_split( statements, test_size=config["TestPortion"], random_state=42, stratify=None)
+            logger.info(f"Split dataset into {len(test_statements)} test statements ({config['TestPortion']*100} %).")
+        else:
+            # randomly sample N statements
+            shuffled_statements = sorted(statements, key=lambda _: random.random())  # Shuffle while keeping order fixed
+            test_statements = statements[:int(config["TestPortion"])]
+            
     else:
         test_statements = statements
 
@@ -353,8 +360,7 @@ if __name__ == "__main__":
     # evaluate
     eval_dataset(
         model_id = config["ModelName"],
-        statements = test_statements[lower_index:upper_index],
-        #statements = test_statements[:1],
+        statements = test_statements[lower_index:upper_index + 1],
         result_dir = result_dir,
         prompt_config_path = config["PromptConfigPath"],
         index = config["Index"],
