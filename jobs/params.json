@@ -1,0 +1,52 @@
+[
+  {
+    "NAME": "Qwen32B",
+    "DATASET_PATH": "datasets/curated.sqlite",
+    "EVIDENCE_SOURCE": "demagog",
+    "PROMPT_PATH": "prompts/truefalse.yaml",
+    "ALLOWED_LABELS": "pravda nepravda",
+    "BATCH_SIZE": 1,
+    "SAMPLE_PORTION": 1,
+    "MAX_INDEX": 1,
+    "EXAMPLE_COUNT": 0,
+    "WALLTIME": "3:0:0",
+    "EXPLANATION": "",
+    "MODEL_API": "vllm",
+    "MODEL": "Qwen/Qwen2.5-32B",
+    "MODEL_FILE": "/storage/brno2/home/tomn/models/Qwen2.5-32B-Instruct-Q5_K_M.gguf",
+    "OUTPUT": "results/curated/demagog_evidence/zeroshot/all/binary"
+  },
+  {
+    "NAME": "cheat_zeroshot",
+    "DATASET_PATH": "datasets/curated.sqlite",
+    "EVIDENCE_SOURCE": "cheat",
+    "PROMPT_PATH": "prompts/unveri.yaml",
+    "ALLOWED_LABELS": "pravda nepravda neověřitelné",
+    "BATCH_SIZE": 1,
+    "SAMPLE_PORTION": 1,
+    "MAX_INDEX": 1,
+    "EXAMPLE_COUNT": 0,
+    "WALLTIME": "3:0:0",
+    "EXPLANATION": "",
+    "MODEL_API": "transformers",
+    "MODEL": "meta-llama/Llama-3.2-3B-Instruct",
+    "OUTPUT": "results/curated/cheat_evidence/zeroshot/ternary"
+  },
+  {
+    "NAME": "cheat_zeroshot",
+    "DATASET_PATH": "datasets/curated.sqlite",
+    "EVIDENCE_SOURCE": "cheat",
+    "PROMPT_PATH": "prompts/truefalse.yaml",
+    "ALLOWED_LABELS": "pravda nepravda",
+    "BATCH_SIZE": 1,
+    "SAMPLE_PORTION": 1,
+    "MAX_INDEX": 1,
+    "EXAMPLE_COUNT": 0,
+    "WALLTIME": "3:0:0",
+    "EXPLANATION": "",
+    "MODEL_API": "vllm",
+    "MODEL": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "MODEL_FILE": "--model-file /storage/brno2/home/tomn/czech-statements-dataset/models/DeepSeek-R1-Distill-Qwen-32B-Q5_K_M.gguf",
+    "OUTPUT": "results/curated/cheat_evidence/zeroshot/binary"
+  }
+]

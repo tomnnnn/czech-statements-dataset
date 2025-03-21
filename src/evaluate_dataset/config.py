@@ -31,6 +31,7 @@ class Config:
     relevancy_threshold: int = 1
     relevant_paragraph: bool = False
     min_evidence_count: int = 1
+    env_path: str = ".env"
 
 def load_yaml_config(path: str) -> dict:
     """Loads the configuration from a YAML file."""
@@ -64,6 +65,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("model_name", type=str, nargs="?", help="Name of the model to evaluate")
     parser.add_argument("--stratify", action="store_true", help="Stratify test set by labels")
     parser.add_argument("--min-evidence-count", type=int, help="Minimum number of evidence items per example")
+    parser.add_argument("--env-path", type=str, help="Path to .env file")
 
     args = parser.parse_args()
 

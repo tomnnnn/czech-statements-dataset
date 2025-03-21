@@ -1,38 +1,36 @@
 #!/bin/bash
-PARAM_FILE="params.txt"
 
+PARAM_FILE="params.json"
 export DATA="/storage/brno2/home/tomn/czech-statements-dataset"
-export LOG_DIR=$DATA/logs
-TO_REPLACE='$MODEL,$DATA,$PROMPT_PATH,$ALLOWED_LABELS,$MODEL,$BATCH_SIZE,$SAMPLE_PORTION,$MAX_INDEX,$EXAMPLE_COUNT,$EXPLANATION,$DATASET_PATH,$EVIDENCE_SOURCE,$NAME,$MODEL_API,$MODEL_FILE'
-export LOG_DIR=$DATA/logs
+export LOG_DIR="$DATA/logs"
+TO_REPLACE='$OUTPUT,$MODEL,$DATA,$PROMPT_PATH,$ALLOWED_LABELS,$MODEL,$BATCH_SIZE,$SAMPLE_PORTION,$MAX_INDEX,$EXAMPLE_COUNT,$EXPLANATION,$DATASET_PATH,$EVIDENCE_SOURCE,$NAME,$MODEL_API,$MODEL_FILE'
 
 rm -rf .jobs
 mkdir .jobs
 
-# Read each line from the parameter file
-while IFS= read -r line || [ -n "$line" ]; do
-	# skip commented lines
-	if [[ -z "$line" || "$line" =~ ^# ]]; then
-		continue
-	fi
+# Read JSON and process each job
+jq -c '.[]' "$PARAM_FILE" | while read -r json_line; do
+    # Parse JSON into variables
+    eval "$(echo "$json_line" | jq -r 'to_entries | map("export " + .key + "=\"" + (.value | tostring) + "\"") | .[]')"
 
-	# if $MODEL_API is empty, set it to the default value
-	if [[ -z "$MODEL_API" ]]; then
-		export MODEL_API="transformers"
-	fi
+    JOB_UID=$(tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 6 | head -n 1)
+    JOB_SCRIPT=".jobs/${NAME}_${JOB_UID}.pbs"
 
-	# Extract parameter values from the line
-	eval export "$line"  # This sets variables dynamically
+    # Handle PBS_ARRAY_INDEX for single-job case
+    if [[ "$MAX_INDEX" -eq 1 ]]; then
+        export PBS_ARRAY_INDEX=0
+    fi
 
-	# Generate a unique job script name
-	JOB_SCRIPT=".jobs/${NAME}.pbs"
+    # Use envsubst to substitute variables in the template
+    envsubst $TO_REPLACE < job_template.pbs > "$JOB_SCRIPT"
 
-	# Substitute variables in the template using 'envsubst'
-	envsubst $TO_REPLACE < job_template.pbs > "$JOB_SCRIPT"
+    # Construct qsub command
+    if [[ "$MAX_INDEX" -eq 1 ]]; then
+        queue_cmd="qsub -l walltime=${WALLTIME} -N ${NAME} -o $LOG_DIR ${JOB_SCRIPT}"
+    else
+        queue_cmd="qsub -J 1-${MAX_INDEX} -l walltime=${WALLTIME} -N ${NAME} -o $LOG_DIR ${JOB_SCRIPT}"
+    fi
 
-	# Run job
-	queue_cmd="qsub -J 1-${MAX_INDEX} -l walltime=${WALLTIME} -N ${NAME} -o $LOG_DIR ${JOB_SCRIPT}"
-	echo $queue_cmd
-	$queue_cmd
-
-done < "$PARAM_FILE"
+    echo "$queue_cmd"
+    $queue_cmd
+done

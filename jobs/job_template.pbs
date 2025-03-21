@@ -4,8 +4,9 @@
 
 export TMPDIR=$SCRATCHDIR
 export HF_HOME=$DATA/.hf # set Hugging Face cache directory
-
-export OUTPUT_DIR=$DATA/results/new/$NAME
+export CUDA_VISIBLE_DEVICES=0
+export OUTPUT_DIR=$DATA/$OUTPUT
+# export PYTORCH_CUDA_ALLOC_CONF="max_memory_reserved_gb:40"
 
 echo "Job started on $(hostname) at $(date) with index $PBS_ARRAY_INDEX"
 
@@ -14,17 +15,12 @@ mkdir -p "$OUTPUT_DIR" # prepare output folder
 cd "$SCRATCHDIR" || { echo "Failed to change to scratch directory"; exit 1; }
 
 # Load required modules
-module add mambaforge || { echo "Failed to load mambaforge"; exit 1; }
+module add mambaforge
+module add cuda
 
 # Activate conda environment
-if ! mamba activate "$DATA/.mamba/venv"; then
+if ! mamba activate "$DATA/.mamba/env"; then
 	echo "Failed to activate mamba environment"
-	exit 1
-fi
-
-# Activate Python virtual environment
-if ! source "$DATA/.venv/bin/activate"; then
-	echo "Failed to activate Python virtual environment"
 	exit 1
 fi
 
@@ -46,7 +42,7 @@ PYTHONPATH=src python -m src.evaluate_dataset			\
 	--evidence-source $EVIDENCE_SOURCE			\
 	--prompt-config prompt.yaml				\
 	--model-api $MODEL_API					\
-	--model-file $MODEL_FILE				\
+	$MODEL_FILE						\
 	$MODEL
 
 # Finalize
