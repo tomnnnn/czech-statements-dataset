@@ -26,7 +26,7 @@ class DemagogDataset:
         if not os.path.exists(path):
             self.new = True
 
-        self.conn = sqlite3.connect(f"file:{path}?mode={'ro' if readonly else 'wa'}", uri=True)
+        self.conn = sqlite3.connect(f"file:{path}?mode={'ro' if readonly else 'rwc'}", uri=True)
         self.readonly = readonly
         self.conn.row_factory = sqlite3.Row
         self.cursor = self.conn.cursor()
@@ -130,7 +130,7 @@ class DemagogDataset:
         """
         Get a statement by its ID
         """
-        self.cursor.execute("SELECT * FROM demagog WHERE id = ?", (statement_id,))
+        self.cursor.execute("SELECT * FROM statements WHERE id = ?", (statement_id,))
 
         row = self.cursor.fetchone()
         return dict(row) if row else None
@@ -213,6 +213,16 @@ class DemagogDataset:
             ),
         )
         self.conn.commit()
+
+
+    def delete_statement(self, statement_id):
+        """
+        Delete a statement and its evidence documents from the dataset
+        """
+        self.cursor.execute(f"DELETE FROM statements WHERE id = ?", (statement_id,))
+        self.cursor.execute(f"DELETE FROM {self._evidence_table} WHERE statement_id = ?", (statement_id,))
+        self.conn.commit()
+
 
     def insert_statement(self, statement: dict):
         """
