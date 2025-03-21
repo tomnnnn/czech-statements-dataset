@@ -6,7 +6,6 @@ import os
 import random
 import re
 import tldextract
-import sqlite3
 
 import yaml
 from sklearn.model_selection import train_test_split
@@ -46,7 +45,7 @@ def extract_label(response, allowed_labels):
     return label
 
 
-def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=1500):
+def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=1500, relevancy_threshold=0.5, relevant_paragraph=False):
     """
     Build prompts for given statements. Optionally include evidence from evidence_dir.
 
@@ -59,19 +58,26 @@ def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=1500):
     for statement in statements:
         statement_str = ( f"{statement['statement']} - {statement['author']}, {statement['date']}")
 
-        evidence = dataset.get_evidence(statement['id'])
+        evidence = dataset.get_evidence(statement['id'])[:10]
+        evidence = [e for e in evidence if float(e['relevancy']) >= float(relevancy_threshold)]
+
         if not evidence:
             logger.warning(f"No evidence found for statement {statement['id']}.")
             prompts.append(statement_str + "\nPodpůrné dokumenty: Není dostupný žádný podpůrný dokument.")
             continue
 
+        evidence_contents = [
+            e['content'][:max_evidence_len] if not relevant_paragraph else e['description'] + '\n' + e['relevant_paragraph'] 
+            for e in evidence
+        ]
+
         truncated = [
             {
                 'Titulek': e['title'],
-                'Text': e['content'][:max_evidence_len] + "..." if len(e['content']) > max_evidence_len else e['content'],
-                'Zdroj': tldextract.extract(e['url']).domain + "." + tldextract.extract(e['url']).suffix,
+                'Text': text,
+                'Zdroj': tldextract.extract(e['url']).domain + "." + tldextract.extract(e['url']).suffix if e['url'] else '',
             }
-            for e in evidence
+            for e,text in zip(evidence, evidence_contents)
         ]
 
         evidence_str = json.dumps(truncated, indent=2, ensure_ascii=False)
@@ -88,6 +94,8 @@ def split_and_build_examples(
     allowed_labels=["pravda", "nepravda", "neověřitelné"],
     include_explanation=False,
     count_for_each_label=1,
+    relevancy_threshold=0.5,
+    relevant_paragraph=False
 ):
     """
     Samples pseudo-randomly examples from statements for each label and uses them as examples for few-shot prompting. Optionally includes evidence and explanation.
@@ -115,7 +123,7 @@ def split_and_build_examples(
         example_statements.extend(shuffled_items[:count_for_each_label])
 
     test_statements = [stmt for stmt in statements if stmt not in example_statements]
-    inputs = prompt_builder(example_statements,dataset)
+    inputs = prompt_builder(example_statements,dataset, relevancy_threshold=relevancy_threshold, relevant_paragraph=relevant_paragraph)
 
     explanations = [
         (
@@ -135,48 +143,38 @@ def split_and_build_examples(
 
 
 def eval_dataset(
-    model_id,
-    statements,
-    result_dir,
+    config,
     dataset,
-    prompt_config_path=None,
-    index=0,
-    with_explanation=False,
-    example_count=0,
-    batch_size=1,
-    allowed_labels=['pravda', 'nepravda'],
+    statements,
     example_statements=None,
-    model_api="transformers",
-    model_file=""
 ):
     """
     Test chosen models accuracy of labeling given statements with zero-shot prompt.
     Results are saved to result_dir.
 
     Args:
-    model_id (str): ID of the model to evaluate.
+    config (dict): Configuration dictionary.
+    dataset (DemagogDataset): Dataset object.
     statements (List): List of statements to evaluate.
-    result_dir (str): Path to directory where results will be saved.
-    evidence_dir (str): Path to directory with evidence files.
-    prompt_config_path (str): Path to prompt configuration file.
-    index (int): Index for parallelization.
-    with_explanation (bool): Require explanation in the model output.
-    example_count (int): Number of examples for each label to use.
-    batch_size (int): Inference batch size.
-    allowed_labels (List): List of allowed labels.
+    example_statements (List): List of example statements to use for few-shot prompting. If None, statements are used.
     """
 
-    model = llm_api_factory(model_api, model_id, filename=model_file)
-    system_prompt, _ = load_prompt_config(prompt_config_path)
+    result_dir = os.path.join(config["ResultsFolder"], config["ModelName"].split("/")[-1])
+    os.makedirs(result_dir, exist_ok=True)
+
+    model = llm_api_factory(config["ModelAPI"], config["ModelName"], filename=config["ModelFile"])
+    system_prompt, _ = load_prompt_config(config["PromptConfigPath"])
 
     # split statements into examples and test statements
     examples, test_statements = split_and_build_examples(
         example_statements if example_statements else statements,
         seed=42,
-        include_explanation=with_explanation,
-        count_for_each_label=example_count,
-        allowed_labels=allowed_labels,
-        dataset=dataset
+        include_explanation=config["WithExplanation"],
+        count_for_each_label=config["ExampleCount"],
+        allowed_labels=config["AllowedLabels"],
+        dataset=dataset,
+        relevancy_threshold=config["RelevancyThreshold"],
+        relevant_paragraph=config["RelevantParagraph"]
     )
     logger.info(f"Loaded system prompt: {system_prompt}")
     logger.info(f"Loaded {len(examples)} examples.")
@@ -186,10 +184,10 @@ def eval_dataset(
         json.dump(examples, f, indent=4, ensure_ascii=False)
 
     model.set_system_prompt(system_prompt)
-    model.set_generation_prompt("Úvaha: " if with_explanation else "Hodnocení: ")
+    model.set_generation_prompt("Úvaha: " if config["WithExplanation"] else "Hodnocení: ")
     model.set_examples(examples)
 
-    prompts = prompt_builder(test_statements, dataset)
+    prompts = prompt_builder(test_statements, dataset, relevancy_threshold=config["RelevancyThreshold"], relevant_paragraph=config["RelevantParagraph"])
 
     # test statements info
     logger.info(f"Evaluating {len(prompts)} statements.")
@@ -199,7 +197,7 @@ def eval_dataset(
 
     # generate responses
     logger.info(f"Generating responses for {len(prompts)} prompts.")
-    responses = model(prompts, batch_size, max_new_tokens=3000 if with_explanation else 25)
+    responses = model(prompts, config["BatchSize"], max_new_tokens=3000 if config["WithExplanation"] else 25)
 
     verdicts = [
         {
@@ -208,29 +206,29 @@ def eval_dataset(
             "author": statement["author"],
             "date": statement["date"],
             "response": response,
-            "label": extract_label(response, allowed_labels),
+            "label": extract_label(response, config["AllowedLabels"]),
         }
         for statement, response in zip(test_statements, responses)
     ]
 
     # save responses
-    responses_dest = os.path.join(result_dir, f"responses_{index}.json")
+    responses_dest = os.path.join(result_dir, f"responses_{config['Index']}.json")
     with open(os.path.join(responses_dest), "w") as f:
         json.dump(verdicts, f, indent=4, ensure_ascii=False)
         logger.info(f"Responses saved to {responses_dest}")
 
     # save prompts
-    prompts_dest = os.path.join(result_dir, f"prompts_{index}.json")
+    prompts_dest = os.path.join(result_dir, f"prompts_{config['Index']}.json")
     with open(prompts_dest, "w") as f:
         json.dump(prompts, f, indent=4, ensure_ascii=False)
         logger.info(f"Prompts saved to {prompts_dest}")
 
-    if index == 0:
+    if config["Index"] == 0:
         # calculate and save metrics
         results_dest = os.path.join(result_dir, f"metrics.json")
         with open(results_dest, "w") as f:
             json.dump(
-                calculate_metrics(test_statements, verdicts, allowed_labels),
+                calculate_metrics(test_statements, verdicts, config["AllowedLabels"]),
                 f,
                 indent=4,
                 ensure_ascii=False,
@@ -239,7 +237,8 @@ def eval_dataset(
             logger.info(f"Metrics saved to {results_dest}")
     else:
         # parallelization used, dont calculate metrics, it will be aggregated later
-        with open(os.path.join(result_dir, f"results_{index}.json"), "w") as f:
+        file_path = os.path.join(result_dir, f"results_{config['Index']}.json")
+        with open(file_path, "w") as f:
             json.dump(
                 {"y_pred": verdicts, "y_ref": test_statements},
                 f,
@@ -248,7 +247,7 @@ def eval_dataset(
             )
 
             logger.info(
-                f"Results saved to {os.path.join(result_dir, f'results_{index}.json')}"
+                f"Results saved to {file_path}."
             )
 
 
@@ -286,6 +285,8 @@ def load_config():
     parser.add_argument("-e", "--explanation", action="store_true", help="Require explanation in the model output",)
     parser.add_argument("-p", "--prompt-config", type=str, default=config["PromptConfigPath"], help="Prompt config file path")
     parser.add_argument("-b", "--batch-size", type=int, default=1, help="Inference batch size")
+    parser.add_argument("-r", "--relevancy-threshold", type=int, default=1, help="Sets minimum relevancy score needed to include evidence in listed evidence documents")
+    parser.add_argument("-P", "--relevant-paragraph", action="store_true", help="Include only relevant paragraph from evidence")
     parser.add_argument("-t", "--test-portion", type=float, default=None, help="Portion of dataset to sample for testing. If number N >= 1 is supplied, exactly N statements will be sampled for testing.")
     parser.add_argument("-d", "--dataset-path", type=str, default=config.get("DatasetPath", ""), help="Path to dataset file. Accepts [sqlite] database file.")
     parser.add_argument("-a", "--allowed-labels", nargs="+", default=['pravda','nepravda'], help="Labels that should be included in the evaluation")
@@ -295,6 +296,7 @@ def load_config():
     parser.add_argument("-E", "--evidence-source", type=str, default="demagog", help="Source of evidence data, used to determine evidence table in dataset database.")
     parser.add_argument("--model-file", help="Optional path to model file if needed.", type=str, default=None, nargs="?")
     parser.add_argument("ModelName", help="Name of the model to evaluate.", type=str, default=config["ModelName"], nargs="?",)
+    parser.add_argument("--stratify", action="store_true", help="Stratify test set by labels.")
 
 
     args = parser.parse_args()
@@ -314,6 +316,9 @@ def load_config():
     config["LogPath"] = args.log_path
     config["EvidenceSource"] = args.evidence_source
     config["ModelFile"] = args.model_file
+    config["Stratify"] = args.stratify
+    config["RelevancyThreshold"] = args.relevancy_threshold
+    config["RelevantParagraph"] = args.relevant_paragraph
 
 
     if config["Index"] and not config["Max"]:
@@ -330,24 +335,32 @@ if __name__ == "__main__":
     dataset = DemagogDataset(config["DatasetPath"], config["EvidenceSource"], readonly=True)
     random.seed(42)
 
-    result_dir = os.path.join(config["ResultsFolder"], config["ModelName"].split("/")[-1])
-    os.makedirs(result_dir, exist_ok=True)
-
     logger.info(f"Starting evaluation of model {config['ModelName']} via {config['ModelAPI']} API")
 
     # get all statements with allowed labels and at least 5 articles
-    statements = dataset.get_all_statements(config["AllowedLabels"], 5)
+    statements = dataset.get_all_statements(config["AllowedLabels"], 0)
+    labels = [item["label"] for item in statements]
 
     logger.info(f"Loaded {len(statements)} statements with allowed labels and at least 5 evidence articles.")
 
     if config["TestPortion"] and config["TestPortion"] != 1:
         if config["TestPortion"] < 1.0:
-            _, test_statements = train_test_split( statements, test_size=config["TestPortion"], random_state=42, stratify=None)
+            _, test_statements = train_test_split(statements, test_size=config["TestPortion"], random_state=42, stratify=labels)
             logger.info(f"Split dataset into {len(test_statements)} test statements ({config['TestPortion']*100} %).")
         else:
             # randomly sample N statements
             shuffled_statements = sorted(statements, key=lambda _: random.random())  # Shuffle while keeping order fixed
-            test_statements = statements[:int(config["TestPortion"])]
+
+            if config["Stratify"]:
+                by_label = {
+                    label: [stmt for stmt in shuffled_statements if stmt["label"].lower() == label]
+                    for label in config["AllowedLabels"]
+                }
+                test_statements = []
+                for label in config["AllowedLabels"]:
+                    test_statements.extend(by_label[label][:int(config["TestPortion"]/len(config["AllowedLabels"]))])
+            else:
+                test_statements = shuffled_statements[:config["TestPortion"]]
             
     else:
         test_statements = statements
@@ -359,18 +372,9 @@ if __name__ == "__main__":
 
     # evaluate
     eval_dataset(
-        model_id = config["ModelName"],
-        statements = test_statements[lower_index:upper_index + 1],
-        result_dir = result_dir,
-        prompt_config_path = config["PromptConfigPath"],
-        index = config["Index"],
-        with_explanation = config["WithExplanation"],
-        example_count=config["ExampleCount"],
-        batch_size = config["BatchSize"],
-        allowed_labels = config["AllowedLabels"],
-        model_api=config["ModelAPI"],
+        config=config,
         dataset=dataset,
-        model_file=config["ModelFile"]
+        statements=test_statements[lower_index:upper_index + 1],
     )
 
     logger.info("Evaluation finished.")
