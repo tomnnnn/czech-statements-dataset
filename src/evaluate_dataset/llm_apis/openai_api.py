@@ -10,7 +10,7 @@ class OpenAI_API(LanguageModelAPI):
     system_prompt = ""
     generation_prompt = ""
 
-    def __init__(self,model_path="gpt-4o"):
+    def __init__(self,model_path="gpt-4o", **kwargs):
         super().__init__(model_path)
         self.client = OpenAI(api_key=os.getenv("MODEL_API_KEY"))
 

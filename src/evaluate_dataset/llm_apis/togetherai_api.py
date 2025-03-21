@@ -11,7 +11,7 @@ class TogetherAI_API(LanguageModelAPI):
     system_prompt = ""
     generation_prompt = ""
 
-    def __init__(self, model_path):
+    def __init__(self, model_path, **kwargs):
         super().__init__(model_path)
         self.client = Together(api_key=os.getenv("MODEL_API_KEY"))
 
