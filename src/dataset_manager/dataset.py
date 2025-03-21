@@ -112,7 +112,6 @@ class DemagogDataset:
 
         """
         allowed_labels_str = " WHERE LOWER(s.label) IN ({})".format( ", ".join([f"'{l}'" for l in allowed_labels])) if allowed_labels else ""
-        print(allowed_labels_str)
 
         self.cursor.execute(f"""
             SELECT s.* 
