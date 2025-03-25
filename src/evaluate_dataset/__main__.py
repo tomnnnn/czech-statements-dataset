@@ -4,6 +4,8 @@ import os
 import random
 import re
 import tldextract
+from dataclasses import asdict
+import operator
 
 import yaml
 from sklearn.model_selection import train_test_split
@@ -15,9 +17,15 @@ from .utils import calculate_metrics
 
 logger = logging.getLogger(__name__)
 
+ops = {
+    "eq": operator.eq,
+    "ge": operator.ge,
+    "le": operator.le,
+}
+
 def load_prompt_config(config_location) -> tuple:
     """
-    Load system prompt and examples from configuration file. If the file does not exist, return empty system prompt and no examples.
+    Load system prompt and generation prompt from configuration file. If the file does not exist, return empty values
     """
 
     if not os.path.exists(config_location):
@@ -29,7 +37,7 @@ def load_prompt_config(config_location) -> tuple:
     with open(config_location, "r") as f:
         prompts = yaml.load(f, Loader=yaml.FullLoader)
 
-    return prompts.get("system_prompt", ""), prompts.get("examples", [])
+    return prompts.get("system_prompt", ""), prompts.get("generation_prompt", "") 
 
 
 def extract_label(response, allowed_labels):
@@ -53,18 +61,30 @@ def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=1500, r
     for statement in statements:
         statement_str = ( f"{statement['statement']} - {statement['author']}, {statement['date']}")
 
-        evidence = dataset.get_evidence(statement['id'])[:10]
-        evidence = [e for e in evidence if float(e['relevancy']) >= float(relevancy_threshold)]
+
+
+        evidence = dataset.get_evidence(statement['id'])
+        evidence = [e for e in evidence if ops[config.rel_operator](float(e['relevancy']),float(relevancy_threshold))]
 
         if not evidence:
             logger.warning(f"No evidence found for statement {statement['id']}.")
             prompts.append(statement_str + "\nPodpůrné dokumenty: Není dostupný žádný podpůrný dokument.")
             continue
 
-        evidence_contents = [
-            e['content'][:max_evidence_len] if not relevant_paragraph else e['description'] + '\n' + e['relevant_paragraph'] 
-            for e in evidence
-        ]
+        evidence_contents = []
+        for e in evidence:
+            # Get the description and relevant paragraph, with default empty string if not available
+            description = e.get('description', '')
+            relevant_paragraph = e.get('relevant_paragraph', '')
+
+            if relevant_paragraph:
+                # If relevant_paragraph is requested, combine description and relevant_paragraph
+                content = f"{description}\n{relevant_paragraph}"
+            else:
+                # Otherwise, use full content text
+                content = e['content'][:max_evidence_len]
+
+            evidence_contents.append(content)
 
         truncated = [
             {
@@ -75,7 +95,7 @@ def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=1500, r
             for e,text in zip(evidence, evidence_contents)
         ]
 
-        evidence_str = json.dumps(truncated, indent=2, ensure_ascii=False)
+        evidence_str = json.dumps(truncated, ensure_ascii=False)
 
         prompts.append(f"{statement_str}\nPodpůrné dokumenty: {evidence_str}")
 
@@ -90,7 +110,8 @@ def split_and_build_examples(
     include_explanation=False,
     count_for_each_label=1,
     relevancy_threshold=0.5,
-    relevant_paragraph=False
+    relevant_paragraph=False,
+    generation_prompt=""
 ):
     """
     Samples pseudo-randomly examples from statements for each label and uses them as examples for few-shot prompting. Optionally includes evidence and explanation.
@@ -130,7 +151,7 @@ def split_and_build_examples(
     ]
 
     examples = [
-        {"input": input_text, "output": explanation + "Hodnocení: " + stmt["label"].lower()}
+        {"input": input_text, "output": explanation + generation_prompt + stmt["label"].lower()}
         for input_text, stmt, explanation in zip(inputs, example_statements, explanations)
     ]
 
@@ -154,11 +175,11 @@ def eval_dataset(
     example_statements (List): List of example statements to use for few-shot prompting. If None, statements are used.
     """
 
-    result_dir = os.path.join(config.out_folder, config.model_name.split("/")[-1])
+    result_dir = os.path.join(config.out_folder, config.model_name.split("/")[-1] if config.model_name else config.model_file.split(".")[0])
     os.makedirs(result_dir, exist_ok=True)
 
-    model = llm_api_factory(config.model_api, config.model_name, filename=config.model_file)
-    system_prompt, _ = load_prompt_config(config.prompt_config)
+    model = llm_api_factory(config.model_api, config.model_name, **asdict(config))
+    system_prompt, generation_prompt = load_prompt_config(config.prompt_config)
 
     # split statements into examples and test statements
     examples, test_statements = split_and_build_examples(
@@ -169,7 +190,8 @@ def eval_dataset(
         allowed_labels=config.allowed_labels,
         dataset=dataset,
         relevancy_threshold=config.relevancy_threshold,
-        relevant_paragraph=config.relevant_paragraph
+        relevant_paragraph=config.relevant_paragraph,
+        generation_prompt=generation_prompt
     )
     logger.info(f"Loaded system prompt: {system_prompt}")
     logger.info(f"Loaded {len(examples)} examples.")
@@ -179,7 +201,11 @@ def eval_dataset(
         json.dump(examples, f, indent=4, ensure_ascii=False)
 
     model.set_system_prompt(system_prompt)
-    model.set_generation_prompt("Úvaha: " if config.with_explanation else "Hodnocení: ")
+
+    print("Generation Prompt:", generation_prompt)
+    if generation_prompt: 
+        model.set_generation_prompt(generation_prompt)
+
     model.set_examples(examples)
 
     prompts = prompt_builder(test_statements, dataset, relevancy_threshold=config.relevancy_threshold, relevant_paragraph=config.relevant_paragraph)
@@ -192,7 +218,8 @@ def eval_dataset(
 
     # generate responses
     logger.info(f"Generating responses for {len(prompts)} prompts.")
-    responses = model(prompts, config.batch_size, max_new_tokens=3000 if config.with_explanation else 25)
+    max_new_tokens = config.max_tokens if config.max_tokens else (3000 if config.with_explanation else 25)
+    responses = model(prompts, config.batch_size, max_new_tokens = max_new_tokens)
 
     verdicts = [
         {

@@ -1,9 +1,10 @@
 import yaml
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from typing import List, Optional
 import logging
 import argparse
+import operator
 from .logging_config import setup_logging
 import pprint
 
@@ -13,7 +14,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class Config:
     out_folder: str
-    model_name: str
+    model_name: Optional[str] = None
     index: int = 0
     max: int = 1
     with_explanation: bool = False
@@ -28,10 +29,15 @@ class Config:
     evidence_source: str = "demagog"
     model_file: Optional[str] = None
     stratify: bool = False
-    relevancy_threshold: int = 1
+    relevancy_threshold: float = 1
     relevant_paragraph: bool = False
     min_evidence_count: int = 1
     env_path: str = ".env"
+    tokenizer_path: Optional[str] = None
+    ctx_len: int = 4096
+    rel_operator: str = "ge"
+    no_chat_format: bool = False
+    max_tokens: Optional[int] = None
 
 def load_yaml_config(path: str) -> dict:
     """Loads the configuration from a YAML file."""
@@ -52,7 +58,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("-e", "--with-explanation", action="store_true", help="Require explanation in the model output")
     parser.add_argument("-p", "--prompt-config", type=str, help="Prompt config file path")
     parser.add_argument("-b", "--batch-size", type=int, help="Inference batch size")
-    parser.add_argument("-r", "--relevancy-threshold", type=int, help="Minimum relevancy score for evidence inclusion")
+    parser.add_argument("-r", "--relevancy-threshold", type=float, help="Minimum relevancy score for evidence inclusion")
     parser.add_argument("-P", "--relevant-paragraph", action="store_true", help="Include only relevant paragraph from evidence")
     parser.add_argument("-t", "--test-portion", type=float, help="Portion of dataset to sample for testing")
     parser.add_argument("-d", "--dataset-path", type=str, help="Path to dataset file")
@@ -62,10 +68,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("-l", "--log-path", type=str, help="Path to log file")
     parser.add_argument("-E", "--evidence-source", type=str, help="Source of evidence data")
     parser.add_argument("--model-file", type=str, help="Optional path to model file")
-    parser.add_argument("model_name", type=str, nargs="?", help="Name of the model to evaluate")
+    parser.add_argument("--model-name", type=str, nargs="?", help="Name of the model to evaluate")
     parser.add_argument("--stratify", action="store_true", help="Stratify test set by labels")
     parser.add_argument("--min-evidence-count", type=int, help="Minimum number of evidence items per example")
     parser.add_argument("--env-path", type=str, help="Path to .env file")
+    parser.add_argument("--tokenizer-path", type=str, help="Path to pretrained tokenizer")
+    parser.add_argument("--ctx-len", type=int, help="Maximum context length for the model")
+    parser.add_argument("--rel-operator", type=str, help="Operator for relevancy threshold comparison. Available: eq, ge, le")
+    parser.add_argument("--no-chat-format", action="store_true", help="Don't use chat format for input prompts")
+    parser.add_argument("--max-tokens", type=int,nargs="?", help="Maximum number of tokens for model output")
 
     args = parser.parse_args()
 
@@ -89,3 +100,6 @@ def load_config() -> Config:
     setup_logging(config.log_path)
     logger.info(f"Loaded configuration:\n{pprint.pformat(config, indent=4)}")
     return config
+
+def __dict__(self):
+    return asdict(self)

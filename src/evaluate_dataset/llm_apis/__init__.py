@@ -1,20 +1,23 @@
-from .openai_api import OpenAI_API
-from .togetherai_api import TogetherAI_API
-from .transformer_local import Transformer_Local
-from .vllm_local import VLLM_Local
-from .mock_api import MockLanguageModelAPI
-# from .llamacpp_local import LlamaCpp_Local
-
+import importlib
 from ..llm_api import LanguageModelAPI
 
 llm_api_dict = {
-    "openai": OpenAI_API,
-    "togetherai": TogetherAI_API,
-    "transformers": Transformer_Local,
-    "vllm": VLLM_Local,
-    "mock": MockLanguageModelAPI,
-    #    "llamacpp": LlamaCpp_Local
+    "openai": "openai_api.OpenAI_API",
+    "togetherai": "togetherai_api.TogetherAI_API",
+    "transformers": "transformer_local.Transformer_Local",
+    "vllm": "vllm_local.VLLM_Local",
+    "mock": "mock_api.MockLanguageModelAPI",
+    "llamacpp": "llamacpp_local.LlamaCpp_Local"
 }
 
 def llm_api_factory(api, *args, **kwargs) -> LanguageModelAPI:
-    return llm_api_dict[api](*args, **kwargs)
+    if api not in llm_api_dict:
+        raise ValueError(f"Unknown API: {api}")
+
+    module_name, class_name = llm_api_dict[api].rsplit(".", 1)
+    
+    # Import using the package name (assuming this file is in the same package)
+    module = importlib.import_module(f"{__package__}.{module_name}")
+    
+    cls = getattr(module, class_name)
+    return cls(*args, **kwargs)
