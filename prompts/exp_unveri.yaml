@@ -4,3 +4,5 @@ system_prompt: |
   Formát výstupu:
   Úvaha: <myšlenkový pochod, kterým dojdeš k hodnocení>
   Hodnocení: <konečné hodnocení, jedno ze slov pravda, nepravda, neověřitelné>
+
+generation_prompt: "Úvaha: "
