@@ -1,0 +1,242 @@
+[
+    {
+        "id": 27,
+        "statement": "Já nejsem ani nikde podezřelý (...) ani stíhaný.",
+        "author": "Pavel Blažek",
+        "date": "2025-01-08",
+        "response": "\n\nPavel Blažek je český politik a právník, který je od roku 2021 ministrem",
+        "label": "nolabel"
+    },
+    {
+        "id": 100,
+        "statement": "My máme za tři roky, co jsme ve vládě, (…) jednoho trestně stíhaného bývalého politika hnutí STAN. Když se dívám na konkurenční ANO a nebo třeba i koaliční partnery, tak máme nejmíň.",
+        "author": "Vít  Rakušan",
+        "date": "2024-10-14",
+        "response": "\n\nVýsledky:\n\n* Vláda ANO a ČSSD: 1\n* Vláda Petra F",
+        "label": "nolabel"
+    },
+    {
+        "id": 101,
+        "statement": "My (hnutí STAN, pozn.) nemáme pod sebou v Praze dopravu.",
+        "author": "Vít  Rakušan",
+        "date": "2024-10-14",
+        "response": "Podle informací z dostupných zdrojů, které byly poskytnuty, je zřejmé, že h",
+        "label": "nolabel"
+    },
+    {
+        "id": 242,
+        "statement": "Ta munice (v rámci české muniční iniciativy pro Ukrajinu, pozn.) je ještě ruského původu.",
+        "author": "Andrej Babiš",
+        "date": "2024-06-05",
+        "response": "Based on the provided documents, here's an evaluation of Andrej Babiš's statement:\n\n1. **Claim**: The ammunition (",
+        "label": "nolabel"
+    },
+    {
+        "id": 379,
+        "statement": "Od 1. července bude v platnosti a účinnosti nový stavební zákon.",
+        "author": "Zbyněk Stanjura",
+        "date": "2024-02-29",
+        "response": "Zdroj: zakonyprolidi.cz\n\n* Titulek: 195/202",
+        "label": "nolabel"
+    },
+    {
+        "id": 524,
+        "statement": "Fatah se (...) postavil za Hamás a vyjádřil mu podporu.",
+        "author": "Jan Zahradil",
+        "date": "2023-10-11",
+        "response": "Jan Zahradil, politik České republiky, prohlásil, že se Fatah postavil za Hamás a vy",
+        "label": "nolabel"
+    },
+    {
+        "id": 525,
+        "statement": "Toho 8. 10., kdy došlo k těm krvavým, brutálním útokům, tak ty útoky přicházely z Pásma Gazy, které ovládá Hamás. Ale kolem Západního břehu Jordánu, který kontroluje palestinská samospráva, zůstal klid. (…) Z toho Západního břehu ty útoky nepřicházejí.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "Položka 1: Srovnávací fotky ukazují, jak rostly na palestinské pů",
+        "label": "nolabel"
+    },
+    {
+        "id": 526,
+        "statement": "(…) Gazu ovládají teroristé, kteří efektivně znemožňují tam jakoukoliv mezinárodní pomoc dostat, na rozdíl od toho Západního břehu Jordánu, kde se normálně staví nemocnice, normálně se tam staví školy.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "Je pravděpodobné, že v Gaze ovládají teroristé, kteří znemožňují jakouk",
+        "label": "nolabel"
+    },
+    {
+        "id": 527,
+        "statement": "Když to vztáhnu na případ ruské invaze na Ukrajinu, tak tam jsme (Evropská unie, pozn.) sankcionovali plošně celé Rusko.",
+        "author": "Jan Zahradil",
+        "date": "2023-10-11",
+        "response": "\n\nZdroj: novinky.cz\n\nText: Rusko uzná nezávislost obou povstaleck",
+        "label": "nolabel"
+    },
+    {
+        "id": 531,
+        "statement": "V tomhletom seznamu (států a organizací, které podporují dvoustátní řešení izraelsko-palestinského konfliktu, pozn.) nefigurovalo hnutí Hamás, které od začátku říkalo, že Izrael nenávidí a chce ho zničit.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "Mikuláš Peksa má pravdu, že hnutí Hamás nefigurovalo v seznamu států a",
+        "label": "nolabel"
+    },
+    {
+        "id": 533,
+        "statement": "Izraelská armáda, respektive izraelská vláda tam (v Pásmu Gazy, pozn.) teď stopnuly dodávky vody.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "Podle informací z \"Security Outlines\" je izraelsko-arabský konflikt primárně teritoriální a",
+        "label": "nolabel"
+    },
+    {
+        "id": 606,
+        "statement": "My jsme měli podle serveru Romea nejvíce romských kandidátů ze všech parlamentních stran.",
+        "author": "Tomio Okamura",
+        "date": "2023-08-20",
+        "response": "Je to pravda, že jsme měli podle serveru Romea nejvíce romských kandidátů ze všech",
+        "label": "pravda"
+    },
+    {
+        "id": 684,
+        "statement": "Všichni penzisté od července, tak, jak zákon ukládá, také dostanou přidáno, to znamená, my tady nezastavujeme nebo dokonce nesnižujeme důchody, naopak historicky máme a budeme mít nejvyšší v historii České republiky.",
+        "author": "Marek Výborný",
+        "date": "2023-05-05",
+        "response": "Marek Výborný, mluvící v roce 2023, tvrdí, že od července budou",
+        "label": "nolabel"
+    },
+    {
+        "id": 762,
+        "statement": "V současné době v Evropě máme pouze dvě fabriky na celulózu, která je naprosto nutná pro výrobu munice.",
+        "author": "Jan Bartošek",
+        "date": "2023-03-27",
+        "response": "Bohužel, nemohu najít žádné podpůrné dokumenty, které by potvrz",
+        "label": "nolabel"
+    },
+    {
+        "id": 944,
+        "statement": "Mnohokrát jsem jednal i s ukrajinskými představiteli.",
+        "author": "Petr Pavel",
+        "date": "2023-01-12",
+        "response": "Dle zprávy z Novinek, byl bývalý velvyslanec v České republice Jevhen Pere",
+        "label": "nolabel"
+    },
+    {
+        "id": 945,
+        "statement": "On (premiér Petr Fiala, pozn.) v novoročním projevu mluvil ne sice slovem e-armáda, ale mluvil o tom, že právě vznikají konsorcia českých firem, a že děláme ty technologie (...).",
+        "author": "Karel Diviš",
+        "date": "2023-01-08",
+        "response": "The given text is in Czech and discusses the topic of the Czech president's New Year speech and the formation of electronic armies.",
+        "label": "nolabel"
+    },
+    {
+        "id": 1209,
+        "statement": "Je jasné, kdo v tom (kauze Dozimetr, pozn.) jel. Že to byl STAN, TOP 09, ODS, ale i ANO.",
+        "author": "Jan Čižinský",
+        "date": "2022-09-16",
+        "response": "I'm sorry, I don't understand the question you're asking. Could you please provide more context or clarify what you want",
+        "label": "nolabel"
+    },
+    {
+        "id": 2228,
+        "statement": "Český zákon o střetu zájmů (tzv. lex Babiš, pozn.) připravila opozice, ne hnutí ANO.",
+        "author": "Klára Dostálová",
+        "date": "2021-05-24",
+        "response": "Zákon o střetu zájmů (tzv. lex Babiš) byl přijat Poslaneckou sn",
+        "label": "nolabel"
+    },
+    {
+        "id": 2370,
+        "statement": "Jsem to koneckonců já, kdo buď podepíše, nebo případně nepodepíše odvolání jakéhokoliv ministra.",
+        "author": "Miloš Zeman",
+        "date": "2021-04-11",
+        "response": "Miloš Zeman, prezident České republiky, prohlásil v dubnu 2021: \"J",
+        "label": "nolabel"
+    },
+    {
+        "id": 2891,
+        "statement": "Je to samozřejmě spalovna v nemocnici v Uherském Hradišti, proti které jsem hlasoval.",
+        "author": "Ivo Valenta",
+        "date": "2020-10-07",
+        "response": "Ivo Valenta's statement is a clear and concise expression of his opinion on the incinerator in Uherské H",
+        "label": "nolabel"
+    },
+    {
+        "id": 3945,
+        "statement": "Tak já jsem apeloval na pana primátora Hřiba, aby se o tom (záměru vypustit z Dohody o spolupráci a navázání vztahu sesterských měst mezi Pekingem a Prahou)  bavil s ministerstvem zahraničí, aby pochopil, o co se jedná.",
+        "author": "Lubomír Zaorálek",
+        "date": "2019-09-22",
+        "response": "Lubomír Zaorálek, bývalý ministr zahraničí České republiky, se v roce 201",
+        "label": "nolabel"
+    },
+    {
+        "id": 4107,
+        "statement": "Těch výkřiků, které křičí jako „pojďme to zrušit a pojďme hlasovat znovu“ (o brexitu, pozn.) jsou fakt jako téměř ojedinělé.",
+        "author": "Marek Benda",
+        "date": "2019-08-01",
+        "response": "Je pravděpodobné, že Marek Benda, který je českým novinářem a politikem, se vyj",
+        "label": "nolabel"
+    },
+    {
+        "id": 4149,
+        "statement": "28. června jsem se dozvěděl od pana Hamáčka, že prezident nechce jmenovat Šmardu, 4. července jsem jel s panem Hamáčkem za prezidentem.",
+        "author": "Andrej Babiš",
+        "date": "2019-07-27",
+        "response": "Tato odpověď není příliš užitečná, protože neobsahuje žádnou informaci o tom,",
+        "label": "nolabel"
+    },
+    {
+        "id": 4292,
+        "statement": "Je to krok (pozastavení vyplácení dotací Agrofertu a firmám rodiny ministra Tomana, pozn.) poměrně standardní a myslím si, že je to krok, který vyplývá z principu předběžné opatrnosti, protože v okamžiku, kdy by ty peníze byly vyplaceny příjemci, který nesplňuje podmínky z různých důvodů, tak by je následně musel státní fond zpětně vymáhat.",
+        "author": "Stanislav Polčák",
+        "date": "2019-06-06",
+        "response": "The given statement is a quote from Stanislav Polčák, who was the Minister of Agriculture at the time. The statement is",
+        "label": "nolabel"
+    },
+    {
+        "id": 4294,
+        "statement": "Vezměte si, že střet zájmů je definován prostě tak, že někdo působí na úrovni veřejné moci, může spolurozhodovat nebo ovlivňovat nebo z jeho postavení vyplývá možnost mít vliv, byť nepřímý. A na druhé straně zároveň je jistým příjemcem, beneficientem těch výhod nebo toho rozhodování. Tak toto je přece střet zájmů, a u pana Babiše je to naprosto jednoznačné.",
+        "author": "Stanislav Polčák",
+        "date": "2019-06-06",
+        "response": "Střet zájmů je situace, kdy někdo, který působí na úrovni veřejné m",
+        "label": "nolabel"
+    },
+    {
+        "id": 4505,
+        "statement": "Řebíček byl nejúspěšnější ministr (dopravy) za ODS, jeho firma Viamont stavěla ty dálnice.",
+        "author": "Andrej Babiš",
+        "date": "2019-01-01",
+        "response": "Ministerstvo spravedlnosti ČR potvrdilo, že Ing. Aleš Řebíček, naro",
+        "label": "nolabel"
+    },
+    {
+        "id": 6309,
+        "statement": "Oni jsou proimigrační (KDU-ČSL, pozn.) proislámští, otevřeně podporují Angelu Merkelovou, (...) oni se jezdí radit do Sudetoněmeckého Landsmannschaftu.",
+        "author": "Tomio Okamura",
+        "date": "2017-10-13",
+        "response": "Based on the provided text and supporting documents, here's an analysis:\n\n1. **Tomio Okamura's Statement**: The",
+        "label": "nolabel"
+    },
+    {
+        "id": 7175,
+        "statement": "Vrací se nám opět systém povinných kvót, který již Juncker odmítl.",
+        "author": "Milan Chovanec",
+        "date": "2017-01-22",
+        "response": "\n\nPředseda Evropské komise Jean-Claude Juncker odmítl návrh na zavedení povinných",
+        "label": "nolabel"
+    },
+    {
+        "id": 10140,
+        "statement": "Já si pamatuju na Lisabonskou smlouvu, o tom se ani ve sněmovně diskutovat nesmělo.",
+        "author": "Vojtěch Filip",
+        "date": "2014-04-23",
+        "response": "The given text is in Czech and it's a quote from Vojtěch Filip, a Czech politician, stating that the",
+        "label": "nolabel"
+    },
+    {
+        "id": 10507,
+        "statement": "No právě, čím víc se jakákoliv olympiáda prohlašuje za apolitickou, tak tím víc je spojena s politikou.",
+        "author": "Václav Moravec",
+        "date": "2014-02-09",
+        "response": "The given text is in Czech and it's a quote from Václav Moravec stating that the more any Olympiad claims to be",
+        "label": "nolabel"
+    }
+]

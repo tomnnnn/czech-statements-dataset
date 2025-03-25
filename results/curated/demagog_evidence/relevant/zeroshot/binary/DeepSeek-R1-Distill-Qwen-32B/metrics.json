@@ -1,0 +1,27 @@
+{
+    "pravda": {
+        "precision": 0.75,
+        "recall": 0.3,
+        "f1-score": 0.42857142857142855,
+        "support": 10.0
+    },
+    "nepravda": {
+        "precision": 0.5625,
+        "recall": 0.9,
+        "f1-score": 0.6923076923076923,
+        "support": 10.0
+    },
+    "accuracy": 0.6,
+    "macro avg": {
+        "precision": 0.65625,
+        "recall": 0.6,
+        "f1-score": 0.5604395604395604,
+        "support": 20.0
+    },
+    "weighted avg": {
+        "precision": 0.65625,
+        "recall": 0.6,
+        "f1-score": 0.5604395604395604,
+        "support": 20.0
+    }
+}

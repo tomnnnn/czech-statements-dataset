@@ -1,0 +1,242 @@
+[
+    {
+        "id": 27,
+        "statement": "Já nejsem ani nikde podezřelý (...) ani stíhaný.",
+        "author": "Pavel Blažek",
+        "date": "2025-01-08",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 100,
+        "statement": "My máme za tři roky, co jsme ve vládě, (…) jednoho trestně stíhaného bývalého politika hnutí STAN. Když se dívám na konkurenční ANO a nebo třeba i koaliční partnery, tak máme nejmíň.",
+        "author": "Vít  Rakušan",
+        "date": "2024-10-14",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 101,
+        "statement": "My (hnutí STAN, pozn.) nemáme pod sebou v Praze dopravu.",
+        "author": "Vít  Rakušan",
+        "date": "2024-10-14",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 242,
+        "statement": "Ta munice (v rámci české muniční iniciativy pro Ukrajinu, pozn.) je ještě ruského původu.",
+        "author": "Andrej Babiš",
+        "date": "2024-06-05",
+        "response": "\n\nHodnocení: neověřitelné",
+        "label": "neověřitelné"
+    },
+    {
+        "id": 379,
+        "statement": "Od 1. července bude v platnosti a účinnosti nový stavební zákon.",
+        "author": "Zbyněk Stanjura",
+        "date": "2024-02-29",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 524,
+        "statement": "Fatah se (...) postavil za Hamás a vyjádřil mu podporu.",
+        "author": "Jan Zahradil",
+        "date": "2023-10-11",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 525,
+        "statement": "Toho 8. 10., kdy došlo k těm krvavým, brutálním útokům, tak ty útoky přicházely z Pásma Gazy, které ovládá Hamás. Ale kolem Západního břehu Jordánu, který kontroluje palestinská samospráva, zůstal klid. (…) Z toho Západního břehu ty útoky nepřicházejí.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "\n\nHodnocení: pravda",
+        "label": "pravda"
+    },
+    {
+        "id": 526,
+        "statement": "(…) Gazu ovládají teroristé, kteří efektivně znemožňují tam jakoukoliv mezinárodní pomoc dostat, na rozdíl od toho Západního břehu Jordánu, kde se normálně staví nemocnice, normálně se tam staví školy.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 527,
+        "statement": "Když to vztáhnu na případ ruské invaze na Ukrajinu, tak tam jsme (Evropská unie, pozn.) sankcionovali plošně celé Rusko.",
+        "author": "Jan Zahradil",
+        "date": "2023-10-11",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 531,
+        "statement": "V tomhletom seznamu (států a organizací, které podporují dvoustátní řešení izraelsko-palestinského konfliktu, pozn.) nefigurovalo hnutí Hamás, které od začátku říkalo, že Izrael nenávidí a chce ho zničit.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 533,
+        "statement": "Izraelská armáda, respektive izraelská vláda tam (v Pásmu Gazy, pozn.) teď stopnuly dodávky vody.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 606,
+        "statement": "My jsme měli podle serveru Romea nejvíce romských kandidátů ze všech parlamentních stran.",
+        "author": "Tomio Okamura",
+        "date": "2023-08-20",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 684,
+        "statement": "Všichni penzisté od července, tak, jak zákon ukládá, také dostanou přidáno, to znamená, my tady nezastavujeme nebo dokonce nesnižujeme důchody, naopak historicky máme a budeme mít nejvyšší v historii České republiky.",
+        "author": "Marek Výborný",
+        "date": "2023-05-05",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 762,
+        "statement": "V současné době v Evropě máme pouze dvě fabriky na celulózu, která je naprosto nutná pro výrobu munice.",
+        "author": "Jan Bartošek",
+        "date": "2023-03-27",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 944,
+        "statement": "Mnohokrát jsem jednal i s ukrajinskými představiteli.",
+        "author": "Petr Pavel",
+        "date": "2023-01-12",
+        "response": "\n\nHodnocení: pravda",
+        "label": "pravda"
+    },
+    {
+        "id": 945,
+        "statement": "On (premiér Petr Fiala, pozn.) v novoročním projevu mluvil ne sice slovem e-armáda, ale mluvil o tom, že právě vznikají konsorcia českých firem, a že děláme ty technologie (...).",
+        "author": "Karel Diviš",
+        "date": "2023-01-08",
+        "response": "\n\nHodnocení: neověřitelné",
+        "label": "neověřitelné"
+    },
+    {
+        "id": 1209,
+        "statement": "Je jasné, kdo v tom (kauze Dozimetr, pozn.) jel. Že to byl STAN, TOP 09, ODS, ale i ANO.",
+        "author": "Jan Čižinský",
+        "date": "2022-09-16",
+        "response": "\n\nHodnocení: pravda",
+        "label": "pravda"
+    },
+    {
+        "id": 2228,
+        "statement": "Český zákon o střetu zájmů (tzv. lex Babiš, pozn.) připravila opozice, ne hnutí ANO.",
+        "author": "Klára Dostálová",
+        "date": "2021-05-24",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 2370,
+        "statement": "Jsem to koneckonců já, kdo buď podepíše, nebo případně nepodepíše odvolání jakéhokoliv ministra.",
+        "author": "Miloš Zeman",
+        "date": "2021-04-11",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 2891,
+        "statement": "Je to samozřejmě spalovna v nemocnici v Uherském Hradišti, proti které jsem hlasoval.",
+        "author": "Ivo Valenta",
+        "date": "2020-10-07",
+        "response": "\n\nHodnocení: neověřitelné",
+        "label": "neověřitelné"
+    },
+    {
+        "id": 3945,
+        "statement": "Tak já jsem apeloval na pana primátora Hřiba, aby se o tom (záměru vypustit z Dohody o spolupráci a navázání vztahu sesterských měst mezi Pekingem a Prahou)  bavil s ministerstvem zahraničí, aby pochopil, o co se jedná.",
+        "author": "Lubomír Zaorálek",
+        "date": "2019-09-22",
+        "response": "\n\nHodnocení: neověřitelné",
+        "label": "neověřitelné"
+    },
+    {
+        "id": 4107,
+        "statement": "Těch výkřiků, které křičí jako „pojďme to zrušit a pojďme hlasovat znovu“ (o brexitu, pozn.) jsou fakt jako téměř ojedinělé.",
+        "author": "Marek Benda",
+        "date": "2019-08-01",
+        "response": "\n\nHodnocení: neověřitelné",
+        "label": "neověřitelné"
+    },
+    {
+        "id": 4149,
+        "statement": "28. června jsem se dozvěděl od pana Hamáčka, že prezident nechce jmenovat Šmardu, 4. července jsem jel s panem Hamáčkem za prezidentem.",
+        "author": "Andrej Babiš",
+        "date": "2019-07-27",
+        "response": "\n\nHodnocení: neověřitelné",
+        "label": "neověřitelné"
+    },
+    {
+        "id": 4292,
+        "statement": "Je to krok (pozastavení vyplácení dotací Agrofertu a firmám rodiny ministra Tomana, pozn.) poměrně standardní a myslím si, že je to krok, který vyplývá z principu předběžné opatrnosti, protože v okamžiku, kdy by ty peníze byly vyplaceny příjemci, který nesplňuje podmínky z různých důvodů, tak by je následně musel státní fond zpětně vymáhat.",
+        "author": "Stanislav Polčák",
+        "date": "2019-06-06",
+        "response": "\n\nHodnocení: pravda",
+        "label": "pravda"
+    },
+    {
+        "id": 4294,
+        "statement": "Vezměte si, že střet zájmů je definován prostě tak, že někdo působí na úrovni veřejné moci, může spolurozhodovat nebo ovlivňovat nebo z jeho postavení vyplývá možnost mít vliv, byť nepřímý. A na druhé straně zároveň je jistým příjemcem, beneficientem těch výhod nebo toho rozhodování. Tak toto je přece střet zájmů, a u pana Babiše je to naprosto jednoznačné.",
+        "author": "Stanislav Polčák",
+        "date": "2019-06-06",
+        "response": "\n\nHodnocení: neověřitelné",
+        "label": "neověřitelné"
+    },
+    {
+        "id": 4505,
+        "statement": "Řebíček byl nejúspěšnější ministr (dopravy) za ODS, jeho firma Viamont stavěla ty dálnice.",
+        "author": "Andrej Babiš",
+        "date": "2019-01-01",
+        "response": "\n\nHodnocení: pravda",
+        "label": "pravda"
+    },
+    {
+        "id": 6309,
+        "statement": "Oni jsou proimigrační (KDU-ČSL, pozn.) proislámští, otevřeně podporují Angelu Merkelovou, (...) oni se jezdí radit do Sudetoněmeckého Landsmannschaftu.",
+        "author": "Tomio Okamura",
+        "date": "2017-10-13",
+        "response": "\n\nHodnocení: neověřitelné",
+        "label": "neověřitelné"
+    },
+    {
+        "id": 7175,
+        "statement": "Vrací se nám opět systém povinných kvót, který již Juncker odmítl.",
+        "author": "Milan Chovanec",
+        "date": "2017-01-22",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 10140,
+        "statement": "Já si pamatuju na Lisabonskou smlouvu, o tom se ani ve sněmovně diskutovat nesmělo.",
+        "author": "Vojtěch Filip",
+        "date": "2014-04-23",
+        "response": "\n\nHodnocení: nepravda",
+        "label": "nepravda"
+    },
+    {
+        "id": 10507,
+        "statement": "No právě, čím víc se jakákoliv olympiáda prohlašuje za apolitickou, tak tím víc je spojena s politikou.",
+        "author": "Václav Moravec",
+        "date": "2014-02-09",
+        "response": "\n\nHodnocení: pravda",
+        "label": "pravda"
+    }
+]

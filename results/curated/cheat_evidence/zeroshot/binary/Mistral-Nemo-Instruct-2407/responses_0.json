@@ -1,0 +1,162 @@
+[
+    {
+        "id": 100,
+        "statement": "My máme za tři roky, co jsme ve vládě, (…) jednoho trestně stíhaného bývalého politika hnutí STAN. Když se dívám na konkurenční ANO a nebo třeba i koaliční partnery, tak máme nejmíň.",
+        "author": "Vít  Rakušan",
+        "date": "2024-10-14",
+        "response": "\n\nVít Rakušan, předseda hnutí STAN, prohlásil v říjnu 20",
+        "label": "nolabel"
+    },
+    {
+        "id": 101,
+        "statement": "My (hnutí STAN, pozn.) nemáme pod sebou v Praze dopravu.",
+        "author": "Vít  Rakušan",
+        "date": "2024-10-14",
+        "response": "STAN nemá v Praze pod sebou dopravu.",
+        "label": "nolabel"
+    },
+    {
+        "id": 379,
+        "statement": "Od 1. července bude v platnosti a účinnosti nový stavební zákon.",
+        "author": "Zbyněk Stanjura",
+        "date": "2024-02-29",
+        "response": "Podle informací, které mám k dispozici, bude nový stavební zákon v platnosti a úč",
+        "label": "nolabel"
+    },
+    {
+        "id": 524,
+        "statement": "Fatah se (...) postavil za Hamás a vyjádřil mu podporu.",
+        "author": "Jan Zahradil",
+        "date": "2023-10-11",
+        "response": "\n\nThe given text is a news article discussing the political situation in Palestine and the recent conflict between Israel and Hamas. The article",
+        "label": "nolabel"
+    },
+    {
+        "id": 525,
+        "statement": "Toho 8. 10., kdy došlo k těm krvavým, brutálním útokům, tak ty útoky přicházely z Pásma Gazy, které ovládá Hamás. Ale kolem Západního břehu Jordánu, který kontroluje palestinská samospráva, zůstal klid. (…) Z toho Západního břehu ty útoky nepřicházejí.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "\n\nMikuláš Peksa ve svém výroku uvádí, že útoky na Izrael v říjnu",
+        "label": "nolabel"
+    },
+    {
+        "id": 526,
+        "statement": "(…) Gazu ovládají teroristé, kteří efektivně znemožňují tam jakoukoliv mezinárodní pomoc dostat, na rozdíl od toho Západního břehu Jordánu, kde se normálně staví nemocnice, normálně se tam staví školy.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "\n\nMikuláš Peksa, český politik a poslanec za Piráty, v rozhovoru pro den",
+        "label": "nolabel"
+    },
+    {
+        "id": 527,
+        "statement": "Když to vztáhnu na případ ruské invaze na Ukrajinu, tak tam jsme (Evropská unie, pozn.) sankcionovali plošně celé Rusko.",
+        "author": "Jan Zahradil",
+        "date": "2023-10-11",
+        "response": "The provided text is a quote from Jan Zahradil, a Czech politician, stating that when it comes to the case of",
+        "label": "nolabel"
+    },
+    {
+        "id": 531,
+        "statement": "V tomhletom seznamu (států a organizací, které podporují dvoustátní řešení izraelsko-palestinského konfliktu, pozn.) nefigurovalo hnutí Hamás, které od začátku říkalo, že Izrael nenávidí a chce ho zničit.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "\n\nMikuláš Peksa má pravdu, že hnutí Hamás nefigurovalo v tomhleto seznam",
+        "label": "nolabel"
+    },
+    {
+        "id": 533,
+        "statement": "Izraelská armáda, respektive izraelská vláda tam (v Pásmu Gazy, pozn.) teď stopnuly dodávky vody.",
+        "author": "Mikuláš Peksa",
+        "date": "2023-10-11",
+        "response": "Mikuláš Peksa uvedl, že izraelská armáda nebo vláda přerušily dodávky",
+        "label": "nolabel"
+    },
+    {
+        "id": 606,
+        "statement": "My jsme měli podle serveru Romea nejvíce romských kandidátů ze všech parlamentních stran.",
+        "author": "Tomio Okamura",
+        "date": "2023-08-20",
+        "response": "Podle serveru Romea.cz je pravděpodobně pravda, že SPD má nejvíce romských kandidát",
+        "label": "pravda"
+    },
+    {
+        "id": 684,
+        "statement": "Všichni penzisté od července, tak, jak zákon ukládá, také dostanou přidáno, to znamená, my tady nezastavujeme nebo dokonce nesnižujeme důchody, naopak historicky máme a budeme mít nejvyšší v historii České republiky.",
+        "author": "Marek Výborný",
+        "date": "2023-05-05",
+        "response": "\n\nMarek Výborný uvedl, že všichni penzisté od července budou dostávat př",
+        "label": "nolabel"
+    },
+    {
+        "id": 945,
+        "statement": "On (premiér Petr Fiala, pozn.) v novoročním projevu mluvil ne sice slovem e-armáda, ale mluvil o tom, že právě vznikají konsorcia českých firem, a že děláme ty technologie (...).",
+        "author": "Karel Diviš",
+        "date": "2023-01-08",
+        "response": "\n\nPodle zprávy, kterou poskytl Karel Diviš, premiér Petr Fiala v novoročním proje",
+        "label": "nolabel"
+    },
+    {
+        "id": 2228,
+        "statement": "Český zákon o střetu zájmů (tzv. lex Babiš, pozn.) připravila opozice, ne hnutí ANO.",
+        "author": "Klára Dostálová",
+        "date": "2021-05-24",
+        "response": "no\n\nVláda Bohuslava Sobotky, která zahrnovala hnutí ANO, ČSSD a K",
+        "label": "nolabel"
+    },
+    {
+        "id": 2370,
+        "statement": "Jsem to koneckonců já, kdo buď podepíše, nebo případně nepodepíše odvolání jakéhokoliv ministra.",
+        "author": "Miloš Zeman",
+        "date": "2021-04-11",
+        "response": "no, Miloš Zeman nemůže odmítnout podepsat odvolání jakéhokoliv ministra, protože",
+        "label": "nolabel"
+    },
+    {
+        "id": 4107,
+        "statement": "Těch výkřiků, které křičí jako „pojďme to zrušit a pojďme hlasovat znovu“ (o brexitu, pozn.) jsou fakt jako téměř ojedinělé.",
+        "author": "Marek Benda",
+        "date": "2019-08-01",
+        "response": "\n\nVýrok Marka Bendy z roku 2019, že výkřiky \"pojď",
+        "label": "nolabel"
+    },
+    {
+        "id": 4292,
+        "statement": "Je to krok (pozastavení vyplácení dotací Agrofertu a firmám rodiny ministra Tomana, pozn.) poměrně standardní a myslím si, že je to krok, který vyplývá z principu předběžné opatrnosti, protože v okamžiku, kdy by ty peníze byly vyplaceny příjemci, který nesplňuje podmínky z různých důvodů, tak by je následně musel státní fond zpětně vymáhat.",
+        "author": "Stanislav Polčák",
+        "date": "2019-06-06",
+        "response": "The given statement is a quote from Stanislav Polčák, who is discussing the decision to halt the payment of subsidies by Ag",
+        "label": "nolabel"
+    },
+    {
+        "id": 4294,
+        "statement": "Vezměte si, že střet zájmů je definován prostě tak, že někdo působí na úrovni veřejné moci, může spolurozhodovat nebo ovlivňovat nebo z jeho postavení vyplývá možnost mít vliv, byť nepřímý. A na druhé straně zároveň je jistým příjemcem, beneficientem těch výhod nebo toho rozhodování. Tak toto je přece střet zájmů, a u pana Babiše je to naprosto jednoznačné.",
+        "author": "Stanislav Polčák",
+        "date": "2019-06-06",
+        "response": "no\n\nDůvod: Zákon o střetu zájmů definuje střet zájmů jako situaci",
+        "label": "nolabel"
+    },
+    {
+        "id": 6309,
+        "statement": "Oni jsou proimigrační (KDU-ČSL, pozn.) proislámští, otevřeně podporují Angelu Merkelovou, (...) oni se jezdí radit do Sudetoněmeckého Landsmannschaftu.",
+        "author": "Tomio Okamura",
+        "date": "2017-10-13",
+        "response": "\n\nZdroj: [{\"Titulek\": \"Článek\", \"Text\": \"\\nKDU-Č",
+        "label": "nolabel"
+    },
+    {
+        "id": 7175,
+        "statement": "Vrací se nám opět systém povinných kvót, který již Juncker odmítl.",
+        "author": "Milan Chovanec",
+        "date": "2017-01-22",
+        "response": "\n\nMilan Chovanec uvedl, že se opět vrací systém povinných kvót, který již Jun",
+        "label": "nolabel"
+    },
+    {
+        "id": 10140,
+        "statement": "Já si pamatuju na Lisabonskou smlouvu, o tom se ani ve sněmovně diskutovat nesmělo.",
+        "author": "Vojtěch Filip",
+        "date": "2014-04-23",
+        "response": "The given statement by Vojtěch Filip suggests that the Lisbon Treaty was not discussed in the Chamber of Deputies. However",
+        "label": "nolabel"
+    }
+]

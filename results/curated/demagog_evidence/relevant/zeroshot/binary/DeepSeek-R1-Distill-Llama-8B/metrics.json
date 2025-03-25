@@ -1,0 +1,32 @@
+{
+    "pravda": {
+        "precision": 0.42857142857142855,
+        "recall": 0.3,
+        "f1-score": 0.35294117647058826,
+        "support": 10.0
+    },
+    "nepravda": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 10.0
+    },
+    "micro avg": {
+        "precision": 0.375,
+        "recall": 0.15,
+        "f1-score": 0.21428571428571427,
+        "support": 20.0
+    },
+    "macro avg": {
+        "precision": 0.21428571428571427,
+        "recall": 0.15,
+        "f1-score": 0.17647058823529413,
+        "support": 20.0
+    },
+    "weighted avg": {
+        "precision": 0.21428571428571427,
+        "recall": 0.15,
+        "f1-score": 0.17647058823529413,
+        "support": 20.0
+    }
+}

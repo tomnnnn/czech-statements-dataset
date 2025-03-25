@@ -1,0 +1,38 @@
+{
+    "pravda": {
+        "precision": 0.375,
+        "recall": 0.3,
+        "f1-score": 0.3333333333333333,
+        "support": 10.0
+    },
+    "nepravda": {
+        "precision": 0.3888888888888889,
+        "recall": 0.7,
+        "f1-score": 0.5,
+        "support": 10.0
+    },
+    "neověřitelné": {
+        "precision": 0.5,
+        "recall": 0.1,
+        "f1-score": 0.16666666666666666,
+        "support": 10.0
+    },
+    "micro avg": {
+        "precision": 0.39285714285714285,
+        "recall": 0.36666666666666664,
+        "f1-score": 0.3793103448275862,
+        "support": 30.0
+    },
+    "macro avg": {
+        "precision": 0.4212962962962963,
+        "recall": 0.3666666666666667,
+        "f1-score": 0.3333333333333333,
+        "support": 30.0
+    },
+    "weighted avg": {
+        "precision": 0.42129629629629634,
+        "recall": 0.36666666666666664,
+        "f1-score": 0.33333333333333326,
+        "support": 30.0
+    }
+}
