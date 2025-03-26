@@ -4,7 +4,7 @@
         "statement": "My máme za tři roky, co jsme ve vládě, (…) jednoho trestně stíhaného bývalého politika hnutí STAN. Když se dívám na konkurenční ANO a nebo třeba i koaliční partnery, tak máme nejmíň.",
         "author": "Vít  Rakušan",
         "date": "2024-10-14",
-        "response": "</think>a na zřaťe přecky na zřaťe na jeho rucino a jeho př",
+        "response": " ago, že je z     – – –, jak na z – – – – ",
         "label": "nolabel"
     },
     {
@@ -12,23 +12,23 @@
         "statement": "My (hnutí STAN, pozn.) nemáme pod sebou v Praze dopravu.",
         "author": "Vít  Rakušan",
         "date": "2024-10-14",
-        "response": "Okay, so I need to evaluate the statement made by a Czech politician regarding whether it's true or false based on factual evidence",
-        "label": "nolabel"
+        "response": "://\n\n</think>\n\nHodnocení: pravda",
+        "label": "pravda"
     },
     {
         "id": 379,
         "statement": "Od 1. července bude v platnosti a účinnosti nový stavební zákon.",
         "author": "Zbyněk Stanjura",
         "date": "2024-02-29",
-        "response": "Okay, so I need to evaluate the statement: \"From July 1, 2024, the new building law will",
-        "label": "nolabel"
+        "response": "://\n\n</think>\n\nHodnocení: pravda",
+        "label": "pravda"
     },
     {
         "id": 524,
         "statement": "Fatah se (...) postavil za Hamás a vyjádřil mu podporu.",
         "author": "Jan Zahradil",
         "date": "2023-10-11",
-        "response": "Alright, let's tackle this task step by step. First, I need to evaluate the statement made by a Czech politician about",
+        "response": "://\n\n</think>\n\nVýrok: Fatah se postavil za Hamás a vyjádřil mu podporu.\n\nHod",
         "label": "nolabel"
     },
     {
@@ -36,7 +36,7 @@
         "statement": "Toho 8. 10., kdy došlo k těm krvavým, brutálním útokům, tak ty útoky přicházely z Pásma Gazy, které ovládá Hamás. Ale kolem Západního břehu Jordánu, který kontroluje palestinská samospráva, zůstal klid. (…) Z toho Západního břehu ty útoky nepřicházejí.",
         "author": "Mikuláš Peksa",
         "date": "2023-10-11",
-        "response": "Okay, I need to evaluate the statement made by Mikuláš Peksa on October 11, 2023, regarding",
+        "response": "://\n\n</think>\n\nVýrok Mikuláše Peksy je spravedlný. Na Západním břeh",
         "label": "nolabel"
     },
     {
@@ -44,7 +44,7 @@
         "statement": "(…) Gazu ovládají teroristé, kteří efektivně znemožňují tam jakoukoliv mezinárodní pomoc dostat, na rozdíl od toho Západního břehu Jordánu, kde se normálně staví nemocnice, normálně se tam staví školy.",
         "author": "Mikuláš Peksa",
         "date": "2023-10-11",
-        "response": "Okay, so I need to evaluate whether the statement made by Mikuláš Peksa is true or false. The statement is",
+        "response": "://\n\n</think>\n\nVýrok: Gazu ovládají teroristé, kteří efektivně znemož",
         "label": "nolabel"
     },
     {
@@ -52,7 +52,7 @@
         "statement": "Když to vztáhnu na případ ruské invaze na Ukrajinu, tak tam jsme (Evropská unie, pozn.) sankcionovali plošně celé Rusko.",
         "author": "Jan Zahradil",
         "date": "2023-10-11",
-        "response": "Alright, let's dive into this. The statement in question is made by Jan Zahradil, a Ukrainian politician, on",
+        "response": "://\n\n</think>\n\nVýrok: \"Když to vztáhnu na případ ruské invaze na Ukrajin",
         "label": "nolabel"
     },
     {
@@ -60,15 +60,15 @@
         "statement": "V tomhletom seznamu (států a organizací, které podporují dvoustátní řešení izraelsko-palestinského konfliktu, pozn.) nefigurovalo hnutí Hamás, které od začátku říkalo, že Izrael nenávidí a chce ho zničit.",
         "author": "Mikuláš Peksa",
         "date": "2023-10-11",
-        "response": "Okay, so I need to evaluate whether the statement made by Mikuláš Peksa is true or false. The statement is",
-        "label": "nolabel"
+        "response": "://\n\n</think>\n\nVýrok: \"Tomhleto tvrzení je **nepravda**.\" \n\nDův",
+        "label": "nepravda"
     },
     {
         "id": 533,
         "statement": "Izraelská armáda, respektive izraelská vláda tam (v Pásmu Gazy, pozn.) teď stopnuly dodávky vody.",
         "author": "Mikuláš Peksa",
         "date": "2023-10-11",
-        "response": "Okay, so I need to evaluate whether the statement made by Mikuláš Peksa, specifically about Israel stopping water supplies to",
+        "response": "://\n\n</think>\n\nVýrok: Izraelská armáda, respektive izraelská vláda tam",
         "label": "nolabel"
     },
     {
@@ -76,15 +76,15 @@
         "statement": "My jsme měli podle serveru Romea nejvíce romských kandidátů ze všech parlamentních stran.",
         "author": "Tomio Okamura",
         "date": "2023-08-20",
-        "response": "Alright, let's tackle this task step by step. I need to evaluate the statement made by a Czech politician regarding its truth",
-        "label": "nolabel"
+        "response": "://\n\n</think>\n\nHodnocení: pravda",
+        "label": "pravda"
     },
     {
         "id": 684,
         "statement": "Všichni penzisté od července, tak, jak zákon ukládá, také dostanou přidáno, to znamená, my tady nezastavujeme nebo dokonce nesnižujeme důchody, naopak historicky máme a budeme mít nejvyšší v historii České republiky.",
         "author": "Marek Výborný",
         "date": "2023-05-05",
-        "response": "Alright, let's tackle this task step by step. I need to evaluate the statement made by Marek Výborný,",
+        "response": "://\n\n</think>\n\nVýrok: \"Všichni penzisté od července, tak, jak zákon uklád",
         "label": "nolabel"
     },
     {
@@ -92,7 +92,7 @@
         "statement": "On (premiér Petr Fiala, pozn.) v novoročním projevu mluvil ne sice slovem e-armáda, ale mluvil o tom, že právě vznikají konsorcia českých firem, a že děláme ty technologie (...).",
         "author": "Karel Diviš",
         "date": "2023-01-08",
-        "response": "Okay, so I need to evaluate the statement made by Czech politician Karel Diviš in his New Year's speech. The statement",
+        "response": "://\n\n</think>\n\nVýrok Petra Fialy o založení konsorcia českých firem a technologie",
         "label": "nolabel"
     },
     {
@@ -100,7 +100,7 @@
         "statement": "Český zákon o střetu zájmů (tzv. lex Babiš, pozn.) připravila opozice, ne hnutí ANO.",
         "author": "Klára Dostálová",
         "date": "2021-05-24",
-        "response": "Alright, let's dive into this task. I need to evaluate the statement made by a Czech politician regarding its truthfulness based",
+        "response": "://\n\n</think>\n\nVýrok: Český zákon o střetu zájmů (tzv. lex Babiš",
         "label": "nolabel"
     },
     {
@@ -108,15 +108,15 @@
         "statement": "Jsem to koneckonců já, kdo buď podepíše, nebo případně nepodepíše odvolání jakéhokoliv ministra.",
         "author": "Miloš Zeman",
         "date": "2021-04-11",
-        "response": "Alright, let's dive into this. I need to evaluate the statement made by Czech politician Miloš Zeman in April ",
-        "label": "nolabel"
+        "response": "://\n\n</think>\n\nHodnocení: pravda",
+        "label": "pravda"
     },
     {
         "id": 4107,
         "statement": "Těch výkřiků, které křičí jako „pojďme to zrušit a pojďme hlasovat znovu“ (o brexitu, pozn.) jsou fakt jako téměř ojedinělé.",
         "author": "Marek Benda",
         "date": "2019-08-01",
-        "response": "Alright, let me try to figure out how to approach this. So, the user provided a statement by Marek Benda",
+        "response": "://\n\n</think>\n\nVýrok: Téchnější způsob vyjaduvání o pravdě a nepravdě",
         "label": "nolabel"
     },
     {
@@ -124,7 +124,7 @@
         "statement": "Je to krok (pozastavení vyplácení dotací Agrofertu a firmám rodiny ministra Tomana, pozn.) poměrně standardní a myslím si, že je to krok, který vyplývá z principu předběžné opatrnosti, protože v okamžiku, kdy by ty peníze byly vyplaceny příjemci, který nesplňuje podmínky z různých důvodů, tak by je následně musel státní fond zpětně vymáhat.",
         "author": "Stanislav Polčák",
         "date": "2019-06-06",
-        "response": "Okay, so I need to evaluate the statement made by a Czech politician regarding whether it's true or not based on its factual",
+        "response": "://\n\n</think>\n\nVýrok je správně podložený příslušnými dokumenty a fakty. Je tomu",
         "label": "nolabel"
     },
     {
@@ -132,7 +132,7 @@
         "statement": "Vezměte si, že střet zájmů je definován prostě tak, že někdo působí na úrovni veřejné moci, může spolurozhodovat nebo ovlivňovat nebo z jeho postavení vyplývá možnost mít vliv, byť nepřímý. A na druhé straně zároveň je jistým příjemcem, beneficientem těch výhod nebo toho rozhodování. Tak toto je přece střet zájmů, a u pana Babiše je to naprosto jednoznačné.",
         "author": "Stanislav Polčák",
         "date": "2019-06-06",
-        "response": "Alright, let's tackle this task step by step. The user has provided a statement from a Czech politician and some supporting documents",
+        "response": "://\n\n</think>\n\nVýrok je správně formulován a opírá na konkrétné právní",
         "label": "nolabel"
     },
     {
@@ -140,7 +140,7 @@
         "statement": "Oni jsou proimigrační (KDU-ČSL, pozn.) proislámští, otevřeně podporují Angelu Merkelovou, (...) oni se jezdí radit do Sudetoněmeckého Landsmannschaftu.",
         "author": "Tomio Okamura",
         "date": "2017-10-13",
-        "response": "Alright, let's dive into this. I need to evaluate the statement made by Tomio Okamura in 2017 that",
+        "response": "://\n\n</think>\n\nVýrok: \"Oni jsou proimigrační (KDU-ČSL, pozn",
         "label": "nolabel"
     },
     {
@@ -148,7 +148,7 @@
         "statement": "Vrací se nám opět systém povinných kvót, který již Juncker odmítl.",
         "author": "Milan Chovanec",
         "date": "2017-01-22",
-        "response": "Alright, let's tackle this task step by step. The user has provided a statement made by a Czech politician along with several",
+        "response": "://\n\n</think>\n\nVýrok: \"Vrací se nám opět systém povinných kvót, který již Juncker",
         "label": "nolabel"
     },
     {
@@ -156,7 +156,7 @@
         "statement": "Já si pamatuju na Lisabonskou smlouvu, o tom se ani ve sněmovně diskutovat nesmělo.",
         "author": "Vojtěch Filip",
         "date": "2014-04-23",
-        "response": "Okay, so I need to evaluate the statement made by Vojtěch Filip, a Czech politician, about the Lisbon Treaty.",
+        "response": "://\n\n</think>\n\nVýrok: \"Já si pamatuju na Lisabonskou smlouvu,",
         "label": "nolabel"
     }
 ]
