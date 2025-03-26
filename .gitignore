@@ -7,10 +7,11 @@ datasets/
 .venv
 .env
 .mamba
-results/
 logs/baseline
 baseline/results
 stats
 logs
 .hf/
-jobs/.jobs
+jobs
+models
+
