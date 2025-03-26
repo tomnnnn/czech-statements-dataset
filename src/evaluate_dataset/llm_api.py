@@ -1,9 +1,17 @@
+import os
+import logging
+
+logger = logging.getLogger(__name__)
+
 class LanguageModelAPI:
     generation_prompt = ""
     system_prompt = ""
     examples = []
 
     def __init__(self, model_path, **kwargs):
+        if os.getenv("HF_TOKEN", None) is None:
+            logger.warning("Hugging Face token not found in environment variables.")
+
         self.model_path = model_path
         self.chat_format = not kwargs.get("no_chat_format", False)
 

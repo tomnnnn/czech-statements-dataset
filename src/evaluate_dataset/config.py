@@ -38,6 +38,7 @@ class Config:
     rel_operator: str = "ge"
     no_chat_format: bool = False
     max_tokens: Optional[int] = None
+    rope_scaling: Optional[str] = None
 
 def load_yaml_config(path: str) -> dict:
     """Loads the configuration from a YAML file."""
@@ -77,6 +78,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--rel-operator", type=str, help="Operator for relevancy threshold comparison. Available: eq, ge, le")
     parser.add_argument("--no-chat-format", action="store_true", help="Don't use chat format for input prompts")
     parser.add_argument("--max-tokens", type=int,nargs="?", help="Maximum number of tokens for model output")
+    parser.add_argument("--rope-scaling", type=str, help="Configuration JSON string for ROPE scaling")
 
     args = parser.parse_args()
 

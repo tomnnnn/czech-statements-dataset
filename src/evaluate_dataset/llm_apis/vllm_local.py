@@ -1,4 +1,5 @@
 import os
+import json
 import torch
 import logging
 from transformers import AutoTokenizer
@@ -20,8 +21,8 @@ class VLLM_Local(LanguageModelAPI):
         num_gpus = torch.cuda.device_count()
         print(f"Found {num_gpus} gpus")
 
-        if os.getenv("HF_TOKEN", None) is None:
-            logger.warning("Hugging Face token not found in environment variables.")
+        # Get rope scaling configuration if provided
+        rope_scaling = self._get_rope_config(kwargs.get("rope_scaling", None))
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = LLM(
@@ -30,7 +31,29 @@ class VLLM_Local(LanguageModelAPI):
             tensor_parallel_size=num_gpus if distribute_load else 1,
             gpu_memory_utilization=gpu_memory_utilization,
             max_model_len=kwargs.get("ctx_len", None),
+            rope_scaling=rope_scaling,
         )
+
+    def _get_rope_config(self, rope_config):
+        """
+        Get rope scaling configuration from the input argument.
+        """
+        if rope_config:
+            if isinstance(rope_config, str):
+                try:
+                    rope_scaling = json.loads(rope_config)  # Convert JSON string to dict
+                except json.JSONDecodeError:
+                    raise ValueError("Invalid JSON format for rope_scaling argument.")
+            elif isinstance(rope_config, dict):
+                rope_scaling = rope_config  # Use directly if already a dictionary
+                logger.info("Using following rope scaling configuration: %s", rope_scaling)
+            else:
+                raise TypeError("rope_scaling must be a dictionary or a valid JSON string.")
+        else:
+            rope_scaling = None  # Disable rope scaling if not provided
+
+        return rope_scaling
+
 
     def prepare_input(self, prompts):
         convos = super().prepare_input(prompts)
