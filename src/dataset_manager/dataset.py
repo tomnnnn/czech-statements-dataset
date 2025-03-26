@@ -185,7 +185,7 @@ class DemagogDataset:
         """
         Get all evidence documents from the dataset
         """
-        self.cursor.execute("SELECT * FROM ?", (self._evidence_table))
+        self.cursor.execute(f"SELECT * FROM {self._evidence_table}")
 
         rows = self.cursor.fetchall()
         return [dict(r) for r in rows]
