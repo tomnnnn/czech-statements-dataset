@@ -1,17 +1,20 @@
 import json
 import logging
+import operator
 import os
 import random
 import re
-import tldextract
 from dataclasses import asdict
-import operator
+from typing import List
 
+import tldextract
 import yaml
+from dataset_manager.orm import *
 from sklearn.model_selection import train_test_split
+from sqlalchemy import func
+from sqlalchemy.orm import Session
 
-from dataset_manager import DemagogDataset
-from .config import load_config
+from .config import Config, load_config
 from .llm_apis import llm_api_factory
 from .utils import calculate_metrics
 
@@ -48,49 +51,39 @@ def extract_label(response, allowed_labels):
 
     return "nolabel"
 
-def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=1500, relevancy_threshold=0.5, relevant_paragraph=False):
+def prompt_builder(statements: List[Statement], dataset: Session, config: Config):
     """
     Build prompts for given statements. Optionally include evidence from evidence_dir.
-
-    Args:
-    statements (List): List of statements.
-    evidence_dir (str): Path to folder with evidence files.
-    max_content_len (int): maximum length of evidence content to include in the prompt.
     """
     prompts = []
     for statement in statements:
-        statement_str = ( f"{statement['statement']} - {statement['author']}, {statement['date']}")
+        statement_str = ( f"{statement.statement} - {statement.author}, {statement.date}")
 
-
-
-        evidence = dataset.get_evidence(statement['id'])
-        evidence = [e for e in evidence if ops[config.rel_operator](float(e['relevancy']),float(relevancy_threshold))]
+        evidence = statement.segments if config.relevant_paragraph else statement.articles
 
         if not evidence:
-            logger.warning(f"No evidence found for statement {statement['id']}.")
+            logger.warning(f"No evidence found for statement {statement.id}.")
             prompts.append(statement_str + "\nPodpůrné dokumenty: Není dostupný žádný podpůrný dokument.")
             continue
 
         evidence_contents = []
-        for e in evidence:
-            # Get the description and relevant paragraph, with default empty string if not available
-            description = e.get('description', '')
-            relevant_paragraph = e.get('relevant_paragraph', '')
 
-            if relevant_paragraph:
-                # If relevant_paragraph is requested, combine description and relevant_paragraph
-                content = f"{description}\n{relevant_paragraph}"
+        for e in evidence:
+            if config.relevant_paragraph:
+                # If relevant_paragraph is requested, combine description and relevant segment
+                description = e.article.description or ''
+                content = f"{description}\n{e.text}"
             else:
-                # Otherwise, use full content text
-                content = e['content'][:max_evidence_len]
+                # Otherwise, use full content text of article
+                content = e.content[:config.ctx_len]
 
             evidence_contents.append(content)
 
         truncated = [
             {
-                'Titulek': e['title'],
+                'Titulek': e.title or e.article.title,
                 'Text': text,
-                'Zdroj': tldextract.extract(e['url']).domain + "." + tldextract.extract(e['url']).suffix if e['url'] else '',
+                'Zdroj': tldextract.extract(str(e.url or e.article.url)).domain + "." + tldextract.extract(str(e.url or e.article.url)).suffix or '',
             }
             for e,text in zip(evidence, evidence_contents)
         ]
@@ -103,15 +96,11 @@ def prompt_builder(statements, dataset: DemagogDataset, max_evidence_len=1500, r
 
 
 def split_and_build_examples(
-    statements,
-    dataset,
+    statements: List[Statement],
+    dataset: Session,
+    config: Config,
+    generation_prompt: str = "",
     seed=None,
-    allowed_labels=["pravda", "nepravda", "neověřitelné"],
-    include_explanation=False,
-    count_for_each_label=1,
-    relevancy_threshold=0.5,
-    relevant_paragraph=False,
-    generation_prompt=""
 ):
     """
     Samples pseudo-randomly examples from statements for each label and uses them as examples for few-shot prompting. Optionally includes evidence and explanation.
@@ -128,30 +117,30 @@ def split_and_build_examples(
         random.seed(seed)
 
     example_statements = []
-    for label in allowed_labels:
-        filtered_statements = [ stmt for stmt in statements if stmt["label"].lower() == label ]
+    for label in config.allowed_labels:
+        filtered_statements = [ stmt for stmt in statements if stmt.label.lower() == label ]
 
-        if len(filtered_statements) < count_for_each_label:
-            raise ValueError(f"Not enough statements for label '{label}'. Required: {count_for_each_label}, Found: {len(filtered_statements)}")
+        if len(filtered_statements) < config.example_count:
+            raise ValueError(f"Not enough statements for label '{label}'. Required: {config.example_count}, Found: {len(filtered_statements)}")
 
         # pseudo-randomly sample
         shuffled_items = sorted(filtered_statements, key=lambda _: random.random())  # Shuffle while keeping order fixed
-        example_statements.extend(shuffled_items[:count_for_each_label])
+        example_statements.extend(shuffled_items[:config.example_count])
 
     test_statements = [stmt for stmt in statements if stmt not in example_statements]
-    inputs = prompt_builder(example_statements,dataset, relevancy_threshold=relevancy_threshold, relevant_paragraph=relevant_paragraph)
+    inputs = prompt_builder(example_statements,dataset, config)
 
     explanations = [
         (
-            f"Úvaha: {stmt['explanation'] if stmt['explanation_brief'] else stmt['explanation']}\n"
-            if include_explanation
+            f"Úvaha: {stmt.explanation or stmt.explanation_brief}\n"
+            if config.with_explanation
             else ""
         )
         for stmt in example_statements
     ]
 
     examples = [
-        {"input": input_text, "output": explanation + generation_prompt + stmt["label"].lower()}
+        {"input": input_text, "output": explanation + generation_prompt + stmt.label.lower()}
         for input_text, stmt, explanation in zip(inputs, example_statements, explanations)
     ]
 
@@ -159,9 +148,9 @@ def split_and_build_examples(
 
 
 def eval_dataset(
-    config,
-    dataset,
-    statements,
+    config: Config,
+    dataset: Session,
+    statements: List[Statement],
     example_statements=None,
 ):
     """
@@ -170,7 +159,7 @@ def eval_dataset(
 
     Args:
     config (dict): Configuration dictionary.
-    dataset (DemagogDataset): Dataset object.
+    dataset (): Dataset SQL session object.
     statements (List): List of statements to evaluate.
     example_statements (List): List of example statements to use for few-shot prompting. If None, statements are used.
     """
@@ -184,14 +173,9 @@ def eval_dataset(
     # split statements into examples and test statements
     examples, test_statements = split_and_build_examples(
         example_statements if example_statements else statements,
-        seed=42,
-        include_explanation=config.with_explanation,
-        count_for_each_label=config.example_count,
-        allowed_labels=config.allowed_labels,
-        dataset=dataset,
-        relevancy_threshold=config.relevancy_threshold,
-        relevant_paragraph=config.relevant_paragraph,
-        generation_prompt=generation_prompt
+        dataset,
+        config,
+        generation_prompt
     )
     logger.info(f"Loaded system prompt: {system_prompt}")
     logger.info(f"Loaded {len(examples)} examples.")
@@ -208,11 +192,11 @@ def eval_dataset(
 
     model.set_examples(examples)
 
-    prompts = prompt_builder(test_statements, dataset, relevancy_threshold=config.relevancy_threshold, relevant_paragraph=config.relevant_paragraph)
+    prompts = prompt_builder(test_statements, dataset, config)
 
     # test statements info
     logger.info(f"Evaluating {len(prompts)} statements.")
-    labels = [item["label"] for item in test_statements]
+    labels = [item.label for item in test_statements]
     label_counts = {label: labels.count(label) for label in set(labels)}
     logger.info(f"Label distribution in test set: {label_counts}")
 
@@ -221,12 +205,13 @@ def eval_dataset(
     max_new_tokens = config.max_tokens if config.max_tokens else (3000 if config.with_explanation else 25)
     responses = model(prompts, config.batch_size, max_new_tokens = max_new_tokens)
 
+    print("Responses:", responses)
     verdicts = [
         {
-            "id": statement["id"],
-            "statement": statement["statement"],
-            "author": statement["author"],
-            "date": statement["date"],
+            "id": statement.id,
+            "statement": statement.statement,
+            "author": statement.author,
+            "date": statement.date,
             "response": response,
             "label": extract_label(response, config.allowed_labels),
         }
@@ -250,7 +235,7 @@ def eval_dataset(
         results_dest = os.path.join(result_dir, f"metrics.json")
         with open(results_dest, "w") as f:
             json.dump(
-                calculate_metrics(test_statements, verdicts, config.allowed_labels),
+                calculate_metrics([s.__dict__ for s in test_statements], verdicts, config.allowed_labels),
                 f,
                 indent=4,
                 ensure_ascii=False,
@@ -262,7 +247,7 @@ def eval_dataset(
         file_path = os.path.join(result_dir, f"results_{config.index}.json")
         with open(file_path, "w") as f:
             json.dump(
-                {"y_pred": verdicts, "y_ref": test_statements},
+                {"y_pred": verdicts, "y_ref": [s.__dict__ for s in test_statements},
                 f,
                 indent=4,
                 ensure_ascii=False,
@@ -273,13 +258,19 @@ def eval_dataset(
             )
 
 
-def sample_dataset(dataset, config):
+def sample_dataset(dataset, config: Config):
     random.seed(42)
-    statements = dataset.get_all_statements(config.allowed_labels, config.min_evidence_count)
+    statements = (dataset.query(Statement)
+        .filter(func.lower(Statement.label).in_(config.allowed_labels))
+        .join(ArticleRelevance)
+        .group_by(Statement.id)
+        .having(func.count(ArticleRelevance.article_id) > config.min_evidence_count)
+        .all()
+      )
 
     logger.info(f"Loaded {len(statements)} statements with allowed labels and at least {config.min_evidence_count} evidence articles.")
 
-    labels = [item["label"] for item in statements]
+    labels = [item.label for item in statements]
 
     if config.test_portion and config.test_portion != 1:
         if config.test_portion < 1.0:
@@ -292,7 +283,7 @@ def sample_dataset(dataset, config):
 
             if config.stratify:
                 by_label = {
-                    label: [stmt for stmt in shuffled_statements if stmt["label"].lower() == label]
+                    label: [stmt for stmt in shuffled_statements if stmt.label.lower() == label]
                     for label in config.allowed_labels
                 }
                 test_statements = []
@@ -326,8 +317,7 @@ def cut_for_parallelization(config, statements):
 
 if __name__ == "__main__":
     config = load_config()
-
-    dataset = DemagogDataset(config.dataset_path, config.evidence_source, readonly=True)
+    dataset = init_db(config.dataset_path)
     statements = sample_dataset(dataset, config)
     statements = cut_for_parallelization(config, statements)
 

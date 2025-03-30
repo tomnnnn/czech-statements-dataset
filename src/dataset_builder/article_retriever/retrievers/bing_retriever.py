@@ -2,10 +2,10 @@ import asyncio
 import sys
 import aiohttp
 import datetime
-from ..evidence_retriever import EvidenceRetriever
+from ..article_retriever import ArticleRetriever
 
 
-class BingRetriever(EvidenceRetriever):
+class BingRetriever(ArticleRetriever):
     def __prepare_query(self, claim: str) -> str:
          return "-site:demagog.cz -site:x.com -site:facebook.com -site:instagram.com -site:reddit.com -filetype:pdf -filetype:xls -filetype:doc -filetype:docx -filetype:csv -filetype:xml " + claim
 

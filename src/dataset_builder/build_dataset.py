@@ -2,15 +2,14 @@ import json
 import os
 import shutil
 import sys
-from warnings import showwarning
 
 from tqdm.asyncio import tqdm
 
 from .config import CONFIG
-from article_retriever import ArticleRetriever
-from demagog_scraper import DemagogScraper
-from evidence_retriever import evidence_retriever_factory
+from .article_scraper import ArticleScraper
+from .demagog_scraper import DemagogScraper
 from dataset_manager.orm import *
+from .article_retriever import article_retriever_factory
 from sqlalchemy import insert
 
 
@@ -43,17 +42,19 @@ async def build_dataset():
     if CONFIG["UseExistingStatements"]:
         # load existing statements
         print("Using existing statements")
-        stmts = dataset.query(Statement).all()
+        stmts = [stmt.__dict__ for stmt in dataset.query(Statement).all()]
     else:
         # scrape statements
         scraper = DemagogScraper(CONFIG["FromYear"], CONFIG["ToYear"], CONFIG["FirstNPages"])
 
         # include demagog evidence links if the evidence retriever is demagog 
         stmts = await scraper.run(CONFIG["EvidenceRetriever"] == "demagog")
-        sql_stmt = insert(Statement).values(stmts)
-        dataset.execute(sql_stmt)
-        dataset.commit()
 
+        valid_columns = {column.name for column in Statement.__table__.columns}
+        filtered_stmts = [{k: v for k, v in row.items() if k in valid_columns} for row in stmts]
+        insert_stmt = insert(Statement).values(filtered_stmts)
+        dataset.execute(insert_stmt)
+        dataset.commit()
 
     if CONFIG["UseExistingEvidenceLinks"]:
         print("Using existing evidence links")
@@ -61,7 +62,7 @@ async def build_dataset():
             evidence_links = json.load(file)
     else:
         # search for evidence for each statement
-        evidence_retriever = evidence_retriever_factory(
+        evidence_retriever = article_retriever_factory(
             CONFIG["EvidenceRetriever"], CONFIG["EvidenceAPIKey"]
         )
         evidence_retriever.set_fetch_concurrency(CONFIG["FetchConcurrency"])
@@ -74,7 +75,7 @@ async def build_dataset():
 
     if CONFIG["ScrapeArticles"]:
         # skip already scraped evidence (file exists)
-        scraped_ids = dataset.query(Article.id).distinct(Article.statement_id).all()
+        scraped_ids = dataset.query(Article.id).all()
         filtered_evidence_links = [item for item in evidence_links if item["id"] not in scraped_ids]
 
         print(f"Skipping {len(scraped_ids)} already scraped statements")
@@ -90,12 +91,16 @@ async def build_dataset():
 
 
 async def retrieve_and_save(dataset: Session, statement_id, links):
-    article_retriever = ArticleRetriever()
-    articles = await article_retriever.batch_retrieve(links, show_progress=False)
+    article_scraper = ArticleScraper()
+    articles = await article_scraper.batch_retrieve(links, show_progress=False)
 
-    stmt = insert(Article).values(articles)
-    stmt_relevance = insert(ArticleRelevance).values([{"statement_id": statement_id, "article_id": article["id"]} for article in articles])
+    article_columns = {column.name for column in Article.__table__.columns}
+    articles_filtered = [{k: v for k, v in article.items() if k in article_columns} for article in articles]
 
-    dataset.execute(stmt)
-    dataset.execute(stmt_relevance)
+    article_stmt = insert(Article).values(articles_filtered).returning(Article.id)
+    article_ids = dataset.execute(article_stmt).scalars().all()
+
+    relevance_stmt = insert(ArticleRelevance).values([{"statement_id": statement_id, "article_id": article_id} for article_id in article_ids])
+    dataset.execute(relevance_stmt)
+
     dataset.commit()

@@ -4,10 +4,10 @@ import sys
 
 import aiohttp
 
-from ..evidence_retriever import EvidenceRetriever
+from ..article_retriever import ArticleRetriever
 
 
-class DemagogRetriever(EvidenceRetriever):
+class DemagogRetriever(ArticleRetriever):
     """
     Assumes evidence links are already scraped and stored in the statements database.
     """

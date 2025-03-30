@@ -1,7 +1,7 @@
 from tqdm.asyncio import tqdm
 import asyncio
 
-class EvidenceRetriever:
+class ArticleRetriever:
     def __init__(self, api_key: str, fetch_concurrency: int = 5, fetch_delay: int = 1):
         self.fetch_sem = asyncio.Semaphore(fetch_concurrency)
         self.fetch_delay = fetch_delay

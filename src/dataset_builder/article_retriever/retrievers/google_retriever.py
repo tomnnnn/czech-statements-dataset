@@ -2,10 +2,10 @@ import asyncio
 import datetime
 import sys
 import aiohttp
-from ..evidence_retriever import EvidenceRetriever
+from ..article_retriever import ArticleRetriever
 
 
-class GoogleRetriever(EvidenceRetriever):
+class GoogleRetriever(ArticleRetriever):
     """
     Retrieves evidence from Google search engine using Serper API
 

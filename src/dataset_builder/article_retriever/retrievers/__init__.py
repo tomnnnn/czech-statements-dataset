@@ -2,7 +2,7 @@ from .bing_retriever import BingRetriever
 from .google_retriever import GoogleRetriever
 from .criteria_retriever import CriteriaRetriever
 from .demagog_retriever import DemagogRetriever
-from ..evidence_retriever import EvidenceRetriever
+from ..article_retriever import ArticleRetriever
 
 
 retrievers_dict = {
@@ -12,7 +12,7 @@ retrievers_dict = {
     'demagog': DemagogRetriever
 }
 
-def evidence_retriever_factory(api: str, api_key: str|None = None) -> EvidenceRetriever:
+def article_retriever_factory(api: str, api_key: str|None = None) -> ArticleRetriever:
     if api not in retrievers_dict:
         raise ValueError(f"Unsupported evidence retriever API: {api}")
 

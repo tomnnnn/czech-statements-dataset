@@ -8,10 +8,11 @@ class MockLanguageModelAPI(LanguageModelAPI):
         gpu_memory_utilization: float = 0.85,
         **kwargs,
     ):
+        super().__init__(model_path, **kwargs)
         print(kwargs)
 
     def _infer(self, conversations, batch_size=8, max_new_tokens=1000, **kwargs):
-        if kwargs.get('chat', False):
+        if kwargs.get('chat', True):
             return [
                 "\r\n".join(passage["content"] if len(passage["content"]) < 200 else passage["content"][:200] + "..." for passage in conversation)
                 for conversation in conversations

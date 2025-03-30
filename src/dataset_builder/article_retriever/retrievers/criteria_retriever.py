@@ -2,10 +2,10 @@ import asyncio
 import datetime
 import sys
 import aiohttp
-from ..evidence_retriever import EvidenceRetriever
+from ..article_retriever import ArticleRetriever
 
 
-class CriteriaRetriever(EvidenceRetriever):
+class CriteriaRetriever(ArticleRetriever):
     def __prepare_query(self, claim: str) -> str:
         return claim
 

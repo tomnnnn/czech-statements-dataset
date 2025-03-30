@@ -3,7 +3,75 @@ import os
 import sqlite3
 from bs4 import BeautifulSoup
 
-class DemagogDataset:
+class Dataset:
+    def set_evidence_source(self, source):
+        pass
+
+    def get_statements(self, allowed_labels=None, min_evidence_count=0):
+        pass
+
+    def get_statement(self, statement_id):
+        pass
+
+    def get_articles(self, statement_id = None):
+        pass
+
+    def get_article(self, article_id):
+        pass
+
+    def get_segments(self, article_id=None):
+        pass
+
+    def get_segment(self, segment_id):
+        pass
+
+    def get_segment_relevances(self):
+        pass
+
+    def get_article_relevances(self):
+        pass
+
+    def set_segment_relevance(self, segment_id, statement_id, relevance=1):
+        pass
+
+    def set_segment_relevances(self, segment_relevances):
+        pass
+
+    def set_article_relevance(self, article_id, statement_id, relevance=1):
+        pass
+
+    def set_article_relevances(self, article_relevances):
+        pass
+
+    def delete_statement(self, statement_id):
+        pass
+
+    def delete_article(self, article_id):
+        pass
+
+    def delete_segment(self, segment_id):
+        pass
+
+    def insert_statement(self, statement):
+        pass
+
+    def insert_statements(self, statements):
+        pass
+
+    def insert_article(self, article):
+        pass
+
+    def insert_articles(self, articles):
+        pass
+
+    def insert_segment(self, segment):
+        pass
+
+    def insert_segments(self, segments):
+        pass
+
+
+class DemagogDataset(Dataset):
     """
     Class for managing the dataset of statements and evidence from Demagog.cz
     The dataset is stored in a SQLite database
@@ -32,74 +100,13 @@ class DemagogDataset:
         self.cursor = self.conn.cursor()
         self.set_evidence_source(evidence_source)
 
-        if not readonly:
-            # create tables if not exist
-            self.cursor.execute(
-                """CREATE TABLE IF NOT EXISTS statements (
-                id INTEGER PRIMARY KEY,
-                statement TEXT,
-                label TEXT,
-                author TEXT,
-                date TEXT,
-                party TEXT,
-                explanation TEXT,
-                explanation_brief TEXT,
-                origin TEXT
-                )""",
-            )
-
-            # NOTE: For the sake of simplicity, no join table is used, despite many-to-many relationship
-            self.cursor.execute(
-                """CREATE TABLE IF NOT EXISTS tags (
-                id INTEGER PRIMARY KEY,
-                statement_id INTEGER,
-                tag TEXT
-                )
-                """
-            )
-            # create index
-            self.cursor.execute(
-                """CREATE INDEX IF NOT EXISTS idx_statements_id ON statements (id)"""
-            )
-
-            self.cursor.execute(
-                """CREATE INDEX IF NOT EXISTS idx_tags_statement_id ON tags (statement_id)"""
-            )
-
-            self.conn.commit()
-
     def set_evidence_source(self, source):
         """
         Set the source of the evidence documents. Creates a new evidence table for the source if it doesn't exist
         """
         self.evidence_source = source
-        self._evidence_table = "evidence_" + source
-
-        if not self.readonly:
-            # create evidence table if not exist
-            self.cursor.execute(
-                f"""CREATE TABLE IF NOT EXISTS {self._evidence_table} (
-                id INTEGER PRIMARY KEY,
-                statement_id INTEGER,
-                url TEXT,
-                title TEXT,
-                description TEXT,
-                content TEXT,
-                author TEXT,
-                type TEXT,
-                published TEXT,
-                source TEXT,
-                accessed TEXT,
-                FOREIGN KEY (statement_id) REFERENCES statements (id)
-                )"""
-            )
-
-            # create index
-            self.cursor.execute(
-                f"""CREATE INDEX IF NOT EXISTS idx_{self._evidence_table}_statement_id ON {self._evidence_table} (statement_id)"""
-            )
-
-            self.conn.commit()
+        self._evidence_table = "articles_" + source
+        self._segment_table = "segments_" + source
 
 
     def get_all_statements(self, allowed_labels=None, min_evidence_count=0):
@@ -113,14 +120,22 @@ class DemagogDataset:
         """
         allowed_labels_str = " WHERE LOWER(s.label) IN ({})".format( ", ".join([f"'{l}'" for l in allowed_labels])) if allowed_labels else ""
 
-        self.cursor.execute(f"""
-            SELECT s.* 
-            FROM statements s
-            JOIN {self._evidence_table} a ON s.id = a.statement_id
-            {allowed_labels_str}
-            GROUP BY s.id
-            HAVING COUNT(a.id) >= {min_evidence_count}
-        """)
+        # TODO: tidy up
+        if min_evidence_count == 0:
+            self.cursor.execute(f"""
+                SELECT * 
+                FROM statements s
+                {allowed_labels_str}
+            """)
+        else:
+            self.cursor.execute(f"""
+                SELECT s.* 
+                FROM statements s
+                JOIN {self._evidence_table} a ON s.id = a.statement_id
+                {allowed_labels_str}
+                GROUP BY s.id
+                HAVING COUNT(a.id) >= {min_evidence_count}
+            """)
 
         rows = self.cursor.fetchall()
         return [dict(row) for row in rows]
@@ -160,7 +175,7 @@ class DemagogDataset:
 
     def get_evidence(self, statement_id):
         """
-        Get all evidence documents for a statement by the statement ID
+        Get all evidence articles for a statement by the statement ID
         """
         self.cursor.execute(
             f"SELECT * FROM {self._evidence_table} WHERE statement_id = {str(statement_id)}"
@@ -179,6 +194,10 @@ class DemagogDataset:
 
         return result
 
+    def get_evidence_by_id(self, evidence_id):
+        self.cursor.execute(f"SELECT * FROM {self._evidence_table} WHERE id = ?", (evidence_id,))
+
+        return dict(self.cursor.fetchone())
 
 
     def get_all_evidence(self):
@@ -316,6 +335,8 @@ class DemagogDataset:
         )
 
         self.conn.commit()
+
+
     def get_scraped_statement_ids(self):
         """
         Get a list of statement_ids that have already been scraped (have atleast one evidence document)
@@ -325,6 +346,55 @@ class DemagogDataset:
 
         # Return a list of unique statement_ids
         return [r[0] for r in result]
+
+    def get_segment_relevances(self, with_statement=False, with_segment=False):
+        """
+        Get segment - statement pair relevances.
+
+        :param with_statement: If True, join with the statement table to get statement details.
+        :param with_segment: If True, join with the segment table to get segment details.
+        :return: List of dictionaries representing segment relevances.
+        """
+        query = """
+            SELECT sr.*{statement_col}{segment_col}
+            FROM segment_relevance sr
+            {statement_join}
+            {segment_join}
+        """.format(
+            statement_col=", s.statement AS statement" if with_statement else "",
+            segment_col=", seg.text AS text" if with_segment else "",
+            statement_join="JOIN statements s ON sr.statement_id = s.id" if with_statement else "",
+            segment_join=f"JOIN {self._segment_table} seg ON sr.segment_id = seg.id" if with_segment else ""
+        )
+
+        self.cursor.execute(query)
+        rows = self.cursor.fetchall()
+        return [dict(row) for row in rows]
+
+
+    def set_segment_relevance(self, segment_id, statement_id, relevance=1):
+        """
+        Sets or updates the relevance of a segment to a statement
+        """
+
+        self.cursor.execute(
+            "INSERT OR REPLACE INTO segment_relevance (segment_id, statement_id, relevance) VALUES (?, ?, ?)",
+            (segment_id, statement_id, relevance)
+        )
+        self.conn.commit()
+        print(f"Segment {segment_id} successfully attached to statement {statement_id} with relevance {relevance}")
+
+    def set_segment_relevance_batch(self, segment_relevances):
+        """
+        Sets or updates the relevance of multiple segments to statements
+        """
+
+        self.cursor.executemany(
+            "INSERT OR REPLACE INTO segment_relevance (segment_id, statement_id, relevance) VALUES (?, ?, ?)",
+            segment_relevances
+        )
+        self.conn.commit()
+        print(f"Segment relevances successfully updated")
 
 
     def __del__(self):
