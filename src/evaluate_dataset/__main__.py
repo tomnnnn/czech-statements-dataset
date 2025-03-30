@@ -79,14 +79,17 @@ def prompt_builder(statements: List[Statement], dataset: Session, config: Config
 
             evidence_contents.append(content)
 
-        truncated = [
-            {
-                'Titulek': e.title or e.article.title,
+        truncated = []
+        for e,text in zip(evidence, evidence_contents):
+            url = e.url if not config.relevant_paragraph else e.article.url
+            source = tldextract.extract(str(url)).domain + "." + tldextract.extract(str(url)).suffix or ''
+            title = e.title if not config.relevant_paragraph else e.article.title
+
+            truncated.append({
+                'Titulek': title,
                 'Text': text,
-                'Zdroj': tldextract.extract(str(e.url or e.article.url)).domain + "." + tldextract.extract(str(e.url or e.article.url)).suffix or '',
-            }
-            for e,text in zip(evidence, evidence_contents)
-        ]
+                'Zdroj': source,
+            })
 
         evidence_str = json.dumps(truncated, ensure_ascii=False)
 
@@ -247,7 +250,7 @@ def eval_dataset(
         file_path = os.path.join(result_dir, f"results_{config.index}.json")
         with open(file_path, "w") as f:
             json.dump(
-                {"y_pred": verdicts, "y_ref": [s.__dict__ for s in test_statements},
+                {"y_pred": verdicts, "y_ref": [s.__dict__ for s in test_statements]},
                 f,
                 indent=4,
                 ensure_ascii=False,
@@ -264,7 +267,7 @@ def sample_dataset(dataset, config: Config):
         .filter(func.lower(Statement.label).in_(config.allowed_labels))
         .join(ArticleRelevance)
         .group_by(Statement.id)
-        .having(func.count(ArticleRelevance.article_id) > config.min_evidence_count)
+        .having(func.count(ArticleRelevance.article_id) >= config.min_evidence_count)
         .all()
       )
 
