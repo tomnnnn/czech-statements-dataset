@@ -13,7 +13,6 @@ class VLLM_Local(LanguageModelAPI):
     def __init__(
         self,
         model_path: str,
-        distribute_load: bool = False,
         gpu_memory_utilization: float = 0.95,
         **kwargs,
     ):
@@ -22,30 +21,33 @@ class VLLM_Local(LanguageModelAPI):
         print(f"Found {num_gpus} gpus")
 
         # Get rope scaling configuration if provided
-        rope_scaling = self._get_rope_config(kwargs.get("rope_scaling", None))
+        rope_scaling = self._get_rope_scaling(kwargs.get("rope_scaling", None))
+
+        num_gpus = torch.cuda.device_count()
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = LLM(
             model=kwargs.get("model_file", model_path) or model_path,
             tokenizer=model_path,
-            tensor_parallel_size=num_gpus if distribute_load else 1,
+            tensor_parallel_size=num_gpus,
             gpu_memory_utilization=gpu_memory_utilization,
             max_model_len=kwargs.get("ctx_len", None),
+            enforce_eager=True,
             rope_scaling=rope_scaling,
         )
 
-    def _get_rope_config(self, rope_config):
+    def _get_rope_scaling(self, rope_scaling):
         """
         Get rope scaling configuration from the input argument.
         """
-        if rope_config:
-            if isinstance(rope_config, str):
+        if rope_scaling:
+            if isinstance(rope_scaling, str):
                 try:
-                    rope_scaling = json.loads(rope_config)  # Convert JSON string to dict
+                    rope_scaling = json.loads(rope_scaling)  # Convert JSON string to dict
                 except json.JSONDecodeError:
                     raise ValueError("Invalid JSON format for rope_scaling argument.")
-            elif isinstance(rope_config, dict):
-                rope_scaling = rope_config  # Use directly if already a dictionary
+            elif isinstance(rope_scaling, dict):
+                rope_scaling = rope_scaling  # Use directly if already a dictionary
                 logger.info("Using following rope scaling configuration: %s", rope_scaling)
             else:
                 raise TypeError("rope_scaling must be a dictionary or a valid JSON string.")

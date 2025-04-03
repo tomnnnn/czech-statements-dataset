@@ -1,5 +1,6 @@
 import sklearn.metrics
 import numpy as np
+import pprint
 from utils.utils import *
 
 def calculate_metrics(ref_statements, responses, allowed_labels):
@@ -13,11 +14,10 @@ def calculate_metrics(ref_statements, responses, allowed_labels):
     """
 
     # get labels from responses
-    pred_labels = [
-        item["label"].lower()
-        for ref in ref_statements 
-        if (item := find_by_id(ref['id'], responses)) is not None
-    ]    
+    pred_labels = []
+    for ref in ref_statements:
+        pred_labels.append(next((i['label'] for i in responses if str(i['id']) == str(ref['id'])), None))
+
     # get labels from reference
     ref_labels = [ref["label"].lower() for ref in ref_statements]
 

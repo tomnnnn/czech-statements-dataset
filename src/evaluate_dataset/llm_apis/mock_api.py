@@ -1,4 +1,5 @@
 from ..llm_api import LanguageModelAPI
+import random
 
 class MockLanguageModelAPI(LanguageModelAPI):
     def __init__(
@@ -12,10 +13,6 @@ class MockLanguageModelAPI(LanguageModelAPI):
         print(kwargs)
 
     def _infer(self, conversations, batch_size=8, max_new_tokens=1000, **kwargs):
-        if kwargs.get('chat', True):
-            return [
-                "\r\n".join(passage["content"] if len(passage["content"]) < 200 else passage["content"][:200] + "..." for passage in conversation)
-                for conversation in conversations
-            ]
-        else:
-            return [convo[:1000] for convo in conversations]
+        labels = ["pravda", "nepravda"]
+
+        return [labels[random.randint(0, 1)] for _ in range(len(conversations))]

@@ -77,8 +77,13 @@ class Tag(Base):
     
     statement = relationship("Statement", back_populates="tags")
 
+def as_dict(row) -> dict:
+    return {c.name: getattr(row, c.name) for c in row.__table__.columns}
 
-def init_db(path="datasets/curated_updated.sqlite") -> Session:
+def as_dict_list(rows) -> list[dict]:
+    return [as_dict(row) for row in rows]
+
+def init_db(path="datasets/curated.sqlite") -> Session:
     db_url = "sqlite:///" + path
     engine = create_engine(db_url)
     SessionLocal = sessionmaker(bind=engine)
@@ -87,6 +92,15 @@ def init_db(path="datasets/curated_updated.sqlite") -> Session:
 
     return session
 
+def row2dict(row):
+    d = {}
+    for column in row.__table__.columns:
+        d[column.name] = str(getattr(row, column.name))
+
+    return d
+
+def rows2dict(rows: list):
+    return [row2dict(row) for row in rows]
 
 if __name__ == "__main__":
     dataset = init_db("../../datasets/curated_updated.sqlite")

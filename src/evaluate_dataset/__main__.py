@@ -1,4 +1,6 @@
 import json
+from typing import Dict
+from bs4 import BeautifulSoup
 import logging
 import operator
 import os
@@ -13,6 +15,7 @@ from dataset_manager.orm import *
 from sklearn.model_selection import train_test_split
 from sqlalchemy import func
 from sqlalchemy.orm import Session
+from evidence_retriever.hop_retriever import HopRetriever
 
 from .config import Config, load_config
 from .llm_apis import llm_api_factory
@@ -51,52 +54,91 @@ def extract_label(response, allowed_labels):
 
     return "nolabel"
 
-def prompt_builder(statements: List[Statement], dataset: Session, config: Config):
+
+def html_to_text(html):
+    """
+    Convert HTML content to plain text
+    """
+    soup = BeautifulSoup(html, 'html.parser')
+
+    # Decompose all <img> and <figure> tags in a single loop
+    for tag in soup.find_all(['img', 'figure']):
+        tag.decompose()
+
+    # Remove <p> tags containing 'cookie' in a single pass
+    for tag in soup.find_all('p'):
+        if 'cookie' in tag.text.lower():
+            tag.decompose()
+
+    # Collect text efficiently using a generator
+    text = '\n'.join(
+        tag.text.strip()
+        for tag in soup.find_all('p')
+        if len(tag.text.strip()) > 100
+    )
+
+    return text
+
+
+def format_statement(statement) -> str:
+    """Formats the statement string."""
+    return f"{statement.statement} - {statement.author}, {statement.date}"
+
+
+def extract_evidence(statement, config, max_num_articles=10) -> List:
+    """Extracts evidence based on config settings."""
+    if config.relevant_paragraph:
+        return statement.segments
+    return [
+        Article(
+            id=e.id, 
+            title=e.title, 
+            url=e.url, 
+            content=html_to_text(e.content) if config.html_article else e.content
+        ) 
+        for e in statement.articles[:max_num_articles]
+    ]
+
+
+def format_evidence(evidence, config) -> List[Dict[str, str]]:
+    """Formats and truncates evidence content for JSON output."""
+    evidence_dicts = []
+    
+    for e in evidence:
+        url = e.url if not config.relevant_paragraph else e.article.url
+        source = f"{tldextract.extract(str(url)).domain}.{tldextract.extract(str(url)).suffix}" or ""
+        title = e.title if not config.relevant_paragraph else e.article.title
+        content = e.text if config.relevant_paragraph else e.content[:3000]
+        
+        evidence_dicts.append({
+            'Titulek': title,
+            'Text': content,
+            'Zdroj': source,
+        })
+    
+    return evidence_dicts
+
+def prompt_builder(statements: List[Statement], dataset: Session, config: Config) -> List[str]:
     """
     Build prompts for given statements. Optionally include evidence from evidence_dir.
     """
     prompts = []
-    for statement in statements:
-        statement_str = ( f"{statement.statement} - {statement.author}, {statement.date}")
 
-        evidence = statement.segments if config.relevant_paragraph else statement.articles
+    for statement in statements:
+        statement_str = format_statement(statement)
+        evidence = extract_evidence(statement, config)
 
         if not evidence:
             logger.warning(f"No evidence found for statement {statement.id}.")
-            prompts.append(statement_str + "\nPodpůrné dokumenty: Není dostupný žádný podpůrný dokument.")
+            prompts.append(f"{statement_str}\nPodpůrné dokumenty: Není dostupný žádný podpůrný dokument.")
             continue
 
-        evidence_contents = []
-
-        for e in evidence:
-            if config.relevant_paragraph:
-                # If relevant_paragraph is requested, combine description and relevant segment
-                description = e.article.description or ''
-                content = f"{description}\n{e.text}"
-            else:
-                # Otherwise, use full content text of article
-                content = e.content[:config.ctx_len]
-
-            evidence_contents.append(content)
-
-        truncated = []
-        for e,text in zip(evidence, evidence_contents):
-            url = e.url if not config.relevant_paragraph else e.article.url
-            source = tldextract.extract(str(url)).domain + "." + tldextract.extract(str(url)).suffix or ''
-            title = e.title if not config.relevant_paragraph else e.article.title
-
-            truncated.append({
-                'Titulek': title,
-                'Text': text,
-                'Zdroj': source,
-            })
-
-        evidence_str = json.dumps(truncated, ensure_ascii=False)
+        truncated_evidence = format_evidence(evidence, config)
+        evidence_str = json.dumps(truncated_evidence, ensure_ascii=False)
 
         prompts.append(f"{statement_str}\nPodpůrné dokumenty: {evidence_str}")
 
     return prompts
-
 
 def split_and_build_examples(
     statements: List[Statement],
@@ -208,7 +250,6 @@ def eval_dataset(
     max_new_tokens = config.max_tokens if config.max_tokens else (3000 if config.with_explanation else 25)
     responses = model(prompts, config.batch_size, max_new_tokens = max_new_tokens)
 
-    print("Responses:", responses)
     verdicts = [
         {
             "id": statement.id,
@@ -233,12 +274,15 @@ def eval_dataset(
         json.dump(prompts, f, indent=4, ensure_ascii=False)
         logger.info(f"Prompts saved to {prompts_dest}")
 
+    test_statements_dict = rows2dict(test_statements)
+
     if config.index == 0:
         # calculate and save metrics
         results_dest = os.path.join(result_dir, f"metrics.json")
+ 
         with open(results_dest, "w") as f:
             json.dump(
-                calculate_metrics([s.__dict__ for s in test_statements], verdicts, config.allowed_labels),
+                calculate_metrics(test_statements_dict, verdicts, config.allowed_labels),
                 f,
                 indent=4,
                 ensure_ascii=False,
@@ -250,7 +294,7 @@ def eval_dataset(
         file_path = os.path.join(result_dir, f"results_{config.index}.json")
         with open(file_path, "w") as f:
             json.dump(
-                {"y_pred": verdicts, "y_ref": [s.__dict__ for s in test_statements]},
+                {"y_pred": verdicts, "y_ref": test_statements_dict},
                 f,
                 indent=4,
                 ensure_ascii=False,
