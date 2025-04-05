@@ -40,6 +40,7 @@ class Config:
     max_tokens: Optional[int] = None
     rope_scaling: Optional[str] = None
     html_article: bool = False
+    api_base_url: Optional[str] = None
 
 def load_yaml_config(path: str) -> dict:
     """Loads the configuration from a YAML file."""
@@ -81,6 +82,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-tokens", type=int,nargs="?", help="Maximum number of tokens for model output")
     parser.add_argument("--rope-scaling", type=str, help="Configuration JSON string for ROPE scaling")
     parser.add_argument("--html-article", action="store_true", help="Use HTML article format for evidence")
+    parser.add_argument("--api-base-url", type=str, help="Base URL for the API")
 
     args = parser.parse_args()
 

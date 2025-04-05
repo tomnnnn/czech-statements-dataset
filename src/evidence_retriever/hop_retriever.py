@@ -1,7 +1,8 @@
 import dspy
 import logging
 import time
-from typing import Callable
+import pprint
+from typing import Callable, Optional
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)

@@ -81,5 +81,5 @@ class VLLM_Local(LanguageModelAPI):
         )
 
         outputs = self.model.generate(conversations, sampling_params)
-
         return [output.outputs[0].text for output in outputs]
+

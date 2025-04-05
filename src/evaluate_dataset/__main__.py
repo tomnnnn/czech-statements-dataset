@@ -8,6 +8,9 @@ import random
 import re
 from dataclasses import asdict
 from typing import List
+import dspy
+from evidence_retriever.hop_retriever import HopRetriever
+from evidence_retriever.search_functions import search_function_factory
 
 import tldextract
 import yaml
@@ -88,7 +91,8 @@ def format_statement(statement) -> str:
 def extract_evidence(statement, config, max_num_articles=10) -> List:
     """Extracts evidence based on config settings."""
     if config.relevant_paragraph:
-        return statement.segments
+        prediction = RETRIEVER(statement=statement.statement)
+        return [s['text'] for s in prediction.segments]
     return [
         Article(
             id=e.id, 
@@ -105,16 +109,23 @@ def format_evidence(evidence, config) -> List[Dict[str, str]]:
     evidence_dicts = []
     
     for e in evidence:
-        url = e.url if not config.relevant_paragraph else e.article.url
-        source = f"{tldextract.extract(str(url)).domain}.{tldextract.extract(str(url)).suffix}" or ""
-        title = e.title if not config.relevant_paragraph else e.article.title
-        content = e.text if config.relevant_paragraph else e.content[:3000]
-        
-        evidence_dicts.append({
-            'Titulek': title,
-            'Text': content,
-            'Zdroj': source,
-        })
+        if config.relevant_paragraph:
+            evidence_dicts.append({
+                'Titulek': '',
+                'Text': e,
+                'Zdroj': ''
+            })
+        else:
+            url = e.url if not config.relevant_paragraph else e.article.url
+            source = f"{tldextract.extract(str(url)).domain}.{tldextract.extract(str(url)).suffix}" or ""
+            title = e.title if not config.relevant_paragraph else e.article.title
+            content = e.text if config.relevant_paragraph else e.content
+
+            evidence_dicts.append({
+                'Titulek': title[:3000],
+                'Text': content[:3000],
+                'Zdroj': source[:3000],
+            })
     
     return evidence_dicts
 
@@ -212,6 +223,7 @@ def eval_dataset(
     result_dir = os.path.join(config.out_folder, config.model_name.split("/")[-1] if config.model_name else config.model_file.split(".")[0])
     os.makedirs(result_dir, exist_ok=True)
 
+    logger.info(f"Initializing model backend")
     model = llm_api_factory(config.model_api, config.model_name, **asdict(config))
     system_prompt, generation_prompt = load_prompt_config(config.prompt_config)
 
@@ -362,11 +374,34 @@ def cut_for_parallelization(config, statements):
 
     return statements[lower_index:upper_index + 1]
 
+def init_retriever(dataset):
+    """
+    Initializes the retriever with the dataset.
+
+    Args:
+    dataset (Session): Dataset SQL session object.
+
+    Returns:
+    HopRetriever: Initialized retriever.
+    """
+    corpus = as_dict_list(dataset.query(Segment).all())
+    search_function = search_function_factory("bge3", corpus)
+    retriever = HopRetriever(search_function.search, 2)
+    
+    return retriever
+
 if __name__ == "__main__":
+    global RETRIEVER
+
     config = load_config()
     dataset = init_db(config.dataset_path)
     statements = sample_dataset(dataset, config)
     statements = cut_for_parallelization(config, statements)
+
+    lm = dspy.LM("hosted_vllm/Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4", api_base=config.api_base_url, max_tokens=3000)
+    dspy.configure(lm=lm, provide_traceback=True)
+
+    RETRIEVER = init_retriever(dataset)
 
     logger.info(f"Starting evaluation of model {config.model_name} via {config.model_api} API")
 
