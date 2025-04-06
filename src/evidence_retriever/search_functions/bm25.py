@@ -15,7 +15,6 @@ class BM25(SearchFunction):
 
     def _index(self):
         corpus_tokens = bm25s.tokenize([item['text'] for item in self.corpus], stemmer=self._stemmer)
-        print(corpus_tokens[:5])
         retriever = bm25s.BM25(k1=0.9, b=0.4)
         retriever.index(corpus_tokens)
 

@@ -7,15 +7,20 @@ from dataset_manager import Dataset
 from evidence_retriever import HopRetriever
 import json
 from dataclasses import asdict
+import dspy
 
 if __name__ == "__main__":
     config = load_config()
     llm = llm_api_factory(config.model_api, config.model_name, **asdict(config))
 
+    # TODO: move to the retriever
+    lm = dspy.LM("hosted_vllm/" + config.model_name, api_base=config.api_base_url)
+    dspy.configure(lm=lm, provide_traceback=True)
+
     dataset = Dataset(config.dataset_path)
     corpus = rows2dict(dataset.get_segments())
 
-    retriever = HopRetriever("bge-m3", corpus, num_docs=3, num_hops=2)
+    retriever = HopRetriever("bm25", corpus, num_docs=3, num_hops=2)
     fc = FactChecker(llm, retriever,config)
 
     evaluator = FactCheckingEvaluator(dataset, fc, config)
