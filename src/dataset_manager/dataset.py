@@ -11,7 +11,7 @@ class Dataset:
         statements = self.session.query(Statement)
 
         if allowed_labels:
-            statements = statements.filter(Statement.label.in_(allowed_labels))
+            statements = statements.filter(func.lower(Statement.label).in_(allowed_labels))
 
         if min_evidence_count > 0:
             statements = statements.join(ArticleRelevance).group_by(Statement.id).having(func.count(ArticleRelevance.article_id) >= min_evidence_count)
