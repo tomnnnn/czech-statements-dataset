@@ -117,15 +117,16 @@ class FactChecker:
         evidence = self._gather_evidence(statements)
         prompts = self._build_prompts(statements, evidence)
 
-        predictions = self.model(prompts)
-        predicted_labels = [self._extract_label(prediction) for prediction in predictions]
+        responses = self.model(prompts)
+        predicted_labels = [self._extract_label(prediction) for prediction in responses]
 
         return [
             {
                 "statement": statement.statement,
                 "evidence": evidence[statement.id],
                 "prompt": prompt,
+                "response": response,
                 "label": label,
              }
-            for statement, label, prompt in zip(statements, predicted_labels, prompts)
+            for statement, label, response, prompt in zip(statements, predicted_labels, responses, prompts)
         ]
