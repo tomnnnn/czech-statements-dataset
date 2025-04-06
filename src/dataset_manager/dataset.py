@@ -148,36 +148,16 @@ class Dataset:
         self.session.commit()
         return new_statements
 
-    def insert_article(self, article) -> Article:
-        new_article = Article(
-            url=article.get("url", ""),
-            title=article.get("title", ""),
-            description=article.get("description", ""),
-            content=article.get("content", ""),
-            type=article.get("type", ""),
-            author=article.get("author", ""),
-            source=article.get("source", ""),
-            published=article.get("published", ""),
-            accessed=datetime.datetime.now(),
-        )
+    def insert_article(self, article: list[dict]) -> Article:
+        new_article = Article(**article)
 
-        self.session.add(article)
+        self.session.add(new_article)
         self.session.commit()
         return new_article
 
-    def insert_articles(self, articles) -> list[Article]:
+    def insert_articles(self, articles: list[dict]) -> list[Article]:
         new_articles = [
-            Article(
-                url=article.get("url", ""),
-                title=article.get("title", ""),
-                description=article.get("description", ""),
-                content=article.get("content", ""),
-                type=article.get("type", ""),
-                author=article.get("author", ""),
-                source=article.get("source", ""),
-                published=article.get("published", ""),
-                accessed=datetime.datetime.now(),
-            )
+            Article(**article)
             for article in articles
         ]
 
@@ -185,29 +165,20 @@ class Dataset:
         self.session.commit()
         return new_articles
 
-    def insert_segment(self, segment) -> Segment:
-        segment = Segment(
-            article_id=segment.get("article_id", ""),
-            text=segment.get("text", ""),
-        )
+    def insert_segment(self, segment: dict) -> Segment:
+        new_segment = Segment(**segment)
 
-        self.session.add(segment)
+        self.session.add(new_segment)
         self.session.commit()
-        return segment
+        return new_segment
 
-    def insert_segments(self, segments) -> list[Segment]:
-        segments = [
-            Segment(
-                article_id=segment.get("article_id", ""),
-                text=segment.get("text", ""),
-            )
-            for segment in segments
-        ]
+    def insert_segments(self, segments: list[dict]) -> list[Segment]:
+        new_segments = [ Segment(**segment) for segment in segments ]
 
-        self.session.add_all(segments)
+        self.session.add_all(new_segments)
         self.session.commit()
 
-        return segments
+        return new_segments
     
     def statements_count(self):
         return self.session.query(Statement).count()
