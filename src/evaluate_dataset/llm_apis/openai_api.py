@@ -13,7 +13,7 @@ class OpenAI_API(LanguageModelAPI):
 
     def __init__(self,model_path="gpt-4o", **kwargs):
         super().__init__(model_path)
-        self.client = OpenAI(api_key=os.getenv("MODEL_API_KEY"), base_url=kwargs.get("api_base_url", None))
+        self.client = OpenAI(base_url=kwargs.get("api_base_url", None))
 
     def _infer(self, conversations, batch_size=8, max_new_tokens=1000):
         results = []

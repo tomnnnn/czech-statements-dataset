@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 class HopRetriever(Retriever):
-    def __init__(self, search_algorithm: Literal['bge-m3', 'bm25'], corpus, num_docs=10, num_hops=4, **kwargs):
+    def __init__(self, search_algorithm: str, corpus, num_docs=10, num_hops=4, **kwargs):
         self.num_docs, self.num_hops = num_docs, num_hops
         self.generate_query = dspy.ChainOfThought("výrok, co_zjistit, jazyk -> query")
         self.append_notes = dspy.ChainOfThought( "výrok, co_zjistit, nasbírané_texty -> co_dalšího_zjistit: list[str]")

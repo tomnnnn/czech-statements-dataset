@@ -56,7 +56,6 @@ class FactCheckingEvaluator:
 
         parallelized_sample = self._cut_for_parallelization(sample)
 
-        return self.dataset.get_statements()
         return parallelized_sample
 
 

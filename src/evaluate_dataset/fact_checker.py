@@ -59,7 +59,7 @@ class FactChecker:
                 {
                     "title": segment.article.title,
                     "text": segment.text,
-                    "url": segment.article.url,
+                    "url": segment.article.source,
                 }
 
                 for segment in segments

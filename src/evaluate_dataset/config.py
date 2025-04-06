@@ -25,7 +25,7 @@ class Config:
     allowed_labels: List[str] = field(default_factory=lambda: ["pravda", "nepravda"])
     model_api: str = "transformers"
     dataset_path: str = ""
-    log_path: str = ""
+    log_path: str = "logs"
     evidence_source: str = "demagog"
     model_file: Optional[str] = None
     stratify: bool = False
@@ -41,6 +41,9 @@ class Config:
     rope_scaling: Optional[str] = None
     html_article: bool = False
     api_base_url: Optional[str] = None
+    search_k_segments: int = 3
+    search_algorithm: str = "bm25"
+    num_hops: int = 4
 
 def load_yaml_config(path: str) -> dict:
     """Loads the configuration from a YAML file."""
@@ -70,6 +73,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("-c", "--example-count", type=int, help="Number of examples per label")
     parser.add_argument("-l", "--log-path", type=str, help="Path to log file")
     parser.add_argument("-E", "--evidence-source", type=str, help="Source of evidence data")
+    parser.add_argument("-k", "--search-k-segments", type=int, help="Number of segments to search for evidence per hop")
+    parser.add_argument("-f", "--search-algorithm", type=str, help="Search algorithm for evidence retrieval. Available: bm25, bge-m3")
+    parser.add_argument("-n", "--num-hops", type=int, help="Number of hops for evidence retrieval")
     parser.add_argument("--model-file", type=str, help="Optional path to model file")
     parser.add_argument("--model-name", type=str, nargs="?", help="Name of the model to evaluate")
     parser.add_argument("--stratify", action="store_true", help="Stratify test set by labels")

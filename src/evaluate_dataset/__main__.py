@@ -7,6 +7,7 @@ from evidence_retriever import HopRetriever
 import json
 from dataclasses import asdict
 import dspy
+import os
 
 if __name__ == "__main__":
     config = load_config()
@@ -19,17 +20,25 @@ if __name__ == "__main__":
     dataset = Dataset(config.dataset_path)
     corpus = dataset.get_segments()
 
-    retriever = HopRetriever("bm25", corpus, num_docs=3, num_hops=2)
+    retriever = HopRetriever(config.search_algorithm, corpus, num_docs=config.search_k_segments, num_hops=config.num_hops)
     fc = FactChecker(llm, retriever,config)
 
     evaluator = FactCheckingEvaluator(dataset, fc, config)
 
     predictions, metrics = evaluator.run()
 
+    predictions_path = os.path.join(config.out_folder, f"predictions_{config.index}.json")
+    metrics_path = os.path.join(config.out_folder, f"metrics_{config.index}.json")
+
+    os.makedirs(config.out_folder, exist_ok=True)
+
     # Save predictions and metrics to JSON files
-    with open("predictions.json", "w") as f:
+    with open(predictions_path, "w") as f:
         json.dump(predictions, f, indent=4, ensure_ascii=False)
-    with open("metrics.json", "w") as f:
+    with open(metrics_path, "w") as f:
         json.dump(metrics, f, indent=4, ensure_ascii=False)
 
-    print("Predictions and metrics saved to predictions.json and metrics.json.")
+    print(f"Predictions saved to {predictions_path}")
+    print(f"Metrics saved to {metrics_path}")
+    print("Evaluation completed.")
+
