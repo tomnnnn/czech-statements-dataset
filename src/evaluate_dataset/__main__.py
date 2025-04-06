@@ -29,8 +29,8 @@ if __name__ == "__main__":
 
     # Save predictions and metrics to JSON files
     with open("predictions.json", "w") as f:
-        json.dump(predictions, f, indent=4)
+        json.dump(predictions, f, indent=4, ensure_ascii=False)
     with open("metrics.json", "w") as f:
-        json.dump(metrics, f, indent=4)
+        json.dump(metrics, f, indent=4, ensure_ascii=False)
 
     print("Predictions and metrics saved to predictions.json and metrics.json.")
