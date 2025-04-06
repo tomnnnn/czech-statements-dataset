@@ -1,2 +1,3 @@
-from .dataset import DemagogDataset
-from .orm import *
+from .dataset import Dataset
+
+__all__ = ["Dataset"]

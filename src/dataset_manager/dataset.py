@@ -1,401 +1,219 @@
 import datetime
-import os
-import sqlite3
-from bs4 import BeautifulSoup
+from .orm import *
+from sqlalchemy import func
+from sqlalchemy.exc import NoResultFound
 
 class Dataset:
-    def set_evidence_source(self, source):
-        pass
+    def __init__(self, path: str):
+        self.session = init_db(path)
 
     def get_statements(self, allowed_labels=None, min_evidence_count=0):
-        pass
+        statements = self.session.query(Statement)
 
-    def get_statement(self, statement_id):
-        pass
+        if allowed_labels:
+            statements = statements.filter(Statement.label.in_(allowed_labels))
 
-    def get_articles(self, statement_id = None):
-        pass
+        if min_evidence_count > 0:
+            statements = statements.join(ArticleRelevance).group_by(Statement.id).having(func.count(ArticleRelevance.article_id) >= min_evidence_count)
 
-    def get_article(self, article_id):
-        pass
+        return statements.all()
 
-    def get_segments(self, article_id=None):
-        pass
+    def get_statement(self, statement_id) -> Statement|None:
+        return (self.session.query(Statement).filter(Statement.id == statement_id).first())
 
-    def get_segment(self, segment_id):
-        pass
+    def get_articles(self, statement_id = None) -> list[Article]:
+        articles = self.session.query(Article)
 
-    def get_segment_relevances(self):
-        pass
+        if statement_id:
+            articles = articles.join(ArticleRelevance).filter(ArticleRelevance.statement_id == statement_id)
 
-    def get_article_relevances(self):
-        pass
-
-    def set_segment_relevance(self, segment_id, statement_id, relevance=1):
-        pass
-
-    def set_segment_relevances(self, segment_relevances):
-        pass
-
-    def set_article_relevance(self, article_id, statement_id, relevance=1):
-        pass
-
-    def set_article_relevances(self, article_relevances):
-        pass
-
-    def delete_statement(self, statement_id):
-        pass
-
-    def delete_article(self, article_id):
-        pass
-
-    def delete_segment(self, segment_id):
-        pass
-
-    def insert_statement(self, statement):
-        pass
-
-    def insert_statements(self, statements):
-        pass
-
-    def insert_article(self, article):
-        pass
-
-    def insert_articles(self, articles):
-        pass
-
-    def insert_segment(self, segment):
-        pass
-
-    def insert_segments(self, segments):
-        pass
+        return articles.all()
 
 
-class DemagogDataset(Dataset):
-    """
-    Class for managing the dataset of statements and evidence from Demagog.cz
-    The dataset is stored in a SQLite database
+    def get_article(self, article_id) -> Article|None:
+        return (self.session.query(Article).filter(Article.id == article_id).first())
 
-    The dataset consists of two or more main tables:
-    - statements: contains the statements with their metadata
-    - evidence: contains the evidence documents for each statement
+    def get_segments(self, article_id=None) -> list[Segment]:
+        segments = self.session.query(Segment)
 
-    Additional tables:
-    - tags: contains the tags for each statement
-    """
-    new = False
+        if article_id:
+            segments = segments.filter(Segment.article_id == article_id)
 
-    def __init__(self, path, evidence_source="demagog", readonly=False):
+        return segments.all()
+
+    def get_segment(self, segment_id) -> Segment|None:
+        return (self.session.query(Segment).filter(Segment.id == segment_id).first())
+
+    def get_segment_relevances(self, statement_id=None, segment_id=None):
+        relevances = self.session.query(SegmentRelevance)
+
+        if statement_id:
+            relevances = relevances.filter(SegmentRelevance.statement_id == statement_id)
+
+        if segment_id:
+            relevances = relevances.filter(SegmentRelevance.segment_id == segment_id)
+
+        return relevances.all()
+
+
+    def get_article_relevances(self, statement_id=None, article_id=None) -> list[ArticleRelevance]:
+        relevances = self.session.query(ArticleRelevance)
+
+        if statement_id:
+            relevances = relevances.filter(ArticleRelevance.statement_id == statement_id)
+
+        if article_id:
+            relevances = relevances.filter(ArticleRelevance.article_id == article_id)
+
+        return relevances.all()
+
+
+    def set_segment_relevance(self, segment_id: int, statement_id: int, relevance: float) -> None:
         """
-        Initialize the dataset database connection, create tables if they don't exist
+        Sets or updates the relevance of a segment to a statement.
         """
-        self.path = path
+        try:
+            rel = self.session.query(SegmentRelevance).filter_by(
+                segment_id=segment_id,
+                statement_id=statement_id
+            ).one()
+        except NoResultFound:
+            rel = SegmentRelevance(
+                segment_id=segment_id,
+                statement_id=statement_id,
+                relevance=relevance
+            )
+            self.session.add(rel)
 
-        if not os.path.exists(path):
-            self.new = True
+        rel.relevance = relevance
+        self.session.commit()
 
-        self.conn = sqlite3.connect(f"file:{path}?mode={'ro' if readonly else 'rwc'}", uri=True)
-        self.readonly = readonly
-        self.conn.row_factory = sqlite3.Row
-        self.cursor = self.conn.cursor()
-        self.set_evidence_source(evidence_source)
 
-    def set_evidence_source(self, source):
+    def set_article_relevance(self, article_id, statement_id) -> None:
         """
-        Set the source of the evidence documents. Creates a new evidence table for the source if it doesn't exist
+        Sets or updates the relevance of a segment to a statement.
         """
-        self.evidence_source = source
-        self._evidence_table = "articles_" + source
-        self._segment_table = "segments_" + source
+        self.session.add(ArticleRelevance(
+            article_id=article_id,
+            statement_id=statement_id,
+        ))
+        self.session.commit()
 
 
-    def get_all_statements(self, allowed_labels=None, min_evidence_count=0):
-        """
-        Get all statements from the dataset
+    def delete_statement(self, statement_id) -> None:
+        self.session.delete(self.session.query(Statement).filter(Statement.id == statement_id).first())
+        self.session.commit()
 
-        Args:
-        allowed_labels: Optional list of labels to filter the statements by
-        min_evidence_count: Optional minimum number of evidence documents required for the statement
+    def delete_article(self, article_id) -> None:
+        self.session.delete(self.session.query(Article).filter(Article.id == article_id).first())
+        self.session.commit()
 
-        """
-        allowed_labels_str = " WHERE LOWER(s.label) IN ({})".format( ", ".join([f"'{l}'" for l in allowed_labels])) if allowed_labels else ""
+    def delete_segment(self, segment_id) -> None:
+        self.session.delete(self.session.query(Segment).filter(Segment.id == segment_id).first())
+        self.session.commit()
 
-        # TODO: tidy up
-        if min_evidence_count == 0:
-            self.cursor.execute(f"""
-                SELECT * 
-                FROM statements s
-                {allowed_labels_str}
-            """)
-        else:
-            self.cursor.execute(f"""
-                SELECT s.* 
-                FROM statements s
-                JOIN {self._evidence_table} a ON s.id = a.statement_id
-                {allowed_labels_str}
-                GROUP BY s.id
-                HAVING COUNT(a.id) >= {min_evidence_count}
-            """)
-
-        rows = self.cursor.fetchall()
-        return [dict(row) for row in rows]
-
-    def get_statement(self, statement_id):
-        """
-        Get a statement by its ID
-        """
-        self.cursor.execute("SELECT * FROM statements WHERE id = ?", (statement_id,))
-
-        row = self.cursor.fetchone()
-        return dict(row) if row else None
-
-    def _convert_html_to_text(self, html):
-        """
-        Convert HTML content to plain text
-        """
-        soup = BeautifulSoup(html, 'html.parser')
-
-        # Decompose all <img> and <figure> tags in a single loop
-        for tag in soup.find_all(['img', 'figure']):
-            tag.decompose()
-
-        # Remove <p> tags containing 'cookie' in a single pass
-        for tag in soup.find_all('p'):
-            if 'cookie' in tag.text.lower():
-                tag.decompose()
-
-        # Collect text efficiently using a generator
-        text = '\n'.join(
-            tag.text.strip()
-            for tag in soup.find_all('p')
-            if len(tag.text.strip()) > 100
+    def insert_statement(self, statement: dict[str, str]) -> Statement:
+        new_statement = Statement(
+            statement=statement.get("statement", ""),
+            label=statement.get("label", ""),
+            author=statement.get("author", ""),
+            date=statement.get("date", ""),
+            party=statement.get("party", ""),
+            explanation=statement.get("explanation", ""),
+            explanation_brief=statement.get("explanation_brief", ""),
+            origin=statement.get("origin", ""),
         )
 
-        return text
+        self.session.add(new_statement)
+        self.session.commit()
 
-    def get_evidence(self, statement_id):
-        """
-        Get all evidence articles for a statement by the statement ID
-        """
-        self.cursor.execute(
-            f"SELECT * FROM {self._evidence_table} WHERE statement_id = {str(statement_id)}"
+        return new_statement
+
+    def insert_statements(self, statements) -> list[Statement]:
+        new_statements = [
+            Statement(
+                statement=statement.get("statement", ""),
+                label=statement.get("label", ""),
+                author=statement.get("author", ""),
+                date=statement.get("date", ""),
+                party=statement.get("party", ""),
+                explanation=statement.get("explanation", ""),
+                explanation_brief=statement.get("explanation_brief", ""),
+                origin=statement.get("origin", ""),
+            )
+            for statement in statements
+        ]
+
+        self.session.add_all(new_statements)
+        self.session.commit()
+        return new_statements
+
+    def insert_article(self, article) -> Article:
+        new_article = Article(
+            url=article.get("url", ""),
+            title=article.get("title", ""),
+            description=article.get("description", ""),
+            content=article.get("content", ""),
+            type=article.get("type", ""),
+            author=article.get("author", ""),
+            source=article.get("source", ""),
+            published=article.get("published", ""),
+            accessed=datetime.datetime.now(),
         )
 
-        row = self.cursor.fetchall()
+        self.session.add(article)
+        self.session.commit()
+        return new_article
 
-        result = [dict(r) for r in row]
+    def insert_articles(self, articles) -> list[Article]:
+        new_articles = [
+            Article(
+                url=article.get("url", ""),
+                title=article.get("title", ""),
+                description=article.get("description", ""),
+                content=article.get("content", ""),
+                type=article.get("type", ""),
+                author=article.get("author", ""),
+                source=article.get("source", ""),
+                published=article.get("published", ""),
+                accessed=datetime.datetime.now(),
+            )
+            for article in articles
+        ]
 
-        # NOTE: temporarily convert html content to plain text in demagog dataset
-        if self.evidence_source == "demagog":
-            result = [
-                {**r, "content": self._convert_html_to_text(r["content"])}
-                for r in result
-            ]
+        self.session.add_all(new_articles)
+        self.session.commit()
+        return new_articles
 
-        return result
-
-    def get_evidence_by_id(self, evidence_id):
-        self.cursor.execute(f"SELECT * FROM {self._evidence_table} WHERE id = ?", (evidence_id,))
-
-        return dict(self.cursor.fetchone())
-
-
-    def get_all_evidence(self):
-        """
-        Get all evidence documents from the dataset
-        """
-        self.cursor.execute(f"SELECT * FROM {self._evidence_table}")
-
-        rows = self.cursor.fetchall()
-        return [dict(r) for r in rows]
-
-    def insert_evidence(self, statement_id, evidence: dict):
-        """
-        Insert an evidence document into the dataset
-        """
-        self.cursor.execute(
-            f"""INSERT INTO {self._evidence_table} 
-            VALUES (statement_id, url, title, description, content, author, type, published, source, accessed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                statement_id,
-                evidence.get("url", ""),
-                evidence.get("title", ""),
-                evidence.get("description", ""),
-                evidence.get("content", ""),
-                evidence.get("author", ""),
-                evidence.get("type", ""),
-                evidence.get("published", ""),
-                evidence.get("source", ""),
-                datetime.datetime.now(),
-            ),
-        )
-        self.conn.commit()
-
-
-    def delete_statement(self, statement_id):
-        """
-        Delete a statement and its evidence documents from the dataset
-        """
-        self.cursor.execute(f"DELETE FROM statements WHERE id = ?", (statement_id,))
-        self.cursor.execute(f"DELETE FROM {self._evidence_table} WHERE statement_id = ?", (statement_id,))
-        self.conn.commit()
-
-
-    def insert_statement(self, statement: dict):
-        """
-        Insert a statement into the dataset
-        """
-        self.cursor.execute(
-            """ INSERT INTO demagog 
-            VALUES (statement, label, author, date, party, explanation, explanation_brief, origin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            (
-                statement.get("statement", ""),
-                statement.get("label", ""),
-                statement.get("author", ""),
-                statement.get("date", ""),
-                statement.get("party", ""),
-                statement.get("explanation", ""),
-                statement.get("explanation_brief", ""),
-                statement.get("origin", ""),
-            ),
+    def insert_segment(self, segment) -> Segment:
+        segment = Segment(
+            article_id=segment.get("article_id", ""),
+            text=segment.get("text", ""),
         )
 
-        # save tags
-        self.cursor.executemany(
-            f"""INSERT INTO tags (statement_id, tag) VALUES (?, ?)""",
-            [
-                (statement["id"], tag)
-                for tag in statement.get("tags", [])
-            ]
-        )
-        self.conn.commit()
+        self.session.add(segment)
+        self.session.commit()
+        return segment
 
+    def insert_segments(self, segments) -> list[Segment]:
+        segments = [
+            Segment(
+                article_id=segment.get("article_id", ""),
+                text=segment.get("text", ""),
+            )
+            for segment in segments
+        ]
 
-    def insert_statements(self, statements: list):
-        """
-        Insert multiple statements into the dataset
-        """
+        self.session.add_all(segments)
+        self.session.commit()
 
-        self.cursor.executemany(
-            """ INSERT INTO statements 
-            (statement, label, author, date, party, explanation, explanation_brief, origin) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """,
-            [
-                (
-                    statement.get("statement", ""),
-                    statement.get("label", ""),
-                    statement.get("author", ""),
-                    statement.get("date", ""),
-                    statement.get("party", ""),
-                    statement.get("explanation", ""),
-                    statement.get("explanation_brief", ""),
-                    statement.get("origin", ""),
-                )
-                for statement in statements
-            ],
-        )
+        return segments
+    
+    def statements_count(self):
+        return self.session.query(Statement).count()
 
-        # save tags
-        self.cursor.executemany(
-            f"""INSERT INTO tags (statement_id, tag) VALUES (?, ?)""",
-            [
-                (statement["id"], tag)
-                for statement in statements
-                for tag in statement.get("tags", [])
-            ]
-        )
+    def articles_count(self):
+        return self.session.query(Article).count()
 
-        self.conn.commit()
-
-    def insert_evidence_batch(self, statement_id, evidence: list):
-        """
-        Insert multiple evidence documents into the dataset
-        """
-        self.cursor.executemany(
-            f"""INSERT INTO {self._evidence_table} 
-            (statement_id, url, title, description, content, author, type, published, source, accessed) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            [
-                (
-                    statement_id,
-                    ev.get("url", ""),
-                    ev.get("title", ""),
-                    ev.get("description", ""),
-                    ev.get("content", ""),
-                    ev.get("author", ""),
-                    ev.get("type", ""),
-                    ev.get("published", ""),
-                    ev.get("source", ""),
-                    datetime.datetime.now(),
-                )
-                for ev in evidence
-            ],
-        )
-
-        self.conn.commit()
-
-
-    def get_scraped_statement_ids(self):
-        """
-        Get a list of statement_ids that have already been scraped (have atleast one evidence document)
-        """
-        self.cursor.execute(f"SELECT DISTINCT statement_id FROM {self._evidence_table}")
-        result = self.cursor.fetchall()
-
-        # Return a list of unique statement_ids
-        return [r[0] for r in result]
-
-    def get_segment_relevances(self, with_statement=False, with_segment=False):
-        """
-        Get segment - statement pair relevances.
-
-        :param with_statement: If True, join with the statement table to get statement details.
-        :param with_segment: If True, join with the segment table to get segment details.
-        :return: List of dictionaries representing segment relevances.
-        """
-        query = """
-            SELECT sr.*{statement_col}{segment_col}
-            FROM segment_relevance sr
-            {statement_join}
-            {segment_join}
-        """.format(
-            statement_col=", s.statement AS statement" if with_statement else "",
-            segment_col=", seg.text AS text" if with_segment else "",
-            statement_join="JOIN statements s ON sr.statement_id = s.id" if with_statement else "",
-            segment_join=f"JOIN {self._segment_table} seg ON sr.segment_id = seg.id" if with_segment else ""
-        )
-
-        self.cursor.execute(query)
-        rows = self.cursor.fetchall()
-        return [dict(row) for row in rows]
-
-
-    def set_segment_relevance(self, segment_id, statement_id, relevance=1):
-        """
-        Sets or updates the relevance of a segment to a statement
-        """
-
-        self.cursor.execute(
-            "INSERT OR REPLACE INTO segment_relevance (segment_id, statement_id, relevance) VALUES (?, ?, ?)",
-            (segment_id, statement_id, relevance)
-        )
-        self.conn.commit()
-        print(f"Segment {segment_id} successfully attached to statement {statement_id} with relevance {relevance}")
-
-    def set_segment_relevance_batch(self, segment_relevances):
-        """
-        Sets or updates the relevance of multiple segments to statements
-        """
-
-        self.cursor.executemany(
-            "INSERT OR REPLACE INTO segment_relevance (segment_id, statement_id, relevance) VALUES (?, ?, ?)",
-            segment_relevances
-        )
-        self.conn.commit()
-        print(f"Segment relevances successfully updated")
-
-
-    def __del__(self):
-        self.conn.close()
+    def segment_count(self):
+        return self.session.query(Segment).count()
