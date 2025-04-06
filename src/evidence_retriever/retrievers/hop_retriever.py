@@ -1,20 +1,21 @@
 import dspy
 import logging
 import time
-import pprint
-from typing import Callable, Optional
+from ..search_functions import search_function_factory
+from typing import Literal
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 class HopRetriever(dspy.Module):
-    def __init__(self, search_func: Callable[[str, int], dict|list], num_docs=10, num_hops=4):
+    def __init__(self, search_algorithm: Literal['bge-m3', 'mb25'], corpus, num_docs=10, num_hops=4, **kwargs):
         self.num_docs, self.num_hops = num_docs, num_hops
         self.generate_query = dspy.ChainOfThought("výrok, co_zjistit, jazyk -> query")
         self.append_notes = dspy.ChainOfThought( "výrok, co_zjistit, nasbírané_texty -> co_dalšího_zjistit: list[str]")
-        self.search = search_func
 
-    def forward(self, statement: str):
+        self.search_func = search_function_factory(search_algorithm, corpus)
+
+    def forward(self, statement: str) -> dspy.Prediction:
         notes = [statement]
         retrieved_segments = [] # all segments retrieved
         retrieved_texts = [] # retrieved segments without metadata
@@ -29,7 +30,8 @@ class HopRetriever(dspy.Module):
                 logger.info(f"Generating query took {time.time() - start} seconds")
 
             start = time.time()
-            new_segments = self.search(query, self.num_docs)
+            new_segments = self.search_func.search(query, self.num_docs)
+
             if (time.time() - start) > 1:
                 logger.info(f"Searching took {time.time() - start} seconds")
 

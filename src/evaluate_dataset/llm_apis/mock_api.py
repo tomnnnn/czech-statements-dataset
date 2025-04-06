@@ -11,13 +11,11 @@ class MockLanguageModelAPI(LanguageModelAPI):
         **kwargs,
     ):
         super().__init__(model_path, **kwargs)
-        print(kwargs)
-        self.tokenizer = transformers.AutoTokenizer.from_pretrained(model_path)
 
 
     def prepare_input(self, prompts):
         return prompts
 
     def _infer(self, conversations, batch_size=8, max_new_tokens=1000, **kwargs):
-        token_lengths = [self.tokenizer(prompt, return_tensors="pt")["input_ids"].shape[1] for prompt in conversations]
-        return [str(length) for length in token_lengths]
+        responses = ["Pravda" for _ in range(len(conversations))]
+        return responses

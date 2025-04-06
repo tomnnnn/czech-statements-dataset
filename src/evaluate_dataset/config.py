@@ -21,7 +21,7 @@ class Config:
     prompt_config: str = ""
     example_count: int = 0
     batch_size: int = 1
-    test_portion: Optional[float] = None
+    test_portion: float = 1
     allowed_labels: List[str] = field(default_factory=lambda: ["pravda", "nepravda"])
     model_api: str = "transformers"
     dataset_path: str = ""

@@ -69,10 +69,10 @@ def parse_args():
     parser.add_argument("--optimized-path", type=str, default=None)
     parser.add_argument("--output-dir", type=str, default="retriever-train-results")
     parser.add_argument("--num-threads", type=int, default=48)
-    parser.add_argument("--search-function", type=str, default="bge3")
+    parser.add_argument("--search-function", type=str, default="bge-m3")
     parser.add_argument("--max-tokens", type=int, default=3000)
-    parser.add_argument("--save-index", action="store_true")
-    parser.add_argument("--index-path", type=str, default="")
+    # parser.add_argument("--save-index", action="store_true")
+    # parser.add_argument("--index-path", type=str, default="")
     parser.add_argument("--eval-metric", type=str, default="recall")
 
     return parser.parse_args()
@@ -98,9 +98,7 @@ if __name__ == "__main__":
     examples = [dspy.Example(statement=f"{s['statement']} - {s['author']}, {s['date']}", relevant_segments=s['segments'], statement_id=s['id']).with_inputs('statement') for s in statements]
     logger.info("Examples built")
 
-    search_function = search_function_factory(args.search_function, corpus, save_index=args.save_index, index_path=args.index_path)
-
-    hop_retriever = HopRetriever(search_function.search, num_docs=2)
+    hop_retriever = HopRetriever(args.search_function, corpus, num_docs=2)
 
     if args.optimized_path:
         print("Loading optimized model")

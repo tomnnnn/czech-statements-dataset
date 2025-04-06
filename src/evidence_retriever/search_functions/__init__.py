@@ -4,7 +4,7 @@ from .search_function import SearchFunction
 
 _search_function_dict = {
     "bm25": BM25,
-    "bge3": BGE_M3
+    "bge-m3": BGE_M3
 }
 
 def search_function_factory(search_function_name: str, corpus: list[dict], **kwargs) -> SearchFunction:
