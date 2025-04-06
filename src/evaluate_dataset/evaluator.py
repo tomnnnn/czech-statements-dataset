@@ -4,6 +4,8 @@ from dataset_manager import Dataset
 from .config import Config
 from dataset_manager.models import Statement
 from .fact_checker import FactChecker
+import sklearn
+import numpy as np
 import random
 
 logger = logging.getLogger(__name__)
@@ -62,12 +64,19 @@ class FactCheckingEvaluator:
         predicted_labels = [statement['label'].lower() for statement in predicted]
         reference_labels = [statement.label.lower() for statement in reference]
 
-        print("Evaluating the results...")
-        print("Predicted:", predicted_labels)
-        print("Reference:", reference_labels)
+        # calculate metrics
+        return sklearn.metrics.classification_report(reference_labels, predicted_labels, output_dict=True, labels=self.cfg.allowed_labels, zero_division=np.nan)
 
-    def run(self):
+    def run(self) -> tuple:
+        """
+        Run the evaluation process.
+
+        Returns:
+        Tuple: Predictions and evaluation metrics.
+        """
         statements = self._sample_dataset()
         print("Sampled statements:", statements)
-        results = self.fact_checker.run(statements)
-        self._evaluate(results, statements)
+        predictions = self.fact_checker.run(statements)
+        metrics = self._evaluate(predictions, statements)
+
+        return predictions, metrics

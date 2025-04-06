@@ -2,19 +2,17 @@ from .search_function import SearchFunction
 from FlagEmbedding import BGEM3FlagModel, FlagModel
 import numpy as np
 import faiss
-from typing import Literal
 
 class BGE_M3(SearchFunction):
-    def __init__(self, corpus, vector_type: Literal["dense_vecs", "colbert_vecs", "lexical_weights"] = "dense_vecs", **kwargs):
+    def __init__(self, corpus, **kwargs):
         super().__init__(corpus)
         self.corpus = corpus
-        self.vector_type = vector_type
 
         # Initialize the model
         self.model = BGEM3FlagModel('BAAI/bge-m3', use_fp16=True)
         
         # Get embeddings and ensure they're in float32 format for FAISS
-        self.embeddings = np.array(self.model.encode([i["text"] for i in corpus], return_sparse=True)[self.vector_type], dtype=np.float32)
+        self.embeddings = np.array(self.model.encode([i["text"] for i in corpus], return_dense=True)["dense_vecs"], dtype=np.float32)
         
         # Optionally save the index later
         self.save_index = kwargs.get('save_index', False)
@@ -48,7 +46,7 @@ class BGE_M3(SearchFunction):
     def search(self, query: str, k: int = 10) -> list[dict]:
         """Search a single query and return the top-k results."""
         query_embedding = np.array(
-            self.model.encode_queries([query], return_dense=True)[self.vector_type], 
+            self.model.encode_queries([query], return_dense=True)["dense_vecs"], 
             dtype=np.float32
         )
         return self._search_index(query_embedding, k)[0]  # Extract first result since it's a single query
@@ -56,7 +54,7 @@ class BGE_M3(SearchFunction):
     def search_batch(self, queries: list[str], k: int = 10) -> list[list[dict]]:
         """Search multiple queries in batch and return top-k results for each."""
         query_embeddings = np.array(
-            self.model.encode(queries, return_dense=True)[self.vector_type], 
+            self.model.encode(queries, return_dense=True)["dense_vecs"], 
             dtype=np.float32
         )
         return self._search_index(query_embeddings, k)

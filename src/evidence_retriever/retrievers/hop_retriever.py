@@ -3,11 +3,12 @@ import logging
 import time
 from ..search_functions import search_function_factory
 from typing import Literal
+from ..retriever import Retriever
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-class HopRetriever(dspy.Module):
+class HopRetriever(Retriever):
     def __init__(self, search_algorithm: Literal['bge-m3', 'mb25'], corpus, num_docs=10, num_hops=4, **kwargs):
         self.num_docs, self.num_hops = num_docs, num_hops
         self.generate_query = dspy.ChainOfThought("výrok, co_zjistit, jazyk -> query")

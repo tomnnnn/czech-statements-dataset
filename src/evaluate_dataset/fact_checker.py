@@ -20,12 +20,10 @@ class FactChecker:
         model: LanguageModelAPI,
         evidence_retriever: Retriever,
         cfg: Config,
-        prompt_template: str,
     ):
         self.model = model
         self.cfg = cfg
         self.retriever = evidence_retriever
-        self.prompt_template = prompt_template
 
         # model instructions (system prompt)
         # load prompt config
@@ -35,9 +33,11 @@ class FactChecker:
             prompt_config = yaml.safe_load(f)
             system_prompt = prompt_config.get("system_prompt", "")
             generation_prompt = prompt_config.get("generation_prompt", "")
+            prompt_template = prompt_config.get("prompt_template", "")
 
         self.model.set_system_prompt(system_prompt)
         self.model.set_generation_prompt(generation_prompt)
+        self.prompt_template = prompt_template
 
     def _gather_evidence(self, statements: list[Statement]) -> dict[int, list[str]]:
         """
