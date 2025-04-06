@@ -52,10 +52,20 @@ class FactChecker:
 
         evidence = defaultdict(list)
         for statement in tqdm(statements, desc="Gathering evidence", unit="statement"):
-            segments = self.retriever(statement.statement).segments
-            segment_texts = [segment['text'] for segment in segments]
+            statement_with_context = f"{statement.statement} - {statement.author}, {statement.date}"
+            segments = self.retriever(statement_with_context).segments
 
-            evidence[statement.id] = segment_texts
+            enriched_segments = [
+                {
+                    "title": segment.article.title,
+                    "text": segment.text,
+                    "url": segment.article.url,
+                }
+
+                for segment in segments
+            ]
+
+            evidence[statement.id] = enriched_segments
 
         return evidence
 

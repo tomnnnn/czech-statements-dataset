@@ -38,7 +38,7 @@ class HopRetriever(Retriever):
 
             # Update retrieved segments and texts
             retrieved_segments.extend(new_segments)
-            retrieved_texts.extend([segment["text"] for segment in new_segments])
+            retrieved_texts.extend([segment.text for segment in new_segments])
 
             # Update notes for the next iteration
             start = time.time()
@@ -48,4 +48,4 @@ class HopRetriever(Retriever):
                 logger.info(f"Appending notes took {time.time() - start} seconds")
             notes.extend(prediction.co_dalšího_zjistit)
 
-        return dspy.Prediction(notes=notes, segments=list({frozenset(d.items()): d for d in retrieved_segments}.values()))
+        return dspy.Prediction(notes=notes, segments=retrieved_segments, metadata={"retriever": "hop_retriever"})

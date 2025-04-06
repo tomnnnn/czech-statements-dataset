@@ -1,4 +1,3 @@
-from dataset_manager.orm import rows2dict
 from .evaluator import FactCheckingEvaluator
 from .fact_checker import FactChecker
 from .llm_apis import llm_api_factory
@@ -18,7 +17,7 @@ if __name__ == "__main__":
     dspy.configure(lm=lm, provide_traceback=True)
 
     dataset = Dataset(config.dataset_path)
-    corpus = rows2dict(dataset.get_segments())
+    corpus = dataset.get_segments()
 
     retriever = HopRetriever("bm25", corpus, num_docs=3, num_hops=2)
     fc = FactChecker(llm, retriever,config)
