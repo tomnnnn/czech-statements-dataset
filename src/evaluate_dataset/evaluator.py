@@ -46,7 +46,7 @@ class FactCheckingEvaluator:
         List: Sampled statements from the dataset.
         """
 
-        statements = self.dataset.get_statements(self.cfg.allowed_labels, self.cfg.min_evidence_count)
+        statements = self.dataset.get_statements(self.cfg.allowed_labels)
         labels = [statement.label for statement in statements]
 
         if self.cfg.test_portion < 1:
