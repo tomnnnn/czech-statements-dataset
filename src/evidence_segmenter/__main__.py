@@ -1,27 +1,20 @@
-from dataset_manager import DemagogDataset
-import csv
-import json
+from dataset_manager import Dataset
 from .segment import segment_article
+import argparse
 
 if __name__ == "__main__":
-    dataset = DemagogDataset("datasets/curated.sqlite", "demagog")
-    evidence = dataset.get_all_evidence()
+    parser = argparse.ArgumentParser(description="Segment articles into smaller segments.")
+    parser.add_argument("-d", "--dataset_path", type=str, help="Path to the dataset file")
+    args = parser.parse_args()
+
+    dataset = Dataset(args.d)
+    articles = dataset.get_articles()
 
     segments = []
-    for article in evidence:
+    for article in articles:
         segments.extend(
-            {"article_id": article["id"], **segment} 
-            for segment in segment_article(article["content"]) if segment is not None
+            {"article_id": article.id, "text": segment} 
+            for segment in segment_article(article.content) if len(segment) > 25
         )
 
-    segments = [segment for segment in segments if segment["text"]]
-
-    # Save segments to json
-    with open("segments.json", "w") as f:
-        json.dump(segments, f, indent=4, ensure_ascii=False)
-
-    # save segments to csv
-    with open("segments.csv", "w") as f:
-        writer = csv.DictWriter(f, fieldnames=["article_id", "tag", "text", "raw"])
-        writer.writeheader()
-        writer.writerows(segments)
+    dataset.insert_segments(segments)

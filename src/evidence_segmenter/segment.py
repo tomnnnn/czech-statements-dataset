@@ -9,18 +9,18 @@ transformation_rules = {
 }
 
 
-def transform_element(el) -> dict|None:
+def transform_element(el) -> str:
     """
     Transform element to string
     """
     tag = el.name
     if tag in transformation_rules:
-        return {"tag": tag, "text": transformation_rules[tag].transform(el), "raw": el.prettify()}
+        return transformation_rules[tag].transform(el)
     else:
-        return None
+        return ""
 
 
-def segment_article(html: str) -> list:
+def segment_article(html: str) -> list[str]:
     """
     Transform html to string
     """
