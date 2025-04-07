@@ -5,3 +5,9 @@ system_prompt: |
   Hodnocení: <konečné hodnocení, jedno ze slov pravda|nepravda>
 
 generation_prompt: "Hodnocení: "
+
+prompt_template: |
+  {statement} - {author}, {date}
+
+  Podpůrné dokumenty:
+  {evidence}
