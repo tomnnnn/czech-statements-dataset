@@ -72,32 +72,43 @@ async def build_dataset():
 
         filtered_evidence_links = [item for item in evidence_links if item["id"] not in scraped_ids]
 
-        print(f"Skipping {len(scraped_ids)} already scraped statements")
+        if len(scraped_ids) > 0:
+            print(f"Skipping {len(scraped_ids)} already scraped statements")
 
         # prepare inputs for batch retrieval
         links_batches = [ [ result["url"] for result in item["results"] ] for item in filtered_evidence_links ]
         batch_ids = [item["id"] for item in filtered_evidence_links]
 
         # scrape articles
-        tasks = [retrieve_and_save(dataset, id, links) for id,links in zip(batch_ids, links_batches)]
+        tasks = [scrape_articles_and_save(dataset, id, links) for id,links in zip(batch_ids, links_batches)]
 
-        await tqdm.gather(*tasks, desc="Scraping articles (total progress)", unit="statements", file=sys.stdout)
+        task_results = await tqdm.gather(*tasks, desc="Scraping articles (total progress)", unit="statements", file=sys.stdout)
+        saved_articles = [article for task_result in task_results for article in task_result]
+        
+
+        if CONFIG["SegmentArticles"]:
+            # segment articles
+            await segment_articles(dataset, saved_articles)
 
 
-async def retrieve_and_save(dataset: Dataset, statement_id, links):
+async def segment_articles(dataset: Dataset, articles: list[Article]):
+    segments = []
+    for _,a in enumerate(tqdm(articles, desc="Segmenting articles", unit="article", file=sys.stdout)):
+        segments.extend([
+            {"article_id": a.id, "text": segment}
+            for segment in segment_article(a.content, min_len=25)
+        ])
+
+    dataset.insert_segments(segments)
+
+
+async def scrape_articles_and_save(dataset: Dataset, statement_id, links) -> list[Article]:
     article_scraper = ArticleScraper()
-    articles = await article_scraper.scrape_extractus(links, show_progress=True)
+    articles = await article_scraper.scrape_extractus(links)
 
     inserted_articles = dataset.insert_articles(articles)
 
-    for a in tqdm(inserted_articles, desc=f"Setting article relevance {'and segmenting articles' if CONFIG['SegmentArticles'] else ''}", unit="articles", file=sys.stdout):
-        dataset.set_article_relevance(statement_id, a.id)
-
-        if CONFIG["SegmentArticles"]:
-            segments = [
-                {"article_id": a.id, "text": segment}
-                for segment in segment_article(a.content, min_len=25)
-            ]
-
-            dataset.insert_segments(segments)
-
+    for a in inserted_articles:
+        dataset.set_article_relevance(a.id, statement_id)
+    
+    return inserted_articles

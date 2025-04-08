@@ -66,8 +66,6 @@ async function processUrl(url) {
         data: article,
       }
     } catch (error) {
-      // print to stderr
-      console.error(`Error processing ${url}: ${error.message}`);
       return {
         success: false,
         data: {

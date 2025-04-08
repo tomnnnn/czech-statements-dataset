@@ -119,7 +119,7 @@ class ArticleScraper:
 
         return result
 
-    async def scrape_extractus(self, links, id=None, max_num_paragraphs=1000, min_num_words=5, show_progress=True, output_html=True):
+    def scrape_extractus(self, links, id=None, max_num_paragraphs=1000, min_num_words=5, show_progress=True, output_html=True):
         """
         Scrapes the articles using nodejs script with article-extractor library
         """
@@ -129,10 +129,8 @@ class ArticleScraper:
         json_result = subprocess.run(cmd, check=True, capture_output=True)
 
         result = json.loads(json_result.stdout.decode("utf-8"))
-        print(json_result.stderr.decode("utf-8"))
 
         articles = result["articles"]
-
         # TODO: use the unprocessed articles to let user know which ones failed
         unprocessed = result["unprocessed"]
         
