@@ -11,7 +11,7 @@ transformation_rules = {
 
 def transform_element(el) -> str:
     """
-    Transform element to string
+    Transform HTML element to string segment
     """
     tag = el.name
     if tag in transformation_rules:
@@ -20,9 +20,13 @@ def transform_element(el) -> str:
         return ""
 
 
-def segment_article(html: str) -> list[str]:
+def segment_article(html: str, min_len = 25) -> list[str]:
     """
-    Transform html to string
+    transform html to list of string segments
     """
     soup = BeautifulSoup(html, "html.parser")
-    return [transform_element(el) for el in soup.find_all()]
+
+    segments = [transform_element(el) for el in soup.find_all()]
+    segments = [seg for seg in segments if len(seg) > min_len]
+
+    return segments

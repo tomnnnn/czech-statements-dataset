@@ -7,6 +7,13 @@ class Dataset:
     def __init__(self, path: str):
         self.session = init_db(path)
 
+    def _filter_column_keys(self, data, model) -> dict:
+        """
+        Filters the keys of the data dictionary to only include those that are present in the model's columns.
+        """
+        column_names = {column.name for column in model.__table__.columns}
+        return {key: value for key, value in data.items() if key in column_names}
+
     def get_statements(self, allowed_labels=None, min_evidence_count=0):
         statements = self.session.query(Statement)
 
@@ -113,16 +120,9 @@ class Dataset:
         self.session.commit()
 
     def insert_statement(self, statement: dict[str, str]) -> Statement:
-        new_statement = Statement(
-            statement=statement.get("statement", ""),
-            label=statement.get("label", ""),
-            author=statement.get("author", ""),
-            date=statement.get("date", ""),
-            party=statement.get("party", ""),
-            explanation=statement.get("explanation", ""),
-            explanation_brief=statement.get("explanation_brief", ""),
-            origin=statement.get("origin", ""),
-        )
+        statement = self._filter_column_keys(statement, Statement)
+
+        new_statement = Statement( **statement,)
 
         self.session.add(new_statement)
         self.session.commit()
@@ -130,17 +130,9 @@ class Dataset:
         return new_statement
 
     def insert_statements(self, statements) -> list[Statement]:
+        statements = [self._filter_column_keys(statement, Statement) for statement in statements]
         new_statements = [
-            Statement(
-                statement=statement.get("statement", ""),
-                label=statement.get("label", ""),
-                author=statement.get("author", ""),
-                date=statement.get("date", ""),
-                party=statement.get("party", ""),
-                explanation=statement.get("explanation", ""),
-                explanation_brief=statement.get("explanation_brief", ""),
-                origin=statement.get("origin", ""),
-            )
+            Statement( **statement,)
             for statement in statements
         ]
 
@@ -148,7 +140,9 @@ class Dataset:
         self.session.commit()
         return new_statements
 
-    def insert_article(self, article: list[dict]) -> Article:
+    def insert_article(self, article: dict) -> Article:
+        article = self._filter_column_keys(article, Article)
+
         new_article = Article(**article)
 
         self.session.add(new_article)
@@ -156,6 +150,8 @@ class Dataset:
         return new_article
 
     def insert_articles(self, articles: list[dict]) -> list[Article]:
+        articles = [self._filter_column_keys(article, Article) for article in articles]
+
         new_articles = [
             Article(**article)
             for article in articles
@@ -166,6 +162,7 @@ class Dataset:
         return new_articles
 
     def insert_segment(self, segment: dict) -> Segment:
+        segment = self._filter_column_keys(segment, Segment)
         new_segment = Segment(**segment)
 
         self.session.add(new_segment)
@@ -173,6 +170,8 @@ class Dataset:
         return new_segment
 
     def insert_segments(self, segments: list[dict]) -> list[Segment]:
+        segments = [self._filter_column_keys(segment, Segment) for segment in segments]
+
         new_segments = [ Segment(**segment) for segment in segments ]
 
         self.session.add_all(new_segments)

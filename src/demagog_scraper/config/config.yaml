@@ -1,5 +1,0 @@
-default:
-  FetchConcurrency: 5
-  FetchDelay: .5
-  YearListPath: datasets/years/years.json
-

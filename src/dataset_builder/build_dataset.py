@@ -3,13 +3,16 @@ import os
 import shutil
 import sys
 from tqdm.asyncio import tqdm
+from collections import defaultdict
 
 from .config import CONFIG
 from .article_scraper import ArticleScraper
 from .demagog_scraper import DemagogScraper
 from dataset_manager import Dataset
 from .article_retriever import article_retriever_factory
+from .segmenter import segment_article
 from dataset_manager.orm import rows2dict
+from dataset_manager.models import Article
 
 
 def prepare_output_dir(output_dir):
@@ -64,7 +67,7 @@ async def build_dataset():
             json.dump(evidence_links, file, ensure_ascii=False, indent=4)
 
     if CONFIG["ScrapeArticles"]:
-        # skip already scraped evidence (file exists)
+        # skip already scraped evidence
         scraped_ids = [a.id for a in dataset.get_articles()]
 
         filtered_evidence_links = [item for item in evidence_links if item["id"] not in scraped_ids]
@@ -83,9 +86,18 @@ async def build_dataset():
 
 async def retrieve_and_save(dataset: Dataset, statement_id, links):
     article_scraper = ArticleScraper()
-    articles = await article_scraper.batch_retrieve(links, show_progress=False)
+    articles = await article_scraper.scrape_extractus(links, show_progress=True)
 
     inserted_articles = dataset.insert_articles(articles)
 
-    for a in inserted_articles:
+    for a in tqdm(inserted_articles, desc=f"Setting article relevance {'and segmenting articles' if CONFIG['SegmentArticles'] else ''}", unit="articles", file=sys.stdout):
         dataset.set_article_relevance(statement_id, a.id)
+
+        if CONFIG["SegmentArticles"]:
+            segments = [
+                {"article_id": a.id, "text": segment}
+                for segment in segment_article(a.content, min_len=25)
+            ]
+
+            dataset.insert_segments(segments)
+

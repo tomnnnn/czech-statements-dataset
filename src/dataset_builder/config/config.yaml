@@ -18,3 +18,4 @@ default:
   SearchesPerDelay: 3
   EvidenceRetriever: criteria
   EvidenceAPIKey: $BING_API_KEY
+  SegmentArticles: True

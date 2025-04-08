@@ -1,6 +1,8 @@
 import asyncio
+import os
 import bs4
 import json
+import subprocess
 from tqdm.asyncio import tqdm
 from collections import defaultdict
 import sys
@@ -11,7 +13,7 @@ class ArticleScraper:
         self.fetch_sem = asyncio.Semaphore(fetch_concurrency)
         self.fetch_delay = fetch_delay
 
-    def __extract_article(self, html, max_num_paragraphs=1000, min_num_words=30):
+    def __extract_article(self, html, max_num_paragraphs=1000, min_num_words=30, output_html=True):
         """
         Extract article content from HTML using a combination of article tags and paragraph heuristics
 
@@ -54,7 +56,12 @@ class ArticleScraper:
             raise ValueError("No paragraphs found")
 
         article_dom = parents_counts[0][0]
-        article_text = "\n".join(p.get_text() for p in article_dom.find_all("p") if len(p.get_text().split()) > min_num_words)
+
+        if output_html:
+            article_text = article_dom.decode_contents()
+        else:
+            article_text = "\n".join(p.get_text(strip=True) for p in article_dom.find_all("p") if len(p.get_text().split()) > min_num_words)
+
         title = soup.find('title')
         title = title.get_text() if title else ""
 
@@ -64,7 +71,7 @@ class ArticleScraper:
         return parsed_article
 
 
-    async def batch_retrieve(self, links: list[str], id=None, max_num_paragraphs: int=1000, min_num_words:int=5, show_progress=True):
+    async def batch_scrape(self, links: list[str], id=None, max_num_paragraphs: int=1000, min_num_words:int=5, show_progress=True, output_html=True):
         """
         Extract article content from a batch of URLs.
 
@@ -76,34 +83,13 @@ class ArticleScraper:
         Returns:
             dict|list: If an ID is provided, a dictionary containing the ID and a list of articles. Otherwise, a list of articles.
         """
-        tasks = [self.retrieve(link, max_num_paragraphs, min_num_words) for link in links]
+        tasks = [self.scrape(link, max_num_paragraphs, min_num_words, output_html) for link in links]
         articles = await tqdm.gather(*tasks, desc="Retrieving and extracting articles", unit="article", disable=not show_progress)
         articles = [r for r in articles if r is not None]
 
         return articles
 
-
-    async def batch_retrieve_save(self, path:str, links: list[str], id=None, max_num_paragraphs: int=1000, min_num_words:int=5, show_progress=True):
-        """
-        Extract article content from a batch of URLs and save it to a JSON file.
-
-        Args:
-            path (str): The path to save the JSON file.
-            links (List[Dict[str, str]]): A list of dictionaries containing the URL and ID of the article.
-            max_num_paragraphs (int): The maximum number of paragraphs to consider.
-            min_num_words (int): The minimum number of words in a paragraph to consider.
-
-        Returns:
-            None
-        """
-        articles = await self.batch_retrieve(links, id, max_num_paragraphs, min_num_words, show_progress)
-        with open(path, "w") as f:
-            json.dump(articles, f, indent=4, ensure_ascii=False)
-
-        return None
-
-
-    async def retrieve(self, url, max_num_paragraphs=1000, min_num_words=5):
+    async def scrape(self, url, max_num_paragraphs=1000, min_num_words=5, output_html=True):
         """
         Fetch and extract article content from a URL
 
@@ -121,7 +107,7 @@ class ArticleScraper:
             await asyncio.sleep(self.fetch_delay)
 
         try:
-            article = self.__extract_article(html, max_num_paragraphs, min_num_words)
+            article = self.__extract_article(html, max_num_paragraphs, min_num_words, output_html)
         except Exception as e:
             print(f"Failed to extract article from {url}: {e}", file=sys.stderr)
             return None
@@ -132,3 +118,22 @@ class ArticleScraper:
         }
 
         return result
+
+    async def scrape_extractus(self, links, id=None, max_num_paragraphs=1000, min_num_words=5, show_progress=True, output_html=True):
+        """
+        Scrapes the articles using nodejs script with article-extractor library
+        """
+
+        js_script_path = os.path.join(os.path.dirname(__file__), "extractus/scrape_articles.js")
+        cmd = ["node", js_script_path, json.dumps(links)]
+        json_result = subprocess.run(cmd, check=True, capture_output=True)
+
+        result = json.loads(json_result.stdout.decode("utf-8"))
+        print(json_result.stderr.decode("utf-8"))
+
+        articles = result["articles"]
+
+        # TODO: use the unprocessed articles to let user know which ones failed
+        unprocessed = result["unprocessed"]
+        
+        return articles
