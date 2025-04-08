@@ -39,7 +39,7 @@ async def build_dataset():
     """
 
     output_dir = prepare_output_dir(CONFIG["OutputDir"])
-    dataset = Dataset(os.path.join(output_dir, "dataset.sqlite"))
+    dataset = Dataset(os.path.join(output_dir, "dataset.sqlite"), create_if_not_exists=True)
 
     if not CONFIG["UseExistingStatements"]:
         # scrape statements

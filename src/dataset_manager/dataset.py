@@ -1,10 +1,14 @@
 import datetime
+import os
 from .orm import *
 from sqlalchemy import func
 from sqlalchemy.exc import NoResultFound
 
 class Dataset:
-    def __init__(self, path: str):
+    def __init__(self, path: str, create_if_not_exists: bool = False):
+        if not create_if_not_exists and not os.path.exists(path):
+            raise FileNotFoundError(f"Database file not found: {path}")
+
         self.session = init_db(path)
 
     def _filter_column_keys(self, data, model) -> dict:
