@@ -3,7 +3,7 @@ from .fact_checker import FactChecker
 from .llm_apis import llm_api_factory
 from .config import load_config
 from dataset_manager import Dataset
-from evidence_retriever import HopRetriever
+from evidence_retriever import HopRetriever,MockRetriever
 import json
 from dataclasses import asdict
 import dspy
@@ -27,10 +27,11 @@ if __name__ == "__main__":
 
     predictions, metrics = evaluator.run()
 
-    predictions_path = os.path.join(config.out_folder, f"predictions_{config.index}.json")
-    metrics_path = os.path.join(config.out_folder, f"metrics_{config.index}.json")
+    results_dirpath = os.path.join(config.out_folder, config.model_name.split('/')[-1])
+    predictions_path = os.path.join(results_dirpath, f"predictions_{config.index}.json")
+    metrics_path = os.path.join(results_dirpath, f"metrics_{config.index}.json")
 
-    os.makedirs(config.out_folder, exist_ok=True)
+    os.makedirs(results_dirpath, exist_ok=True)
 
     # Save predictions and metrics to JSON files
     with open(predictions_path, "w") as f:

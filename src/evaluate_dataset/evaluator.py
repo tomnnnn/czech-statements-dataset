@@ -75,7 +75,6 @@ class FactCheckingEvaluator:
         Tuple: Predictions and evaluation metrics.
         """
         statements = self._sample_dataset()
-        print("Sampled statements:", statements)
         predictions = self.fact_checker.run(statements)
         metrics = self._evaluate(predictions, statements)
 

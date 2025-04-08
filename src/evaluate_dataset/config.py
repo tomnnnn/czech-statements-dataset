@@ -26,7 +26,6 @@ class Config:
     model_api: str = "transformers"
     dataset_path: str = ""
     log_path: str = "logs"
-    evidence_source: str = "demagog"
     model_file: Optional[str] = None
     stratify: bool = False
     relevancy_threshold: float = 1
@@ -35,7 +34,6 @@ class Config:
     env_path: str = ".env"
     tokenizer_path: Optional[str] = None
     ctx_len: int = 4096
-    rel_operator: str = "ge"
     no_chat_format: bool = False
     max_tokens: Optional[int] = None
     rope_scaling: Optional[str] = None
@@ -72,7 +70,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("-A", "--model-api", help="LLM API to use")
     parser.add_argument("-c", "--example-count", type=int, help="Number of examples per label")
     parser.add_argument("-l", "--log-path", type=str, help="Path to log file")
-    parser.add_argument("-E", "--evidence-source", type=str, help="Source of evidence data")
     parser.add_argument("-k", "--search-k-segments", type=int, help="Number of segments to search for evidence per hop")
     parser.add_argument("-f", "--search-algorithm", type=str, help="Search algorithm for evidence retrieval. Available: bm25, bge-m3")
     parser.add_argument("-n", "--num-hops", type=int, help="Number of hops for evidence retrieval")
@@ -83,7 +80,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--env-path", type=str, help="Path to .env file")
     parser.add_argument("--tokenizer-path", type=str, help="Path to pretrained tokenizer")
     parser.add_argument("--ctx-len", type=int, help="Maximum context length for the model")
-    parser.add_argument("--rel-operator", type=str, help="Operator for relevancy threshold comparison. Available: eq, ge, le")
     parser.add_argument("--no-chat-format", action="store_true", help="Don't use chat format for input prompts")
     parser.add_argument("--max-tokens", type=int,nargs="?", help="Maximum number of tokens for model output")
     parser.add_argument("--rope-scaling", type=str, help="Configuration JSON string for ROPE scaling")

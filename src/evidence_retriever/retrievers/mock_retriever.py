@@ -4,7 +4,7 @@ import random
 from typing import Literal
 
 class MockRetriever(Retriever):
-    def __init__(self, search_algorithm: Literal['bge-m3', 'mb25'], corpus, num_docs=10, **kwargs):
+    def __init__(self, search_algorithm, corpus, num_docs=10, **kwargs):
         self.corpus = corpus
         self.num_docs = num_docs
         pass
