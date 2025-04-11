@@ -1,16 +1,28 @@
 from .bge_m3 import BGE_M3
-from .bm25 import BM25
-from dataset_manager.orm import *
-import pprint
+import asyncio
+from dataset_manager import Dataset
 
-dataset = init_db()
+dataset = Dataset("datasets/curated.sqlite")
 
-corpus = rows2dict(dataset.query(Segment).all())[:20]
-query = "Co je kauza Dozimetr?"
+corpus = dataset.get_segments()[:100]
+bge = BGE_M3(corpus)
 
-print("Loading BGE_M3...")
-search_engine = BGE_M3(corpus, vector_type="lexical_weights")
-print("Loaded BGE_M3")
+async def search(query):
+    results = bge.search(query, k=5)
+    
+    return results
 
-results = search_engine.search(query, k=3)
-pprint.pp(results)
+async def main():
+    coroutines = [
+        search("What is the capital of France?"),
+        search("Who wrote 'To Kill a Mockingbird'?"),
+        search("What is the largest mammal?"),
+        search("What is the speed of light?"),
+        search("What is the capital of Japan?")
+    ]
+
+    results = await asyncio.gather(*coroutines)
+    for result in results:
+        print(result)
+
+asyncio.run(main())

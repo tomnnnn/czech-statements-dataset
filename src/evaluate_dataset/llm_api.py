@@ -1,5 +1,6 @@
 import os
 import logging
+import asyncio
 
 logger = logging.getLogger(__name__)
 
@@ -54,9 +55,9 @@ class LanguageModelAPI:
 
         return conversations
 
-    def _infer(self, conversations, batch_size=8, max_new_tokens=1000):
+    async def _infer(self, conversations, batch_size=8, max_new_tokens=1000):
         raise NotImplementedError
 
-    def __call__(self, prompts, batch_size=8, max_new_tokens=1000)->list:
+    async def __call__(self, prompts, batch_size=8, max_new_tokens=1000)->list:
         conversations = self.prepare_input(prompts)
-        return self._infer(conversations, batch_size, max_new_tokens)
+        return await self._infer(conversations, batch_size, max_new_tokens)

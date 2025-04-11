@@ -42,6 +42,15 @@ class Config:
     search_k_segments: int = 3
     search_algorithm: str = "bm25"
     num_hops: int = 4
+    num_docs: int = 1
+    index_path: Optional[str] = None
+    save_index: bool = False
+    load_index: bool = False
+    embeddings_path: Optional[str] = None
+    save_embeddings: bool = False
+    load_embeddings: bool = False
+    async_retrieve: bool = False
+    retriever: str = "simple"
 
 def load_yaml_config(path: str) -> dict:
     """Loads the configuration from a YAML file."""
@@ -75,16 +84,24 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("-n", "--num-hops", type=int, help="Number of hops for evidence retrieval")
     parser.add_argument("--model-file", type=str, help="Optional path to model file")
     parser.add_argument("--model-name", type=str, nargs="?", help="Name of the model to evaluate")
+    parser.add_argument("--num-docs", type=int, help="Number of documents to retrieve per hop")
     parser.add_argument("--stratify", action="store_true", help="Stratify test set by labels")
     parser.add_argument("--min-evidence-count", type=int, help="Minimum number of evidence items per example")
     parser.add_argument("--env-path", type=str, help="Path to .env file")
     parser.add_argument("--tokenizer-path", type=str, help="Path to pretrained tokenizer")
     parser.add_argument("--ctx-len", type=int, help="Maximum context length for the model")
-    parser.add_argument("--no-chat-format", action="store_true", help="Don't use chat format for input prompts")
     parser.add_argument("--max-tokens", type=int,nargs="?", help="Maximum number of tokens for model output")
     parser.add_argument("--rope-scaling", type=str, help="Configuration JSON string for ROPE scaling")
     parser.add_argument("--html-article", action="store_true", help="Use HTML article format for evidence")
     parser.add_argument("--api-base-url", type=str, help="Base URL for the API")
+    parser.add_argument("--retriever", type=str, help="Retriever type for evidence retrieval [simple, hop]")
+    parser.add_argument("--index-path", type=str, help="Path to the search index file")
+    parser.add_argument("--save-index", action="store_true", help="Save the search index after creation")
+    parser.add_argument("--load-index", action="store_true", help="Load the search index from a file")
+    parser.add_argument("--embeddings-path", type=str, help="Path to the search algorithm embeddings file")
+    parser.add_argument("--save-embeddings", action="store_true", help="Save the embeddings from a search algorithm after creation")
+    parser.add_argument("--async-retrieve", action="store_true", help="Use async retrieval for evidence")
+    parser.add_argument("--load-embeddings", action="store_true", help="Load the embeddings for indexer algorithm from a file")
 
     args = parser.parse_args()
 

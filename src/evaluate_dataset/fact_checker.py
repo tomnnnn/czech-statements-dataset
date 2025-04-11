@@ -3,13 +3,15 @@ import logging
 from collections import defaultdict
 import re
 import yaml
-from tqdm import tqdm
 
 from dataset_manager.models import Statement
 from dataset_manager.orm import rows2dict
-from evidence_retriever import Retriever
+from evidence_retriever import Retriever, SimpleRetriever
 from .config import Config
 from .llm_api import LanguageModelAPI
+from tqdm.asyncio import tqdm_asyncio
+
+from threading import Lock
 
 logger = logging.getLogger(__name__)
 
@@ -18,12 +20,13 @@ class FactChecker:
     def __init__(
         self,
         model: LanguageModelAPI,
-        evidence_retriever: Retriever,
+        evidence_retriever: Retriever|SimpleRetriever,
         cfg: Config,
     ):
         self.model = model
         self.cfg = cfg
         self.retriever = evidence_retriever
+        self.lock = Lock()
 
         # model instructions (system prompt)
         # load prompt config
@@ -39,7 +42,40 @@ class FactChecker:
         self.model.set_generation_prompt(generation_prompt)
         self.prompt_template = prompt_template
 
-    def _gather_evidence(self, statements: list[Statement]) -> dict[int, list[str]]:
+
+    async def _retrieve_segments(self, statement: Statement) -> tuple[int, list[dict]]:
+        """
+        Retrieve segments for a given statement using the retriever.
+
+        Args:
+        statement (Statement): The statement to evaluate.
+
+        Returns:
+        Tuple: A tuple containing the statement ID and a list of segments.
+        """
+
+        logger.info(f"Retrieving segments for statement {statement.id}")
+
+        statement_str = f"{statement.statement} - {statement.author}, {statement.date}"
+
+        if isinstance(self.retriever, SimpleRetriever):
+            segments = (await self.retriever(statement=statement_str)).segments
+        else:
+            segments = self.retriever(statement=statement_str).segments
+
+        enriched_segments = [
+            {
+                "title": segment.article.title[:3000],
+                "text": segment.text[:3000],
+                "url": segment.article.source[:3000],
+            }
+            for segment in segments
+        ]
+
+        return statement.id, enriched_segments
+
+
+    async def _gather_evidence(self, statements: list[Statement]) -> dict[int, list[dict]]:
         """
         Gather evidence for a given statement using the retriever.
 
@@ -50,27 +86,31 @@ class FactChecker:
         Dict: A dictionary mapping statement IDs to lists of segments.
         """
 
+        logger.info("Gathering evidence")
+
         evidence = defaultdict(list)
-        for statement in tqdm(statements, desc="Gathering evidence", unit="statement"):
-            statement_with_context = f"{statement.statement} - {statement.author}, {statement.date}"
-            segments = self.retriever(statement_with_context).segments
 
-            enriched_segments = [
-                {
-                    "title": segment.article.title,
-                    "text": segment.text,
-                    "url": segment.article.source,
-                }
+        for statement in statements:
+            id, segments = await self._retrieve_segments(statement)
+            evidence[id] = segments
 
-                for segment in segments
-            ]
-
-            evidence[statement.id] = enriched_segments
+        # coroutines = [
+        #     self._retrieve_segments(statement)
+        #     for statement in statements
+        # ]
+        #
+        # results = await tqdm_asyncio.gather(*coroutines, desc="Gathering evidence", unit="statement")
+        #
+        # for statement_id, segments in results:
+        #     evidence[statement_id] = [
+        #         f"{segment['title']}: {segment['text']} ({segment['url']})"
+        #         for segment in segments
+        #     ]
 
         return evidence
 
     def _build_prompts(
-        self, statements: list[Statement], evidence: dict[int, list[str]]
+        self, statements: list[Statement], evidence: dict[int, list[dict]]
     ) -> list[str]:
         """
         Build prompts for the model based on statements and their evidence.
@@ -82,6 +122,8 @@ class FactChecker:
         Returns:
         List: List of prompts for language model inference.
         """
+
+        logger.info("Building prompts")
 
         prompts = []
         statement_dicts = rows2dict(statements)
@@ -113,7 +155,7 @@ class FactChecker:
 
         return "nolabel"
 
-    def run(self, statements: list[Statement]):
+    async def run(self, statements: list[Statement]):
         """
         Run the fact-checking process on a list of statements.
 
@@ -124,10 +166,11 @@ class FactChecker:
         List: Results of the evaluation.
         """
 
-        evidence = self._gather_evidence(statements)
+        evidence = await self._gather_evidence(statements)
         prompts = self._build_prompts(statements, evidence)
 
-        responses = self.model(prompts)
+        logger.info("Running model inference")
+        responses = await self.model(prompts)
         predicted_labels = [self._extract_label(prediction) for prediction in responses]
 
         return [

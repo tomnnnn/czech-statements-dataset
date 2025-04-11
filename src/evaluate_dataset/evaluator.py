@@ -46,7 +46,7 @@ class FactCheckingEvaluator:
         List: Sampled statements from the dataset.
         """
 
-        statements = self.dataset.get_statements(self.cfg.allowed_labels)
+        statements = self.dataset.get_statements(self.cfg.allowed_labels, self.cfg.min_evidence_count)
         labels = [statement.label for statement in statements]
 
         if self.cfg.test_portion < 1:
@@ -67,7 +67,7 @@ class FactCheckingEvaluator:
         # calculate metrics
         return sklearn.metrics.classification_report(reference_labels, predicted_labels, output_dict=True, labels=self.cfg.allowed_labels, zero_division=np.nan)
 
-    def run(self) -> tuple:
+    async def run(self) -> tuple:
         """
         Run the evaluation process.
 
@@ -75,7 +75,7 @@ class FactCheckingEvaluator:
         Tuple: Predictions and evaluation metrics.
         """
         statements = self._sample_dataset()
-        predictions = self.fact_checker.run(statements)
+        predictions = await self.fact_checker.run(statements)
         metrics = self._evaluate(predictions, statements)
 
         return predictions, metrics

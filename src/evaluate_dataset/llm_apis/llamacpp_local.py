@@ -1,5 +1,6 @@
 from ..llm_api import LanguageModelAPI
 from llama_cpp import Llama
+import asyncio
 
 
 class LlamaCpp_Local(LanguageModelAPI):
@@ -24,7 +25,7 @@ class LlamaCpp_Local(LanguageModelAPI):
                 n_gpu_layers=1,
             )
 
-    def _infer(self, conversations: list, batch_size: int = 1, max_new_tokens: int = 512):
+    async def _infer(self, conversations: list, batch_size: int = 1, max_new_tokens: int = 512):
         completions = []
         for convo in conversations:
             if self.chat_format:

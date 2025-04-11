@@ -23,12 +23,18 @@ class BM25(SearchFunction):
         self.retriever = retriever
 
 
-    def search(self, query: str, k: int = 10) -> list[Segment]:
-        tokens = bm25s.tokenize(query, stemmer=self._stemmer, show_progress=False)
-        results, scores = self.retriever.retrieve(tokens, k=k, n_threads=10, show_progress=False)
-        run = [
-            self.corpus[idx]
-            for idx,_ in zip(results[0], scores[0])
-        ]
+    def search(self, query: str|list, k: int = 10) -> list[Segment]|list[list[Segment]]:
+        query = [query] if isinstance(query, str) else query
 
-        return run
+        results = []
+
+        for q in query:
+            tokens = bm25s.tokenize(q, stemmer=self._stemmer, show_progress=False)
+            indices, scores = self.retriever.retrieve(tokens, k=k, n_threads=10, show_progress=False)
+            run = [
+                self.corpus[idx]
+                for idx,_ in zip(indices[0], scores[0])
+            ]
+            results.append(run)
+
+        return results if isinstance(query, list) else results[0]

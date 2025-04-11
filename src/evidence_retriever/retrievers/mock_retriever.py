@@ -1,13 +1,12 @@
+from ..search_functions import SearchFunction
 from ..retriever import Retriever
 import dspy
 import random
-from typing import Literal
 
 class MockRetriever(Retriever):
-    def __init__(self, search_algorithm, corpus, num_docs=10, **kwargs):
+    def __init__(self, search_function: SearchFunction, corpus, num_docs=10, **kwargs):
         self.corpus = corpus
         self.num_docs = num_docs
-        pass
 
     def forward(self, statement: str) -> dspy.Prediction:
         # Randomly select num_docs segments from the corpus
