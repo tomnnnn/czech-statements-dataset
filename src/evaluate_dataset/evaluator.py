@@ -1,18 +1,15 @@
-from collections import defaultdict
 import logging
 import subprocess
 import requests
 import time
 from sentence_transformers import SentenceTransformer
-import tqdm
 from sklearn.model_selection import train_test_split
 from dataset_manager import Dataset
-from src.evidence_retriever.search_functions import search_function_factory
-from src.evidence_retriever.search_functions.bge_m3 import BGE_M3
+from fact_checker.evidence_retriever.search_functions import BGE_M3
 from .config import Config
 import asyncio
 from dataset_manager.models import Article, Statement
-from .fact_checker import FactChecker
+from fact_checker import FactChecker
 import sklearn
 import numpy as np
 import random
@@ -99,7 +96,6 @@ class FactCheckingEvaluator:
                     save_index=not load_index,
                     load_index=load_index,
                     index_path=index_path,
-                    model=model,
                 )
                 await search_fn.index_async()
                 return statement.id, search_fn

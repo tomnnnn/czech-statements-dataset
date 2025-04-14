@@ -1,8 +1,6 @@
-from ..llm_api import LanguageModelAPI
+from .base import LanguageModelAPI
 from openai import AsyncOpenAI
 from tqdm.asyncio import tqdm_asyncio
-import requests
-import time
 import logging
 import pprint
 

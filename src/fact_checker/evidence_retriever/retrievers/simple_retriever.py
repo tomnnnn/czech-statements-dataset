@@ -1,7 +1,7 @@
 from src.dataset_manager.models import Segment
 import dspy
-from src.evidence_retriever.search_functions.search_function import SearchFunction
-from src.evidence_retriever.retriever import Retriever
+from ..search_functions import SearchFunction
+from ..base import Retriever
 
 
 class SimpleRetriever(Retriever):

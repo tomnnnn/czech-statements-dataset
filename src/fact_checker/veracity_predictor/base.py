@@ -1,5 +1,6 @@
-from ..contextualized_statement import ContextualizedStatement
+from dataset_manager.models import Statement
 from utils.llm_apis import LanguageModelAPI
+from ..fc_state import FactCheckingState
 
 class Predictor():
     """
@@ -16,14 +17,8 @@ class Predictor():
         raise NotImplementedError("Subclasses should implement this method.")
 
 
-    async def predict(self, statements: list[ContextualizedStatement]) -> list[dict]:
+    async def predict(self, statement: Statement, evidence: list[dict]) -> tuple[str, str]:
         """
-        Predict the veracity of a list of statements.
-
-        Args:
-            statements (list[ContextualizedStatement]): List of statements to evaluate.
-
-        Returns:
-            list[float]: List of veracity scores for each statement.
+        Based on statement and evidence docments, predicts the statement's veracity label.
         """
         raise NotImplementedError("Subclasses should implement this method.")

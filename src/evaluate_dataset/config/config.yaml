@@ -1,0 +1,50 @@
+# config.yaml
+
+out_folder: "results/"
+model_name: "gpt-4o"
+index: 0
+max: 1
+with_explanation: true
+prompt_config: "prompts/truefalse.yaml"
+example_count: 0
+batch_size: 4
+test_portion: 0.2
+
+allowed_labels:
+  - "pravda"
+  - "nepravda"
+
+model_api: "openai"
+dataset_path: "datasets/curated.sqlite"
+log_path: "logs/"
+# model_file: "models/llama3-8b.gguf"
+
+stratify: true
+relevancy_threshold: 0
+relevant_paragraph: true
+min_evidence_count: 2
+
+env_path: ".env"
+# tokenizer_path: "tokenizers/llama3"
+ctx_len: 4096
+no_chat_format: false
+max_tokens: 512
+rope_scaling: null
+
+html_article: true
+# api_base_url: "http://localhost:8000"
+search_k_segments: 3
+search_algorithm: "bm25"
+num_hops: 2
+num_docs: 3
+
+# index_path: "indexes/bm25_index.json"
+save_index: false
+load_index: true
+
+# embeddings_path: "embeddings/bge.json"
+save_embeddings: false
+load_embeddings: true
+
+async_retrieve: true
+retriever: "simple"

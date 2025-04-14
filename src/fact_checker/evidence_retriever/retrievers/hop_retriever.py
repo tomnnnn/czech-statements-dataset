@@ -3,7 +3,7 @@ import sys
 import logging
 import time
 from ..search_functions import SearchFunction
-from ..retriever import Retriever
+from ..base import Retriever
 
 logger = logging.getLogger(__name__)
 

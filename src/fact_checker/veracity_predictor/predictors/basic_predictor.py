@@ -1,10 +1,10 @@
 import json
 import re
 
+from dataset_manager.models import Statement
 from utils.llm_apis import LanguageModelAPI
 
-from ..base import ContextualizedStatement, Predictor
-
+from ..base import FactCheckingState, Predictor
 
 class BasicPredictor(Predictor):
     def __init__(
@@ -39,29 +39,16 @@ class BasicPredictor(Predictor):
 
         return "nolabel"
 
-    async def predict(self, statements: list[ContextualizedStatement]) -> list[dict]:
-        prompts = [
-            self.prompt_template.format(
-                statement=statement["statement"],
-                evidence=json.dumps(statement["evidence"], ensure_ascii=False),
+    async def predict(self, statement: Statement, evidence: list[dict]) -> tuple[str, str]:
+        prompt = self.prompt_template.format(
+                statement=str(statement),
+                evidence=json.dumps(evidence, ensure_ascii=False),
             )
-            for statement in statements
-        ]
 
         # Generate predictions
-        responses = await self.model(prompts)
+        response = (await self.model(prompt))[0]
 
         # Parse predictions
-        labels = [self._parse_prediction(response) for response in responses]
+        label = self._parse_prediction(response)
 
-        predictions = [
-            {
-                "id": statement["id"],
-                "statement": statement["statement"],
-                "evidence": statement["evidence"],
-                "label": label,
-            }
-            for statement, label in zip(statements, labels)
-        ]
-
-        return predictions
+        return label, response

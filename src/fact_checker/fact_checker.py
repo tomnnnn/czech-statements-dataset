@@ -1,55 +1,35 @@
-import json
 import logging
-from collections import defaultdict
-import re
-import yaml
 
-from dataset_manager.models import Statement
-from dataset_manager.orm import rows2dict
-from evidence_retriever import Retriever, SimpleRetriever
-from src.evidence_retriever.retrievers.hop_retriever import HopRetriever
-from src.fact_checker.contextualized_statement import ContextualizedStatement
-from .config import Config
-from .llm_api import LanguageModelAPI
 import dspy
+from dataset_manager.models import Statement
 from tqdm.asyncio import tqdm_asyncio
+from .evidence_retriever import HopRetriever
+from utils.llm_apis import LanguageModelAPI
+
+from .evidence_retriever import Retriever
+
 from .evidence_retriever.search_functions import SearchFunction
+from .fc_state import FactCheckingState
 from .veracity_predictor import Predictor
 
 logger = logging.getLogger(__name__)
 
+
 class FactChecker:
     def __init__(
         self,
-        model: LanguageModelAPI,
         evidence_retriever: Retriever,
         veracity_predictor: Predictor,
-        cfg: Config,
-        **kwargs
+        **kwargs,
     ):
-        self.model = model
-        self.cfg = cfg
-        self.show_progress= kwargs.get("show_progress", True)
-        self.predictor = veracity_predictor
+        self.show_progress = kwargs.get("show_progress", True)
 
+        self.predictor = veracity_predictor
         self.retriever = dspy.asyncify(evidence_retriever)
 
-        # model instructions (system prompt)
-        # load prompt config
-        prompt_config_path = cfg.prompt_config
-
-        with open(prompt_config_path, "r", encoding="utf-8") as f:
-            prompt_config = yaml.safe_load(f)
-            system_prompt = prompt_config.get("system_prompt", "")
-            generation_prompt = prompt_config.get("generation_prompt", "")
-            prompt_template = prompt_config.get("prompt_template", "")
-
-        self.model.set_system_prompt(system_prompt)
-        self.model.set_generation_prompt(generation_prompt)
-        self.prompt_template = prompt_template
-
-
-    async def _retrieve_segments(self, statement: Statement, search_function: SearchFunction) -> tuple[int, list[dict], dict]:
+    async def _retrieve_segments(
+        self, statement: Statement, search_function: SearchFunction
+    ) -> tuple[int, list[dict], dict]:
         """
         Retrieve segments for a given statement using the retriever.
 
@@ -64,12 +44,10 @@ class FactChecker:
 
         statement_str = f"{statement.statement} - {statement.author}, {statement.date}"
 
-        # if isinstance(self.retriever, SimpleRetriever):
-        #     retrieved_evidence = (await self.retriever(statement=statement_str, search_func=search_function))
-        # else:
-        #     retrieved_evidence = self.retriever(statement=statement_str, search_func=search_function)
 
-        retrieved_evidence = await self.retriever(statement=statement_str, search_func=search_function)
+        retrieved_evidence = await self.retriever(
+            statement_str, search_function
+        )
 
         segments = retrieved_evidence.segments
         enriched_segments = [
@@ -83,8 +61,9 @@ class FactChecker:
 
         return statement.id, enriched_segments, retrieved_evidence.used_queries
 
-
-    async def _gather_evidence(self, statements: list[Statement], search_function: SearchFunction) -> tuple[dict[int, list[dict]], dict]:
+    async def _gather_evidence(
+        self, statements: list[Statement], search_function: SearchFunction
+    ) -> tuple[dict[int, list[dict]], dict]:
         """
         Gather evidence for a given statement using the retriever.
 
@@ -95,22 +74,20 @@ class FactChecker:
         Dict: A dictionary mapping statement IDs to lists of segments.
         """
 
-        logger.info("Gathering evidence")
-
         evidence = {}
         used_queries = {}
-
-        # for statement in statements:
-        #     id, segments, queries = await self._retrieve_segments(statement, search_function)
-        #     evidence[id] = segments
-        #     used_queries[id] = queries
 
         coroutines = [
             self._retrieve_segments(statement, search_function)
             for statement in statements
         ]
 
-        results = await tqdm_asyncio.gather(*coroutines, desc="Gathering evidence", unit="statement", disable=not self.show_progress)
+        results = await tqdm_asyncio.gather(
+            *coroutines,
+            desc="Gathering evidence",
+            unit="statement",
+            disable=not self.show_progress,
+        )
 
         for statement_id, segments, queries in results:
             evidence[statement_id] = segments
@@ -118,53 +95,16 @@ class FactChecker:
 
         return evidence, used_queries
 
-    def _build_prompts(
-        self, statements: list[Statement], evidence: dict[int, list[dict]]
-    ) -> list[str]:
-        """
-        Build prompts for the model based on statements and their evidence.
-
-        Args:
-        statements (List): List of statements to evaluate.
-        evidence (Dict): A dictionary mapping statement IDs to lists of segments.
-
-        Returns:
-        List: List of prompts for language model inference.
-        """
-
-        logger.info("Building prompts")
-
-        prompts = []
-        statement_dicts = rows2dict(statements)
-
-        for statement in statement_dicts:
-            evidence_json = json.dumps(evidence[statement["id"]], ensure_ascii=False)
-            prompt = self.prompt_template.format(**statement, evidence=evidence_json)
-            prompts.append(prompt)
-
-        return prompts
-
     def _build_examples(self) -> list[str]:
         raise NotImplementedError
 
-    def _extract_label(self, prediction: str) -> str:
-        """
-        Extract the label from the model's prediction.
 
-        Args:
-        prediction (str): The model's prediction.
-
-        Returns:
-        str: The extracted label.
-        """
-        if prediction:
-            labels_regex = "|".join(self.cfg.allowed_labels)
-            labels = re.findall(labels_regex, prediction.lower())
-            return labels[-1] if labels else "nolabel"
-
-        return "nolabel"
-
-    async def run(self, statements: list[Statement], search_function: SearchFunction, show_progress=False):
+    async def run(
+        self,
+        statements: list[Statement],
+        search_function: SearchFunction,
+        show_progress=False,
+    ):
         """
         Run the fact-checking process on a list of statements.
 
@@ -177,22 +117,27 @@ class FactChecker:
 
         try:
             evidence, used_queries = await self._gather_evidence(statements, search_function)
-            states = [
-                ContextualizedStatement(
-                    id=statement.id, 
-                    statement=f"{statement.statement} - {statement.author}, {statement.date}",
-                    evidence=evidence[statement.id],
-                )
+
+            predictions_coroutines = [
+                self.predictor.predict(statement, evidence[statement.id])
                 for statement in statements
             ]
-            predictions = self.predictor.predict(states)
-            return [
-                {
-                    **prediction,
-                    "used_queries" : used_queries[prediction["id"]],
-                }
-                for prediction in predictions
-            ]
+
+            labels, responses = await tqdm_asyncio.gather(*predictions_coroutines, disable=not show_progress)
+
+            states = []
+            for statement,label,response in zip(statements, labels, responses):
+                states.append(FactCheckingState(
+                    statement=statement,
+                    evidence=evidence[statement.id],
+                    label=label,
+                    metadata={
+                        "used_queries": used_queries[statement.id],
+                        "response": response
+                    }
+                ))
+
+            return states
 
         except Exception as e:
             logger.error(f"Error during fact-checking: {e}\nStatement: {statements}")

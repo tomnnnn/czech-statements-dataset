@@ -1,10 +1,9 @@
 from .evaluator import FactCheckingEvaluator
-from .fact_checker import FactChecker
-from .llm_apis import llm_api_factory
+from fact_checker import FactChecker, BasicPredictor, HopRetriever, SimpleRetriever
 from .config import load_config
+import yaml
+from utils.llm_apis import llm_api_factory
 from dataset_manager import Dataset
-from evidence_retriever import HopRetriever,MockRetriever,SimpleRetriever
-from evidence_retriever.search_functions import search_function_factory
 import json
 import asyncio
 from dataclasses import asdict
@@ -20,20 +19,29 @@ retriever_dict = {
     "simple": SimpleRetriever
 }
 
+def load_prompt_config(path):
+    with open(path, "r") as f:
+        config = yaml.safe_load(f)
+
+    return config['system_prompt'], config['generation_prompt'], config['prompt_template'], config['allowed_labels']
+
+
 async def main():
     start = time.time()
     config = load_config()
 
     # TODO: move to the retriever
-    lm = dspy.LM("hosted_vllm/" + config.model_name, api_base=config.api_base_url, max_tokens=3000)
+    lm = dspy.LM("openai/" + config.model_name, api_base=config.api_base_url, max_tokens=3000)
     dspy.configure(lm=lm)
 
     dataset = Dataset(config.dataset_path, read_only=True)
-    
-    retriever = retriever_dict[config.retriever](num_docs=config.num_docs)
 
     llm = llm_api_factory(config.model_api, config.model_name, **asdict(config), show_progress=False)
-    fc = FactChecker(llm,retriever,config, show_progress=False)
+    system_prompt, generation_prompt, prompt_template, allowed_labels = load_prompt_config(config.prompt_config)
+
+    retriever = retriever_dict[config.retriever](num_docs=config.num_docs)
+    predictor = BasicPredictor(llm,system_prompt,generation_prompt,prompt_template,allowed_labels)
+    fc = FactChecker(retriever,predictor)
 
     evaluator = FactCheckingEvaluator(dataset, fc, config)
 

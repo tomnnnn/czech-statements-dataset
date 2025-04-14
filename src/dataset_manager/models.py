@@ -84,6 +84,9 @@ class Statement(Base):
             Index("ix_statements_id", "id"),
     )
 
+    def __str__(self) -> str:
+        return f"{self.statement} - {self.author}, {self.date}"
+
 class Tag(Base):
     __tablename__ = "tags"
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)

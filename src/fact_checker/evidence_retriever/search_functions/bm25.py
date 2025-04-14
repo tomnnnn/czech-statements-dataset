@@ -39,3 +39,6 @@ class BM25(SearchFunction):
             results.append(run)
 
         return results if not single else results[0]
+
+    async def search_async(self, query: str|list, k: int = 10) -> list[Segment]|list[list[Segment]]:
+        return self.search(query, k)

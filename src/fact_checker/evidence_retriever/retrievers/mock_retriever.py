@@ -1,5 +1,5 @@
 from ..search_functions import SearchFunction
-from ..retriever import Retriever
+from ..base import Retriever
 import dspy
 import random
 
