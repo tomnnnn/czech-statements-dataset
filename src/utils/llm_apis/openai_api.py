@@ -19,22 +19,8 @@ class OpenAI_API(LanguageModelAPI):
 
     def __init__(self,model_path="gpt-4o", **kwargs):
         super().__init__(model_path)
-        # wait for server to be up by checking api_base_url/health
-        
-        # while True:
-        #     try:
-        #         response = requests.get("http://0.0.0.0:8000/health")
-        #
-        #         if response.status_code == 200:
-        #             print("Server is up and running.")
-        #             break
-        #         else:
-        #             print(f"Server is not ready yet, status code: {response.status_code}")
-        #             time.sleep(10)
-        #     except Exception as e:
-        #         print(f"Waiting for server to be up: {e}...")
-        #         time.sleep(10)
 
+        self.show_progress = kwargs.get("show_progress", True)
         self.client = AsyncOpenAI(base_url=kwargs.get("api_base_url", None))
 
     async def _completion(self, chat, max_new_tokens):
@@ -54,7 +40,7 @@ class OpenAI_API(LanguageModelAPI):
             for chat in conversations
         ]
 
-        results = await tqdm_asyncio.gather(*coroutines, desc="Collecting model responses", unit="response")
+        results = await tqdm_asyncio.gather(*coroutines, desc="Collecting model responses", unit="response", disable=not self.show_progress)
 
         pprint.pp(results)
         logger.info("Returning results")

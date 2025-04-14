@@ -7,6 +7,8 @@ from dataset_manager.orm import *
 from .hop_retriever import HopRetriever
 import logging
 from .search_functions import search_function_factory
+from evaluate_dataset.fact_checker import FactChecker
+from evaluate_dataset.llm_apis import openai_api
 
 to_label = []
 
@@ -14,6 +16,9 @@ to_label = []
 logging.basicConfig(filename=f"logs/retriever_{str(datetime.datetime.now()).replace(' ', '-')}.log", level=logging.INFO)
 logging.getLogger("LiteLLM").setLevel(logging.ERROR)
 logger = logging.getLogger(__name__)
+
+llm = openai_api.OpenAI_API("")
+fc = FactChecker("Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4")
 
 
 def eval_metric(example, pred, trace=None):
@@ -31,6 +36,9 @@ def eval_metric(example, pred, trace=None):
 
     # If we're just doing inference, just measure the recall.
     return recall if EVAL_METRIC == "recall" else precision
+
+def eval_end2end(example, pred, trace=None)
+
 
 
 def load_segments(dataset: Session) -> list[dict]:

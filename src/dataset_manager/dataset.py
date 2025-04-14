@@ -1,3 +1,4 @@
+from collections import defaultdict
 import datetime
 import os
 from .orm import *
@@ -5,11 +6,11 @@ from sqlalchemy import func
 from sqlalchemy.exc import NoResultFound
 
 class Dataset:
-    def __init__(self, path: str, create_if_not_exists: bool = False):
+    def __init__(self, path: str, create_if_not_exists: bool = False, read_only: bool = False):
         if not create_if_not_exists and not os.path.exists(path):
             raise FileNotFoundError(f"Database file not found: {path}")
 
-        self.session = init_db(path)
+        self.session = init_db(path, read_only)
 
     def _filter_column_keys(self, data, model) -> dict:
         """
@@ -52,7 +53,33 @@ class Dataset:
 
         return segments.all()
 
+    def get_segments_by_statements(self, statement_ids: list[int]) -> dict[int, list[Segment]]:
+        """
+        Get all segments belonging to articles that are relevant to a statement.
+        """
+        # Query to fetch all segments linked to statements through articles
+        print("executing query")
+        segments = (
+            self.session.query(Statement.id, Segment)
+            .join(Statement.articles)  # Join to Article through the relationship
+            .join(Article.segments)   # Join to Segment through the relationship
+            .filter(Statement.id.in_(statement_ids))  # Filter by a list of statement_ids
+        ).all()
+        print("query done")
+
+        # Process the results into a dictionary
+        statement_segments = defaultdict(list)
+
+        for statement_id, segment in segments:
+            statement_segments[statement_id].append(segment)
+
+        statement_segments = dict(statement_segments)
+
+        print("Returning segments")
+        return statement_segments
+
     def get_segment(self, segment_id) -> Segment|None:
+
         return (self.session.query(Segment).filter(Segment.id == segment_id).first())
 
     def get_segment_relevances(self, statement_id=None, segment_id=None):

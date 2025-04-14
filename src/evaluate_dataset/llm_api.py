@@ -58,6 +58,6 @@ class LanguageModelAPI:
     async def _infer(self, conversations, batch_size=8, max_new_tokens=1000):
         raise NotImplementedError
 
-    async def __call__(self, prompts, batch_size=8, max_new_tokens=1000)->list:
+    async def __call__(self, prompts, batch_size=8, max_new_tokens=1000) -> list:
         conversations = self.prepare_input(prompts)
         return await self._infer(conversations, batch_size, max_new_tokens)

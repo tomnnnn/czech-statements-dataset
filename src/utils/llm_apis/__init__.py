@@ -1,5 +1,5 @@
 import importlib
-from ..llm_api import LanguageModelAPI
+from .base import LanguageModelAPI
 
 llm_api_dict = {
     "openai": "openai_api.OpenAI_API",

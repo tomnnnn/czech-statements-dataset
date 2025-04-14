@@ -28,14 +28,12 @@ async def main():
     lm = dspy.LM("hosted_vllm/" + config.model_name, api_base=config.api_base_url, max_tokens=3000)
     dspy.configure(lm=lm)
 
-    dataset = Dataset(config.dataset_path)
-    corpus = dataset.get_segments()
+    dataset = Dataset(config.dataset_path, read_only=True)
     
-    search_function = search_function_factory(config.search_algorithm, corpus, **asdict(config))
-    retriever = retriever_dict[config.retriever](search_function, num_docs=config.num_docs)
+    retriever = retriever_dict[config.retriever](num_docs=config.num_docs)
 
-    llm = llm_api_factory(config.model_api, config.model_name, **asdict(config))
-    fc = FactChecker(llm, retriever,config)
+    llm = llm_api_factory(config.model_api, config.model_name, **asdict(config), show_progress=False)
+    fc = FactChecker(llm,retriever,config, show_progress=False)
 
     evaluator = FactCheckingEvaluator(dataset, fc, config)
 

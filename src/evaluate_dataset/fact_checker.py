@@ -7,12 +7,12 @@ import yaml
 from dataset_manager.models import Statement
 from dataset_manager.orm import rows2dict
 from evidence_retriever import Retriever, SimpleRetriever
+from src.evidence_retriever.retrievers.hop_retriever import HopRetriever
 from .config import Config
 from .llm_api import LanguageModelAPI
+import dspy
 from tqdm.asyncio import tqdm_asyncio
-
-from threading import Lock
-
+from evidence_retriever.search_functions import SearchFunction
 logger = logging.getLogger(__name__)
 
 
@@ -20,13 +20,15 @@ class FactChecker:
     def __init__(
         self,
         model: LanguageModelAPI,
-        evidence_retriever: Retriever|SimpleRetriever,
+        evidence_retriever: Retriever,
         cfg: Config,
+        **kwargs
     ):
         self.model = model
         self.cfg = cfg
-        self.retriever = evidence_retriever
-        self.lock = Lock()
+        self.show_progress= kwargs.get("show_progress", True)
+
+        self.retriever = dspy.asyncify(evidence_retriever)
 
         # model instructions (system prompt)
         # load prompt config
@@ -43,7 +45,7 @@ class FactChecker:
         self.prompt_template = prompt_template
 
 
-    async def _retrieve_segments(self, statement: Statement) -> tuple[int, list[dict]]:
+    async def _retrieve_segments(self, statement: Statement, search_function: SearchFunction) -> tuple[int, list[dict], dict]:
         """
         Retrieve segments for a given statement using the retriever.
 
@@ -58,11 +60,14 @@ class FactChecker:
 
         statement_str = f"{statement.statement} - {statement.author}, {statement.date}"
 
-        if isinstance(self.retriever, SimpleRetriever):
-            segments = (await self.retriever(statement=statement_str)).segments
-        else:
-            segments = self.retriever(statement=statement_str).segments
+        # if isinstance(self.retriever, SimpleRetriever):
+        #     retrieved_evidence = (await self.retriever(statement=statement_str, search_func=search_function))
+        # else:
+        #     retrieved_evidence = self.retriever(statement=statement_str, search_func=search_function)
 
+        retrieved_evidence = await self.retriever(statement=statement_str, search_func=search_function)
+
+        segments = retrieved_evidence.segments
         enriched_segments = [
             {
                 "title": segment.article.title[:3000],
@@ -72,10 +77,10 @@ class FactChecker:
             for segment in segments
         ]
 
-        return statement.id, enriched_segments
+        return statement.id, enriched_segments, retrieved_evidence.used_queries
 
 
-    async def _gather_evidence(self, statements: list[Statement]) -> dict[int, list[dict]]:
+    async def _gather_evidence(self, statements: list[Statement], search_function: SearchFunction) -> tuple[dict[int, list[dict]], dict]:
         """
         Gather evidence for a given statement using the retriever.
 
@@ -88,26 +93,26 @@ class FactChecker:
 
         logger.info("Gathering evidence")
 
-        evidence = defaultdict(list)
+        evidence = {}
+        used_queries = {}
 
-        for statement in statements:
-            id, segments = await self._retrieve_segments(statement)
-            evidence[id] = segments
+        # for statement in statements:
+        #     id, segments, queries = await self._retrieve_segments(statement, search_function)
+        #     evidence[id] = segments
+        #     used_queries[id] = queries
 
-        # coroutines = [
-        #     self._retrieve_segments(statement)
-        #     for statement in statements
-        # ]
-        #
-        # results = await tqdm_asyncio.gather(*coroutines, desc="Gathering evidence", unit="statement")
-        #
-        # for statement_id, segments in results:
-        #     evidence[statement_id] = [
-        #         f"{segment['title']}: {segment['text']} ({segment['url']})"
-        #         for segment in segments
-        #     ]
+        coroutines = [
+            self._retrieve_segments(statement, search_function)
+            for statement in statements
+        ]
 
-        return evidence
+        results = await tqdm_asyncio.gather(*coroutines, desc="Gathering evidence", unit="statement", disable=not self.show_progress)
+
+        for statement_id, segments, queries in results:
+            evidence[statement_id] = segments
+            used_queries[statement_id] = queries
+
+        return evidence, used_queries
 
     def _build_prompts(
         self, statements: list[Statement], evidence: dict[int, list[dict]]
@@ -155,7 +160,38 @@ class FactChecker:
 
         return "nolabel"
 
-    async def run(self, statements: list[Statement]):
+    async def fact_check(self, statement: Statement, evidence: list[dict]):
+        """
+        Fact-check a single statement using the model.
+
+        Args:
+        statement (Statement): The statement to evaluate.
+        evidence (List): List of segments related to the statement.
+
+        Returns:
+        Dict: The result of the evaluation.
+        """
+
+        prompt = self.prompt_template.format(
+            statement=statement.statement,
+            author=statement.author,
+            date=statement.date,
+            evidence=json.dumps(evidence, ensure_ascii=False),
+        )
+
+        response = await self.model(prompt)
+        label = self._extract_label(response[0])
+
+        return {
+            "id": statement.id,
+            "statement": statement.statement,
+            "evidence": evidence,
+            "prompt": prompt,
+            "response": response,
+            "label": label,
+         }
+
+    async def run(self, statements: list[Statement], search_function: SearchFunction, show_progress=False):
         """
         Run the fact-checking process on a list of statements.
 
@@ -166,20 +202,26 @@ class FactChecker:
         List: Results of the evaluation.
         """
 
-        evidence = await self._gather_evidence(statements)
-        prompts = self._build_prompts(statements, evidence)
+        try:
+            evidence, used_queries = await self._gather_evidence(statements, search_function)
+            prompts = self._build_prompts(statements, evidence)
 
-        logger.info("Running model inference")
-        responses = await self.model(prompts)
-        predicted_labels = [self._extract_label(prediction) for prediction in responses]
+            logger.info("Running model inference")
+            responses = await self.model(prompts)
+            predicted_labels = [self._extract_label(prediction) for prediction in responses]
 
-        return [
-            {
-                "statement": statement.statement,
-                "evidence": evidence[statement.id],
-                "prompt": prompt,
-                "response": response,
-                "label": label,
-             }
-            for statement, label, response, prompt in zip(statements, predicted_labels, responses, prompts)
-        ]
+            return [
+                {
+                    "id": statement.id,
+                    "statement": statement.statement,
+                    "queries": used_queries[statement.id],
+                    "evidence": evidence[statement.id],
+                    "prompt": prompt,
+                    "response": response,
+                    "label": label,
+                 }
+                for statement, label, response, prompt in zip(statements, predicted_labels, responses, prompts)
+            ]
+        except Exception as e:
+            logger.error(f"Error during fact-checking: {e}\nStatement: {statements}")
+            return None

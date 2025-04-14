@@ -14,6 +14,6 @@ def setup_logging(log_dir="logs"):
 
     logging.basicConfig(
         filename=log_filename,
-        level=logging.DEBUG,
+        level=logging.WARNING,
         format="%(asctime)s - %(levelname)s - %(message)s",
     )

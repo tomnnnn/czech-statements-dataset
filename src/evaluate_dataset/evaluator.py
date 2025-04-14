@@ -1,12 +1,23 @@
+from collections import defaultdict
 import logging
+import subprocess
+import requests
+import time
+from sentence_transformers import SentenceTransformer
+import tqdm
 from sklearn.model_selection import train_test_split
 from dataset_manager import Dataset
+from src.evidence_retriever.search_functions import search_function_factory
+from src.evidence_retriever.search_functions.bge_m3 import BGE_M3
 from .config import Config
-from dataset_manager.models import Statement
+import asyncio
+from dataset_manager.models import Article, Statement
 from .fact_checker import FactChecker
 import sklearn
 import numpy as np
 import random
+from tqdm.asyncio import tqdm_asyncio
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -59,13 +70,77 @@ class FactCheckingEvaluator:
         return parallelized_sample
 
 
+    async def _create_search_functions(self, statements: list[Statement]):
+        print("loading segments...")
+        segments = self.dataset.get_segments_by_statements([s.id for s in statements])
+        print(f"Loaded segments for {len(segments.keys())} statements")
+
+        # Filter statements with segments
+        statements = [s for s in statements if s.id in segments]
+
+        print(f"Indexing {len(statements)} statements asynchronously (throttled)...")
+
+        search_functions = {}
+
+        # Limit concurrency to prevent CUDA OOM (tune based on GPU capacity)
+        semaphore = asyncio.Semaphore(20)  # You can try 1, 2, or more depending on your GPU
+
+        # Load model
+        model = SentenceTransformer("BAAI/BGE-M3")
+
+        async def build_search_fn(statement: Statement):
+            async with semaphore:
+                segment_list = segments[statement.id]
+                index_path = f"indexes/{statement.id}.faiss"
+                load_index = os.path.exists(index_path)
+
+                search_fn = BGE_M3(
+                    segment_list,
+                    save_index=not load_index,
+                    load_index=load_index,
+                    index_path=index_path,
+                    model=model,
+                )
+                await search_fn.index_async()
+                return statement.id, search_fn
+
+        # Run throttled async tasks
+        results = await tqdm_asyncio.gather(*(build_search_fn(s) for s in statements), desc="Building statement indices", unit="indices")
+
+        for statement_id, search_fn in results:
+            search_functions[statement_id] = search_fn
+
+        print("Finished indexing.")
+        return search_functions
+
+
     def _evaluate(self, predicted, reference):
         # NOTE: currently, the labels are ordinary strings. Using enums to unify labels is a good idea.
         predicted_labels = [statement['label'].lower() for statement in predicted]
-        reference_labels = [statement.label.lower() for statement in reference]
+        reference_labels = [statement.label.lower() for statement in reference if statement.id in [p['id'] for p in predicted]]
 
         # calculate metrics
         return sklearn.metrics.classification_report(reference_labels, predicted_labels, output_dict=True, labels=self.cfg.allowed_labels, zero_division=np.nan)
+
+
+    def _wait_for_server(self):
+        # wait for server to be up by checking api_base_url/health
+        # TODO: move to seperate class
+        subprocess.Popen(["vllm", "serve", "--enable-chunked-prefill","true","--gpu-memory-utilization", "0.85", "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"])
+
+        print(f"Waiting for LLM server to be up...")
+        while True:
+            try:
+                response = requests.get("http://0.0.0.0:8000/health")
+
+                if response.status_code == 200:
+                    print("Server is up and running.")
+                    break
+                else:
+                    print(f"Server is not ready yet, status code: {response.status_code}")
+                    time.sleep(10)
+            except Exception:
+                time.sleep(10)
 
     async def run(self) -> tuple:
         """
@@ -75,7 +150,20 @@ class FactCheckingEvaluator:
         Tuple: Predictions and evaluation metrics.
         """
         statements = self._sample_dataset()
-        predictions = await self.fact_checker.run(statements)
+        search_functions = await self._create_search_functions(statements)
+
+        self._wait_for_server()
+
+        statements = [s for s in statements if s.id in search_functions.keys()]
+
+        coroutines = [self.fact_checker.run([statement], search_functions[statement.id]) for statement in statements]
+
+        predictions = await asyncio.gather(*coroutines)
+        predictions = [p for p in predictions if p]
+
+        # flatten the predictions
+        predictions = [prediction for sublist in predictions for prediction in sublist]
+        
         metrics = self._evaluate(predictions, statements)
 
         return predictions, metrics

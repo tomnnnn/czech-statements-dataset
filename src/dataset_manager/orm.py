@@ -1,11 +1,22 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
+import time
 from .models import *
 
-def init_db(path="datasets/curated.sqlite") -> Session:
-    db_url = "sqlite:///" + path
-    engine = create_engine(db_url)
+def init_db(path="datasets/curated.sqlite", read_only=False) -> Session:
+    if read_only:
+        engine = create_engine("sqlite:///")
+        import sqlite3
+        filedb = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+
+        start = time.time()
+        print("Loading database to memory...")
+        filedb.backup(engine.raw_connection().connection)
+        print("Database loaded to memory in", time.time() - start, "seconds")
+    else:
+        engine = create_engine(f"sqlite:///{path}")
+
     SessionLocal = sessionmaker(bind=engine)
     session = SessionLocal()
     Base.metadata.create_all(engine)
