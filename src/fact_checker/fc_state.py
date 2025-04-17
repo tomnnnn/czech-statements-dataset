@@ -1,8 +1,10 @@
 from typing import TypedDict
-from dataset_manager.models import Statement
 
-class FactCheckingState(TypedDict):
-    statement: Statement
+class FactCheckingResult(TypedDict):
+    statement_id: int
+    statement: str
+    author: str
+    date: str
     evidence: list[dict]
     label: str
     metadata: dict

@@ -1,8 +1,12 @@
-import logging
-import dspy
-from src.dataset_manager.models import Segment, Statement
-from ..search_functions import SearchFunction
 
+import logging
+import os
+import dspy
+from sentence_transformers import SentenceTransformer
+from src.dataset_manager.models import Segment, Statement
+from src.fact_checker.evidence_retriever.search_functions.bge_m3 import BGE_M3
+from ..search_functions import SearchFunction
+from concurrent.futures import ThreadPoolExecutor
 logger = logging.getLogger(__name__)
 
 
@@ -25,11 +29,16 @@ class AppendNotes(dspy.Signature):
     co_dalšího_zjistit: list[str] = dspy.OutputField()
 
 
-class HopRetriever(dspy.Module):
-    def __init__(self, num_docs=4, num_hops=4, **kwargs):
+class HopRetrieverAlt(dspy.Module):
+    """
+    Alternative HopRetriever that creates the search index before searching.
+    """
+    def __init__(self, dataset, num_docs=4, num_hops=4, **kwargs):
         self.num_docs, self.num_hops = num_docs, num_hops
         self.generate_query = dspy.ChainOfThought(GenerateQuery)
         self.append_notes = dspy.ChainOfThought(AppendNotes)
+        self.dataset = dataset
+        self.encoder = SentenceTransformer("BAAI/BGE-M3")
 
     def _format_segments(self, segments: list[Segment]) -> list[dict]:
         return [
@@ -44,16 +53,39 @@ class HopRetriever(dspy.Module):
     def _extract_text(self, segments: list[Segment]) -> list[str]:
         return [segment.text for segment in segments]
 
-    def forward(
-        self, statement: Statement, search_func: SearchFunction
-    ) -> dspy.Prediction:
+    def create_search_function(self, statement: Statement) -> SearchFunction:
+        # TODO: decouple from BGE_M3
+        segments = self.dataset.get_segments_by_statements([statement.id])[statement.id]
+        index_path = os.path.join("indexes", f"{statement.id}.faiss")
+        load_index = os.path.exists(index_path)
+
+        print("Loading index:", load_index)
+        print("Creating index:", index_path)
+        search_func = BGE_M3(
+            segments,
+            save_index=not load_index,
+            load_index=load_index,
+            index_path=index_path,
+            model=self.encoder,
+        )
+
+        search_func.create_index()
+
+        print("Index created:", index_path)
+        return search_func
+
+
+    def forward(self, statement: Statement) -> dspy.Prediction:
         notes = [statement]
         retrieved_segments = []
         queries = []
 
+        print("Fetching segments for statement:", statement.id)
+        search_func = self.create_search_function(statement)
+
         for i in range(self.num_hops):
             # Generate query and search for new segments
-            print(f"Hop {i + 1} of {self.num_hops}")
+            print("Hop number:", i)
             query = self.generate_query(
                 výrok=statement.statement,
                 autor=statement.author,

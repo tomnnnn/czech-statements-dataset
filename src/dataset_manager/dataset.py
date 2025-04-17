@@ -3,6 +3,7 @@ import datetime
 import os
 from .orm import *
 from sqlalchemy import func
+from sqlalchemy.orm import joinedload
 from sqlalchemy.exc import NoResultFound
 
 class Dataset:
@@ -58,14 +59,13 @@ class Dataset:
         Get all segments belonging to articles that are relevant to a statement.
         """
         # Query to fetch all segments linked to statements through articles
-        print("executing query")
         segments = (
             self.session.query(Statement.id, Segment)
             .join(Statement.articles)  # Join to Article through the relationship
             .join(Article.segments)   # Join to Segment through the relationship
+            .options(joinedload(Segment.article))
             .filter(Statement.id.in_(statement_ids))  # Filter by a list of statement_ids
         ).all()
-        print("query done")
 
         # Process the results into a dictionary
         statement_segments = defaultdict(list)
@@ -75,7 +75,6 @@ class Dataset:
 
         statement_segments = dict(statement_segments)
 
-        print("Returning segments")
         return statement_segments
 
     def get_segment(self, segment_id) -> Segment|None:

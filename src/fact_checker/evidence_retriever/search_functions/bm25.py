@@ -23,22 +23,16 @@ class BM25(SearchFunction):
         self.retriever = retriever
 
 
-    def search(self, query: str|list, k: int = 10) -> list[Segment]|list[list[Segment]]:
-        single = isinstance(query, str)
-        query = [query] if not single else query
+    def search(self, query: str, k: int = 10) -> list[Segment]:
+        tokens = bm25s.tokenize(query, stemmer=self._stemmer, show_progress=False)
+        indices, scores = self.retriever.retrieve(tokens, k=k, n_threads=10, show_progress=False)
 
-        results = []
+        result = [
+            self.corpus[idx]
+            for idx,_ in zip(indices[0], scores[0])
+        ]
 
-        for q in query:
-            tokens = bm25s.tokenize(q, stemmer=self._stemmer, show_progress=False)
-            indices, scores = self.retriever.retrieve(tokens, k=k, n_threads=10, show_progress=False)
-            run = [
-                self.corpus[idx]
-                for idx,_ in zip(indices[0], scores[0])
-            ]
-            results.append(run)
+        return result
 
-        return results if not single else results[0]
-
-    async def search_async(self, query: str|list, k: int = 10) -> list[Segment]|list[list[Segment]]:
+    async def search_async(self, query: str, k: int = 10) -> list[Segment]:
         return self.search(query, k)

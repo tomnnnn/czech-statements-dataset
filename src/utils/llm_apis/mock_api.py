@@ -1,13 +1,10 @@
-from ..llm_api import LanguageModelAPI
-import transformers
-import random
+from .base import LanguageModelAPI
+import asyncio
 
 class MockLanguageModelAPI(LanguageModelAPI):
     def __init__(
         self,
         model_path: str,
-        distribute_load: bool = False,
-        gpu_memory_utilization: float = 0.85,
         **kwargs,
     ):
         super().__init__(model_path, **kwargs)
@@ -16,6 +13,7 @@ class MockLanguageModelAPI(LanguageModelAPI):
     def prepare_input(self, prompts):
         return prompts
 
-    def _infer(self, conversations, batch_size=8, max_new_tokens=1000, **kwargs):
+    async def _infer(self, conversations, batch_size=8, max_new_tokens=1000, **kwargs):
+        await asyncio.sleep(0.1)
         responses = ["Pravda" for _ in range(len(conversations))]
         return responses

@@ -3,6 +3,9 @@ from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
 import time
 from .models import *
+import logging
+
+logger = logging.getLogger(__name__)
 
 def init_db(path="datasets/curated.sqlite", read_only=False) -> Session:
     if read_only:
@@ -11,9 +14,9 @@ def init_db(path="datasets/curated.sqlite", read_only=False) -> Session:
         filedb = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
 
         start = time.time()
-        print("Loading database to memory...")
+        print("Loading database into memory...")
         filedb.backup(engine.raw_connection().connection)
-        print("Database loaded to memory in", time.time() - start, "seconds")
+        print(f"Database loaded to memory in {time.time() - start} seconds")
     else:
         engine = create_engine(f"sqlite:///{path}")
 

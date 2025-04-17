@@ -3,13 +3,11 @@ import logging
 import dspy
 from dataset_manager.models import Statement
 from tqdm.asyncio import tqdm_asyncio
-from .evidence_retriever import HopRetriever
-from utils.llm_apis import LanguageModelAPI
 
 from .evidence_retriever import Retriever
 
 from .evidence_retriever.search_functions import SearchFunction
-from .fc_state import FactCheckingState
+from .fc_state import FactCheckingResult
 from .veracity_predictor import Predictor
 
 logger = logging.getLogger(__name__)
@@ -104,7 +102,7 @@ class FactChecker:
         statements: list[Statement],
         search_function: SearchFunction,
         show_progress=False,
-    ):
+    ) -> list[FactCheckingResult]:
         """
         Run the fact-checking process on a list of statements.
 
@@ -115,30 +113,28 @@ class FactChecker:
         List: Results of the evaluation.
         """
 
-        try:
-            evidence, used_queries = await self._gather_evidence(statements, search_function)
+        evidence, used_queries = await self._gather_evidence(statements, search_function)
 
-            predictions_coroutines = [
-                self.predictor.predict(statement, evidence[statement.id])
-                for statement in statements
-            ]
+        predictions_coroutines = [
+            self.predictor.predict(statement, evidence[statement.id])
+            for statement in statements
+        ]
 
-            labels, responses = await tqdm_asyncio.gather(*predictions_coroutines, disable=not show_progress)
+        predictions = await tqdm_asyncio.gather(*predictions_coroutines, disable=not show_progress)
 
-            states = []
-            for statement,label,response in zip(statements, labels, responses):
-                states.append(FactCheckingState(
-                    statement=statement,
-                    evidence=evidence[statement.id],
-                    label=label,
-                    metadata={
-                        "used_queries": used_queries[statement.id],
-                        "response": response
-                    }
-                ))
+        results = []
+        for statement,(label,response) in zip(statements, predictions):
+            results.append(FactCheckingResult(
+                statement_id=statement.id,
+                statement=statement.statement,
+                author=statement.author,
+                date=statement.date,
+                evidence=evidence[statement.id],
+                label=label,
+                metadata={
+                    "used_queries": used_queries[statement.id],
+                    "response": response
+                }
+            ))
 
-            return states
-
-        except Exception as e:
-            logger.error(f"Error during fact-checking: {e}\nStatement: {statements}")
-            return None
+        return results

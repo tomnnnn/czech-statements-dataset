@@ -1,11 +1,11 @@
 from .base import LanguageModelAPI
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI, OpenAI
 from tqdm.asyncio import tqdm_asyncio
 import logging
 import pprint
+import asyncio
 
 logger = logging.getLogger(__name__)
-
 
 class OpenAI_API(LanguageModelAPI):
     """
@@ -20,6 +20,7 @@ class OpenAI_API(LanguageModelAPI):
 
         self.show_progress = kwargs.get("show_progress", True)
         self.client = AsyncOpenAI(base_url=kwargs.get("api_base_url", None))
+        self.sync_client = OpenAI(base_url=kwargs.get("api_base_url", None))
 
     async def _completion(self, chat, max_new_tokens):
         response = await self.client.chat.completions.create(
@@ -32,7 +33,6 @@ class OpenAI_API(LanguageModelAPI):
         return response.choices[0].message.content
 
     async def _infer(self, conversations, batch_size=8, max_new_tokens=1000):
-        logger.info("Running inference")
         coroutines = [
             self._completion(chat, max_new_tokens)
             for chat in conversations
@@ -40,7 +40,18 @@ class OpenAI_API(LanguageModelAPI):
 
         results = await tqdm_asyncio.gather(*coroutines, desc="Collecting model responses", unit="response", disable=not self.show_progress)
 
-        pprint.pp(results)
-        logger.info("Returning results")
+        return results
+    
+    def _infer_sync(self, conversations, batch_size=8, max_new_tokens=1000):
+        results = []
+        for chat in conversations:
+            response = self.sync_client.chat.completions.create(
+                model=self.model_path,
+                messages=chat,
+                max_tokens=max_new_tokens,
+                temperature=0.0,
+            )
+
+            results.append(response.choices[0].message.content)
 
         return results

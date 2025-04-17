@@ -32,7 +32,6 @@ class LanguageModelAPI:
         Puts prompts and examples into list of chat format dictionaries
         """
         prompts = prompts if isinstance(prompts, list) else [prompts]
-        print("self.chat_format:", self.chat_format)
 
         if self.chat_format:
             conversations = [
@@ -57,6 +56,16 @@ class LanguageModelAPI:
     async def _infer(self, conversations, batch_size=8, max_new_tokens=1000):
         raise NotImplementedError
 
+    def _infer_sync(self, conversations, batch_size=8, max_new_tokens=1000):
+        raise NotImplementedError
+
     async def __call__(self, prompts, batch_size=8, max_new_tokens=1000) -> list:
         conversations = self.prepare_input(prompts)
         return await self._infer(conversations, batch_size, max_new_tokens)
+
+    def generate_sync(self, prompts, batch_size=8, max_new_tokens=1000) -> list:
+        """
+        Generate predictions synchronously.
+        """
+        conversations = self.prepare_input(prompts)
+        return self._infer_sync(conversations, batch_size, max_new_tokens)

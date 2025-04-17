@@ -1,6 +1,6 @@
 from dataset_manager.models import Statement
 from utils.llm_apis import LanguageModelAPI
-from ..fc_state import FactCheckingState
+from ..fc_state import FactCheckingResult
 
 class Predictor():
     """

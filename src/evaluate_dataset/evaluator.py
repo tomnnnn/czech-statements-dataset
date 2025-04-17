@@ -5,10 +5,12 @@ import time
 from sentence_transformers import SentenceTransformer
 from sklearn.model_selection import train_test_split
 from dataset_manager import Dataset
-from fact_checker.evidence_retriever.search_functions import BGE_M3
+from fact_checker.evidence_retriever.search_functions import BGE_M3, BM25
+from src.fact_checker.evidence_retriever.search_functions.mock import MockSearchFunction
+from src.fact_checker.fc_state import FactCheckingResult
 from .config import Config
 import asyncio
-from dataset_manager.models import Article, Statement
+from dataset_manager.models import Statement
 from fact_checker import FactChecker
 import sklearn
 import numpy as np
@@ -68,19 +70,14 @@ class FactCheckingEvaluator:
 
 
     async def _create_search_functions(self, statements: list[Statement]):
-        print("loading segments...")
         segments = self.dataset.get_segments_by_statements([s.id for s in statements])
-        print(f"Loaded segments for {len(segments.keys())} statements")
 
         # Filter statements with segments
         statements = [s for s in statements if s.id in segments]
 
-        print(f"Indexing {len(statements)} statements asynchronously (throttled)...")
-
         search_functions = {}
 
-        # Limit concurrency to prevent CUDA OOM (tune based on GPU capacity)
-        semaphore = asyncio.Semaphore(20)  # You can try 1, 2, or more depending on your GPU
+        semaphore = asyncio.Semaphore(20)
 
         # Load model
         model = SentenceTransformer("BAAI/BGE-M3")
@@ -96,24 +93,26 @@ class FactCheckingEvaluator:
                     save_index=not load_index,
                     load_index=load_index,
                     index_path=index_path,
+                    model=model
                 )
                 await search_fn.index_async()
                 return statement.id, search_fn
 
-        # Run throttled async tasks
-        results = await tqdm_asyncio.gather(*(build_search_fn(s) for s in statements), desc="Building statement indices", unit="indices")
+                # search_fn = BM25(segment_list)
+                # return statement.id, search_fn
+
+        results = await tqdm_asyncio.gather(*(build_search_fn(s) for s in statements), desc="Building evidence document indices", unit="indices")
 
         for statement_id, search_fn in results:
             search_functions[statement_id] = search_fn
 
-        print("Finished indexing.")
         return search_functions
 
 
-    def _evaluate(self, predicted, reference):
+    def _evaluate(self, predicted: list[FactCheckingResult], reference):
         # NOTE: currently, the labels are ordinary strings. Using enums to unify labels is a good idea.
         predicted_labels = [statement['label'].lower() for statement in predicted]
-        reference_labels = [statement.label.lower() for statement in reference if statement.id in [p['id'] for p in predicted]]
+        reference_labels = [statement.label.lower() for statement in reference if statement.id in [p['statement_id'] for p in predicted]]
 
         # calculate metrics
         return sklearn.metrics.classification_report(reference_labels, predicted_labels, output_dict=True, labels=self.cfg.allowed_labels, zero_division=np.nan)
@@ -154,12 +153,11 @@ class FactCheckingEvaluator:
 
         coroutines = [self.fact_checker.run([statement], search_functions[statement.id]) for statement in statements]
 
-        predictions = await asyncio.gather(*coroutines)
+        predictions = await tqdm_asyncio.gather(*coroutines, desc="Evaluating statements", unit="statement")
         predictions = [p for p in predictions if p]
 
         # flatten the predictions
         predictions = [prediction for sublist in predictions for prediction in sublist]
-        
         metrics = self._evaluate(predictions, statements)
 
         return predictions, metrics
