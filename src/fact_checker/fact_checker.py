@@ -1,9 +1,7 @@
-from typing import Literal
-
 import dspy
 import json
 import logging
-from src.dataset_manager.dataset import Dataset
+from typing import Literal
 from src.dataset_manager.models import Statement
 from .retrievers import HopRetriever
 from .search_functions.base import SearchFunction
@@ -47,20 +45,19 @@ class FactChecker(dspy.Module):
         self.classify = dspy.ChainOfThought(veracity)
 
 
-    async def forward(self, settings, statement: Statement, search_func: SearchFunction) -> dspy.Prediction:
+    def forward(self, statement: Statement, search_func: SearchFunction) -> dspy.Prediction:
         # get evidence
         logger.info("Retrieving evidence...")
-        evidence = (await self.retriever(settings, statement, search_func)).evidence
+        evidence = self.retriever(statement, search_func).evidence
 
         # classify
         logger.info("Classifying statement...")
-        label = (await self.classify(
-            settings=settings,
+        label = self.classify(
             statement=statement.statement,
             author=statement.author,
             date=statement.date,
             evidence=json.dumps(evidence, ensure_ascii=False),
-        )).label
+        ).label
 
         # create and return the prediction
         return dspy.Prediction(
