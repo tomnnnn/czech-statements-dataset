@@ -1,34 +1,43 @@
 import argparse
-from typing import Callable
-import requests
-import time
-import subprocess
 import asyncio
 import json
 import os
-import numpy as np
-
+import subprocess
+import time
 import dspy
 import mlflow
+import numpy as np
+import requests
+
+from typing import Literal
 from dataset_manager import Dataset
 from dspy.teleprompt import MIPROv2
 from fact_checker.dspy_fact_checker import FactChecker
 from sentence_transformers import SentenceTransformer
-from sklearn.utils import shuffle
 from sklearn.metrics import classification_report
-from src.dataset_manager.models import Statement
-from src.fact_checker.evidence_retriever.search_functions import BGE_M3
+from sklearn.utils import shuffle
 from tqdm.asyncio import tqdm_asyncio
 
-from src.fact_checker.veracity_predictor.base import Predictor
-from src.fact_checker.veracity_predictor.predictors.basic_predictor import BasicPredictor
+from src.dataset_manager.models import Statement
+from src.fact_checker.evidence_retriever.search_functions import BGE_M3
+
+def get_allowed_labels(mode: str) -> list[str]:
+    """
+    Get the allowed labels based on the classification mode.
+    """
+    if mode == "binary":
+        return ["pravda", "nepravda"]
+    elif mode == "ternary":
+        return ["pravda", "nepravda", "neověřitelné"]
+    else:
+        raise ValueError(f"Unknown mode: {mode}. Use 'binary' or 'ternary'.")
 
 
 def evaluate(
-    retriever: dspy.Module,
+    fact_checker: dspy.Module,
     examples: list[dspy.Example],
     output_folder: str,
-    metric: Callable,
+    allowed_labels: list[str],
     result_filename: str = "evaluation_results.json",
 ):
     """
@@ -38,14 +47,19 @@ def evaluate(
     pred_labels = []
     ref_labels = []
 
+    def metric(example, pred, trace=None):
+        pred_labels.append(pred.label.lower())
+        ref_labels.append(example.label.lower())
+
+        return pred.label.lower() == example.label.lower()
+
     # Create the evaluator
     evaluate = dspy.Evaluate(
         devset=examples,
         metric=metric,
-        num_threads=24,
+        num_threads=200,
         display_progress=True,
         display_table=True,
-        return_outputs=True,
         return_all_scores=True,
         provide_traceback=True,
     )
@@ -54,14 +68,17 @@ def evaluate(
     eval_results = evaluate(fact_checker)
 
     # Calculate metrics
-    metrics = classification_report(ref_labels, pred_labels, labels=['pravda', 'nepravda', 'neověřitelné'], output_dict=True, zero_division=np.nan)
+    metrics = classification_report(
+        ref_labels,
+        pred_labels,
+        labels=allowed_labels,
+        output_dict=True,
+        zero_division=np.nan,
+    )
 
     output_path = os.path.join(output_folder, result_filename)
     with open(output_path, "w") as f:
-        json.dump({
-            "evaluation_results": eval_results,
-            "classification_report": metrics,
-        }, f, indent=4, ensure_ascii=False)
+        json.dump(metrics, f, indent=4, ensure_ascii=False)
 
 
 def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str):
@@ -145,39 +162,48 @@ def parse_args():
         default=4,
         help="Number of documents to retrieve per hop.",
     )
+    parser.add_argument(
+        "--mode",
+        type=str,
+        default="binary",
+        help="Classification mode for the fact checker.",
+    )
     return parser.parse_args()
 
 
 async def create_search_functions(dataset: Dataset, statements: list[Statement]):
-    # Get segments for the statements
-    segments = dataset.get_segments_by_statements([s.id for s in statements])
-
-    # Filter statements with segments
-    statements = [s for s in statements if s.id in segments]
-
     search_functions = {}
 
     # Load model for encoding the segments
+    print("Loading model for encoding the segments...")
     model = SentenceTransformer("BAAI/BGE-M3")
 
-    semaphore = asyncio.Semaphore(20)
+    semaphore_segments = asyncio.Semaphore(50)
+    semaphore_index = asyncio.Semaphore(50)
 
     async def build_search_fn(statement: Statement):
-        async with semaphore:
-            segment_list = segments[statement.id]
+        async with semaphore_segments:
+            print("Getting segments for statement:", statement.id)
+            segments = dataset.get_segments_by_statements([statement.id])[statement.id]
             index_path = f"indexes/{statement.id}.faiss"
             load_index = os.path.exists(index_path)
 
             search_fn = BGE_M3(
-                segment_list,
+                segments,
                 save_index=not load_index,
                 load_index=load_index,
                 index_path=index_path,
                 model=model,
             )
-            await search_fn.index_async()
-            return statement.id, search_fn
 
+        async with semaphore_index:
+            print("Building index for statement:", statement.id)
+            await search_fn.index_async()
+            print("Index built for statement:", statement.id)
+
+        return statement.id, search_fn
+
+    print("Building search functions for the statements...")
     results = await tqdm_asyncio.gather(
         *(build_search_fn(s) for s in statements),
         desc="Building evidence document indices",
@@ -189,12 +215,50 @@ async def create_search_functions(dataset: Dataset, statements: list[Statement])
 
     return search_functions
 
-def launch_vllm_server():
-    log = open('vllm.log', 'a')
+
+def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_size=50) -> tuple[list, list]:
+    """
+    Split the sample into train and dev sets.
+    """
+    label_map = {
+        label: [s for s in sample if s.label.lower() == label]
+        for label in allowed_labels
+    }
+
+    count_per_label_train = train_size // len(allowed_labels)
+    count_per_label_dev = dev_size // len(allowed_labels)
+
+    train_set = []
+    dev_set = []
+
+    for label, statements in label_map.items():
+        # Shuffle the statements
+        statements = shuffle(statements, random_state=42)
+
+        # Split the statements into train and dev sets
+        train_set.extend(statements[:count_per_label_train])
+        dev_set.extend(statements[count_per_label_train:count_per_label_train + count_per_label_dev])
+
+    return train_set, dev_set
+
+
+def launch_vllm(name):
+    """
+    Launch the VLLM server with the specified model and wait for it to be ready.
+    """
+    log = open(f"vllm_{name}.log", "a")
     subprocess.Popen(
-        ["vllm", "serve", "--enable-chunked-prefill","true","--gpu-memory-utilization", "0.85", "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"], 
+        [
+            "vllm",
+            "serve",
+            "--enable-chunked-prefill",
+            "true",
+            "--gpu-memory-utilization",
+            "0.85",
+            "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",
+        ],
         stdout=log,
-        stderr=log
+        stderr=log,
     )
 
     print(f"Waiting for LLM server to be up...")
@@ -206,38 +270,10 @@ def launch_vllm_server():
                 print("Server is up and running.")
                 break
             else:
+                print(f"Server is not ready yet, status code: {response.status_code}")
                 time.sleep(10)
         except Exception:
             time.sleep(10)
-
-
-def split_sample(sample: list, train_size=50, dev_size=50) -> tuple[list, list]:
-    """
-    Split the sample into train and dev sets. Spreads the labels evenly.
-    """
-
-    allowed_labels = ["pravda", "nepravda", "neověřitelné"]
-
-    label_map = {label: [s for s in sample if s.label == label] for label in allowed_labels}
-
-    train_set = []
-    dev_set = []
-
-    per_label_count_train = train_size // len(allowed_labels)
-    per_label_count_dev = dev_size // len(allowed_labels)
-
-    for label, statements in label_map.items():
-        # Shuffle the statements
-        statements = shuffle(statements)
-
-        # Split the statements into train and dev sets
-        train_statements = statements[:per_label_count_train]
-        dev_statements = statements[per_label_count_train:per_label_count_train + per_label_count_dev]
-
-        train_set.extend(train_statements)
-        dev_set.extend(dev_statements)
-
-    return train_set, dev_set
 
 
 def main():
@@ -246,38 +282,23 @@ def main():
     lm = dspy.LM(
         args.model,
         api_base=args.api_base,
-        api_key="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",
+        api_key="EMPTY",
         temperature=0.0,
-        max_tokens=3000
+        max_tokens=3000,
     )
-
-    def metric(example, pred, trace=None):
-        segments = pred.segments
-
-        evidence = [
-            {
-                "text": segment.text[:3000],
-            }
-            for segment in segments
-        ]
-
-        # Run the async function synchronously using asyncio.run()
-        label, _ = predictor.predict_sync(example.statement, evidence)
-
-        if label.lower() != example.label.lower():
-            return 0
-        else:
-            return 1
     dspy.configure(lm=lm)
 
-    mlflow.dspy.autolog()
+    mlflow.dspy.autolog(log_compiles=True, log_evals=True, log_traces_from_compile=True)
     mlflow.set_experiment(args.name)
+
+    # Get allowed labels based on the mode
+    allowed_labels = get_allowed_labels(args.mode)
 
     # Load the dataset
     dataset = Dataset(args.dataset)
 
     # Initialize the FactChecker
-    fact_checker = FactChecker(dataset, args.num_hops, args.num_docs)
+    fact_checker = FactChecker(args.num_hops, args.num_docs, mode=args.mode)
 
     # Sample a subset of the dataset for evaluation
     print("Gettig statements from the dataset...")
@@ -286,12 +307,14 @@ def main():
     # Create examples for evaluation
     print(f"Sampling {args.num_train + args.num_dev} statements from the dataset...")
     train_statements, dev_statements = split_sample(
-        statements, args.num_train, args.num_dev
+        statements, allowed_labels, args.num_train, args.num_dev
     )
 
     # Create the search functions for the dataset
     print("Creating search functions for the dataset...")
-    search_functions = asyncio.run(create_search_functions(dataset, statements))
+    search_functions = asyncio.run(
+        create_search_functions(dataset, dev_statements + train_statements)
+    )
 
     # Create the train and dev sets
     trainset = [
@@ -312,23 +335,29 @@ def main():
         for statement in dev_statements
     ]
 
-    # Run the LM server
-    launch_vllm_server()
+    # Launch the VLLM server and wait for it to be ready
+    launch_vllm(args.name)
 
     # Prepare output folder
     output_folder = os.path.join(args.output_folder, args.name)
     os.makedirs(output_folder, exist_ok=True)
 
-    # Evaluate the fact checker
-    evaluate(fact_checker, devset, output_folder, "pre_optimize_evaluation.json")
+    run_name = "Optimization Run" if args.num_train > 0 else "Evaluation Run"
+    with mlflow.start_run(run_name=run_name) as run:
+        optimize = args.num_train > 0
+        print("Optimizing the fact checker..." if optimize else "Evaluating the fact checker...")
 
-    # Optimize the fact checker
-    optimized = optimize(fact_checker, trainset, args.output_folder)
+        evaluation_name = "evaluation_results.json" if not optimize else "optimized_evaluation_results.json"
+        # Evaluate the fact checker
+        evaluate(fact_checker, devset, output_folder, allowed_labels, evaluation_name)
 
-    # Evaluate the optimized fact checker
-    evaluate(optimized, devset, output_folder, "post_optimize_evaluation.json")
+        if optimize:
+            # Optimize the fact checker
+            optimized = optimize(fact_checker, trainset, output_folder)
+
+            # Evaluate the optimized fact checker
+            evaluate(optimized, devset, output_folder, allowed_labels, "post_optimize_evaluation.json")
 
 
 if __name__ == "__main__":
     main()
-

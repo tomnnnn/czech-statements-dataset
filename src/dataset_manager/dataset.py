@@ -60,11 +60,11 @@ class Dataset:
         """
         # Query to fetch all segments linked to statements through articles
         segments = (
-            self.session.query(Statement.id, Segment)
-            .join(Statement.articles)  # Join to Article through the relationship
-            .join(Article.segments)   # Join to Segment through the relationship
-            .options(joinedload(Segment.article))
-            .filter(Statement.id.in_(statement_ids))  # Filter by a list of statement_ids
+            self.session.query(ArticleRelevance.statement_id, Segment)
+            .select_from(ArticleRelevance)
+            .join(Article, ArticleRelevance.article_id == Article.id)
+            .join(Segment, Segment.article_id == Article.id)
+            .filter(ArticleRelevance.statement_id.in_(statement_ids))
         ).all()
 
         # Process the results into a dictionary
@@ -76,6 +76,20 @@ class Dataset:
         statement_segments = dict(statement_segments)
 
         return statement_segments
+
+    def get_segments_by_statement(self, statement_id: int) -> list[Segment]:
+        """
+        Get all segments belonging to articles that are relevant to a statement.
+        """
+        # Query to fetch all segments linked to statements through articles
+        segments = (
+            self.session.query(Segment)
+            .join(ArticleRelevance)
+            .join(Article)
+            .filter(ArticleRelevance.statement_id == statement_id)  # Filter by a list of statement_ids
+        ).all()
+
+        return segments
 
     def get_segment(self, segment_id) -> Segment|None:
 

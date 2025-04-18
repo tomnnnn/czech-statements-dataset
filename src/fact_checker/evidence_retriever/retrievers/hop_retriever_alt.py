@@ -1,44 +1,44 @@
-
 import logging
-import os
 import dspy
-from sentence_transformers import SentenceTransformer
 from src.dataset_manager.models import Segment, Statement
-from src.fact_checker.evidence_retriever.search_functions.bge_m3 import BGE_M3
 from ..search_functions import SearchFunction
-from concurrent.futures import ThreadPoolExecutor
+
 logger = logging.getLogger(__name__)
 
+class EstablishGoals(dspy.Signature):
+    statement: str = dspy.InputField()
+    author: str = dspy.InputField()
+    date: str = dspy.InputField()
+
+    what_to_find: list[str] = dspy.OutputField()
+    search_language: str = dspy.OutputField()
 
 class GenerateQuery(dspy.Signature):
-    výrok: str = dspy.InputField()
-    autor: str = dspy.InputField()
-    datum: str = dspy.InputField()
-    co_zjistit: list[str] = dspy.InputField()
+    statement: str = dspy.InputField()
+    author: str = dspy.InputField()
+    date: str = dspy.InputField()
+    what_to_find: list[str] = dspy.InputField()
+    search_language: str = dspy.InputField()
 
-    query: str = dspy.OutputField()
+    search_query: str = dspy.OutputField()
 
 
 class AppendNotes(dspy.Signature):
-    výrok: str = dspy.InputField()
-    autor: str = dspy.InputField()
-    datum: str = dspy.InputField()
-    co_zjistit: list[str] = dspy.InputField()
-    nasbírané_texty: list[str] = dspy.InputField()
+    statement: str = dspy.InputField()
+    author: str = dspy.InputField()
+    date: str = dspy.InputField()
+    what_to_find: list[str] = dspy.InputField()
+    collected_documents: list[str] = dspy.InputField()
 
-    co_dalšího_zjistit: list[str] = dspy.OutputField()
+    what_to_find: list[str] = dspy.OutputField()
 
 
-class HopRetrieverAlt(dspy.Module):
-    """
-    Alternative HopRetriever that creates the search index before searching.
-    """
-    def __init__(self, dataset, num_docs=4, num_hops=4, **kwargs):
+class HopRetriever(dspy.Module):
+    def __init__(self, num_docs=4, num_hops=4, **kwargs):
         self.num_docs, self.num_hops = num_docs, num_hops
+        self.establish_goals = dspy.ChainOfThought(EstablishGoals)
         self.generate_query = dspy.ChainOfThought(GenerateQuery)
         self.append_notes = dspy.ChainOfThought(AppendNotes)
-        self.dataset = dataset
-        self.encoder = SentenceTransformer("BAAI/BGE-M3")
 
     def _format_segments(self, segments: list[Segment]) -> list[dict]:
         return [
@@ -53,47 +53,34 @@ class HopRetrieverAlt(dspy.Module):
     def _extract_text(self, segments: list[Segment]) -> list[str]:
         return [segment.text for segment in segments]
 
-    def create_search_function(self, statement: Statement) -> SearchFunction:
-        # TODO: decouple from BGE_M3
-        segments = self.dataset.get_segments_by_statements([statement.id])[statement.id]
-        index_path = os.path.join("indexes", f"{statement.id}.faiss")
-        load_index = os.path.exists(index_path)
-
-        print("Loading index:", load_index)
-        print("Creating index:", index_path)
-        search_func = BGE_M3(
-            segments,
-            save_index=not load_index,
-            load_index=load_index,
-            index_path=index_path,
-            model=self.encoder,
+    def forward(
+        self, statement: Statement, search_func: SearchFunction
+    ) -> dspy.Prediction:
+        print("Establishing goals...")
+        initial_thought = self.establish_goals(
+            statement=statement.statement,
+            author=statement.author,
+            date=statement.date,
         )
 
-        search_func.create_index()
-
-        print("Index created:", index_path)
-        return search_func
-
-
-    def forward(self, statement: Statement) -> dspy.Prediction:
-        notes = [statement]
+        what_to_find = initial_thought.what_to_find
+        search_language = initial_thought.search_language
         retrieved_segments = []
         queries = []
 
-        print("Fetching segments for statement:", statement.id)
-        search_func = self.create_search_function(statement)
-
+        print("Retrieving documents...")
         for i in range(self.num_hops):
             # Generate query and search for new segments
-            print("Hop number:", i)
+            print(f"Hop {i + 1} of {self.num_hops}")
             query = self.generate_query(
-                výrok=statement.statement,
-                autor=statement.author,
-                datum=statement.date,
-                co_zjistit=notes,
-            ).query
-            queries.append(query)
+                statement=statement.statement,
+                author=statement.author,
+                date=statement.date,
+                what_to_find=what_to_find,
+                search_language=search_language,
+            ).search_query
 
+            queries.append(query)
             new_segments = search_func.search(str(query), self.num_docs)
 
             # Update retrieved segments and texts
@@ -101,14 +88,14 @@ class HopRetrieverAlt(dspy.Module):
 
             # Update notes for the next iteration
             prediction = self.append_notes(
-                výrok=statement.statement,
-                autor=statement.author,
-                datum=statement.date,
-                co_zjistit=notes,
-                nasbírané_texty=self._extract_text(retrieved_segments),
+                statement=statement.statement,
+                author=statement.author,
+                date=statement.date,
+                what_to_find=what_to_find,
+                collected_documents=self._extract_text(retrieved_segments),
             )
 
-            notes.extend(prediction.co_dalšího_zjistit)
+            what_to_find = prediction.what_to_find
 
         evidence = self._format_segments(retrieved_segments)
 
@@ -116,5 +103,6 @@ class HopRetrieverAlt(dspy.Module):
             segments=retrieved_segments,
             evidence=evidence,
             used_queries=queries,
-            notes=notes,
+            what_to_find=what_to_find,
         )
+

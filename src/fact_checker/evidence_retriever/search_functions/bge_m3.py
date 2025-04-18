@@ -76,6 +76,7 @@ class BGE_M3(SearchFunction):
         if self.load_index and self.index_path:
             self.index = await asyncio.to_thread(faiss.read_index, self.index_path)
         else:
+            print("Creating index...")
             texts = [i.text for i in self.corpus]
             embeddings = np.array(await self._encode_documents_async(texts), dtype=np.float32)
             dim = embeddings.shape[1]
@@ -84,5 +85,4 @@ class BGE_M3(SearchFunction):
             if self.save_index and self.index_path:
                 await asyncio.to_thread(faiss.write_index, self.index, self.index_path)
 
-            del embeddings
             torch.cuda.empty_cache()
