@@ -4,8 +4,7 @@ import json
 import os
 import subprocess
 import time
-from typing import Literal
-
+import logging
 import dspy
 import numpy as np
 import requests
@@ -13,14 +12,19 @@ import mlflow
 
 from dataset_manager import Dataset
 from dspy.teleprompt import MIPROv2
-from fact_checker.dspy_fact_checker import FactChecker
+from fact_checker import FactChecker
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics import classification_report
 from sklearn.utils import shuffle
 from tqdm.asyncio import tqdm_asyncio
 
 from src.dataset_manager.models import Statement
-from src.fact_checker.evidence_retriever.search_functions import BGE_M3
+from src.fact_checker.search_functions import BGE_M3, BM25
+
+# mute warnings from mlflow
+logging.getLogger("mlflow").setLevel(logging.ERROR)
+logging.getLogger("dspy").setLevel(logging.ERROR)
+
 
 def get_allowed_labels(mode: str) -> list[str]:
     """
@@ -34,7 +38,7 @@ def get_allowed_labels(mode: str) -> list[str]:
         raise ValueError(f"Unknown mode: {mode}. Use 'binary' or 'ternary'.")
 
 
-def evaluate(
+async def evaluate(
     fact_checker: dspy.Module,
     examples: list[dspy.Example],
     output_folder: str,
@@ -48,7 +52,7 @@ def evaluate(
     pred_labels = []
     ref_labels = []
 
-    def metric(example, pred, trace=None):
+    async def metric(settings, example, pred, trace=None):
         pred_labels.append(pred.label.lower())
         ref_labels.append(example.label.lower())
 
@@ -66,7 +70,7 @@ def evaluate(
     )
 
     # Evaluate the model
-    eval_results = evaluate(fact_checker)
+    eval_results = await evaluate(settings=dspy.settings, program=fact_checker)
 
     # Calculate metrics
     metrics = classification_report(
@@ -74,25 +78,27 @@ def evaluate(
         pred_labels,
         labels=allowed_labels,
         output_dict=True,
-        zero_division=np.nan,
+        zero_division=np.nan, # type: ignore
     )
 
     output_path = os.path.join(output_folder, result_filename)
     with open(output_path, "w") as f:
         json.dump(metrics, f, indent=4, ensure_ascii=False)
 
+    return eval_results, metrics
 
-def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str):
+
+async def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str):
     """
     Optimize the fact checker in zeroshot settings using MIPROv2.
     """
 
-    def metric(example, pred, trace=None):
+    async def metric(settings, example, pred, trace=None):
         return pred.label.lower() == example.label.lower()
 
     teleprompter = MIPROv2(metric=metric, auto="light")
 
-    zeroshot_optimized = teleprompter.compile(
+    zeroshot_optimized = await teleprompter.compile(
         fact_checker.deepcopy(),
         trainset=train,
         max_bootstrapped_demos=1,
@@ -124,7 +130,7 @@ def parse_args():
     parser.add_argument(
         "--api-base",
         type=str,
-        default="http://0.0.0.0:8000/v1",
+        default=None,
         help="API base URL.",
     )
     parser.add_argument(
@@ -184,25 +190,28 @@ async def create_search_functions(dataset: Dataset, statements: list[Statement])
 
     # Load model for encoding the segments
     print("Loading model for encoding the segments...")
-    model = SentenceTransformer("BAAI/BGE-M3")
+    # model = SentenceTransformer("BAAI/BGE-M3")
 
     semaphore = asyncio.Semaphore(100)
 
     async def build_search_fn(statement: Statement):
-        async with semaphore:
-            segment_list = segments[statement.id]
-            index_path = f"indexes/{statement.id}.faiss"
-            load_index = os.path.exists(index_path)
+        # async with semaphore:
+        #     segment_list = segments[statement.id]
+        #     index_path = f"indexes/{statement.id}.faiss"
+        #     load_index = os.path.exists(index_path)
+        #
+        #     search_fn = BGE_M3(
+        #         segment_list,
+        #         save_index=not load_index,
+        #         load_index=load_index,
+        #         index_path=index_path,
+        #         model=model,
+        #     )
+        #     await search_fn.index_async()
+        #     return statement.id, search_fn
 
-            search_fn = BGE_M3(
-                segment_list,
-                save_index=not load_index,
-                load_index=load_index,
-                index_path=index_path,
-                model=model,
-            )
-            await search_fn.index_async()
-            return statement.id, search_fn
+        search_fn = BM25(segments[statement.id])
+        return statement.id, search_fn
 
     print("Building search functions for the statements...")
     results = await tqdm_asyncio.gather(
@@ -277,20 +286,21 @@ def launch_vllm(name):
             time.sleep(10)
 
 
-def main():
+async def main():
     args = parse_args()
 
     lm = dspy.LM(
         args.model,
         api_base=args.api_base,
-        api_key="EMPTY",
+        api_key=os.environ.get("API_KEY"),
         temperature=0.0,
         max_tokens=3000,
+        rpm=60
     )
-    dspy.configure(lm=lm)
+    dspy.settings.configure(lm=lm)
 
     mlflow.dspy.autolog(log_compiles=True, log_evals=True, log_traces_from_compile=True)
-    mlflow.set_experiment(args.name + "_new")
+    mlflow.set_experiment(args.name)
 
     # Get allowed labels based on the mode
     allowed_labels = get_allowed_labels(args.mode)
@@ -313,9 +323,7 @@ def main():
 
     # Create the search functions for the dataset
     print("Creating search functions for the dataset...")
-    search_functions = asyncio.run(
-        create_search_functions(dataset, dev_statements + train_statements)
-    )
+    search_functions = await create_search_functions(dataset, dev_statements + train_statements)
 
     # Create the train and dev sets
     trainset = [
@@ -336,8 +344,8 @@ def main():
         for statement in dev_statements
     ]
 
-    # Launch the VLLM server and wait for it to be ready
-    launch_vllm(args.name)
+    # # Launch the VLLM server and wait for it to be ready
+    # launch_vllm(args.name)
 
     # Prepare output folder
     output_folder = os.path.join(args.output_folder, args.name)
@@ -345,9 +353,9 @@ def main():
 
     do_optimize = args.num_train > 0
 
-    # TODO: seperate optimization and evaluation into seperate functions
     run_name = "Optimization Run" if do_optimize else "Evaluation Run"
-    with mlflow.start_run(run_name=run_name) as run:
+
+    with mlflow.start_run(run_name=run_name):
         print("Optimizing the fact checker..." if do_optimize else "Evaluating the fact checker...")
 
         evaluation_name = "evaluation_results.json" if not do_optimize else "optimized_evaluation_results.json"
@@ -356,17 +364,17 @@ def main():
         if do_optimize:
             print("Pre-optimization evaluation...")
 
-        evaluate(fact_checker, devset, output_folder, allowed_labels, evaluation_name)
+        await evaluate(fact_checker, devset, output_folder, allowed_labels, evaluation_name)
 
         if do_optimize:
             # Optimize the fact checker
             print("Optimizing the fact checker...")
-            optimized = optimize(fact_checker, trainset, output_folder)
+            optimized = await optimize(fact_checker, trainset, output_folder)
 
             # Evaluate the optimized fact checker
             print("Post-optimization evaluation...")
-            evaluate(optimized, devset, output_folder, allowed_labels, "post_optimize_evaluation.json")
+            await evaluate(optimized, devset, output_folder, allowed_labels, "post_optimize_evaluation.json")
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
