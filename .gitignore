@@ -1,18 +1,8 @@
-__pycache__
-dataset.json
-pyrightconfig.json
-dataset
-.DS_Store
-datasets/
-.venv
-.env
-.mamba
-logs/baseline
-baseline/results
-stats
-logs
-.hf/
-jobs
-models
+*
+
+!src/
 node_modules/
+
+prompts/
+
 
