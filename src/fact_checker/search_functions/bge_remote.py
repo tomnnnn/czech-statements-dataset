@@ -56,6 +56,6 @@ class Remote(SearchFunction):
                 return []
 
             json_resp = await response.json()
-            segments = [Segment(**item["data"]) for item in json_resp["results"]]
+            segments = [Segment(**item) for item in json_resp["results"]]
 
             return segments

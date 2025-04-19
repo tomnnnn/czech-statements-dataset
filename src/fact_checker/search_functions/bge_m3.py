@@ -25,6 +25,18 @@ class BGE_M3(SearchFunction):
     async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
         return await asyncio.to_thread(self.model.encode, documents, convert_to_numpy=True)
 
+    def key_exists(self, key: str|int = "_default") -> bool:
+        """
+        Check if the key exists in the indices dictionary.
+
+        Args:
+            key (str): Key for the index.
+
+        Returns:
+            bool: True if the key exists, False otherwise.
+        """
+        return key in self.indices
+
     async def add_index(self, segments: list[Segment], save_path: Optional[str], load_if_exists: bool, save: bool, key: str|int = "_default"):
         """
         Creates or loads an index and adds it to internal indices dictionary.
