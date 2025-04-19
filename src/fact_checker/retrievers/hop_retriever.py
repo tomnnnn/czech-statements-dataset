@@ -1,10 +1,9 @@
 import logging
-
+from typing import Literal
 import dspy
-
 from src.dataset_manager.models import Segment, Statement
+from ..search_functions.bge_remote import RemoteSearchFunction
 
-from ..search_functions import SearchFunction
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +14,7 @@ class EstablishGoals(dspy.Signature):
     date: str = dspy.InputField()
 
     what_to_find: list[str] = dspy.OutputField()
-    search_language: str = dspy.OutputField()
+    search_language: Literal['en', 'cs', 'sk'] = dspy.OutputField()
 
 
 class GenerateQuery(dspy.Signature):
@@ -36,6 +35,7 @@ class AppendNotes(dspy.Signature):
     collected_documents: list[str] = dspy.InputField()
 
     what_to_find: list[str] = dspy.OutputField()
+    preffered_language: Literal['en', 'cs', 'sk'] = dspy.OutputField()
 
 
 class HopRetriever(dspy.Module):
@@ -44,6 +44,7 @@ class HopRetriever(dspy.Module):
         self.establish_goals = dspy.ChainOfThought(EstablishGoals)
         self.generate_query = dspy.ChainOfThought(GenerateQuery)
         self.append_notes = dspy.ChainOfThought(AppendNotes)
+        self.doc_retriever = RemoteSearchFunction()
 
 
     def _format_segments(self, segments: list[Segment]) -> list[dict]:
@@ -62,7 +63,7 @@ class HopRetriever(dspy.Module):
 
 
     def forward(
-        self, statement: Statement, search_func: SearchFunction
+        self, statement: Statement
     ) -> dspy.Prediction:
         logger.info("Establishing goals...")
         initial_thought = self.establish_goals(
@@ -91,7 +92,7 @@ class HopRetriever(dspy.Module):
             ).search_query
 
             queries.append(query)
-            new_segments = search_func.search(str(query), self.num_docs)
+            new_segments = self.doc_retriever.search(query=str(query), k=self.num_docs, key=statement.id)
 
             # Update retrieved segments and texts
             retrieved_segments.extend(new_segments)
@@ -106,9 +107,11 @@ class HopRetriever(dspy.Module):
             )
 
             what_to_find = prediction.what_to_find
+            search_language = prediction.preffered_language
 
         evidence = self._format_segments(retrieved_segments)
 
+        # self.doc_retriever.unload_index(key=statement.id)
         return dspy.Prediction(
             segments=retrieved_segments,
             evidence=evidence,

@@ -37,3 +37,11 @@ async def search(req: SearchRequest):
 
     return {"results": results}
 
+
+@app.post("/unload")
+async def unload_index(statement_id: int):
+    if index_manager.key_exists(statement_id):
+        index_manager.unload_index(statement_id)
+        return {"message": f"Index for statement {statement_id} unloaded."}
+    else:
+        return {"message": f"No index found for statement {statement_id}."}

@@ -9,6 +9,36 @@ import os
 import faiss
 from fact_checker.search_functions.base import SearchFunction
 
+class MultiSemaphore:
+    def __init__(self, value: int):
+        self._sem = asyncio.Semaphore(value)
+
+    async def acquire(self, n: int = 1):
+        for _ in range(n):
+            await self._sem.acquire()
+
+    def release(self, n: int = 1):
+        for _ in range(n):
+            self._sem.release()
+
+    def get_context(self, n: int = 1):
+        return _MultiSemaphoreContext(self, n)
+
+    def num_acquired(self):
+        return self._sem._value
+
+class _MultiSemaphoreContext:
+    def __init__(self, sem: MultiSemaphore, n: int):
+        self._sem = sem
+        self._n = n
+
+    async def __aenter__(self):
+        await self._sem.acquire(self._n)
+
+    async def __aexit__(self, exc_type, exc, tb):
+        self._sem.release(self._n)
+
+
 class IndexEntry(TypedDict):
     index: faiss.Index
     corpus: list[Segment]
@@ -18,36 +48,28 @@ class BGE_M3(SearchFunction):
     indices: dict[str|int, IndexEntry]
     model: SentenceTransformer
 
-    def __init__(self, model: SentenceTransformer, batch_size = 32, **kwargs):
+    def __init__(self, model: SentenceTransformer, concurrency = 400, **kwargs):
         self.model = model
         self.indices = {}
-        self.batch_size = batch_size
-        self.sem = asyncio.Semaphore(50)
+        self.sem = MultiSemaphore(concurrency)
 
     def _encode_documents(self, documents: list[str]) -> np.ndarray:
-        return self.model.encode(documents, convert_to_numpy=True)
+        result = self.model.encode(documents, convert_to_numpy=True)
+        torch.cuda.empty_cache()
 
-    async def _safe_encode_batch(self, batch: list[str]) -> np.ndarray:
-        size = len(batch)
-        while size > 0:
-            try:
-                async with self.sem:
-                    return await asyncio.to_thread(self._encode_documents, batch[:size])
-            except RuntimeError as e:
-                if "out of memory" in str(e).lower():
-                    print(f"OOM on batch of size {size}. Reducing...")
-                    await asyncio.sleep(1)  # give memory time to clear
-                    size = size // 2
-                else:
-                    raise e
-
-        print(f"Could not encode even a single document in batch: {batch}")
-        return np.array([])
+        return result
 
     async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
-        batches = [documents[i:i + self.batch_size] for i in range(0, len(documents), self.batch_size)]
-        results = await asyncio.gather(*(self._safe_encode_batch(batch) for batch in batches))
-        return np.vstack(results)
+        async with self.sem.get_context(len(documents)):
+            try:
+                result = await asyncio.to_thread(self._encode_documents, documents)
+            except Exception as e:
+                result = np.array([])
+                print(f"Error in encoding: {e}")
+                print(f"Number of documents: {len(documents)}")
+                print(f"Num acquired: {self.sem.num_acquired()}")
+
+        return result
 
 
     def key_exists(self, key: str|int = "_default") -> bool:

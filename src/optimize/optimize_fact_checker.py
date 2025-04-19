@@ -145,6 +145,12 @@ def optimize_simba(fact_checker: dspy.Module, train: list[dspy.Example], output_
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate the FactChecker model.")
     parser.add_argument(
+        "--optimizer",
+        type=str,
+        default="mipro",
+        help="Optimizer to use. Options: 'mipro', 'simba'.",
+    )
+    parser.add_argument(
         "--dataset",
         type=str,
         default="datasets/dataset_demagog.sqlite",
@@ -289,14 +295,12 @@ def main():
     ]
 
     do_optimize = args.num_train > 0
-    run_name = "Optimization Run" if do_optimize else "Evaluation Run"
+    run_name = f"Optimization Run {args.optimizer.upper()}" if do_optimize else "Evaluation Run"
     run_name += f" {args.mode.capitalize()}"
 
     # Prepare output folder
     output_folder = os.path.join(args.output_folder, args.name, run_name.replace(" ", "_"))
     os.makedirs(output_folder, exist_ok=True)
-
-
 
     with mlflow.start_run(run_name=run_name):
         print("Optimizing the fact checker..." if do_optimize else "Evaluating the fact checker...")
@@ -321,7 +325,11 @@ def main():
         if do_optimize:
             # Optimize the fact checker
             print("Optimizing the fact checker...")
-            optimized = optimize(fact_checker, trainset, output_folder)
+
+            if args.optimizer == "mipro":
+                optimized = optimize(fact_checker, trainset, output_folder)
+            elif args.optimizer == "simba":
+                optimized = optimize_simba(fact_checker, trainset, output_folder)
 
             # Evaluate the optimized fact checker
             print("Post-optimization evaluation...")

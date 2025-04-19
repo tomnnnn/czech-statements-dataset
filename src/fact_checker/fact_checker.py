@@ -4,7 +4,6 @@ import logging
 from typing import Literal
 from src.dataset_manager.models import Statement
 from .retrievers import HopRetriever
-from .search_functions.base import SearchFunction
 
 logger = logging.getLogger(__name__)
 
@@ -45,10 +44,10 @@ class FactChecker(dspy.Module):
         self.classify = dspy.ChainOfThought(veracity)
 
 
-    def forward(self, statement: Statement, search_func: SearchFunction) -> dspy.Prediction:
+    def forward(self, statement: Statement) -> dspy.Prediction:
         # get evidence
         logger.info("Retrieving evidence...")
-        evidence = self.retriever(statement, search_func).evidence
+        evidence = self.retriever(statement).evidence
 
         # classify
         logger.info("Classifying statement...")
