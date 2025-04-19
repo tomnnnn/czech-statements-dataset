@@ -21,9 +21,14 @@ class BGE_M3(SearchFunction):
     def __init__(self, model: SentenceTransformer, **kwargs):
         self.model = model
         self.indices = {}
+        self.semaphore = asyncio.Semaphore(30)
+
+    def _encode_documents(self, documents: list[str]) -> np.ndarray:
+        return self.model.encode(documents, convert_to_numpy=True)
 
     async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
-        return await asyncio.to_thread(self.model.encode, documents, convert_to_numpy=True)
+        async with self.semaphore:
+            return await asyncio.to_thread(self._encode_documents, documents)
 
     def key_exists(self, key: str|int = "_default") -> bool:
         """
@@ -87,7 +92,7 @@ class BGE_M3(SearchFunction):
 
 
     def search(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
-        query_embeddings = self.model.encode([query], convert_to_numpy=True)
+        query_embeddings = self.model.encode([query], convert_to_numpy=True, batch_size=32)
         results = self._search_index(query_embeddings, k, key)
 
         torch.cuda.empty_cache()
