@@ -18,27 +18,37 @@ class BGE_M3(SearchFunction):
     indices: dict[str|int, IndexEntry]
     model: SentenceTransformer
 
-    def __init__(self, model: SentenceTransformer, **kwargs):
+    def __init__(self, model: SentenceTransformer, batch_size = 32, **kwargs):
         self.model = model
         self.indices = {}
+        self.batch_size = batch_size
+        self.sem = asyncio.Semaphore(50)
 
     def _encode_documents(self, documents: list[str]) -> np.ndarray:
         return self.model.encode(documents, convert_to_numpy=True)
 
-    async def _encode_documents_async(self, documents: list[str], retries=0) -> np.ndarray:
-        try:
-            return await asyncio.to_thread(self._encode_documents, documents)
-        except Exception as e:
-            print(f"Error in encoding documents: {e}")
+    async def _safe_encode_batch(self, batch: list[str]) -> np.ndarray:
+        size = len(batch)
+        while size > 0:
+            try:
+                async with self.sem:
+                    return await asyncio.to_thread(self._encode_documents, batch[:size])
+            except RuntimeError as e:
+                if "out of memory" in str(e).lower():
+                    print(f"OOM on batch of size {size}. Reducing...")
+                    await asyncio.sleep(1)  # give memory time to clear
+                    size = size // 2
+                else:
+                    raise e
 
-            if retries < 4:
-                retry_delay = 2 ** retries
-                print(f"Retrying in: {retry_delay} seconds")
-                await asyncio.sleep(retry_delay)
-                return await self._encode_documents_async(documents, retries + 1)
-            else:
-                print("Max retries reached. Returning empty array.")
-                return np.array([])
+        print(f"Could not encode even a single document in batch: {batch}")
+        return np.array([])
+
+    async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
+        batches = [documents[i:i + self.batch_size] for i in range(0, len(documents), self.batch_size)]
+        results = await asyncio.gather(*(self._safe_encode_batch(batch) for batch in batches))
+        return np.vstack(results)
+
 
     def key_exists(self, key: str|int = "_default") -> bool:
         """
