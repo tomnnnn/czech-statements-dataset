@@ -1,5 +1,5 @@
 from .bge_m3 import BGE_M3
-from src.dataset_manager.models import Segment
+from dataset_manager.models import Segment
 from .bm25 import BM25
 from .base import SearchFunction
 

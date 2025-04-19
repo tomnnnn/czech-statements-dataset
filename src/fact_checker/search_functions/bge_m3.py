@@ -8,6 +8,8 @@ from sentence_transformers import SentenceTransformer
 import os
 import faiss
 from fact_checker.search_functions.base import SearchFunction
+import time
+
 
 class MultiSemaphore:
     def __init__(self, value: int):
@@ -72,6 +74,13 @@ class BGE_M3(SearchFunction):
         return result
 
 
+    def unload_index(self, key: str|int):
+        del self.indices[key]["index"]
+        del self.indices[key]["corpus"]
+        self.indices.pop(key, None)
+        gc.collect()
+        torch.cuda.empty_cache()
+
     def key_exists(self, key: str|int = "_default") -> bool:
         """
         Check if the key exists in the indices dictionary.
@@ -84,7 +93,7 @@ class BGE_M3(SearchFunction):
         """
         return key in self.indices
 
-    async def add_index(self, segments: list[Segment], save_path: Optional[str], load_if_exists: bool, save: bool, key: str|int = "_default"):
+    async def add_index(self, segments: list[Segment], save_path: Optional[str], load_if_exists: bool, save: bool = True, key: str|int = "_default"):
         """
         Creates or loads an index and adds it to internal indices dictionary.
 
@@ -97,6 +106,7 @@ class BGE_M3(SearchFunction):
         if load_if_exists and save_path and os.path.exists(save_path):
             index = faiss.read_index(save_path)
         else:
+            start = time.time()
             texts = [i.text for i in segments]
             embeddings = await self._encode_documents_async(texts)
             dim = embeddings.shape[1]
@@ -107,6 +117,8 @@ class BGE_M3(SearchFunction):
             if save and save_path:
                 os.makedirs(os.path.dirname(save_path), exist_ok=True)
                 faiss.write_index(index, save_path)
+
+            print("Creating index took:", time.time() - start, "seconds")
 
             torch.cuda.empty_cache()
 

@@ -41,7 +41,7 @@ class Article(Base):
             "url": self.url,
             "title": self.title,
             "description": self.description,
-            "content": self.content,
+            "content": "", # dont attach content, temporary
             "type": self.type,
             "author": self.author,
             "source": self.source,

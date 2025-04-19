@@ -2,7 +2,7 @@ import dspy
 import json
 import logging
 from typing import Literal
-from src.dataset_manager.models import Statement
+from dataset_manager.models import Statement
 from .retrievers import HopRetriever
 
 logger = logging.getLogger(__name__)
