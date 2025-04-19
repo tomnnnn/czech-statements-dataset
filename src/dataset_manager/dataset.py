@@ -84,9 +84,10 @@ class Dataset:
         # Query to fetch all segments linked to statements through articles
         segments = (
             self.session.query(Segment)
-            .join(ArticleRelevance)
-            .join(Article)
-            .filter(ArticleRelevance.statement_id == statement_id)  # Filter by a list of statement_ids
+            .select_from(ArticleRelevance)
+            .join(Article, ArticleRelevance.article_id == Article.id)
+            .join(Segment, Segment.article_id == Article.id)
+            .filter(ArticleRelevance.statement_id == statement_id)
         ).all()
 
         return segments
