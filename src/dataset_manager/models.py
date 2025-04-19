@@ -35,6 +35,20 @@ class Article(Base):
         Index("ix_articles_id", "id"),
     )
 
+    def to_dict(self) -> dict:
+        return {
+            "id": self.id,
+            "url": self.url,
+            "title": self.title,
+            "description": self.description,
+            "content": self.content,
+            "type": self.type,
+            "author": self.author,
+            "source": self.source,
+            "published": self.published,
+            "accessed": self.accessed,
+        }
+
 class EvidenceCheat(Base):
     __tablename__ = "evidence_cheat"
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
@@ -73,7 +87,6 @@ class Segment(Base):
 
         if include_relationships:
             data["article"] = self.article.to_dict() if self.article else None
-            data["statements"] = [s.to_dict() for s in self.statements]
 
         return data
 
