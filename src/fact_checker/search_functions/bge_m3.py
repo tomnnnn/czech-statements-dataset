@@ -1,88 +1,90 @@
-from dataset_manager.models import Segment
-from .base import SearchFunction
-import numpy as np
-import faiss
-import torch
-import numpy as np
-import faiss
-import logging
-import numpy as np
-import faiss
+from typing import Optional, TypedDict, Union
 import asyncio
+import numpy as np
+from sqlalchemy import Index
+import torch
+from dataset_manager.models import Segment
+from sentence_transformers import SentenceTransformer
+import os
+import faiss
+from fact_checker.search_functions.base import SearchFunction
 
-logger = logging.getLogger(__name__)
+class IndexEntry(TypedDict):
+    index: faiss.Index
+    corpus: list[Segment]
+
 
 class BGE_M3(SearchFunction):
-    def __init__(self, corpus, model_name="BAAI/bge-m3", **kwargs):
-        super().__init__(corpus, **kwargs)
-        self.corpus = corpus
+    indices: dict[str|int, IndexEntry]
+    model: SentenceTransformer
 
-        self.model=kwargs.get('model', None)
+    def __init__(self, model: SentenceTransformer, **kwargs):
+        self.model = model
+        self.indices = {}
 
-        # Save/load config
-        self.save_index = kwargs.get('save_index', False)
-        self.load_index = kwargs.get('load_index', False)
-        self.index_path = kwargs.get('index_path', "")
-
-        self.index = None
-
-    def _encode_documents(self, documents):
-        return self.model.encode(documents, convert_to_numpy=True)
-
-    async def _encode_documents_async(self, documents):
+    async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
         return await asyncio.to_thread(self.model.encode, documents, convert_to_numpy=True)
 
-    def _search_index(self, query_embeddings: np.ndarray, k: int) -> list[list[Segment]]:
-        # TODO: simplify to single search
-        _, ids = self.index.search(query_embeddings, k)
+    async def add_index(self, segments: list[Segment], save_path: Optional[str], load_if_exists: bool, save: bool, key: str|int = "_default"):
+        """
+        Creates or loads an index and adds it to internal indices dictionary.
+
+        Args:
+            segments (list[Segment]): List of segments to index.
+            key (str): Key for the index.
+            save_path (Optional[str]): Path to save the index.
+            load (Union[Literal["auto"], bool]): Whether to load the index if it exists.
+        """
+        if load_if_exists and save_path and os.path.exists(save_path):
+            index = faiss.read_index(save_path)
+        else:
+            texts = [i.text for i in segments]
+            embeddings = await self._encode_documents_async(texts)
+            dim = embeddings.shape[1]
+
+            index = faiss.index_factory(dim, 'Flat', faiss.METRIC_INNER_PRODUCT)
+            index.add(embeddings)
+
+            if save and save_path:
+                os.makedirs(os.path.dirname(save_path), exist_ok=True)
+                faiss.write_index(index, save_path)
+
+            torch.cuda.empty_cache()
+
+        self.indices[key] = {
+            "index": index,
+            "corpus": segments
+        }
+
+
+    def _search_index(self, query_embeddings: np.ndarray, k: int, key: str|int = "_default") -> list[list[Segment]]:
+        index = self.indices[key]["index"]
+        corpus = self.indices[key]["corpus"]
+
+        _, ids = index.search(query_embeddings, k=k)
         try:
             return [
-                [self.corpus[idx] for idx in id_list if idx != -1]
+                [corpus[idx] for idx in id_list if idx != -1]
                 for id_list in ids
             ]  # type: ignore
         except Exception as e:
             print(f"Error in search: {e}")
-            print(len(self.corpus))
+            print(len(corpus))
             print(ids)
-            return [[self.corpus[0]]]
+            return [[corpus[0]]]
 
-    def search(self, query: str, k: int = 10) -> list[Segment]:
-        query_embeddings = self._encode_documents([query])
-        results = self._search_index(query_embeddings, k)
+
+    def search(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
+        query_embeddings = self.model.encode([query], convert_to_numpy=True)
+        results = self._search_index(query_embeddings, k, key)
 
         torch.cuda.empty_cache()
         return results[0]
 
-    async def search_async(self, query: str | list, k: int = 10) -> list[Segment]:
+    async def search_async(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
         query_embeddings = await self._encode_documents_async([query])
-        results = self._search_index(query_embeddings, k)
+        results = self._search_index(query_embeddings, k, key)
 
         torch.cuda.empty_cache()
         return results[0]
 
-    def create_index(self):
-        if self.load_index and self.index_path:
-            self.index = faiss.read_index(self.index_path)
-        else:
-            embeddings = np.array(self._encode_documents([i.text for i in self.corpus]), dtype=np.float32)
-            dim = embeddings.shape[1]
-            self.index = faiss.index_factory(dim, 'Flat', faiss.METRIC_INNER_PRODUCT)
-            self.index.add(embeddings)
-            if self.save_index and self.index_path:
-                faiss.write_index(self.index, self.index_path)
-
-    async def index_async(self):
-        """Asynchronous version of the index builder."""
-        if self.load_index and self.index_path:
-            self.index = await asyncio.to_thread(faiss.read_index, self.index_path)
-        else:
-            print("Creating index...")
-            texts = [i.text for i in self.corpus]
-            embeddings = np.array(await self._encode_documents_async(texts), dtype=np.float32)
-            dim = embeddings.shape[1]
-            self.index = faiss.index_factory(dim, 'Flat', faiss.METRIC_INNER_PRODUCT)
-            self.index.add(embeddings)
-            if self.save_index and self.index_path:
-                await asyncio.to_thread(faiss.write_index, self.index, self.index_path)
-
-            torch.cuda.empty_cache()

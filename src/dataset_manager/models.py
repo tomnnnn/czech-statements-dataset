@@ -61,8 +61,22 @@ class Segment(Base):
     statements = relationship("Statement", secondary="segment_relevance", back_populates="segments")
 
     __table_args__ = (
-            Index("ix_segments_article_id", "article_id"),
+        Index("ix_segments_article_id", "article_id"),
     )
+
+    def to_dict(self, include_relationships: bool = False) -> dict:
+        data = {
+            "id": self.id,
+            "article_id": self.article_id,
+            "text": self.text,
+        }
+
+        if include_relationships:
+            data["article"] = self.article.to_dict() if self.article else None
+            data["statements"] = [s.to_dict() for s in self.statements]
+
+        return data
+
 
 class Statement(Base):
     __tablename__ = "statements"

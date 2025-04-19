@@ -1,9 +1,26 @@
+from abc import ABC, abstractmethod
+from typing import Optional
 from dataset_manager.models import Segment
+import faiss
 
+class SearchFunction(ABC):
+    @abstractmethod
+    async def add_index(self, segments: list[Segment], save_path: Optional[str], load_if_exists: bool, save: bool, key: str|int = "_default"):
+        """
+        Creates or loads an index and adds it to internal indices dictionary.
 
-class SearchFunction():
-    def __init__(self, corpus: list[Segment], **kwargs):
+        Args:
+            segments (list[Segment]): List of segments to index.
+            key (str): Key for the index.
+            save_path (Optional[str]): Path to save the index.
+            load (Union[Literal["auto"], bool]): Whether to load the index if it exists.
+        """
         pass
 
-    def search(self, query: str, k: int = 10) -> list[Segment]:
-        raise NotImplementedError
+    @abstractmethod
+    def search(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
+        pass
+
+    @abstractmethod
+    async def search_async(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
+        pass
