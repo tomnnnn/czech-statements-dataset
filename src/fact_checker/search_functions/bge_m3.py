@@ -21,14 +21,24 @@ class BGE_M3(SearchFunction):
     def __init__(self, model: SentenceTransformer, **kwargs):
         self.model = model
         self.indices = {}
-        self.semaphore = asyncio.Semaphore(30)
 
     def _encode_documents(self, documents: list[str]) -> np.ndarray:
         return self.model.encode(documents, convert_to_numpy=True)
 
-    async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
-        async with self.semaphore:
+    async def _encode_documents_async(self, documents: list[str], retries=0) -> np.ndarray:
+        try:
             return await asyncio.to_thread(self._encode_documents, documents)
+        except Exception as e:
+            print(f"Error in encoding documents: {e}")
+
+            if retries < 4:
+                retry_delay = 2 ** retries
+                print(f"Retrying in: {retry_delay} seconds")
+                await asyncio.sleep(retry_delay)
+                return await self._encode_documents_async(documents, retries + 1)
+            else:
+                print("Max retries reached. Returning empty array.")
+                return np.array([])
 
     def key_exists(self, key: str|int = "_default") -> bool:
         """
