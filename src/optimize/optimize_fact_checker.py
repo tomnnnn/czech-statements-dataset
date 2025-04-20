@@ -21,6 +21,15 @@ from sklearn.utils import shuffle
 logging.getLogger("mlflow").setLevel(logging.ERROR)
 logging.getLogger("dspy").setLevel(logging.ERROR)
 
+LOG_PATH = os.path.join("logs", f"{time.strftime('%Y-%m-%d_%H-%M-%S')}.log")
+logging.basicConfig(
+    level=logging.WARNING,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler(LOG_PATH),
+    ]
+)
+
 
 def get_allowed_labels(mode: str) -> list[str]:
     """
@@ -95,7 +104,7 @@ def evaluate(
     return eval_results, report
 
 
-def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str):
+def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str, seed: int = 42):
     """
     Optimize the fact checker in zeroshot settings using MIPROv2.
     """
@@ -108,6 +117,7 @@ def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder
     zeroshot_optimized = teleprompter.compile(
         fact_checker.deepcopy(),
         trainset=train,
+        seed=seed,
         max_bootstrapped_demos=1,
         max_labeled_demos=1,
         requires_permission_to_run=False,
@@ -119,7 +129,7 @@ def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder
 
     return zeroshot_optimized
 
-def optimize_simba(fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str):
+def optimize_simba(fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str, seed: int = 42):
     """
     Optimize the fact checker in zeroshot settings using MIPROv2.
     """
@@ -132,7 +142,7 @@ def optimize_simba(fact_checker: dspy.Module, train: list[dspy.Example], output_
     zeroshot_optimized = teleprompter.compile(
         fact_checker.deepcopy(),
         trainset=train,
-        seed=1234,
+        seed=seed,
     )
 
     # Save the optimized model
@@ -144,6 +154,12 @@ def optimize_simba(fact_checker: dspy.Module, train: list[dspy.Example], output_
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate the FactChecker model.")
+    parser.add_argument(
+        "--seed",
+        default=42,
+        type=int,
+        help="Random seed for reproducibility.",
+    )
     parser.add_argument(
         "--optimizer",
         type=str,
@@ -213,7 +229,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_size=50) -> tuple[list, list]:
+def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_size=50, seed=42) -> tuple[list, list]:
     """
     Split the sample into train and dev sets.
     """
@@ -230,7 +246,7 @@ def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_siz
 
     for label, statements in label_map.items():
         # Shuffle the statements
-        statements = shuffle(statements, random_state=42)
+        statements = shuffle(statements, random_state=seed)
 
         # Split the statements into train and dev sets
         train_set.extend(statements[:count_per_label_train])
@@ -274,7 +290,7 @@ def main():
     # Create examples for evaluation
     print(f"Sampling {args.num_train + args.num_dev} statements from the dataset...")
     train_statements, dev_statements = split_sample(
-        statements, allowed_labels, args.num_train, args.num_dev
+        statements, allowed_labels, args.num_train, args.num_dev, seed=args.seed
     )
 
     # Create the train and dev sets
@@ -327,9 +343,11 @@ def main():
             print("Optimizing the fact checker...")
 
             if args.optimizer == "mipro":
-                optimized = optimize(fact_checker, trainset, output_folder)
+                optimized = optimize(fact_checker, trainset, output_folder, seed=args.seed)
             elif args.optimizer == "simba":
-                optimized = optimize_simba(fact_checker, trainset, output_folder)
+                optimized = optimize_simba(fact_checker, trainset, output_folder, seed=args.seed)
+            else:
+                raise ValueError(f"Unknown optimizer: {args.optimizer}. Use 'mipro' or 'simba'.")
 
             # Evaluate the optimized fact checker
             print("Post-optimization evaluation...")
