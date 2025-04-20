@@ -3,6 +3,7 @@ from typing import Literal
 import dspy
 from src.dataset_manager.models import Segment, Statement
 from ..search_functions.bge_remote import RemoteSearchFunction
+import mlflow
 
 
 logger = logging.getLogger(__name__)
@@ -92,7 +93,14 @@ class HopRetriever(dspy.Module):
             ).search_query
 
             queries.append(query)
-            new_segments = self.doc_retriever.search(query=str(query), k=self.num_docs, key=statement.id)
+            with mlflow.start_span(name="search_documents") as span:
+                span.set_inputs({
+                    "query": query,
+                    "k": self.num_docs,
+                    "key": statement.id,
+                })
+                new_segments = self.doc_retriever.search(query=str(query), k=self.num_docs, key=statement.id)
+                span.set_outputs({"segments": [segment.text for segment in new_segments]})
 
             # Update retrieved segments and texts
             retrieved_segments.extend(new_segments)
