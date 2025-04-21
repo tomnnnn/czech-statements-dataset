@@ -5,7 +5,6 @@ from typing import Optional
 import aiohttp
 import requests
 
-
 logger = logging.getLogger(__name__)
 
 class RemoteSearchFunction(SearchFunction):
@@ -69,8 +68,9 @@ class RemoteSearchFunction(SearchFunction):
         return segments
 
     async def search_async(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
-        async with aiohttp.ClientSession() as session:
-            async with self.session.post(f"{self.api_base}/search", json={"query": query, "k": k, "statement_id": key}) as response:
+        timeout = aiohttp.ClientTimeout(total=500)
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with session.post(f"{self.api_base}/search", json={"query": query, "k": k, "statement_id": key}) as response:
                 if response.status != 200:
                     logger.error("Failed to search the index")
                     return []

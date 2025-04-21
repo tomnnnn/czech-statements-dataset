@@ -1,7 +1,7 @@
 import logging
 from typing import Literal
 import dspy
-from src.dataset_manager.models import Segment, Statement
+from dataset_manager.models import Segment, Statement
 from ..search_functions.bge_remote import RemoteSearchFunction
 import mlflow
 

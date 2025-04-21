@@ -1,5 +1,6 @@
 import argparse
 import sqlite3
+from sklearn.model_selection import train_test_split
 import json
 import pandas as pd
 import os
@@ -13,7 +14,8 @@ import mlflow
 
 from dataset_manager import Dataset
 from dspy.teleprompt import MIPROv2, SIMBA
-from fact_checker.fact_checker import FactChecker
+# from fact_checker.fact_checker import FactChecker
+from fact_checker.fact_checker_decompose import FactCheckerDecomposer
 from sklearn.metrics import classification_report
 from sklearn.utils import shuffle
 
@@ -21,15 +23,15 @@ from sklearn.utils import shuffle
 logging.getLogger("mlflow").setLevel(logging.ERROR)
 logging.getLogger("dspy").setLevel(logging.ERROR)
 
-LOG_PATH = os.path.join("logs", f"{time.strftime('%Y-%m-%d_%H-%M-%S')}.log")
-logging.basicConfig(
-    level=logging.WARNING,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler(LOG_PATH),
-    ]
-)
 
+def configure_logging(log_path):
+    logging.basicConfig(
+        level=logging.WARNING,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        handlers=[
+            logging.FileHandler(log_path),
+        ]
+    )
 
 def get_allowed_labels(mode: str) -> list[str]:
     """
@@ -48,7 +50,7 @@ def evaluate(
     examples: list[dspy.Example],
     output_folder: str,
     allowed_labels: list[str],
-    result_filename: str = "evaluation_results.json",
+    name: str = "evaluation",
 ):
     """
     Evaluate the fact checker on the provided examples and saves the results.
@@ -68,10 +70,11 @@ def evaluate(
         devset=examples,
         metric=metric,
         num_threads=50,
+        max_errors=50,
         display_progress=True,
         display_table=True,
         return_all_scores=True,
-        provide_traceback=True,
+        provide_traceback=False,
     )
 
     # Evaluate the model
@@ -89,22 +92,22 @@ def evaluate(
     for label, r in report.items(): # type: ignore
         if isinstance(r, dict):
             for metric_name, value in r.items():
-                mlflow.log_metric(f"{label}_{metric_name}", value)
+                mlflow.log_metric(f"{name}_{label}_{metric_name}", value)
         else:
             # For accuracy
-            mlflow.log_metric(label, r)
+            mlflow.log_metric(f"{name}_{label}", r)
 
     report_pd = pd.DataFrame(report).transpose()
-    mlflow.log_table(report_pd, artifact_file="classification_report.json")
+    mlflow.log_table(report_pd, artifact_file=f"{name}_classification_report.json")
 
-    output_path = os.path.join(output_folder, result_filename)
+    output_path = os.path.join(output_folder, name + ".json")
     with open(output_path, "w") as f:
         json.dump(report, f, indent=4, ensure_ascii=False)
 
     return eval_results, report
 
 
-def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str, seed: int = 42):
+def optimize(lm, fact_checker: dspy.Module, train: list[dspy.Example], output_folder: str, seed: int = 42):
     """
     Optimize the fact checker in zeroshot settings using MIPROv2.
     """
@@ -112,7 +115,7 @@ def optimize(fact_checker: dspy.Module, train: list[dspy.Example], output_folder
     def metric(example, pred, trace=None):
         return pred.label.lower() == example.label.lower()
 
-    teleprompter = MIPROv2(metric=metric, auto="medium")
+    teleprompter = MIPROv2(metric=metric, auto="medium", prompt_model=lm, teacher_settings=dict(lm=lm), max_errors=100)
 
     zeroshot_optimized = teleprompter.compile(
         fact_checker.deepcopy(),
@@ -154,6 +157,10 @@ def optimize_simba(fact_checker: dspy.Module, train: list[dspy.Example], output_
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate the FactChecker model.")
+
+    parser.add_argument("--evaluate", action="store_true", help="Evaluate the model.")
+    parser.add_argument("--train-portion", type=float, default=0.0, help="Portion of the dataset to use for training. Cannot be used with --num-train and --num-dev.")
+    parser.add_argument("--dev-portion", type=float, default=0.0, help="Portion of the dataset to use for development. Cannot be used with --num-train and --num-dev.")
     parser.add_argument(
         "--seed",
         default=42,
@@ -169,7 +176,7 @@ def parse_args():
     parser.add_argument(
         "--dataset",
         type=str,
-        default="datasets/dataset_demagog.sqlite",
+        default="datasets/demagog_deduplicated.sqlite",
         help="Path to the dataset file.",
     )
     parser.add_argument(
@@ -199,13 +206,13 @@ def parse_args():
     parser.add_argument(
         "--num-train",
         type=int,
-        default=50,
+        default=0,
         help="Number of training examples.",
     )
     parser.add_argument(
         "--num-dev",
         type=int,
-        default=50,
+        default=0,
         help="Number of development examples.",
     )
     parser.add_argument(
@@ -226,7 +233,15 @@ def parse_args():
         default="binary",
         help="Classification mode for the fact checker.",
     )
-    return parser.parse_args()
+    parser.add_argument(
+        "--run-name",
+        default=None,
+        help="Name of the run.",
+    )
+
+    args = parser.parse_args()
+    return args
+
 
 
 def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_size=50, seed=42) -> tuple[list, list]:
@@ -238,8 +253,14 @@ def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_siz
         for label in allowed_labels
     }
 
+    print("Lengths of the label map:")
+    for label, statements in label_map.items():
+        print(f"{label}: {len(statements)}")
+
     count_per_label_train = train_size // len(allowed_labels)
     count_per_label_dev = dev_size // len(allowed_labels)
+
+    print(f"Count per label for train: {count_per_label_train}, dev: {count_per_label_dev}")
 
     train_set = []
     dev_set = []
@@ -256,8 +277,41 @@ def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_siz
     return train_set, dev_set
 
 
+def sample_statements(args, statements, allowed_labels):
+    # Create examples for evaluation
+    print(f"Sampling statements from the dataset...")
+
+    if args.evaluate:
+        train_statements = []
+
+        if args.dev_portion < 1:
+            labels = [s.label for s in statements]
+            _, dev_statements = train_test_split(statements, test_size=args.dev_portion, stratify=labels, random_state=args.seed)
+        else:
+            dev_statements = statements
+    else:
+        if args.train_portion == 0:
+            train_statements, dev_statements = split_sample(
+                statements, allowed_labels, args.num_train, args.num_dev, seed=args.seed
+            )
+        else:
+            labels = [s.label for s in statements]
+            train_statements, dev_statements = train_test_split(statements, train_size=args.train_portion, stratify=labels, random_state=args.seed)
+
+    return train_statements, dev_statements
+
+
+
 def main():
     args = parse_args()
+
+    if args.run_name:
+        run_name = args.run_name
+    else:
+        run_name = f"Optimization Run {args.optimizer.upper()}" if not args.evaluate else "Evaluation Run"
+        run_name += f" {args.mode.capitalize()}"
+
+    configure_logging(os.path.join("logs", run_name.replace(" ", "_") + ".log"))
 
     lm = dspy.LM(
         args.model,
@@ -269,6 +323,7 @@ def main():
     )
     dspy.configure(lm=lm)
 
+    mlflow.set_tracking_uri("sqlite:///mlruns.db")
     mlflow.dspy.autolog(log_compiles=True, log_evals=True, log_traces_from_compile=True)
     mlflow.set_experiment(args.name)
 
@@ -280,19 +335,14 @@ def main():
     dataset = Dataset(args.dataset)
 
     # Initialize the FactChecker
-    fact_checker = FactChecker(args.num_hops, args.num_docs, mode=args.mode)
+    fact_checker = FactCheckerDecomposer(num_docs=args.num_docs, mode=args.mode)
+    # fact_checker.load("fact-checker-eval/CuratedDecompose/Optimization_Run_MIPRO_Binary/optimized_model.pkl")
 
     # Sample a subset of the dataset for evaluation
     print("Gettig statements from the dataset...")
     statements = dataset.get_statements(min_evidence_count=5)
 
-
-    # Create examples for evaluation
-    print(f"Sampling {args.num_train + args.num_dev} statements from the dataset...")
-    train_statements, dev_statements = split_sample(
-        statements, allowed_labels, args.num_train, args.num_dev, seed=args.seed
-    )
-
+    train_statements, dev_statements = sample_statements(args, statements, allowed_labels)
     # Create the train and dev sets
     trainset = [
         dspy.Example(
@@ -310,40 +360,33 @@ def main():
         for statement in dev_statements
     ]
 
-    do_optimize = args.num_train > 0
-    run_name = f"Optimization Run {args.optimizer.upper()}" if do_optimize else "Evaluation Run"
-    run_name += f" {args.mode.capitalize()}"
-
     # Prepare output folder
     output_folder = os.path.join(args.output_folder, args.name, run_name.replace(" ", "_"))
     os.makedirs(output_folder, exist_ok=True)
 
     with mlflow.start_run(run_name=run_name):
-        print("Optimizing the fact checker..." if do_optimize else "Evaluating the fact checker...")
+        from mlflow.dspy import log_model
+        print("Optimizing the fact checker..." if not args.evaluate else "Evaluating the fact checker...")
 
         mlflow.log_param("num_train", args.num_train)
         mlflow.log_param("num_dev", args.num_dev)
         mlflow.log_param("num_hops", args.num_hops)
         mlflow.log_param("num_docs", args.num_docs)
         mlflow.log_param("allowed_labels", allowed_labels)
+        mlflow.log_param("model", args.model)
+
         label_distribution = {label: len([s for s in train_statements + dev_statements if s.label.lower() == label]) for label in allowed_labels}
+
         for label, count in label_distribution.items():
             mlflow.log_param(f"label_{label}", count)
 
-        evaluation_name = "evaluation_results.json" if not do_optimize else "pre_optimize_evaluation.json"
-
         # Evaluate the fact checker
-        if do_optimize:
-            print("Pre-optimization evaluation...")
-
-        evaluate(fact_checker, devset, output_folder, allowed_labels, evaluation_name)
-
-        if do_optimize:
+        if not args.evaluate:
             # Optimize the fact checker
             print("Optimizing the fact checker...")
 
             if args.optimizer == "mipro":
-                optimized = optimize(fact_checker, trainset, output_folder, seed=args.seed)
+                optimized = optimize(lm, fact_checker, trainset, output_folder, seed=args.seed)
             elif args.optimizer == "simba":
                 optimized = optimize_simba(fact_checker, trainset, output_folder, seed=args.seed)
             else:
@@ -351,7 +394,10 @@ def main():
 
             # Evaluate the optimized fact checker
             print("Post-optimization evaluation...")
-            evaluate(optimized, devset, output_folder, allowed_labels, "post_optimize_evaluation.json")
+            evaluate(optimized, devset, output_folder, allowed_labels, "post_optimize_evaluation")
+        else:
+            evaluate(fact_checker, devset, output_folder, allowed_labels, "evaluation")
+
 
     print("Evaluation completed.")
     print("Results saved to:", os.path.join(output_folder))

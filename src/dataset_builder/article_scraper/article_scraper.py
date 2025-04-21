@@ -119,6 +119,32 @@ class ArticleScraper:
 
         return result
 
+    @staticmethod
+    async def scrape_extractus_async(links):
+        """
+        Scrapes the articles using nodejs script with article-extractor library (asynchronously)
+        """
+        js_script_path = os.path.join(os.path.dirname(__file__), "extractus/scrape_articles.js")
+        cmd = ["node", js_script_path, json.dumps(links)]
+
+        process = await asyncio.create_subprocess_exec(
+            *cmd,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE
+        )
+
+        stdout, stderr = await process.communicate()
+
+        if process.returncode != 0:
+            raise RuntimeError(f"Node script failed with error: {stderr.decode('utf-8')}")
+
+        result = json.loads(stdout.decode("utf-8"))
+
+        articles = result["articles"]
+        unprocessed = result["unprocessed"]  # Still unused but parsed
+
+        return articles
+
     def scrape_extractus(self, links, id=None, max_num_paragraphs=1000, min_num_words=5, show_progress=True, output_html=True):
         """
         Scrapes the articles using nodejs script with article-extractor library

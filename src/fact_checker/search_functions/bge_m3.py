@@ -84,7 +84,7 @@ class BGE_M3(SearchFunction):
         """
         return key in self.indices
 
-    async def add_index(self, segments: list[Segment], save_path: Optional[str], load_if_exists: bool, save: bool, key: str|int = "_default"):
+    async def add_index(self, segments: list[Segment], save_path: Optional[str] = None, load_if_exists: bool = True, save: bool = True, key: str|int = "_default"):
         """
         Creates or loads an index and adds it to internal indices dictionary.
 
