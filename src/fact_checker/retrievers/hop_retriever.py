@@ -105,6 +105,9 @@ class HopRetriever(dspy.Module):
             # Update retrieved segments and texts
             retrieved_segments.extend(new_segments)
 
+            # Remove duplicates
+            retrieved_segments = list({segment.id: segment for segment in retrieved_segments}.values())
+
             # Update notes for the next iteration
             prediction = self.append_notes(
                 statement=statement.statement,

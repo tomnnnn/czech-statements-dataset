@@ -32,7 +32,7 @@ async def search(req: SearchRequest):
     """
     # Get the documents
     search_results = await document_retriever.search_async(req.query, req.k_docs)
-    links = [res["link"] for res in search_results] # TODO: adjust
+    links = [res["link"] for res in search_results]
 
     # Scrape the documents
     try:
@@ -41,7 +41,6 @@ async def search(req: SearchRequest):
     except RuntimeError as e:
         # Handle the error
         return {"error": str(e)}
-
 
 
     # TODO: replace segments with retrieved segments

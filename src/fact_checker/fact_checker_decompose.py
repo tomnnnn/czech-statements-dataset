@@ -1,9 +1,9 @@
 import json
 import logging
-import mlflow
 from typing import Literal
 
 import dspy
+import mlflow
 from src.dataset_manager.models import Segment, Statement
 
 from fact_checker.search_functions.bge_remote import RemoteSearchFunction
@@ -36,26 +36,40 @@ class Decompose(dspy.Signature):
     author: str = dspy.InputField()
     date: str = dspy.InputField()
 
-    statements: list[str] = dspy.OutputField()
-
+    statements: list[str] = dspy.OutputField(
+        description="A list of contextually complete, atomic, and verifiable factual statements from the input. "
+            "Each statement must stand alone with enough context for verification, be neutrally phrased, and remain in the original language. "
+            "Include only factual claims — omit rhetorical, speculative, or personal experience-based content that cannot be independently verified."
+    )
 
 class Analyze(dspy.Signature):
     statement: str = dspy.InputField()
     author: str = dspy.InputField()
     date: str = dspy.InputField()
 
-    what_to_find: list[str] = dspy.OutputField()
-    search_language: Literal["en", "cs", "sk"] = dspy.OutputField()
+    what_to_find: list[str] = dspy.OutputField(
+        description="A list of specific informations or evidence to search for in the documents. "
+        "This should be a concise and clear statement of what the user is looking for."
+    )
+    search_language: Literal["en", "cs", "sk"] = dspy.OutputField(
+        description="The language in which the search queries should be generated."
+    )
 
 
 class GenerateQueries(dspy.Signature):
     statement: str = dspy.InputField()
     author: str = dspy.InputField()
     date: str = dspy.InputField()
-    what_to_find: list[str] = dspy.InputField()
-    search_language: str = dspy.InputField()
+    what_to_find: list[str] = dspy.InputField(
+        description="A list of specific informations or evidence to search for in the documents."
+    )
+    search_language: str = dspy.InputField(
+        description="The language in which the search queries should be generated."
+    )
 
-    search_queries: list[str] = dspy.OutputField()
+    search_queries: list[str] = dspy.OutputField(
+        description="List of search queries to be used to retrieve needed documents from an index."
+    )
 
 
 class Retriever(dspy.Module):
@@ -78,24 +92,41 @@ class Retriever(dspy.Module):
     def _extract_text(self, segments: list[Segment]) -> list[str]:
         return [segment.text for segment in segments]
 
-    def forward(self, statement_id: int, statement: str, author: str, date: str) -> dspy.Prediction:
+    def forward(
+        self, statement_id: int, statement: str, author: str, date: str
+    ) -> dspy.Prediction:
         analysis = self.analyze_statement(statement=statement, author=author, date=date)
         what_to_find = analysis.what_to_find
         search_language = analysis.search_language
 
-        queries = self.generate_queries(statement=statement, author=author, date=date, what_to_find=what_to_find, search_language=search_language).search_queries
+        queries = self.generate_queries(
+            statement=statement,
+            author=author,
+            date=date,
+            what_to_find=what_to_find,
+            search_language=search_language,
+        ).search_queries
 
         segments = []
         for query in queries:
             with mlflow.start_span("document_retrieval") as span:
-                span.set_inputs({
-                    "query": query,
-                    "k": self.num_docs,
-                    "key": statement_id,
-                })
-                new_segments = self.doc_retriever.search(query=query, k=self.num_docs, key=statement_id)
+                span.set_inputs(
+                    {
+                        "query": query,
+                        "k": self.num_docs,
+                        "key": statement_id,
+                    }
+                )
+                new_segments = self.doc_retriever.search(
+                    query=query, k=self.num_docs, key=statement_id
+                )
                 span.set_outputs(
-                    {"segments": [{"segment_id": segment.id, "text": segment.text} for segment in new_segments]}
+                    {
+                        "segments": [
+                            {"segment_id": segment.id, "text": segment.text}
+                            for segment in new_segments
+                        ]
+                    }
                 )
 
             segments.extend(new_segments)
@@ -137,7 +168,6 @@ class FactCheckerDecomposer(dspy.Module):
             date=statement.date,
         ).statements
 
-        
         """
         2 versions: 
             1] broken down statements will be each verified seperately
@@ -157,7 +187,6 @@ class FactCheckerDecomposer(dspy.Module):
 
             used_queries.extend(retrieve_result.used_queries)
             evidence.extend(retrieve_result.evidence)
-
 
         label = self.classify(
             statement=statement.statement,
