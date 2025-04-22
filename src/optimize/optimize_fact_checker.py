@@ -1,15 +1,11 @@
 import argparse
-import sqlite3
 from sklearn.model_selection import train_test_split
 import json
 import pandas as pd
 import os
-import subprocess
-import time
 import logging
 import dspy
 import numpy as np
-import requests
 import mlflow
 
 from dataset_manager import Dataset
@@ -70,7 +66,7 @@ def evaluate(
         devset=examples,
         metric=metric,
         num_threads=50,
-        max_errors=50,
+        max_errors=100,
         display_progress=True,
         display_table=True,
         return_all_scores=True,
@@ -281,6 +277,8 @@ def sample_statements(args, statements, allowed_labels):
     # Create examples for evaluation
     print(f"Sampling statements from the dataset...")
 
+    statements = [s for s in statements if s.label.lower() in allowed_labels]
+
     if args.evaluate:
         train_statements = []
 
@@ -365,7 +363,6 @@ def main():
     os.makedirs(output_folder, exist_ok=True)
 
     with mlflow.start_run(run_name=run_name):
-        from mlflow.dspy import log_model
         print("Optimizing the fact checker..." if not args.evaluate else "Evaluating the fact checker...")
 
         mlflow.log_param("num_train", args.num_train)
