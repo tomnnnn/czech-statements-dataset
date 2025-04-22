@@ -10,37 +10,6 @@ import faiss
 from fact_checker.search_functions.base import SearchFunction
 import time
 
-
-class MultiSemaphore:
-    def __init__(self, value: int):
-        self._sem = asyncio.Semaphore(value)
-
-    async def acquire(self, n: int = 1):
-        for _ in range(n):
-            await self._sem.acquire()
-
-    def release(self, n: int = 1):
-        for _ in range(n):
-            self._sem.release()
-
-    def get_context(self, n: int = 1):
-        return _MultiSemaphoreContext(self, n)
-
-    def num_acquired(self):
-        return self._sem._value
-
-class _MultiSemaphoreContext:
-    def __init__(self, sem: MultiSemaphore, n: int):
-        self._sem = sem
-        self._n = n
-
-    async def __aenter__(self):
-        await self._sem.acquire(self._n)
-
-    async def __aexit__(self, exc_type, exc, tb):
-        self._sem.release(self._n)
-
-
 class IndexEntry(TypedDict):
     index: faiss.Index
     corpus: list[Segment]
@@ -50,35 +19,29 @@ class BGE_M3(SearchFunction):
     indices: dict[str|int, IndexEntry]
     model: SentenceTransformer
 
-    def __init__(self, model: SentenceTransformer, concurrency = 400, **kwargs):
+    def __init__(self, model: SentenceTransformer, **kwargs):
         self.model = model
         self.indices = {}
-        self.sem = MultiSemaphore(concurrency)
+        self.sem = asyncio.Semaphore(50)
+        self.sem_encode = asyncio.Semaphore(50)
 
     def _encode_documents(self, documents: list[str]) -> np.ndarray:
-        result = self.model.encode(documents, convert_to_numpy=True)
+        with torch.no_grad():
+            result = self.model.encode(documents, convert_to_numpy=True)
+
         torch.cuda.empty_cache()
 
         return result
 
     async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
-        async with self.sem.get_context(len(documents)):
-            try:
-                result = await asyncio.to_thread(self._encode_documents, documents)
-            except Exception as e:
-                result = np.array([])
-                print(f"Error in encoding: {e}")
-                print(f"Number of documents: {len(documents)}")
-                print(f"Num acquired: {self.sem.num_acquired()}")
-
-        return result
+        async with self.sem_encode:
+            return await asyncio.to_thread(self._encode_documents, documents)
 
 
     def unload_index(self, key: str|int):
         del self.indices[key]["index"]
         del self.indices[key]["corpus"]
         self.indices.pop(key, None)
-        gc.collect()
         torch.cuda.empty_cache()
 
     def key_exists(self, key: str|int = "_default") -> bool:
@@ -106,21 +69,23 @@ class BGE_M3(SearchFunction):
         if load_if_exists and save_path and os.path.exists(save_path):
             index = faiss.read_index(save_path)
         else:
-            start = time.time()
-            texts = [i.text for i in segments]
-            embeddings = await self._encode_documents_async(texts)
-            dim = embeddings.shape[1]
+            async with self.sem:
+                start = time.time()
+                print("creating index")
+                texts = [i.text for i in segments]
+                embeddings = await self._encode_documents_async(texts)
+                dim = embeddings.shape[1]
 
-            index = faiss.index_factory(dim, 'Flat', faiss.METRIC_INNER_PRODUCT)
-            index.add(embeddings)
+                index = faiss.index_factory(dim, 'Flat', faiss.METRIC_INNER_PRODUCT)
+                index.add(embeddings)
 
-            if save and save_path:
-                os.makedirs(os.path.dirname(save_path), exist_ok=True)
-                faiss.write_index(index, save_path)
+                if save and save_path:
+                    os.makedirs(os.path.dirname(save_path), exist_ok=True)
+                    faiss.write_index(index, save_path)
 
-            print("Creating index took:", time.time() - start, "seconds")
+                print("Creating index took:", time.time() - start, "seconds")
 
-            torch.cuda.empty_cache()
+                torch.cuda.empty_cache()
 
         self.indices[key] = {
             "index": index,

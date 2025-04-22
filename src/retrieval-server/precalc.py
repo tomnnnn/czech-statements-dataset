@@ -33,17 +33,10 @@ index_manager = BGE_M3(model=model)
 # === Route ===
 @app.post("/search")
 async def search(req: SearchRequest):
-    if not index_manager.key_exists(req.statement_id):
-        start = time.time()
-        segments = dataset.get_segments_by_statement(req.statement_id)
-        print("Getting segments took:", time.time() - start, " seconds")
-        await index_manager.add_index(segments, f"indices/{req.statement_id}.faiss",load_if_exists=True,save=True, key=req.statement_id)
+    segments = dataset.get_segments_by_statement(req.statement_id)
+    await index_manager.add_index(segments, f"indices/{req.statement_id}.faiss",load_if_exists=True,save=True)
 
-    
-    results = await index_manager.search_async(req.query, k=req.k, key=req.statement_id)
-    serialized = [r.to_dict(include_relationships=True) for r in results]
-
-    return {"results": serialized}
+    return True
 
 @app.post("/unload")
 async def unload_index(req: UnloadRequest):
