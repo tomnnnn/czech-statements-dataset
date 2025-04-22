@@ -10,3 +10,4 @@ models/
 tools/
 pyrightconfig.json
 .*
+*.faiss
