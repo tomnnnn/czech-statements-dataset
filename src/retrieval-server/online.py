@@ -6,11 +6,14 @@ from fact_checker.search_functions.bge_m3 import BGE_M3
 from fastapi import FastAPI
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
+import time
+import torch
 
 
 # === Init ===
 app = FastAPI()
-model = SentenceTransformer("BAAI/BGE-M3")  # or any other embedding model
+model = SentenceTransformer("BAAI/BGE-M3", device="cuda")
+model = torch.compile(model)
 
 # === Request schema ===
 class SearchRequest(BaseModel):
@@ -35,6 +38,7 @@ async def search(req: SearchRequest):
     links = [res["link"] for res in search_results]
 
     # Scrape the documents
+    start = time.time()
     try:
         articles = await ArticleScraper.scrape_extractus_async(links)
         articles = [article for article in articles if article]
@@ -42,8 +46,8 @@ async def search(req: SearchRequest):
         # Handle the error
         return {"error": str(e)}
 
+    print("Scraping took", time.time() - start, "seconds")
 
-    # TODO: replace segments with retrieved segments
     segments = []
     for article in articles:
         article_obj = Article(
@@ -55,7 +59,7 @@ async def search(req: SearchRequest):
             source=article['source'],
             description=article['description'],
         )
-        article_segments = segment_article(article['content'])
+        article_segments = segment_article(article['content'], min_len=100)
 
         for segment in article_segments:
             segment_dict = {
@@ -71,7 +75,13 @@ async def search(req: SearchRequest):
     # Search for relevant segments
     retrieved_segments = await segment_retriever.search_async(req.query, k=req.k, key=req.statement_id)
 
+    # Convert back to dict
+    retrieved_segment_dicts = [
+            segment.to_dict(True) for segment in retrieved_segments
+    ]
+
+
     # Return the results
     return {
-        "results": retrieved_segments,
+        "results": retrieved_segment_dicts,
     }
