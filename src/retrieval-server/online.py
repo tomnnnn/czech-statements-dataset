@@ -16,8 +16,7 @@ model = SentenceTransformer("BAAI/BGE-M3")  # or any other embedding model
 class SearchRequest(BaseModel):
     query: str
     statement_id: int
-    k_docs: int = 10
-    k_segments: int = 5
+    k: int = 10
 
 # === Retrievers ===
 segment_retriever = BGE_M3(model=model)
@@ -31,7 +30,8 @@ async def search(req: SearchRequest):
     For a given query, searcher for k documents using google api. After that, retrieves relevant segments from the document
     """
     # Get the documents
-    search_results = await document_retriever.search_async(req.query, req.k_docs)
+    # NOTE: hard-coded 10 documents for now
+    search_results = await document_retriever.search_async(req.query, 10)
     links = [res["link"] for res in search_results]
 
     # Scrape the documents
@@ -65,14 +65,11 @@ async def search(req: SearchRequest):
             segment_obj = Segment(**segment_dict)
             segments.append(segment_obj)
 
-    # Convert segments to Segment objects
-    segment_dicts = [segment.to_dict(True) for segment in segments]
-
     # Index the segments
     await segment_retriever.add_index(segments, save=False, load_if_exists=False, key=req.statement_id)
 
     # Search for relevant segments
-    retrieved_segments = await segment_retriever.search_async(req.query, k=req.k_segments, key=req.statement_id)
+    retrieved_segments = await segment_retriever.search_async(req.query, k=req.k, key=req.statement_id)
 
     # Return the results
     return {

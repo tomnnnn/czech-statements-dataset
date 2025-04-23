@@ -21,7 +21,7 @@ class GoogleSearch():
             response = await google.as_api_key(
                 service.cse.list(q=query, cx="f2513f07c25b448b7", num=k)
             )
-            return response['items']
+            return response.get('items', [])
 
     def __del__(self):
         self.service.close()
