@@ -12,8 +12,22 @@ import torch
 
 # === Init ===
 app = FastAPI()
-model = SentenceTransformer("BAAI/BGE-M3", device="cuda")
-model = torch.compile(model)
+model = None
+segment_retriever = None
+document_retriever = None
+
+
+@app.on_event("startup")
+async def load_model():
+    global model
+    global segment_retriever
+    global document_retriever
+
+    model = SentenceTransformer("BAAI/BGE-M3", device="cuda")
+    model = torch.compile(model)
+    segment_retriever = BGE_M3(model=model)
+    document_retriever = GoogleSearch()
+
 
 # === Request schema ===
 class SearchRequest(BaseModel):
@@ -22,8 +36,6 @@ class SearchRequest(BaseModel):
     k: int = 10
 
 # === Retrievers ===
-segment_retriever = BGE_M3(model=model)
-document_retriever = GoogleSearch()
 
 # === Route ===
 @app.post("/search")
@@ -35,6 +47,13 @@ async def search(req: SearchRequest):
     # Get the documents
     # NOTE: hard-coded 10 documents for now
     search_results = await document_retriever.search_async(req.query, 10)
+
+    if not search_results:
+        return {
+            "results": [],
+        }
+        
+        
     links = [res["link"] for res in search_results]
 
     # Scrape the documents
