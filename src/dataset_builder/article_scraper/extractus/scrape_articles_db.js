@@ -5,40 +5,24 @@ import pLimit from "p-limit";
 import { URL } from "url";
 import cliProgress from "cli-progress";
 import Database from "better-sqlite3";
-import UserAgent from "user-agents";
+import {HeaderGenerator} from 'header-generator';
+
+let headerGenerator = new HeaderGenerator({
+        browsers: [
+            {name: "firefox", minVersion: 80},
+            {name: "chrome", minVersion: 87},
+            "safari"
+        ],
+        devices: [
+            "desktop"
+        ],
+        operatingSystems: [
+            "windows"
+        ]
+});
 
 // Initialize SQLite database
 const db = new Database("../../datasets/curated.sqlite");
-db.exec(`
-  CREATE TABLE IF NOT EXISTS evidence_demagog (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    statement_id INTEGER,
-    url TEXT,
-    title TEXT,
-    description TEXT,
-    content TEXT,
-    type TEXT,
-    author TEXT,
-    source TEXT,
-    published TEXT,
-    accessed TEXT,
-    FOREIGN KEY (statement_id) REFERENCES statements(id)
-  );
-`);
-
-db.exec(`
-  CREATE TABLE IF NOT EXISTS statements (
-    id INTEGER PRIMARY KEY,
-    statement TEXT,
-    label TEXT,
-    author TEXT,
-    date TEXT,
-    party TEXT,
-    explanation TEXT,
-    explanation_brief TEXT,
-    origin TEXT
-  );
-`);
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS failed_scrapes (
@@ -90,7 +74,7 @@ function isValidUrl(url) {
 // Function to save article data to SQLite
 function saveArticle(statement_id, article) {
   const stmt = db.prepare(`
-      INSERT OR IGNORE INTO evidence_demagog (statement_id, url, title, description, content, type, author, source, published, accessed)
+      INSERT OR IGNORE INTO articles (statement_id, url, title, description, content, type, author, source, published, accessed)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   stmt.run(
@@ -105,25 +89,24 @@ function saveArticle(statement_id, article) {
     article.published,
     new Date().toISOString(),
   );
-}
 
-// Function to save statements into SQLite
-function saveStatement(statement) {
-  const stmt = db.prepare(`
-    INSERT OR IGNORE INTO statements (id, statement, label, author, date, party, explanation, explanation_brief, origin)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `);
-  stmt.run(
-    statement.id,
-    statement.statement,
-    statement.assessment,
-    statement.author,
-    statement.date,
-    statement.party,
-    statement.explanation,
-    statement.explanation_brief,
-    statement.origin,
-  );
+    // Try to get the article ID
+  let articleId;
+  const lastId = db.prepare("SELECT last_insert_rowid() as id").get().id;
+
+  if (lastId !== 0) {
+    articleId = lastId;
+  } else {
+    // If no insert happened, lookup by unique column (e.g., url)
+    const row = db.prepare("SELECT id FROM articles WHERE url = ?").get(article.url);
+    articleId = row?.id;
+  }
+
+  // Now use articleId to insert into the joiner table
+  if (articleId) {
+    const joinStmt = db.prepare("INSERT INTO article_relevance (statement_id, article_id) VALUES (?, ?)");
+    joinStmt.run(statement_id, articleId);
+  }
 }
 
 // Processing each URL with rate limiting
@@ -133,50 +116,53 @@ async function processUrl(statement_id, url) {
     return;
   }
 
+  if (articleExists(url)) {
+    console.log(`Article already exists for URL: ${url}`);
+    return;
+  }
+
   const domain = new URL(url).hostname;
   const limiter = getLimiterForDomain(domain);
 
   return limiter(async () => {
-    await setTimeout(5000 / REQUESTS_PER_DOMAIN_PER_SECOND); // Rate limit delay
+    await setTimeout(1000 / REQUESTS_PER_DOMAIN_PER_SECOND); // Rate limit delay
+
+    let headers = headerGenerator.getHeaders({
+        operatingSystems: [
+            "linux"
+        ],
+        locales: ["en-US", "en"]
+    });
+
+    headers.proxy = "http://pcEE0ReXWA-res-de:PC_7UoLO7QZqfrAD6rlW@proxy-eu.proxy-cheap.com:5959"
 
     try {
-      const article = await extract(url, {
-        headers: {
-          "user-agent": new UserAgent().toString(),
-        },
+      const article = await extract(url,{
+        signal: AbortSignal.timeout(5000)
+      },{
+        headers: headers, 
       });
+
       if (article) {
         saveArticle(statement_id, article);
       }
     } catch (error) {
-      // print to stderr
-      console.error(`Error processing ${url}: ${error.message}`);
-
       // Save the error to the database
       const stmt = db.prepare(
         "INSERT INTO failed_scrapes (statement_id, url, error, timestamp, evidence_source) VALUES (?, ?, ?, ?, 'demagog')",
       );
       stmt.run(statement_id, url, error.message, new Date().toISOString());
     }
-
-    progressBar.increment(); // Update progress bar
+    finally {
+      progressBar.increment(); // Update progress bar
+    }
   });
 }
 
 function articleExists(url) {
-  //const stmt = db.prepare(`
-  //  SELECT COUNT(*) 
-  //  FROM (
-  //    SELECT 1 FROM evidence_demagog WHERE url = ? 
-  //    UNION 
-  //    SELECT 1 FROM failed_scrapes WHERE url = ?
-  //  ) AS combined;
-  //`);
-  //
-
   const stmt = db.prepare(`
     SELECT COUNT(*)
-    FROM evidence_demagog
+    FROM articles
     WHERE url = ?
   `);
   const result = stmt.get(url);
@@ -185,22 +171,7 @@ function articleExists(url) {
 
 // Extract articles from the JSON file
 async function extractArticlesFromJson(filePath) {
-  const data = await readFile(filePath, "utf8");
-  const statements = JSON.parse(data);
-
-  // filter out only those statements that are already in the database
-  const stmt = db.prepare("SELECT id FROM statements WHERE id = ?");
-  const filteredStatements = statements.filter((statement) => {
-    const result = stmt.get(statement.id);
-    return result !== undefined;
-  });
-
-  const urls = filteredStatements.flatMap((statement) => {
-    saveStatement(statement);
-    return statement.evidence_links
-      .filter((link) => isValidUrl(link.url) && !articleExists(link.url))
-      .map((link) => ({ statement_id: statement.id, url: link.url }));
-  });
+  const urls = await readFile(filePath, "utf8");
 
   console.log(`Starting extraction for ${urls.length} URLs...`);
   progressBar.start(urls.length, 0);
@@ -215,4 +186,4 @@ async function extractArticlesFromJson(filePath) {
 }
 
 // Run the extraction
-extractArticlesFromJson("../../datasets/json/with_evidence/demagog/statements.json");
+extractArticlesFromJson("missing_urls.json");
