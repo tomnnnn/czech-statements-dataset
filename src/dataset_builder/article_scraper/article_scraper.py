@@ -125,12 +125,18 @@ class ArticleScraper:
         Scrapes the articles using nodejs script with article-extractor library (asynchronously)
         """
         js_script_path = os.path.join(os.path.dirname(__file__), "extractus/scrape_articles.js")
-        cmd = ["node", js_script_path, json.dumps(links)]
+
+        tmpdir = os.environ.get("TMPDIR", "/tmp")
+        input_path = os.path.join(tmpdir, "urls.json")
+        with open(input_path, "w") as f:
+            json.dump(links, f, indent=4, ensure_ascii=False)
+
+        cmd = ["node", js_script_path, input_path]
 
         process = await asyncio.create_subprocess_exec(
             *cmd,
             stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE
+            stderr=sys.stderr,
         )
 
         stdout, stderr = await process.communicate()
@@ -143,7 +149,7 @@ class ArticleScraper:
         articles = result["articles"]
         unprocessed = result["unprocessed"]  # Still unused but parsed
 
-        return articles
+        return articles, unprocessed
 
     def scrape_extractus(self, links, id=None, max_num_paragraphs=1000, min_num_words=5, show_progress=True, output_html=True):
         """

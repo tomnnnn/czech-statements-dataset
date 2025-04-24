@@ -5,16 +5,32 @@ import pLimit from "p-limit";
 import { URL } from "url";
 import cliProgress from "cli-progress";
 import UserAgent from "user-agents";
+import {HeaderGenerator} from 'header-generator';
+import fs from 'fs';
+
+let headerGenerator = new HeaderGenerator({
+        browsers: [
+            {name: "firefox", minVersion: 80},
+            {name: "chrome", minVersion: 87},
+            "safari"
+        ],
+        devices: [
+            "desktop"
+        ],
+        operatingSystems: [
+            "windows"
+        ]
+});
 
 // Limit settings
-const REQUESTS_PER_DOMAIN_PER_SECOND = 3;
+const REQUESTS_PER_DOMAIN_PER_SECOND = 2;
 const DOMAIN_LIMITERS = new Map();
 
 // Create progress bar
 const progressBar = new cliProgress.SingleBar(
   {
     format:
-      "Processing [{bar}] {percentage}% | {value}/{total} URLs | ETA: {eta}s | Speed: {speed} URLs/s",
+      "Processing [{bar}] {percentage}% | {value}/{total} URLs | ETA: {eta}s",
     barCompleteChar: "=",
     barIncompleteChar: " ",
     hideCursor: false,
@@ -52,14 +68,25 @@ async function processUrl(url) {
   const limiter = getLimiterForDomain(domain);
 
   return limiter(async () => {
-    await setTimeout(5000 / REQUESTS_PER_DOMAIN_PER_SECOND); // Rate limit delay
+    await setTimeout(1000 / REQUESTS_PER_DOMAIN_PER_SECOND); // Rate limit delay
+
+    let headers = headerGenerator.getHeaders({
+        operatingSystems: [
+            "linux"
+        ],
+        locales: ["en-US", "en"]
+    });
+
+    headers.proxy = "http://pcEE0ReXWA-res-de:PC_7UoLO7QZqfrAD6rlW@proxy-eu.proxy-cheap.com:5959"
 
     try {
-      const article = await extract(url, {
-        headers: {
-          "user-agent": new UserAgent().toString(),
-        },
+      const article = await extract(url,{
+        signal: AbortSignal.timeout(5000)
+      },{
+        headers: headers, 
       });
+
+      console.error(`Extracted article from ${url}`);
 
       return {
         success: true,
@@ -82,41 +109,55 @@ async function processUrl(url) {
 }
 
 async function extractArticles() {
-  // load urls from --urls argument (passes json string)
-  var urls = [];
-
+  // Get the file path from the argument
   const args = process.argv.slice(2);
-  if (args.length == 1) {
-    urls = JSON.parse(args[0]);
+  if (args.length !== 1) {
+    console.error('Please provide the path to the JSON file.');
+    process.exit(1);
   }
+
+  const filePath = args[0];
+
+  // Read and parse the JSON file
+  let urls = [];
+  try {
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    urls = JSON.parse(fileContent);
+  } catch (error) {
+    console.error(`Error reading or parsing file: ${error.message}`);
+    process.exit(1);
+  }
+
+  // Ensure URLs are loaded correctly
+  console.error(`Loaded ${urls.length} URLs`);
 
   progressBar.start(urls.length, 0);
 
-  const promises = urls.map( url =>
-    processUrl(url),
-  );
-  
+  const promises = urls.map(url => processUrl(url));
+
   const result = await Promise.all(promises);
+
+  console.error(`Processed ${result.length} URLs`);
 
   const articles = result
     .filter(item => item.success)
-    .map(item => item.data)
+    .map(item => item.data);
 
   const unprocessed = result
     .filter(item => !item.success)
-    .map(item => item.data)
+    .map(item => item.data);
 
   const result_obj = {
     "articles": articles,
     "unprocessed": unprocessed,
-  }
+  };
   const result_json = JSON.stringify(result_obj, null, 2);
 
   progressBar.stop();
 
   console.log(result_json);
-
 }
 
 // Run the extraction
-extractArticles()
+extractArticles();
+
