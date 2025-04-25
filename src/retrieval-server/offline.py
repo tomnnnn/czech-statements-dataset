@@ -22,9 +22,6 @@ class SearchRequest(BaseModel):
 class UnloadRequest(BaseModel):
     statement_id: int
 
-# GPU resource (initialized once for reuse)
-# gpu_resource = faiss.StandardGpuResources()
-
 # Initialize shared memory for caching
 app.state.index_cache = {}
 app.state.data_map = {}
@@ -43,8 +40,5 @@ async def search(req: SearchRequest):
     results = await index_manager.search_async(req.query, k=req.k, key=req.statement_id)
     serialized = [r.to_dict(include_relationships=True) for r in results]
 
-    return {"results": serialized}
-
-@app.post("/unload")
-async def unload_index(req: UnloadRequest):
     index_manager.unload_index(req.statement_id)
+    return {"results": serialized}

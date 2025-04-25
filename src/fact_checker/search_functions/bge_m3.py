@@ -22,12 +22,12 @@ class BGE_M3(SearchFunction):
     def __init__(self, model: SentenceTransformer, **kwargs):
         self.model = model
         self.indices = {}
-        self.sem = asyncio.Semaphore(5)
-        self.sem_encode = asyncio.Semaphore(5)
+        self.sem = asyncio.Semaphore(20)
+        self.sem_encode = asyncio.Semaphore(20)
 
     def _encode_documents(self, documents: list[str]) -> np.ndarray:
         with torch.no_grad():
-            result = self.model.encode(documents, convert_to_numpy=True)
+            result = self.model.encode(documents, convert_to_numpy=True, batch_size=64)
 
         torch.cuda.empty_cache()
 

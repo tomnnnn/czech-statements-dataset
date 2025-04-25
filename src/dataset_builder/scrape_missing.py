@@ -19,8 +19,11 @@ from dataset_manager import Dataset
 import sqlite3
 from .article_scraper import ArticleScraper
 
+SCRATCHDIR=os.environ.get("SCRATCHDIR")
+
 def get_missing_urls():
-    con = sqlite3.connect("datasets/dataset.sqlite")
+    dataset_path = os.path.join(SCRATCHDIR, "dataset.db")
+    con = sqlite3.connect(dataset_path)
     con.row_factory = sqlite3.Row
     cur = con.cursor()
 
@@ -36,7 +39,7 @@ def get_missing_urls():
 
 async def main():
     scraper = ArticleScraper()
-    dataset = Dataset("datasets/dataset_demagog.sqlite")
+    dataset = Dataset("datasets/demagog_deduplicated.sqlite")
     articles = dataset.get_articles()
     missing_articles = get_missing_urls()
     scraped_urls = [

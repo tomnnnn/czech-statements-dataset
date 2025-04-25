@@ -22,7 +22,38 @@ let headerGenerator = new HeaderGenerator({
 });
 
 // Initialize SQLite database
-const db = new Database("../../datasets/curated.sqlite");
+const db = new Database("../../datasets/demagog.sqlite");
+db.exec(`
+  CREATE TABLE IF NOT EXISTS evidence_demagog (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    statement_id INTEGER,
+    url TEXT,
+    title TEXT,
+    description TEXT,
+    content TEXT,
+    type TEXT,
+    author TEXT,
+    source TEXT,
+    published TEXT,
+    accessed TEXT,
+    FOREIGN KEY (statement_id) REFERENCES statements(id)
+  );
+`);
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS statements (
+    id INTEGER PRIMARY KEY,
+    statement TEXT,
+    label TEXT,
+    author TEXT,
+    date TEXT,
+    party TEXT,
+    explanation TEXT,
+    explanation_brief TEXT,
+    origin TEXT
+  );
+`);
+>>>>>>> Stashed changes
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS failed_scrapes (
