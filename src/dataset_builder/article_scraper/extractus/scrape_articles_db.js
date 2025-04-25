@@ -22,38 +22,7 @@ let headerGenerator = new HeaderGenerator({
 });
 
 // Initialize SQLite database
-const db = new Database("../../datasets/demagog.sqlite");
-db.exec(`
-  CREATE TABLE IF NOT EXISTS evidence_demagog (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    statement_id INTEGER,
-    url TEXT,
-    title TEXT,
-    description TEXT,
-    content TEXT,
-    type TEXT,
-    author TEXT,
-    source TEXT,
-    published TEXT,
-    accessed TEXT,
-    FOREIGN KEY (statement_id) REFERENCES statements(id)
-  );
-`);
-
-db.exec(`
-  CREATE TABLE IF NOT EXISTS statements (
-    id INTEGER PRIMARY KEY,
-    statement TEXT,
-    label TEXT,
-    author TEXT,
-    date TEXT,
-    party TEXT,
-    explanation TEXT,
-    explanation_brief TEXT,
-    origin TEXT
-  );
-`);
->>>>>>> Stashed changes
+const db = new Database("datasets/demagog.sqlite");
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS failed_scrapes (
@@ -147,11 +116,6 @@ async function processUrl(statement_id, url) {
     return;
   }
 
-  if (articleExists(url)) {
-    console.log(`Article already exists for URL: ${url}`);
-    return;
-  }
-
   const domain = new URL(url).hostname;
   const limiter = getLimiterForDomain(domain);
 
@@ -165,20 +129,23 @@ async function processUrl(statement_id, url) {
         locales: ["en-US", "en"]
     });
 
-    headers.proxy = "http://pcEE0ReXWA-res-de:PC_7UoLO7QZqfrAD6rlW@proxy-eu.proxy-cheap.com:5959"
 
     try {
       const article = await extract(url,{
         signal: AbortSignal.timeout(5000)
       },{
         headers: headers, 
+	proxy: "http://pcEE0ReXWA-res-any:PC_7UoLO7QZqfrAD6rlW@proxy-eu.proxy-cheap.com:5959"
       });
 
       if (article) {
+	console.log("Success")
         saveArticle(statement_id, article);
       }
     } catch (error) {
       // Save the error to the database
+	console.error(url)
+	console.error(error)
       const stmt = db.prepare(
         "INSERT INTO failed_scrapes (statement_id, url, error, timestamp, evidence_source) VALUES (?, ?, ?, ?, 'demagog')",
       );
@@ -202,7 +169,8 @@ function articleExists(url) {
 
 // Extract articles from the JSON file
 async function extractArticlesFromJson(filePath) {
-  const urls = await readFile(filePath, "utf8");
+  const data = await readFile(filePath, "utf8");
+  const urls = JSON.parse(data)
 
   console.log(`Starting extraction for ${urls.length} URLs...`);
   progressBar.start(urls.length, 0);
@@ -210,6 +178,7 @@ async function extractArticlesFromJson(filePath) {
   const promises = urls.map(({ statement_id, url }) =>
     processUrl(statement_id, url),
   );
+
   await Promise.all(promises);
 
   progressBar.stop();

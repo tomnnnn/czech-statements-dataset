@@ -77,7 +77,7 @@ async function processUrl(url) {
         locales: ["en-US", "en"]
     });
 
-    headers.proxy = "http://pcEE0ReXWA-res-de:PC_7UoLO7QZqfrAD6rlW@proxy-eu.proxy-cheap.com:5959"
+    headers.proxy = "http://pcEE0ReXWA-res-any:PC_7UoLO7QZqfrAD6rlW@proxy-eu.proxy-cheap.com:5959"
 
     try {
       const article = await extract(url,{

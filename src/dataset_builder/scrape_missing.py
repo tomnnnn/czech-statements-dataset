@@ -12,6 +12,7 @@ import os
 import shutil
 import sys
 import aiohttp
+from itertools import islice
 
 from tqdm.asyncio import tqdm
 
@@ -38,15 +39,14 @@ def get_missing_urls():
     return row_dicts
 
 async def main():
+    print("Starting the script...")
     scraper = ArticleScraper()
     dataset = Dataset("datasets/demagog_deduplicated.sqlite")
     articles = dataset.get_articles()
     missing_articles = get_missing_urls()
-    scraped_urls = [
-        a.url for a in articles
-    ]
+    scraped_urls = [a.url for a in articles]
     
-    # filter identical urls
+    # Filter out identical URLs
     missing_urls = []
 
     for article in missing_articles:
@@ -56,20 +56,42 @@ async def main():
     with open("missing_urls.json", "w") as f:
         json.dump(missing_urls, f, indent=4, ensure_ascii=False)
 
-    missing_urls = [ i["url"] for i in missing_urls if i["url"] if not i["url"].endswith(".pdf")]
+    missing_urls = [i["url"] for i in missing_urls if i["url"] and not i["url"].endswith(".pdf")]
     missing_urls = [i for i in missing_urls if not "195.46.72.16" in i]
     missing_urls = list(set(missing_urls))
 
-    articles,unprocessed = await scraper.scrape_extractus_async(missing_urls)
+    # Define batch size
+    batch_size = 200
 
-    for a in articles:
-        a["accessed"] = datetime.now().isoformat()
+    # Split missing_urls into batches of 2000
+    def chunks(iterable, size):
+        it = iter(iterable)
+        for first in it:
+            yield [first] + list(islice(it, size - 1))
 
-    with open("articles.json", "w") as f:
-        json.dump(articles, f, indent=4, ensure_ascii=False)
+    # Process each batch sequentially
+    iteration_number = 1
+    print("Processing batches of missing URLs...")
+    for batch in chunks(missing_urls, batch_size):
+        # Scrape and extract articles for the batch
+        articles, unprocessed = await scraper.scrape_extractus_async(batch)
 
-    with open("unprocessed.json", "w") as f:
-        json.dump(unprocessed, f, indent=4, ensure_ascii=False)
-    
+        # Add timestamp to the articles
+        for a in articles:
+            a["accessed"] = datetime.now().isoformat()
+
+        # Save the articles in a batch-specific file
+        with open(f"articles/{iteration_number}_articles.json", "w") as f:
+            json.dump(articles, f, indent=4, ensure_ascii=False)
+
+        # Save unprocessed articles if any
+        with open(f"articles/{iteration_number}_unprocessed.json", "w") as f:
+            json.dump(unprocessed, f, indent=4, ensure_ascii=False)
+
+        # Increment iteration number for the next batch
+        iteration_number += 1
+
+    print("Batch processing completed.")
+
 if __name__ == "__main__":
     asyncio.run(main())
