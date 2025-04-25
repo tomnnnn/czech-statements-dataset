@@ -147,7 +147,8 @@ class ArticleScraper:
         result = json.loads(stdout.decode("utf-8"))
 
         articles = result["articles"]
-        unprocessed = result["unprocessed"]  # Still unused but parsed
+        unprocessed = result["unprocessed"]
+        articles = [item for item in articles if item is not None]
 
         return articles, unprocessed
 
@@ -163,7 +164,7 @@ class ArticleScraper:
         result = json.loads(json_result.stdout.decode("utf-8"))
 
         articles = result["articles"]
-        # TODO: use the unprocessed articles to let user know which ones failed
+        articles = [item for item in articles if item is not None]
         unprocessed = result["unprocessed"]
         
         return articles

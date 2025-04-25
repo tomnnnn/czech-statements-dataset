@@ -10,7 +10,7 @@ import mlflow
 
 from dataset_manager import Dataset
 from dspy.teleprompt import MIPROv2, SIMBA
-# from fact_checker.fact_checker import FactChecker
+from fact_checker.fact_checker import FactChecker
 from fact_checker.fact_checker_decompose import FactCheckerDecomposer
 from sklearn.metrics import classification_report
 from sklearn.utils import shuffle
@@ -154,6 +154,7 @@ def optimize_simba(fact_checker: dspy.Module, train: list[dspy.Example], output_
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate the FactChecker model.")
 
+    parser.add_argument("--search-base-api", type=str, default="htttp://localhost:4242", help="Base URL for the search API.")
     parser.add_argument("--evaluate", action="store_true", help="Evaluate the model.")
     parser.add_argument("--train-portion", type=float, default=0.0, help="Portion of the dataset to use for training. Cannot be used with --num-train and --num-dev.")
     parser.add_argument("--dev-portion", type=float, default=0.0, help="Portion of the dataset to use for development. Cannot be used with --num-train and --num-dev.")
@@ -303,66 +304,69 @@ def sample_statements(args, statements, allowed_labels):
 def main():
     args = parse_args()
 
+    mlflow.set_tracking_uri("sqlite:///mlruns.db")
+    mlflow.dspy.autolog(log_compiles=True, log_evals=True, log_traces_from_compile=True)
+    mlflow.set_experiment(args.name)
+
     if args.run_name:
         run_name = args.run_name
     else:
         run_name = f"Optimization Run {args.optimizer.upper()}" if not args.evaluate else "Evaluation Run"
         run_name += f" {args.mode.capitalize()}"
 
-    configure_logging(os.path.join("logs", run_name.replace(" ", "_") + ".log"))
-
-    lm = dspy.LM(
-        args.model,
-        api_base=args.api_base,
-        api_key=os.environ.get("API_KEY"),
-        temperature=0.0,
-        max_tokens=3000,
-        rpm=60
-    )
-    dspy.configure(lm=lm)
-
-    mlflow.set_tracking_uri("sqlite:///mlruns.db")
-    mlflow.dspy.autolog(log_compiles=True, log_evals=True, log_traces_from_compile=True)
-    mlflow.set_experiment(args.name)
-
-    # Get allowed labels based on the mode
-    allowed_labels = get_allowed_labels(args.mode)
-    print(f"Allowed labels: {allowed_labels}")
-
-    # Load the dataset
-    dataset = Dataset(args.dataset)
-
-    # Initialize the FactChecker
-    fact_checker = FactCheckerDecomposer(num_docs=args.num_docs, mode=args.mode)
-    # fact_checker.load("fact-checker-eval/CuratedDecompose/Optimization_Run_MIPRO_Binary/optimized_model.pkl")
-
-    # Sample a subset of the dataset for evaluation
-    print("Gettig statements from the dataset...")
-    statements = dataset.get_statements(min_evidence_count=5)
-
-    train_statements, dev_statements = sample_statements(args, statements, allowed_labels)
-    # Create the train and dev sets
-    trainset = [
-        dspy.Example(
-            statement=statement,
-            label=statement.label,
-        ).with_inputs("statement", "search_func")
-        for statement in train_statements
-    ]
-
-    devset = [
-        dspy.Example(
-            statement=statement,
-            label=statement.label,
-        ).with_inputs("statement", "search_func")
-        for statement in dev_statements
-    ]
-
-    # Prepare output folder
-    output_folder = os.path.join(args.output_folder, args.name, run_name.replace(" ", "_"))
-    os.makedirs(output_folder, exist_ok=True)
-
     with mlflow.start_run(run_name=run_name):
+        configure_logging(os.path.join("logs", run_name.replace(" ", "_") + ".log"))
+
+        lm = dspy.LM(
+            args.model,
+            api_base=args.api_base,
+            api_key=os.environ.get("API_KEY"),
+            temperature=0.0,
+            max_tokens=3000,
+            rpm=60
+        )
+        dspy.configure(lm=lm)
+
+
+        # Get allowed labels based on the mode
+        allowed_labels = get_allowed_labels(args.mode)
+        print(f"Allowed labels: {allowed_labels}")
+
+        # Load the dataset
+        dataset = Dataset(args.dataset)
+
+        # Initialize the FactChecker
+        fact_checker = FactCheckerDecomposer(num_docs=args.num_docs, mode=args.mode, search_base_api=args.search_base_api)
+
+        # fact_checker = FactChecker(mode=args.mode, search_base_api=args.search_base_api)
+        # fact_checker.load("fact-checker-eval/Random/Binary/optimized_model.pkl")
+
+        # Sample a subset of the dataset for evaluation
+        print("Gettig statements from the dataset...")
+        statements = dataset.get_statements(min_evidence_count=5)
+
+        train_statements, dev_statements = sample_statements(args, statements, allowed_labels)
+        # Create the train and dev sets
+        trainset = [
+            dspy.Example(
+                statement=statement,
+                label=statement.label,
+            ).with_inputs("statement", "search_func")
+            for statement in train_statements
+        ]
+
+        devset = [
+            dspy.Example(
+                statement=statement,
+                label=statement.label,
+            ).with_inputs("statement", "search_func")
+            for statement in dev_statements
+        ]
+
+        # Prepare output folder
+        output_folder = os.path.join(args.output_folder, args.name, run_name.replace(" ", "_"))
+        os.makedirs(output_folder, exist_ok=True)
+
         print("Optimizing the fact checker..." if not args.evaluate else "Evaluating the fact checker...")
 
         mlflow.log_param("num_train", args.num_train)

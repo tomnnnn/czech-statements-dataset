@@ -23,7 +23,7 @@ from .article_scraper import ArticleScraper
 SCRATCHDIR=os.environ.get("SCRATCHDIR")
 
 def get_missing_urls():
-    dataset_path = os.path.join(SCRATCHDIR, "dataset.db")
+    dataset_path = "datasets/dataset.sqlite"
     con = sqlite3.connect(dataset_path)
     con.row_factory = sqlite3.Row
     cur = con.cursor()
@@ -37,6 +37,14 @@ def get_missing_urls():
     row_dicts = [dict(row) for row in rows]
 
     return row_dicts
+
+def get_missing_urls_from_json():
+    """
+    Reads the missing URLs from a JSON file.
+    """
+    with open("missing_urls.json", "r") as f:
+        missing_urls = json.load(f)
+    return missing_urls
 
 async def main():
     print("Starting the script...")
