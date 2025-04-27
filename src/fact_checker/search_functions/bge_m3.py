@@ -8,6 +8,7 @@ from sentence_transformers import SentenceTransformer
 import os
 import faiss
 from fact_checker.search_functions.base import SearchFunction
+from FlagEmbedding import BGEM3FlagModel
 import time
 
 class IndexEntry(TypedDict):
@@ -17,30 +18,27 @@ class IndexEntry(TypedDict):
 
 class BGE_M3(SearchFunction):
     indices: dict[str|int, IndexEntry]
-    model: SentenceTransformer
+    model: BGEM3FlagModel
 
-    def __init__(self, model: SentenceTransformer, **kwargs):
-        self.model = model
+    def __init__(self, batch_size=32, **kwargs):
+        self.model = BGEM3FlagModel("BAAI/bge-m3")
+        self.batch_size = batch_size
         self.indices = {}
         self.sem = asyncio.Semaphore(20)
         self.sem_encode = asyncio.Semaphore(20)
 
-    def _encode_documents(self, documents: list[str]) -> np.ndarray:
-        with torch.no_grad():
-            result = self.model.encode(documents, convert_to_numpy=True, batch_size=64)
-
-        torch.cuda.empty_cache()
-
-        return result
-
     async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
         async with self.sem_encode:
-            return await asyncio.to_thread(self._encode_documents, documents)
+            embeddings = await asyncio.to_thread(self.model.encode, documents)
+            return embeddings["dense_vecs"] # type: ignore
+
+    async def _encode_query_async(self, query: str) -> np.ndarray:
+        async with self.sem_encode:
+            embeddings = await asyncio.to_thread(self.model.encode_queries, [query])
+            return embeddings["dense_vecs"] # type: ignore
 
 
     def unload_index(self, key: str|int):
-        del self.indices[key]["index"]
-        del self.indices[key]["corpus"]
         self.indices.pop(key, None)
         torch.cuda.empty_cache()
 
@@ -66,6 +64,9 @@ class BGE_M3(SearchFunction):
             save_path (Optional[str]): Path to save the index.
             load (Union[Literal["auto"], bool]): Whether to load the index if it exists.
         """
+        if not segments:
+            raise ValueError("No segments provided for indexing.")
+
         if load_if_exists and save_path and os.path.exists(save_path):
             index = faiss.read_index(save_path)
         else:
@@ -111,7 +112,7 @@ class BGE_M3(SearchFunction):
 
 
     def search(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
-        query_embeddings = self.model.encode([query], convert_to_numpy=True, batch_size=32)
+        query_embeddings = self.model.encode([query], convert_to_numpy=True, batch_size=self.batch_size)["dense_vecs"]
         results = self._search_index(query_embeddings, k, key)
 
         torch.cuda.empty_cache()
