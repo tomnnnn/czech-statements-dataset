@@ -51,7 +51,7 @@ async def main():
     scraper = ArticleScraper()
     dataset = Dataset("datasets/demagog_deduplicated.sqlite")
     articles = dataset.get_articles()
-    missing_articles = get_missing_urls()
+    missing_articles = get_missing_urls_from_json()
     scraped_urls = [a.url for a in articles]
     
     # Filter out identical URLs
@@ -69,7 +69,7 @@ async def main():
     missing_urls = list(set(missing_urls))
 
     # Define batch size
-    batch_size = 200
+    batch_size = 100
 
     # Split missing_urls into batches of 2000
     def chunks(iterable, size):
@@ -78,10 +78,13 @@ async def main():
             yield [first] + list(islice(it, size - 1))
 
     # Process each batch sequentially
-    iteration_number = 1
+    iteration_number = 3
     print("Processing batches of missing URLs...")
-    for batch in chunks(missing_urls, batch_size):
+    for i, batch in enumerate(chunks(missing_urls, batch_size)):
         # Scrape and extract articles for the batch
+        if i < iteration_number:
+            continue
+
         articles, unprocessed = await scraper.scrape_extractus_async(batch)
 
         # Add timestamp to the articles
@@ -96,6 +99,7 @@ async def main():
         with open(f"articles/{iteration_number}_unprocessed.json", "w") as f:
             json.dump(unprocessed, f, indent=4, ensure_ascii=False)
 
+        print(f"Successfully scraped {len(articles)} articles in batch {iteration_number}.")
         # Increment iteration number for the next batch
         iteration_number += 1
 
