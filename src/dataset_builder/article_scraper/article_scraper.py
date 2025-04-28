@@ -7,6 +7,8 @@ from tqdm.asyncio import tqdm
 from collections import defaultdict
 import sys
 from utils import fetch
+from tqdm.asyncio import tqdm_asyncio
+import uuid
 
 class ArticleScraper:
     def __init__(self, fetch_concurrency=5, fetch_delay=0.5):
@@ -120,37 +122,40 @@ class ArticleScraper:
         return result
 
     @staticmethod
-    async def scrape_extractus_async(links):
+    async def scrape_extractus_async(links: list[str]):
         """
         Scrapes the articles using nodejs script with article-extractor library (asynchronously)
         """
-        js_script_path = os.path.join(os.path.dirname(__file__), "extractus/scrape_articles.js")
 
-        tmpdir = os.environ.get("TMPDIR", "/tmp")
-        input_path = os.path.join(tmpdir, "urls.json")
-        with open(input_path, "w") as f:
-            json.dump(links, f, indent=4, ensure_ascii=False)
+        parser_path = os.path.join(os.path.dirname(__file__), "extractus/parse_article.js")
 
-        cmd = ["node", js_script_path, input_path]
+        fetch_tasks = [fetch(link) for link in links ]
+        htmls = await tqdm_asyncio.gather(*fetch_tasks)
 
-        process = await asyncio.create_subprocess_exec(
-            *cmd,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=sys.stderr,
-        )
 
-        stdout, stderr = await process.communicate()
+        async def run_parse_task(parser_path, html):
+            cmd = ["node", parser_path]
+            process = await asyncio.create_subprocess_exec(
+                *cmd,
+                stdin=asyncio.subprocess.PIPE,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=sys.stderr,
+            )
+            stdout, stderr = await process.communicate(input=html.encode("utf-8"))
+            if process.returncode != 0:
+                raise RuntimeError(f"Node script failed with error: {stderr.decode('utf-8')}")
 
-        if process.returncode != 0:
-            raise RuntimeError(f"Node script failed with error: {stderr.decode('utf-8')}")
+            return json.loads(stdout.decode("utf-8"))
 
-        result = json.loads(stdout.decode("utf-8"))
+        parse_tasks = []
+        for html in htmls:
+            parse_tasks.append(
+                run_parse_task(parser_path, html)
+            )
 
-        articles = result["articles"]
-        unprocessed = result["unprocessed"]
-        articles = [item for item in articles if item is not None]
+        articles = await tqdm_asyncio.gather(*parse_tasks, desc="Parsing articles", unit="article")
 
-        return articles, unprocessed
+        return articles
 
     def scrape_extractus(self, links, id=None, max_num_paragraphs=1000, min_num_words=5, show_progress=True, output_html=True):
         """

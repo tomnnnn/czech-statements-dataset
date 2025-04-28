@@ -1,6 +1,8 @@
 import asyncio
 import sys
 import aiohttp
+from collections import defaultdict
+from aiolimiter import AsyncLimiter
 from user_agent import generate_user_agent
 
 def find_by_id(id, data):
@@ -8,6 +10,8 @@ def find_by_id(id, data):
         if d["id"] == id:
             return d
     return None
+
+DOMAIN_RATE_LIMIT_MAP = defaultdict(lambda: AsyncLimiter(5, 1)) # Limit to 5 request per second per domain
 
 async def fetch(url, retries=3, timeout=30, backoff_factor=2):
     """
@@ -24,7 +28,7 @@ async def fetch(url, retries=3, timeout=30, backoff_factor=2):
     """
     async def fetch_with_retry(url, retries_left):
         timeout_config = aiohttp.ClientTimeout(total=timeout)
-        async with aiohttp.ClientSession(timeout=timeout_config) as session:
+        async with aiohttp.ClientSession(timeout=timeout_config) as session, DOMAIN_RATE_LIMIT_MAP[url]:
             headers = {
                 "User-Agent": generate_user_agent(),
             }

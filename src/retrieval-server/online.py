@@ -13,8 +13,8 @@ import torch
 # === Init ===
 app = FastAPI()
 model = None
-segment_retriever = None
-document_retriever = None
+segment_retriever: BGE_M3
+document_retriever: GoogleSearch
 
 
 @app.on_event("startup")
@@ -25,7 +25,7 @@ async def load_model():
 
     model = SentenceTransformer("BAAI/BGE-M3", device="cuda")
     model = torch.compile(model)
-    segment_retriever = BGE_M3(model=model)
+    segment_retriever = BGE_M3(128)
     document_retriever = GoogleSearch()
 
 
@@ -63,7 +63,8 @@ async def search(req: SearchRequest):
         articles = [article for article in articles if article]
     except RuntimeError as e:
         # Handle the error
-        return {"error": str(e)}
+        print("Error scraping articles:", e)
+        return {"results": []}
 
     print("Scraping took", time.time() - start, "seconds")
 
