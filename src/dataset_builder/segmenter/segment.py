@@ -1,5 +1,5 @@
 from .html_transformers import Paragraph, Table, List
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 transformation_rules = {
     "p": Paragraph(),
@@ -9,7 +9,7 @@ transformation_rules = {
 }
 
 
-def transform_element(el) -> str:
+def transform_element(el: Tag) -> str:
     """
     Transform HTML element to string segment
     """
@@ -19,14 +19,32 @@ def transform_element(el) -> str:
     else:
         return ""
 
-
-def segment_article(html: str, min_len = 25) -> list[str]:
+def extract_elements(html: str, title: str) -> list[tuple[str, Tag]]:
     """
-    transform html to list of string segments
+    Extract elements from HTML and associate them with the nearest heading.
     """
     soup = BeautifulSoup(html, "html.parser")
+    result = []
 
-    segments = [transform_element(el) for el in soup.find_all()]
+    current_heading = title
+
+    for el in soup.find_all():
+        if isinstance(el, Tag):
+            if el.name in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']:
+                current_heading = el.get_text(strip=True)
+            else:
+                result.append((current_heading, el))
+
+    return result
+
+def segment_article(html: str, title: str, min_len = 25,) -> list[str]:
+    """
+    Transform html to list of string segments
+    """
+
+    elements = extract_elements(html, title=title)
+
+    segments = [transform_element(el[1]) for el in elements]
     segments = [seg for seg in segments if len(seg) > min_len]
 
     return segments
