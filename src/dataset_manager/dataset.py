@@ -46,6 +46,18 @@ class Dataset:
     def get_article(self, article_id) -> Article|None:
         return (self.session.query(Article).filter(Article.id == article_id).first())
 
+
+    def get_segments_with_statement_ids(self, article_id=None) -> list[tuple[int, Segment]]:
+        segments = self.session.query(ArticleRelevance.statement_id,Segment).join(Article).join(ArticleRelevance)
+
+        if article_id:
+            segments = segments.filter(Segment.article_id == article_id)
+
+        segments = segments.all()
+
+        # convert to list of tuples
+        return [(statement_id, segment) for statement_id, segment in segments]
+
     def get_segments(self, article_id=None) -> list[Segment]:
         segments = self.session.query(Segment)
 
