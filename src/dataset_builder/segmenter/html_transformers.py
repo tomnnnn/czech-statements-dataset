@@ -1,5 +1,8 @@
 import csv
 import io
+from abc import ABC, abstractmethod
+from semantic_router.encoders import HuggingFaceEncoder
+from semantic_chunkers import StatisticalChunker
 
 def normalize_text(text: str) -> str:
     """
@@ -7,23 +10,36 @@ def normalize_text(text: str) -> str:
     """
     return " ".join(text.split())
 
-class ElementTransformer:
-    def transform(self, el) -> str:
-        raise NotImplementedError()
+class ElementTransformer(ABC):
+    @abstractmethod
+    def transform(self, el) -> list[str]:
+        pass
 
 class Paragraph(ElementTransformer):
-    def transform(self, el) -> str:
-        return normalize_text(el.text.strip())
+    def __init__(self):
+        encoder=HuggingFaceEncoder(name="BAAI/bge-m3", batch_size=256)
+        self.chunker = StatisticalChunker(encoder=encoder, max_split_tokens=2048)
+
+    def transform(self, el) -> list[str]:
+        text = normalize_text(el.text.strip())
+
+        if len(text) > 6000:
+            # Split long paragraphs into smaller segments using semantic chunker
+            chunks = self.chunker(docs=[text])
+            return [chunk.content for chunk in chunks[0]]
+            
+        else:
+            return [text]
 
 class List(ElementTransformer):
-    def transform(self, el) -> str:
+    def transform(self, el) -> list[str]:
         """
         Transforms <ol> and <ul> elements into formatted text.
         Supports nested lists and maintains correct formatting.
         """
         return self._parse_list(el)
 
-    def _parse_list(self, el, level=1, prefix="") -> str:
+    def _parse_list(self, el, level=1, prefix="") -> list[str]:
         items = []
         is_ordered = el.name == "ol"
 
@@ -42,10 +58,10 @@ class List(ElementTransformer):
             else:
                 items.append(f"{item_prefix}{li_text}")
 
-        return "\n".join(items)
+        return ["\n".join(items)]
 
 class Table(ElementTransformer):
-    def transform(self, el) -> str:
+    def transform(self, el) -> list[str]:
         """
         Transform table to csv string
         """
@@ -62,5 +78,5 @@ class Table(ElementTransformer):
         csv_string = output.getvalue()
         output.close()        
 
-        return csv_string
+        return [csv_string]
 
