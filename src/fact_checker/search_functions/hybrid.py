@@ -1,116 +1,106 @@
+from .bge_m3 import BGE_M3
+import asyncio
+from tqdm.asyncio import tqdm_asyncio
+from .bm25 import BM25
 import os
-from pymilvus.model.hybrid import BGEM3EmbeddingFunction
-from pymilvus.model.reranker import BGERerankFunction
 from dataset_manager import Dataset
-from pymilvus import (
-    MilvusClient,
-    DataType,
-    Collection,
-)
+from FlagEmbedding import FlagReranker
 
 class HybridSearch():
-    col: Collection
+    def __init__(self, dataset_path: str):
+        dataset = Dataset(dataset_path)
+        self.dense_retriever = BGE_M3(128)
+        self.sparse_retriever = BM25()
+        self.reranker = FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=True)
 
-    def __init__(self, db_uri: str, col_name: str):
-        self.ef = BGEM3EmbeddingFunction(use_fp16=False, device="cpu")
-        self.rf = BGERerankFunction(
-            model_name="BAAI/bge-reranker-v2-m3",  # Specify the model name. Defaults to `BAAI/bge-reranker-v2-m3`.
-            device="cpu" # Specify the device to use, e.g., 'cpu' or 'cuda:0'
-        )
+        statements = dataset.get_statements()[:3]
+        statement_ids = [s.id for s in statements]
+        self.segment_map = dataset.get_segments_by_statements(statement_ids)
 
-        self.client = MilvusClient(uri=db_uri)
-        self.col_name = col_name
+    async def create_indices(self):
+        dense_create_tasks = [
+            self.dense_retriever.create_index(
+               [segment.text for segment in segments], 
+                os.path.join("indices_hybrid", "dense", f"{statement_id}.faiss")
+            )
+            for statement_id, segments in self.segment_map.items()
+        ]
 
-    def create_index(self):
-        dense_dim = self.ef.dim["dense"]
-        schema = self.client.create_schema()
-        schema.add_field("pk", DataType.VARCHAR, is_primary=True, auto_id=True, max_length=100)
-        schema.add_field("statement_id", DataType.INT64)
-        schema.add_field("text", DataType.VARCHAR, max_length=10000)
-        schema.add_field("sparse_vector", DataType.SPARSE_FLOAT_VECTOR)
-        schema.add_field("dense_vector", DataType.FLOAT_VECTOR, dim=dense_dim)
+        sparse_create_tasks = [
+            self.sparse_retriever.create_index(
+                [segment.text for segment in segments],
+                os.path.join("indices_hybrid", "sparse", str(statement_id))
+            )
+            for statement_id, segments in self.segment_map.items()
+        ]
 
-        index_params = self.client.prepare_index_params()
-        index_params.add_index(
-            field_name="sparse_vector",
-            index_type="SPARSE_INVERTED_INDEX",
-            metric_type="IP",
-        )
-        index_params.add_index(
-            field_name="dense_vector",
-            index_type="AUTOINDEX",
-            metric_type="IP",
-        )
-        
-        self.client.create_collection(self.col_name, schema=schema)
-        self.client.create_index(self.col_name, index_params=index_params)
+        await tqdm_asyncio.gather(*dense_create_tasks)
+        await tqdm_asyncio.gather(*sparse_create_tasks)
 
-    def insert_segments(self):
-        dataset = Dataset(os.path.join(os.environ.get("SCRATCHDIR", "datasets"), "dataset.db"))
-        entries = dataset.get_segments_with_statement_ids()
 
-        statement_ids = [e[0] for e in entries]
-        segments = [e[1] for e in entries]
-        segment_texts = [seg.text for seg in segments]
+    async def load_indices(self, statement_ids: list[int]|None = None):
+        """
+        Loads the indices for the given statement IDs.
 
-        docs_embeddings = self.ef(segment_texts)
+        Args:
+            statement_ids (list): List of statement IDs to load.
+        """
+        if not statement_ids:
+            dataset = Dataset(os.path.join(os.environ.get("SCRATCHDIR", "datasets"), "dataset.db"))
+            statements = dataset.get_statements()
+            statement_ids = [s.id for s in statements]
 
-        for i in range(0, 20, 20):
-            batched_entities = [
-                {
-                    "statement_id": statement_id,
-                    "text": text,
-                    "sparse_vector": sparse,
-                    "dense_vector": dense,
-                }
-                for statement_id, text, sparse, dense in zip(
-                    statement_ids[i : i + 50],
-                    segment_texts[i : i + 50],
-                    docs_embeddings["sparse"][i : i + 50],
-                    docs_embeddings["dense"][i : i + 50],
-                )
-            ]
 
-            self.client.insert(self.col_name, batched_entities)
+        for statement_id in statement_ids:
+            await self.dense_retriever.add_index(
+                self.segment_map[statement_id],
+                os.path.join("indices_hybrid", "dense", f"{statement_id}.faiss"),
+                load_if_exists=True,
+                save=False,
+                key=statement_id
+            )
+
+            await self.sparse_retriever.add_index(
+                self.segment_map[statement_id],
+                os.path.join("indices_hybrid", "sparse", str(statement_id)),
+                load_if_exists=True,
+                save=False,
+                key=statement_id
+            )
 
     def search(
         self,
         query,
-        limit=10,
-        k=10
+        statement_id,
+        k=3,
     ):
-        query_embedding = self.ef.encode_queries([query])
 
-        dense_results = self.client.search(
-            self.col_name,
-            data=query_embedding["dense"],
-            limit=limit,
-            params={"metric_type": "IP"},
-            output_fields=["text"]
-        )[0]
-
-        sparse_results = self.client.search(
-            self.col_name,
-            data=query_embedding["sparse"],
-            limit=limit,
-            params={"metric_type": "IP"},
-            output_fields=["text"]
-        )[0]
-
-        # Combine the results
-        results = []
-        for dense,sparse in zip(dense_results, sparse_results):
-            results.append(dense["text"])
-            results.append(sparse["text"])
-
-        # Combine the results using the BGERerankFunction
-        reranked_results = self.rf(
-            query=query,
-            documents=results,
-            top_k=k,
+        dense_results = self.dense_retriever.search(
+            query,
+            k=k,
+            key=statement_id
         )
 
-        reranked_texts = [
-            doc.text for doc in reranked_results
+        sparse_results = self.sparse_retriever.search(
+            query,
+            k=k,
+            key=statement_id
+        )
+
+        # Combine the results
+        combined_results = dense_results + sparse_results
+        sentence_pairs = [
+            (query, result.text) for result in combined_results
         ]
-        return reranked_texts
+
+        # Rerank the combined results
+        scores = self.reranker.compute_score(sentence_pairs)
+
+        # Sort the results based on the scores
+        sorted_results = sorted(zip(combined_results, scores), key=lambda x: x[1], reverse=True)
+
+        # Extract the sorted text results
+        sorted_combined_results = [result[0] for result in sorted_results]
+
+        # Return the sorted results (or use as needed)
+        return sorted_combined_results

@@ -1,10 +1,8 @@
-from typing import Optional, TypedDict, Union
+from typing import Optional, TypedDict
 import asyncio
 import numpy as np
-from sqlalchemy import Index
 import torch
 from dataset_manager.models import Segment
-from sentence_transformers import SentenceTransformer
 import os
 import faiss
 from fact_checker.search_functions.base import SearchFunction
@@ -21,7 +19,7 @@ class BGE_M3(SearchFunction):
     model: BGEM3FlagModel
 
     def __init__(self, batch_size=32, **kwargs):
-        self.model = BGEM3FlagModel("BAAI/bge-m3")
+        self.model = BGEM3FlagModel("BAAI/bge-m3", use_fp16=True)
         self.batch_size = batch_size
         self.indices = {}
         self.sem = asyncio.Semaphore(20)
@@ -53,6 +51,18 @@ class BGE_M3(SearchFunction):
             bool: True if the key exists, False otherwise.
         """
         return key in self.indices
+
+    async def create_index(self, texts: list[str], save_path: str):
+        async with self.sem:
+            embeddings = await self._encode_documents_async(texts)
+            dim = embeddings.shape[1]
+
+            index = faiss.index_factory(dim, 'Flat', faiss.METRIC_INNER_PRODUCT)
+            index.add(embeddings)
+
+            os.makedirs(os.path.dirname(save_path), exist_ok=True)
+            faiss.write_index(index, save_path)
+
 
     async def add_index(self, segments: list[Segment], save_path: Optional[str] = None, load_if_exists: bool = True, save: bool = True, key: str|int = "_default"):
         """
@@ -128,4 +138,3 @@ class BGE_M3(SearchFunction):
 
         torch.cuda.empty_cache()
         return results[0]
-
