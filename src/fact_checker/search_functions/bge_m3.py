@@ -104,26 +104,15 @@ class BGE_M3(SearchFunction):
         }
 
 
-    def _search_index(self, query_embeddings: np.ndarray, k: int, key: str|int = "_default", num_neighbors: int = 0) -> list[list[Segment]]:
+    def _search_index(self, query_embeddings: np.ndarray, k: int, key: str|int = "_default") -> list[list[Segment]]:
         index = self.indices[key]["index"]
         corpus = self.indices[key]["corpus"]
 
         _, ids = index.search(query_embeddings, k=k)
-        try:
-            results = []
-            for id in ids[0]:
-                lower = max(0, id - num_neighbors)
-                upper = min(len(corpus), id[0] + num_neighbors + 1)
-                results.extend(corpus[lower:upper])
-
-            return list(set(results))
-
-        except Exception as e:
-            print(f"Error in search: {e}")
-            print(len(corpus))
-            print(ids)
-            return [[corpus[0]]]
-
+        results = [
+            [corpus[int(i)] for i in ids[j] if i != -1] for j in range(len(ids))
+        ]
+        return results
 
     def search(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
         query_embeddings = self.model.encode([query], convert_to_numpy=True, batch_size=self.batch_size)["dense_vecs"]
@@ -132,9 +121,9 @@ class BGE_M3(SearchFunction):
         torch.cuda.empty_cache()
         return results[0]
 
-    async def search_async(self, query: str, k: int = 10, key: str|int = "_default", num_neighbors: int = 0) -> list[Segment]:
+    async def search_async(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
         query_embeddings = await self._encode_documents_async([query])
-        results = self._search_index(query_embeddings, k, key, num_neighbors=num_neighbors)
+        results = self._search_index(query_embeddings, k, key)
 
         torch.cuda.empty_cache()
         return results[0]
