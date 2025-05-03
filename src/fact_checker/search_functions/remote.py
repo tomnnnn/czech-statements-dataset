@@ -8,8 +8,11 @@ import requests
 logger = logging.getLogger(__name__)
 
 class RemoteSearchFunction(SearchFunction):
-    def __init__(self, api_base="http://127.0.0.1:4242", **kwargs):
-        self.api_base = api_base
+    """
+    A class to interact with a remote search API.
+    """
+    def __init__(self, search_endpoint="http://localhost:4242/search", **kwargs):
+        self.search_endpoint = search_endpoint
 
     async def add_index(self, segments: list[Segment], save_path: Optional[str], load_if_exists: bool, save: bool, key: str|int = "_default"):
         """
@@ -21,20 +24,7 @@ class RemoteSearchFunction(SearchFunction):
             save_path (Optional[str]): Path to save the index.
             load (Union[Literal["auto"], bool]): Whether to load the index if it exists.
         """
-
-    def unload_index(self, key: str|int = "_default"):
-        """
-        Unloads the index with the given key.
-
-        Args:
-            key (str): The key for the index.
-        """
-
-        response = requests.post(f"{self.api_base}/unload", json={"statement_id": int(key)})
-        if response.status_code != 200:
-            logger.error("Failed to unload the index: " + response.text)
-            return
-
+        raise NotImplementedError("Remote search function does not support adding index.")
 
     def search(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
         """
@@ -49,7 +39,7 @@ class RemoteSearchFunction(SearchFunction):
             list[Segment]: A list of segments matching the query.
         """
 
-        response = requests.post(f"{self.api_base}/search", json={"query": query, "k": k, "statement_id": int(key)})
+        response = requests.post(f"{self.search_endpoint}/search", json={"query": query, "k": k, "statement_id": int(key)})
         if response.status_code != 200:
             logger.error("Failed to search the index: " + response.text)
             return []
@@ -70,7 +60,7 @@ class RemoteSearchFunction(SearchFunction):
     async def search_async(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
         timeout = aiohttp.ClientTimeout(total=500)
         async with aiohttp.ClientSession(timeout=timeout) as session:
-            async with session.post(f"{self.api_base}/search", json={"query": query, "k": k, "statement_id": key}) as response:
+            async with session.post(self.search_endpoint, json={"query": query, "k": k, "statement_id": key}) as response:
                 if response.status != 200:
                     logger.error("Failed to search the index")
                     return []
@@ -78,6 +68,7 @@ class RemoteSearchFunction(SearchFunction):
                 json_resp = await response.json()
 
                 segments = []
+                print("JSON Response:", json_resp)
                 for item in json_resp["results"]:
                     article_data = item.pop("article", None)
                     
