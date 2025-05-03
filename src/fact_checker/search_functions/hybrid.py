@@ -1,41 +1,49 @@
 from .bge_m3 import BGE_M3
 import asyncio
 from tqdm.asyncio import tqdm_asyncio
+import tqdm
 from .bm25 import BM25
 import os
+from collections import defaultdict
 from dataset_manager import Dataset
+from dataset_manager.models import Segment
 from FlagEmbedding import FlagReranker
 
 class HybridSearch():
-    def __init__(self, dataset_path: str):
-        dataset = Dataset(dataset_path)
-        self.dense_retriever = BGE_M3(128)
+    def __init__(self, dataset_path: str, storage_dir: str):
+        self.storage_dir = storage_dir
+
+        self.dense_retriever = BGE_M3(2500)
         self.sparse_retriever = BM25()
         self.reranker = FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=True)
 
-        statements = dataset.get_statements()[:3]
-        statement_ids = [s.id for s in statements]
-        self.segment_map = dataset.get_segments_by_statements(statement_ids)
+        dataset = Dataset(dataset_path)
+        segments = dataset.get_segments_with_statement_ids()
+        self.segment_map = defaultdict(list)
+
+        for statement_id, segment in segments:
+            self.segment_map[statement_id].append(segment)
+
+        self.statement_ids = self.segment_map.keys()
+        print(len(self.statement_ids))
+
 
     async def create_indices(self):
-        dense_create_tasks = [
-            self.dense_retriever.create_index(
-               [segment.text for segment in segments], 
-                os.path.join("indices_hybrid", "dense", f"{statement_id}.faiss")
+        for statement_id, segments in tqdm.tqdm(self.segment_map.items(), desc="Creating dense indices"):
+            await self.dense_retriever.create_index(
+                [segment.text for segment in segments], 
+                os.path.join(self.storage_dir, "dense", f"{statement_id}.faiss")
             )
-            for statement_id, segments in self.segment_map.items()
-        ]
 
         sparse_create_tasks = [
             self.sparse_retriever.create_index(
                 [segment.text for segment in segments],
-                os.path.join("indices_hybrid", "sparse", str(statement_id))
+                os.path.join(self.storage_dir, "sparse", str(statement_id))
             )
             for statement_id, segments in self.segment_map.items()
         ]
 
-        await tqdm_asyncio.gather(*dense_create_tasks)
-        await tqdm_asyncio.gather(*sparse_create_tasks)
+        await tqdm_asyncio.gather(*sparse_create_tasks, desc="Creating sparse indices")
 
 
     async def load_indices(self, statement_ids: list[int]|None = None):
@@ -45,16 +53,10 @@ class HybridSearch():
         Args:
             statement_ids (list): List of statement IDs to load.
         """
-        if not statement_ids:
-            dataset = Dataset(os.path.join(os.environ.get("SCRATCHDIR", "datasets"), "dataset.db"))
-            statements = dataset.get_statements()
-            statement_ids = [s.id for s in statements]
-
-
-        for statement_id in statement_ids:
+        for statement_id in tqdm.tqdm(self.statement_ids, desc="Loading indices"):
             await self.dense_retriever.add_index(
                 self.segment_map[statement_id],
-                os.path.join("indices_hybrid", "dense", f"{statement_id}.faiss"),
+                save_path=os.path.join(self.storage_dir, "dense", f"{statement_id}.faiss"),
                 load_if_exists=True,
                 save=False,
                 key=statement_id
@@ -62,45 +64,88 @@ class HybridSearch():
 
             await self.sparse_retriever.add_index(
                 self.segment_map[statement_id],
-                os.path.join("indices_hybrid", "sparse", str(statement_id)),
+                os.path.join(self.storage_dir, "sparse", str(statement_id)),
                 load_if_exists=True,
                 save=False,
                 key=statement_id
             )
 
-    def search(
-        self,
-        query,
-        statement_id,
-        k=3,
-    ):
-
-        dense_results = self.dense_retriever.search(
-            query,
-            k=k,
-            key=statement_id
-        )
-
-        sparse_results = self.sparse_retriever.search(
-            query,
-            k=k,
-            key=statement_id
-        )
-
-        # Combine the results
-        combined_results = dense_results + sparse_results
-        sentence_pairs = [
-            (query, result.text) for result in combined_results
-        ]
-
-        # Rerank the combined results
+    def _rerank(self, query: str, segments: list[Segment], k: int):
+        sentence_pairs = [(query, result.text) for result in segments]
         scores = self.reranker.compute_score(sentence_pairs)
+        sorted_results = [res for res, _ in sorted(zip(segments, scores), key=lambda x: x[1], reverse=True)]
+        return sorted_results[:k]
 
-        # Sort the results based on the scores
-        sorted_results = sorted(zip(combined_results, scores), key=lambda x: x[1], reverse=True)
+    async def search_dense(
+        self,
+        query: str,
+        statement_id: int,
+        k: int = 3,
+        n: int|None = None,
+        rerank=True,
+    ) -> list[Segment]:
+        """
+        Search a statement's article index using BGE-M3 dense embeddings.
 
-        # Extract the sorted text results
-        sorted_combined_results = [result[0] for result in sorted_results]
+        Args:
+            query (str): Search query to be used in search
+            statement_id (int): Statement whose articles to search
+            k (int): How many top segments to retrieve
+            n (int|None): Number of retrieved segments from index (can be higher than k in case we use reranking)
 
-        # Return the sorted results (or use as needed)
-        return sorted_combined_results
+        Returns:
+            List of segments.
+
+        """
+        if not n or n < k:
+            n = k
+
+        results = await self.dense_retriever.search_async(
+            query,
+            k=n,
+            key=statement_id
+        )
+
+        if rerank:
+            return _rerank(query, results, k)
+        else:
+            return results[:k]
+
+    async def search(
+        self,
+        query: str,
+        statement_id: int,
+        k:int = 3,
+        n:int|None = None,
+    ):
+        """
+        Search a statement's article index using BGE-M3 dense embeddings and BM25 vectors.
+
+        Args:
+            query (str): Search query to be used in search
+            statement_id (int): Statement whose articles to search
+            k (int): How many top segments to return
+            n (int|None): Number of retrieved segments from each index
+
+        Returns:
+            List of segments.
+        """
+        if not n or 2*n < k:
+            n = k 
+
+        dense_results = await self.dense_retriever.search_async(
+            query,
+            k=k,
+            key=statement_id
+        )
+
+        sparse_results = await self.sparse_retriever.search_async(
+            query,
+            k=k,
+            key=statement_id
+        )
+
+        combined_results = dense_results + sparse_results
+        combined_results = list({seg.text:seg for seg in combined_results}.values())
+        return self._rerank(query, combined_results, k)
+

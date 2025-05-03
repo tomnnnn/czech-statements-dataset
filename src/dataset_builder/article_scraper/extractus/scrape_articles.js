@@ -4,6 +4,7 @@ import pLimit from "p-limit";
 import { URL } from "url";
 import cliProgress from "cli-progress";
 import UserAgent from "user-agents";
+import { readFileSync } from 'fs';
 
 // Limit settings
 const REQUESTS_PER_DOMAIN_PER_SECOND = 3;
@@ -84,10 +85,13 @@ async function extractArticles() {
   // load urls from --urls argument (passes json string)
   var urls = [];
 
-  const args = process.argv.slice(2);
-  if (args.length == 1) {
-    urls = JSON.parse(args[0]);
-  }
+
+const args = process.argv.slice(2);
+if (args.length === 1) {
+const filePath = args[0];
+const fileContent = readFileSync(filePath, 'utf-8');
+urls = JSON.parse(fileContent);
+}
 
   progressBar.start(urls.length, 0);
 

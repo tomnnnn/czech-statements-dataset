@@ -17,16 +17,19 @@ class ElementTransformer(ABC):
 
 class Paragraph(ElementTransformer):
     def __init__(self):
-        encoder=HuggingFaceEncoder(name="BAAI/bge-m3", batch_size=256)
-        self.chunker = StatisticalChunker(encoder=encoder, max_split_tokens=2048)
+        encoder=HuggingFaceEncoder(name="BAAI/bge-m3", batch_size=1024)
+        self.chunker = StatisticalChunker(encoder=encoder, max_split_tokens=250)
 
     def transform(self, el) -> list[str]:
         text = normalize_text(el.text.strip())
 
         if len(text) > 6000:
+            print("Paragraph too long, chunking using semantic chunker")
             # Split long paragraphs into smaller segments using semantic chunker
             chunks = self.chunker(docs=[text])
-            return [chunk.content for chunk in chunks[0]]
+            segments = [chunk.content for chunk in chunks[0]]
+            print(segments[0] + "\n\n")
+            return segments
             
         else:
             return [text]

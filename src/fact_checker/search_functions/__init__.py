@@ -2,6 +2,7 @@ from .bge_m3 import BGE_M3
 from dataset_manager.models import Segment
 from .bm25 import BM25
 from .base import SearchFunction
+from .hybrid import HybridSearch
 
 _search_function_dict = {
     "bm25": BM25,

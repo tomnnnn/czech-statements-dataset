@@ -71,11 +71,11 @@ class BM25(SearchFunction):
         ids, scores = index.retrieve(tokenized_query, k=k, n_threads=10, show_progress=False)
 
         result = [
-            corpus[idx]
-            for idx,_ in zip(ids[0], scores[0])
+            corpus[id]
+            for id in ids[0]
         ]
 
-        return result[0]
+        return result
 
     async def search_async(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
         # TODO: Implement async search

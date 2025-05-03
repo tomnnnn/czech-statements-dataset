@@ -15,7 +15,7 @@ if __name__ == "__main__":
     for _,article in enumerate(tqdm.tqdm(articles, desc="Segmenting articles", unit="article")):
         segments.extend(
             {"article_id": article.id, "text": segment} 
-            for segment in segment_article(article.content, article.title) if len(segment) > 25
+            for segment in segment_article(article.content, 50)
         )
 
     dataset.insert_segments(segments)

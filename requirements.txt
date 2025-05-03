@@ -17,3 +17,5 @@ user_agent==0.1.10
 dspy==2.6.18
 aiogoogle
 google-api-python-client
+faiss-cpu
+sqlalchemy

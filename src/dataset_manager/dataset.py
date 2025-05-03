@@ -48,7 +48,10 @@ class Dataset:
 
 
     def get_segments_with_statement_ids(self, article_id=None) -> list[tuple[int, Segment]]:
-        segments = self.session.query(ArticleRelevance.statement_id,Segment).join(Article).join(ArticleRelevance)
+        segments = (self.session.query(ArticleRelevance.statement_id,Segment)
+                    .select_from(Segment)
+                    .join(ArticleRelevance, Segment.article_id == ArticleRelevance.article_id))
+
 
         if article_id:
             segments = segments.filter(Segment.article_id == article_id)

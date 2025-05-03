@@ -28,8 +28,9 @@ def segment_article(html: str, min_len = 25) -> list[str]:
 
     segments = [transform_element(el) for el in soup.find_all()]
 
-    # Flatten the list of lists into a single list
     segments = [item for sublist in segments for item in sublist]
+
     segments = [seg for seg in segments if len(seg) > min_len]
 
     return segments
+
