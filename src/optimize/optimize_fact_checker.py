@@ -11,13 +11,18 @@ import mlflow
 from dataset_manager import Dataset
 from dspy.teleprompt import MIPROv2, SIMBA
 from fact_checker.fact_checker import FactChecker
-from fact_checker.fact_checker_decompose import FactCheckerDecomposer
+from fact_checker.fact_checker_entities import FactChecker as FactCheckerEntities
 from sklearn.metrics import classification_report
 from sklearn.utils import shuffle
 
 # mute warnings from mlflow
 logging.getLogger("mlflow").setLevel(logging.ERROR)
 logging.getLogger("dspy").setLevel(logging.ERROR)
+
+fc_dict = {
+    "hop": FactChecker,
+    "entities": FactCheckerEntities,
+}
 
 
 def configure_logging(log_path):
@@ -65,12 +70,12 @@ def evaluate(
     evaluate = dspy.Evaluate(
         devset=examples,
         metric=metric,
-        num_threads=50,
+        num_threads=20,
         max_errors=100,
         display_progress=True,
         display_table=True,
         return_all_scores=True,
-        provide_traceback=False,
+        provide_traceback=True,
     )
 
     # Evaluate the model
@@ -154,7 +159,10 @@ def optimize_simba(fact_checker: dspy.Module, train: list[dspy.Example], output_
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate the FactChecker model.")
 
+    parser.add_argument("--min-num-evidence", type=int, default=1, help="Minimum number of evidence to include statement in the sample")
+    parser.add_argument("--fc" , type=str, default="hop", choices=["hop", "entities"], help="Type of fact checker to use.")
     parser.add_argument("--search-base-api", type=str, default="htttp://localhost:4242", help="Base URL for the search API.")
+    parser.add_argument("--use-filtered", action="store_true", help="Use filtered statements for evaluation.")
     parser.add_argument("--evaluate", action="store_true", help="Evaluate the model.")
     parser.add_argument("--train-portion", type=float, default=0.0, help="Portion of the dataset to use for training. Cannot be used with --num-train and --num-dev.")
     parser.add_argument("--dev-portion", type=float, default=0.0, help="Portion of the dataset to use for development. Cannot be used with --num-train and --num-dev.")
@@ -240,7 +248,6 @@ def parse_args():
     return args
 
 
-
 def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_size=50, seed=42) -> tuple[list, list]:
     """
     Split the sample into train and dev sets.
@@ -249,6 +256,9 @@ def split_sample(sample: list, allowed_labels: list[str], train_size=50, dev_siz
         label: [s for s in sample if s.label.lower() == label]
         for label in allowed_labels
     }
+    print("Distribution of the labels:")
+    for label, statements in label_map.items():
+        print(f"{label}: {len(statements)}")
 
     print("Lengths of the label map:")
     for label, statements in label_map.items():
@@ -280,6 +290,14 @@ def sample_statements(args, statements, allowed_labels):
 
     statements = [s for s in statements if s.label.lower() in allowed_labels]
 
+    if args.use_filtered:
+        with open("fact-checker-eval/verifiable_statements.json", "r") as f:
+            verifiable_statements = json.load(f)
+
+        verifiable_ids = [item['id'] for item in verifiable_statements]
+        statements = [s for s in statements if s.id in verifiable_ids]
+        print(f"Filtered statements: {len(statements)}")
+
     if args.evaluate:
         train_statements = []
 
@@ -297,6 +315,13 @@ def sample_statements(args, statements, allowed_labels):
             labels = [s.label for s in statements]
             train_statements, dev_statements = train_test_split(statements, train_size=args.train_portion, stratify=labels, random_state=args.seed)
 
+
+    # report label distribution
+
+    label_distribution = {label: len([s for s in train_statements + dev_statements if s.label.lower() == label]) for label in allowed_labels}
+    print("Label distribution:")
+    for label, count in label_distribution.items():
+        print(f"{label}: {count}")
     return train_statements, dev_statements
 
 
@@ -336,14 +361,14 @@ def main():
         dataset = Dataset(args.dataset)
 
         # Initialize the FactChecker
-        fact_checker = FactCheckerDecomposer(num_docs=args.num_docs, mode=args.mode, search_base_api=args.search_base_api)
+        # fact_checker = FactCheckerDecomposer(num_docs=args.num_docs, mode=args.mode, search_base_api=args.search_base_api)
 
-        # fact_checker = FactChecker(mode=args.mode, search_base_api=args.search_base_api)
+        fact_checker = fc_dict[args.fc](mode=args.mode, search_base_api=args.search_base_api)
         # fact_checker.load("fact-checker-eval/Random/Binary/optimized_model.pkl")
 
         # Sample a subset of the dataset for evaluation
         print("Gettig statements from the dataset...")
-        statements = dataset.get_statements(min_evidence_count=5)
+        statements = dataset.get_statements(min_evidence_count=args.min_num_evidence)
 
         train_statements, dev_statements = sample_statements(args, statements, allowed_labels)
         # Create the train and dev sets
