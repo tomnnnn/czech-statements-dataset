@@ -52,7 +52,10 @@ class BGE_M3(SearchFunction):
         """
         return key in self.indices
 
-    async def create_index(self, texts: list[str], save_path: str):
+    async def create_index(self, texts: list[str], save_path: str|None = None) -> faiss.Index:
+        """
+        Creates a FAISS index from the given texts and saves it to the specified path if provided.
+        """
         async with self.sem:
             embeddings = await self._encode_documents_async(texts)
             dim = embeddings.shape[1]
@@ -60,8 +63,11 @@ class BGE_M3(SearchFunction):
             index = faiss.index_factory(dim, 'Flat', faiss.METRIC_INNER_PRODUCT)
             index.add(embeddings)
 
-            os.makedirs(os.path.dirname(save_path), exist_ok=True)
-            faiss.write_index(index, save_path)
+            if save_path:
+                os.makedirs(os.path.dirname(save_path), exist_ok=True)
+                faiss.write_index(index, save_path)
+
+            return index
 
 
     async def add_index(self, segments: list[Segment], save_path: Optional[str] = None, load_if_exists: bool = True, save: bool = True, key: str|int = "_default"):
@@ -126,4 +132,12 @@ class BGE_M3(SearchFunction):
         results = self._search_index(query_embeddings, k, key)
 
         torch.cuda.empty_cache()
+        return results[0]
+
+    async def search_external_index(self, query: str, index: faiss.Index, corpus: list[Segment], k: int = 10) -> list[Segment]:
+        query_embeddings = await self._encode_documents_async([query])
+        _, ids = index.search(query_embeddings, k=k)
+        results = [
+            [corpus[int(i)] for i in ids[j] if i != -1] for j in range(len(ids))
+        ]
         return results[0]

@@ -1,3 +1,5 @@
+import bm25s
+import faiss
 from .bge_m3 import BGE_M3
 import asyncio
 from tqdm.asyncio import tqdm_asyncio
@@ -107,9 +109,57 @@ class HybridSearch():
         )
 
         if rerank:
-            return _rerank(query, results, k)
+            return self._rerank(query, results, k)
         else:
             return results[:k]
+
+    async def search_on_the_fly(
+        self,
+        query: str,
+        corpus: list[Segment],
+        k: int = 3,
+        n: int|None = None,
+    ):
+        """
+        Search a statement's article index using BGE-M3 dense embeddings and BM25 vectors.
+
+        Args:
+            query (str): Search query to be used in search
+            dense_index (faiss.Index): Dense index to search
+            sparse_index (bm25s.BM25): Sparse index to search
+            k (int): How many top segments to return
+            n (int|None): Number of retrieved segments from each index
+
+        Returns:
+            List of segments.
+        """
+        if not n or 2*n < k:
+            n = k 
+
+        dense_index = await self.dense_retriever.create_index(
+            [segment.text for segment in corpus]
+        )
+        sparse_index = await self.sparse_retriever.create_index(
+            [segment.text for segment in corpus]
+        )
+
+        dense_results = await self.dense_retriever.search_external_index(
+            query,
+            index=dense_index,
+            corpus=corpus,
+            k=k,
+        )
+
+        sparse_results = await self.sparse_retriever.search_external_index(
+            query,
+            index=sparse_index,
+            corpus=corpus,
+            k=k,
+        )
+
+        combined_results = dense_results + sparse_results
+        combined_results = list({seg.text:seg for seg in combined_results}.values())
+        return self._rerank(query, combined_results, k)
 
     async def search(
         self,

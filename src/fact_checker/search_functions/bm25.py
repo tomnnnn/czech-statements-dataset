@@ -21,9 +21,9 @@ class BM25(SearchFunction):
         return [simplemma.lemmatize(word, "cs") for word in words]
 
 
-    async def create_index(self, texts: list[str], save_dir: str):
+    async def create_index(self, texts: list[str], save_dir: str|None = None):
         """
-        Creates a BM25 index from the given texts and saves it to the specified path.
+        Creates a BM25 index from the given texts and saves it to the specified path if provided.
 
         Args:
             texts (list[str]): List of texts to index.
@@ -32,7 +32,10 @@ class BM25(SearchFunction):
         tokenized_texts = bm25s.tokenize(texts, stemmer=self._stemmer)
         index = bm25s.BM25(k1=0.9, b=0.4)
         index.index(tokenized_texts)
-        index.save(save_dir)
+        if save_dir:
+            index.save(save_dir)
+
+        return index
 
 
     async def add_index(self, segments: list[Segment], save_path: Optional[str], load_if_exists: bool, save: bool, key: str|int = "_default"):
@@ -76,6 +79,17 @@ class BM25(SearchFunction):
         ]
 
         return result
+
+    async def search_external_index(self, query: str, index: bm25s.BM25, corpus: list[Segment], k: int = 10) -> list[Segment]:
+        tokenized_query = bm25s.tokenize(query, stemmer=self._stemmer, show_progress=False)
+        ids, scores = index.retrieve(tokenized_query, k=k, n_threads=10, show_progress=False)
+
+        result = [
+            corpus[id]
+            for id in ids[0]
+        ]
+
+        return result # type: ignore
 
     async def search_async(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
         # TODO: Implement async search
