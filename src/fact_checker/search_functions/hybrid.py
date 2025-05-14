@@ -24,7 +24,7 @@ class HybridSearch():
         self.segment_map = defaultdict(list)
 
         for statement_id, segment in segments:
-            self.segment_map[statement_id].append(segment)
+            self.segment_map['merged'].append(segment)
 
         self.statement_ids = self.segment_map.keys()
         print(len(self.statement_ids))
@@ -135,6 +135,9 @@ class HybridSearch():
         """
         if not n or 2*n < k:
             n = k 
+
+        if not corpus:
+            return []
 
         dense_index = await self.dense_retriever.create_index(
             [segment.text for segment in corpus]

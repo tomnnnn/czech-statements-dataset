@@ -23,7 +23,7 @@ class BGE_M3(SearchFunction):
         self.batch_size = batch_size
         self.indices = {}
         self.sem = asyncio.Semaphore(20)
-        self.sem_encode = asyncio.Semaphore(20)
+        self.sem_encode = asyncio.Semaphore(1)
 
     async def _encode_documents_async(self, documents: list[str]) -> np.ndarray:
         async with self.sem_encode:
@@ -34,7 +34,6 @@ class BGE_M3(SearchFunction):
         async with self.sem_encode:
             embeddings = await asyncio.to_thread(self.model.encode_queries, [query])
             return embeddings["dense_vecs"] # type: ignore
-
 
     def unload_index(self, key: str|int):
         self.indices.pop(key, None)
@@ -68,7 +67,6 @@ class BGE_M3(SearchFunction):
                 faiss.write_index(index, save_path)
 
             return index
-
 
     async def add_index(self, segments: list[Segment], save_path: Optional[str] = None, load_if_exists: bool = True, save: bool = True, key: str|int = "_default"):
         """
@@ -128,7 +126,7 @@ class BGE_M3(SearchFunction):
         return results[0]
 
     async def search_async(self, query: str, k: int = 10, key: str|int = "_default") -> list[Segment]:
-        query_embeddings = await self._encode_documents_async([query])
+        query_embeddings = await self._encode_query_async(query)
         results = self._search_index(query_embeddings, k, key)
 
         torch.cuda.empty_cache()
